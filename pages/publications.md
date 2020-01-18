@@ -1,0 +1,17 @@
+<html><body><h4>Papers about Brian</h4>
+<ol>
+ 	<li>Stimberg M, Brette R, Goodman DFM (2019). <a href="https://elifesciences.org/articles/47314">Brian 2, an intuitive and efficient neural simulator</a>. <em>eLife</em> 8:e47314. doi: 10.7554/eLife.47314</li>
+ 	<li>Stimberg M, Goodman DFM, Benichoux V, Brette R (2014). <a href="http://www.frontiersin.org/Journal/10.3389/fninf.2014.00006/abstract">Equation-oriented specification of neural models for simulations</a>. <em>Frontiers in Neuroinformatics</em> 8:6. doi: 10.3389/fninf.2014.00006</li>
+ 	<li>Goodman DFM and Brette R (2013) <a href="http://www.scholarpedia.org/article/Brian_simulator">Brian simulator</a>. <em>Scholarpedia</em>, 8(1):10883</li>
+ 	<li>Brette R (2012). On the design of script languages for neural simulation. [<a href="/WordPress/wp-content/uploads/2012/05/On-the-design-of-script-languages-for-neural-simulation.pdf">preprint</a>]</li>
+ 	<li>Fontaine B, Goodman DFM, Benichoux V, Brette R (2011). <a href="http://www.frontiersin.org/neuroinformatics/abstract/11725">Brian Hears: online auditory processing using vectorisation over channels.</a> <em>Frontiers in Neuroinformatics</em> 5:9. doi: 10.3389/fninf.2011.00009</li>
+ 	<li>Brette R and Goodman, DFM. (2010). <a href="http://www.mitpressjournals.org/doi/abs/10.1162/NECO_a_00123?url_ver=Z39.88-2003&amp;rfr_id=ori:rid:crossref.org&amp;rfr_dat=cr_pub%3dpubmed">Vectorised algorithms for spiking neural network simulation</a>. <em>Neural Computation</em>. doi:10.1162/NECO_a_00123 [<a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2010/10/algorithms-preprint.pdf">preprint</a>]</li>
+ 	<li>Goodman, DFM. (2010). <a href="http://www.springerlink.com/content/12614h7817602680/">Code generation: a strategy for neural network simulators.</a> <em>Neuroinformatics</em>. doi:10.1007/s12021-010-9082-x [<a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2010/07/codegen.pdf">pdf</a>]</li>
+ 	<li>Rossant C, Goodman DFM, Platkiewicz J and Brette, R. (2010). <a href="http://frontiersin.org/neuroscience/neuroinformatics/paper/10.3389/neuro.11/002.2010/">Automatic fitting of spiking neuron models to electrophysiological recordings.</a> <em>Frontiers in Neuroinformatics</em>. doi:10.3389/neuro.11.002.2010</li>
+ 	<li>Goodman DFM and Brette R (2009). <a href="http://frontiersin.org/neuroscience/paper/10.3389/neuro.01/026.2009/">The Brian simulator</a>. <em>Front Neurosci </em>doi:10.3389/neuro.01.026.2009.</li>
+ 	<li>Brette, R and Goodman D (2009). <a href="http://www.ine-news.org/view.php?source=1659-2009-07-07">Brian: a simple and flexible simulator for spiking neural networks.</a> <em>The Neuromorphic Engineer</em>. doi: 10.2417/1200906.1659</li>
+ 	<li>Goodman D and Brette R (2008) <a href="http://www.frontiersin.org/neuroinformatics/paper/10.3389/neuro.11/005.2008/">Brian: a simulator for spiking neural networks in Python</a>. <em>Front. Neuroinform.</em> doi:10.3389/neuro.11.005.2008</li>
+</ol>
+<h4>How to cite Brian</h4>
+If you use Brian for your published research, we suggest that you cite the following paper:
+<p style="padding-left: 40px;">Stimberg M, Brette R, Goodman DFM (2019). <a href="https://elifesciences.org/articles/47314">Brian 2, an intuitive and efficient neural simulator</a>. <em>eLife</em> 8:e47314. doi: 10.7554/eLife.47314</p></body></html>

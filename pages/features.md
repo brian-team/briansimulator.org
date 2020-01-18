@@ -1,0 +1,12 @@
+<html><body><ul>
+	<li><strong>Models: </strong> models are defined directly by their equations; threshold and reset (for integrate-and-fire models) can be customised. Both integrate-and-fire models and Hodgkin-Huxley type models can be used. Models with dendrites are possible, although it is not optimised for this case (in practice, Brian is still useful for models with a few compartments, but not with reconstructed dendritic trees).</li>
+	<li><strong>Integration methods</strong>: exact integration for linear models, Euler, Runge-Kutta and exponential Euler for nonlinear models. Stochastic differential equations are also possible.</li>
+	<li><strong>Connectivity</strong>: can be defined directly or with predefined functions (for all-to-all or random connectivity), and can include transmission delays.</li>
+	<li><strong>Units:</strong> Brian has a system for defining quantities with physical dimensions. Arithmetical operations and equations are checked for dimensional consistency, which can help to eliminate hard to debug scaling errors and mistakes in entering equations.</li>
+	<li><strong>Control and monitoring:</strong> all the internal variables of the simulator can be directly accessed to initialise the network or control it as it runs. Spikes and state variables can be monitored and either saved to a file or used directly. All monitors can be customised.</li>
+	<li><strong>Analysis and plotting:</strong> any Python package can be used in combination with Brian, in particular the NumPy and SciPy scientific computing packages, and the PyLab graphics package which mirrors the syntax of the Matlab plotting commands. Brian also includes a number of functions for spike train statistics.</li>
+	<li><strong>Speed:</strong> Brian uses vector-based operations (using NumPy and SciPy) to simulate neural populations very efficiently. For large networks, the cost of interpretation is small and the speed is comparable to C code.</li>
+	<li><strong>Plasticity: </strong> short-term plasticity and spike-timing dependent plasticity.</li>
+	<li><strong>Distributed computing: </strong>Brian can be used with the Parallel Python package to run independent simulations on a cluster or on different processors (e.g. running a simulation with different parameter values).</li>
+	<li><strong>Interfaces</strong>: the CherryPy package can be used to write HTML interfaces to Brian simulations (running locally or on a web server). There are also a number of third-party packages available for graphic interfaces.</li>
+</ul></body></html>
