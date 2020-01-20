@@ -1,0 +1,10 @@
+[Core]
+name = examples
+module = examples
+
+[Nikola]
+PluginCategory = Shortcode
+
+[Documentation]
+author = Marcel Stimberg
+version = 0.1
