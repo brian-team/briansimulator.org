@@ -136,7 +136,7 @@
     <a href="https://groups.google.com/briansupport">
                 
                   <div class="card-body">
-                    <h4><i class='fa fa-envelope'></i> Support mailing list</h4>
+                    <h3><i class='fa fa-envelope'></i> Support mailing list</h3>
                     <p class="card-summary">To ask questions and discuss.</p>
                   </div>
     </a>
@@ -148,7 +148,7 @@
     <a href="https://twitter.com/briansimulator">
                 
                   <div class="card-body">
-                    <h4><i class='fab fa-twitter'></i> Twitter</h4>
+                    <h3><i class='fab fa-twitter'></i> Twitter</h3>
                     <p class="card-summary">Twitter account <span style="font-family:'Lucida Console', monospace">@briansimulator</span></p>
                   </div>
     </a>
@@ -160,7 +160,7 @@
     <a href="/contribute/index.html">
                 
                   <div class="card-body">
-                    <h4><i class='fa fa-laptop-code'></i> Contribute</h4>
+                    <h3><i class='fa fa-laptop-code'></i> Contribute</h3>
                     <p class="card-summary">Get involved in making Brian 2 better.</p>
                   </div>
     </a>
