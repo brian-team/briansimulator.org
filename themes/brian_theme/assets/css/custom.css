@@ -1,3 +1,6 @@
+/* Example "carousel" */
+
+/* do not use the full height for the prev/next links -- otherwise our own link cannot be clicked */
 .carousel-control-prev, .carousel-control-next{
     position: absolute;
     top: 50%;
@@ -5,6 +8,26 @@
     transform: translateY(-50%);
 }
 
+/* by default, the carousel arrows use white, invert the color */
 .carousel-control-prev-icon, .carousel-control-next-icon{
     filter: invert(100%);
+}
+
+/* jupyter notebook */
+div.prompt {
+    display: none;
+}
+
+div.input  {
+    border: none;
+    background-color: none;
+}
+
+div.input * {
+    background-color: none;
+}
+
+div.output_subarea {
+    /* Widens image-containing divs so that image is full body width */
+    max-width: 100%;
 }
