@@ -915,7 +915,11 @@ REDIRECTIONS = [
  ['brian-2-1-3/index.html', '/posts/brian-2-1-3.html'],
  ['brian-2-2/index.html', '/posts/brian-2-2.html'],
  ['paper-on-brian-2-published-in-elife/index.html',
-  '/posts/paper-on-brian-2-published-in-elife.html']]
+  '/posts/paper-on-brian-2-published-in-elife.html'],
+ ['readers-digest-12-dec-2012/index.html',
+  'http://romainbrette.fr/readers-digest-12-dec-2012'],
+ ['robots-and-jobs/index.html',
+  'http://romainbrette.fr/robots-and-jobs']]
 # Presets of commands to execute to deploy. Can be anything, for
 # example, you may use rsync:
 # "rsync -rav --delete output/ joe@my.site:/srv/www/site"
