@@ -178,8 +178,9 @@
 <div class="col-md-4 py-2">
     <div class="card h-100">
     <div class="card-body">
+    <a href="publications/index.html">
     <h3><i class="fa fa-book"></i> Our articles</h3>
-    TODO
+    </a>
     </div>
     </div>
 </div>
@@ -194,8 +195,9 @@
 <div class="col-md-4 py-2">
 <div class="card h-100">
     <div class="card-body">
+    <a href="cite/index.html">
     <h3><i class="fas fa-pencil-alt"></i> How to cite</h3>
-    TODO
+    </a>
     </div>
     </div>
 </div>
