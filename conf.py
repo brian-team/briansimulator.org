@@ -1503,7 +1503,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # (translatable)
 EXTRA_HEAD_DATA = '''
 <script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script>
-                   '''
+<link rel="stylesheet" type="text/css" href="/assets/css/custom.css">'''
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)
