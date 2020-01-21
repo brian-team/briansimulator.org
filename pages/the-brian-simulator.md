@@ -134,7 +134,7 @@
     <div class="col-md-4">
     <div class="card community-card">
     <div class="card-body">
-    <a href="https://groups.google.com/briansupport">
+    <a href="https://groups.google.com/forum/#!forum/briansupport">
                     <h3><i class='fa fa-envelope'></i> Support mailing list</h3>
                     <p class="card-summary">To ask questions and discuss.</p>
     </a>
