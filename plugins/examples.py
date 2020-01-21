@@ -18,13 +18,6 @@ class ExampleGallery(ShortcodePlugin):
     def handler(self, gallery_dir, site=None, lang=None, post=None, data=None):
         # raise Exception(f'gallery_dir: {gallery_dir}')
         html_lines = ['<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">']
-        html_lines += ['<ol class="carousel-indicators">']
-        for i, (img, _) in enumerate(image_list(gallery_dir)):
-            if i == 0:
-                html_lines += [f'<li data-target="#carouselExampleIndicators" data-slide-to="{i}" class="active"></li>']
-            else:
-                html_lines += [f'<li data-target="#carouselExampleIndicators" data-slide-to="{i}"></li>']
-        html_lines += ['</ol>']
         html_lines += ['<div class="carousel-inner">']
         for i, (img, meta) in enumerate(image_list(gallery_dir)):
             if i == 0:
@@ -37,8 +30,7 @@ class ExampleGallery(ShortcodePlugin):
                 html_lines += [f'<a href="{lines[1]}"<h4>{lines[0]}</h4></a>']
                 html_lines += [f'<p>{lines[2]}</p>']
             html_lines += [f'<img class="d-block" src="{img}" style="max-height: 20rem; margin-left: auto; margin-right: auto;">']
-            html_lines += ['<div class="carousel-caption d-none d-md-block">']
-            html_lines +=['</div></div>']
+            html_lines +=['</div>']
         html_lines.extend(['</div>',
                            '</div>',
                            '<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">',

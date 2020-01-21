@@ -1,0 +1,10 @@
+.carousel-control-prev, .carousel-control-next{
+    position: absolute;
+    top: 50%;
+    height: 100px;
+    transform: translateY(-50%);
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon{
+    filter: invert(100%);
+}
