@@ -1,20 +1,40 @@
 # briansimulator.org
 
-## Installing and building on Windows
+## Installing
 
-The following commands to install:
-
+```
     conda create --name nikola python=3
-    activate nikola
+    conda activate nikola
     pip install Nikola[extras]
-    pip install jupyter
-    
-Then to build:
+```
 
-    activate nikola
+## Building the website locally
+```
+    conda activate nikola
+    nikola build
+```
+
+Depending on your configuration, you might have to set an environment variable
+to avoid conflicts over the jupyter configuration. E.g. on Windows:
+```
+    conda activate nikola
     set JUPYTER_CONFIG_DIR=.
     nikola build
-    
-And to serve locally:
+```
 
+To serve the website locally:
+```
     nikola serve -b
+```
+
+Alternatively, you can use the following command to develop locally, it will
+build and serve the website, and rebuild it whenever a file changes:
+```
+    nikola auto
+```
+
+## Deploy the website
+```
+    nikola github_deploy
+```
+
