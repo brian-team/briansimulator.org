@@ -755,8 +755,6 @@ REDIRECTIONS = [
   'http:/romainbrette.fr/what-is-computational-neuroscience-vi-deduction-induction-counter-induction/'],
  ['what-is-computational-neuroscience-vii-incommensurability-and-relativism/index.html',
   'http:/romainbrette.fr/what-is-computational-neuroscience-vii-incommensurability-and-relativism/'],
- ['readers-digest-12-dec-2012/index.html',
-  '/posts/readers-digest-12-dec-2012.html'],
  ['rate-vs-timing-xi-flavors-of-spike-based-theories-1-synfire-chains/index.html',
   'http:/romainbrette.fr/rate-vs-timing-xi-flavors-of-spike-based-theories-1-synfire-chains/'],
  ['the-machine-learning-analogy-of-perception/index.html',
@@ -917,9 +915,7 @@ REDIRECTIONS = [
  ['paper-on-brian-2-published-in-elife/index.html',
   '/posts/paper-on-brian-2-published-in-elife.html'],
  ['readers-digest-12-dec-2012/index.html',
-  'http://romainbrette.fr/readers-digest-12-dec-2012'],
- ['robots-and-jobs/index.html',
-  'http://romainbrette.fr/robots-and-jobs']]
+  'http://romainbrette.fr/readers-digest-12-dec-2012']]
 # Presets of commands to execute to deploy. Can be anything, for
 # example, you may use rsync:
 # "rsync -rav --delete output/ joe@my.site:/srv/www/site"
