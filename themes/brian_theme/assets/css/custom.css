@@ -1,16 +1,17 @@
 /* Example "carousel" */
 
-/* do not use the full height for the prev/next links -- otherwise our own link cannot be clicked */
-.carousel-control-prev, .carousel-control-next{
-    position: absolute;
-    top: 50%;
-    height: 100px;
-    transform: translateY(-50%);
+.carousel .carousel-indicators li {
+  background-color: #fff;
+  background-color: rgba(70, 70, 70, 0.25);
 }
 
-/* by default, the carousel arrows use white, invert the color */
-.carousel-control-prev-icon, .carousel-control-next-icon{
-    filter: invert(100%);
+.carousel .carousel-indicators .active {
+  background-color: #444;
+}
+
+.carousel .carousel-column {
+    height: 240px;
+    max-height: 240px;
 }
 
 /* jupyter notebook */

@@ -1,0 +1,19 @@
+<div class="row">
+<div class="col-md-6 carousel-column">
+<h3><i class="fa fa-balance-scale"></i> Physical units</h3>
+            <p>Quantities use physical units (e.g. mV or &micro;&#8486;), and Brian checks
+            the consistency of units to avoid errors.</p>
+</div>
+<div class="col-md-6 carousel-column d-none d-md-block">
+<pre class="code literal-block"><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Rm</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">Mohm</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">I</span> <span class="o">=</span> <span class="mi">50</span><span class="o">*</span><span class="n">nA</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">I</span><span class="o">*</span><span class="mi">10000</span>
+<span class="go">0.5 * mamp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Rm</span> <span class="o">*</span> <span class="n">I</span>
+<span class="go">50. * mvolt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Rm</span> <span class="o">+</span> <span class="n">I</span>
+<span class="go">[...]</span>
+<span class="go">Cannot calculate 1. Mohm + 50. nA, units do not match (units are ohm and A).</span>
+</pre>
+</div>
+</div>

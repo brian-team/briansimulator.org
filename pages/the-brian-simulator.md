@@ -10,18 +10,17 @@
 .. hidetitle: True
 -->
 
-<div class="module about-module container-fluid mb-2 p-4">
-  <div class="row">
-      <div class="col-md-4">
+<div class="module about-module container-fluid mb-2 p-4 bg-light">
       <p>Brian is a free, open source simulator for spiking neural networks. It is written in the Python programming language and is available on almost all platforms. We believe that a simulator should not only save the time of processors, but also the time of scientists. Brian is therefore designed to be easy to learn and use, highly flexible and easily extensible.</p>
-      </div>
-      <div class="col-md-8">
-      {{% examples "examples" %}}
-      </div>
-  </div>
 </div>
 
-<div class="module features-module container-fluid bg-light mb-2 p-4">
+<div class="module features-module container-fluid mb-2 p-4">
+      <h2>Why use Brian?</h2>
+      {{% examples "examples" %}}
+</div>
+
+<!--
+<div class="module features-module container-fluid mb-2 p-4">
     <div class="row">
         <div class="col-md-12">
         <h2 class="module-header">Why use Brian?</h2>
@@ -83,8 +82,9 @@
         </div>
     </div>
 </div>
+-->
 
-<div class="container-fluid mb-2 p-4">
+<div class="container-fluid mb-2 p-4 bg-light">
     <div class="row">
         <div class="col-md-8">
             <!--<h3><i class="fa fa-download"></i> Download and installation</h3>-->
@@ -138,7 +138,7 @@
     </div>
 </div>
 
-<div class="container-fluid bg-light mb-2 p-4 rounded">
+<div class="container-fluid  mb-2 p-4 rounded">
     <div class="row">
         <div class="col-md-6 py-2">
             <h3 class="card-title"><i class='fa fa-globe'></i> Community</h3>
@@ -165,7 +165,7 @@
     </div>
 </div>
 
-<div class="container-fluid p-4">
+<div class="container-fluid p-4 bg-light">
     <div class="row">
         <div class="col-md-4 py-2">
             <h3><i class="fa fa-users"></i> Team</h3>
