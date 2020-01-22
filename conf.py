@@ -231,6 +231,7 @@ POSTS = (
 )
 
 PAGES = (
+    ("pages/index.md", "", "frontpage.tmpl"),
     ("pages/*.md", "", "page.tmpl"),
     ("pages/*.rst", "", "page.tmpl"),
     ("pages/*.txt", "", "page.tmpl"),
