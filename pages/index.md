@@ -11,7 +11,7 @@
 -->
 
 <div class="module features-module container-fluid mb-2 p-4">
-      <h2>Why use Brian?</h2>
+      <h4 class="pb-2">Why use Brian?</h4>
       {{% examples "examples" %}}
 </div>
 
