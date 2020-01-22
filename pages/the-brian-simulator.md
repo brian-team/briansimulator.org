@@ -7,14 +7,15 @@
 .. link: 
 .. description: 
 .. type: text
+.. hidetitle: True
 -->
 
 <div class="module about-module container-fluid mb-2 p-4">
   <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-4">
       <p>Brian is a free, open source simulator for spiking neural networks. It is written in the Python programming language and is available on almost all platforms. We believe that a simulator should not only save the time of processors, but also the time of scientists. Brian is therefore designed to be easy to learn and use, highly flexible and easily extensible.</p>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-8">
       {{% examples "examples" %}}
       </div>
   </div>
@@ -83,164 +84,112 @@
     </div>
 </div>
 
-<div class="module start-module container-fluid mb-2 p-4">
-<div class="row">
-<div class="col-md-12">
-<h2 class="module-header">Getting started</h2>
-</div>
-</div>
-<div class="row">
-<div class="col-md-8">
-<h3><i class="fa fa-download"></i> Installation and Download</h3>
-<h4>Install with conda</h4>
-<code>conda install -c conda-forge brian2</code>
-<h4>Install with pip</h4>
-<code>pip install brian2</code>
-<p>For more details, see the <a href="https://brian2.readthedocs.io/en/stable/introduction/install.html">installation instructions in the documentation</a>.</p>
-</div>
-<div class="col-md-4">
-<div class="row">
-<div class="col">
-<div class="card card-body">
-<a href="https://brian2.readthedocs.io/en/stable/resources/tutorials/index.html"><h4><i class='fa fa-book'></i> Tutorials</h4></a>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col">
-<div class="card card-body">
-<a href="https://brian2.readthedocs.io/en/stable/examples/index.html"><h4><i class='fa fa-book'></i> Examples</h4></a>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col">
-<div class="card card-body">
-<a href="https://brian2.readthedocs.io"><h4><i class='fa fa-book'></i> Documentation</h4></a>
-</div>
-</div>
-</div>
-</div>
-</div>
+<div class="container-fluid mb-2 p-4">
+    <div class="row">
+        <div class="col-md-8">
+            <!--<h3><i class="fa fa-download"></i> Download and installation</h3>-->
+            <h3><i class="fab fa-linux"></i> <i class="fab fa-windows"></i> <i class="fab fa-apple"></i> Download and installation</h3>
+            <div><code><i class="fa fa-chevron-right"></i> <a href="https://www.anaconda.com/distribution/">conda</a> install -c conda-forge brian2</code></div>
+            <div>or</div>
+            <div><code><i class="fa fa-chevron-right"></i> pip install brian2</code></div>
+            <div>For more details, see the <a href="https://brian2.readthedocs.io/en/stable/introduction/install.html">installation instructions in the documentation</a>.</div>
+        </div>
+        <div class="col-md-4">
+            <h3><i class="fa fa-graduation-cap"></i> Getting started</h3>
+            <a href="https://brian2.readthedocs.io/en/stable/resources/tutorials/index.html"><h4>Tutorials</h4></a>
+            <a href="https://brian2.readthedocs.io/en/stable/examples/index.html"><h4>Examples</h4></a>
+            <a href="https://brian2.readthedocs.io"><h4>Documentation</h4></a>
+        </div>
+    </div>
 </div>
 
-<div class="module community-module container-fluid bg-light mb-2 p-4">
-<div class="row community-row">
-    <div class="col-md-12">
-    <h2 class="module-header">Community</h2>
+<div class="container-fluid p-4 d-none">
+    <div class="row card-deck">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title"><i class='fa fa-globe'></i> Community</h3>
+            </div>
+            <div class="card-body">
+                <a href="https://groups.google.com/forum/#!forum/briansupport">
+                    <h4><i class='fa fa-comment'></i> Support forum</h4>
+                </a>
+                <a href="https://twitter.com/briansimulator">
+                    <h4><i class='fab fa-twitter'></i> @briansimulator</h4>
+                </a>
+                <a href="/contribute/index.html">
+                    <h4><i class='fa fa-laptop-code'></i> Contribute</h4>
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title"><i class='fa fa-file'></i> Publications</h3>
+            </div>
+            <div class="card-body">
+                <a href="publications/index.html">
+                    <h4><i class="fa fa-book"></i> Papers about Brian</h4>
+                </a>
+                <h4><i class="fa fa-book"></i> Papers using Brian</h4>
+                <a href="cite/index.html">
+                    <h4><i class="fas fa-pencil-alt"></i> How to cite Brian</h4>
+                </a>
+            </div>
+        </div>
     </div>
-</div>
-<div class="row community-row">
-    <div class="col-md-4">
-    <div class="card community-card">
-    <div class="card-body">
-    <a href="https://groups.google.com/forum/#!forum/briansupport">
-                    <h3><i class='fa fa-envelope'></i> Support mailing list</h3>
-                    <p class="card-summary">To ask questions and discuss.</p>
-    </a>
-    </div>
-    </div>
-    </div>
-    
-    <div class="col-md-4">
-    <div class="card community-card">
-          <div class="card-body">
-          <a href="https://twitter.com/briansimulator">
-            <h3><i class='fab fa-twitter'></i> Twitter</h3>
-            <p class="card-summary">Twitter account <span style="font-family:'Lucida Console', monospace">@briansimulator</span></p>
-    </a>
-    </div>
-    </div>
-    </div>
-
-    <div class="col-md-4">
-    <div class="card community-card">
-                  <div class="card-body">
-                      <a href="/contribute/index.html">
-                    <h3><i class='fa fa-laptop-code'></i> Contribute</h3>
-                    <p class="card-summary">Get involved in making Brian 2 better.</p>
-                    </a>
-                  </div>
-    </div>
-    </div>
-</div>
-</div>
-</div>
 </div>
 
-<div class="module publications-module container-fluid mb-2 p-4">
-<div class="row">
-<div class="col-md-12">
-<h2 class="module-header">Publications</h2>
-</div>
-</div>
-<div class="row">
-<div class="col-md-4 py-2">
-    <div class="card h-100">
-    <div class="card-body">
-    <a href="publications/index.html">
-    <h3><i class="fa fa-book"></i> Our articles</h3>
-    </a>
+<div class="container-fluid bg-light mb-2 p-4 rounded">
+    <div class="row">
+        <div class="col-md-6 py-2">
+            <h3 class="card-title"><i class='fa fa-globe'></i> Community</h3>
+            <a href="https://groups.google.com/forum/#!forum/briansupport">
+                <h4>Support forum</h4>
+            </a>
+            <a href="https://twitter.com/briansimulator">
+                <h4>@briansimulator</h4>
+            </a>
+            <a href="/contribute/index.html">
+                <h4>Contribute</h4>
+            </a>            
+        </div>
+        <div class="col-md-6 py-2">
+            <h3 class="card-title"><i class='fa fa-file'></i> Publications</h3>
+            <a href="publications/index.html">
+                <h4>Papers about Brian</h4>
+            </a>
+            <h4>Papers using Brian</h4>
+            <a href="cite/index.html">
+                <h4>How to cite Brian</h4>
+            </a>            
+        </div>
     </div>
-    </div>
-</div>
-<div class="col-md-4 py-2">
-    <div class="card h-100">
-    <div class="card-body">
-    <h3><i class="fa fa-book"></i> Articles by others</h3>
-    TODO
-    </div>
-    </div>
-</div>
-<div class="col-md-4 py-2">
-<div class="card h-100">
-    <div class="card-body">
-    <a href="cite/index.html">
-    <h3><i class="fas fa-pencil-alt"></i> How to cite</h3>
-    </a>
-    </div>
-    </div>
-</div>
-</div>
-</div>
-</div>
 </div>
 
-<div class="module development-module container-fluid bg-light mb-2 p-4">
-<div class="row community-row">
-<div class="col-md-12">
-<h2 class="module-header">Development</h2>
-</div>
-<div class="col-md-4 py-2">
-    <div class="card h-100">
-    <div class="card-body">
-    <h3><i class="fa fa-brain"></i> Team</h3>
-    <p>Brian's main development team consists of:</p>
-    <ul>
-    <li><a href="http://romainbrette.fr">Romain Brette</a> (Institut de la Vision, INSERM, Paris)</li>
-    <li><a href="http://neural-reckoning.org/">Dan Goodman</a> (Imperial College London)</li>
-    <li>Marcel Stimberg (Institut de la Vision, Sorbonne University, Paris)</li>
-    </ul>
+<div class="container-fluid p-4">
+    <div class="row">
+        <div class="col-md-4 py-2">
+            <h3><i class="fa fa-users"></i> Team</h3>
+            <ul class="list-unstyled">
+                <li><a href="http://romainbrette.fr">Romain Brette</a><br/><span class="text-muted">Institut de la Vision, INSERM, Paris</span></li>
+                <li><a href="http://neural-reckoning.org/">Dan Goodman</a><br/><span class="text-muted">Imperial College London</span></li>
+                <li>Marcel Stimberg<br/><span class="text-muted">Institut de la Vision, Sorbonne University, Paris</span></li>
+            </ul>
+        </div>
+        <div class="col-md-4 py-2">
+            <h3><i class="fa fa-code"></i> Code</h3>
+            <p>
+                The source code is freely available on
+                <a href="https://github.com/brian-team/brian2"><i class="fab fa-github"></i> GitHub</a>, allowing
+                copying and modification under the
+                <a href="https://cecill.info/licences/Licence_CeCILL_V2.1-en.html">CeCILLv2.1</a> license
+                (GPL-compatible).
+            </p>
+        </div>
+        <div class="col-md-4 py-2">
+            <h3><i class="fa fa-heart"></i> Contributors</h3>
+            <p>For a full list of authors, see the <a href="https://github.com/brian-team/brian2/blob/master/AUTHORS">AUTHORS file</a> in the repository. All contributions (not only in the form of code) are listed in the <a href="https://brian2.readthedocs.io/en/stable/introduction/release_notes.html">release notes</a>.
+        </div>
     </div>
-    </div>
-</div>
-<div class="col-md-4 py-2">
-    <div class="card h-100">
-    <div class="card-body">
-    <h3><i class="fa fa-code"></i> Code</h3>
-    <p>The source code is freely available on <a href="https://github.com/brian-team/brian2"><i class="fab fa-github"></i> github</a>, allowing copying and modification under the <a href="https://cecill.info/licences/Licence_CeCILL_V2.1-en.html">CeCILLv2.1</a> license.</p>
-    </div>
-    </div>
-</div>
-<div class="col-md-4 py-2">
-<div class="card h-100">
-    <div class="card-body">
-    <h3><i class="fa fa-users"></i> Authors</h3>
-    <p>For a full list of authors, see the <a href="https://github.com/brian-team/brian2/blob/master/AUTHORS">AUTHORS file</a> in the repository. All contributions (not only in the form of code) are listed in the <a href="https://brian2.readthedocs.io/en/stable/introduction/release_notes.html">release notes</a>.
-    </div>
-    </div>
-</div>
-</div>
 </div>
 
 
