@@ -80,7 +80,7 @@
 </div>
 -->
 
-<div class="container-fluid mb-2 p-4 bg-light">
+<div class="container-fluid mb-2 p-4 border-blue">
     <div class="row">
         <div class="col-md-8">
             <!--<h3><i class="fa fa-download"></i> Download and installation</h3>-->

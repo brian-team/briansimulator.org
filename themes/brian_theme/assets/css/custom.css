@@ -1,3 +1,11 @@
+/* Blue background/border color */
+.bg-blue {
+    background-color: #20096B;
+}
+
+.border-blue {
+    border: 2px solid #20096B !important;
+}
 /* Example "carousel" */
 
 .carousel .carousel-indicators li {

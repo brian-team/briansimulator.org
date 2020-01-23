@@ -12,14 +12,17 @@ ${template_hooks['extra_head']()}
 <a href="#content" class="sr-only sr-only-focusable">${messages("Skip to main content")}</a>
 
 <!-- Menubar -->
-    <div class="container-fluid bg-blue text-light">
+
 <nav class="navbar navbar-expand-md static-top mb-4 navbar-dark bg-blue">
     <div class="container"><!-- This keeps the margins nice -->
         <a class="navbar-brand" href="${abs_link(_link("root", None, lang))}">
         %if logo_url:
-            <img src="${logo_url}" alt="${blog_title|h}" id="logo" class="d-inline-block d-sm-none align-top">
+            <img src="${logo_url}" alt="${blog_title|h}" id="logo" class="d-inline-block align-top">
         %endif
 
+        % if show_blog_title:
+            <span id="blog-title">${blog_title|h}</span>
+        % endif
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -48,24 +51,8 @@ ${template_hooks['extra_head']()}
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->
-    </nav>
+</nav>
 
-    <div class="container">
-    <div class="row">
-    <div class="col-sm-4 d-none d-sm-block">
-    <img src="/logos/brian_logo_big.png" alt="${blog_title|h}" id="logo" class="align-top pb-5">
-    </div>
-    <div class="col-sm-8 align-self-center h-100">
-        <p class="p-4">
-            Brian is a free, open source simulator for spiking neural networks. It is written in the Python programming
-            language and is available on almost all platforms. We believe that a simulator should not only save the time
-            of processors, but also the time of scientists. Brian is therefore designed to be easy to learn and use,
-            highly flexible and easily extensible.
-        </p>
-    </div>
-    </div>
-</div>
-</div>
 <!-- End of Menubar -->
 
 <div class="container" id="content" role="main">
