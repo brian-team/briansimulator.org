@@ -94,7 +94,7 @@
         <div class="col-md-4">
             <h3><i class="fa fa-graduation-cap"></i> Getting started</h3>
             <a href="https://mybinder.org/v2/gh/brian-team/brian2-binder/master?filepath=demo.ipynb" target="_blank"><h4>Try in the browser</h4></a>
-            <a href="getting_started/index.html"><h4>Beginners guide</h4></a>
+            <a href="getting-started/index.html"><h4>Beginners guide</h4></a>
             <a href="https://brian2.readthedocs.io/en/stable/resources/tutorials/index.html"><h4>Tutorials</h4></a>
             <a href="https://brian2.readthedocs.io/en/stable/examples/index.html"><h4>Examples</h4></a>
             <a href="https://brian2.readthedocs.io"><h4>Documentation</h4></a>
@@ -110,7 +110,7 @@
         </div>
         <div class="col-md-4">
              <a href="/categories/blog/index.html"><h3><i class="fas fa-scroll"></i> Articles</h3></a>
-            {{% post-list start="0" stop="3" tags="blog" %}}{{% /post-list %}}
+            {{% post-list start="0" stop="3" tags="articles" %}}{{% /post-list %}}
         </div>
          <div class="col-md-4 d-none d-sm-block">
             <a href="https://twitter.com/briansimulator"><h3><i class="fab fa-twitter"></i> Twitter</h3></a>

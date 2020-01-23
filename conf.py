@@ -17,7 +17,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "admin"  # (translatable)
-BLOG_TITLE = "The spiking neural network simulator"  # (translatable)
+BLOG_TITLE = "The Brian spiking neural network simulator"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "http://briansimulator.org/"
@@ -156,7 +156,7 @@ NAVIGATION_LINKS = {
             (
                 ("/blog/index.html", "All posts"),
                 ("/categories/news/index.html", "News"),
-                ("/categories/development/index.html", "Development")
+                ("/categories/articles/index.html", "Articles")
             ),
             "Blog"
         )
@@ -369,11 +369,17 @@ SHOW_BLOG_TITLE = False
 
 # If TAG_PAGES_ARE_INDEXES is set to True, each tag's page will contain
 # the posts themselves. If set to False, it will be just a list of links.
-# TAG_PAGES_ARE_INDEXES = False
+TAG_PAGES_ARE_INDEXES = True
 
 # Set descriptions for tag pages to make them more interesting. The
 # default is no description. The value is used in the meta description
 # and displayed underneath the tag list or index page’s title.
+TAG_DESCRIPTIONS = {
+ DEFAULT_LANG: {
+  "articles": "Articles about features of the Brian simulator.",
+  "News": "New releases, etc."
+ }
+}
 # TAG_DESCRIPTIONS = {
 #    DEFAULT_LANG: {
 #        "blogging": "Meta-blog posts about blogging.",
@@ -381,6 +387,12 @@ SHOW_BLOG_TITLE = False
 #    },
 # }
 
+TAG_TITLES = {
+ DEFAULT_LANG: {
+  "articles": "Articles",
+  "News": "News"
+ }
+}
 # Set special titles for tag pages. The default is "Posts about TAG".
 # TAG_TITLES = {
 #    DEFAULT_LANG: {
@@ -442,7 +454,7 @@ CATEGORY_OUTPUT_FLAT_HIERARCHY = False
 
 # If CATEGORY_PAGES_ARE_INDEXES is set to True, each category's page will contain
 # the posts themselves. If set to False, it will be just a list of links.
-# CATEGORY_PAGES_ARE_INDEXES = False
+CATEGORY_PAGES_ARE_INDEXES = True
 
 # Set descriptions for category pages to make them more interesting. The
 # default is no description. The value is used in the meta description
