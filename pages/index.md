@@ -109,8 +109,8 @@
             <a href="https://groups.google.com/forum/#!forum/briansupport">
                 <h4>Support forum</h4>
             </a>
-            <h4>Papers using Brian</h4>
-            <h4>Software packages</h4>
+            <h4><a href="/papers-using-brian">Papers using Brian</a></h4>
+            <h4><a href="/libraries">Software packages</a></h4>
             <h4>
                 <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&allsimu=true">Models</a> (and
                 <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=113733&allsimu=true">older ones</a>)
@@ -133,8 +133,7 @@
             <a href="cite/index.html">
                 <h4>How to cite us</h4>
             </a>
-            <p>&nbsp;</p>
-            <h4>Who we are</h4>
+            <h5>Who we are</h5>
             <ul class="list-unstyled">
                 <li><a href="http://romainbrette.fr">Romain Brette</a><br/><span class="text-muted">Institut de la Vision, INSERM, Paris</span></li>
                 <li><a href="http://neural-reckoning.org/">Dan Goodman</a><br/><span class="text-muted">Imperial College London</span></li>

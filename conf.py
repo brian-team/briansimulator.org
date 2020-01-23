@@ -139,17 +139,19 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/install/index.html", "Install"),
+        ("https://brian2.readthedocs.io/en/stable/introduction/install.html", "Install"),
         (
             (
-                ("https://brian2.readthedocs.org", 'Documentation <i class="fas fa-external-link-alt"></i>'),
-                ("/getting_started/index.html", "Getting started"),
-                ("/support/index.html", "Support"),
+               ("https://mybinder.org/v2/gh/brian-team/brian2-binder/master?filepath=demo.ipynb", "Try in the browser"),
+               ("/getting-started", "Beginners guide"),
+               ("https://brian2.readthedocs.io/en/stable/resources/tutorials/index.html", "Tutorials"),
+               ("https://brian2.readthedocs.io/en/stable/examples/index.html", "Examples"),
+               ("https://brian2.readthedocs.io", "Documentation"),
             ),
-            "Get help"
+            "Getting started"
         ),
-        ("/showcase/index.html", "Showcase"),
-        ("/contribute/index.html", "Contribute"),
+        ("https://groups.google.com/forum/#!forum/briansupport", "Get help"),
+        ("/cite", "How to cite"),
         (
             (
                 ("/blog/index.html", "All posts"),

@@ -10,12 +10,13 @@
 -->
 ## How to cite Brian
 
-When you use Brian in your research, please cite our introductory paper:
+When you use Brian in your research, please cite our main paper:
 
-<blockquote class="blockquote">
-Stimberg, M., Brette, R. & Goodman, D. F. Brian 2, an intuitive and efficient neural simulator. <em>eLife</em> 8, e47314 (2019). doi: <a href="https://doi.org/10.7554/eLife.47314">10.7554/eLife.47314</a>
-</blockquote>
-
+<div class="alert alert-success" role="alert">
+{{% publication authors="Stimberg M, Brette R, Goodman DFM" year="2019"
+                title="Brian 2, an intuitive and efficient neural simulator"
+                url="https://elifesciences.org/articles/47314"
+                journal="eLife" extras="8:e47314. doi: 10.7554/eLife.47314" %}}
 <details>
 <summary>BibTeX (click to expand)</summary>
 ```bibtex
@@ -33,6 +34,7 @@ Stimberg, M., Brette, R. & Goodman, D. F. Brian 2, an intuitive and efficient ne
 }
 ``` 
 </details>
+</div>
 
 <br>
 Some journals use an <abbr title="Research Resource Identifiers">RRID</abbr> to reference software tools. The Brian simulator
