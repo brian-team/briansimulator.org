@@ -129,7 +129,7 @@
                 <h4>Support forum</h4>
             </a>
             <h4><a href="/papers-using-brian">Papers using Brian</a></h4>
-            <h4><a href="/libraries">Software packages</a></h4>
+            <h4><a href="/ecosystem">Software ecosystem</a></h4>
             <h4>
                 <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&allsimu=true">Models</a> (and
                 <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=113733&allsimu=true">older ones</a>)
