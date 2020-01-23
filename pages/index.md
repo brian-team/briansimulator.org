@@ -106,11 +106,11 @@
     <div class="row">
         <div class="col-md-4">
             <h3><i class="fa fa-newspaper"></i> News</h3>
-            {{% post-list start="0" stop="10" tags="News" %}}{{% /post-list %}}
+            {{% post-list start="0" stop="3" tags="News" %}}{{% /post-list %}}
         </div>
         <div class="col-md-4">
             <h3><i class="fas fa-scroll"></i> Blog posts</h3>
-            {{% post-list start="0" stop="10" tags="blog" %}}{{% /post-list %}}
+            {{% post-list start="0" stop="3" tags="blog" %}}{{% /post-list %}}
         </div>
          <div class="col-md-4 d-none d-sm-block">
             <a href="https://twitter.com/briansimulator"><h3><i class="fab fa-twitter"></i> Twitter</h3></a>
@@ -121,7 +121,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid p-4 border-blue">
+<div class="container-fluid p-4">
     <div class="row">
         <div class="col-md-4">
             <h3><i class='fa fa-globe'></i> Community</h3>
@@ -138,32 +138,25 @@
                 <h4>How to contribute</h4>
             </a>
         </div>
-        <div class="col-md-8">
-            <div class="row">
-                <div class="col-md-12">
-                <h3><i class="fa fa-users"></i> Team</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <a href="publications/index.html">
-                        <h4>Our papers</h4>
-                    </a>
-                    <a href="cite/index.html">
-                        <h4>How to cite us</h4>
-                    </a>
-                    <a href="https://github.com/brian-team/brian-material/tree/master/logos">
-                        <h4>Download logos</h4>
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-unstyled">
-                        <li><a href="http://romainbrette.fr">Romain Brette</a><br/><span class="text-muted">Institut de la Vision, INSERM, Paris</span></li>
-                        <li><a href="http://neural-reckoning.org/">Dan Goodman</a><br/><span class="text-muted">Imperial College London</span></li>
-                        <li>Marcel Stimberg<br/><span class="text-muted">Institut de la Vision, Sorbonne University, Paris</span></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="col-md-4">
+            <h3><i class="fa fa-tools"></i> Material</h3>
+            <a href="publications/index.html">
+                <h4>Our papers</h4>
+            </a>
+            <a href="cite/index.html">
+                <h4>How to cite us</h4>
+            </a>
+            <a href="https://github.com/brian-team/brian-material/tree/master/logos">
+                <h4>Download logos</h4>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <h3><i class="fa fa-users"></i> Team</h3>
+            <ul class="list-unstyled">
+                <li><a href="http://romainbrette.fr">Romain Brette</a><br/><span class="text-muted">Institut de la Vision, INSERM, Paris</span></li>
+                <li><a href="http://neural-reckoning.org/">Dan Goodman</a><br/><span class="text-muted">Imperial College London</span></li>
+                <li>Marcel Stimberg<br/><span class="text-muted">Institut de la Vision, Sorbonne University, Paris</span></li>
+            </ul>
         </div>
     </div>
     <div class="row">

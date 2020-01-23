@@ -3,15 +3,16 @@
 <!-- Begin post-list ${post_list_id} -->
 <div id="${post_list_id}" class="post-list">
     %if posts:
-    <ul class="post-list">
-        % for post in posts:
-            <li class="post-list-item">
-            ${post.formatted_date(date_format)|h}
-            &nbsp;
-            <a href="${post.permalink(lang)}">${post.title(lang)|h}</a>
-            </li>
-        % endfor
-    </ul>
+    <div class="list-group list-group-flush">
+    % for post in posts:
+        <a href="${post.permalink(lang)}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+        <h4 class="mb-1 text-dark">${post.title(lang)|h}</h4>
+        <small class="text-muted">${post.formatted_date(date_format)|h}</small>
+        </div>
+        </a>
+    % endfor
+    </div>
     %endif
 </div>
 <!-- End post-list ${post_list_id} -->
