@@ -4,13 +4,11 @@
 <div id="${post_list_id}" class="post-list">
     %if posts:
     % for post in posts:
-        <div class="media pb-2 pt-2">
-        <div class="media-body">
+        <div class="pb-2 pt-2">
+        <small class="text-muted">${post.formatted_date(date_format)|h}</small>
         <a href="${post.permalink(lang)}">
         <h4 class="mb-1">${post.title(lang)|h}</h4>
         </a>
-        </div>
-        <small class="text-muted">${post.formatted_date(date_format)|h}</small>
         </div>
     % endfor
     %endif
