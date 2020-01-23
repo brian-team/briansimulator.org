@@ -10,6 +10,8 @@
 -->
 ## How to cite Brian
 
+### In a paper
+
 When you use Brian in your research, please cite our main paper:
 
 <div class="alert alert-success" role="alert">
@@ -96,3 +98,12 @@ function update_text() {
 })();
 
 </script>
+
+<p>
+    You may be interested in our <a href="/publications">other publications about Brian</a>.
+</p>
+
+### In a poster
+
+Please cite us above and include a copy of the
+<a href="https://github.com/brian-team/brian-material/tree/master/logos">Brian logo</a> and webpage address.

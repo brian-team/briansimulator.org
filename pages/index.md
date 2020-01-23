@@ -133,6 +133,9 @@
             <a href="cite/index.html">
                 <h4>How to cite us</h4>
             </a>
+            <a href="https://github.com/brian-team/brian-material/tree/master/logos">
+                <h4>Download logos</h4>
+            </a>
             <h5>Who we are</h5>
             <ul class="list-unstyled">
                 <li><a href="http://romainbrette.fr">Romain Brette</a><br/><span class="text-muted">Institut de la Vision, INSERM, Paris</span></li>
