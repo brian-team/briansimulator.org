@@ -3,16 +3,16 @@
 <!-- Begin post-list ${post_list_id} -->
 <div id="${post_list_id}" class="post-list">
     %if posts:
-    <div class="list-group list-group-flush">
     % for post in posts:
-        <a href="${post.permalink(lang)}" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-        <h4 class="mb-1 text-dark">${post.title(lang)|h}</h4>
+        <div class="media pb-2 pt-2">
+        <div class="media-body">
+        <a href="${post.permalink(lang)}">
+        <h4 class="mb-1">${post.title(lang)|h}</h4>
+        </a>
+        </div>
         <small class="text-muted">${post.formatted_date(date_format)|h}</small>
         </div>
-        </a>
     % endfor
-    </div>
     %endif
 </div>
 <!-- End post-list ${post_list_id} -->

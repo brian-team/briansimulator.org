@@ -104,20 +104,18 @@
 
 <div class="container-fluid p-4">
     <div class="row">
-        <div class="col-md-4">
-            <h3><i class="fa fa-newspaper"></i> News</h3>
-            {{% post-list start="0" stop="3" tags="News" %}}{{% /post-list %}}
+        <div class="col-md-6 d-block d-sm-none">
+        <a href="https://twitter.com/briansimulator"><h3><i class="fab fa-twitter"></i> Twitter</h3></a>
         </div>
-        <div class="col-md-4">
-            <h3><i class="fas fa-scroll"></i> Blog posts</h3>
+        <div class="col-md-6">
+            <a href="/categories/news/index.html"><h3><i class="fa fa-newspaper"></i> News</h3></a>
+            {{% post-list start="0" stop="3" tags="News" %}}{{% /post-list %}}
+             <a href="/categories/blog/index.html"><h3 class="mt-4"><i class="fas fa-scroll"></i> Articles</h3></a>
             {{% post-list start="0" stop="3" tags="blog" %}}{{% /post-list %}}
         </div>
-         <div class="col-md-4 d-none d-sm-block">
+         <div class="col-md-6 d-none d-sm-block">
             <a href="https://twitter.com/briansimulator"><h3><i class="fab fa-twitter"></i> Twitter</h3></a>
-            <a class="twitter-timeline" data-width="334" data-height="400" data-dnt="true" data-tweet-limit="2" data-chrome="noborders noheader nofooter noscrollbar" href="https://twitter.com/briansimulator?ref_src=twsrc%5Etfw">Tweets by briansimulator</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-        </div>
-        <div class="col-md-4 d-block d-sm-none">
-        <a href="https://twitter.com/briansimulator"><h3><i class="fab fa-twitter"></i> Twitter</h3></a>
+            <a class="twitter-timeline" data-width="496" data-height="384" data-dnt="true" data-tweet-limit="2" data-chrome="noborders noheader nofooter noscrollbar" href="https://twitter.com/briansimulator?ref_src=twsrc%5Etfw">Tweets by briansimulator</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
         </div>
     </div>
 </div>
