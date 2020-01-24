@@ -13,7 +13,7 @@ class ExampleGallery(ShortcodePlugin):
 
     def handler(self, gallery_dir, site=None, lang=None, post=None, data=None):
         files = file_list(gallery_dir)
-        html_lines = ['<div id="carouselExampleIndicators" class="carousel slide pb-5" data-ride="carousel">']
+        html_lines = ['<div id="carouselExampleIndicators" class="carousel slide pb-5" data-ride="carousel" data-interval="10000">']
         html_lines += ['<ol class="carousel-indicators">']
         for i, html in enumerate(files):
             if i == 0:
