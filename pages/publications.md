@@ -1,5 +1,11 @@
 <ul class="list-group">
 <li class="list-group-item"> 
+{{% publication authors="Stimberg M, Goodman DFM, Nowotny T" year="2020"
+                title="Brian2GeNN: a system for accelerating a large variety of spiking neural networks with graphics hardware"
+                url="https://www.nature.com/articles/s41598-019-54957-7"
+                journal="Scientific Reports" extras="10, 410. doi: 10.1038/s41598-019-54957-7 " %}}
+</li>
+<li class="list-group-item"> 
 {{% publication authors="Stimberg M, Brette R, Goodman DFM" year="2019"
                 title="Brian 2, an intuitive and efficient neural simulator"
                 url="https://elifesciences.org/articles/47314"
