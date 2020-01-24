@@ -2,4 +2,8 @@
 ${ authors } (${year})<br/>
 <a href="${ url }">${ title }</a><br/>
 <i>${ journal }</i> <span class="text-muted">${ extras }
+% if data:
+<br/>
+${ data }
+% endif
 </p>
