@@ -1,4 +1,4 @@
-<ul class="list-group">
+<ul class="list-group list-group-flush">
 <li class="list-group-item"> 
 {{% publication authors="Stimberg M, Goodman DFM, Nowotny T" year="2020"
                 title="Brian2GeNN: a system for accelerating a large variety of spiking neural networks with graphics hardware"

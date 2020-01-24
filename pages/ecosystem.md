@@ -9,7 +9,7 @@ groups. If you have written a package using Brian and it's not listed here, let 
 
 ## Brian team
 
-<ul class="list-group">
+<ul class="list-group list-group-flush">
     <li class="list-group-item">
         <h3><a href="http://brian2genn.readthedocs.io/">brian2genn</a></h3>
         Brian 2 frontend to the
@@ -36,7 +36,7 @@ groups. If you have written a package using Brian and it's not listed here, let 
 
 ## Third party packages
 
-<ul class="list-group">
+<ul class="list-group list-group-flush">
     <li class="list-group-item">
         <h3><a href="https://github.com/EPFL-LCN/neuronaldynamics-exercises">Neuronal Dynamics Exercises</a></h3>
         This repository contains python exercises accompanying the book
