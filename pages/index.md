@@ -114,7 +114,7 @@
         </div>
          <div class="col-md-4 d-none d-sm-block">
             <a href="https://twitter.com/briansimulator"><h3><i class="fab fa-twitter"></i> Twitter</h3></a>
-            <a class="twitter-timeline" data-width="324" data-height="400" data-dnt="true" data-tweet-limit="2" data-chrome="noborders noheader nofooter noscrollbar" href="https://twitter.com/briansimulator?ref_src=twsrc%5Etfw">Tweets by briansimulator</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+            <a class="twitter-timeline" data-width="auto" data-dnt="true" data-tweet-limit="2" data-chrome="noborders noheader nofooter noscrollbar" data-dnt="true" href="https://twitter.com/briansimulator?ref_src=twsrc%5Etfw">Tweets by briansimulator</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         <div class="col-md-4 d-block d-sm-none">
         <a href="https://twitter.com/briansimulator"><h3><i class="fab fa-twitter"></i> Twitter</h3></a>
