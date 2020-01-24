@@ -1,0 +1,15 @@
+<%
+import re
+import urllib.request
+url = "https://raw.githubusercontent.com/brian-team/brian2/master/AUTHORS"
+response = urllib.request.urlopen(url)
+data = response.read()      # a `bytes` object
+text = data.decode('utf-8')
+all_authors = re.findall(r"(.*?) \(\@(\w+)\)", text, re.M)
+%>
+
+<ul class="list-group list-group-flush">
+% for name, handle in all_authors:
+<li class="list-group-item">${name} (<a href="https://github.com/${handle}">@${handle}</a>)</li>
+% endfor
+</ul>

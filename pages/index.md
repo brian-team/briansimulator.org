@@ -151,7 +151,7 @@
             </a>
         </div>
         <div class="col-md-4">
-            <h3><i class="fa fa-users"></i> Team</h3>
+            <a href="/team"><h3><i class="fa fa-users"></i> Team</h3></a>
             <ul class="list-unstyled">
                 <li><a href="http://romainbrette.fr">Romain Brette</a><br/><span class="text-muted">Institut de la Vision, INSERM, Paris</span></li>
                 <li><a href="http://neural-reckoning.org/">Dan Goodman</a><br/><span class="text-muted">Imperial College London</span></li>
