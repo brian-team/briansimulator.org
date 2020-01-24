@@ -4,13 +4,14 @@
 .. type: text
 -->
 
-Hundreds of studies have been published using Brian (see for example citations to our
+Hundreds of studies have been published using Brian (for example, follow these links to the lists of articles citing
+our main papers: 
 [2008](https://scholar.google.co.uk/scholar?oi=bibs&hl=en&cites=18115752495835148610),
 [2009](https://scholar.google.co.uk/scholar?oi=bibs&hl=en&cites=1566345528960375919),
-[2014](https://scholar.google.co.uk/scholar?oi=bibs&hl=en&cites=7576215400515272282), and
-[2019](https://scholar.google.co.uk/scholar?oi=bibs&hl=en&cites=8200771366550226800)
-papers).
-Here are a few we selected.
+[2014](https://scholar.google.co.uk/scholar?oi=bibs&hl=en&cites=7576215400515272282),
+[2019](https://scholar.google.co.uk/scholar?oi=bibs&hl=en&cites=8200771366550226800)).
+
+Here are a few we selected to give an idea of what can be done with Brian.
 
 <ul class="list-group list-group-flush">
 
