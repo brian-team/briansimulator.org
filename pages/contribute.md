@@ -25,7 +25,7 @@ If you are very confident with Brian and happy to get deep into the source code,
 
 ## Contribute to external libraries
 A great way to help us is to write or contribute to external libraries that either build on Brian or are useful for
-neural simulation. Take a look at [what other people have done](/packages).
+neural simulation. Take a look at [what other people have done](/ecosystem).
 
 ## Tell us what you would like to see in Brian
 Help us prioritize the future features by telling us what is most important to you, either via the
