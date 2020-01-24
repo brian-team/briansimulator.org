@@ -21,7 +21,7 @@
     <div class="card-body">
         Romain is a research director in computational and theoretical neuroscience in the
         <a href="http://www.institut-vision.org/">Vision Institute</a>, where
-        he also leads the
+        he leads the
         <a href="http://www.computational-neuroscience-of-sensory-systems.org/">computational neuroscience of sensory
         systems group</a>. His main interests are <a href="http://romainbrette.fr/sensory-systems/">neural modeling of
         perception</a> and <a href="http://romainbrette.fr/spike-initiation/">spike initiation</a>.
@@ -52,12 +52,14 @@
 
 <div class="card">
     <div class="card-header">
-        <img class="img-fluid rounded float-right" src="/photos/marcel_stimberg.jpg" style="height: 80px;"/>
+        <img class="img-fluid rounded float-right" src="/photos/marcel_stimberg.png" style="height: 80px;"/>
         <h4>Marcel Stimberg</h4>
         <div class="text-muted">Institut de la Vision, Sorbonne University, Paris</div>
     </div>
     <div class="card-body">
-        Marcel is a research engineer in the <a href="http://www.institut-vision.org/">Vision Institute</a>.
+        Marcel is a software research engineer in the <a href="http://www.institut-vision.org/">Vision Institute</a>.
+        He is working on tools for neural simulations, as well as supporting the
+        team in their work on neural data analysis (spike sorting) and electrophysiology. 
     </div>
 </div>
 
