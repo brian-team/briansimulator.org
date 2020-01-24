@@ -4,7 +4,8 @@
 .. type: text
 -->
 
-If you have written a package using Brian and it's not listed here, let us know!
+Below is a list of packages that build on Brian, either from us, colleagues we've worked on, or entirely separate
+groups. If you have written a package using Brian and it's not listed here, let us know!
 
 ## Brian team
 
