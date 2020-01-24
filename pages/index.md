@@ -128,6 +128,9 @@
             <a href="https://groups.google.com/forum/#!forum/briansupport">
                 <h4>Support forum</h4>
             </a>
+            <a href="https://gitter.im/brian-team/brian2">
+                <h4>Chat group</h4>
+            </a>
             <h4><a href="/papers-using-brian">Papers using Brian</a></h4>
             <h4><a href="/ecosystem">Software ecosystem</a></h4>
             <h4>
