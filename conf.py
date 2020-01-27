@@ -16,7 +16,7 @@ import time
 
 
 # Data about this site
-BLOG_AUTHOR = "admin"  # (translatable)
+BLOG_AUTHOR = "Brian team"  # (translatable)
 BLOG_TITLE = "The Brian spiking neural network simulator"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
@@ -1244,7 +1244,7 @@ LICENSE = ""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = 'Contents &copy; {date}         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         {license} &ndash; Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter"></i></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github"></i></a>'
+CONTENT_FOOTER = 'Contents &copy; {date}         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         {license} &ndash; Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter"></i></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github"></i></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book"></i></a>'
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
