@@ -109,7 +109,7 @@
             {{% post-list start="0" stop="4" tags="News" %}}{{% /post-list %}}
         </div>
         <div class="col-md-4">
-             <a href="/categories/blog/index.html"><h3><i class="fas fa-scroll"></i> Articles</h3></a>
+             <a href="/categories/articles/index.html"><h3><i class="fas fa-scroll"></i> Articles</h3></a>
             {{% post-list start="0" stop="4" tags="articles" %}}{{% /post-list %}}
         </div>
          <div class="col-md-4 d-none d-sm-block">
