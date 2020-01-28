@@ -20,7 +20,7 @@ BLOG_AUTHOR = "Brian team"  # (translatable)
 BLOG_TITLE = "The Brian spiking neural network simulator"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "http://briansimulator.org/"
+SITE_URL = "/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://briansimulator.org/"
@@ -229,7 +229,17 @@ POSTS = (
     ("posts/*.rst", "posts", "post.tmpl"),
     ("posts/*.txt", "posts", "post.tmpl"),
     ("posts/*.html", "posts", "post.tmpl"),
-    ("posts/*.ipynb", "posts", "post.tmpl")
+    ("posts/*.ipynb", "posts", "post.tmpl"),
+    ("news/*.md", "posts", "post.tmpl"),
+    ("news/*.rst", "posts", "post.tmpl"),
+    ("news/*.txt", "posts", "post.tmpl"),
+    ("news/*.html", "posts", "post.tmpl"),
+    ("news/*.ipynb", "posts", "post.tmpl"),
+    ("articles/*.md", "posts", "post.tmpl"),
+    ("articles/*.rst", "posts", "post.tmpl"),
+    ("articles/*.txt", "posts", "post.tmpl"),
+    ("articles/*.html", "posts", "post.tmpl"),
+    ("articles/*.ipynb", "posts", "post.tmpl")
 )
 
 PAGES = (
