@@ -1,9 +1,0 @@
-<%
-import urllib.parse
-
-def encoded(s):
-    return urllib.parse.quote(s, safe='')
-    
-%>
-<a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=${encoded(fname)}"><img alt="Launch on Binder" src="https://mybinder.org/badge_logo.svg"></a>
-
