@@ -25,7 +25,7 @@ SITE_URL = "/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://briansimulator.org/"
 BLOG_EMAIL = "postmaster@briansimulator.org"
-BLOG_DESCRIPTION = "PUT DESCRIPTION HERE"  # (translatable)
+BLOG_DESCRIPTION = "A free, open source simulator for spiking neural networks."
 
 # Nikola is multilingual!
 #
