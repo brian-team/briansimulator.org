@@ -316,7 +316,7 @@ COMPILERS = {
     "rest": ('.txt', '.rst'),
     "markdown": ('.md', '.mdown', '.markdown'),
     "html": ('.html', '.htm'),
-    "ipynb": ('.ipynb', )
+    "ipynb_with_header": ('.ipynb', )
 }
 
 # Enable reST directives that insert the contents of external files such

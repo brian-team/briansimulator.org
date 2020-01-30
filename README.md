@@ -38,3 +38,13 @@ build and serve the website, and rebuild it whenever a file changes:
     nikola github_deploy
 ```
 
+## Writing articles
+
+Articles are jupyter notebook files. By default, a special header is added to
+their rendering on the website. This header contains an automatically generated
+"launch binder" badge, and a link to the general "Notes on Notebooks" article.
+Note that this header is only included on the website, it will not be shown on
+binder or when downloading the notebook.
+
+If you do not want this header to be added, set `hide_notebook_header` to `true`
+in the notebook's metadata.

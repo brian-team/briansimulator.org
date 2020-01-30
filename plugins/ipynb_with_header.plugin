@@ -1,0 +1,7 @@
+[Core]
+name = ipynb_with_header
+module = ipynb_with_header
+
+[Nikola]
+PluginCategory = Compiler
+friendlyname = Jupyter Notebook with header
