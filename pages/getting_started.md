@@ -17,9 +17,13 @@ We present our easy, six step programme for learning how to model spiking neural
 
 ## 1. Learn computational neuroscience
 
-If you're not already familiar with computational neuroscience, we would recommend you get started with
-[Neuronal Dynamics (Gerstner et al.)](https://neuronaldynamics.epfl.ch/). It's freely available online and comes with
-a set of exercises using Python and Brian.
+If you're not already familiar with computational neuroscience, we would recommend you get started with some of these
+freely available online resources:
+
+* [Neuronal Dynamics (Gerstner et al.)](https://neuronaldynamics.epfl.ch/). Uses Python and Brian for exercises.
+  Associated [EPFL course](https://courseware.epfl.ch/courses/course-v1:EPFL+BIO_465.b+2019_1/about) and
+  [videos](https://lcnwww.epfl.ch/gerstner/NeuronalDynamics-MOOCall.html).
+* [INCF Training Space](https://training.incf.org/) has a number of courses on computational neuroscience.
 
 ## 2. Try Brian in the browser
 
@@ -57,6 +61,10 @@ pip install brian2
     
 See our [detailed installation documentation](https://brian2.readthedocs.io/en/stable/introduction/install.html) for
 more information.
+
+Finally, check out various ways of
+[running Brian scripts](https://brian2.readthedocs.io/en/stable/introduction/scripts.html), including interactive
+noteboks, integrated development environments and command line.
 
 ## 5. Follow the tutorials
 
