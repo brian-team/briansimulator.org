@@ -139,7 +139,7 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("https://brian2.readthedocs.io/en/stable/introduction/install.html", "Install"),
+        ("/install/", "Install"),
         (
             (
                ("https://mybinder.org/v2/gh/brian-team/brian2-binder/master?filepath=demo.ipynb", "Try in the browser"),
@@ -150,8 +150,6 @@ NAVIGATION_LINKS = {
             ),
             "Getting started"
         ),
-        ("https://groups.google.com/forum/#!forum/briansupport", "Get help"),
-        ("/cite", "How to cite"),
         (
             (
                 ("/blog", "All posts"),
@@ -161,8 +159,29 @@ NAVIGATION_LINKS = {
                 ("/archive.html", "Archive")
             ),
             "Blog"
-        )
-    ),
+        ),
+        (
+            (
+                ("https://groups.google.com/forum/#!forum/briansupport", "Support forum"),
+                ("https://gitter.im/brian-team/brian2", "Chat group"),
+                ("/papers-using-brian/", "Papers using Brian"),
+                ("/ecosystem/", "Software ecosystem"),
+                ("https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&allsimu=true", "Models"),
+                ("/contribute", "How to contribute")
+            ),
+            "Community"
+        ),
+        (
+            (
+                ("/publications/", "Our papers"),
+                ("/cite/", "How to cite us"),
+                ("https://github.com/brian-team/brian-material/tree/master/logos", "Download logos"),
+                ("https://github.com/brian-team/brian2", "GitHub repository")
+            ),
+            "Material"
+        ),
+        ("/team", "Team")
+    )
 }
 
 # Alternative navigation links. Works the same way NAVIGATION_LINKS does,
@@ -229,17 +248,14 @@ THEME_CONFIG = {
 POSTS = (
     ("posts/*.md", "posts", "post.tmpl"),
     ("posts/*.rst", "posts", "post.tmpl"),
-    ("posts/*.txt", "posts", "post.tmpl"),
     ("posts/*.html", "posts", "post.tmpl"),
     ("posts/*.ipynb", "posts", "post.tmpl"),
     ("news/*.md", "posts", "post.tmpl"),
     ("news/*.rst", "posts", "post.tmpl"),
-    ("news/*.txt", "posts", "post.tmpl"),
     ("news/*.html", "posts", "post.tmpl"),
     ("news/*.ipynb", "posts", "post.tmpl"),
     ("articles/*.md", "posts", "post.tmpl"),
     ("articles/*.rst", "posts", "post.tmpl"),
-    ("articles/*.txt", "posts", "post.tmpl"),
     ("articles/*.html", "posts", "post.tmpl"),
     ("articles/*.ipynb", "posts", "post.tmpl")
 )
@@ -248,7 +264,6 @@ PAGES = (
     ("pages/index.md", "", "frontpage.tmpl"),
     ("pages/*.md", "", "page.tmpl"),
     ("pages/*.rst", "", "page.tmpl"),
-    ("pages/*.txt", "", "page.tmpl"),
     ("pages/*.html", "", "page.tmpl"),
     ("pages/*.ipynb", "", "page.tmpl")
 )
