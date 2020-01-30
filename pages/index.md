@@ -152,6 +152,9 @@
             <a href="https://github.com/brian-team/brian-material/tree/master/logos">
                 <h4>Download logos</h4>
             </a>
+            <a href="https://github.com/brian-team/brian2">
+                <h4>GitHub repository</h4>
+            </a>
         </div>
         <div class="col-md-4">
             <a href="/team"><h3><i class="fa fa-users"></i> Team</h3></a>

@@ -16,11 +16,11 @@ Here are a few we selected to give an idea of what can be done with Brian.
 <ul class="list-group list-group-flush">
 
 <li class="list-group-item"> 
-{{% publication authors="Ladenbauer J, McKenzie S, English DF, Hagens O, Ostojic S" year="2019"
-                title="Inferring and validating mechanistic models of neural microcircuits based on spike-train data"
-                url="https://doi.org/10.1038/s41467-019-12572-0"
-                journal="Nature Communications" extras="10, 4933. doi:10.1038/s41467-019-12572-0" %}}
-<a href="https://github.com/neuromethods/inference-for-integrate-and-fire-models">[code]</a>
+{{% publication authors="Frady EP, Sommer FT" year="2019"
+                title="Robust computation with rhythmic spike patterns"
+                url="https://doi.org/10.1073/pnas.1902653116"
+                journal="PNAS" extras="116 (36) 18050-18059; doi: 10.1073/pnas.1902653116" %}}
+<a href="https://github.com/epaxon/epaxon.github.io">[code]</a>
 {{% /publication %}}
 </li>
 
