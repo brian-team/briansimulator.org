@@ -40,3 +40,8 @@ div.output_subarea {
     /* Widens image-containing divs so that image is full body width */
     max-width: 100%;
 }
+
+/* Hide quickstart header on website */
+div.notebook-quickstart {
+    display: none;
+}

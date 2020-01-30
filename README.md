@@ -48,3 +48,24 @@ binder or when downloading the notebook.
 
 If you do not want this header to be added, set `hide_notebook_header` to `true`
 in the notebook's metadata.
+
+In addition, copy & paste the following HTML code to the beginning of the
+notebook (in a markdown cell):
+```HTML
+<div class="notebook-quickstart pb-2 alert alert-primary">
+<h3>Quickstart</h3>
+To run the code below:
+
+1. Click on the cell to select it.
+2. Press `SHIFT+ENTER` on your keyboard or press the play button
+   (<button class='fa fa-play icon-play btn btn-xs btn-default'></button>) in the toolbar above.
+
+Feel free to create new cells using the plus button
+(<button class='fa fa-plus icon-plus btn btn-xs btn-default'></button>), or pressing `SHIFT+ENTER` while this cell
+is selected.
+</div>
+```
+
+This header will not be shown on the website, but included when you run the
+notebook on [mybinder](https://mybinder.org) or locally.
+
