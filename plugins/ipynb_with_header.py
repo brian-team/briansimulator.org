@@ -61,3 +61,8 @@ class CompileIPynbWithHeader(_CompileIPynb):
         else:
             return html, deps
 
+    def read_metadata(self, post, lang=None):
+        metadata = super(CompileIPynbWithHeader, self).read_metadata(post, lang)
+        if 'has_math' not in metadata:
+            metadata['has_math'] = 'true'
+        return metadata
