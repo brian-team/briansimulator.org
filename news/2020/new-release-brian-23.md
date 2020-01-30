@@ -2,10 +2,8 @@
 .. title: New release: Brian 2.3
 .. slug: brian-23
 .. date: 2020-01-06 14:06:02 UTC
-.. tags: News
-.. category: 
-.. link: 
-.. description: 
+.. category: news
+.. tags: Release,Development
 .. type: text
 -->
 

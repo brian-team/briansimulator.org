@@ -2,10 +2,8 @@
 .. title: Brian2GeNN paper published: accelerate Brian simulations with GPUs
 .. slug: brian2genn-paper
 .. date: 2020-01-15 09:18:16 UTC
-.. tags: News
-.. category: 
-.. link: 
-.. description: 
+.. tags: publication, brian2genn
+.. category: news
 .. type: text
 -->
 

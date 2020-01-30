@@ -2,10 +2,8 @@
 .. title: GSoC 2020: work on Brian during the summer
 .. slug: gsoc-2020-work-on-brian-during-the-summer
 .. date: 2020-01-24 09:18:16 UTC
-.. tags: News
-.. category: 
-.. link: 
-.. description: 
+.. tags: GSoC
+.. category: news
 .. type: text
 -->
 

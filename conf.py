@@ -154,9 +154,11 @@ NAVIGATION_LINKS = {
         ("/cite", "How to cite"),
         (
             (
-                ("/blog/index.html", "All posts"),
-                ("/categories/news/index.html", "News"),
-                ("/categories/articles/index.html", "Articles")
+                ("/blog", "All posts"),
+                ("/categories/news", "News"),
+                ("/categories/article", "Articles"),
+                ("/tags/", "Tags"),
+                ("/archive.html", "Archive")
             ),
             "Blog"
         )
@@ -367,7 +369,7 @@ SHOW_BLOG_TITLE = False
 # output / TRANSLATION[lang] / TAG_PATH / tag.html (list of posts for a tag)
 # output / TRANSLATION[lang] / TAG_PATH / tag RSS_EXTENSION (RSS feed for a tag)
 # (translatable)
-# TAG_PATH = "categories"
+TAG_PATH = "tags"
 
 # By default, the list of tags is stored in
 #     output / TRANSLATION[lang] / TAG_PATH / index.html
@@ -384,12 +386,6 @@ TAG_PAGES_ARE_INDEXES = True
 # Set descriptions for tag pages to make them more interesting. The
 # default is no description. The value is used in the meta description
 # and displayed underneath the tag list or index page’s title.
-TAG_DESCRIPTIONS = {
- DEFAULT_LANG: {
-  "articles": "Articles about features of the Brian simulator.",
-  "News": "New releases, etc."
- }
-}
 # TAG_DESCRIPTIONS = {
 #    DEFAULT_LANG: {
 #        "blogging": "Meta-blog posts about blogging.",
@@ -397,12 +393,6 @@ TAG_DESCRIPTIONS = {
 #    },
 # }
 
-TAG_TITLES = {
- DEFAULT_LANG: {
-  "articles": "Articles",
-  "News": "News"
- }
-}
 # Set special titles for tag pages. The default is "Posts about TAG".
 # TAG_TITLES = {
 #    DEFAULT_LANG: {
@@ -441,8 +431,8 @@ HIDDEN_TAGS = ['mathjax']
 # output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category.html (list of posts for a category)
 # output / TRANSLATION[lang] / CATEGORY_PATH / CATEGORY_PREFIX category RSS_EXTENSION (RSS feed for a category)
 # (translatable)
-# CATEGORY_PATH = "categories"
-# CATEGORY_PREFIX = "cat_"
+CATEGORY_PATH = "categories"
+CATEGORY_PREFIX = ""
 
 # By default, the list of categories is stored in
 #     output / TRANSLATION[lang] / CATEGORY_PATH / index.html
@@ -469,20 +459,20 @@ CATEGORY_PAGES_ARE_INDEXES = True
 # Set descriptions for category pages to make them more interesting. The
 # default is no description. The value is used in the meta description
 # and displayed underneath the category list or index page’s title.
-# CATEGORY_DESCRIPTIONS = {
-#    DEFAULT_LANG: {
-#        "blogging": "Meta-blog posts about blogging.",
-#        "open source": "My contributions to my many, varied, ever-changing, and eternal libre software projects."
-#    },
-# }
+CATEGORY_DESCRIPTIONS = {
+   DEFAULT_LANG: {
+     "article": "Articles about features of the Brian simulator.",
+     "News": "New releases, etc."
+   },
+}
 
 # Set special titles for category pages. The default is "Posts about CATEGORY".
-# CATEGORY_TITLES = {
-#    DEFAULT_LANG: {
-#        "blogging": "Meta-posts about blogging",
-#        "open source": "Posts about open source software"
-#    },
-# }
+CATEGORY_TITLES = {
+   DEFAULT_LANG: {
+       "article": "Articles",
+       "news": "News"
+   },
+}
 
 # If you do not want to display a category publicly, you can mark it as hidden.
 # The category will not be displayed on the category list page.
@@ -516,9 +506,8 @@ HIDDEN_CATEGORIES = []
 # Map paths to prettier category names. (translatable)
 # CATEGORY_DESTPATH_NAMES = {
 #    DEFAULT_LANG: {
-#        'webdev': 'Web Development',
-#        'webdev/django': 'Web Development/Django',
-#        'random': 'Odds and Ends',
+#        'article': 'Articles',
+#        'news': 'News'
 #    },
 # }
 
@@ -575,7 +564,7 @@ FRONT_INDEX_HEADER = {
 # Create per-month archives instead of per-year
 # CREATE_MONTHLY_ARCHIVE = False
 # Create one large archive instead of per-year
-# CREATE_SINGLE_ARCHIVE = False
+CREATE_SINGLE_ARCHIVE = True
 # Create year, month, and day archives each with a (long) list of posts
 # (overrides both CREATE_MONTHLY_ARCHIVE and CREATE_SINGLE_ARCHIVE)
 # CREATE_FULL_ARCHIVES = False
