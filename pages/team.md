@@ -17,6 +17,7 @@
             <h4>Romain Brette</h4>
         </a>
         <div class="text-muted">Institut de la Vision, INSERM, Paris</div>
+        <div class="mt-2"><a href="https://twitter.com/romainbrette/"><i class="fab fa-twitter"></i> @romainbrette</a></div>
     </div>
     <div class="card-body">
         Romain is a research director in computational and theoretical neuroscience in the
@@ -38,6 +39,7 @@
             <h4>Dan Goodman</h4>
         </a>
         <div class="text-muted">Imperial College London</div>
+        <div class="mt-2"><a href="https://twitter.com/neuralreckoning/"><i class="fab fa-twitter"></i> @neuralreckoning</a></div>
     </div>
     <div class="card-body">
         Dan is a faculty member in the <a href="http://www3.imperial.ac.uk/intellisysnetworks">Intelligent
@@ -55,6 +57,7 @@
         <img class="img-fluid rounded float-right" src="/photos/marcel_stimberg.png" style="height: 80px;"/>
         <h4>Marcel Stimberg</h4>
         <div class="text-muted">Institut de la Vision, Sorbonne University, Paris</div>
+        <div class="mt-2"><a href="https://twitter.com/MarcelStimberg/"><i class="fab fa-twitter"></i> @marcelstimberg</a></div>
     </div>
     <div class="card-body">
         Marcel is a software research engineer in the <a href="http://www.institut-vision.org/">Vision Institute</a>.
