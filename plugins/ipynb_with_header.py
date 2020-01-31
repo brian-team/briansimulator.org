@@ -7,7 +7,7 @@ from nikola.utils import makedirs
 
 
 HEADER = '''
-    <div class="alert alert-primary" role="alert">
+    <div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
     You can either download it via the "Source" link on the top right, or run it directly in the browser on the
