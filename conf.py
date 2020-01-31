@@ -205,11 +205,11 @@ THEME_COLOR = '#333e63'
 # bootblog4 supports: featured_large featured_small featured_on_mobile
 #                     featured_large_image_on_mobile featured_strip_html sidebar
 # bootstrap4 supports: navbar_light (defaults to False)
-THEME_CONFIG = {
-    DEFAULT_LANG: {
-        'navbar_light': True
-    }
-}
+# THEME_CONFIG = {
+#     DEFAULT_LANG: {
+#         'navbar_light': False
+#     }
+# }
 
 # POSTS and PAGES contains (wildcard, destination, template) tuples.
 # (translatable)
