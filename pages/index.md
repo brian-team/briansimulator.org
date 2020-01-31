@@ -18,15 +18,15 @@
 <div class="container-fluid mb-2 p-4 border-blue">
     <div class="row">
         <div class="col-md-8">
-            <a href="/install/"><h3><i class="fab fa-linux"></i> <i class="fab fa-windows"></i> <i class="fab fa-apple"></i> Download and installation</h3></a>
-            <p><code><i class="fa fa-chevron-right"></i> <a href="https://www.anaconda.com/distribution/">conda</a> install -c conda-forge brian2</code><br/>
+            <a href="/install/"><h3><i class="fab fa-linux" aria-hidden="true"></i> <i class="fab fa-windows" aria-hidden="true"></i> <i class="fab fa-apple" aria-hidden="true"></i> Download and installation</h3></a>
+            <p><code><i class="fa fa-chevron-right" aria-hidden="true"></i> <a href="https://www.anaconda.com/distribution/">conda</a> install -c conda-forge brian2</code><br/>
             or<br/>
-            <code><i class="fa fa-chevron-right"></i> pip install brian2</code></p>
+            <code><i class="fa fa-chevron-right" aria-hidden="true"></i> pip install brian2</code></p>
             <p>For more details, see the <a href="https://brian2.readthedocs.io/en/stable/introduction/install.html">installation instructions in the documentation</a>.</p>
-            <div>Source code available on <a href="https://github.com/brian-team/brian2"><i class="fab fa-github"></i> GitHub</a>.</div>
+            <div>Source code available on <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>.</div>
         </div>
         <div class="col-md-4">
-            <h3><i class="fa fa-graduation-cap"></i> Getting started</h3>
+            <h3><i class="fa fa-graduation-cap" aria-hidden="true"></i> Getting started</h3>
             <a href="https://mybinder.org/v2/gh/brian-team/brian2-binder/master?filepath=demo.ipynb" target="_blank"><h4>Try in the browser</h4></a>
             <a href="getting-started/index.html"><h4>Beginners guide</h4></a>
             <a href="https://brian2.readthedocs.io/en/stable/resources/tutorials/index.html"><h4>Tutorials</h4></a>
@@ -39,26 +39,26 @@
 <div class="container-fluid p-4">
     <div class="row">
         <div class="col-md-4">
-            <a href="/categories/news/"><h3><i class="fa fa-newspaper"></i> News</h3></a>
+            <a href="/categories/news/"><h3><i class="fa fa-newspaper" aria-hidden="true"></i> News</h3></a>
             {{% post-list start="0" stop="4" categories="News" %}}{{% /post-list %}}
         </div>
         <div class="col-md-4">
-             <a href="/categories/article/"><h3><i class="fas fa-scroll"></i> Articles</h3></a>
+             <a href="/categories/article/"><h3><i class="fas fa-scroll" aria-hidden="true"></i> Articles</h3></a>
             {{% post-list start="0" stop="4" categories="article" %}}{{% /post-list %}}
         </div>
          <div class="col-md-4 d-none d-sm-block">
-            <a href="https://twitter.com/briansimulator"><h3><i class="fab fa-twitter"></i> Twitter</h3></a>
+            <a href="https://twitter.com/briansimulator"><h3><i class="fab fa-twitter" aria-hidden="true"></i> Twitter</h3></a>
             <a class="twitter-timeline" data-width="auto" data-tweet-limit="2" data-chrome="noborders noheader nofooter noscrollbar" data-dnt="true" href="https://twitter.com/briansimulator?ref_src=twsrc%5Etfw">Tweets by briansimulator</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         <div class="col-md-4 d-block d-sm-none">
-        <a href="https://twitter.com/briansimulator"><h3><i class="fab fa-twitter"></i> Twitter</h3></a>
+        <a href="https://twitter.com/briansimulator"><h3><i class="fab fa-twitter" aria-hidden="true"></i> Twitter</h3></a>
         </div>
     </div>
 </div>
 <div class="container-fluid p-4">
     <div class="row">
         <div class="col-md-4">
-            <h3><i class='fa fa-globe'></i> Community</h3>
+            <h3><i class='fa fa-globe' aria-hidden="true"></i> Community</h3>
             <a href="https://groups.google.com/forum/#!forum/briansupport">
                 <h4>Support forum</h4>
             </a>
@@ -91,7 +91,7 @@
             </a>
         </div>
         <div class="col-md-4">
-            <a href="/team/"><h3><i class="fa fa-users"></i> Team</h3></a>
+            <a href="/team/"><h3><i class="fa fa-users" aria-hidden="true"></i> Team</h3></a>
             <ul class="list-unstyled">
                 <li><a href="http://romainbrette.fr">Romain Brette</a><br/><span class="text-muted">Institut de la Vision, INSERM, Paris</span></li>
                 <li><a href="http://neural-reckoning.org/">Dan Goodman</a><br/><span class="text-muted">Imperial College London</span></li>
