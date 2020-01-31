@@ -1,0 +1,47 @@
+/* Blue background/border color */
+.bg-blue {
+    background-color: #035b8f;
+}
+
+.border-blue {
+    border: 2px solid #035b8f !important;
+}
+/* Example "carousel" */
+
+.carousel .carousel-indicators li {
+  background-color: #fff;
+  background-color: rgba(70, 70, 70, 0.25);
+}
+
+.carousel .carousel-indicators .active {
+  background-color: #444;
+}
+
+.carousel .carousel-right-column {
+    height: 240px;
+    max-height: 240px;
+}
+
+/* jupyter notebook */
+div.prompt {
+    display: none;
+}
+
+div.input  {
+    border: none;
+    background-color: none;
+}
+
+div.input * {
+    background-color: none;
+}
+
+div.output_subarea {
+    /* Widens image-containing divs so that image is full body width */
+    max-width: 100%;
+}
+
+/* Hide quickstart header on website */
+div.notebook-quickstart {
+    display: none;
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brian 2.0 alpha release | The Brian spiking neural network simulator</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#333e63">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href=".">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="../../assets/css/custom.css">
+<meta name="author" content="Brian team">
+<link rel="prev" href="../brian-tutorial-at-cns-2013/" title="Brian tutorial at CNS 2013" type="text/html">
+<link rel="next" href="../new-alpha-version-of-brian-2-0/" title="New alpha version of Brian 2.0" type="text/html">
+<meta property="og:site_name" content="The Brian spiking neural network simulator">
+<meta property="og:title" content="Brian 2.0 alpha release">
+<meta property="og:url" content="/posts/brian-2-0-alpha-release/">
+<meta property="og:description" content="We are proud to announce the alpha release of Brian2, the successor of Brian, everyone's favourite neural simulator.
+This is an alpha release, therefore many features are still missing and there are v">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2013-10-13T17:20:40Z">
+<meta property="article:tag" content="Development">
+<meta property="article:tag" content="Release">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@briansimulator">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4 navbar-dark bg-blue"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+            <img src="../../logos/brian_logo_small.png" alt="The Brian spiking neural network simulator" id="logo" class="d-inline-block align-top"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../install/" class="nav-link">Install</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Getting started</a>
+            <div class="dropdown-menu">
+                    <a href="https://mybinder.org/v2/gh/brian-team/brian2-binder/master?filepath=demo.ipynb" class="dropdown-item">Try in the browser</a>
+                    <a href="../../getting-started" class="dropdown-item">Beginners guide</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/resources/tutorials/index.html" class="dropdown-item">Tutorials</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/examples/index.html" class="dropdown-item">Examples</a>
+                    <a href="https://brian2.readthedocs.io" class="dropdown-item">Documentation</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+            <div class="dropdown-menu">
+                    <a href="../../blog" class="dropdown-item">All posts</a>
+                    <a href="../../categories/news" class="dropdown-item">News</a>
+                    <a href="../../categories/article" class="dropdown-item">Articles</a>
+                    <a href="../../tags/" class="dropdown-item">Tags</a>
+                    <a href="../../archive.html" class="dropdown-item">Archive</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu">
+                    <a href="https://groups.google.com/forum/#!forum/briansupport" class="dropdown-item">Support forum</a>
+                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="../../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
+                    <a href="../../ecosystem/" class="dropdown-item">Software ecosystem</a>
+                    <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
+                    <a href="../../contribute" class="dropdown-item">How to contribute</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Material</a>
+            <div class="dropdown-menu">
+                    <a href="../../publications/" class="dropdown-item">Our papers</a>
+                    <a href="../../cite/" class="dropdown-item">How to cite us</a>
+                    <a href="https://github.com/brian-team/brian-material/tree/master/logos" class="dropdown-item">Download logos</a>
+                    <a href="https://github.com/brian-team/brian2" class="dropdown-item">GitHub repository</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../team" class="nav-link">Team</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
+
+                
+                
+                    
+    
+    </li>
+<li class="nav-item">
+    <a href="index.md" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Brian 2.0 alpha release</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2013-10-13T17:20:40Z" itemprop="datePublished" title="2013-10-13">2013-10-13</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="index.md" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p></p>
+<p>We are proud to announce the alpha release of Brian2, the successor of Brian, everyone's favourite neural simulator.</p>
+<p>This is an alpha release, therefore many features are still missing and there are very likely many bugs. The main reason for this release is to get feedback from users, the only way to make sure that the final version will be as useful to everyone as possible.</p>
+
+<p>This release is the cumulation of work that started more than one year ago, a basic rewrite of Brian that tries to keep and extend the strengths of Brian (ease of use, flexibility) while building it on a new foundation of a code generation framework that will allow for exciting new applications in the future.</p>
+
+<h3>How to get Brian2?</h3>
+
+<p>Brian2 is available on the <a href="https://pypi.python.org/pypi/Brian2">python package index</a>, therefore you can install it using easy_install or pip:</p>
+
+<p><code>easy_install brian2
+pip install --pre brian2</code></p>
+<p>Alternatively, you can directly download the package from the package index and install it yourself using <code>python setup.py install</code> (if you are using Python 2, simply running it from the source directory also works).</p>
+
+<p>Finally, you can also clone the git repository at:
+<a href="https://github.com/brian-team/brian2">https://github.com/brian-team/brian2</a></p>
+
+<p>Note that the package is called <b>brian2</b>, not <b>brian</b>, therefore it does not interfere with an existing Brian installation and trying out Brian2 will not affect your existing Brian simulations.</p>
+
+<h3>Documentation</h3>
+
+<p>You can find documentation for Brian2 at readthedocs: <a href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
+
+<p>Note that the user documentation is still quite incomplete, you'll find a lot of information in the reference documentation, though.</p>
+
+<h3>Feedback wanted!</h3>
+
+<p>This is an alpha release, so there is still a lot that will change in the next months. However, the syntax is already mostly the way we plan it to be. Please provide feedback if you find something unintuitive or you fail to see how to express something that you could express in Brian1. For the feedback, please use either the <a href="http://groups.google.com/group/brian-development/">brian-development mailing list</a> or the <a href="https://github.com/brian-team/brian2/issues">github issues</a>. Note that the *internal* code (e.g. the interface to the code generation framework) will still change quite a bit.</p>
+
+<h3>Known issues</h3>
+
+<ul>
+<li>Brian hears and the modelfitting toolbox have not yet been ported to Brian2</li>
+    <li>Brian2 is not yet optimised for performance. In particular, setting up a simulation or using multiple run statements might appear to be slow because a lot of work is unnecessarily repeated. For the simulation itself, a big performance increase can be often achieved by switching on C++ code generation by using the following in the code: <code>brian_prefs.codegen.target = 'weave'</code>
+</li>
+    <li>When using the ipython notebook, importing brian2 makes a lot of debug outputs appear under certain circumstances (<a href="https://github.com/brian-team/brian2/issues/133">#133</a>)</li>
+    <li>Many error messages are not yet as helpful as they could be</li>
+    <li>Various other known issues can be found in the <a href="https://github.com/brian-team/brian2/issues">issue tracker</a>
+</li>
+</ul>
+<p></p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../tags/development/" rel="tag">Development</a></li>
+            <li><a class="tag p-category" href="../../tags/release/" rel="tag">Release</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../brian-tutorial-at-cns-2013/" rel="prev" title="Brian tutorial at CNS 2013">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../new-alpha-version-of-brian-2-0/" rel="next" title="New alpha version of Brian 2.0">Next post</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer" class="text-center">
+            Contents © 2020         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

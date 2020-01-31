@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Posts about model | The Brian spiking neural network simulator</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#333e63">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href=".">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="../../assets/css/custom.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<!-- Hide notebook header on index pages --><style>
+    div.notebook-header {
+        display: none;
+    }
+    </style>
+<link rel="alternate" type="application/rss+xml" title="RSS for tag model" hreflang="en" href="../model.xml">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4 navbar-dark bg-blue"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+            <img src="../../logos/brian_logo_small.png" alt="The Brian spiking neural network simulator" id="logo" class="d-inline-block align-top"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../install/" class="nav-link">Install</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Getting started</a>
+            <div class="dropdown-menu">
+                    <a href="https://mybinder.org/v2/gh/brian-team/brian2-binder/master?filepath=demo.ipynb" class="dropdown-item">Try in the browser</a>
+                    <a href="../../getting-started" class="dropdown-item">Beginners guide</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/resources/tutorials/index.html" class="dropdown-item">Tutorials</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/examples/index.html" class="dropdown-item">Examples</a>
+                    <a href="https://brian2.readthedocs.io" class="dropdown-item">Documentation</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+            <div class="dropdown-menu">
+                    <a href="../../blog" class="dropdown-item">All posts</a>
+                    <a href="../../categories/news" class="dropdown-item">News</a>
+                    <a href="../../categories/article" class="dropdown-item">Articles</a>
+                    <a href="../" class="dropdown-item">Tags</a>
+                    <a href="../../archive.html" class="dropdown-item">Archive</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu">
+                    <a href="https://groups.google.com/forum/#!forum/briansupport" class="dropdown-item">Support forum</a>
+                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="../../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
+                    <a href="../../ecosystem/" class="dropdown-item">Software ecosystem</a>
+                    <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
+                    <a href="../../contribute" class="dropdown-item">How to contribute</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Material</a>
+            <div class="dropdown-menu">
+                    <a href="../../publications/" class="dropdown-item">Our papers</a>
+                    <a href="../../cite/" class="dropdown-item">How to cite us</a>
+                    <a href="https://github.com/brian-team/brian-material/tree/master/logos" class="dropdown-item">Download logos</a>
+                    <a href="https://github.com/brian-team/brian2" class="dropdown-item">GitHub repository</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../team" class="nav-link">Team</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"><li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
+
+                
+                
+                    
+                
+            </li></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+    <header><h1>Posts about model</h1>
+        <div class="metadata">
+            
+                <p class="feedlink">
+                        
+            <a href="../model.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
+
+                </p>
+
+            
+
+        </div>
+    </header><div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2020/elife-3-bisection/" class="u-url">Making use of Python: threshold finding with bisection</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/2020/elife-3-bisection/" rel="bookmark">
+            <time class="published dt-published" datetime="2020-01-30T17:46:00Z" itemprop="datePublished" title="2020-01-30">2020-01-30</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f9783346c20>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f9783346dd0>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_3_bisection.png', 'title': 'Making use of Python: threshold finding with bisection', 'slug': 'elife-3-bisection', 'date': '2020-01-30 17:46', 'tags': 'model', 'category': 'article', 'updated': '2020-01-30 17:46', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'description': '', 'template': '', 'password': ''})}) -->
+    <div class="alert alert-primary notebook-header" role="alert">
+    <p>
+    This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
+    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    <a href="https://mybinder.org">mybinder</a> infrastructure: <a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Felife_example_3_bisection.ipynb">
+    <img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"></a>
+    </p>
+    <p><strong>For more information, see our general <a href="../../posts/2020/notes-notebooks/">Notes on Notebooks</a>.</strong></p>
+    </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="notebook-quickstart">
+<h4>Quickstart</h4>
+To run the code below:
+<ol>
+<li>Click on the cell to select it.</li>
+<li>Press <code>SHIFT+ENTER</code> on your keyboard or press the play button
+   (<button class="fa fa-play icon-play btn btn-xs btn-default"></button>) in the toolbar above</li>
+</ol>
+Feel free to create new cells using the plus button
+(<button class="fa fa-plus icon-plus btn btn-xs btn-default"></button>), or pressing <code>SHIFT+ENTER</code> while this cell
+is selected.
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This article demonstrates how a control flow, where simulation parameters depend on the results of previous simulations, can be expressed by making use of standard control structures in Python. By having access to the full expressivity of a general purpose programming language, expressing such control flow is straight-forward; this would not be the case for a declarative model description.</p>
+<p>Our goal in this toy example is to find the threshold voltage of neuron as a function of the density of sodium channels.</p>
+<p>This example is from our eLife paper <a href="https://elifesciences.org/articles/47314">(Stimberg et al. 2019)</a>.
+</p>
+<p class="more"><a href="../../posts/2020/elife-3-bisection/">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+        <img src="../../images/articles/2020/elife_example_3_bisection.png" alt="Preview image" class="d-none d-sm-block float-right m-2" width="120px" height="120px">
+</div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2020/elife-2-eye-movements/" class="u-url">Non-standard neuron modelling: smooth pursuit eye movements</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/2020/elife-2-eye-movements/" rel="bookmark">
+            <time class="published dt-published" datetime="2020-01-30T17:07:00Z" itemprop="datePublished" title="2020-01-30">2020-01-30</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f9783346290>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f9783346b00>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_2_eye_movements.png', 'title': 'Non-standard neuron modelling: smooth pursuit eye movements', 'slug': 'elife-2-eye-movements', 'date': '2020-01-30 17:07', 'tags': 'model, synapses', 'category': 'article', 'updated': '2020-01-30 17:07', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'description': '', 'template': '', 'password': ''})}) -->
+    <div class="alert alert-primary notebook-header" role="alert">
+    <p>
+    This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
+    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    <a href="https://mybinder.org">mybinder</a> infrastructure: <a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Felife_example_2_eye_movements.ipynb">
+    <img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"></a>
+    </p>
+    <p><strong>For more information, see our general <a href="../../posts/2020/notes-notebooks/">Notes on Notebooks</a>.</strong></p>
+    </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="notebook-quickstart">
+<h4>Quickstart</h4>
+To run the code below:
+<ol>
+<li>Click on the cell to select it.</li>
+<li>Press <code>SHIFT+ENTER</code> on your keyboard or press the play button
+   (<button class="fa fa-play icon-play btn btn-xs btn-default"></button>) in the toolbar above</li>
+</ol>
+Feel free to create new cells using the plus button
+(<button class="fa fa-plus icon-plus btn btn-xs btn-default"></button>), or pressing <code>SHIFT+ENTER</code> while this cell
+is selected.
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this article we demonstrate how Brian can be used to simulate non-neural aspects of the model. This is an idealized model of the smooth pursuit reflex, including two ocular muscles, a moving visual stimulus and spiking neural control.</p>
+<p>This article is adapted from our eLife paper <a href="https://elifesciences.org/articles/47314">(Stimberg et al. 2019)</a>, which includes an interactive version that you can play with <a href="https://github.com/brian-team/brian2_paper_examples">here</a>.
+</p>
+<p class="more"><a href="../../posts/2020/elife-2-eye-movements/">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+        <img src="../../images/articles/2020/elife_example_2_eye_movements.png" alt="Preview image" class="d-none d-sm-block float-right m-2" width="120px" height="120px">
+</div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2020/elife-1-pyloric/" class="u-url">Non-standard neuron modelling: the pyloric network</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/2020/elife-1-pyloric/" rel="bookmark">
+            <time class="published dt-published" datetime="2020-01-28T16:46:00Z" itemprop="datePublished" title="2020-01-28">2020-01-28</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f9783346050>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f97833467a0>, {'has_math': 'true', 'title': 'Non-standard neuron modelling: the pyloric network', 'slug': 'elife-1-pyloric', 'date': '2020-01-28 16:46', 'tags': 'model, synapses', 'category': 'article', 'updated': '2020-01-28 16:46', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'description': '', 'template': '', 'password': ''})}) -->
+    <div class="alert alert-primary notebook-header" role="alert">
+    <p>
+    This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
+    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    <a href="https://mybinder.org">mybinder</a> infrastructure: <a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Felife_example_1_pyloric_network.ipynb">
+    <img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"></a>
+    </p>
+    <p><strong>For more information, see our general <a href="../../posts/2020/notes-notebooks/">Notes on Notebooks</a>.</strong></p>
+    </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="notebook-quickstart">
+<h4>Quickstart</h4>
+To run the code below:
+<ol>
+<li>Click on the cell to select it.</li>
+<li>Press <code>SHIFT+ENTER</code> on your keyboard or press the play button
+   (<button class="fa fa-play icon-play btn btn-xs btn-default"></button>) in the toolbar above</li>
+</ol>
+Feel free to create new cells using the plus button
+(<button class="fa fa-plus icon-plus btn btn-xs btn-default"></button>), or pressing <code>SHIFT+ENTER</code> while this cell
+is selected.
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>One of the great advantages of using Brian is that defining new non-standard model types is easy. In this article, we will build a highly simplified model of the pyloric circuit of the crustacean stomatogastric ganglion. This circuit generates a tri-phasic rhythmic pattern with alternating bursts of action potentials in different types of motor neurons. Here, we follow previous work (e.g. Golowasch et al., 1999) by modeling the circuit as consisting of three populations: AB/PD (anterior buster and pyloric dilator neurons), LP (lateral pyloric neurons), and PY (pyloric neurons). This model has a number of non-standard properties that will be described in the following annotated version of the code.</p>
+<blockquote>
+<p>Golowasch, J., Casey, M., Abbott, L. F., &amp; Marder, E. (1999).<br>
+Network Stability from Activity-Dependent Regulation of Neuronal Conductances.<br>
+Neural Computation, 11(5), 1079-1096.<br><a href="https://doi.org/10.1162/089976699300016359">https://doi.org/10.1162/089976699300016359</a></p>
+</blockquote>
+<p>This article was based on one of the examples from our eLife paper <a href="https://elifesciences.org/articles/47314">(Stimberg et al. 2019)</a>.
+</p>
+<p class="more"><a href="../../posts/2020/elife-1-pyloric/">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article>
+</div>
+
+
+
+
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script><script>
+                renderMathInElement(document.body,
+                    {
+                        
+delimiters: [
+    {left: "$$", right: "$$", display: true},
+    {left: "\\[", right: "\\]", display: true},
+    {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
+    {left: "$", right: "$", display: false},
+    {left: "\\(", right: "\\)", display: false}
+]
+
+                    }
+                );
+            </script><!--End of body content--><footer id="footer" class="text-center">
+            Contents © 2020         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

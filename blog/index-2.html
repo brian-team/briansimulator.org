@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="A free, open source simulator for spiking neural networks.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Brian spiking neural network simulator (old posts, page 2) | The Brian spiking neural network simulator</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#333e63">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="#">
+<link rel="prev" href="index-3.html" type="text/html">
+<link rel="next" href="index-1.html" type="text/html">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="../assets/css/custom.css">
+<!-- Hide notebook header on index pages --><style>
+    div.notebook-header {
+        display: none;
+    }
+    </style>
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4 navbar-dark bg-blue"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../">
+            <img src="../logos/brian_logo_small.png" alt="The Brian spiking neural network simulator" id="logo" class="d-inline-block align-top"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../install/" class="nav-link">Install</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Getting started</a>
+            <div class="dropdown-menu">
+                    <a href="https://mybinder.org/v2/gh/brian-team/brian2-binder/master?filepath=demo.ipynb" class="dropdown-item">Try in the browser</a>
+                    <a href="../getting-started" class="dropdown-item">Beginners guide</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/resources/tutorials/index.html" class="dropdown-item">Tutorials</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/examples/index.html" class="dropdown-item">Examples</a>
+                    <a href="https://brian2.readthedocs.io" class="dropdown-item">Documentation</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+            <div class="dropdown-menu">
+                    <a href="../blog" class="dropdown-item">All posts</a>
+                    <a href="../categories/news" class="dropdown-item">News</a>
+                    <a href="../categories/article" class="dropdown-item">Articles</a>
+                    <a href="../tags/" class="dropdown-item">Tags</a>
+                    <a href="../archive.html" class="dropdown-item">Archive</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu">
+                    <a href="https://groups.google.com/forum/#!forum/briansupport" class="dropdown-item">Support forum</a>
+                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
+                    <a href="../ecosystem/" class="dropdown-item">Software ecosystem</a>
+                    <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
+                    <a href="../contribute" class="dropdown-item">How to contribute</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Material</a>
+            <div class="dropdown-menu">
+                    <a href="../publications/" class="dropdown-item">Our papers</a>
+                    <a href="../cite/" class="dropdown-item">How to cite us</a>
+                    <a href="https://github.com/brian-team/brian-material/tree/master/logos" class="dropdown-item">Download logos</a>
+                    <a href="https://github.com/brian-team/brian2" class="dropdown-item">GitHub repository</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../team" class="nav-link">Team</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"><li class="nav-item">
+<a href="../rss.xml" class="nav-link">RSS feed</a>
+
+                
+                
+                    
+                
+            </li></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+    
+
+
+    
+<div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-tutorial-at-telluride/" class="u-url">Brian tutorial at Telluride</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/brian-tutorial-at-telluride/" rel="bookmark">
+            <time class="published dt-published" datetime="2010-06-30T02:32:39Z" itemprop="datePublished" title="2010-06-30">2010-06-30</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>There will be a tutorial on Brian at the <a href="https://neuromorphs.net/nm/wiki/2010">Telluride workshop</a> in Colorado, tomorrow at noon (via Skype as I'm in Paris).</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/building-sparse-connections/" class="u-url">Building sparse connections</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/building-sparse-connections/" rel="bookmark">
+            <time class="published dt-published" datetime="2010-03-31T18:14:28Z" itemprop="datePublished" title="2010-03-31">2010-03-31</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>We just added a new feature for building sparse connections: the sparseness keyword now accepts functions in the same way as the weight keyword, e.g.:</p>
+<p>[python]
+myconnection.connect_random(group1,group2,0.1,weight=1<em>nS,sparseness=exp(-abs(i-j)</em>.1))
+[/python]</p>
+<p>makes random synapses between neurons with a distance-dependent probability (assuming the neurons are topographically arranged, with a linear topology).</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/code-generation/" class="u-url">Code generation</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/code-generation/" rel="bookmark">
+            <time class="published dt-published" datetime="2010-02-06T02:39:30Z" itemprop="datePublished" title="2010-02-06">2010-02-06</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>The latest SVN version of Brian includes a new experimental package, brian.experimental.codegen, which is designed for automatic generation of code for numerical integration in Python, C++ and GPU C++. If the global preference usecodegen is True then it will be used automatically for all nonlinear differential equations. If usecodegenweave is True then C code will be generated, otherwise Python code. In all cases the code runs faster. GPU code is not currently used. Use the <a href="http://www.briansimulator.org/docs/reference-preferences.html#global-configuration-file">brian_global_preferences.py</a> file to activate it for all your code. As an example of how it works, let's use the following Brian Equations object:</p>
+<p>[python]
+eqs = Equations('''
+dV/dt = -W<em>V/(10</em>second) : volt
+dW/dt = -V*<em>2/(1</em>second) : volt
+''')
+[/python]</p>
+<p>The codegen module generates the following code for the Euler update scheme. For Python:</p>
+<p>[python]
+V = _S[0]
+W = _S[1]
+V__tmp = -0.1<em>V</em>W
+W__tmp = -1.0<em>V</em><em>2
+V += V__tmp</em>dt
+W += W__tmp*dt
+[/python]</p>
+<p>For C:</p>
+<p>[cpp]
+double <em>V__Sbase = _S+0</em>num_neurons;
+double <em>W__Sbase = _S+1</em>num_neurons;
+for(int _i=0;_i&lt;num_neurons;_i++){
+    double &amp;V = <em>V__Sbase++;
+    double &amp;W = </em>W__Sbase++;
+    double V__tmp = -0.1<em>V</em>W;
+    double W__tmp = -1.0<em>pow(V, 2);
+    V += V__tmp</em>dt;
+    W += W__tmp*dt;
+}
+[/cpp]</p>
+<p>And for the GPU:</p>
+<p>[cpp]
+<strong>global</strong> void stateupdate(int num_neurons, double t, double <em>S)
+{
+    int i = blockIdx.x * blockDim.x + threadIdx.x;
+    if(i&gt;=num_neurons) return;
+    double &amp;V = S[i+0</em>num_neurons];
+    double &amp;W = S[i+1<em>num_neurons];
+    double &amp;V = </em>V__Sbase++;
+    double &amp;W = <em>W__Sbase++;
+    double V__tmp = -0.1</em>V<em>W;
+    double W__tmp = -1.0</em>pow(V, 2);
+    V += V__tmp<em>dt;
+    W += W__tmp</em>dt;
+}
+[/cpp]</p>
+<p>These are all generated from the following template for the Euler integration scheme:</p>
+<p>[python]
+euler_scheme = [
+    (('foreachvar', 'nonzero'),
+        '''
+        $vartype ${var}__tmp = $var_expr
+        '''),
+    (('foreachvar', 'nonzero'),
+        '''
+        $var += ${var}__tmp*dt
+        ''')
+    ]
+[/python]</p>
+<p>The other schemes are the RK2 and exponential Euler scheme. For example, the exponential Euler scheme is:</p>
+<p>[python]
+exp_euler_scheme = [
+    (('foreachvar', 'nonzero'),
+        '''
+        $vartype ${var}__B = @substitute(var_expr, {var:0})
+        $vartype ${var}__A = @substitute(var_expr, {var:1})
+        ${var}__A -= ${var}__B
+        ${var}__B /= ${var}__A
+        ${var}__A <em>= dt
+        '''),
+    (('foreachvar', 'nonzero'),
+        '''
+        $var += ${var}__B
+        $var </em>= exp(${var}__A)
+        $var -= ${var}__B
+        ''')
+    ]
+[/python]</p>
+<p>On the Equations above, this generates the following Python code:</p>
+<p>[python]
+V = _S[0]
+W = _S[1]
+V__B = 0
+W__B = -1.0<em>V<strong>2
+V__A = -0.1<em>W
+W__A = -1.0</em>V</strong>2
+V__A -= V__B
+W__A -= W__B
+V__B /= V__A
+W__B /= W__A
+V__A </em>= dt
+W__A <em>= dt
+V += V__B
+W += W__B
+V </em>= exp(V__A)
+W *= exp(W__A)
+V -= V__B
+W -= W__B
+[/python]</p>
+<p>And similarly for C++ and GPU.</p>
+<p>We will be extending the automatic generation of code into other areas, including resets, thresholds, and STDP code.</p>
+<p>If you have any comments on the approach, bug reports, etc. please let us know!</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/sharing-numpy-arrays-between-processes/" class="u-url">Sharing numpy arrays between processes</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/sharing-numpy-arrays-between-processes/" rel="bookmark">
+            <time class="published dt-published" datetime="2010-01-31T19:44:53Z" itemprop="datePublished" title="2010-01-31">2010-01-31</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>This is a little trick that may be useful to people using multiprocessing and numpy that I couldn't find any good examples of online.</p>
+<p>Using the Python multiprocessing package you create a new Python process for each CPU in the system, but you may often want to work on the same data without making a copy. Here is one way to do that. First of all, we assume you're starting with a large numpy array S. We replace S with a version in shared memory, and then we can pass this</p>
+<p>[python]
+from multiprocessing import sharedctypes
+size = S.size
+shape = S.shape
+S.shape = size
+S_ctypes = sharedctypes.RawArray('d', S)
+S = numpy.frombuffer(S_ctypes, dtype=numpy.float64, count=size)
+S.shape = shape
+[/python]</p>
+<p>Now we can send S_ctypes and shape to a child process in multiprocessing, and convert it back to a numpy array in the child process as follows:</p>
+<p>[python]
+from numpy import ctypeslib
+S = ctypeslib.as_array(S_ctypes)
+S.shape = shape
+[/python] </p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-1-2/" class="u-url">Brian 1.2</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/brian-1-2/" rel="bookmark">
+            <time class="published dt-published" datetime="2010-01-19T20:44:13Z" itemprop="datePublished" title="2010-01-19">2010-01-19</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>We have just released <a href="https://neuralensemble.org/trac/brian/wiki/Downloads">Brian 1.2</a>.</p>
+<p>The major feature of this release is the model fitting toolbox, designed for automatic fitting of spiking neural models to recorded data. The toolbox is capable of using multiple CPUs or GPUs, across multiple machines. For example, in our lab we use 3 computers with 2 GPUs each to get a 300x speed increase compared to using a single CPU.</p>
+<p>Other features of this release include some support for real time plotting as the simulation runs and some important bug fixes. See below for the complete list of changes.</p>
+<p>With this release, we are moving away from the old Sourceforge site to the new <a href="https://neuralensemble.org/trac/brian/wiki">Brian Trac</a> kindly hosted by <a href="http://www.neuralensemble.org/">Neural Ensemble</a>. We have also been working on our release tools, making it much easier to produce new releases. We now plan to do fairly frequent 'quick releases' which will be less thoroughly tested, but useful for those who want the latest features without having to much around with the SVN version.</p>
+<p>Major features:
+</p>
+<ul>
+<li>Model fitting toolbox (library.modelfitting)</li>
+</ul>
+Minor features:
+<ul>
+<li>New real-time <code>refresh=</code> options added to plotting functions</li>
+    <li>Gamma factor in utils.statistics</li>
+    <li>New RegularClock object</li>
+    <li>Added brian_sample_run function to test installation in place of nose tests</li>
+</ul>
+Improvements:
+<ul>
+<li>Speed improvements to monitors and plotting functions</li>
+    <li>Sparse matrix support improved, should work with scipy versions up to 0.7.1</li>
+    <li>Various improvements to brian.hears (still experimental though)</li>
+    <li>Parameters now picklable</li>
+    <li>Made Equations picklable</li>
+</ul>
+Bug fixes:
+<ul>
+<li>Fixed major bug with subgroups and connections (announced on webpage)</li>
+    <li>Fixed major bug with multiple clocks (announced on webpage)</li>
+    <li>No warnings with Python 2.6</li>
+    <li>Minor bugfix to TimedArray caused by floating point comparisons</li>
+    <li>Bugfix: refractory neurons could fire in very extreme circumstances</li>
+    <li>Fixed bug with DelayConnection not setting max_delay</li>
+    <li>Fixed bug with STP</li>
+    <li>Fixed bug with weight=lambda i,j:rand()</li>
+</ul>
+New examples:
+<ul>
+<li>New multiprocessing examples</li>
+    <li>Added polychronisation example</li>
+    <li>Added modelfitting examples</li>
+    <li>Added examples of TimedArray and linked_var</li>
+    <li>Added examples of using derived classes with Brian</li>
+    <li>Realtime plotting example</li>
+</ul>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/bug-advisory-multiple-clocks/" class="u-url">Bug advisory: multiple clocks</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/bug-advisory-multiple-clocks/" rel="bookmark">
+            <time class="published dt-published" datetime="2010-01-13T15:53:08Z" itemprop="datePublished" title="2010-01-13">2010-01-13</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>We recently found and fixed a bug which may silently cause spikes to be lost or extra spikes to be generated in certain circumstances. At the moment, the only known example of a problem is when using SpikeGeneratorGroup in a simulation with multiple clocks as in <a href="http://groups.google.com/group/briansupport/browse_thread/thread/98151b5f340c33b0?hl=en">this message on the support group</a>, but the problem may also appear in rare situations with other simulations with multiple clocks. We advise users to upgrade to Brian 1.1.4 when it is released next week.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/bug-advisory-connections-from-subgroups-with-delays/" class="u-url">Bug advisory: connections from subgroups with delays</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/bug-advisory-connections-from-subgroups-with-delays/" rel="bookmark">
+            <time class="published dt-published" datetime="2009-12-01T20:27:39Z" itemprop="datePublished" title="2009-12-01">2009-12-01</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>We recently found a bug that may silently cause problems with many simulations. The bug causes problems in the following situation:
+</p>
+<ul>
+<li>You create a NeuronGroup</li>
+    <li>You create a subgroup of that group</li>
+    <li>You create a Connection from that subgroup</li>
+    <li>The Connection has delays</li>
+</ul>
+In this case, the SpikeContainer object would be improperly initialised and many spikes may be lost. The latest development version fixes this. See <a href="http://neuralensemble.org/trac/brian/ticket/33">ticket #33</a> on our trac.
+<p>If you have code running on an older version and think your code might be affected, please get in contact on the <a href="mailto:briansupport@googlegroups.com">briansupport@googlegroups.com</a> list.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/new-svn/" class="u-url">New SVN</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/new-svn/" rel="bookmark">
+            <time class="published dt-published" datetime="2009-11-05T16:36:14Z" itemprop="datePublished" title="2009-11-05">2009-11-05</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>The Brian SVN has moved from SourceForge to <a href="http://neuralensemble.org/brian">neuralensemble.org</a>. The current release (1.1.3) is still available at the SourceForge and PyPI pages, but future releases will be at the new page. The current development version will only be available on the new page from now on.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/real-time-plotting/" class="u-url">Real time plotting</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/real-time-plotting/" rel="bookmark">
+            <time class="published dt-published" datetime="2009-09-10T18:14:01Z" itemprop="datePublished" title="2009-09-10">2009-09-10</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>A feature of the pylab/matplotlib plotting package that I hadn't used before is animation. The <a href="http://www.scipy.org/Cookbook/Matplotlib/Animations">Animations </a>entry on the Scipy Cookbook explains how to do it. Here is an example of using it to do realtime plotting of a network in Brian. We plot a raster plot and sample membrane potential trace as the CUBA example runs:</p>
+<p>[python]
+from brian import *</p>
+<h6>Set up the standard CUBA example</h6>
+<p>N = 4000
+eqs='''
+dv/dt = (ge+gi-(v+49<em>mV))/(20</em>ms) : volt
+dge/dt = -ge/(5<em>ms) : volt
+dgi/dt = -gi/(10</em>ms) : volt
+'''
+P = NeuronGroup(N, eqs, threshold=-50<em>mV,reset=-60</em>mV)
+P.v = -60<em>mV+10</em>mV<em>rand(len(P))
+Pe = P.subgroup(3200)
+Pi = P.subgroup(800)
+Ce = Connection(Pe, P, 'ge', weight=1.62</em>mV, sparseness=0.02)
+Ci = Connection(Pi, P, 'gi', weight=-9*mV, sparseness=0.02)</p>
+<h6>Real time plotting stuff</h6>
+<h2>First of all, we use standard Brian monitors to record values</h2>
+<p>M = SpikeMonitor(P)
+trace = StateMonitor(P, 'v', record=0)</p>
+<h2>The ion() command switches pylab's "interactive mode" on</h2>
+<p>ion()</p>
+<h2>We set up the plot with the correct axes</h2>
+<p>subplot(211)</p>
+<h2>Note that we have to store a copy of the objects (plot lines) whose data</h2>
+<h2>we will update in real time</h2>
+<p>rasterline, = plot([], [], '.') # plot points, hence the '.'
+axis([0, 1, 0, N])
+subplot(212)
+traceline, = plot([], []) # plot lines, hence no '.'
+axis([0, 1, -0.06, -0.05])</p>
+<h2>This network operation updates the graphics every 10ms of simulated time</h2>
+<p>@network_operation(clock=EventClock(dt=10<em>ms))
+def draw_gfx():
+    # This returns two lists i, t of the neuron indices and spike times for
+    # all the recorded spikes so far
+    i, t = zip(</em>M.spikes)
+    # Now we update the raster and trace plots with this new data
+    rasterline.set_xdata(t)
+    rasterline.set_ydata(i)
+    traceline.set_xdata(trace.times)
+    traceline.set_ydata(trace[0])
+    # and finally tell pylab to redraw it
+    draw()</p>
+<p>run(1*second)
+draw_gfx() # final draw to get the last bits of data in
+ioff() # switch interactive mode off
+show() # and wait for user to close the window before shutting down
+[/python]</p>
+<p>We're thinking about adapting some of this to include in the standard Brian plotting library. Any thoughts?</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-1-1-3/" class="u-url">Brian 1.1.3</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/brian-1-1-3/" rel="bookmark">
+            <time class="published dt-published" datetime="2009-09-08T17:40:21Z" itemprop="datePublished" title="2009-09-08">2009-09-08</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>We have just produced a <a href="http://sourceforge.net/project/showfiles.php?group_id=226798">new release of Brian</a>, version 1.1.3, with the
+following changes:</p>
+<ul>
+<li>STDP now works with DelayConnection</li>
+<li>Added EventClock</li>
+<li>Added RecentStateMonitor</li>
+<li>Added colormap option to StateMonitor.plot</li>
+<li>Added timed array module, see TimedArray class for details.</li>
+<li>Added optional progress reporting to run()</li>
+<li>New recall() function (converse to forget())</li>
+<li>Added progress reporting module (brian.utils.progressreporting)</li>
+<li>Added SpikeMonitor.spiketimes</li>
+<li>Added developer's guide to docs</li>
+<li>Early version of brian.hears subpackage for auditory modelling</li>
+<li>Various bug fixes</li>
+</ul>
+<p>You will also notice that the manual now includes a developer's guide. If you are interested in contributing, we suggest you to subscribe to the <a href="http://groups.google.fr/group/brian-development">Brian development mailing list</a>.</p>
+</div>
+    </div>
+    </article>
+</div>
+
+        <ul class="pager postindexpager clearfix">
+<li class="previous"><a href="index-3.html" rel="prev">Newer posts</a></li>
+            <li class="next"><a href="index-1.html" rel="next">Older posts</a></li>
+        </ul>
+<!--End of body content--><footer id="footer" class="text-center">
+            Contents © 2020         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

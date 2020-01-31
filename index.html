@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Brian Simulator | The Brian spiking neural network simulator</title>
+<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#333e63">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<link rel="canonical" href=".">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+<meta name="author" content="Brian team">
+<meta property="og:site_name" content="The Brian spiking neural network simulator">
+<meta property="og:title" content="The Brian Simulator">
+<meta property="og:url" content="/">
+<meta property="og:description" content="Why use Brian?
+      
+
+
+
+
+
+
+
+
+
+
+
+    
+        Easy to use
+        
+            Brian has a powerful, easy to understand syntax that can define, run and plot neural models
+            in just a few lin">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-01-17T15:03:57Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@briansimulator">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4 navbar-dark bg-blue"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href=".">
+            <img src="logos/brian_logo_small.png" alt="The Brian spiking neural network simulator" id="logo" class="d-inline-block align-top"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="install/" class="nav-link">Install</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Getting started</a>
+            <div class="dropdown-menu">
+                    <a href="https://mybinder.org/v2/gh/brian-team/brian2-binder/master?filepath=demo.ipynb" class="dropdown-item">Try in the browser</a>
+                    <a href="getting-started" class="dropdown-item">Beginners guide</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/resources/tutorials/index.html" class="dropdown-item">Tutorials</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/examples/index.html" class="dropdown-item">Examples</a>
+                    <a href="https://brian2.readthedocs.io" class="dropdown-item">Documentation</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+            <div class="dropdown-menu">
+                    <a href="blog" class="dropdown-item">All posts</a>
+                    <a href="categories/news" class="dropdown-item">News</a>
+                    <a href="categories/article" class="dropdown-item">Articles</a>
+                    <a href="tags/" class="dropdown-item">Tags</a>
+                    <a href="archive.html" class="dropdown-item">Archive</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu">
+                    <a href="https://groups.google.com/forum/#!forum/briansupport" class="dropdown-item">Support forum</a>
+                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="papers-using-brian/" class="dropdown-item">Papers using Brian</a>
+                    <a href="ecosystem/" class="dropdown-item">Software ecosystem</a>
+                    <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
+                    <a href="contribute" class="dropdown-item">How to contribute</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Material</a>
+            <div class="dropdown-menu">
+                    <a href="publications/" class="dropdown-item">Our papers</a>
+                    <a href="cite/" class="dropdown-item">How to cite us</a>
+                    <a href="https://github.com/brian-team/brian-material/tree/master/logos" class="dropdown-item">Download logos</a>
+                    <a href="https://github.com/brian-team/brian2" class="dropdown-item">GitHub repository</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="team" class="nav-link">Team</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+<a href="rss.xml" class="nav-link">RSS feed</a>
+
+                
+                
+                    
+    
+    </li>
+<li class="nav-item">
+    <a href="index.md" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header></header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="module features-module container-fluid mb-2 p-4">
+      <h5 class="pb-2">Why use Brian?</h5>
+      <div id="carouselExampleIndicators" class="carousel slide pb-5" data-ride="carousel" data-interval="10000">
+<ol class="carousel-indicators">
+<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+</li>
+<li data-target="#carouselExampleIndicators" data-slide-to="1">
+</li>
+<li data-target="#carouselExampleIndicators" data-slide-to="2">
+</li>
+<li data-target="#carouselExampleIndicators" data-slide-to="3">
+</li>
+<li data-target="#carouselExampleIndicators" data-slide-to="4">
+</li>
+</ol>
+<div class="carousel-inner">
+<div class="carousel-item active">
+<div class="row">
+
+    <div class="col-md-6 carousel-left-column">
+        <h4>Easy to use</h4>
+        <p>
+            Brian has a powerful, easy to understand syntax that can define, run and plot neural models
+            in just a few lines of code.
+        </p>
+        <p>
+            We have simple <a href="getting-started">guides to get you started</a> with installing and learning
+            Python and Brian, and <a href="https://brian2.readthedocs.io/">detailed documentation</a> to help you
+            master everything Brian has to offer.
+        </p>
+    </div>
+
+    <div class="col-md-6 carousel-right-column d-block">
+        <img src="examples/1-easy.png" class="img-fluid d-block mx-auto" alt="Code and plot example">
+</div>
+
+</div>
+
+</div>
+<div class="carousel-item">
+<div class="row">
+
+    <div class="col-md-6 carousel-left-column">
+        <h4>Flexible</h4>
+        <p>
+            Detailed biophysical Hodgkin-Huxley model? Reduced two variable leaky integrate-and-fire neuron? A new
+            synapse model that hasn't been added to other simulators yet?
+        </p>
+        <p>
+            No problem, just write down the equations in standard mathematical notation and run it.
+        </p>
+    </div>
+
+    <div class="col-md-6 carousel-right-column d-block">
+        <img src="examples/2-flexible.png" class="img-fluid d-block mx-auto" alt="Equation and code example">
+</div>
+
+</div>
+
+</div>
+<div class="carousel-item">
+<div class="row">
+
+    <div class="col-md-6 carousel-left-column">
+        <h4>Performance</h4>
+        <p>
+            In 1952 Hodgkin and Huxley simulated their model of the squid giant axon. It took them three weeks using a
+            hand operated  Brunsviga mechanical calculator. Fortunately, you don't have to wait that long. Brian can
+            simulate thousands of neurons in realtime.
+        </p>
+        <p>
+            Brian uses <emph>runtime code generation</emph> for state of the art performance, automatically converting
+            your equations into low level C++ code, compiling and running them without any user input required.
+        </p>
+    </div>
+
+    <div class="col-md-6 carousel-right-column d-block">
+        <img src="examples/3-performance.jpg" class="img-fluid d-block mx-auto" alt="Mechanical calculator">
+</div>
+
+</div>
+
+</div>
+<div class="carousel-item">
+<div class="row">
+
+    <div class="col-md-6 carousel-left-column">
+        <h4>Reliable</h4>
+        <p>
+            Brian is more than ten years old, so you can rely on it giving accurate results. We have an extensive
+            test suite that catches any bugs and makes sure that it runs on all platforms. We continue working on
+            Brian, releasing a new version about every six months.
+        </p>
+        <p>
+            And, we help you to make sure that your code doesn't have bugs. If you try to write a dimensionally
+            inconsistent equation, we'll tell you. If the solver you specified for your differential equations is
+            unstable, we'll let you know.
+        </p>
+    </div>
+
+    <div class="col-md-6 carousel-right-column d-block">
+        <img src="examples/4-reliable.png" class="img-fluid d-block mx-auto" alt="Example for calculating with units">
+</div>
+
+</div>
+
+</div>
+<div class="carousel-item">
+<div class="row">
+
+    <div class="col-md-6 carousel-left-column">
+        <h4>Widely used</h4>
+        <p>
+            Brian has been successfully used in <a href="papers-using-brian">hundreds of modelling studies</a>,
+            many of which have made their code freely available to download online. It's used for the coding
+            exercises in the popular computational neuroscience textbook
+            <a href="https://neuronaldynamics.epfl.ch/">Neuronal Dynamics</a> (Gerstner et al.).
+        </p>
+        <p>
+            Brian also has a <a href="ecosystem">vibrant ecosystem of software packages</a> built on top of it.
+        </p>
+    </div>
+
+    <div class="col-md-6 carousel-right-column d-block">
+        <img src="examples/5-widely-used.jpg" class="img-fluid d-block mx-auto" alt="Neuronal dynamics book cover and PyRho logo">
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="container-fluid mb-2 p-4 border-blue">
+    <div class="row">
+        <div class="col-md-8">
+            <a href="install/"><h4>
+<i class="fab fa-linux" aria-hidden="true"></i> <i class="fab fa-windows" aria-hidden="true"></i> <i class="fab fa-apple" aria-hidden="true"></i> Download and installation</h4></a>
+            <pre class="code literal-block" style="margin-bottom: 0.2em; margin-left: 0em;"><i class="fa fa-chevron-right gp" aria-hidden="true"></i> <a href="https://www.anaconda.com/distribution/">conda</a> install -c conda-forge brian2</pre>
+            or
+            <pre class="code literal-block" style="margin-top: 0.2em; margin-left: 0em;"><i class="fa fa-chevron-right gp" aria-hidden="true"></i> pip install brian2</pre>
+            <p>For more details, see the <a href="https://brian2.readthedocs.io/en/stable/introduction/install.html">installation instructions in the documentation</a>.</p>
+            <div>Source code available on <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>.</div>
+        </div>
+        <div class="col-md-4">
+            <h4>
+<i class="fa fa-graduation-cap" aria-hidden="true"></i> Getting started</h4>
+            <a href="https://mybinder.org/v2/gh/brian-team/brian2-binder/master?filepath=demo.ipynb" target="_blank"><h5>Try in the browser</h5></a>
+            <a href="getting-started/index.html"><h5>Beginners guide</h5></a>
+            <a href="https://brian2.readthedocs.io/en/stable/resources/tutorials/index.html"><h5>Tutorials</h5></a>
+            <a href="https://brian2.readthedocs.io/en/stable/examples/index.html"><h5>Examples</h5></a>
+            <a href="https://brian2.readthedocs.io"><h5>Documentation</h5></a>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid p-4">
+    <div class="row">
+        <div class="col-md-4">
+            <a href="categories/news/"><h4>
+<i class="fa fa-newspaper" aria-hidden="true"></i> News</h4></a>
+            
+<!-- Begin post-list post_list_01b48d884ea14fca861198ffea4f32b0 -->
+<div id="post_list_01b48d884ea14fca861198ffea4f32b0" class="post-list">
+        <div class="pb-2 pt-2">
+        <small class="text-muted">2020-01-24</small>
+        <a href="posts/2020/gsoc-2020-work-on-brian-during-the-summer/">
+        <h5 class="mb-1">GSoC 2020: work on Brian during the summer</h5>
+        </a>
+        </div>
+        <div class="pb-2 pt-2">
+        <small class="text-muted">2020-01-15</small>
+        <a href="posts/2020/brian2genn-paper/">
+        <h5 class="mb-1">Brian2GeNN paper published: accelerate Brian simulations with GPUs</h5>
+        </a>
+        </div>
+        <div class="pb-2 pt-2">
+        <small class="text-muted">2020-01-06</small>
+        <a href="posts/2020/brian-23/">
+        <h5 class="mb-1">New release: Brian 2.3</h5>
+        </a>
+        </div>
+        <div class="pb-2 pt-2">
+        <small class="text-muted">2019-08-21</small>
+        <a href="posts/paper-on-brian-2-published-in-elife/">
+        <h5 class="mb-1">Paper on Brian 2 published in eLife</h5>
+        </a>
+        </div>
+</div>
+<!-- End post-list post_list_01b48d884ea14fca861198ffea4f32b0 -->
+
+
+        </div>
+        <div class="col-md-4">
+             <a href="categories/article/"><h4>
+<i class="fas fa-scroll" aria-hidden="true"></i> Articles</h4></a>
+            
+<!-- Begin post-list post_list_51db2f340543422e98c081558c0c3ac8 -->
+<div id="post_list_51db2f340543422e98c081558c0c3ac8" class="post-list">
+        <div class="pb-2 pt-2">
+        <small class="text-muted">2020-01-30</small>
+        <a href="posts/2020/elife-3-bisection/">
+        <h5 class="mb-1">Making use of Python: threshold finding with bisection</h5>
+        </a>
+        </div>
+        <div class="pb-2 pt-2">
+        <small class="text-muted">2020-01-30</small>
+        <a href="posts/2020/elife-2-eye-movements/">
+        <h5 class="mb-1">Non-standard neuron modelling: smooth pursuit eye movements</h5>
+        </a>
+        </div>
+        <div class="pb-2 pt-2">
+        <small class="text-muted">2020-01-28</small>
+        <a href="posts/2020/elife-1-pyloric/">
+        <h5 class="mb-1">Non-standard neuron modelling: the pyloric network</h5>
+        </a>
+        </div>
+        <div class="pb-2 pt-2">
+        <small class="text-muted">2020-01-28</small>
+        <a href="posts/2020/notes-notebooks/">
+        <h5 class="mb-1">Notes on Notebooks</h5>
+        </a>
+        </div>
+</div>
+<!-- End post-list post_list_51db2f340543422e98c081558c0c3ac8 -->
+
+
+        </div>
+         <div class="col-md-4 d-none d-sm-block">
+            <a href="https://twitter.com/briansimulator"><h4>
+<i class="fab fa-twitter" aria-hidden="true"></i> Twitter</h4></a>
+            <a class="twitter-timeline" data-width="auto" data-tweet-limit="2" data-chrome="noborders noheader nofooter noscrollbar" data-dnt="true" href="https://twitter.com/briansimulator?ref_src=twsrc%5Etfw">Tweets by briansimulator</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+        <div class="col-md-4 d-block d-sm-none">
+        <a href="https://twitter.com/briansimulator"><h4>
+<i class="fab fa-twitter" aria-hidden="true"></i> Twitter</h4></a>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid p-4">
+    <div class="row">
+        <div class="col-md-4">
+            <h4>
+<i class="fa fa-globe" aria-hidden="true"></i> Community</h4>
+            <a href="https://groups.google.com/forum/#!forum/briansupport">
+                <h5>Support forum</h5>
+            </a>
+            <a href="https://gitter.im/brian-team/brian2">
+                <h5>Chat group</h5>
+            </a>
+            <h5><a href="papers-using-brian/">Papers using Brian</a></h5>
+            <h5><a href="ecosystem/">Software ecosystem</a></h5>
+            <h5>
+                <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true">Models</a> (and
+                <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=113733&amp;allsimu=true">older ones</a>)
+            </h5>
+            <a href="contribute/">
+                <h5>How to contribute</h5>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <h4>
+<i class="fa fa-tools"></i> Material</h4>
+            <a href="publications/">
+                <h5>Our papers</h5>
+            </a>
+            <a href="cite/">
+                <h5>How to cite us</h5>
+            </a>
+            <a href="https://github.com/brian-team/brian-material/tree/master/logos">
+                <h5>Download logos</h5>
+            </a>
+            <a href="https://github.com/brian-team/brian2">
+                <h5>GitHub repository</h5>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="team/"><h4>
+<i class="fa fa-users" aria-hidden="true"></i> Team</h4></a>
+            <ul class="list-unstyled">
+<li>
+<a href="http://romainbrette.fr">Romain Brette</a><br><span class="text-muted">Institut de la Vision, INSERM, Paris</span>
+</li>
+                <li>
+<a href="http://neural-reckoning.org/">Dan Goodman</a><br><span class="text-muted">Imperial College London</span>
+</li>
+                <li>Marcel Stimberg<br><span class="text-muted">Institut de la Vision, Sorbonne University, Paris</span>
+</li>
+            </ul>
+</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                For a full list of contributors, see the
+                <a href="https://github.com/brian-team/brian2/blob/master/AUTHORS">AUTHORS file</a> in the repository.
+                All contributions (not only in the form of code) are listed in the
+                <a href="https://brian2.readthedocs.io/en/stable/introduction/release_notes.html">release notes</a>.
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+    
+
+</article><!--End of body content--><footer id="footer" class="text-center">
+            Contents © 2020         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<html><body><p>We are happy to announce the release of <strong>Brian 2.0rc3</strong>. This release fixes several bugs, in particular related to long-running simulations (a memory leak and the inability to configure the logging system). It  also improves the random number generation mechanism (same high-quality random numbers in C++ standalone as in runtime mode; new seed function to get reproducible random numbers). See the <a href="http://brian2.readthedocs.org/en/2.0rc3/introduction/release_notes.html">release notes</a> for more information and other changes.
+
+<strong>How to get Brian 2:</strong> follow the <a href="http://brian2.readthedocs.org/en/2.0rc3/introduction/install.html">installation instructions in the documentation</a>
+
+<strong>Further information about Brian2:</strong> <a class="moz-txt-link-freetext" href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a>
+
+As always, please report bugs or suggestions to the <a href="https://github.com/brian-team/brian2/issues">github bug tracker</a> or to the brian-development mailing list (<a class="moz-txt-link-abbreviated" href="mailto:brian-development@googlegroups.com">brian-development@googlegroups.com</a>).</p></body></html>

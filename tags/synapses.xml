@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>The Brian spiking neural network simulator (Posts about synapses)</title><link>/</link><description></description><atom:link href="/tags/synapses.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:postmaster@briansimulator.org"&gt;Brian team&lt;/a&gt; </copyright><lastBuildDate>Fri, 31 Jan 2020 14:11:23 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Non-standard neuron modelling: smooth pursuit eye movements</title><link>/posts/2020/elife-2-eye-movements/</link><dc:creator>Brian team</dc:creator><description>&lt;div&gt;&lt;!-- Functionary(&lt;function Post.__init__.&lt;locals&gt;.&lt;lambda&gt; at 0x7f9783346290&gt;, {'en': defaultdict(&lt;function get_meta.&lt;locals&gt;.&lt;lambda&gt; at 0x7f9783346b00&gt;, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_2_eye_movements.png', 'title': 'Non-standard neuron modelling: smooth pursuit eye movements', 'slug': 'elife-2-eye-movements', 'date': '2020-01-30 17:07', 'tags': 'model, synapses', 'category': 'article', 'updated': '2020-01-30 17:07', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'description': '', 'template': '', 'password': ''})}) --&gt;
+    &lt;div class="alert alert-primary notebook-header" role="alert"&gt;
+    &lt;p&gt;
+    This article is written as a &lt;a href="https://jupyter.org"&gt;Jupyter notebook&lt;/a&gt; which you can execute and modify interactively.
+    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    &lt;a href="https://mybinder.org"&gt;mybinder&lt;/a&gt; infrastructure: &lt;a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Felife_example_2_eye_movements.ipynb"&gt;
+    &lt;img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"&gt;&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;For more information, see our general &lt;a href="/posts/2020/notes-notebooks/"&gt;Notes on Notebooks&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;div class="notebook-quickstart"&gt;
+&lt;h4&gt;Quickstart&lt;/h4&gt;
+To run the code below:
+&lt;ol&gt;
+&lt;li&gt;Click on the cell to select it.&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;SHIFT+ENTER&lt;/code&gt; on your keyboard or press the play button
+   (&lt;button class="fa fa-play icon-play btn btn-xs btn-default"&gt;&lt;/button&gt;) in the toolbar above&lt;/li&gt;
+&lt;/ol&gt;
+Feel free to create new cells using the plus button
+(&lt;button class="fa fa-plus icon-plus btn btn-xs btn-default"&gt;&lt;/button&gt;), or pressing &lt;code&gt;SHIFT+ENTER&lt;/code&gt; while this cell
+is selected.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In this article we demonstrate how Brian can be used to simulate non-neural aspects of the model. This is an idealized model of the smooth pursuit reflex, including two ocular muscles, a moving visual stimulus and spiking neural control.&lt;/p&gt;
+&lt;p&gt;This article is adapted from our eLife paper &lt;a href="https://elifesciences.org/articles/47314"&gt;(Stimberg et al. 2019)&lt;/a&gt;, which includes an interactive version that you can play with &lt;a href="https://github.com/brian-team/brian2_paper_examples"&gt;here&lt;/a&gt;.
+&lt;/p&gt;&lt;p&gt;&lt;a href="/posts/2020/elife-2-eye-movements/"&gt;Read more…&lt;/a&gt; (15 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>model</category><category>synapses</category><guid>/posts/2020/elife-2-eye-movements/</guid><pubDate>Thu, 30 Jan 2020 17:07:00 GMT</pubDate></item><item><title>Non-standard neuron modelling: the pyloric network</title><link>/posts/2020/elife-1-pyloric/</link><dc:creator>Brian team</dc:creator><description>&lt;div&gt;&lt;!-- Functionary(&lt;function Post.__init__.&lt;locals&gt;.&lt;lambda&gt; at 0x7f9783346050&gt;, {'en': defaultdict(&lt;function get_meta.&lt;locals&gt;.&lt;lambda&gt; at 0x7f97833467a0&gt;, {'has_math': 'true', 'title': 'Non-standard neuron modelling: the pyloric network', 'slug': 'elife-1-pyloric', 'date': '2020-01-28 16:46', 'tags': 'model, synapses', 'category': 'article', 'updated': '2020-01-28 16:46', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'description': '', 'template': '', 'password': ''})}) --&gt;
+    &lt;div class="alert alert-primary notebook-header" role="alert"&gt;
+    &lt;p&gt;
+    This article is written as a &lt;a href="https://jupyter.org"&gt;Jupyter notebook&lt;/a&gt; which you can execute and modify interactively.
+    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    &lt;a href="https://mybinder.org"&gt;mybinder&lt;/a&gt; infrastructure: &lt;a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Felife_example_1_pyloric_network.ipynb"&gt;
+    &lt;img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"&gt;&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;For more information, see our general &lt;a href="/posts/2020/notes-notebooks/"&gt;Notes on Notebooks&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;div class="notebook-quickstart"&gt;
+&lt;h4&gt;Quickstart&lt;/h4&gt;
+To run the code below:
+&lt;ol&gt;
+&lt;li&gt;Click on the cell to select it.&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;SHIFT+ENTER&lt;/code&gt; on your keyboard or press the play button
+   (&lt;button class="fa fa-play icon-play btn btn-xs btn-default"&gt;&lt;/button&gt;) in the toolbar above&lt;/li&gt;
+&lt;/ol&gt;
+Feel free to create new cells using the plus button
+(&lt;button class="fa fa-plus icon-plus btn btn-xs btn-default"&gt;&lt;/button&gt;), or pressing &lt;code&gt;SHIFT+ENTER&lt;/code&gt; while this cell
+is selected.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;One of the great advantages of using Brian is that defining new non-standard model types is easy. In this article, we will build a highly simplified model of the pyloric circuit of the crustacean stomatogastric ganglion. This circuit generates a tri-phasic rhythmic pattern with alternating bursts of action potentials in different types of motor neurons. Here, we follow previous work (e.g. Golowasch et al., 1999) by modeling the circuit as consisting of three populations: AB/PD (anterior buster and pyloric dilator neurons), LP (lateral pyloric neurons), and PY (pyloric neurons). This model has a number of non-standard properties that will be described in the following annotated version of the code.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;Golowasch, J., Casey, M., Abbott, L. F., &amp;amp; Marder, E. (1999).&lt;br&gt;
+Network Stability from Activity-Dependent Regulation of Neuronal Conductances.&lt;br&gt;
+Neural Computation, 11(5), 1079-1096.&lt;br&gt;
+&lt;a href="https://doi.org/10.1162/089976699300016359"&gt;https://doi.org/10.1162/089976699300016359&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This article was based on one of the examples from our eLife paper &lt;a href="https://elifesciences.org/articles/47314"&gt;(Stimberg et al. 2019)&lt;/a&gt;.
+&lt;/p&gt;&lt;p&gt;&lt;a href="/posts/2020/elife-1-pyloric/"&gt;Read more…&lt;/a&gt; (19 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>model</category><category>synapses</category><guid>/posts/2020/elife-1-pyloric/</guid><pubDate>Tue, 28 Jan 2020 16:46:00 GMT</pubDate></item></channel></rss>

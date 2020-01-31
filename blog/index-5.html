@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="A free, open source simulator for spiking neural networks.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Brian spiking neural network simulator (old posts, page 5) | The Brian spiking neural network simulator</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#333e63">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="#">
+<link rel="prev" href="index-6.html" type="text/html">
+<link rel="next" href="index-4.html" type="text/html">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="../assets/css/custom.css">
+<!-- Hide notebook header on index pages --><style>
+    div.notebook-header {
+        display: none;
+    }
+    </style>
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4 navbar-dark bg-blue"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../">
+            <img src="../logos/brian_logo_small.png" alt="The Brian spiking neural network simulator" id="logo" class="d-inline-block align-top"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../install/" class="nav-link">Install</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Getting started</a>
+            <div class="dropdown-menu">
+                    <a href="https://mybinder.org/v2/gh/brian-team/brian2-binder/master?filepath=demo.ipynb" class="dropdown-item">Try in the browser</a>
+                    <a href="../getting-started" class="dropdown-item">Beginners guide</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/resources/tutorials/index.html" class="dropdown-item">Tutorials</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/examples/index.html" class="dropdown-item">Examples</a>
+                    <a href="https://brian2.readthedocs.io" class="dropdown-item">Documentation</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+            <div class="dropdown-menu">
+                    <a href="../blog" class="dropdown-item">All posts</a>
+                    <a href="../categories/news" class="dropdown-item">News</a>
+                    <a href="../categories/article" class="dropdown-item">Articles</a>
+                    <a href="../tags/" class="dropdown-item">Tags</a>
+                    <a href="../archive.html" class="dropdown-item">Archive</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu">
+                    <a href="https://groups.google.com/forum/#!forum/briansupport" class="dropdown-item">Support forum</a>
+                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
+                    <a href="../ecosystem/" class="dropdown-item">Software ecosystem</a>
+                    <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
+                    <a href="../contribute" class="dropdown-item">How to contribute</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Material</a>
+            <div class="dropdown-menu">
+                    <a href="../publications/" class="dropdown-item">Our papers</a>
+                    <a href="../cite/" class="dropdown-item">How to cite us</a>
+                    <a href="https://github.com/brian-team/brian-material/tree/master/logos" class="dropdown-item">Download logos</a>
+                    <a href="https://github.com/brian-team/brian2" class="dropdown-item">GitHub repository</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../team" class="nav-link">Team</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"><li class="nav-item">
+<a href="../rss.xml" class="nav-link">RSS feed</a>
+
+                
+                
+                    
+                
+            </li></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+    
+
+
+    
+<div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-tutorial-cns-2015/" class="u-url">Brian tutorial at CNS 2015</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/brian-tutorial-cns-2015/" rel="bookmark">
+            <time class="published dt-published" datetime="2015-07-17T14:05:17Z" itemprop="datePublished" title="2015-07-17">2015-07-17</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>On <strong>July 18th 2015</strong>, we'll have a tutorial on "Modelling of spiking neural networks with Brian" at the <a href="http://www.cnsorg.org/cns-2015-prague">CNS conference</a> in Prague. It will feature introductory sessions in the morning (no prior Brian knowledge necessary) and more advanced topics in the afternoon. Follow this link to find the <a href="http://briansimulator.org/brian-tutorial-at-cns-2015">preliminary schedule</a>.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-2-0-fourth-beta-release/" class="u-url">Brian 2.0 fourth beta release</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/brian-2-0-fourth-beta-release/" rel="bookmark">
+            <time class="published dt-published" datetime="2015-07-17T13:36:03Z" itemprop="datePublished" title="2015-07-17">2015-07-17</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>We are happy to announce the fourth beta release of Brian 2.0. For more information, have a look at the <a href="http://brian2.readthedocs.org/en/2.0b4/introduction/release_notes.html">release notes</a>.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-2-0-second-beta-release/" class="u-url">Brian 2.0 second beta release</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/brian-2-0-second-beta-release/" rel="bookmark">
+            <time class="published dt-published" datetime="2015-03-12T12:05:05Z" itemprop="datePublished" title="2015-03-12">2015-03-12</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>We are happy to announce the second beta release of Brian 2.0!</p>
+<p>This new version contains important bug fixes and improvements, we therefore strongly recommend all users of Brian 2 to upgrade. If you are a user new to Brian, we’d also recommend to directly start with the Brian 2 beta instead of using the stable release of Brian 1.
+</p>
+<h3>What’s new?</h3>
+Several new features have been added:
+<ul>
+<li>Support for multicompartmental neurons in the C++ standalone mode</li>
+    <li>New features for TimedArray and SpikeGeneratorGroup</li>
+    <li>Automatic selection of a code generation target</li>
+    <li>Tutorials for users starting with Brian</li>
+    <li>…</li>
+</ul>
+For a full list of changes, see the <a href="https://brian2.readthedocs.org/en/2.0b2/introduction/release_notes.html">release notes</a>.
+<p><strong>How to get Brian 2</strong>: follow the <a href="https://brian2.readthedocs.org/en/2.0b2/introduction/install.html">installation instructions in the documentation</a></p>
+<p><strong>Further information about Brian2</strong>: <a href="https://brian2.readthedocs.org">brian2.readthedocs.org</a></p>
+<p>This is still a Beta release, please report bugs or suggestions to the github bug tracker (<a href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>) or to the brian-development mailing list (<a href="mailto:brian-development@googlegroups.com">brian-development@googlegroups.com</a>).</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/google-summer-of-code-2015/" class="u-url">Google Summer of Code 2015</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/google-summer-of-code-2015/" rel="bookmark">
+            <time class="published dt-published" datetime="2015-03-05T16:35:34Z" itemprop="datePublished" title="2015-03-05">2015-03-05</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<a href="http://www.google-melange.com/gsoc/homepage/google/gsoc2015">Google Summer of Code 2015</a> ("a program that offers student developers stipends to write code for various open source projects.") has announced the accepted mentoring organisations yesterday, among them the <a href="http://incf.org/">International Neuroinformatics Coordinating Facility</a> (INCF). <strong>Under the umbrella of the INCF, it is possible to work on Brian!</strong> We have added an idea for a project (<a href="http://incf.org/gsoc/2015/proposals/#-span----nbsp---span--span-improving-the-brian-simulator-s-interoperability-with-simulator-independent-model-description-languages--span-">"Improving the Brian simulator's interoperability with simulator-independent model-description languages"</a>) to the INCF webpage, but you are free to come up with a proposal of your own.
+<p>The application period starts on March 16th, but now would be the time to discuss ideas with us. Head over to our <a href="https://groups.google.com/forum/#!forum/brian-development">mailing list</a> (<em>brian-development@googlegroups.com</em>) if you have questions and/or ideas.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-2-0-beta-release/" class="u-url">Brian 2.0 beta release</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/brian-2-0-beta-release/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-11-04T17:33:01Z" itemprop="datePublished" title="2014-11-04">2014-11-04</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>We are happy to announce the first beta release of Brian 2.0!</p>
+<p>This is the first version of Brian 2.0 we recommend for general use. From now on, we will try to keep changes that break existing code to a minimum. If you are a user new to Brian, we’d recommend to start with the Brian 2 beta instead of using the stable release of Brian 1.
+</p>
+<h3>What's new?</h3>
+Several new features have been added:
+<ul>
+<li>Support for multicompartmental neurons</li>
+    <li>Cython as a new code generation target (bringing the performance benefits of compiled code to Python 3)</li>
+    <li>Several improvements to the C++ standalone mode, in particular OpenMP support for multithreading (not well tested yet, though, use with caution)</li>
+    <li>Improved system for repeating and continuing simulations and dealing with multiple simulation clocks and timesteps</li>
+    <li>Support for linked variables</li>
+    <li>...</li>
+</ul>
+For a full list of changes, see the <a href="https://brian2.readthedocs.org/en/2.0beta/introduction/release_notes.html">release notes</a>.
+<p>In addition, a large number of bugs have been fixed, we therefore recommend all users of Brian 2 to upgrade.</p>
+<p><strong>How to get Brian 2</strong>: follow the <a href="https://brian2.readthedocs.org/en/2.0beta/introduction/install.html">installation instructions in the documentation</a></p>
+<p><strong>Further information about Brian2:</strong> <a href="http://brian2.readthedocs.org">brian2.readthedocs.org</a></p>
+<p>This is still a Beta release, please report bugs or suggestions to the github bug tracker (<a class="reference external" href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>) or to the brian-development mailing list (<a class="reference external" href="mailto:brian-development%40googlegroups.com">brian-development@googlegroups.com</a>).</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-tutorial-cns-2014/" class="u-url">Brian tutorial at CNS 2014</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/brian-tutorial-cns-2014/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-07-08T13:24:09Z" itemprop="datePublished" title="2014-07-08">2014-07-08</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>On <strong>July 26th 2014</strong>, we'll have a tutorial on "Modelling of spiking neural networks with Brian" at the <a href="http://www.cnsorg.org/cns-2014-quebec-city">CNS conference</a> in Québec City. It will feature introductory sessions in the morning (no prior Brian knowledge necessary) and more advanced topics in the afternoon. Follow this link to find the <a href="http://briansimulator.org/brian-tutorial-at-cns-2014">preliminary schedule</a>.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/new-alpha-version-of-brian-2/" class="u-url">New alpha version of Brian 2</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/new-alpha-version-of-brian-2/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-03-11T16:10:49Z" itemprop="datePublished" title="2014-03-11">2014-03-11</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>We are happy to announce another alpha release of Brian2 (version number 2.0a8). A significant amount of internal refactoring work has been done since the previous release and many bugs (in particular related to the new "standalone" mode) have been fixed. The release also adds the following user-visible changes:</p>
+<ul>
+<li>The definition of variable namespaces is now finalized and follows a consistent approach, see <a href="http://brian2.readthedocs.org/en/latest/user/equations.html#external-variables-and-functions">the documentation</a> for details</li>
+<li>A variable marked as "unless refractory" in the equations is now completely clamped during refractoriness, i.e. it also ignores synaptic input, for example</li>
+<li>Pre-defined constants (e.g. "e" or "pi") are now correctly understood in the symbolic analysis of equations</li>
+<li>Parameters and subexpressions can be declared as "scalar", meaning that they should be stored/calculated as a single value for a whole group</li>
+<li>Exact integration can now take place even for equations referring to a TimedArray, if the timestep of the TimedArray is a multiple of the simulation timestep</li>
+<li>The internal calculation of TimedArray values is now more robust. The new approach entails a change in the semantics of TimedArray when its timestep is bigger than the simulation timestep. For more details see <a href="http://brian2.readthedocs.org/en/latest/user/input.html#timed-arrays">the documentation</a>
+</li>
+<li>Performance improvement for the Python-based SpikeQueue</li>
+</ul>
+<p>Brian 2 is stabilizing and can already be used for quite a variety of network simulations. We ported a rather complex example from Brian 1 (<code>synapses_barrelcortex.py</code>) that shows a lot of Brian2's features in use.</p>
+
+<p>As always, please report any comments to the <a href="http://groups.google.com/group/brian-development/">brian-development mailing list</a> or open an issue on the <a href="https://github.com/brian-team/brian2/issues">github repository</a>.</p>
+
+<h3>How to get Brian2?</h3>
+
+<p>Brian2 is available on the <a href="https://pypi.python.org/pypi/Brian2">python package index</a>, therefore  you can install it using easy_install or pip:</p>
+
+<p><code>
+    easy_install brian2
+    pip install brian 2  # for older versions of pip
+    pip install --pre brian2  # for newer versions of pip
+</code>
+Alternatively, you can directly download the package from the package index and install it yourself using <code>python setup.py install</code> (if you are using Python 2.x, simply running it from the source directory also works).</p>
+<p>Finally, you can also clone the git repository at:<br><a href="https://github.com/brian-team/brian2">https://github.com/brian-team/brian2</a></p>
+
+<p>Note that the package is called brian2, not brian, therefore it does not interfere with an existing Brian installation and trying out Brian2 will not affect your existing Brian simulations.</p>
+
+<h3>Documentation</h3>
+
+<p>You can find documentation for Brian2 at readthedocs: <a href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
+
+<p>Note that the user documentation is still quite incomplete, you'll find a lot of information in the reference documentation, though.</p>
+
+<p></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/new-brian-paper-equation-oriented-specification-of-neural-models-for-simulations/" class="u-url">New Brian paper: Equation-oriented specification of neural models for simulations</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/new-brian-paper-equation-oriented-specification-of-neural-models-for-simulations/" rel="bookmark">
+            <time class="published dt-published" datetime="2014-02-04T05:45:13Z" itemprop="datePublished" title="2014-02-04">2014-02-04</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>We have just had a new paper <a href="http://www.frontiersin.org/Journal/10.3389/fninf.2014.00006/abstract">Equation-oriented specification of neural models for simulations</a> published in the <a href="http://www.frontiersin.org/Neuroinformatics/researchtopics/Python_in_Neuroscience_II/1591">Python in Neuroscience II</a> special edition of <a href="http://www.frontiersin.org/Neuroinformatics">Frontiers in Neuroinformatics</a>. In this paper we describe the new approach to neural model specification we're taking in Brian 2.</p>
+<p>Abstract below:
+</p>
+<blockquote>Simulating biological neuronal networks is a core method of research in computational neuroscience. A full specification of such a network model includes a description of the dynamics and state changes of neurons and synapses, as well as the synaptic connectivity patterns and the initial values of all parameters. A standard approach in neuronal modeling software is to build network models based on a library of pre-defined components and mechanisms; if a model component does not yet exist, it has to be defined in a special-purpose or general low-level language and potentially be compiled and linked with the simulator. Here we propose an alternative approach that allows flexible definition of models by writing textual descriptions based on mathematical notation. We demonstrate that this approach allows the definition of a wide range of models with minimal syntax. Furthermore, such explicit model descriptions allow the generation of executable code for various target languages and devices, since the description is not tied to an implementation. Finally, this approach also has advantages for readability and reproducibility, because the model description is fully explicit, and because it can be automatically parsed and transformed into formatted descriptions. The presented approach has been implemented in the Brian2 simulator.</blockquote>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/yet-another-alpha-brian-2-0/" class="u-url">Yet another alpha version of Brian 2.0</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/yet-another-alpha-brian-2-0/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-12-18T17:00:15Z" itemprop="datePublished" title="2013-12-18">2013-12-18</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>We are happy to announce another alpha release of Brian2 (version number 2.0a7). Major changes introduced since the last release:</p>
+<ul>
+<li>A workaround that makes Brian2 work with the latest version of sympy (0.7.4) which introduced a bug in their differential equation solver.</li>
+<li>A C++ version of the SpikeQueue, the data structure responsible for the spike transmission. This feature needs a working C++ compiler and will lead to a performance gain.</li>
+<li>Faster synapse updates in pure numpy/Python for STDP-like rules</li>
+<li>A more flexible approach for importing the brian2 package that should allow for different programming styles (see <a href="http://brian2.readthedocs.org/en/latest/introduction/import.html">the documentation</a>).</li>
+</ul>
+<p>Please report any comments/questions you may have to the <a href="http://groups.google.com/group/brian-development/">brian-development mailing list</a></p>
+
+<h3>How to get Brian2?</h3>
+
+<p>Brian2 is available on the <a href="https://pypi.python.org/pypi/Brian2">python package index</a>, therefore  you can install it using easy_install or pip:</p>
+
+<p><code>easy_install brian2
+pip install brian 2  # older versions of pip
+pip install --pre brian2  # newer versions of pip
+</code>
+</p>
+<p>Alternatively, you can directly download the package from the package index and install it yourself using <code>python setup.py install</code> (if you are using Python 2.x, simply running it from the source directory also works).</p>
+<p>Finally, you can also clone the git repository at:<br><a href="https://github.com/brian-team/brian2">https://github.com/brian-team/brian2</a></p>
+
+<p>Note that the package is called brian2, not brian, therefore it does not interfere with an existing Brian installation and trying out Brian2 will not affect your existing Brian simulations.</p>
+
+<h3>Documentation</h3>
+
+<p>You can find documentation for Brian2 at readthedocs: <a href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
+
+<p>Note that the user documentation is still quite incomplete, you'll find a lot of information in the reference documentation, though.</p>
+
+<p></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/new-alpha-version-of-brian-2-0/" class="u-url">New alpha version of Brian 2.0</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/new-alpha-version-of-brian-2-0/" rel="bookmark">
+            <time class="published dt-published" datetime="2013-10-29T10:47:02Z" itemprop="datePublished" title="2013-10-29">2013-10-29</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>We are happy to announce another alpha release of Brian2 (version number 2.0a5) which adds a new feature for testing: C++ standalone simulations.</p>
+<p>Standalone mode is a new addition to Brian2 with no equivalent in Brian1. It takes a simulation script and generates a directory of completely Brian-independent C++ files from it that perform the simulation. This can give significant performance advantages over the standard Brian simulation mode and also allows to do simulations on devices where Brian or one of its dependencies is not available (e.g. on a computing cluster or in robotics applications).</p>
+
+<p>This mode has some restrictions compared to the standard operating mode of Brian, you can find more details in the documentation:<br><a href="http://brian2.readthedocs.org/en/latest/user/devices.html">http://brian2.readthedocs.org/en/latest/user/devices.html</a></p>
+
+<p>We are very interested in feedback about how this mode fits with your needs, what restrictions you cannot live with, what additional functionality you'd need, etc. Please report any comments to the <a href="http://groups.google.com/group/brian-development/">brian-development mailing list</a></p>
+
+<h3>How to get Brian2?</h3>
+
+<p>Brian2 is available on the <a href="https://pypi.python.org/pypi/Brian2">python package index</a>, therefore  you can install it using easy_install or pip:</p>
+
+<p><code>easy_install brian2
+pip install brian 2  # older versions of pip
+pip install --pre brian2  # newer versions of pip
+</code>
+</p>
+<p>Alternatively, you can directly download the package from the package index and install it yourself using <code>python setup.py install</code> (if you are using Python 2.x, simply running it from the source directory also works).</p>
+<p>Finally, you can also clone the git repository at:<br><a href="https://github.com/brian-team/brian2">https://github.com/brian-team/brian2</a></p>
+
+<p>Note that the package is called brian2, not brian, therefore it does not interfere with an existing Brian installation and trying out Brian2 will not affect your existing Brian simulations.</p>
+
+<h3>Documentation</h3>
+
+<p>You can find documentation for Brian2 at readthedocs: <a href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
+
+<p>Note that the user documentation is still quite incomplete, you'll find a lot of information in the reference documentation, though.</p>
+
+<p></p>
+</div>
+    </div>
+    </article>
+</div>
+
+        <ul class="pager postindexpager clearfix">
+<li class="previous"><a href="index-6.html" rel="prev">Newer posts</a></li>
+            <li class="next"><a href="index-4.html" rel="next">Older posts</a></li>
+        </ul>
+<!--End of body content--><footer id="footer" class="text-center">
+            Contents © 2020         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

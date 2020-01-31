@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brian Tutorial at CNS 2015 | The Brian spiking neural network simulator</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#333e63">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href=".">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="../../assets/css/custom.css">
+<meta name="author" content="Brian team">
+<meta property="og:site_name" content="The Brian spiking neural network simulator">
+<meta property="og:title" content="Brian Tutorial at CNS 2015">
+<meta property="og:url" content="/old/brian-tutorial-at-cns-2015/">
+<meta property="og:description" content="Modelling of spiking neural networks with Brian
+Tutorial T3 at CNS 2015, Prague (July 18th 2015)
+The tutorial will take place in room RB 211 at the University of Economics. Please consider installing ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2015-07-16T12:28:20Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@briansimulator">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4 navbar-dark bg-blue"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+            <img src="../../logos/brian_logo_small.png" alt="The Brian spiking neural network simulator" id="logo" class="d-inline-block align-top"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../install/" class="nav-link">Install</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Getting started</a>
+            <div class="dropdown-menu">
+                    <a href="https://mybinder.org/v2/gh/brian-team/brian2-binder/master?filepath=demo.ipynb" class="dropdown-item">Try in the browser</a>
+                    <a href="../../getting-started" class="dropdown-item">Beginners guide</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/resources/tutorials/index.html" class="dropdown-item">Tutorials</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/examples/index.html" class="dropdown-item">Examples</a>
+                    <a href="https://brian2.readthedocs.io" class="dropdown-item">Documentation</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+            <div class="dropdown-menu">
+                    <a href="../../blog" class="dropdown-item">All posts</a>
+                    <a href="../../categories/news" class="dropdown-item">News</a>
+                    <a href="../../categories/article" class="dropdown-item">Articles</a>
+                    <a href="../../tags/" class="dropdown-item">Tags</a>
+                    <a href="../../archive.html" class="dropdown-item">Archive</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu">
+                    <a href="https://groups.google.com/forum/#!forum/briansupport" class="dropdown-item">Support forum</a>
+                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="../../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
+                    <a href="../../ecosystem/" class="dropdown-item">Software ecosystem</a>
+                    <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
+                    <a href="../../contribute" class="dropdown-item">How to contribute</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Material</a>
+            <div class="dropdown-menu">
+                    <a href="../../publications/" class="dropdown-item">Our papers</a>
+                    <a href="../../cite/" class="dropdown-item">How to cite us</a>
+                    <a href="https://github.com/brian-team/brian-material/tree/master/logos" class="dropdown-item">Download logos</a>
+                    <a href="https://github.com/brian-team/brian2" class="dropdown-item">GitHub repository</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../team" class="nav-link">Team</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
+
+                
+                
+                    
+    
+    </li>
+<li class="nav-item">
+    <a href="index.md" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Brian Tutorial at CNS 2015</a></h1>
+
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p></p>
+<h3>Modelling of spiking neural networks with Brian</h3>
+Tutorial T3 at <a href="http://www.cnsorg.org/cns-2015-prague">CNS 2015</a>, Prague (<strong>July 18th 2015</strong>)
+<p>The tutorial will take place in room RB 211 at the <a href="http://www.cnsorg.org/cns-2015-venue">University of Economics</a>. Please consider installing Brian 2 beforehand, see the installation instructions in the <a href="http://brian2.readthedocs.org">documentation</a>.</p>
+<p><em><strong>The material presented at the tutorial can be found here:</strong> <a href="https://github.com/brian-team/brian-material/tree/master/2015-CNS-tutorial">https://github.com/brian-team/brian-material/tree/master/2015-CNS-tutorial</a>
+</em>
+</p>
+<h4>Schedule</h4>
+In the morning sessions, we plan to give an introduction to Brian, no prior knowledge of Brian is necessary. The afternoon sessions will be about more advanced topics and delve a bit into Brian's internals. There will also be a general question&amp;answers session where we can discuss any topic of interest to the participants.
+<table>
+<colgroup>
+<col width="120">
+<col width="640">
+</colgroup>
+<tbody>
+<tr>
+<td>
+<p dir="ltr" style="text-align: center;"><strong>Time</strong></p>
+</td>
+<td>
+<p dir="ltr" style="text-align: center;"><strong>Topic</strong></p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p dir="ltr">9.00 - 9.30</p>
+</td>
+<td>
+<p dir="ltr">Introduction &amp; installation</p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p dir="ltr">9.30 - 10.10</p>
+</td>
+<td>
+<p dir="ltr">Core concepts of Brian 2</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr" style="text-align: center;"><em>Coffee break</em></p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p dir="ltr">10.40 - 12.00</p>
+</td>
+<td>
+<p dir="ltr">Hands-on tutorial</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr" style="text-align: center;"><em>Lunch break</em></p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<p dir="ltr" style="text-align: center;">13.30 - 13.45</p>
+</td>
+<td>
+<p dir="ltr">Going from Brian 1 to Brian 2</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr" style="text-align: center;">13.45 - 15.10</p>
+</td>
+<td>
+<p dir="ltr">Advanced Brian 2 (code generation, standalone mode, extending Brian 2)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p dir="ltr" style="text-align: center;"><em>Coffee break</em></p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<p dir="ltr" style="text-align: center;">15.40 - 16.30</p>
+</td>
+<td>
+<p dir="ltr">Question &amp; Answer session</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h5>Working with Brian 2</h5>
+We recommend using the <a href="http://continuum.io/downloads">Anaconda distribution</a> with Brian 2.
+<ul>
+<li>The full Anaconda distribution comes with a Matlab-like development environment for Python called <a href="https://code.google.com/p/spyderlib/">Spyder</a>, you can start it by typing <code>spyder</code> in a Terminal. You can also start it using Anaconda's "launcher" application, for more details and other IDEs that you can use, see <a href="http://docs.continuum.io/anaconda/ide_integration.html">docs.continuum.io/anaconda/ide_integration.html</a>
+</li>
+    <li>You don't necessarily need a full IDE to work with Python/Brian, starting <code>ipython</code> in a terminal window and using any text editor to edit files is good enough.</li>
+</ul>
+</div>
+    </div>
+    
+
+</article><!--End of body content--><footer id="footer" class="text-center">
+            Contents © 2020         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>
