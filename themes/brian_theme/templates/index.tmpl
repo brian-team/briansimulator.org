@@ -6,6 +6,7 @@
 <%namespace name="feeds_translations" file="feeds_translations_helper.tmpl" import="*"/>
 <%inherit file="base.tmpl"/>
 
+
 <%block name="extra_head">
     ${parent.extra_head()}
     % if posts and (permalink == '/' or permalink == '/' + index_file):
@@ -61,7 +62,7 @@
     <div class="p-summary entry-summary d-flex">
         ${post.text(teaser_only=True)}
         % if post.meta('previewimage'):
-        <img src="${post.meta('previewimage')}" alt="Preview image" class="d-none d-sm-block float-right m-2" width="120px" height="120px">
+        <img src="${url_replacer(permalink, post.previewimage)}" alt="Preview image" class="d-none d-sm-block float-right m-2" width="120px" height="120px">
         %endif
     %else:
     <div class="e-content entry-content">

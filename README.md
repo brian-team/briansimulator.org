@@ -38,7 +38,13 @@ build and serve the website, and rebuild it whenever a file changes:
     nikola github_deploy
 ```
 
-## Writing articles
+## Writing new posts
+Posts are either "articles" or "news" and should be created in the respective
+directories of the current year (e.g. `articles/2020` or `news/2020`).
+Additionally, they have to set the `category` metadata to either `news` or
+`article`. They should also in general set a number of tags.
+
+### Writing articles
 
 Articles are jupyter notebook files. By default, a special header is added to
 their rendering on the website. This header contains an automatically generated
@@ -74,4 +80,11 @@ the following comment after the initial paragraphs:
 ```HTML
 <!-- TEASER_END -->
 ```
+
+Articles can also have a preview image that will be used in the article
+overview, or e.g. in twitter posts. This preview image should be quadratic and
+at least 120x120 pixels in size. If you put an image with the same name as the
+notebook in `files/images` (e.g. `my_notebook.ipynb` --> `my_notebook.jpeg`), it
+will be automatically used as a preview image. Alternatively, you can specify it
+explicitly using by setting the `previewimage` metadata.
 
