@@ -66,8 +66,7 @@ class CompileIPynbWithHeader(_CompileIPynb):
         if 'has_math' not in metadata:
             metadata['has_math'] = 'true'
         if 'previewimage' not in metadata:
-            nb_fname = os.path.basename(post.source_path)
-            base_fname = os.path.splitext(nb_fname)[0]
+            base_fname = os.path.splitext(post.source_path)[0]
             for extension in ['.png', '.jpg', '.jpeg', '.gif', '.webp']:
                 image_fname = os.path.join('images', base_fname+extension)
                 if os.path.isfile(os.path.join('files', image_fname)):

@@ -84,7 +84,10 @@ the following comment after the initial paragraphs:
 Articles can also have a preview image that will be used in the article
 overview, or e.g. in twitter posts. This preview image should be quadratic and
 at least 120x120 pixels in size. If you put an image with the same name as the
-notebook in `files/images` (e.g. `my_notebook.ipynb` --> `my_notebook.jpeg`), it
-will be automatically used as a preview image. Alternatively, you can specify it
-explicitly using by setting the `previewimage` metadata.
+notebook in `files/images` in the same folder hierarchy, it
+will be automatically used as a preview image.
+For example, the preview image for file `articles/2020/my_notebook.ipynb` should
+be named `files/images/articles/2020/my_notebook.png` (or `.jpeg`, etc.)
+Alternatively, you can specify it explicitly using by setting the `previewimage`
+metadata.
 
