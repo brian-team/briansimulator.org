@@ -69,3 +69,9 @@ is selected.
 This header will not be shown on the website, but included when you run the
 notebook on [mybinder](https://mybinder.org) or locally.
 
+To shorten the article preview (e.g. for its use in the RSS feed), you can add
+the following comment after the initial paragraphs:
+```HTML
+<!-- TEASER_END -->
+```
+
