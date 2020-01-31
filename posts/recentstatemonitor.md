@@ -1,4 +1,4 @@
-<html><body><p>Please see the entry on <a href="../../2009/05/27/the-idea/">the idea</a> of this development blog.
+<html><body><p>Please see the entry on <a href="/posts/the-idea/">the idea</a> of this development blog.
 
 As part of our efforts to implement STDP with heterogeneous delays, which I'll write more about some other time, we realised we needed to access recent values of a variable, but never covering more than a fixed duration T. That is, we needed access to V(t-s) for 0&lt;s&lt;T, where t is the current time. We could get access to this by recording all the values of V, but that's a big memory hog for a long running simulation. Instead, we came up with a new object, the RecentStateMonitor, which works in a very similar way to StateMonitor.
 

@@ -40,7 +40,7 @@ or
 pip install matplotlib jupyter
 ```
 
-Also have a look at other [Brian-related packages](/ecoystem/).
+Also have a look at other [Brian-related packages](/ecosystem/).
 
 <div class="d-flex justify-content-end mb-2"><a href="https://github.com/brian-team/brian2"><button type="button" class="btn btn-primary"><i class="fab fa-github"></i> Source code</button></a></div>
 

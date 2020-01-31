@@ -1,4 +1,4 @@
-<html><body><p>Please see the entry on <a href="../../2009/05/27/the-idea/">the idea</a> of this development blog.
+<html><body><p>Please see the entry on <a href="/posts/the-idea/">the idea</a> of this development blog.
 
 One thing we end up doing very often in Brian in our code, is copying the values of a variable in one group to the values of a variable in another group. That is, a variable from one group should essentially be defined as the same as the variable from another group. This comes up in models of the auditory system we're working on, because we use one NeuronGroup to represent the displacement of hair cells in the cochlea, and a separate NeuronGroup to represent the auditory nerve fibres which receive graded rather than spiking inputs from them. In general, the same thing might be useful in any case where there is a graded rather than spiking connection between two NeuronGroups. What we were doing was this:
 
