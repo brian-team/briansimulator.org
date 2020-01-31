@@ -19,9 +19,9 @@
     <div class="row">
         <div class="col-md-8">
             <a href="/install/"><h3><i class="fab fa-linux" aria-hidden="true"></i> <i class="fab fa-windows" aria-hidden="true"></i> <i class="fab fa-apple" aria-hidden="true"></i> Download and installation</h3></a>
-            <p><code><i class="fa fa-chevron-right" aria-hidden="true"></i> <a href="https://www.anaconda.com/distribution/">conda</a> install -c conda-forge brian2</code><br/>
-            or<br/>
-            <code><i class="fa fa-chevron-right" aria-hidden="true"></i> pip install brian2</code></p>
+            <pre class="code literal-block" style="margin-bottom: 0.2em; margin-left: 0em;"><i class="fa fa-chevron-right gp" aria-hidden="true"></i> <a href="https://www.anaconda.com/distribution/">conda</a> install -c conda-forge brian2</pre>
+            or
+            <pre class="code literal-block" style="margin-top: 0.2em; margin-left: 0em;"><i class="fa fa-chevron-right gp" aria-hidden="true"></i> pip install brian2</pre>
             <p>For more details, see the <a href="https://brian2.readthedocs.io/en/stable/introduction/install.html">installation instructions in the documentation</a>.</p>
             <div>Source code available on <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>.</div>
         </div>

@@ -49,15 +49,11 @@ And some options for learning Python:
 
 If you've installed the Anaconda distribution above, installing Brian is as simple as:
 
-```console
-conda install -c conda-forge brian2
-```
+<pre class="code literal-block"><i class="fa fa-chevron-right gp" aria-hidden="true"></i> conda install -c conda-forge brian2</pre>
     
 On other Python distributions, you can try:
 
-```console
-pip install brian2
-```
+<pre class="code literal-block"><i class="fa fa-chevron-right gp" aria-hidden="true"></i> pip install brian2</pre>
     
 See our [detailed installation documentation](https://brian2.readthedocs.io/en/stable/introduction/install.html) for
 more information.
