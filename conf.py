@@ -20,7 +20,7 @@ BLOG_AUTHOR = "Brian team"  # (translatable)
 BLOG_TITLE = "The Brian spiking neural network simulator"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "/"
+SITE_URL = "https://briansimulator.org/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://briansimulator.org/"
