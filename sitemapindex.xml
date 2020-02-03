@@ -6,91 +6,63 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>/categories/article.xml</loc>
-  <lastmod>2020-01-31T18:07:00Z</lastmod>
+  <loc>https://briansimulator.org/categories/article.xml</loc>
+  <lastmod>2020-02-03T12:46:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>/categories/articles.xml</loc>
-  <lastmod>2020-01-31T18:03:00Z</lastmod>
+  <loc>https://briansimulator.org/categories/news.xml</loc>
+  <lastmod>2020-02-03T12:46:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>/categories/development.xml</loc>
-  <lastmod>2020-01-31T18:03:00Z</lastmod>
+  <loc>https://briansimulator.org/rss.xml</loc>
+  <lastmod>2020-02-03T12:46:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>/categories/multiprocessing.xml</loc>
-  <lastmod>2020-01-31T18:03:00Z</lastmod>
+  <loc>https://briansimulator.org/sitemap.xml</loc>
+  <lastmod>2020-02-03T12:46:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>/categories/news.xml</loc>
-  <lastmod>2020-01-31T18:07:00Z</lastmod>
+  <loc>https://briansimulator.org/tags/brian2genn.xml</loc>
+  <lastmod>2020-02-03T12:46:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>/categories/numpy.xml</loc>
-  <lastmod>2020-01-31T18:03:00Z</lastmod>
+  <loc>https://briansimulator.org/tags/development.xml</loc>
+  <lastmod>2020-02-03T12:46:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>/categories/release.xml</loc>
-  <lastmod>2020-01-31T18:03:00Z</lastmod>
+  <loc>https://briansimulator.org/tags/gsoc.xml</loc>
+  <lastmod>2020-02-03T12:46:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>/categories/shared-memory.xml</loc>
-  <lastmod>2020-01-31T18:03:00Z</lastmod>
+  <loc>https://briansimulator.org/tags/model.xml</loc>
+  <lastmod>2020-02-03T12:46:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>/rss.xml</loc>
-  <lastmod>2020-01-31T18:07:00Z</lastmod>
+  <loc>https://briansimulator.org/tags/multiprocessing.xml</loc>
+  <lastmod>2020-02-03T12:46:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>/sitemap.xml</loc>
-  <lastmod>2020-01-31T18:07:00Z</lastmod>
+  <loc>https://briansimulator.org/tags/notes.xml</loc>
+  <lastmod>2020-02-03T12:46:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>/tags/brian2genn.xml</loc>
-  <lastmod>2020-01-31T18:07:00Z</lastmod>
+  <loc>https://briansimulator.org/tags/numpy.xml</loc>
+  <lastmod>2020-02-03T12:46:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>/tags/development.xml</loc>
-  <lastmod>2020-01-31T18:07:00Z</lastmod>
+  <loc>https://briansimulator.org/tags/publication.xml</loc>
+  <lastmod>2020-02-03T12:46:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>/tags/gsoc.xml</loc>
-  <lastmod>2020-01-31T18:07:00Z</lastmod>
+  <loc>https://briansimulator.org/tags/release.xml</loc>
+  <lastmod>2020-02-03T12:46:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>/tags/model.xml</loc>
-  <lastmod>2020-01-31T18:07:00Z</lastmod>
+  <loc>https://briansimulator.org/tags/shared-memory.xml</loc>
+  <lastmod>2020-02-03T12:46:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>/tags/multiprocessing.xml</loc>
-  <lastmod>2020-01-31T18:07:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>/tags/notes.xml</loc>
-  <lastmod>2020-01-31T18:07:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>/tags/numpy.xml</loc>
-  <lastmod>2020-01-31T18:07:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>/tags/publication.xml</loc>
-  <lastmod>2020-01-31T18:07:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>/tags/pulblication.xml</loc>
-  <lastmod>2020-01-31T18:04:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>/tags/release.xml</loc>
-  <lastmod>2020-01-31T18:07:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>/tags/shared-memory.xml</loc>
-  <lastmod>2020-01-31T18:07:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>/tags/synapses.xml</loc>
-  <lastmod>2020-01-31T18:07:00Z</lastmod>
+  <loc>https://briansimulator.org/tags/synapses.xml</loc>
+  <lastmod>2020-02-03T12:46:00Z</lastmod>
  </sitemap>
 </sitemapindex>

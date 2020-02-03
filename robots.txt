@@ -1,4 +1,4 @@
-Sitemap: /sitemapindex.xml
+Sitemap: https://briansimulator.org/sitemapindex.xml
 
 User-Agent: *
-Host: 
+Host: briansimulator.org
