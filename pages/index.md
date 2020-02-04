@@ -5,9 +5,10 @@
 .. tags: 
 .. category: 
 .. link: 
-.. description: 
+.. description: Brian is a free, open source simulator for spiking neural networks.
 .. type: text
 .. hidetitle: True
+.. previewimage: /logos/brian_logo_small_square.png
 -->
 
 <div class="module features-module container-fluid mb-2 p-4">
