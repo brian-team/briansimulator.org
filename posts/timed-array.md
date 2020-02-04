@@ -1,4 +1,4 @@
-<html><body><p>Please see the entry on <a href="http://briansimulator.org/2009/05/27/the-idea/">the idea</a> of this development blog.
+<html><body><p>Please see the entry on <a href="https://briansimulator.org/2009/05/27/the-idea/">the idea</a> of this development blog.
 
 One annoying thing that crops up often in writing programs for Brian, is that you have some set of equations with a parameter which varies over time according to the values in some array. Supposing that I was an array of length N with values sampled at intervals dt, you would like to be able to write an equation like:
 

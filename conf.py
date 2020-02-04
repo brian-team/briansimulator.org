@@ -660,6 +660,7 @@ REDIRECTIONS = [
  ['upcoming-features/index.html', '/posts/upcoming-features/'],
  ['brians-new-website/index.html', '/posts/brians-new-website/'],
  ['the-idea/index.html', '/posts/the-idea/'],
+ ['2009/05/27/the-idea/index.html', '/posts/the-idea/'],
  ['timed-array/index.html', '/posts/timed-array/'],
  ['recentstatemonitor/index.html', '/posts/recentstatemonitor/'],
  ['linked-variables/index.html', '/posts/linked-variables/'],
