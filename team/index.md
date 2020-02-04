@@ -74,7 +74,7 @@ In addition to the Brian 2 team members, additional work was done on Brian 1 by:
 
 <ul class="list-group list-group-flush">
 <li class="list-group-item">
-    <a href="http://cyrille.rossant.net/">Cyrille Rossant</a> (brian.library.modelfitting)
+    <a href="https://cyrille.rossant.net/">Cyrille Rossant</a> (brian.library.modelfitting)
 </li>
 <li class="list-group-item">
     <a href="https://scholar.google.co.uk/citations?user=rAVkCiQAAAAJ&hl=en">Bertrand Fontaine</a> (brian.hears)
