@@ -53,7 +53,11 @@ ${template_hooks['extra_head']()}
     <div class="container">
     <div class="row">
     <div class="col-sm-4 d-none d-sm-block">
-    <img src="/logos/brian_logo_big.png" alt="${blog_title|h}" id="logo" class="align-top pb-5">
+    <picture>
+            <source media="(min-width: 576px)" alt="${blog_title|h}" srcset="/logos/brian_logo_big.png">
+            Does not support picture tag
+            <!--<img src="/logos/brian_logo_big.png" alt="${blog_title|h}" class="align-top pb-5">-->
+    </picture>
     </div>
     <div class="col-sm-8 align-self-center h-100">
         <p class="p-4">
