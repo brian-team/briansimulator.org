@@ -261,11 +261,11 @@ POSTS = (
 )
 
 PAGES = (
-    ("pages/index.md", "", "frontpage.tmpl"),
     ("pages/*.md", "", "page.tmpl"),
     ("pages/*.rst", "", "page.tmpl"),
-    ("pages/*.html", "", "page.tmpl"),
     ("pages/*.ipynb", "", "page.tmpl"),
+    ("pages/index.html", "", "frontpage.tmpl"),
+    ("pages/*.html", "", "page.tmpl")
 )
 
 
