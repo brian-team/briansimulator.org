@@ -1533,13 +1533,6 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # before </head>
 # (translatable)
 EXTRA_HEAD_DATA = '''
-<script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="/assets/css/custom.css">'''
-# Google Analytics or whatever else you use. Added to the bottom of <body>
-# in the default template (base.tmpl).
-# (translatable)
-BODY_END = '''
-<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -1547,8 +1540,14 @@ BODY_END = '''
   gtag('js', new Date());
   gtag('config', 'UA-84065998-2', { 'anonymize_ip': true });
 </script>
-
+<script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
 '''
+# Google Analytics or whatever else you use. Added to the bottom of <body>
+# in the default template (base.tmpl).
+# (translatable)
+#BODY_END = ''
 
 # The possibility to extract metadata from the filename by using a
 # regular expression.
