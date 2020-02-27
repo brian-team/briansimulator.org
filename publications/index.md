@@ -68,5 +68,5 @@
 </ul>
 
 !!! note
-    Also see our recommendation how to [cite Brian](/cite/index.html) if you use it in your research.
+    Also see our recommendation how to [cite Brian](/cite/) if you use it in your research.
 
