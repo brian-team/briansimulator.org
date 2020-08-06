@@ -19,7 +19,7 @@ If you participate, it would be really helpful if you could download and install
 1. Download and install the [Anaconda Python 3 distribution](https://www.anaconda.com/products/individual)
 2. Open a command prompt and run the following lines:
     <pre class="code literal-block">
-<i class="fa fa-chevron-right gp" aria-hidden="true"> conda create -n brian_tutorial -c conda-forge python=3 brian2 matplotlib notebook
+<i class="fa fa-chevron-right gp" aria-hidden="true"> conda create -n brian_tutorial -c conda-forge python=3 brian2 matplotlib notebook nb_conda_kernels
 <i class="fa fa-chevron-right gp" aria-hidden="true"> conda activate brian_tutorial
 <i class="fa fa-chevron-right gp" aria-hidden="true"> pip install brian2tools
 </pre>
