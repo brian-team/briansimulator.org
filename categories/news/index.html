@@ -120,7 +120,54 @@
 
         </div>
     </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2020/gsoc-2020-work-on-brian-during-the-summer/" class="u-url">GSoC 2020: work on Brian during the summer</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2020/brian-online-tutorial/" class="u-url">Brian online tutorial</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/2020/brian-online-tutorial/" rel="bookmark">
+            <time class="published dt-published" datetime="2020-08-06T13:27:27Z" itemprop="datePublished" title="2020-08-06">2020-08-06</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p>We will experiment with running a Brian tutorial online. The first tutorial of
+this kind will take place on <strong>Friday, August 7th 2020</strong> from <strong>2pm-6pm BST</strong> (UTC+1, see <a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg=Brian+Online+Tutorial&amp;iso=20200807T14&amp;p1=136&amp;ah=4">here for other timezones</a>). Free (but mandatory)
+registration <a href="https://t.co/zS4VQ4Cp51?amp=1">here</a>. We will run the tutorial as
+a <a href="https://zoom.us/">Zoom</a> meeting – registering with the link will give you the URL (please don't share so we can avoid zoombombing). We will record the meeting and
+if everything goes reasonably well, we will upload the videos later.</p>
+<p>If you participate, it would be really helpful if you could download and install Brian before the tutorial so that you can work along with it as we go. Instructions are:</p>
+<ol>
+<li>Download and install the <a href="https://www.anaconda.com/products/individual">Anaconda Python 3 distribution</a>
+</li>
+<li>Open a command prompt and run the following lines:
+    <pre class="code literal-block">
+<i class="fa fa-chevron-right gp" aria-hidden="true"> conda create -n brian_tutorial -c conda-forge python=3 brian2 matplotlib notebook
+<i class="fa fa-chevron-right gp" aria-hidden="true"> conda activate brian_tutorial
+<i class="fa fa-chevron-right gp" aria-hidden="true"> pip install brian2tools
+</i></i></i></pre>
+</li>
+<li>You can now verify this is working by starting a Jupyter notebook server with:
+    <pre class="code literal-block"><i class="fa fa-chevron-right gp" aria-hidden="true"> jupyter notebook</i></pre>
+</li>
+<li>Your browser should open with the Jupyter notebooks interface. Now create a new notebook and put the following code in an empty cell:
+    <pre class="code literal-block">from brian2 import *</pre>
+</li>
+<li>Run that cell by pressing Ctrl+Enter. If that works without any errors (you might see a warning) then you're good to go.</li>
+<li>If that doesn't work or you want to use a different system than Anaconda, take a look at our <a href="https://brian2.readthedocs.io/en/stable/introduction/install.html">detailed installation instructions</a>. </li>
+</ol>
+<p>If you have trouble installing, don't worry. You can use the <a href="http://mybinder.org/v2/gh/brian-team/brian2-binder/master?filepath=index.ipynb">Brian installation on Binder</a> or <a href="https://colab.research.google.com">Google Colab</a> instead.</p>
+<p>For Colab, just make the first cell as follows:</p>
+<p></p>
+<pre class="code literal-block">
+!pip install brian2
+!pip install brian2tools
+</pre>
+<p>Looking forward to seeing you all on Friday!</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2020/gsoc-2020-work-on-brian-during-the-summer/" class="u-url">GSoC 2020: work on Brian during the summer</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Brian team
@@ -297,32 +344,6 @@ The Brian2GeNN release adds a workaround for a bug in some version of the glibc 
 <p><strong>How to get Brian 2</strong>: follow the <a href="http://brian2.readthedocs.io/en/2.1/introduction/install.html">installation instructions in the documentation </a></p>
 <p><strong>Further information about Brian2</strong>: <a class="moz-txt-link-freetext" href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 <p>As always, please report bugs or suggestions to the <a href="https://github.com/brian-team/brian2/issues">github bug tracker</a> or to the brian-development mailing list (<a class="moz-txt-link-abbreviated" href="mailto:brian-development@googlegroups.com">brian-development@googlegroups.com</a>).</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian2genn-1-0/" class="u-url">Brian2GeNN 1.0</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Brian team
-            </span></p>
-            <p class="dateline">
-            <a href="../../posts/brian2genn-1-0/" rel="bookmark">
-            <time class="published dt-published" datetime="2017-06-29T09:26:31Z" itemprop="datePublished" title="2017-06-29">2017-06-29</time></a>
-            </p>
-        </div>
-    </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
-<p>We are proud to announce the release of <strong>Brian2GeNN</strong>, the Brian 2 interface to the <a href="http://genn-team.github.io/genn/">GPU-enhanced Neuronal Network (GeNN)</a> simulator. With this interface, a Brian 2 script (as long as it only uses <a href="http://brian2genn.readthedocs.io/en/latest/introduction/exclusions.html">supported features</a>) can benefit from the potential performance benefits of a GPU by adding just two lines to the start of the script:
-<code>
-import brian2genn
-set_device('genn')
-</code></p>
-<p>Brian2GeNN can be installed from the same Anaconda repository channel as Brian itself:</p>
-<p><code>conda install -c brian-team brian2genn</code></p>
-<p>This installation method will also include the GeNN simulator, while an installation from PyPI (via <code>pip install brian2genn</code>) will require a manual installation of GeNN. See the <a href="http://brian2genn.readthedocs.io">documentation (http://brian2genn.readthedocs.io)</a> for more details.</p>
-<p>Note that in all cases, users need a CUDA-capable NVIDIA GPU and a manual installation of the CUDA SDK.</p>
-<p>The actual performance benefits of using a GPU to run the simulation depend strongly on the details of the model but can be significant. With the Brian2GeNN package, we hope to make it as easy as possible for users to try it out for themselves.</p>
-<p>In case you run into problems with the installation of the package or with its use, please contact us at brian-development@googlegroups.com or open an issue on the <a href="https://github.com/brian-team/brian2genn/issues">Brian2GeNN bug tracker</a>.</p>
 </div>
     </div>
     </article>
