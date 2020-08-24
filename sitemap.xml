@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/archive.html</loc>
-  <lastmod>2020-08-06T14:02:00Z</lastmod>
+  <lastmod>2020-08-24T16:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/assises-de-la-recherche/</loc>
@@ -67,7 +67,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/blog/index-7.html</loc>
-  <lastmod>2020-08-06T13:46:00Z</lastmod>
+  <lastmod>2020-08-24T16:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/brian-1-1-3/</loc>
@@ -259,7 +259,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/categories/news/index-4.html</loc>
-  <lastmod>2020-08-06T13:46:00Z</lastmod>
+  <lastmod>2020-08-24T16:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/cite/</loc>
@@ -464,6 +464,10 @@
  <url>
   <loc>https://briansimulator.org/posts/2020/brian-23/</loc>
   <lastmod>2020-02-11T12:54:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://briansimulator.org/posts/2020/brian-discourse-forum/</loc>
+  <lastmod>2020-08-24T15:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2020/brian-online-tutorial/</loc>
@@ -895,11 +899,15 @@
  </url>
  <url>
   <loc>https://briansimulator.org/tags/</loc>
-  <lastmod>2020-08-06T13:46:00Z</lastmod>
+  <lastmod>2020-08-24T15:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/tags/brian2genn/</loc>
   <lastmod>2020-02-11T12:54:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://briansimulator.org/tags/community/</loc>
+  <lastmod>2020-08-24T15:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/tags/development/</loc>
