@@ -162,7 +162,7 @@ NAVIGATION_LINKS = {
         ),
         (
             (
-                ("https://groups.google.com/forum/#!forum/briansupport", "Support forum"),
+                ("https://brian.discourse.group", "Support forum"),
                 ("https://gitter.im/brian-team/brian2", "Chat group"),
                 ("/papers-using-brian/", "Papers using Brian"),
                 ("/ecosystem/", "Software ecosystem"),
@@ -671,12 +671,12 @@ REDIRECTIONS = [
  ['brian-at-cns/index.html', '/posts/brian-at-cns/'],
  ['hydraulic-neuron-model/index.html', 'http://romainbrette.fr/hydraulic-neuron-model/'],
  ['showcase/index.html', '/papers-using-brian/'],
- ['support/index.html', 'https://groups.google.com/forum/#!forum/briansupport'],
+ ['support/index.html', 'https://brian.discourse.group'],
    ['brian-tutorial-cns-2013/index.html', '/old/brian-tutorial-cns-2013/'],
    ['brian-tutorial-at-cns-2014/index.html',
     '/old/brian-tutorial-at-cns-2014/'],
  ['manual/index.html', 'https://brian2.readthedocs.io'],
- ['support-2/index.html', 'https://groups.google.com/forum/#!forum/briansupport'],
+ ['support-2/index.html', 'https://brian.discourse.group'],
    ['brian-tutorial-at-cns-2015/index.html',
     '/old/brian-tutorial-at-cns-2015/'],
  ['brian-at-neurocomp/index.html', '/posts/brian-at-neurocomp/'],

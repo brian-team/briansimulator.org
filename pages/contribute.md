@@ -14,7 +14,7 @@ very confident that it is a bug, submit it directly to our
 
 ## Help other users
 If you are comfortable with Brian, you could help other users on the
-[<i class="fa fa-envelope"></i>&nbsp;support mailing list](http://groups.google.com/group/briansupport). If you solved a
+[<i class="fab fa-discourse"></i>&nbsp;Brian community forum](https://brian.discourse.group). If you solved a
 non-trivial problem, such as installing Brian on an iPhone, you could also post a message explaining how you did it.
 
 ##Contribute new features or bug fixes
@@ -29,5 +29,7 @@ neural simulation. Take a look at [what other people have done](/ecosystem).
 
 ## Tell us what you would like to see in Brian
 Help us prioritize the future features by telling us what is most important to you, either via the
-[<i class="fa fa-envelope"></i>&nbsp;development mailing list](http://groups.google.com/group/brian-development) or on
+[<i class="fab fa-discourse"></i>&nbsp;Brian community forum](https://brian.discourse.group) or on
 [<i class="fab fa-twitter"></i>&nbsp;Twitter](https://twitter.com/briansimulator).
+
+
