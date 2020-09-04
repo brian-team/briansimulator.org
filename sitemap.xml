@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/archive.html</loc>
-  <lastmod>2020-08-24T16:41:00Z</lastmod>
+  <lastmod>2020-09-04T13:12:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/assises-de-la-recherche/</loc>
@@ -67,7 +67,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/blog/index-7.html</loc>
-  <lastmod>2020-08-24T16:41:00Z</lastmod>
+  <lastmod>2020-09-04T13:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/brian-1-1-3/</loc>
@@ -498,6 +498,14 @@
   <lastmod>2020-02-11T12:54:00Z</lastmod>
  </url>
  <url>
+  <loc>https://briansimulator.org/posts/2020/tutorial-scheduling-1/</loc>
+  <lastmod>2020-09-04T13:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://briansimulator.org/posts/2020/video-scheduling-1/</loc>
+  <lastmod>2020-09-04T13:12:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://briansimulator.org/posts/about-the-new-website/</loc>
   <lastmod>2020-02-11T12:54:00Z</lastmod>
  </url>
@@ -899,7 +907,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/tags/</loc>
-  <lastmod>2020-08-24T15:54:00Z</lastmod>
+  <lastmod>2020-09-04T13:12:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/tags/brian2genn/</loc>
@@ -972,6 +980,18 @@
  <url>
   <loc>https://briansimulator.org/tags/teaching/</loc>
   <lastmod>2020-08-06T13:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://briansimulator.org/tags/training/</loc>
+  <lastmod>2020-09-04T13:12:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://briansimulator.org/tags/tutorial/</loc>
+  <lastmod>2020-09-04T13:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://briansimulator.org/tags/video/</loc>
+  <lastmod>2020-09-04T13:12:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/team/</loc>

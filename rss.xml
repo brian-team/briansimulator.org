@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>The Brian spiking neural network simulator</title><link>https://briansimulator.org/</link><description>A free, open source simulator for spiking neural networks.</description><atom:link href="https://briansimulator.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:postmaster@briansimulator.org"&gt;Brian team&lt;/a&gt; </copyright><lastBuildDate>Mon, 24 Aug 2020 16:28:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>New Brian community forum</title><link>https://briansimulator.org/posts/2020/brian-discourse-forum/</link><dc:creator>Brian team</dc:creator><description>&lt;div&gt;&lt;p&gt;Ask questions, chat and learn with other Brian users, show off what you've done, suggest new features, ... We will try out a brand new forum for support questions
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>The Brian spiking neural network simulator</title><link>https://briansimulator.org/</link><description>A free, open source simulator for spiking neural networks.</description><atom:link href="https://briansimulator.org/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:postmaster@briansimulator.org"&gt;Brian team&lt;/a&gt; </copyright><lastBuildDate>Fri, 04 Sep 2020 13:12:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Getting the timing right (scheduling 1)</title><link>https://briansimulator.org/posts/2020/video-scheduling-1/</link><dc:creator>Brian team</dc:creator><description>&lt;div&gt;&lt;!-- Functionary(&lt;function Post.__init__.&lt;locals&gt;.&lt;lambda&gt; at 0x7fb479bce950&gt;, {'en': defaultdict(&lt;function get_meta.&lt;locals&gt;.&lt;lambda&gt; at 0x7fb479ba9e60&gt;, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_1.png', 'title': 'Getting the timing right (scheduling 1)', 'slug': 'video-scheduling-1', 'date': '2020-09-04 13:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-09-04 13:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'password': '', 'filters': '', 'data': '', 'description': '', 'template': ''})}) --&gt;
+    &lt;div class="alert alert-primary notebook-header" role="alert"&gt;
+    &lt;p&gt;
+    This article is written as a &lt;a href="https://jupyter.org"&gt;Jupyter notebook&lt;/a&gt; which you can execute and modify interactively.
+    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    &lt;a href="https://mybinder.org"&gt;mybinder&lt;/a&gt; infrastructure: &lt;a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Fscheduling_1.ipynb"&gt;
+    &lt;img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"&gt;&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;For more information, see our general &lt;a href="https://briansimulator.org/posts/2020/notes-notebooks/"&gt;Notes on Notebooks&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;div class="notebook-quickstart"&gt;
+&lt;h4&gt;Quickstart&lt;/h4&gt;
+To run the code below:
+&lt;ol&gt;
+&lt;li&gt;Click on the cell to select it.&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;SHIFT+ENTER&lt;/code&gt; on your keyboard or press the play button
+   (&lt;button class="fa fa-play icon-play btn btn-xs btn-default"&gt;&lt;/button&gt;) in the toolbar above&lt;/li&gt;
+&lt;/ol&gt;
+Feel free to create new cells using the plus button
+(&lt;button class="fa fa-plus icon-plus btn btn-xs btn-default"&gt;&lt;/button&gt;), or pressing &lt;code&gt;SHIFT+ENTER&lt;/code&gt; while this cell
+is selected.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;"Scheduling": mechanism to determine the order of operations during a simulation&lt;/p&gt;
+&lt;p&gt;In this notebook we will look at its importance for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;recording values with a &lt;code&gt;StateMonitor&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can also watch the &lt;a href="https://youtu.be/SGZAcut6Jt4"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt;  screencast video on Youtube&lt;/a&gt;.
+&lt;/p&gt;&lt;p&gt;&lt;a href="https://briansimulator.org/posts/2020/video-scheduling-1/"&gt;Read more…&lt;/a&gt; (27 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>training</category><category>video</category><guid>https://briansimulator.org/posts/2020/video-scheduling-1/</guid><pubDate>Fri, 04 Sep 2020 13:00:00 GMT</pubDate></item><item><title>New Brian community forum</title><link>https://briansimulator.org/posts/2020/brian-discourse-forum/</link><dc:creator>Brian team</dc:creator><description>&lt;div&gt;&lt;p&gt;Ask questions, chat and learn with other Brian users, show off what you've done, suggest new features, ... We will try out a brand new forum for support questions
 and general discussion, replacing our previous forums on Google Groups. The new forum builds
 on the &lt;a href="https://www.discourse.org/"&gt;Discourse&lt;/a&gt; platform which gives us exciting new features
 such as giving credit to users for answering questions.&lt;/p&gt;
@@ -153,12 +190,4 @@ Stimberg M, Goodman DFM, Nowotny T (2020)&lt;br&gt;
 &lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;</description><category>brian2genn</category><category>publication</category><guid>https://briansimulator.org/posts/2020/brian2genn-paper/</guid><pubDate>Wed, 15 Jan 2020 09:18:16 GMT</pubDate></item><item><title>New release: Brian 2.3</title><link>https://briansimulator.org/posts/2020/brian-23/</link><dc:creator>Brian team</dc:creator><description>&lt;div&gt;&lt;p&gt;Happy New Year to all Brian users &lt;span class="emoji"&gt;🎉&lt;/span&gt;! We are happy to announce a new release, &lt;strong&gt;Brian 2.3&lt;/strong&gt;. This release fixes a number of bugs and introduces some new features. It also paves the way for the transition from Python 2 to Python 3 – given that Python 2 is now &lt;a href="https://www.python.org/doc/sunset-python-2/"&gt;no longer officially supported&lt;/a&gt;, Brian 2.3 will be the last release to support Python 2. For a full list of changes, see the &lt;a href="http://brian2.readthedocs.io/en/2.3/introduction/release_notes.html"&gt;release notes&lt;/a&gt;. We recommend all users of Brian 2 to update.&lt;/p&gt;
 &lt;p&gt;Brian 2 can be installed with Anaconda from the &lt;a href="https://anaconda.org/conda-forge/brian2"&gt;conda-forge channel&lt;/a&gt; (packages are provided for Python 2.7, 3.6, 3.7, 3.8), or with pip from the &lt;a href="https://pypi.org/project/Brian2/"&gt;pypi repository&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;As always, please report bugs or suggestions to the &lt;a href="https://github.com/brian-team/brian2/issues"&gt;github bug tracker&lt;/a&gt; or to the &lt;a href="https://groups.google.com/forum/#!forum/brian-development"&gt;brian-development mailing list&lt;/a&gt; (&lt;a href="mailto:brian-development@googlegroups.com"&gt;brian-development@googlegroups.com&lt;/a&gt;).&lt;/p&gt;&lt;/div&gt;</description><category>Development</category><category>Release</category><guid>https://briansimulator.org/posts/2020/brian-23/</guid><pubDate>Mon, 06 Jan 2020 14:06:02 GMT</pubDate></item><item><title>Paper on Brian 2 published in eLife</title><link>https://briansimulator.org/posts/paper-on-brian-2-published-in-elife/</link><dc:creator>Brian team</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;We are happy to report that our paper "Brian 2, an intuitive and efficient neural simulator" has been accepted for publication in &lt;em&gt;eLife&lt;/em&gt;: &lt;a href="https://elifesciences.org/articles/47314"&gt;https://elifesciences.org/articles/47314&lt;/a&gt;&lt;/p&gt;
-&lt;!-- /wp:paragraph --&gt;
-&lt;!-- wp:paragraph --&gt;
-
-&lt;p&gt;In this paper, we describe a number of examples that showcase various features of Brian 2, ranging from non-standard neuronal/synaptic models to interacting with hardware in real time via C++ code. All the code to run these examples is openly available in a &lt;a href="https://github.com/brian-team/brian2_paper_examples"&gt;github repository&lt;/a&gt;. &lt;br&gt;The examples are provided as interactive jupyter notebooks, and can be tried out without a local installation of Brian by running them on the &lt;a href="https://mybinder.org/v2/gh/brian-team/brian2_paper_examples/master?filepath=index.ipynb"&gt;binder infrastructure&lt;/a&gt;.&lt;/p&gt;
-
-&lt;!-- /wp:paragraph --&gt;
-
-&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</description><category>publication</category><guid>https://briansimulator.org/posts/paper-on-brian-2-published-in-elife/</guid><pubDate>Wed, 21 Aug 2019 10:56:19 GMT</pubDate></item></channel></rss>
+&lt;p&gt;As always, please report bugs or suggestions to the &lt;a href="https://github.com/brian-team/brian2/issues"&gt;github bug tracker&lt;/a&gt; or to the &lt;a href="https://groups.google.com/forum/#!forum/brian-development"&gt;brian-development mailing list&lt;/a&gt; (&lt;a href="mailto:brian-development@googlegroups.com"&gt;brian-development@googlegroups.com&lt;/a&gt;).&lt;/p&gt;&lt;/div&gt;</description><category>Development</category><category>Release</category><guid>https://briansimulator.org/posts/2020/brian-23/</guid><pubDate>Mon, 06 Jan 2020 14:06:02 GMT</pubDate></item></channel></rss>

@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>The Brian spiking neural network simulator (Articles)</title><link>https://briansimulator.org/</link><description>Articles about features of the Brian simulator.</description><atom:link href="https://briansimulator.org/categories/article.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:postmaster@briansimulator.org"&gt;Brian team&lt;/a&gt; </copyright><lastBuildDate>Tue, 11 Feb 2020 12:54:45 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Making use of Python: threshold finding with bisection</title><link>https://briansimulator.org/posts/2020/elife-3-bisection/</link><dc:creator>Brian team</dc:creator><description>&lt;div&gt;&lt;!-- Functionary(&lt;function Post.__init__.&lt;locals&gt;.&lt;lambda&gt; at 0x7fd2aa8499e0&gt;, {'en': defaultdict(&lt;function get_meta.&lt;locals&gt;.&lt;lambda&gt; at 0x7fd2aa849b90&gt;, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_3_bisection.png', 'title': 'Making use of Python: threshold finding with bisection', 'slug': 'elife-3-bisection', 'date': '2020-01-30 17:46', 'tags': 'model', 'category': 'article', 'updated': '2020-01-30 17:46', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'data': '', 'description': '', 'template': '', 'filters': '', 'password': ''})}) --&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>The Brian spiking neural network simulator (Articles)</title><link>https://briansimulator.org/</link><description>Articles about features of the Brian simulator.</description><atom:link href="https://briansimulator.org/categories/article.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:postmaster@briansimulator.org"&gt;Brian team&lt;/a&gt; </copyright><lastBuildDate>Fri, 04 Sep 2020 13:12:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Getting the timing right (scheduling 1)</title><link>https://briansimulator.org/posts/2020/video-scheduling-1/</link><dc:creator>Brian team</dc:creator><description>&lt;div&gt;&lt;!-- Functionary(&lt;function Post.__init__.&lt;locals&gt;.&lt;lambda&gt; at 0x7fb479bce950&gt;, {'en': defaultdict(&lt;function get_meta.&lt;locals&gt;.&lt;lambda&gt; at 0x7fb479ba9e60&gt;, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_1.png', 'title': 'Getting the timing right (scheduling 1)', 'slug': 'video-scheduling-1', 'date': '2020-09-04 13:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-09-04 13:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'password': '', 'filters': '', 'data': '', 'description': '', 'template': ''})}) --&gt;
+    &lt;div class="alert alert-primary notebook-header" role="alert"&gt;
+    &lt;p&gt;
+    This article is written as a &lt;a href="https://jupyter.org"&gt;Jupyter notebook&lt;/a&gt; which you can execute and modify interactively.
+    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    &lt;a href="https://mybinder.org"&gt;mybinder&lt;/a&gt; infrastructure: &lt;a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Fscheduling_1.ipynb"&gt;
+    &lt;img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"&gt;&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;For more information, see our general &lt;a href="https://briansimulator.org/posts/2020/notes-notebooks/"&gt;Notes on Notebooks&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;div class="notebook-quickstart"&gt;
+&lt;h4&gt;Quickstart&lt;/h4&gt;
+To run the code below:
+&lt;ol&gt;
+&lt;li&gt;Click on the cell to select it.&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;SHIFT+ENTER&lt;/code&gt; on your keyboard or press the play button
+   (&lt;button class="fa fa-play icon-play btn btn-xs btn-default"&gt;&lt;/button&gt;) in the toolbar above&lt;/li&gt;
+&lt;/ol&gt;
+Feel free to create new cells using the plus button
+(&lt;button class="fa fa-plus icon-plus btn btn-xs btn-default"&gt;&lt;/button&gt;), or pressing &lt;code&gt;SHIFT+ENTER&lt;/code&gt; while this cell
+is selected.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;"Scheduling": mechanism to determine the order of operations during a simulation&lt;/p&gt;
+&lt;p&gt;In this notebook we will look at its importance for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;recording values with a &lt;code&gt;StateMonitor&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can also watch the &lt;a href="https://youtu.be/SGZAcut6Jt4"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt;  screencast video on Youtube&lt;/a&gt;.
+&lt;/p&gt;&lt;p&gt;&lt;a href="https://briansimulator.org/posts/2020/video-scheduling-1/"&gt;Read more…&lt;/a&gt; (27 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>training</category><category>video</category><guid>https://briansimulator.org/posts/2020/video-scheduling-1/</guid><pubDate>Fri, 04 Sep 2020 13:00:00 GMT</pubDate></item><item><title>Making use of Python: threshold finding with bisection</title><link>https://briansimulator.org/posts/2020/elife-3-bisection/</link><dc:creator>Brian team</dc:creator><description>&lt;div&gt;&lt;!-- Functionary(&lt;function Post.__init__.&lt;locals&gt;.&lt;lambda&gt; at 0x7fd2aa8499e0&gt;, {'en': defaultdict(&lt;function get_meta.&lt;locals&gt;.&lt;lambda&gt; at 0x7fd2aa849b90&gt;, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_3_bisection.png', 'title': 'Making use of Python: threshold finding with bisection', 'slug': 'elife-3-bisection', 'date': '2020-01-30 17:46', 'tags': 'model', 'category': 'article', 'updated': '2020-01-30 17:46', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'data': '', 'description': '', 'template': '', 'filters': '', 'password': ''})}) --&gt;
     &lt;div class="alert alert-primary notebook-header" role="alert"&gt;
     &lt;p&gt;
     This article is written as a &lt;a href="https://jupyter.org"&gt;Jupyter notebook&lt;/a&gt; which you can execute and modify interactively.
