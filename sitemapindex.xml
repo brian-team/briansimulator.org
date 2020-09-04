@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://briansimulator.org/categories/article.xml</loc>
-  <lastmod>2020-09-04T13:12:00Z</lastmod>
+  <lastmod>2020-09-04T14:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/categories/news.xml</loc>
@@ -15,11 +15,11 @@
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/rss.xml</loc>
-  <lastmod>2020-09-04T13:12:00Z</lastmod>
+  <lastmod>2020-09-04T14:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/sitemap.xml</loc>
-  <lastmod>2020-09-04T13:12:00Z</lastmod>
+  <lastmod>2020-09-04T14:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/brian2genn.xml</loc>
@@ -75,14 +75,10 @@
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/training.xml</loc>
-  <lastmod>2020-09-04T13:12:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://briansimulator.org/tags/tutorial.xml</loc>
-  <lastmod>2020-09-04T13:09:00Z</lastmod>
+  <lastmod>2020-09-04T14:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/video.xml</loc>
-  <lastmod>2020-09-04T13:12:00Z</lastmod>
+  <lastmod>2020-09-04T14:01:00Z</lastmod>
  </sitemap>
 </sitemapindex>
