@@ -52,6 +52,7 @@ To cite a specific version of Brian, you can refer to the identifiers stored on 
 <script type="text/javascript">
 let versions = {
     // Date, DOI
+    "2.4": ["Sep 4, 2020", "10.5281/zenodo.4015226"],
     "2.3": ["Dec 20, 2019", "10.5281/zenodo.3607592"],
     "2.2.2.1": ["Mar 29, 2019", "10.5281/zenodo.2619969"],
     "2.2": ["Oct 8, 2018", "10.5281/zenodo.1459786"],
