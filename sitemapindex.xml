@@ -11,15 +11,15 @@
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/categories/news.xml</loc>
-  <lastmod>2020-08-24T16:28:00Z</lastmod>
+  <lastmod>2020-09-07T09:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/rss.xml</loc>
-  <lastmod>2020-09-04T14:01:00Z</lastmod>
+  <lastmod>2020-09-07T09:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/sitemap.xml</loc>
-  <lastmod>2020-09-04T14:01:00Z</lastmod>
+  <lastmod>2020-09-07T09:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/brian2genn.xml</loc>
@@ -31,7 +31,7 @@
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/development.xml</loc>
-  <lastmod>2020-02-11T12:54:00Z</lastmod>
+  <lastmod>2020-09-07T09:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/gsoc.xml</loc>
@@ -59,7 +59,7 @@
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/release.xml</loc>
-  <lastmod>2020-02-11T12:54:00Z</lastmod>
+  <lastmod>2020-09-07T09:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/shared-memory.xml</loc>
