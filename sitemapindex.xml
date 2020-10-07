@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://briansimulator.org/categories/article.xml</loc>
-  <lastmod>2020-09-04T14:01:00Z</lastmod>
+  <lastmod>2020-10-07T08:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/categories/news.xml</loc>
@@ -15,11 +15,11 @@
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/rss.xml</loc>
-  <lastmod>2020-09-07T09:21:00Z</lastmod>
+  <lastmod>2020-10-07T08:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/sitemap.xml</loc>
-  <lastmod>2020-09-07T09:21:00Z</lastmod>
+  <lastmod>2020-10-07T08:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/brian2genn.xml</loc>
@@ -39,7 +39,7 @@
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/model.xml</loc>
-  <lastmod>2020-02-11T12:54:00Z</lastmod>
+  <lastmod>2020-10-07T08:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/multiprocessing.xml</loc>
@@ -47,7 +47,7 @@
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/notes.xml</loc>
-  <lastmod>2020-02-11T12:54:00Z</lastmod>
+  <lastmod>2020-10-07T08:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/numpy.xml</loc>
@@ -67,7 +67,7 @@
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/synapses.xml</loc>
-  <lastmod>2020-02-11T12:54:00Z</lastmod>
+  <lastmod>2020-10-07T08:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/teaching.xml</loc>
@@ -75,10 +75,10 @@
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/training.xml</loc>
-  <lastmod>2020-09-04T14:01:00Z</lastmod>
+  <lastmod>2020-10-07T08:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/video.xml</loc>
-  <lastmod>2020-09-04T14:01:00Z</lastmod>
+  <lastmod>2020-10-07T08:22:00Z</lastmod>
  </sitemap>
 </sitemapindex>
