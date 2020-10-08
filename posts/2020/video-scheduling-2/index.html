@@ -1,0 +1,3718 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting the timing right (scheduling 2) | The Brian spiking neural network simulator</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#333e63">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
+<link rel="canonical" href="https://briansimulator.org/posts/2020/video-scheduling-2/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-84065998-2', { 'anonymize_ip': true });
+</script><script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="../../../assets/css/custom.css">
+<!-- Global site tag (gtag.js) - Google Analytics --><meta name="author" content="Brian team">
+<link rel="prev" href="../brian-24/" title="New release: Brian 2.4" type="text/html">
+<meta property="og:site_name" content="The Brian spiking neural network simulator">
+<meta property="og:title" content="Getting the timing right (scheduling 2)">
+<meta property="og:url" content="https://briansimulator.org/posts/2020/video-scheduling-2/">
+<meta property="og:description" content='This article is written as a Jupyter notebook which you can execute and modify interactively.
+    You can either download it via the "Source" link on the top right, or run it directly in the browser o'>
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-10-08T09:00:00Z">
+<meta property="article:tag" content="training">
+<meta property="article:tag" content="video">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@briansimulator">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4 navbar-dark bg-blue"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="https://briansimulator.org/">
+            <img src="../../../logos/brian_logo_small.png" alt="The Brian spiking neural network simulator" id="logo" class="d-inline-block align-top"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../../install/" class="nav-link">Install</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Getting started</a>
+            <div class="dropdown-menu">
+                    <a href="https://mybinder.org/v2/gh/brian-team/brian2-binder/master?filepath=demo.ipynb" class="dropdown-item">Try in the browser</a>
+                    <a href="../../../getting-started" class="dropdown-item">Beginners guide</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/resources/tutorials/index.html" class="dropdown-item">Tutorials</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/examples/index.html" class="dropdown-item">Examples</a>
+                    <a href="https://brian2.readthedocs.io" class="dropdown-item">Documentation</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+            <div class="dropdown-menu">
+                    <a href="../../../blog" class="dropdown-item">All posts</a>
+                    <a href="../../../categories/news" class="dropdown-item">News</a>
+                    <a href="../../../categories/article" class="dropdown-item">Articles</a>
+                    <a href="../../../tags/" class="dropdown-item">Tags</a>
+                    <a href="../../../archive.html" class="dropdown-item">Archive</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu">
+                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum</a>
+                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="../../../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
+                    <a href="../../../ecosystem/" class="dropdown-item">Software ecosystem</a>
+                    <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
+                    <a href="../../../contribute" class="dropdown-item">How to contribute</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Material</a>
+            <div class="dropdown-menu">
+                    <a href="../../../publications/" class="dropdown-item">Our papers</a>
+                    <a href="../../../cite/" class="dropdown-item">How to cite us</a>
+                    <a href="https://github.com/brian-team/brian-material/tree/master/logos" class="dropdown-item">Download logos</a>
+                    <a href="https://github.com/brian-team/brian2" class="dropdown-item">GitHub repository</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../../team" class="nav-link">Team</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+<a href="../../../rss.xml" class="nav-link">RSS feed</a>
+
+                
+                
+                    
+    
+    </li>
+<li class="nav-item">
+    <a href="index.ipynb" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Getting the timing right (scheduling 2)</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Brian team
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2020-10-08T09:00:00Z" itemprop="datePublished" title="2020-10-08">2020-10-08</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="index.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f1474745320>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f14747bb950>, {'has_math': 'true', 'title': 'Getting the timing right (scheduling\xa02)', 'slug': 'video-scheduling-2', 'date': '2020-10-08 9:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-10-08 9:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'password': '', 'data': '', 'description': '', 'template': ''})}) -->
+    <div class="alert alert-primary notebook-header" role="alert">
+    <p>
+    This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
+    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    <a href="https://mybinder.org">mybinder</a> infrastructure: <a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Fscheduling_2.ipynb">
+    <img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"></a>
+    </p>
+    <p><strong>For more information, see our general <a href="../notes-notebooks/">Notes on Notebooks</a>.</strong></p>
+    </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="notebook-quickstart">
+<h4>Quickstart</h4>
+To run the code below:
+<ol>
+<li>Click on the cell to select it.</li>
+<li>Press <code>SHIFT+ENTER</code> on your keyboard or press the play button
+   (<button class="fa fa-play icon-play btn btn-xs btn-default"></button>) in the toolbar above</li>
+</ol>
+Feel free to create new cells using the plus button
+(<button class="fa fa-plus icon-plus btn btn-xs btn-default"></button>), or pressing <code>SHIFT+ENTER</code> while this cell
+is selected.
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>"Scheduling": mechanism to determine the order of operations during a simulation</p>
+<p>In this video we will look at its importance for:</p>
+<ul>
+<li>propagating synaptic activity</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can also watch the <a href="https://youtu.be/VwUqKwHtVJM"><i class="fab fa-youtube"></i>  screencast video on Youtube</a>.
+<!-- TEASER_END --></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="o">%</span><span class="k">matplotlib</span> notebook
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'figure.figsize'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># reduce figure size for this notebook</span>
+<span class="n">prefs</span><span class="o">.</span><span class="n">codegen</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="s1">'numpy'</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's say we have a neuron (<code>group</code> in the following code) that is following some dynamics given by its equations, inputs, etc. Now, we also want to make this neuron spike at a specific time (here, 10ms), e.g. to probe a spike-timing-dependent plasticity mechanism or to model some experimental stimulation.</p>
+<p>We could try this by using the approach in the code below: a <code>SpikeGeneratorGroup</code> spikes at the specified time and connects to the target neuron with a synapse that is strong enough to make the target neuron spike. Will this lead to a target neuron spiking at 10ms?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">inp</span> <span class="o">=</span> <span class="n">SpikeGeneratorGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">group</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'dv/dt = -v / (20*ms) : 1'</span><span class="p">,</span>
+                    <span class="n">threshold</span><span class="o">=</span><span class="s1">'v &gt; 1'</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">'v = 0'</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'exact'</span><span class="p">)</span>
+
+<span class="n">syn</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">'v_post += 2'</span><span class="p">)</span>
+<span class="n">syn</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+
+<span class="n">inp_mon</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
+<span class="n">group_mon</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">inp_mon</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">'o'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">group_mon</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">'o'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">yticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">yticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">'group'</span><span class="p">,</span> <span class="s1">'inp'</span><span class="p">],</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">'time (ms)'</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+
+<div id="64818b43-4dff-4741-9c46-eb4fc744a903"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#64818b43-4dff-4741-9c46-eb4fc744a903');
+/* Put everything inside the global mpl namespace */
+/* global mpl */
+window.mpl = {};
+
+mpl.get_websocket_type = function () {
+    if (typeof WebSocket !== 'undefined') {
+        return WebSocket;
+    } else if (typeof MozWebSocket !== 'undefined') {
+        return MozWebSocket;
+    } else {
+        alert(
+            'Your browser does not have WebSocket support. ' +
+                'Please try Chrome, Safari or Firefox ≥ 6. ' +
+                'Firefox 4 and 5 are also supported but you ' +
+                'have to enable WebSockets in about:config.'
+        );
+    }
+};
+
+mpl.figure = function (figure_id, websocket, ondownload, parent_element) {
+    this.id = figure_id;
+
+    this.ws = websocket;
+
+    this.supports_binary = this.ws.binaryType !== undefined;
+
+    if (!this.supports_binary) {
+        var warnings = document.getElementById('mpl-warnings');
+        if (warnings) {
+            warnings.style.display = 'block';
+            warnings.textContent =
+                'This browser does not support binary websocket messages. ' +
+                'Performance may be slow.';
+        }
+    }
+
+    this.imageObj = new Image();
+
+    this.context = undefined;
+    this.message = undefined;
+    this.canvas = undefined;
+    this.rubberband_canvas = undefined;
+    this.rubberband_context = undefined;
+    this.format_dropdown = undefined;
+
+    this.image_mode = 'full';
+
+    this.root = document.createElement('div');
+    this.root.setAttribute('style', 'display: inline-block');
+    this._root_extra_style(this.root);
+
+    parent_element.appendChild(this.root);
+
+    this._init_header(this);
+    this._init_canvas(this);
+    this._init_toolbar(this);
+
+    var fig = this;
+
+    this.waiting = false;
+
+    this.ws.onopen = function () {
+        fig.send_message('supports_binary', { value: fig.supports_binary });
+        fig.send_message('send_image_mode', {});
+        if (mpl.ratio !== 1) {
+            fig.send_message('set_dpi_ratio', { dpi_ratio: mpl.ratio });
+        }
+        fig.send_message('refresh', {});
+    };
+
+    this.imageObj.onload = function () {
+        if (fig.image_mode === 'full') {
+            // Full images could contain transparency (where diff images
+            // almost always do), so we need to clear the canvas so that
+            // there is no ghosting.
+            fig.context.clearRect(0, 0, fig.canvas.width, fig.canvas.height);
+        }
+        fig.context.drawImage(fig.imageObj, 0, 0);
+    };
+
+    this.imageObj.onunload = function () {
+        fig.ws.close();
+    };
+
+    this.ws.onmessage = this._make_on_message_function(this);
+
+    this.ondownload = ondownload;
+};
+
+mpl.figure.prototype._init_header = function () {
+    var titlebar = document.createElement('div');
+    titlebar.classList =
+        'ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix';
+    var titletext = document.createElement('div');
+    titletext.classList = 'ui-dialog-title';
+    titletext.setAttribute(
+        'style',
+        'width: 100%; text-align: center; padding: 3px;'
+    );
+    titlebar.appendChild(titletext);
+    this.root.appendChild(titlebar);
+    this.header = titletext;
+};
+
+mpl.figure.prototype._canvas_extra_style = function (_canvas_div) {};
+
+mpl.figure.prototype._root_extra_style = function (_canvas_div) {};
+
+mpl.figure.prototype._init_canvas = function () {
+    var fig = this;
+
+    var canvas_div = (this.canvas_div = document.createElement('div'));
+    canvas_div.setAttribute(
+        'style',
+        'border: 1px solid #ddd;' +
+            'box-sizing: content-box;' +
+            'clear: both;' +
+            'min-height: 1px;' +
+            'min-width: 1px;' +
+            'outline: 0;' +
+            'overflow: hidden;' +
+            'position: relative;' +
+            'resize: both;'
+    );
+
+    function on_keyboard_event_closure(name) {
+        return function (event) {
+            return fig.key_event(event, name);
+        };
+    }
+
+    canvas_div.addEventListener(
+        'keydown',
+        on_keyboard_event_closure('key_press')
+    );
+    canvas_div.addEventListener(
+        'keyup',
+        on_keyboard_event_closure('key_release')
+    );
+
+    this._canvas_extra_style(canvas_div);
+    this.root.appendChild(canvas_div);
+
+    var canvas = (this.canvas = document.createElement('canvas'));
+    canvas.classList.add('mpl-canvas');
+    canvas.setAttribute('style', 'box-sizing: content-box;');
+
+    this.context = canvas.getContext('2d');
+
+    var backingStore =
+        this.context.backingStorePixelRatio ||
+        this.context.webkitBackingStorePixelRatio ||
+        this.context.mozBackingStorePixelRatio ||
+        this.context.msBackingStorePixelRatio ||
+        this.context.oBackingStorePixelRatio ||
+        this.context.backingStorePixelRatio ||
+        1;
+
+    mpl.ratio = (window.devicePixelRatio || 1) / backingStore;
+
+    var rubberband_canvas = (this.rubberband_canvas = document.createElement(
+        'canvas'
+    ));
+    rubberband_canvas.setAttribute(
+        'style',
+        'box-sizing: content-box; position: absolute; left: 0; top: 0; z-index: 1;'
+    );
+
+    var resizeObserver = new ResizeObserver(function (entries) {
+        var nentries = entries.length;
+        for (var i = 0; i < nentries; i++) {
+            var entry = entries[i];
+            var width, height;
+            if (entry.contentBoxSize) {
+                if (entry.contentBoxSize instanceof Array) {
+                    // Chrome 84 implements new version of spec.
+                    width = entry.contentBoxSize[0].inlineSize;
+                    height = entry.contentBoxSize[0].blockSize;
+                } else {
+                    // Firefox implements old version of spec.
+                    width = entry.contentBoxSize.inlineSize;
+                    height = entry.contentBoxSize.blockSize;
+                }
+            } else {
+                // Chrome <84 implements even older version of spec.
+                width = entry.contentRect.width;
+                height = entry.contentRect.height;
+            }
+
+            // Keep the size of the canvas and rubber band canvas in sync with
+            // the canvas container.
+            if (entry.devicePixelContentBoxSize) {
+                // Chrome 84 implements new version of spec.
+                canvas.setAttribute(
+                    'width',
+                    entry.devicePixelContentBoxSize[0].inlineSize
+                );
+                canvas.setAttribute(
+                    'height',
+                    entry.devicePixelContentBoxSize[0].blockSize
+                );
+            } else {
+                canvas.setAttribute('width', width * mpl.ratio);
+                canvas.setAttribute('height', height * mpl.ratio);
+            }
+            canvas.setAttribute(
+                'style',
+                'width: ' + width + 'px; height: ' + height + 'px;'
+            );
+
+            rubberband_canvas.setAttribute('width', width);
+            rubberband_canvas.setAttribute('height', height);
+
+            // And update the size in Python. We ignore the initial 0/0 size
+            // that occurs as the element is placed into the DOM, which should
+            // otherwise not happen due to the minimum size styling.
+            if (width != 0 && height != 0) {
+                fig.request_resize(width, height);
+            }
+        }
+    });
+    resizeObserver.observe(canvas_div);
+
+    function on_mouse_event_closure(name) {
+        return function (event) {
+            return fig.mouse_event(event, name);
+        };
+    }
+
+    rubberband_canvas.addEventListener(
+        'mousedown',
+        on_mouse_event_closure('button_press')
+    );
+    rubberband_canvas.addEventListener(
+        'mouseup',
+        on_mouse_event_closure('button_release')
+    );
+    // Throttle sequential mouse events to 1 every 20ms.
+    rubberband_canvas.addEventListener(
+        'mousemove',
+        on_mouse_event_closure('motion_notify')
+    );
+
+    rubberband_canvas.addEventListener(
+        'mouseenter',
+        on_mouse_event_closure('figure_enter')
+    );
+    rubberband_canvas.addEventListener(
+        'mouseleave',
+        on_mouse_event_closure('figure_leave')
+    );
+
+    canvas_div.addEventListener('wheel', function (event) {
+        if (event.deltaY < 0) {
+            event.step = 1;
+        } else {
+            event.step = -1;
+        }
+        on_mouse_event_closure('scroll')(event);
+    });
+
+    canvas_div.appendChild(canvas);
+    canvas_div.appendChild(rubberband_canvas);
+
+    this.rubberband_context = rubberband_canvas.getContext('2d');
+    this.rubberband_context.strokeStyle = '#000000';
+
+    this._resize_canvas = function (width, height, forward) {
+        if (forward) {
+            canvas_div.style.width = width + 'px';
+            canvas_div.style.height = height + 'px';
+        }
+    };
+
+    // Disable right mouse context menu.
+    this.rubberband_canvas.addEventListener('contextmenu', function (_e) {
+        event.preventDefault();
+        return false;
+    });
+
+    function set_focus() {
+        canvas.focus();
+        canvas_div.focus();
+    }
+
+    window.setTimeout(set_focus, 100);
+};
+
+mpl.figure.prototype._init_toolbar = function () {
+    var fig = this;
+
+    var toolbar = document.createElement('div');
+    toolbar.classList = 'mpl-toolbar';
+    this.root.appendChild(toolbar);
+
+    function on_click_closure(name) {
+        return function (_event) {
+            return fig.toolbar_button_onclick(name);
+        };
+    }
+
+    function on_mouseover_closure(tooltip) {
+        return function (event) {
+            if (!event.currentTarget.disabled) {
+                return fig.toolbar_button_onmouseover(tooltip);
+            }
+        };
+    }
+
+    fig.buttons = {};
+    var buttonGroup = document.createElement('div');
+    buttonGroup.classList = 'mpl-button-group';
+    for (var toolbar_ind in mpl.toolbar_items) {
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) {
+            /* Instead of a spacer, we start a new button group. */
+            if (buttonGroup.hasChildNodes()) {
+                toolbar.appendChild(buttonGroup);
+            }
+            buttonGroup = document.createElement('div');
+            buttonGroup.classList = 'mpl-button-group';
+            continue;
+        }
+
+        var button = (fig.buttons[name] = document.createElement('button'));
+        button.classList = 'mpl-widget';
+        button.setAttribute('role', 'button');
+        button.setAttribute('aria-disabled', 'false');
+        button.addEventListener('click', on_click_closure(method_name));
+        button.addEventListener('mouseover', on_mouseover_closure(tooltip));
+
+        var icon_img = document.createElement('img');
+        icon_img.src = '_images/' + image + '.png';
+        icon_img.srcset = '_images/' + image + '_large.png 2x';
+        icon_img.alt = tooltip;
+        button.appendChild(icon_img);
+
+        buttonGroup.appendChild(button);
+    }
+
+    if (buttonGroup.hasChildNodes()) {
+        toolbar.appendChild(buttonGroup);
+    }
+
+    var fmt_picker = document.createElement('select');
+    fmt_picker.classList = 'mpl-widget';
+    toolbar.appendChild(fmt_picker);
+    this.format_dropdown = fmt_picker;
+
+    for (var ind in mpl.extensions) {
+        var fmt = mpl.extensions[ind];
+        var option = document.createElement('option');
+        option.selected = fmt === mpl.default_extension;
+        option.innerHTML = fmt;
+        fmt_picker.appendChild(option);
+    }
+
+    var status_bar = document.createElement('span');
+    status_bar.classList = 'mpl-message';
+    toolbar.appendChild(status_bar);
+    this.message = status_bar;
+};
+
+mpl.figure.prototype.request_resize = function (x_pixels, y_pixels) {
+    // Request matplotlib to resize the figure. Matplotlib will then trigger a resize in the client,
+    // which will in turn request a refresh of the image.
+    this.send_message('resize', { width: x_pixels, height: y_pixels });
+};
+
+mpl.figure.prototype.send_message = function (type, properties) {
+    properties['type'] = type;
+    properties['figure_id'] = this.id;
+    this.ws.send(JSON.stringify(properties));
+};
+
+mpl.figure.prototype.send_draw_message = function () {
+    if (!this.waiting) {
+        this.waiting = true;
+        this.ws.send(JSON.stringify({ type: 'draw', figure_id: this.id }));
+    }
+};
+
+mpl.figure.prototype.handle_save = function (fig, _msg) {
+    var format_dropdown = fig.format_dropdown;
+    var format = format_dropdown.options[format_dropdown.selectedIndex].value;
+    fig.ondownload(fig, format);
+};
+
+mpl.figure.prototype.handle_resize = function (fig, msg) {
+    var size = msg['size'];
+    if (size[0] !== fig.canvas.width || size[1] !== fig.canvas.height) {
+        fig._resize_canvas(size[0], size[1], msg['forward']);
+        fig.send_message('refresh', {});
+    }
+};
+
+mpl.figure.prototype.handle_rubberband = function (fig, msg) {
+    var x0 = msg['x0'] / mpl.ratio;
+    var y0 = (fig.canvas.height - msg['y0']) / mpl.ratio;
+    var x1 = msg['x1'] / mpl.ratio;
+    var y1 = (fig.canvas.height - msg['y1']) / mpl.ratio;
+    x0 = Math.floor(x0) + 0.5;
+    y0 = Math.floor(y0) + 0.5;
+    x1 = Math.floor(x1) + 0.5;
+    y1 = Math.floor(y1) + 0.5;
+    var min_x = Math.min(x0, x1);
+    var min_y = Math.min(y0, y1);
+    var width = Math.abs(x1 - x0);
+    var height = Math.abs(y1 - y0);
+
+    fig.rubberband_context.clearRect(
+        0,
+        0,
+        fig.canvas.width / mpl.ratio,
+        fig.canvas.height / mpl.ratio
+    );
+
+    fig.rubberband_context.strokeRect(min_x, min_y, width, height);
+};
+
+mpl.figure.prototype.handle_figure_label = function (fig, msg) {
+    // Updates the figure title.
+    fig.header.textContent = msg['label'];
+};
+
+mpl.figure.prototype.handle_cursor = function (fig, msg) {
+    var cursor = msg['cursor'];
+    switch (cursor) {
+        case 0:
+            cursor = 'pointer';
+            break;
+        case 1:
+            cursor = 'default';
+            break;
+        case 2:
+            cursor = 'crosshair';
+            break;
+        case 3:
+            cursor = 'move';
+            break;
+    }
+    fig.rubberband_canvas.style.cursor = cursor;
+};
+
+mpl.figure.prototype.handle_message = function (fig, msg) {
+    fig.message.textContent = msg['message'];
+};
+
+mpl.figure.prototype.handle_draw = function (fig, _msg) {
+    // Request the server to send over a new figure.
+    fig.send_draw_message();
+};
+
+mpl.figure.prototype.handle_image_mode = function (fig, msg) {
+    fig.image_mode = msg['mode'];
+};
+
+mpl.figure.prototype.handle_history_buttons = function (fig, msg) {
+    for (var key in msg) {
+        if (!(key in fig.buttons)) {
+            continue;
+        }
+        fig.buttons[key].disabled = !msg[key];
+        fig.buttons[key].setAttribute('aria-disabled', !msg[key]);
+    }
+};
+
+mpl.figure.prototype.handle_navigate_mode = function (fig, msg) {
+    if (msg['mode'] === 'PAN') {
+        fig.buttons['Pan'].classList.add('active');
+        fig.buttons['Zoom'].classList.remove('active');
+    } else if (msg['mode'] === 'ZOOM') {
+        fig.buttons['Pan'].classList.remove('active');
+        fig.buttons['Zoom'].classList.add('active');
+    } else {
+        fig.buttons['Pan'].classList.remove('active');
+        fig.buttons['Zoom'].classList.remove('active');
+    }
+};
+
+mpl.figure.prototype.updated_canvas_event = function () {
+    // Called whenever the canvas gets updated.
+    this.send_message('ack', {});
+};
+
+// A function to construct a web socket function for onmessage handling.
+// Called in the figure constructor.
+mpl.figure.prototype._make_on_message_function = function (fig) {
+    return function socket_on_message(evt) {
+        if (evt.data instanceof Blob) {
+            /* FIXME: We get "Resource interpreted as Image but
+             * transferred with MIME type text/plain:" errors on
+             * Chrome.  But how to set the MIME type?  It doesn't seem
+             * to be part of the websocket stream */
+            evt.data.type = 'image/png';
+
+            /* Free the memory for the previous frames */
+            if (fig.imageObj.src) {
+                (window.URL || window.webkitURL).revokeObjectURL(
+                    fig.imageObj.src
+                );
+            }
+
+            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
+                evt.data
+            );
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        } else if (
+            typeof evt.data === 'string' &&
+            evt.data.slice(0, 21) === 'data:image/png;base64'
+        ) {
+            fig.imageObj.src = evt.data;
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        }
+
+        var msg = JSON.parse(evt.data);
+        var msg_type = msg['type'];
+
+        // Call the  "handle_{type}" callback, which takes
+        // the figure and JSON message as its only arguments.
+        try {
+            var callback = fig['handle_' + msg_type];
+        } catch (e) {
+            console.log(
+                "No handler for the '" + msg_type + "' message type: ",
+                msg
+            );
+            return;
+        }
+
+        if (callback) {
+            try {
+                // console.log("Handling '" + msg_type + "' message: ", msg);
+                callback(fig, msg);
+            } catch (e) {
+                console.log(
+                    "Exception inside the 'handler_" + msg_type + "' callback:",
+                    e,
+                    e.stack,
+                    msg
+                );
+            }
+        }
+    };
+};
+
+// from http://stackoverflow.com/questions/1114465/getting-mouse-location-in-canvas
+mpl.findpos = function (e) {
+    //this section is from http://www.quirksmode.org/js/events_properties.html
+    var targ;
+    if (!e) {
+        e = window.event;
+    }
+    if (e.target) {
+        targ = e.target;
+    } else if (e.srcElement) {
+        targ = e.srcElement;
+    }
+    if (targ.nodeType === 3) {
+        // defeat Safari bug
+        targ = targ.parentNode;
+    }
+
+    // pageX,Y are the mouse positions relative to the document
+    var boundingRect = targ.getBoundingClientRect();
+    var x = e.pageX - (boundingRect.left + document.body.scrollLeft);
+    var y = e.pageY - (boundingRect.top + document.body.scrollTop);
+
+    return { x: x, y: y };
+};
+
+/*
+ * return a copy of an object with only non-object keys
+ * we need this to avoid circular references
+ * http://stackoverflow.com/a/24161582/3208463
+ */
+function simpleKeys(original) {
+    return Object.keys(original).reduce(function (obj, key) {
+        if (typeof original[key] !== 'object') {
+            obj[key] = original[key];
+        }
+        return obj;
+    }, {});
+}
+
+mpl.figure.prototype.mouse_event = function (event, name) {
+    var canvas_pos = mpl.findpos(event);
+
+    if (name === 'button_press') {
+        this.canvas.focus();
+        this.canvas_div.focus();
+    }
+
+    var x = canvas_pos.x * mpl.ratio;
+    var y = canvas_pos.y * mpl.ratio;
+
+    this.send_message(name, {
+        x: x,
+        y: y,
+        button: event.button,
+        step: event.step,
+        guiEvent: simpleKeys(event),
+    });
+
+    /* This prevents the web browser from automatically changing to
+     * the text insertion cursor when the button is pressed.  We want
+     * to control all of the cursor setting manually through the
+     * 'cursor' event from matplotlib */
+    event.preventDefault();
+    return false;
+};
+
+mpl.figure.prototype._key_event_extra = function (_event, _name) {
+    // Handle any extra behaviour associated with a key event
+};
+
+mpl.figure.prototype.key_event = function (event, name) {
+    // Prevent repeat events
+    if (name === 'key_press') {
+        if (event.which === this._key) {
+            return;
+        } else {
+            this._key = event.which;
+        }
+    }
+    if (name === 'key_release') {
+        this._key = null;
+    }
+
+    var value = '';
+    if (event.ctrlKey && event.which !== 17) {
+        value += 'ctrl+';
+    }
+    if (event.altKey && event.which !== 18) {
+        value += 'alt+';
+    }
+    if (event.shiftKey && event.which !== 16) {
+        value += 'shift+';
+    }
+
+    value += 'k';
+    value += event.which.toString();
+
+    this._key_event_extra(event, name);
+
+    this.send_message(name, { key: value, guiEvent: simpleKeys(event) });
+    return false;
+};
+
+mpl.figure.prototype.toolbar_button_onclick = function (name) {
+    if (name === 'download') {
+        this.handle_save(this, null);
+    } else {
+        this.send_message('toolbar_button', { name: name });
+    }
+};
+
+mpl.figure.prototype.toolbar_button_onmouseover = function (tooltip) {
+    this.message.textContent = tooltip;
+};
+mpl.toolbar_items = [["Home", "Reset original view", "fa fa-home icon-home", "home"], ["Back", "Back to previous view", "fa fa-arrow-left icon-arrow-left", "back"], ["Forward", "Forward to next view", "fa fa-arrow-right icon-arrow-right", "forward"], ["", "", "", ""], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "fa fa-arrows icon-move", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "fa fa-square-o icon-check-empty", "zoom"], ["", "", "", ""], ["Download", "Download plot", "fa fa-floppy-o icon-save", "download"]];
+
+mpl.extensions = ["eps", "jpeg", "pdf", "png", "ps", "raw", "svg", "tif"];
+
+mpl.default_extension = "png";/* global mpl */
+
+var comm_websocket_adapter = function (comm) {
+    // Create a "websocket"-like object which calls the given IPython comm
+    // object with the appropriate methods. Currently this is a non binary
+    // socket, so there is still some room for performance tuning.
+    var ws = {};
+
+    ws.close = function () {
+        comm.close();
+    };
+    ws.send = function (m) {
+        //console.log('sending', m);
+        comm.send(m);
+    };
+    // Register the callback with on_msg.
+    comm.on_msg(function (msg) {
+        //console.log('receiving', msg['content']['data'], msg);
+        // Pass the mpl event to the overridden (by mpl) onmessage function.
+        ws.onmessage(msg['content']['data']);
+    });
+    return ws;
+};
+
+mpl.mpl_figure_comm = function (comm, msg) {
+    // This is the function which gets called when the mpl process
+    // starts-up an IPython Comm through the "matplotlib" channel.
+
+    var id = msg.content.data.id;
+    // Get hold of the div created by the display call when the Comm
+    // socket was opened in Python.
+    var element = document.getElementById(id);
+    var ws_proxy = comm_websocket_adapter(comm);
+
+    function ondownload(figure, _format) {
+        window.open(figure.canvas.toDataURL());
+    }
+
+    var fig = new mpl.figure(id, ws_proxy, ondownload, element);
+
+    // Call onopen now - mpl needs it, as it is assuming we've passed it a real
+    // web socket which is closed, not our websocket->open comm proxy.
+    ws_proxy.onopen();
+
+    fig.parent_element = element;
+    fig.cell_info = mpl.find_output_cell("<div id='" + id + "'></div>");
+    if (!fig.cell_info) {
+        console.error('Failed to find cell for figure', id, fig);
+        return;
+    }
+};
+
+mpl.figure.prototype.handle_close = function (fig, msg) {
+    var width = fig.canvas.width / mpl.ratio;
+    fig.root.removeEventListener('remove', this._remove_fig_handler);
+
+    // Update the output cell to use the data from the current canvas.
+    fig.push_to_output();
+    var dataURL = fig.canvas.toDataURL();
+    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // the notebook keyboard shortcuts fail.
+    IPython.keyboard_manager.enable();
+    fig.parent_element.innerHTML =
+        '<img src="' + dataURL + '" width="' + width + '">';
+    fig.close_ws(fig, msg);
+};
+
+mpl.figure.prototype.close_ws = function (fig, msg) {
+    fig.send_message('closing', msg);
+    // fig.ws.close()
+};
+
+mpl.figure.prototype.push_to_output = function (_remove_interactive) {
+    // Turn the data on the canvas into data in the output cell.
+    var width = this.canvas.width / mpl.ratio;
+    var dataURL = this.canvas.toDataURL();
+    this.cell_info[1]['text/html'] =
+        '<img src="' + dataURL + '" width="' + width + '">';
+};
+
+mpl.figure.prototype.updated_canvas_event = function () {
+    // Tell IPython that the notebook contents must change.
+    IPython.notebook.set_dirty(true);
+    this.send_message('ack', {});
+    var fig = this;
+    // Wait a second, then push the new image to the DOM so
+    // that it is saved nicely (might be nice to debounce this).
+    setTimeout(function () {
+        fig.push_to_output();
+    }, 1000);
+};
+
+mpl.figure.prototype._init_toolbar = function () {
+    var fig = this;
+
+    var toolbar = document.createElement('div');
+    toolbar.classList = 'btn-toolbar';
+    this.root.appendChild(toolbar);
+
+    function on_click_closure(name) {
+        return function (_event) {
+            return fig.toolbar_button_onclick(name);
+        };
+    }
+
+    function on_mouseover_closure(tooltip) {
+        return function (event) {
+            if (!event.currentTarget.disabled) {
+                return fig.toolbar_button_onmouseover(tooltip);
+            }
+        };
+    }
+
+    fig.buttons = {};
+    var buttonGroup = document.createElement('div');
+    buttonGroup.classList = 'btn-group';
+    var button;
+    for (var toolbar_ind in mpl.toolbar_items) {
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) {
+            /* Instead of a spacer, we start a new button group. */
+            if (buttonGroup.hasChildNodes()) {
+                toolbar.appendChild(buttonGroup);
+            }
+            buttonGroup = document.createElement('div');
+            buttonGroup.classList = 'btn-group';
+            continue;
+        }
+
+        button = fig.buttons[name] = document.createElement('button');
+        button.classList = 'btn btn-default';
+        button.href = '#';
+        button.title = name;
+        button.innerHTML = '<i class="fa ' + image + ' fa-lg"></i>';
+        button.addEventListener('click', on_click_closure(method_name));
+        button.addEventListener('mouseover', on_mouseover_closure(tooltip));
+        buttonGroup.appendChild(button);
+    }
+
+    if (buttonGroup.hasChildNodes()) {
+        toolbar.appendChild(buttonGroup);
+    }
+
+    // Add the status bar.
+    var status_bar = document.createElement('span');
+    status_bar.classList = 'mpl-message pull-right';
+    toolbar.appendChild(status_bar);
+    this.message = status_bar;
+
+    // Add the close button to the window.
+    var buttongrp = document.createElement('div');
+    buttongrp.classList = 'btn-group inline pull-right';
+    button = document.createElement('button');
+    button.classList = 'btn btn-mini btn-primary';
+    button.href = '#';
+    button.title = 'Stop Interaction';
+    button.innerHTML = '<i class="fa fa-power-off icon-remove icon-large"></i>';
+    button.addEventListener('click', function (_evt) {
+        fig.handle_close(fig, {});
+    });
+    button.addEventListener(
+        'mouseover',
+        on_mouseover_closure('Stop Interaction')
+    );
+    buttongrp.appendChild(button);
+    var titlebar = this.root.querySelector('.ui-dialog-titlebar');
+    titlebar.insertBefore(buttongrp, titlebar.firstChild);
+};
+
+mpl.figure.prototype._remove_fig_handler = function () {
+    this.close_ws(this, {});
+};
+
+mpl.figure.prototype._root_extra_style = function (el) {
+    el.style.boxSizing = 'content-box'; // override notebook setting of border-box.
+    el.addEventListener('remove', this._remove_fig_handler);
+};
+
+mpl.figure.prototype._canvas_extra_style = function (el) {
+    // this is important to make the div 'focusable
+    el.setAttribute('tabindex', 0);
+    // reach out to IPython and tell the keyboard manager to turn it's self
+    // off when our div gets focus
+
+    // location in version 3
+    if (IPython.notebook.keyboard_manager) {
+        IPython.notebook.keyboard_manager.register_events(el);
+    } else {
+        // location in version 2
+        IPython.keyboard_manager.register_events(el);
+    }
+};
+
+mpl.figure.prototype._key_event_extra = function (event, _name) {
+    var manager = IPython.notebook.keyboard_manager;
+    if (!manager) {
+        manager = IPython.keyboard_manager;
+    }
+
+    // Check for shift+enter
+    if (event.shiftKey && event.which === 13) {
+        this.canvas_div.blur();
+        // select the cell after this one
+        var index = IPython.notebook.find_cell_index(this.cell_info[0]);
+        IPython.notebook.select(index + 1);
+    }
+};
+
+mpl.figure.prototype.handle_save = function (fig, _msg) {
+    fig.ondownload(fig, null);
+};
+
+mpl.find_output_cell = function (html_output) {
+    // Return the cell and output element which can be found *uniquely* in the notebook.
+    // Note - this is a bit hacky, but it is done because the "notebook_saving.Notebook"
+    // IPython event is triggered only after the cells have been serialised, which for
+    // our purposes (turning an active figure into a static one), is too late.
+    var cells = IPython.notebook.get_cells();
+    var ncells = cells.length;
+    for (var i = 0; i < ncells; i++) {
+        var cell = cells[i];
+        if (cell.cell_type === 'code') {
+            for (var j = 0; j < cell.output_area.outputs.length; j++) {
+                var data = cell.output_area.outputs[j];
+                if (data.data) {
+                    // IPython >= 3 moved mimebundle to data attribute of output
+                    data = data.data;
+                }
+                if (data['text/html'] === html_output) {
+                    return [cell, data, j];
+                }
+            }
+        }
+    }
+};
+
+// Register the function which deals with the matplotlib target/channel.
+// The kernel may be null if the page has been refreshed.
+if (IPython.notebook.kernel !== null) {
+    IPython.notebook.kernel.comm_manager.register_target(
+        'matplotlib',
+        mpl.mpl_figure_comm
+    );
+}
+
+</script>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAEsCAYAAADtt+XCAAAVGElEQVR4nO3dXWzV9R3H8T+W0yJtaWSzAVd6cAlCmVHHiEqy2GTZxEU3mVvmE+NhY2bObfTCTRcuOibUMjfcxXDqtuCM0CWUotHghSDDBLIxoYQyOi2z6hFNJttOq9na9OGzC9dDT9tTyr/n4fv99/1K/jG0h7a/0+Tzpue0NhAAACEEhf4AAAA+ERAAQCgEBAAQCgEBAIRCQAAAoRAQAEAoBAQAEAoBAQCEQkAAAKEQEABAKAQEABAKAQEAhEJAAAChEBAAQCgEBAAQCgEBAIRCQAAAoRAQAEAoBAQAEAoBAQCEQkAAAKEQEABAKAQEABAKAQEAhEJAAAChEBAAQCgEBAAQCgEBAIRCQAAAoRAQAEAoBAQAEAoBAQCEQkAAAKEQEABAKJEIyMDAgBKJhJLJpLq6uri4uLjcX8lkUolEQgMDA4We2IwiEZBEIqEgCLi4uLgidyUSiUJPbEaRCEgymUzd0YX+VwMXFxdXNq6hfxgnk8lCT2xGkQhIV1eXgiBQV1dXoT8UAMgKD7tGQADAIA+7RkAAwCAPu5b1gNTW1mr9+vXZfrPj8nBHA8CF8LBrWQ/IP//5T3V3d2f7zY4rzB3dPzCow6fP6tnWd3T49Fn1Dwzm8CMEgAszJQNSCBd6R7/Y9q6ub9in+AMvpK7rG/bpxbZ3c/yRAsDETMmADH8IKx6Pa/PmzVq7dq3Kyso0b948PfHEE6nbdnZ2KggCNTU1admyZSopKdHixYt14MCBC3qfF3JHv9j2ruYPC8fQNf//FxEBYAEBicc1e/Zsbdu2TR0dHXr44Yd10UUXqb29XdK5gFRVVam5uVmnTp3SunXrVF5errNnz074fU70ju4fGBz1lcfIiFzfsI+HswAUHAGJx7Vy5crU6wYHB1VZWalf//rXks4FpLGxMXWbvr4+VVVVacuWLRnfR09Pz5g/cHO+O/rw6bMZ4zH8Onx64vECgFwgIPG4fvazn6W9/qqrrtLGjRslnQvIwYMH026zYsUKrVmzJuP7qK+vH/NH/s93Rz/b+s6EAvJs6zthjg4AWUNA4nE9+uijaa+/+uqrVV9fL2n8gKxduzbj++ArEABRR0AmGJDhD1f19fVp3rx54z6ENdKFPgcy1pPoPAcCwBICMsGAVFdXq6WlRe3t7brnnntUVlam999/f8LvM8x3YY2MCN+FBcASAjLBgOzcuVPXXXediouLVVNTo/3791/Q++TnQABEzZQMyIUYCkhra+uk3g4/iQ4gagjIeRQyIABgmYddIyAAYJCHXZuS/y8sALDOw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAyJWBfumNV6QTuz7670D/hP+qh10LHZDe3t5sfhyT4uGOBjDF/PU56ReLpPpZ565fLPro5RPgYddSAenu7tZdd92lmTNnas6cOdq6datqa2u1fv16SVI8HtdDDz2k1atXa9asWVq1apUkqbm5WYsXL1ZxcbHi8bh+/vOfp7+DINCePXvSXlZRUaHt27dLkjo7OxUEgZqamrRs2TKVlJRo8eLFOnDgwIQP4eGOBjCF/PU5qb4iPR71s/7/sooJRcTDrqUCsm7dOsXjce3bt09tbW36yle+ovLy8rSAzJo1S4888og6OjrU0dGhV199VRdddJF++tOf6rXXXtP27dt18cUXp+IgTTwgVVVVam5u1qlTp7Ru3TqVl5fr7NmzEzqEhzsawBQx0D/6K4+REflFzXkfzvKwa4H00VcfsVhM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" width="400">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As we can see in the above plot, the target neuron spikes one time step (i.e., by default 0.1ms) later than what we intended. The reason for this is the scheduling of the operations:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">magic_network</span><span class="o">.</span><span class="n">schedule</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['start', 'groups', 'thresholds', 'synapses', 'resets', 'end']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>At the 10ms time step, the <code>SpikeGeneratorGroup</code> will generate a spike in the <code>thresholds</code> slot, which then gets propagated to the target neuron in the <code>synapses</code> slot. This, however, basically ends the time step, the target neuron will only spike in the following time step when our schedule reaches the <code>thresholds</code> slot again.</p>
+<p>To fix this, we might consider to change the order of operations in the schedule. We can do this easily by assigning to the <code>schedule</code> attribute:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we swap synapses and thresholds</span>
+<span class="n">magic_network</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'start'</span><span class="p">,</span> <span class="s1">'groups'</span><span class="p">,</span> <span class="s1">'synapses'</span><span class="p">,</span> <span class="s1">'thresholds'</span><span class="p">,</span> <span class="s1">'resets'</span><span class="p">,</span> <span class="s1">'end'</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Does this fix our issue? Let's run the simulation again:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">inp</span> <span class="o">=</span> <span class="n">SpikeGeneratorGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">group</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'dv/dt = -v / (20*ms) : 1'</span><span class="p">,</span>
+                    <span class="n">threshold</span><span class="o">=</span><span class="s1">'v &gt; 1'</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">'v = 0'</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'exact'</span><span class="p">)</span>
+
+<span class="n">syn</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">'v_post += 2'</span><span class="p">)</span>
+<span class="n">syn</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+
+<span class="n">inp_mon</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
+<span class="n">group_mon</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">inp_mon</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">'o'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">group_mon</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">'o'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">yticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">yticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">'group'</span><span class="p">,</span> <span class="s1">'inp'</span><span class="p">],</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">'time (ms)'</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+
+<div id="260f12a1-0a4d-4b3e-a3f4-f768b5f9b7b1"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#260f12a1-0a4d-4b3e-a3f4-f768b5f9b7b1');
+/* Put everything inside the global mpl namespace */
+/* global mpl */
+window.mpl = {};
+
+mpl.get_websocket_type = function () {
+    if (typeof WebSocket !== 'undefined') {
+        return WebSocket;
+    } else if (typeof MozWebSocket !== 'undefined') {
+        return MozWebSocket;
+    } else {
+        alert(
+            'Your browser does not have WebSocket support. ' +
+                'Please try Chrome, Safari or Firefox ≥ 6. ' +
+                'Firefox 4 and 5 are also supported but you ' +
+                'have to enable WebSockets in about:config.'
+        );
+    }
+};
+
+mpl.figure = function (figure_id, websocket, ondownload, parent_element) {
+    this.id = figure_id;
+
+    this.ws = websocket;
+
+    this.supports_binary = this.ws.binaryType !== undefined;
+
+    if (!this.supports_binary) {
+        var warnings = document.getElementById('mpl-warnings');
+        if (warnings) {
+            warnings.style.display = 'block';
+            warnings.textContent =
+                'This browser does not support binary websocket messages. ' +
+                'Performance may be slow.';
+        }
+    }
+
+    this.imageObj = new Image();
+
+    this.context = undefined;
+    this.message = undefined;
+    this.canvas = undefined;
+    this.rubberband_canvas = undefined;
+    this.rubberband_context = undefined;
+    this.format_dropdown = undefined;
+
+    this.image_mode = 'full';
+
+    this.root = document.createElement('div');
+    this.root.setAttribute('style', 'display: inline-block');
+    this._root_extra_style(this.root);
+
+    parent_element.appendChild(this.root);
+
+    this._init_header(this);
+    this._init_canvas(this);
+    this._init_toolbar(this);
+
+    var fig = this;
+
+    this.waiting = false;
+
+    this.ws.onopen = function () {
+        fig.send_message('supports_binary', { value: fig.supports_binary });
+        fig.send_message('send_image_mode', {});
+        if (mpl.ratio !== 1) {
+            fig.send_message('set_dpi_ratio', { dpi_ratio: mpl.ratio });
+        }
+        fig.send_message('refresh', {});
+    };
+
+    this.imageObj.onload = function () {
+        if (fig.image_mode === 'full') {
+            // Full images could contain transparency (where diff images
+            // almost always do), so we need to clear the canvas so that
+            // there is no ghosting.
+            fig.context.clearRect(0, 0, fig.canvas.width, fig.canvas.height);
+        }
+        fig.context.drawImage(fig.imageObj, 0, 0);
+    };
+
+    this.imageObj.onunload = function () {
+        fig.ws.close();
+    };
+
+    this.ws.onmessage = this._make_on_message_function(this);
+
+    this.ondownload = ondownload;
+};
+
+mpl.figure.prototype._init_header = function () {
+    var titlebar = document.createElement('div');
+    titlebar.classList =
+        'ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix';
+    var titletext = document.createElement('div');
+    titletext.classList = 'ui-dialog-title';
+    titletext.setAttribute(
+        'style',
+        'width: 100%; text-align: center; padding: 3px;'
+    );
+    titlebar.appendChild(titletext);
+    this.root.appendChild(titlebar);
+    this.header = titletext;
+};
+
+mpl.figure.prototype._canvas_extra_style = function (_canvas_div) {};
+
+mpl.figure.prototype._root_extra_style = function (_canvas_div) {};
+
+mpl.figure.prototype._init_canvas = function () {
+    var fig = this;
+
+    var canvas_div = (this.canvas_div = document.createElement('div'));
+    canvas_div.setAttribute(
+        'style',
+        'border: 1px solid #ddd;' +
+            'box-sizing: content-box;' +
+            'clear: both;' +
+            'min-height: 1px;' +
+            'min-width: 1px;' +
+            'outline: 0;' +
+            'overflow: hidden;' +
+            'position: relative;' +
+            'resize: both;'
+    );
+
+    function on_keyboard_event_closure(name) {
+        return function (event) {
+            return fig.key_event(event, name);
+        };
+    }
+
+    canvas_div.addEventListener(
+        'keydown',
+        on_keyboard_event_closure('key_press')
+    );
+    canvas_div.addEventListener(
+        'keyup',
+        on_keyboard_event_closure('key_release')
+    );
+
+    this._canvas_extra_style(canvas_div);
+    this.root.appendChild(canvas_div);
+
+    var canvas = (this.canvas = document.createElement('canvas'));
+    canvas.classList.add('mpl-canvas');
+    canvas.setAttribute('style', 'box-sizing: content-box;');
+
+    this.context = canvas.getContext('2d');
+
+    var backingStore =
+        this.context.backingStorePixelRatio ||
+        this.context.webkitBackingStorePixelRatio ||
+        this.context.mozBackingStorePixelRatio ||
+        this.context.msBackingStorePixelRatio ||
+        this.context.oBackingStorePixelRatio ||
+        this.context.backingStorePixelRatio ||
+        1;
+
+    mpl.ratio = (window.devicePixelRatio || 1) / backingStore;
+
+    var rubberband_canvas = (this.rubberband_canvas = document.createElement(
+        'canvas'
+    ));
+    rubberband_canvas.setAttribute(
+        'style',
+        'box-sizing: content-box; position: absolute; left: 0; top: 0; z-index: 1;'
+    );
+
+    var resizeObserver = new ResizeObserver(function (entries) {
+        var nentries = entries.length;
+        for (var i = 0; i < nentries; i++) {
+            var entry = entries[i];
+            var width, height;
+            if (entry.contentBoxSize) {
+                if (entry.contentBoxSize instanceof Array) {
+                    // Chrome 84 implements new version of spec.
+                    width = entry.contentBoxSize[0].inlineSize;
+                    height = entry.contentBoxSize[0].blockSize;
+                } else {
+                    // Firefox implements old version of spec.
+                    width = entry.contentBoxSize.inlineSize;
+                    height = entry.contentBoxSize.blockSize;
+                }
+            } else {
+                // Chrome <84 implements even older version of spec.
+                width = entry.contentRect.width;
+                height = entry.contentRect.height;
+            }
+
+            // Keep the size of the canvas and rubber band canvas in sync with
+            // the canvas container.
+            if (entry.devicePixelContentBoxSize) {
+                // Chrome 84 implements new version of spec.
+                canvas.setAttribute(
+                    'width',
+                    entry.devicePixelContentBoxSize[0].inlineSize
+                );
+                canvas.setAttribute(
+                    'height',
+                    entry.devicePixelContentBoxSize[0].blockSize
+                );
+            } else {
+                canvas.setAttribute('width', width * mpl.ratio);
+                canvas.setAttribute('height', height * mpl.ratio);
+            }
+            canvas.setAttribute(
+                'style',
+                'width: ' + width + 'px; height: ' + height + 'px;'
+            );
+
+            rubberband_canvas.setAttribute('width', width);
+            rubberband_canvas.setAttribute('height', height);
+
+            // And update the size in Python. We ignore the initial 0/0 size
+            // that occurs as the element is placed into the DOM, which should
+            // otherwise not happen due to the minimum size styling.
+            if (width != 0 && height != 0) {
+                fig.request_resize(width, height);
+            }
+        }
+    });
+    resizeObserver.observe(canvas_div);
+
+    function on_mouse_event_closure(name) {
+        return function (event) {
+            return fig.mouse_event(event, name);
+        };
+    }
+
+    rubberband_canvas.addEventListener(
+        'mousedown',
+        on_mouse_event_closure('button_press')
+    );
+    rubberband_canvas.addEventListener(
+        'mouseup',
+        on_mouse_event_closure('button_release')
+    );
+    // Throttle sequential mouse events to 1 every 20ms.
+    rubberband_canvas.addEventListener(
+        'mousemove',
+        on_mouse_event_closure('motion_notify')
+    );
+
+    rubberband_canvas.addEventListener(
+        'mouseenter',
+        on_mouse_event_closure('figure_enter')
+    );
+    rubberband_canvas.addEventListener(
+        'mouseleave',
+        on_mouse_event_closure('figure_leave')
+    );
+
+    canvas_div.addEventListener('wheel', function (event) {
+        if (event.deltaY < 0) {
+            event.step = 1;
+        } else {
+            event.step = -1;
+        }
+        on_mouse_event_closure('scroll')(event);
+    });
+
+    canvas_div.appendChild(canvas);
+    canvas_div.appendChild(rubberband_canvas);
+
+    this.rubberband_context = rubberband_canvas.getContext('2d');
+    this.rubberband_context.strokeStyle = '#000000';
+
+    this._resize_canvas = function (width, height, forward) {
+        if (forward) {
+            canvas_div.style.width = width + 'px';
+            canvas_div.style.height = height + 'px';
+        }
+    };
+
+    // Disable right mouse context menu.
+    this.rubberband_canvas.addEventListener('contextmenu', function (_e) {
+        event.preventDefault();
+        return false;
+    });
+
+    function set_focus() {
+        canvas.focus();
+        canvas_div.focus();
+    }
+
+    window.setTimeout(set_focus, 100);
+};
+
+mpl.figure.prototype._init_toolbar = function () {
+    var fig = this;
+
+    var toolbar = document.createElement('div');
+    toolbar.classList = 'mpl-toolbar';
+    this.root.appendChild(toolbar);
+
+    function on_click_closure(name) {
+        return function (_event) {
+            return fig.toolbar_button_onclick(name);
+        };
+    }
+
+    function on_mouseover_closure(tooltip) {
+        return function (event) {
+            if (!event.currentTarget.disabled) {
+                return fig.toolbar_button_onmouseover(tooltip);
+            }
+        };
+    }
+
+    fig.buttons = {};
+    var buttonGroup = document.createElement('div');
+    buttonGroup.classList = 'mpl-button-group';
+    for (var toolbar_ind in mpl.toolbar_items) {
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) {
+            /* Instead of a spacer, we start a new button group. */
+            if (buttonGroup.hasChildNodes()) {
+                toolbar.appendChild(buttonGroup);
+            }
+            buttonGroup = document.createElement('div');
+            buttonGroup.classList = 'mpl-button-group';
+            continue;
+        }
+
+        var button = (fig.buttons[name] = document.createElement('button'));
+        button.classList = 'mpl-widget';
+        button.setAttribute('role', 'button');
+        button.setAttribute('aria-disabled', 'false');
+        button.addEventListener('click', on_click_closure(method_name));
+        button.addEventListener('mouseover', on_mouseover_closure(tooltip));
+
+        var icon_img = document.createElement('img');
+        icon_img.src = '_images/' + image + '.png';
+        icon_img.srcset = '_images/' + image + '_large.png 2x';
+        icon_img.alt = tooltip;
+        button.appendChild(icon_img);
+
+        buttonGroup.appendChild(button);
+    }
+
+    if (buttonGroup.hasChildNodes()) {
+        toolbar.appendChild(buttonGroup);
+    }
+
+    var fmt_picker = document.createElement('select');
+    fmt_picker.classList = 'mpl-widget';
+    toolbar.appendChild(fmt_picker);
+    this.format_dropdown = fmt_picker;
+
+    for (var ind in mpl.extensions) {
+        var fmt = mpl.extensions[ind];
+        var option = document.createElement('option');
+        option.selected = fmt === mpl.default_extension;
+        option.innerHTML = fmt;
+        fmt_picker.appendChild(option);
+    }
+
+    var status_bar = document.createElement('span');
+    status_bar.classList = 'mpl-message';
+    toolbar.appendChild(status_bar);
+    this.message = status_bar;
+};
+
+mpl.figure.prototype.request_resize = function (x_pixels, y_pixels) {
+    // Request matplotlib to resize the figure. Matplotlib will then trigger a resize in the client,
+    // which will in turn request a refresh of the image.
+    this.send_message('resize', { width: x_pixels, height: y_pixels });
+};
+
+mpl.figure.prototype.send_message = function (type, properties) {
+    properties['type'] = type;
+    properties['figure_id'] = this.id;
+    this.ws.send(JSON.stringify(properties));
+};
+
+mpl.figure.prototype.send_draw_message = function () {
+    if (!this.waiting) {
+        this.waiting = true;
+        this.ws.send(JSON.stringify({ type: 'draw', figure_id: this.id }));
+    }
+};
+
+mpl.figure.prototype.handle_save = function (fig, _msg) {
+    var format_dropdown = fig.format_dropdown;
+    var format = format_dropdown.options[format_dropdown.selectedIndex].value;
+    fig.ondownload(fig, format);
+};
+
+mpl.figure.prototype.handle_resize = function (fig, msg) {
+    var size = msg['size'];
+    if (size[0] !== fig.canvas.width || size[1] !== fig.canvas.height) {
+        fig._resize_canvas(size[0], size[1], msg['forward']);
+        fig.send_message('refresh', {});
+    }
+};
+
+mpl.figure.prototype.handle_rubberband = function (fig, msg) {
+    var x0 = msg['x0'] / mpl.ratio;
+    var y0 = (fig.canvas.height - msg['y0']) / mpl.ratio;
+    var x1 = msg['x1'] / mpl.ratio;
+    var y1 = (fig.canvas.height - msg['y1']) / mpl.ratio;
+    x0 = Math.floor(x0) + 0.5;
+    y0 = Math.floor(y0) + 0.5;
+    x1 = Math.floor(x1) + 0.5;
+    y1 = Math.floor(y1) + 0.5;
+    var min_x = Math.min(x0, x1);
+    var min_y = Math.min(y0, y1);
+    var width = Math.abs(x1 - x0);
+    var height = Math.abs(y1 - y0);
+
+    fig.rubberband_context.clearRect(
+        0,
+        0,
+        fig.canvas.width / mpl.ratio,
+        fig.canvas.height / mpl.ratio
+    );
+
+    fig.rubberband_context.strokeRect(min_x, min_y, width, height);
+};
+
+mpl.figure.prototype.handle_figure_label = function (fig, msg) {
+    // Updates the figure title.
+    fig.header.textContent = msg['label'];
+};
+
+mpl.figure.prototype.handle_cursor = function (fig, msg) {
+    var cursor = msg['cursor'];
+    switch (cursor) {
+        case 0:
+            cursor = 'pointer';
+            break;
+        case 1:
+            cursor = 'default';
+            break;
+        case 2:
+            cursor = 'crosshair';
+            break;
+        case 3:
+            cursor = 'move';
+            break;
+    }
+    fig.rubberband_canvas.style.cursor = cursor;
+};
+
+mpl.figure.prototype.handle_message = function (fig, msg) {
+    fig.message.textContent = msg['message'];
+};
+
+mpl.figure.prototype.handle_draw = function (fig, _msg) {
+    // Request the server to send over a new figure.
+    fig.send_draw_message();
+};
+
+mpl.figure.prototype.handle_image_mode = function (fig, msg) {
+    fig.image_mode = msg['mode'];
+};
+
+mpl.figure.prototype.handle_history_buttons = function (fig, msg) {
+    for (var key in msg) {
+        if (!(key in fig.buttons)) {
+            continue;
+        }
+        fig.buttons[key].disabled = !msg[key];
+        fig.buttons[key].setAttribute('aria-disabled', !msg[key]);
+    }
+};
+
+mpl.figure.prototype.handle_navigate_mode = function (fig, msg) {
+    if (msg['mode'] === 'PAN') {
+        fig.buttons['Pan'].classList.add('active');
+        fig.buttons['Zoom'].classList.remove('active');
+    } else if (msg['mode'] === 'ZOOM') {
+        fig.buttons['Pan'].classList.remove('active');
+        fig.buttons['Zoom'].classList.add('active');
+    } else {
+        fig.buttons['Pan'].classList.remove('active');
+        fig.buttons['Zoom'].classList.remove('active');
+    }
+};
+
+mpl.figure.prototype.updated_canvas_event = function () {
+    // Called whenever the canvas gets updated.
+    this.send_message('ack', {});
+};
+
+// A function to construct a web socket function for onmessage handling.
+// Called in the figure constructor.
+mpl.figure.prototype._make_on_message_function = function (fig) {
+    return function socket_on_message(evt) {
+        if (evt.data instanceof Blob) {
+            /* FIXME: We get "Resource interpreted as Image but
+             * transferred with MIME type text/plain:" errors on
+             * Chrome.  But how to set the MIME type?  It doesn't seem
+             * to be part of the websocket stream */
+            evt.data.type = 'image/png';
+
+            /* Free the memory for the previous frames */
+            if (fig.imageObj.src) {
+                (window.URL || window.webkitURL).revokeObjectURL(
+                    fig.imageObj.src
+                );
+            }
+
+            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
+                evt.data
+            );
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        } else if (
+            typeof evt.data === 'string' &&
+            evt.data.slice(0, 21) === 'data:image/png;base64'
+        ) {
+            fig.imageObj.src = evt.data;
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        }
+
+        var msg = JSON.parse(evt.data);
+        var msg_type = msg['type'];
+
+        // Call the  "handle_{type}" callback, which takes
+        // the figure and JSON message as its only arguments.
+        try {
+            var callback = fig['handle_' + msg_type];
+        } catch (e) {
+            console.log(
+                "No handler for the '" + msg_type + "' message type: ",
+                msg
+            );
+            return;
+        }
+
+        if (callback) {
+            try {
+                // console.log("Handling '" + msg_type + "' message: ", msg);
+                callback(fig, msg);
+            } catch (e) {
+                console.log(
+                    "Exception inside the 'handler_" + msg_type + "' callback:",
+                    e,
+                    e.stack,
+                    msg
+                );
+            }
+        }
+    };
+};
+
+// from http://stackoverflow.com/questions/1114465/getting-mouse-location-in-canvas
+mpl.findpos = function (e) {
+    //this section is from http://www.quirksmode.org/js/events_properties.html
+    var targ;
+    if (!e) {
+        e = window.event;
+    }
+    if (e.target) {
+        targ = e.target;
+    } else if (e.srcElement) {
+        targ = e.srcElement;
+    }
+    if (targ.nodeType === 3) {
+        // defeat Safari bug
+        targ = targ.parentNode;
+    }
+
+    // pageX,Y are the mouse positions relative to the document
+    var boundingRect = targ.getBoundingClientRect();
+    var x = e.pageX - (boundingRect.left + document.body.scrollLeft);
+    var y = e.pageY - (boundingRect.top + document.body.scrollTop);
+
+    return { x: x, y: y };
+};
+
+/*
+ * return a copy of an object with only non-object keys
+ * we need this to avoid circular references
+ * http://stackoverflow.com/a/24161582/3208463
+ */
+function simpleKeys(original) {
+    return Object.keys(original).reduce(function (obj, key) {
+        if (typeof original[key] !== 'object') {
+            obj[key] = original[key];
+        }
+        return obj;
+    }, {});
+}
+
+mpl.figure.prototype.mouse_event = function (event, name) {
+    var canvas_pos = mpl.findpos(event);
+
+    if (name === 'button_press') {
+        this.canvas.focus();
+        this.canvas_div.focus();
+    }
+
+    var x = canvas_pos.x * mpl.ratio;
+    var y = canvas_pos.y * mpl.ratio;
+
+    this.send_message(name, {
+        x: x,
+        y: y,
+        button: event.button,
+        step: event.step,
+        guiEvent: simpleKeys(event),
+    });
+
+    /* This prevents the web browser from automatically changing to
+     * the text insertion cursor when the button is pressed.  We want
+     * to control all of the cursor setting manually through the
+     * 'cursor' event from matplotlib */
+    event.preventDefault();
+    return false;
+};
+
+mpl.figure.prototype._key_event_extra = function (_event, _name) {
+    // Handle any extra behaviour associated with a key event
+};
+
+mpl.figure.prototype.key_event = function (event, name) {
+    // Prevent repeat events
+    if (name === 'key_press') {
+        if (event.which === this._key) {
+            return;
+        } else {
+            this._key = event.which;
+        }
+    }
+    if (name === 'key_release') {
+        this._key = null;
+    }
+
+    var value = '';
+    if (event.ctrlKey && event.which !== 17) {
+        value += 'ctrl+';
+    }
+    if (event.altKey && event.which !== 18) {
+        value += 'alt+';
+    }
+    if (event.shiftKey && event.which !== 16) {
+        value += 'shift+';
+    }
+
+    value += 'k';
+    value += event.which.toString();
+
+    this._key_event_extra(event, name);
+
+    this.send_message(name, { key: value, guiEvent: simpleKeys(event) });
+    return false;
+};
+
+mpl.figure.prototype.toolbar_button_onclick = function (name) {
+    if (name === 'download') {
+        this.handle_save(this, null);
+    } else {
+        this.send_message('toolbar_button', { name: name });
+    }
+};
+
+mpl.figure.prototype.toolbar_button_onmouseover = function (tooltip) {
+    this.message.textContent = tooltip;
+};
+mpl.toolbar_items = [["Home", "Reset original view", "fa fa-home icon-home", "home"], ["Back", "Back to previous view", "fa fa-arrow-left icon-arrow-left", "back"], ["Forward", "Forward to next view", "fa fa-arrow-right icon-arrow-right", "forward"], ["", "", "", ""], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "fa fa-arrows icon-move", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "fa fa-square-o icon-check-empty", "zoom"], ["", "", "", ""], ["Download", "Download plot", "fa fa-floppy-o icon-save", "download"]];
+
+mpl.extensions = ["eps", "jpeg", "pdf", "png", "ps", "raw", "svg", "tif"];
+
+mpl.default_extension = "png";/* global mpl */
+
+var comm_websocket_adapter = function (comm) {
+    // Create a "websocket"-like object which calls the given IPython comm
+    // object with the appropriate methods. Currently this is a non binary
+    // socket, so there is still some room for performance tuning.
+    var ws = {};
+
+    ws.close = function () {
+        comm.close();
+    };
+    ws.send = function (m) {
+        //console.log('sending', m);
+        comm.send(m);
+    };
+    // Register the callback with on_msg.
+    comm.on_msg(function (msg) {
+        //console.log('receiving', msg['content']['data'], msg);
+        // Pass the mpl event to the overridden (by mpl) onmessage function.
+        ws.onmessage(msg['content']['data']);
+    });
+    return ws;
+};
+
+mpl.mpl_figure_comm = function (comm, msg) {
+    // This is the function which gets called when the mpl process
+    // starts-up an IPython Comm through the "matplotlib" channel.
+
+    var id = msg.content.data.id;
+    // Get hold of the div created by the display call when the Comm
+    // socket was opened in Python.
+    var element = document.getElementById(id);
+    var ws_proxy = comm_websocket_adapter(comm);
+
+    function ondownload(figure, _format) {
+        window.open(figure.canvas.toDataURL());
+    }
+
+    var fig = new mpl.figure(id, ws_proxy, ondownload, element);
+
+    // Call onopen now - mpl needs it, as it is assuming we've passed it a real
+    // web socket which is closed, not our websocket->open comm proxy.
+    ws_proxy.onopen();
+
+    fig.parent_element = element;
+    fig.cell_info = mpl.find_output_cell("<div id='" + id + "'></div>");
+    if (!fig.cell_info) {
+        console.error('Failed to find cell for figure', id, fig);
+        return;
+    }
+};
+
+mpl.figure.prototype.handle_close = function (fig, msg) {
+    var width = fig.canvas.width / mpl.ratio;
+    fig.root.removeEventListener('remove', this._remove_fig_handler);
+
+    // Update the output cell to use the data from the current canvas.
+    fig.push_to_output();
+    var dataURL = fig.canvas.toDataURL();
+    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // the notebook keyboard shortcuts fail.
+    IPython.keyboard_manager.enable();
+    fig.parent_element.innerHTML =
+        '<img src="' + dataURL + '" width="' + width + '">';
+    fig.close_ws(fig, msg);
+};
+
+mpl.figure.prototype.close_ws = function (fig, msg) {
+    fig.send_message('closing', msg);
+    // fig.ws.close()
+};
+
+mpl.figure.prototype.push_to_output = function (_remove_interactive) {
+    // Turn the data on the canvas into data in the output cell.
+    var width = this.canvas.width / mpl.ratio;
+    var dataURL = this.canvas.toDataURL();
+    this.cell_info[1]['text/html'] =
+        '<img src="' + dataURL + '" width="' + width + '">';
+};
+
+mpl.figure.prototype.updated_canvas_event = function () {
+    // Tell IPython that the notebook contents must change.
+    IPython.notebook.set_dirty(true);
+    this.send_message('ack', {});
+    var fig = this;
+    // Wait a second, then push the new image to the DOM so
+    // that it is saved nicely (might be nice to debounce this).
+    setTimeout(function () {
+        fig.push_to_output();
+    }, 1000);
+};
+
+mpl.figure.prototype._init_toolbar = function () {
+    var fig = this;
+
+    var toolbar = document.createElement('div');
+    toolbar.classList = 'btn-toolbar';
+    this.root.appendChild(toolbar);
+
+    function on_click_closure(name) {
+        return function (_event) {
+            return fig.toolbar_button_onclick(name);
+        };
+    }
+
+    function on_mouseover_closure(tooltip) {
+        return function (event) {
+            if (!event.currentTarget.disabled) {
+                return fig.toolbar_button_onmouseover(tooltip);
+            }
+        };
+    }
+
+    fig.buttons = {};
+    var buttonGroup = document.createElement('div');
+    buttonGroup.classList = 'btn-group';
+    var button;
+    for (var toolbar_ind in mpl.toolbar_items) {
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) {
+            /* Instead of a spacer, we start a new button group. */
+            if (buttonGroup.hasChildNodes()) {
+                toolbar.appendChild(buttonGroup);
+            }
+            buttonGroup = document.createElement('div');
+            buttonGroup.classList = 'btn-group';
+            continue;
+        }
+
+        button = fig.buttons[name] = document.createElement('button');
+        button.classList = 'btn btn-default';
+        button.href = '#';
+        button.title = name;
+        button.innerHTML = '<i class="fa ' + image + ' fa-lg"></i>';
+        button.addEventListener('click', on_click_closure(method_name));
+        button.addEventListener('mouseover', on_mouseover_closure(tooltip));
+        buttonGroup.appendChild(button);
+    }
+
+    if (buttonGroup.hasChildNodes()) {
+        toolbar.appendChild(buttonGroup);
+    }
+
+    // Add the status bar.
+    var status_bar = document.createElement('span');
+    status_bar.classList = 'mpl-message pull-right';
+    toolbar.appendChild(status_bar);
+    this.message = status_bar;
+
+    // Add the close button to the window.
+    var buttongrp = document.createElement('div');
+    buttongrp.classList = 'btn-group inline pull-right';
+    button = document.createElement('button');
+    button.classList = 'btn btn-mini btn-primary';
+    button.href = '#';
+    button.title = 'Stop Interaction';
+    button.innerHTML = '<i class="fa fa-power-off icon-remove icon-large"></i>';
+    button.addEventListener('click', function (_evt) {
+        fig.handle_close(fig, {});
+    });
+    button.addEventListener(
+        'mouseover',
+        on_mouseover_closure('Stop Interaction')
+    );
+    buttongrp.appendChild(button);
+    var titlebar = this.root.querySelector('.ui-dialog-titlebar');
+    titlebar.insertBefore(buttongrp, titlebar.firstChild);
+};
+
+mpl.figure.prototype._remove_fig_handler = function () {
+    this.close_ws(this, {});
+};
+
+mpl.figure.prototype._root_extra_style = function (el) {
+    el.style.boxSizing = 'content-box'; // override notebook setting of border-box.
+    el.addEventListener('remove', this._remove_fig_handler);
+};
+
+mpl.figure.prototype._canvas_extra_style = function (el) {
+    // this is important to make the div 'focusable
+    el.setAttribute('tabindex', 0);
+    // reach out to IPython and tell the keyboard manager to turn it's self
+    // off when our div gets focus
+
+    // location in version 3
+    if (IPython.notebook.keyboard_manager) {
+        IPython.notebook.keyboard_manager.register_events(el);
+    } else {
+        // location in version 2
+        IPython.keyboard_manager.register_events(el);
+    }
+};
+
+mpl.figure.prototype._key_event_extra = function (event, _name) {
+    var manager = IPython.notebook.keyboard_manager;
+    if (!manager) {
+        manager = IPython.keyboard_manager;
+    }
+
+    // Check for shift+enter
+    if (event.shiftKey && event.which === 13) {
+        this.canvas_div.blur();
+        // select the cell after this one
+        var index = IPython.notebook.find_cell_index(this.cell_info[0]);
+        IPython.notebook.select(index + 1);
+    }
+};
+
+mpl.figure.prototype.handle_save = function (fig, _msg) {
+    fig.ondownload(fig, null);
+};
+
+mpl.find_output_cell = function (html_output) {
+    // Return the cell and output element which can be found *uniquely* in the notebook.
+    // Note - this is a bit hacky, but it is done because the "notebook_saving.Notebook"
+    // IPython event is triggered only after the cells have been serialised, which for
+    // our purposes (turning an active figure into a static one), is too late.
+    var cells = IPython.notebook.get_cells();
+    var ncells = cells.length;
+    for (var i = 0; i < ncells; i++) {
+        var cell = cells[i];
+        if (cell.cell_type === 'code') {
+            for (var j = 0; j < cell.output_area.outputs.length; j++) {
+                var data = cell.output_area.outputs[j];
+                if (data.data) {
+                    // IPython >= 3 moved mimebundle to data attribute of output
+                    data = data.data;
+                }
+                if (data['text/html'] === html_output) {
+                    return [cell, data, j];
+                }
+            }
+        }
+    }
+};
+
+// Register the function which deals with the matplotlib target/channel.
+// The kernel may be null if the page has been refreshed.
+if (IPython.notebook.kernel !== null) {
+    IPython.notebook.kernel.comm_manager.register_target(
+        'matplotlib',
+        mpl.mpl_figure_comm
+    );
+}
+
+</script>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAEsCAYAAADtt+XCAAAVGElEQVR4nO3dXWzV9R3H8T+W0yJtaWSzAVd6cAlCmVHHiEqy2GTZxEU3mVvmE+NhY2bObfTCTRcuOibUMjfcxXDqtuCM0CWUotHghSDDBLIxoYQyOi2z6hFNJttOq9na9OGzC9dDT9tTyr/n4fv99/1K/jG0h7a/0+Tzpue0NhAAACEEhf4AAAA+ERAAQCgEBAAQCgEBAIRCQAAAoRAQAEAoBAQAEAoBAQCEQkAAAKEQEABAKAQEABAKAQEAhEJAAAChEBAAQCgEBAAQCgEBAIRCQAAAoRAQAEAoBAQAEAoBAQCEQkAAAKEQEABAKAQEABAKAQEAhEJAAAChEBAAQCgEBAAQCgEBAIRCQAAAoRAQAEAoBAQAEAoBAQCEQkAAAKEQEABAKJEIyMDAgBKJhJLJpLq6uri4uLjcX8lkUolEQgMDA4We2IwiEZBEIqEgCLi4uLgidyUSiUJPbEaRCEgymUzd0YX+VwMXFxdXNq6hfxgnk8lCT2xGkQhIV1eXgiBQV1dXoT8UAMgKD7tGQADAIA+7RkAAwCAPu5b1gNTW1mr9+vXZfrPj8nBHA8CF8LBrWQ/IP//5T3V3d2f7zY4rzB3dPzCow6fP6tnWd3T49Fn1Dwzm8CMEgAszJQNSCBd6R7/Y9q6ub9in+AMvpK7rG/bpxbZ3c/yRAsDETMmADH8IKx6Pa/PmzVq7dq3Kyso0b948PfHEE6nbdnZ2KggCNTU1admyZSopKdHixYt14MCBC3qfF3JHv9j2ruYPC8fQNf//FxEBYAEBicc1e/Zsbdu2TR0dHXr44Yd10UUXqb29XdK5gFRVVam5uVmnTp3SunXrVF5errNnz074fU70ju4fGBz1lcfIiFzfsI+HswAUHAGJx7Vy5crU6wYHB1VZWalf//rXks4FpLGxMXWbvr4+VVVVacuWLRnfR09Pz5g/cHO+O/rw6bMZ4zH8Onx64vECgFwgIPG4fvazn6W9/qqrrtLGjRslnQvIwYMH026zYsUKrVmzJuP7qK+vH/NH/s93Rz/b+s6EAvJs6zthjg4AWUNA4nE9+uijaa+/+uqrVV9fL2n8gKxduzbj++ArEABRR0AmGJDhD1f19fVp3rx54z6ENdKFPgcy1pPoPAcCwBICMsGAVFdXq6WlRe3t7brnnntUVlam999/f8LvM8x3YY2MCN+FBcASAjLBgOzcuVPXXXediouLVVNTo/3791/Q++TnQABEzZQMyIUYCkhra+uk3g4/iQ4gagjIeRQyIABgmYddIyAAYJCHXZuS/y8sALDOw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAMMjDrhEQADDIw64REAAwyMOuERAAyJWBfumNV6QTuz7670D/hP+qh10LHZDe3t5sfhyT4uGOBjDF/PU56ReLpPpZ565fLPro5RPgYddSAenu7tZdd92lmTNnas6cOdq6datqa2u1fv16SVI8HtdDDz2k1atXa9asWVq1apUkqbm5WYsXL1ZxcbHi8bh+/vOfp7+DINCePXvSXlZRUaHt27dLkjo7OxUEgZqamrRs2TKVlJRo8eLFOnDgwIQP4eGOBjCF/PU5qb4iPR71s/7/sooJRcTDrqUCsm7dOsXjce3bt09tbW36yle+ovLy8rSAzJo1S4888og6OjrU0dGhV199VRdddJF++tOf6rXXXtP27dt18cUXp+IgTTwgVVVVam5u1qlTp7Ru3TqVl5fr7NmzEzqEhzsawBQx0D/6K4+REflFzXkfzvKwa4H00VcfsVhM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" width="400">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As we can see, nothing changed... This should actually not come as much of a surprise: in the current schedule, the <code>SpikeGeneratorGroup</code> will spike in the 10ms time step, but the activity gets only propagated to the target neuron in the time step that follows! We can also confirm this by looking at our trusted <code>scheduling_summary</code> function:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scheduling_summary</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <table>
+<thead><tr>
+<th style="text-align: center;">object</th>
+            <th style="text-align: center;">part of</th>
+            <th style="text-align: center;">Clock dt</th>
+            <th style="text-align: center;">when</th>
+            <th style="text-align: center;">order</th>
+            <th style="text-align: center;">active</th>
+        </tr></thead>
+<tbody>
+<tr>
+<td style="text-align: left;">
+<b>neurongroup_1_stateupdater</b> (<em>StateUpdater</em>)</td>
+            <td style="text-align: left;">neurongroup_1 (<em>NeuronGroup</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">groups</td>
+            <td style="text-align: right;">0</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>synapses_1_pre</b> (<em>SynapticPathway</em>)</td>
+            <td style="text-align: left;">synapses_1 (<em>Synapses</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">synapses</td>
+            <td style="text-align: right;">-1</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>neurongroup_1_thresholder</b> (<em>Thresholder</em>)</td>
+            <td style="text-align: left;">neurongroup_1 (<em>NeuronGroup</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">thresholds</td>
+            <td style="text-align: right;">0</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>spikegeneratorgroup_1</b> (<em>SpikeGeneratorGroup</em>)</td>
+            <td style="text-align: left;">spikegeneratorgroup_1 (<em>SpikeGeneratorGroup</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">thresholds</td>
+            <td style="text-align: right;">0</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>spikemonitor</b> (<em>SpikeMonitor</em>)</td>
+            <td style="text-align: left;">spikemonitor (<em>SpikeMonitor</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">thresholds</td>
+            <td style="text-align: right;">1</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>spikemonitor_2</b> (<em>SpikeMonitor</em>)</td>
+            <td style="text-align: left;">spikemonitor_2 (<em>SpikeMonitor</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">thresholds</td>
+            <td style="text-align: right;">1</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>neurongroup_1_resetter</b> (<em>Resetter</em>)</td>
+            <td style="text-align: left;">neurongroup_1 (<em>NeuronGroup</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">resets</td>
+            <td style="text-align: right;">0</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Before we continue, let us fix a minor ugliness in the output of <code>scheduling_summary</code>. Brian uses names for each of its objects, but these names are determined automatically and can be hard to link back to the code. For example, which of the <code>SpikeMonitor</code>s corresponds to <code>spikemonitor</code> and <code>spikemonitor_2</code>?</p>
+<p>To make this link more obvious, we can give our own names to objects by specifying their <code>name</code> argument. A useful choice is to simply chose the same name as for the variable in which we store the object:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">inp</span> <span class="o">=</span> <span class="n">SpikeGeneratorGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">ms</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'inp'</span><span class="p">)</span>
+
+<span class="n">group</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'dv/dt = -v / (20*ms) : 1'</span><span class="p">,</span>
+                    <span class="n">threshold</span><span class="o">=</span><span class="s1">'v &gt; 1'</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">'v = 0'</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'exact'</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="s1">'group'</span><span class="p">)</span>
+
+<span class="n">syn</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">'v_post += 2'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'syn'</span><span class="p">)</span>
+<span class="n">syn</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+
+<span class="n">inp_mon</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'inp_mon'</span><span class="p">)</span>
+<span class="n">group_mon</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'group_mon'</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With the <code>name</code> definitions, the <code>scheduling_summary</code> output becomes more readable</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scheduling_summary</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <table>
+<thead><tr>
+<th style="text-align: center;">object</th>
+            <th style="text-align: center;">part of</th>
+            <th style="text-align: center;">Clock dt</th>
+            <th style="text-align: center;">when</th>
+            <th style="text-align: center;">order</th>
+            <th style="text-align: center;">active</th>
+        </tr></thead>
+<tbody>
+<tr>
+<td style="text-align: left;">
+<b>group_stateupdater</b> (<em>StateUpdater</em>)</td>
+            <td style="text-align: left;">group (<em>NeuronGroup</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">groups</td>
+            <td style="text-align: right;">0</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>syn_pre</b> (<em>SynapticPathway</em>)</td>
+            <td style="text-align: left;">syn (<em>Synapses</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">synapses</td>
+            <td style="text-align: right;">-1</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>group_thresholder</b> (<em>Thresholder</em>)</td>
+            <td style="text-align: left;">group (<em>NeuronGroup</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">thresholds</td>
+            <td style="text-align: right;">0</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>inp</b> (<em>SpikeGeneratorGroup</em>)</td>
+            <td style="text-align: left;">inp (<em>SpikeGeneratorGroup</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">thresholds</td>
+            <td style="text-align: right;">0</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>group_mon</b> (<em>SpikeMonitor</em>)</td>
+            <td style="text-align: left;">group_mon (<em>SpikeMonitor</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">thresholds</td>
+            <td style="text-align: right;">1</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>inp_mon</b> (<em>SpikeMonitor</em>)</td>
+            <td style="text-align: left;">inp_mon (<em>SpikeMonitor</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">thresholds</td>
+            <td style="text-align: right;">1</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>group_resetter</b> (<em>Resetter</em>)</td>
+            <td style="text-align: left;">group (<em>NeuronGroup</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">resets</td>
+            <td style="text-align: right;">0</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, back to our problem: how to we make the target neuron spike in the same time step as the <code>SpikeGeneratorGroup</code>? We cannot simply change the global schedule, as this will move both the <code>group_thresholder</code> (which determines when <code>group</code> spikes) and the <code>SpikeGeneratorGroup</code> around. Instead, we will have to move only one of the two operations around. We can do this by specifying the <code>when</code> attribute, which determines into which slot an operation goes. For example, we can use <code>before_synapses</code> (see <a href="https://briansimulator.org/posts/2020/video-scheduling-1/">the first notebook for <em>Getting the timing right</em></a>) slot for the <code>SpikeGeneratorGroup</code>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_scope</span><span class="p">()</span>
+
+<span class="n">inp</span> <span class="o">=</span> <span class="n">SpikeGeneratorGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">ms</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'inp'</span><span class="p">,</span> <span class="n">when</span><span class="o">=</span><span class="s1">'before_synapses'</span><span class="p">)</span>
+
+<span class="n">group</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'dv/dt = -v / (20*ms) : 1'</span><span class="p">,</span>
+                    <span class="n">threshold</span><span class="o">=</span><span class="s1">'v &gt; 1'</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="s1">'v = 0'</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'exact'</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="s1">'group'</span><span class="p">)</span>
+
+<span class="n">syn</span> <span class="o">=</span> <span class="n">Synapses</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">on_pre</span><span class="o">=</span><span class="s1">'v_post += 2'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'syn'</span><span class="p">)</span>
+<span class="n">syn</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+
+<span class="n">inp_mon</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'inp_mon'</span><span class="p">)</span>
+<span class="n">group_mon</span> <span class="o">=</span> <span class="n">SpikeMonitor</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'group_mon'</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">run</span><span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">inp_mon</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">'o'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">group_mon</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">ms</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">'o'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">yticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">yticklabels</span><span class="o">=</span><span class="p">[</span><span class="s1">'group'</span><span class="p">,</span> <span class="s1">'inp'</span><span class="p">],</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">'time (ms)'</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+
+<div id="b20b89f5-3354-4114-91da-be827f8f0fd8"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#b20b89f5-3354-4114-91da-be827f8f0fd8');
+/* Put everything inside the global mpl namespace */
+/* global mpl */
+window.mpl = {};
+
+mpl.get_websocket_type = function () {
+    if (typeof WebSocket !== 'undefined') {
+        return WebSocket;
+    } else if (typeof MozWebSocket !== 'undefined') {
+        return MozWebSocket;
+    } else {
+        alert(
+            'Your browser does not have WebSocket support. ' +
+                'Please try Chrome, Safari or Firefox ≥ 6. ' +
+                'Firefox 4 and 5 are also supported but you ' +
+                'have to enable WebSockets in about:config.'
+        );
+    }
+};
+
+mpl.figure = function (figure_id, websocket, ondownload, parent_element) {
+    this.id = figure_id;
+
+    this.ws = websocket;
+
+    this.supports_binary = this.ws.binaryType !== undefined;
+
+    if (!this.supports_binary) {
+        var warnings = document.getElementById('mpl-warnings');
+        if (warnings) {
+            warnings.style.display = 'block';
+            warnings.textContent =
+                'This browser does not support binary websocket messages. ' +
+                'Performance may be slow.';
+        }
+    }
+
+    this.imageObj = new Image();
+
+    this.context = undefined;
+    this.message = undefined;
+    this.canvas = undefined;
+    this.rubberband_canvas = undefined;
+    this.rubberband_context = undefined;
+    this.format_dropdown = undefined;
+
+    this.image_mode = 'full';
+
+    this.root = document.createElement('div');
+    this.root.setAttribute('style', 'display: inline-block');
+    this._root_extra_style(this.root);
+
+    parent_element.appendChild(this.root);
+
+    this._init_header(this);
+    this._init_canvas(this);
+    this._init_toolbar(this);
+
+    var fig = this;
+
+    this.waiting = false;
+
+    this.ws.onopen = function () {
+        fig.send_message('supports_binary', { value: fig.supports_binary });
+        fig.send_message('send_image_mode', {});
+        if (mpl.ratio !== 1) {
+            fig.send_message('set_dpi_ratio', { dpi_ratio: mpl.ratio });
+        }
+        fig.send_message('refresh', {});
+    };
+
+    this.imageObj.onload = function () {
+        if (fig.image_mode === 'full') {
+            // Full images could contain transparency (where diff images
+            // almost always do), so we need to clear the canvas so that
+            // there is no ghosting.
+            fig.context.clearRect(0, 0, fig.canvas.width, fig.canvas.height);
+        }
+        fig.context.drawImage(fig.imageObj, 0, 0);
+    };
+
+    this.imageObj.onunload = function () {
+        fig.ws.close();
+    };
+
+    this.ws.onmessage = this._make_on_message_function(this);
+
+    this.ondownload = ondownload;
+};
+
+mpl.figure.prototype._init_header = function () {
+    var titlebar = document.createElement('div');
+    titlebar.classList =
+        'ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix';
+    var titletext = document.createElement('div');
+    titletext.classList = 'ui-dialog-title';
+    titletext.setAttribute(
+        'style',
+        'width: 100%; text-align: center; padding: 3px;'
+    );
+    titlebar.appendChild(titletext);
+    this.root.appendChild(titlebar);
+    this.header = titletext;
+};
+
+mpl.figure.prototype._canvas_extra_style = function (_canvas_div) {};
+
+mpl.figure.prototype._root_extra_style = function (_canvas_div) {};
+
+mpl.figure.prototype._init_canvas = function () {
+    var fig = this;
+
+    var canvas_div = (this.canvas_div = document.createElement('div'));
+    canvas_div.setAttribute(
+        'style',
+        'border: 1px solid #ddd;' +
+            'box-sizing: content-box;' +
+            'clear: both;' +
+            'min-height: 1px;' +
+            'min-width: 1px;' +
+            'outline: 0;' +
+            'overflow: hidden;' +
+            'position: relative;' +
+            'resize: both;'
+    );
+
+    function on_keyboard_event_closure(name) {
+        return function (event) {
+            return fig.key_event(event, name);
+        };
+    }
+
+    canvas_div.addEventListener(
+        'keydown',
+        on_keyboard_event_closure('key_press')
+    );
+    canvas_div.addEventListener(
+        'keyup',
+        on_keyboard_event_closure('key_release')
+    );
+
+    this._canvas_extra_style(canvas_div);
+    this.root.appendChild(canvas_div);
+
+    var canvas = (this.canvas = document.createElement('canvas'));
+    canvas.classList.add('mpl-canvas');
+    canvas.setAttribute('style', 'box-sizing: content-box;');
+
+    this.context = canvas.getContext('2d');
+
+    var backingStore =
+        this.context.backingStorePixelRatio ||
+        this.context.webkitBackingStorePixelRatio ||
+        this.context.mozBackingStorePixelRatio ||
+        this.context.msBackingStorePixelRatio ||
+        this.context.oBackingStorePixelRatio ||
+        this.context.backingStorePixelRatio ||
+        1;
+
+    mpl.ratio = (window.devicePixelRatio || 1) / backingStore;
+
+    var rubberband_canvas = (this.rubberband_canvas = document.createElement(
+        'canvas'
+    ));
+    rubberband_canvas.setAttribute(
+        'style',
+        'box-sizing: content-box; position: absolute; left: 0; top: 0; z-index: 1;'
+    );
+
+    var resizeObserver = new ResizeObserver(function (entries) {
+        var nentries = entries.length;
+        for (var i = 0; i < nentries; i++) {
+            var entry = entries[i];
+            var width, height;
+            if (entry.contentBoxSize) {
+                if (entry.contentBoxSize instanceof Array) {
+                    // Chrome 84 implements new version of spec.
+                    width = entry.contentBoxSize[0].inlineSize;
+                    height = entry.contentBoxSize[0].blockSize;
+                } else {
+                    // Firefox implements old version of spec.
+                    width = entry.contentBoxSize.inlineSize;
+                    height = entry.contentBoxSize.blockSize;
+                }
+            } else {
+                // Chrome <84 implements even older version of spec.
+                width = entry.contentRect.width;
+                height = entry.contentRect.height;
+            }
+
+            // Keep the size of the canvas and rubber band canvas in sync with
+            // the canvas container.
+            if (entry.devicePixelContentBoxSize) {
+                // Chrome 84 implements new version of spec.
+                canvas.setAttribute(
+                    'width',
+                    entry.devicePixelContentBoxSize[0].inlineSize
+                );
+                canvas.setAttribute(
+                    'height',
+                    entry.devicePixelContentBoxSize[0].blockSize
+                );
+            } else {
+                canvas.setAttribute('width', width * mpl.ratio);
+                canvas.setAttribute('height', height * mpl.ratio);
+            }
+            canvas.setAttribute(
+                'style',
+                'width: ' + width + 'px; height: ' + height + 'px;'
+            );
+
+            rubberband_canvas.setAttribute('width', width);
+            rubberband_canvas.setAttribute('height', height);
+
+            // And update the size in Python. We ignore the initial 0/0 size
+            // that occurs as the element is placed into the DOM, which should
+            // otherwise not happen due to the minimum size styling.
+            if (width != 0 && height != 0) {
+                fig.request_resize(width, height);
+            }
+        }
+    });
+    resizeObserver.observe(canvas_div);
+
+    function on_mouse_event_closure(name) {
+        return function (event) {
+            return fig.mouse_event(event, name);
+        };
+    }
+
+    rubberband_canvas.addEventListener(
+        'mousedown',
+        on_mouse_event_closure('button_press')
+    );
+    rubberband_canvas.addEventListener(
+        'mouseup',
+        on_mouse_event_closure('button_release')
+    );
+    // Throttle sequential mouse events to 1 every 20ms.
+    rubberband_canvas.addEventListener(
+        'mousemove',
+        on_mouse_event_closure('motion_notify')
+    );
+
+    rubberband_canvas.addEventListener(
+        'mouseenter',
+        on_mouse_event_closure('figure_enter')
+    );
+    rubberband_canvas.addEventListener(
+        'mouseleave',
+        on_mouse_event_closure('figure_leave')
+    );
+
+    canvas_div.addEventListener('wheel', function (event) {
+        if (event.deltaY < 0) {
+            event.step = 1;
+        } else {
+            event.step = -1;
+        }
+        on_mouse_event_closure('scroll')(event);
+    });
+
+    canvas_div.appendChild(canvas);
+    canvas_div.appendChild(rubberband_canvas);
+
+    this.rubberband_context = rubberband_canvas.getContext('2d');
+    this.rubberband_context.strokeStyle = '#000000';
+
+    this._resize_canvas = function (width, height, forward) {
+        if (forward) {
+            canvas_div.style.width = width + 'px';
+            canvas_div.style.height = height + 'px';
+        }
+    };
+
+    // Disable right mouse context menu.
+    this.rubberband_canvas.addEventListener('contextmenu', function (_e) {
+        event.preventDefault();
+        return false;
+    });
+
+    function set_focus() {
+        canvas.focus();
+        canvas_div.focus();
+    }
+
+    window.setTimeout(set_focus, 100);
+};
+
+mpl.figure.prototype._init_toolbar = function () {
+    var fig = this;
+
+    var toolbar = document.createElement('div');
+    toolbar.classList = 'mpl-toolbar';
+    this.root.appendChild(toolbar);
+
+    function on_click_closure(name) {
+        return function (_event) {
+            return fig.toolbar_button_onclick(name);
+        };
+    }
+
+    function on_mouseover_closure(tooltip) {
+        return function (event) {
+            if (!event.currentTarget.disabled) {
+                return fig.toolbar_button_onmouseover(tooltip);
+            }
+        };
+    }
+
+    fig.buttons = {};
+    var buttonGroup = document.createElement('div');
+    buttonGroup.classList = 'mpl-button-group';
+    for (var toolbar_ind in mpl.toolbar_items) {
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) {
+            /* Instead of a spacer, we start a new button group. */
+            if (buttonGroup.hasChildNodes()) {
+                toolbar.appendChild(buttonGroup);
+            }
+            buttonGroup = document.createElement('div');
+            buttonGroup.classList = 'mpl-button-group';
+            continue;
+        }
+
+        var button = (fig.buttons[name] = document.createElement('button'));
+        button.classList = 'mpl-widget';
+        button.setAttribute('role', 'button');
+        button.setAttribute('aria-disabled', 'false');
+        button.addEventListener('click', on_click_closure(method_name));
+        button.addEventListener('mouseover', on_mouseover_closure(tooltip));
+
+        var icon_img = document.createElement('img');
+        icon_img.src = '_images/' + image + '.png';
+        icon_img.srcset = '_images/' + image + '_large.png 2x';
+        icon_img.alt = tooltip;
+        button.appendChild(icon_img);
+
+        buttonGroup.appendChild(button);
+    }
+
+    if (buttonGroup.hasChildNodes()) {
+        toolbar.appendChild(buttonGroup);
+    }
+
+    var fmt_picker = document.createElement('select');
+    fmt_picker.classList = 'mpl-widget';
+    toolbar.appendChild(fmt_picker);
+    this.format_dropdown = fmt_picker;
+
+    for (var ind in mpl.extensions) {
+        var fmt = mpl.extensions[ind];
+        var option = document.createElement('option');
+        option.selected = fmt === mpl.default_extension;
+        option.innerHTML = fmt;
+        fmt_picker.appendChild(option);
+    }
+
+    var status_bar = document.createElement('span');
+    status_bar.classList = 'mpl-message';
+    toolbar.appendChild(status_bar);
+    this.message = status_bar;
+};
+
+mpl.figure.prototype.request_resize = function (x_pixels, y_pixels) {
+    // Request matplotlib to resize the figure. Matplotlib will then trigger a resize in the client,
+    // which will in turn request a refresh of the image.
+    this.send_message('resize', { width: x_pixels, height: y_pixels });
+};
+
+mpl.figure.prototype.send_message = function (type, properties) {
+    properties['type'] = type;
+    properties['figure_id'] = this.id;
+    this.ws.send(JSON.stringify(properties));
+};
+
+mpl.figure.prototype.send_draw_message = function () {
+    if (!this.waiting) {
+        this.waiting = true;
+        this.ws.send(JSON.stringify({ type: 'draw', figure_id: this.id }));
+    }
+};
+
+mpl.figure.prototype.handle_save = function (fig, _msg) {
+    var format_dropdown = fig.format_dropdown;
+    var format = format_dropdown.options[format_dropdown.selectedIndex].value;
+    fig.ondownload(fig, format);
+};
+
+mpl.figure.prototype.handle_resize = function (fig, msg) {
+    var size = msg['size'];
+    if (size[0] !== fig.canvas.width || size[1] !== fig.canvas.height) {
+        fig._resize_canvas(size[0], size[1], msg['forward']);
+        fig.send_message('refresh', {});
+    }
+};
+
+mpl.figure.prototype.handle_rubberband = function (fig, msg) {
+    var x0 = msg['x0'] / mpl.ratio;
+    var y0 = (fig.canvas.height - msg['y0']) / mpl.ratio;
+    var x1 = msg['x1'] / mpl.ratio;
+    var y1 = (fig.canvas.height - msg['y1']) / mpl.ratio;
+    x0 = Math.floor(x0) + 0.5;
+    y0 = Math.floor(y0) + 0.5;
+    x1 = Math.floor(x1) + 0.5;
+    y1 = Math.floor(y1) + 0.5;
+    var min_x = Math.min(x0, x1);
+    var min_y = Math.min(y0, y1);
+    var width = Math.abs(x1 - x0);
+    var height = Math.abs(y1 - y0);
+
+    fig.rubberband_context.clearRect(
+        0,
+        0,
+        fig.canvas.width / mpl.ratio,
+        fig.canvas.height / mpl.ratio
+    );
+
+    fig.rubberband_context.strokeRect(min_x, min_y, width, height);
+};
+
+mpl.figure.prototype.handle_figure_label = function (fig, msg) {
+    // Updates the figure title.
+    fig.header.textContent = msg['label'];
+};
+
+mpl.figure.prototype.handle_cursor = function (fig, msg) {
+    var cursor = msg['cursor'];
+    switch (cursor) {
+        case 0:
+            cursor = 'pointer';
+            break;
+        case 1:
+            cursor = 'default';
+            break;
+        case 2:
+            cursor = 'crosshair';
+            break;
+        case 3:
+            cursor = 'move';
+            break;
+    }
+    fig.rubberband_canvas.style.cursor = cursor;
+};
+
+mpl.figure.prototype.handle_message = function (fig, msg) {
+    fig.message.textContent = msg['message'];
+};
+
+mpl.figure.prototype.handle_draw = function (fig, _msg) {
+    // Request the server to send over a new figure.
+    fig.send_draw_message();
+};
+
+mpl.figure.prototype.handle_image_mode = function (fig, msg) {
+    fig.image_mode = msg['mode'];
+};
+
+mpl.figure.prototype.handle_history_buttons = function (fig, msg) {
+    for (var key in msg) {
+        if (!(key in fig.buttons)) {
+            continue;
+        }
+        fig.buttons[key].disabled = !msg[key];
+        fig.buttons[key].setAttribute('aria-disabled', !msg[key]);
+    }
+};
+
+mpl.figure.prototype.handle_navigate_mode = function (fig, msg) {
+    if (msg['mode'] === 'PAN') {
+        fig.buttons['Pan'].classList.add('active');
+        fig.buttons['Zoom'].classList.remove('active');
+    } else if (msg['mode'] === 'ZOOM') {
+        fig.buttons['Pan'].classList.remove('active');
+        fig.buttons['Zoom'].classList.add('active');
+    } else {
+        fig.buttons['Pan'].classList.remove('active');
+        fig.buttons['Zoom'].classList.remove('active');
+    }
+};
+
+mpl.figure.prototype.updated_canvas_event = function () {
+    // Called whenever the canvas gets updated.
+    this.send_message('ack', {});
+};
+
+// A function to construct a web socket function for onmessage handling.
+// Called in the figure constructor.
+mpl.figure.prototype._make_on_message_function = function (fig) {
+    return function socket_on_message(evt) {
+        if (evt.data instanceof Blob) {
+            /* FIXME: We get "Resource interpreted as Image but
+             * transferred with MIME type text/plain:" errors on
+             * Chrome.  But how to set the MIME type?  It doesn't seem
+             * to be part of the websocket stream */
+            evt.data.type = 'image/png';
+
+            /* Free the memory for the previous frames */
+            if (fig.imageObj.src) {
+                (window.URL || window.webkitURL).revokeObjectURL(
+                    fig.imageObj.src
+                );
+            }
+
+            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
+                evt.data
+            );
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        } else if (
+            typeof evt.data === 'string' &&
+            evt.data.slice(0, 21) === 'data:image/png;base64'
+        ) {
+            fig.imageObj.src = evt.data;
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        }
+
+        var msg = JSON.parse(evt.data);
+        var msg_type = msg['type'];
+
+        // Call the  "handle_{type}" callback, which takes
+        // the figure and JSON message as its only arguments.
+        try {
+            var callback = fig['handle_' + msg_type];
+        } catch (e) {
+            console.log(
+                "No handler for the '" + msg_type + "' message type: ",
+                msg
+            );
+            return;
+        }
+
+        if (callback) {
+            try {
+                // console.log("Handling '" + msg_type + "' message: ", msg);
+                callback(fig, msg);
+            } catch (e) {
+                console.log(
+                    "Exception inside the 'handler_" + msg_type + "' callback:",
+                    e,
+                    e.stack,
+                    msg
+                );
+            }
+        }
+    };
+};
+
+// from http://stackoverflow.com/questions/1114465/getting-mouse-location-in-canvas
+mpl.findpos = function (e) {
+    //this section is from http://www.quirksmode.org/js/events_properties.html
+    var targ;
+    if (!e) {
+        e = window.event;
+    }
+    if (e.target) {
+        targ = e.target;
+    } else if (e.srcElement) {
+        targ = e.srcElement;
+    }
+    if (targ.nodeType === 3) {
+        // defeat Safari bug
+        targ = targ.parentNode;
+    }
+
+    // pageX,Y are the mouse positions relative to the document
+    var boundingRect = targ.getBoundingClientRect();
+    var x = e.pageX - (boundingRect.left + document.body.scrollLeft);
+    var y = e.pageY - (boundingRect.top + document.body.scrollTop);
+
+    return { x: x, y: y };
+};
+
+/*
+ * return a copy of an object with only non-object keys
+ * we need this to avoid circular references
+ * http://stackoverflow.com/a/24161582/3208463
+ */
+function simpleKeys(original) {
+    return Object.keys(original).reduce(function (obj, key) {
+        if (typeof original[key] !== 'object') {
+            obj[key] = original[key];
+        }
+        return obj;
+    }, {});
+}
+
+mpl.figure.prototype.mouse_event = function (event, name) {
+    var canvas_pos = mpl.findpos(event);
+
+    if (name === 'button_press') {
+        this.canvas.focus();
+        this.canvas_div.focus();
+    }
+
+    var x = canvas_pos.x * mpl.ratio;
+    var y = canvas_pos.y * mpl.ratio;
+
+    this.send_message(name, {
+        x: x,
+        y: y,
+        button: event.button,
+        step: event.step,
+        guiEvent: simpleKeys(event),
+    });
+
+    /* This prevents the web browser from automatically changing to
+     * the text insertion cursor when the button is pressed.  We want
+     * to control all of the cursor setting manually through the
+     * 'cursor' event from matplotlib */
+    event.preventDefault();
+    return false;
+};
+
+mpl.figure.prototype._key_event_extra = function (_event, _name) {
+    // Handle any extra behaviour associated with a key event
+};
+
+mpl.figure.prototype.key_event = function (event, name) {
+    // Prevent repeat events
+    if (name === 'key_press') {
+        if (event.which === this._key) {
+            return;
+        } else {
+            this._key = event.which;
+        }
+    }
+    if (name === 'key_release') {
+        this._key = null;
+    }
+
+    var value = '';
+    if (event.ctrlKey && event.which !== 17) {
+        value += 'ctrl+';
+    }
+    if (event.altKey && event.which !== 18) {
+        value += 'alt+';
+    }
+    if (event.shiftKey && event.which !== 16) {
+        value += 'shift+';
+    }
+
+    value += 'k';
+    value += event.which.toString();
+
+    this._key_event_extra(event, name);
+
+    this.send_message(name, { key: value, guiEvent: simpleKeys(event) });
+    return false;
+};
+
+mpl.figure.prototype.toolbar_button_onclick = function (name) {
+    if (name === 'download') {
+        this.handle_save(this, null);
+    } else {
+        this.send_message('toolbar_button', { name: name });
+    }
+};
+
+mpl.figure.prototype.toolbar_button_onmouseover = function (tooltip) {
+    this.message.textContent = tooltip;
+};
+mpl.toolbar_items = [["Home", "Reset original view", "fa fa-home icon-home", "home"], ["Back", "Back to previous view", "fa fa-arrow-left icon-arrow-left", "back"], ["Forward", "Forward to next view", "fa fa-arrow-right icon-arrow-right", "forward"], ["", "", "", ""], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "fa fa-arrows icon-move", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis, CTRL fixes aspect", "fa fa-square-o icon-check-empty", "zoom"], ["", "", "", ""], ["Download", "Download plot", "fa fa-floppy-o icon-save", "download"]];
+
+mpl.extensions = ["eps", "jpeg", "pdf", "png", "ps", "raw", "svg", "tif"];
+
+mpl.default_extension = "png";/* global mpl */
+
+var comm_websocket_adapter = function (comm) {
+    // Create a "websocket"-like object which calls the given IPython comm
+    // object with the appropriate methods. Currently this is a non binary
+    // socket, so there is still some room for performance tuning.
+    var ws = {};
+
+    ws.close = function () {
+        comm.close();
+    };
+    ws.send = function (m) {
+        //console.log('sending', m);
+        comm.send(m);
+    };
+    // Register the callback with on_msg.
+    comm.on_msg(function (msg) {
+        //console.log('receiving', msg['content']['data'], msg);
+        // Pass the mpl event to the overridden (by mpl) onmessage function.
+        ws.onmessage(msg['content']['data']);
+    });
+    return ws;
+};
+
+mpl.mpl_figure_comm = function (comm, msg) {
+    // This is the function which gets called when the mpl process
+    // starts-up an IPython Comm through the "matplotlib" channel.
+
+    var id = msg.content.data.id;
+    // Get hold of the div created by the display call when the Comm
+    // socket was opened in Python.
+    var element = document.getElementById(id);
+    var ws_proxy = comm_websocket_adapter(comm);
+
+    function ondownload(figure, _format) {
+        window.open(figure.canvas.toDataURL());
+    }
+
+    var fig = new mpl.figure(id, ws_proxy, ondownload, element);
+
+    // Call onopen now - mpl needs it, as it is assuming we've passed it a real
+    // web socket which is closed, not our websocket->open comm proxy.
+    ws_proxy.onopen();
+
+    fig.parent_element = element;
+    fig.cell_info = mpl.find_output_cell("<div id='" + id + "'></div>");
+    if (!fig.cell_info) {
+        console.error('Failed to find cell for figure', id, fig);
+        return;
+    }
+};
+
+mpl.figure.prototype.handle_close = function (fig, msg) {
+    var width = fig.canvas.width / mpl.ratio;
+    fig.root.removeEventListener('remove', this._remove_fig_handler);
+
+    // Update the output cell to use the data from the current canvas.
+    fig.push_to_output();
+    var dataURL = fig.canvas.toDataURL();
+    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // the notebook keyboard shortcuts fail.
+    IPython.keyboard_manager.enable();
+    fig.parent_element.innerHTML =
+        '<img src="' + dataURL + '" width="' + width + '">';
+    fig.close_ws(fig, msg);
+};
+
+mpl.figure.prototype.close_ws = function (fig, msg) {
+    fig.send_message('closing', msg);
+    // fig.ws.close()
+};
+
+mpl.figure.prototype.push_to_output = function (_remove_interactive) {
+    // Turn the data on the canvas into data in the output cell.
+    var width = this.canvas.width / mpl.ratio;
+    var dataURL = this.canvas.toDataURL();
+    this.cell_info[1]['text/html'] =
+        '<img src="' + dataURL + '" width="' + width + '">';
+};
+
+mpl.figure.prototype.updated_canvas_event = function () {
+    // Tell IPython that the notebook contents must change.
+    IPython.notebook.set_dirty(true);
+    this.send_message('ack', {});
+    var fig = this;
+    // Wait a second, then push the new image to the DOM so
+    // that it is saved nicely (might be nice to debounce this).
+    setTimeout(function () {
+        fig.push_to_output();
+    }, 1000);
+};
+
+mpl.figure.prototype._init_toolbar = function () {
+    var fig = this;
+
+    var toolbar = document.createElement('div');
+    toolbar.classList = 'btn-toolbar';
+    this.root.appendChild(toolbar);
+
+    function on_click_closure(name) {
+        return function (_event) {
+            return fig.toolbar_button_onclick(name);
+        };
+    }
+
+    function on_mouseover_closure(tooltip) {
+        return function (event) {
+            if (!event.currentTarget.disabled) {
+                return fig.toolbar_button_onmouseover(tooltip);
+            }
+        };
+    }
+
+    fig.buttons = {};
+    var buttonGroup = document.createElement('div');
+    buttonGroup.classList = 'btn-group';
+    var button;
+    for (var toolbar_ind in mpl.toolbar_items) {
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) {
+            /* Instead of a spacer, we start a new button group. */
+            if (buttonGroup.hasChildNodes()) {
+                toolbar.appendChild(buttonGroup);
+            }
+            buttonGroup = document.createElement('div');
+            buttonGroup.classList = 'btn-group';
+            continue;
+        }
+
+        button = fig.buttons[name] = document.createElement('button');
+        button.classList = 'btn btn-default';
+        button.href = '#';
+        button.title = name;
+        button.innerHTML = '<i class="fa ' + image + ' fa-lg"></i>';
+        button.addEventListener('click', on_click_closure(method_name));
+        button.addEventListener('mouseover', on_mouseover_closure(tooltip));
+        buttonGroup.appendChild(button);
+    }
+
+    if (buttonGroup.hasChildNodes()) {
+        toolbar.appendChild(buttonGroup);
+    }
+
+    // Add the status bar.
+    var status_bar = document.createElement('span');
+    status_bar.classList = 'mpl-message pull-right';
+    toolbar.appendChild(status_bar);
+    this.message = status_bar;
+
+    // Add the close button to the window.
+    var buttongrp = document.createElement('div');
+    buttongrp.classList = 'btn-group inline pull-right';
+    button = document.createElement('button');
+    button.classList = 'btn btn-mini btn-primary';
+    button.href = '#';
+    button.title = 'Stop Interaction';
+    button.innerHTML = '<i class="fa fa-power-off icon-remove icon-large"></i>';
+    button.addEventListener('click', function (_evt) {
+        fig.handle_close(fig, {});
+    });
+    button.addEventListener(
+        'mouseover',
+        on_mouseover_closure('Stop Interaction')
+    );
+    buttongrp.appendChild(button);
+    var titlebar = this.root.querySelector('.ui-dialog-titlebar');
+    titlebar.insertBefore(buttongrp, titlebar.firstChild);
+};
+
+mpl.figure.prototype._remove_fig_handler = function () {
+    this.close_ws(this, {});
+};
+
+mpl.figure.prototype._root_extra_style = function (el) {
+    el.style.boxSizing = 'content-box'; // override notebook setting of border-box.
+    el.addEventListener('remove', this._remove_fig_handler);
+};
+
+mpl.figure.prototype._canvas_extra_style = function (el) {
+    // this is important to make the div 'focusable
+    el.setAttribute('tabindex', 0);
+    // reach out to IPython and tell the keyboard manager to turn it's self
+    // off when our div gets focus
+
+    // location in version 3
+    if (IPython.notebook.keyboard_manager) {
+        IPython.notebook.keyboard_manager.register_events(el);
+    } else {
+        // location in version 2
+        IPython.keyboard_manager.register_events(el);
+    }
+};
+
+mpl.figure.prototype._key_event_extra = function (event, _name) {
+    var manager = IPython.notebook.keyboard_manager;
+    if (!manager) {
+        manager = IPython.keyboard_manager;
+    }
+
+    // Check for shift+enter
+    if (event.shiftKey && event.which === 13) {
+        this.canvas_div.blur();
+        // select the cell after this one
+        var index = IPython.notebook.find_cell_index(this.cell_info[0]);
+        IPython.notebook.select(index + 1);
+    }
+};
+
+mpl.figure.prototype.handle_save = function (fig, _msg) {
+    fig.ondownload(fig, null);
+};
+
+mpl.find_output_cell = function (html_output) {
+    // Return the cell and output element which can be found *uniquely* in the notebook.
+    // Note - this is a bit hacky, but it is done because the "notebook_saving.Notebook"
+    // IPython event is triggered only after the cells have been serialised, which for
+    // our purposes (turning an active figure into a static one), is too late.
+    var cells = IPython.notebook.get_cells();
+    var ncells = cells.length;
+    for (var i = 0; i < ncells; i++) {
+        var cell = cells[i];
+        if (cell.cell_type === 'code') {
+            for (var j = 0; j < cell.output_area.outputs.length; j++) {
+                var data = cell.output_area.outputs[j];
+                if (data.data) {
+                    // IPython >= 3 moved mimebundle to data attribute of output
+                    data = data.data;
+                }
+                if (data['text/html'] === html_output) {
+                    return [cell, data, j];
+                }
+            }
+        }
+    }
+};
+
+// Register the function which deals with the matplotlib target/channel.
+// The kernel may be null if the page has been refreshed.
+if (IPython.notebook.kernel !== null) {
+    IPython.notebook.kernel.comm_manager.register_target(
+        'matplotlib',
+        mpl.mpl_figure_comm
+    );
+}
+
+</script>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAEsCAYAAADtt+XCAAAVEklEQVR4nO3df2yUhR3H8aeUthRoT/cHaWdpHQa1NcqmDiROmvgLpwbYZphDBbp0LnN/sGwxkpms6hRb2DAzYRuLC/6ELJSCmYLZYKTD4pjDTis0SoW5EzURt2sxWqTtZ3+4Hlzbq9fH+/H91vcrebJ4Le3znOzzbu96NhAAACEEuT4BAIBPBAQAEAoBAQCEQkAAAKEQEABAKAQEABAKAQEAhEJAAAChEBAAQCgEBAAQCgEBAIRCQAAAoRAQAEAoBAQAEAoBAQCEQkAAAKEQEABAKAQEABAKAQEAhEJAAAChEBAAQCgEBAAQCgEBAIRCQAAAoRAQAEAoBAQAEAoBAQCEQkAAAKEQEABAKAQEABAKAQEAhEJAAAChEBAAQCgEBAAQyrgISH9/v6LRqGKxmLq7uzk4ODjcH7FYTNFoVP39/bme2KTGRUCi0aiCIODg4OAYd0c0Gs31xCY1LgISi8Xid3Suv2rg4ODgSMcx+IVxLBbL9cQmNS4C0t3drSAI1N3dnetTAYC08LBrBAQADPKwawQEAAzysGtpD0htba1WrFiR7g87Kg93NACMhYddS3tA3n//ffX09KT7w47Kwx0N//r6B7S365i2tb+lvV3H1Nc/kOtTwjjmYdd4CAtIwY6Ot3XZqp2quuuZ+HHZqp3a0fF2rk8N45SHXcvoQ1hVVVV64IEHVFdXp6lTp2r69Olav359/H2PHDmiIAi0adMmzZ07V0VFRaqpqdHu3bvH9Dk93NHwa0fH2zr7tHAMHmf//yAiyAQPu5bxgHzhC1/QunXrdOjQIT344IOaMGGCOjs7JZ0KSEVFhZqbm3Xw4EHV19erpKREx44dS/lzerij4VNf/8Cw7zyGRuSyVTt5OAtp52HXMh6QW2+9Nf62gYEBTZs2Tb/5zW8knQpIY2Nj/H1OnjypiooKNTU1Jf0cvb29I77gxvIdDZ/2dh1LGo/Tj71dqX/BA6SCgFRVafXq1Qlvv+iii3TvvfdKOhWQ1tbWhPdZtGiRli9fnvRzNDQ0jPiSf8t3NHza1v5WSgHZ1v5Wrk8V4wwBqarSQw89lPD2WbNmqaGhQdLoAamrq0v6OfgOBNnCdyDIFQKSYkBOf7jq5MmTmj59+qgPYQ3l4Y6GT4PPgYz0JDrPgSCTPOyaiYBUVlaqpaVFnZ2duv322zV16lS99957KX9OD3c0/Br8KayhEeGnsJBJHnbNREA2btyoOXPmqLCwUNXV1dq1a9eYPqeHOxq+8ToQZJuHXcvpCwkHA9Le3v6ZPo6HOxr+8Up0ZJOHXSMgAGCQh10jIABgkIdd47+FBQAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICAAZ52DUCAgAGedg1AgIABnnYNQICpKq/Tzr8V+mVzZ/8b39frs8I45iHXQsdkBMnTqTzPD4TD3c0nDvwtPTL86WG0lPHL8//5HYgAzzsWjwgPT09WrJkiSZPnqyysjKtXbtWtbW1WrFihSSpqqpKP//5z7Vs2TKVlpZq6dKlkqTm5mbV1NSosLBQVVVV+sUvfpH4CYJAW7duTbgtEolow4YNkqQjR44oCAJt2rRJc+fOVVFRkWpqarR79+6UL8LDHQ3HDjwtNUQS49FQ+v/bIkQEGeFh1+IBqa+vV1VVlXbu3KmOjg594xvfUElJSUJASktLtWbNGh06dEiHDh3SP/7xD02YMEH33XefXnvtNW3YsEHFxcXxOEipB6SiokLNzc06ePCg6uvrVVJSomPHjqV0ER7uaDjV3zf8O4+hEfllNQ9nIe087FogffLdR0FBgTZv3hx/QywW0+TJkxMCsmjRooQ/vGTJEl1zzTUJt915552qqak59QlSDEhjY2P87SdPnlRFRYWamppGPOne3l51d3fHj2g0av6OhlOH/zpKPE47Dv8112eKccZNQP75z38qCAK9+eabCW/8yle+khCQ+++/f9jb77nnnoTbtm3bpoKCAvX1ffIVWaoBaW1tTXifRYsWafny5SOedENDg4IgGHZYvqPh1CubUwvIK5s//WMBY+AmIO3t7QqCQP/+978T3vjlL385ISAPPfTQsLffe++9Cbdt3bo1ISB5eXlqaWlJeJ/JkyenFJC6uroRT5rvQJA1fAeCHHETkMGHsJqbm+Nv6O7u1pQpU0YNSLKHsC644IL4P0+bNk3r1q2L//Prr7+uIAiGBeT0h6tOnjyp6dOnJ30IaygPdzScij8HMtKT6DwHgszxsGsJT6J/6Utf0l/+8he9+uqr+ta3vqWSkhL96Ec/kjRyQPbv35/wJPqjjz467En0m2++WdXV1dq/f79efPFFXXnllSooKBgWkMrKSrW0tKizs1O33367pk6dqvfeey+li/BwR8Ox+E9hDY0IP4WFzPGwa6P+GO/s2bO1cuVKSSMHRDr1Y7wFBQWqrKzUmjVrEt5+9OhRXXvttZoyZYpmzpyp7du3j/gcyMaNGzVnzhwVFhaqurpau3btSvkiPNzRcG7E14FUEw9kjIddS/pCwg8++ECRSESPPPJIRk9gMCDt7e2hP4aHOxrjAK9ERxZ52LV4QF566SVt3LhRXV1d2r9/vxYuXKhIJJLyw0hhERAAGM7DriUE5OKLL9aUKVN05pln6uqrr9Yrr7yS8RMgIAAwnIdd4z+mCAAGedi1cRGQWCymIAgUjUYTXh/CwcHB4fUYfH1bLBbL9cQmNS4CMnhHc3BwcIy3IxqN5npikxoXAenv71c0GlUsFsv5Vw2pfEUxnr9TGu/XyPX5P7xcYywWUzQaVX9/f64nNqlxERAvurvtP6b5WY33a+T6/Ps8XGO2EJAs+jz8xR3v18j1+fd5uMZsISBZ9Hn4izver5Hr8+/zcI3ZQkCyqLe3Vw0NDert7c31qWTMeL9Grs+/z8M1ZgsBAQCEQkAAAKEQEABAKAQEABAKAQEAhEJA0qinp0crVqxQZWWlJk2apLlz5+rvf//7qH+mt7dXP/3pT1VZWanCwkLNmDFDv//977N0xmMT5vqefPJJXXTRRSouLlZZWZmWL1+uY8eOZemMR9fa2qobb7xR5eXlCoJAW7duTXj7wMCAGhoaVF5erkmTJqm2tlavvvrqp37c5uZmVVdXx385WktLS6YuYVSZuL7f/e53+trXvqYzzjhDZ5xxhq666irt27cvk5cxqkz9Oxy0adMmBUGghQsXpvvUxwUCkkaLFy9WTU2NWltbdejQITU0NKi0tFRvvfVW0j+zYMECzZkzR3/+85915MgR7du3T21tbVk869SN9fr27NmjCRMm6Fe/+pUOHz6sPXv26IILLtCiRYuyfOYj2759u+6++25t2bJlxPFpbGxUSUmJtmzZoo6ODn37299WeXm5enp6kn7MvXv3Kj8/X6tWrVJnZ6dWrVqliRMn6m9/+1umL2eYTFzfkiVLtG7dOrW3t6uzs1N1dXWKRCKj/h3PpExc46B//etfOuuss3TFFVcQkCQISJp8+OGHys/P1zPPPJNw+6xZs3T33XeP+Gd27NihSCSi999/Pxun+JmEub41a9ZoxowZCbc9/PDDqqioyNh5hjV0fAYGBlRWVqbGxsb4bb29vYpEIvrtb3+b9OMsXrxY1113XcJt8+fP180335z+kx6DdF3fUH19fSopKdFjjz2W1vMNI53X2NfXp8svv1yPPPKIli1bRkCSICBp0tPToyAItHPnzoTbL7vsMtXW1o74Z37wgx/oqquu0l133aUvfvGLmjlzpn7yk5/oww8/zMIZj02Y62tra1NhYaGeffZZDQwM6N1339W8efP0/e9/PwtnPDZDx+eNN95QEAR66aWXEt5vwYIFWrp0adKPM336dK1duzbhtrVr16qysjK9JzxG6bq+oXp6ejRp0iT98Y9/TNu5hpXOa/zZz34W/06ZgCRHQNJo7ty5qq2t1dGjR9XX16cnnnhCeXl5Ovfcc0d8//nz56uoqEg33HCD9u3bp2effVZVVVWqq6vL8pmnZqzXJ0mbN2/W1KlTNXHiRAVBoAULFujjjz/O4lmnZuj4tLW1KQgCHT16NOH9vve97+naa69N+nEKCgr01FNPJdz21FNPqbCwML0nPEbpur6h7rjjDp1zzjn66KOP0nauYaXrGp9//nmdddZZ8V/nTUCSIyBp1NXVpXnz5ikIAuXn5+urX/2qbrnlFlVXV4/4/tdcc40mTZqU8AtjtmzZory8PJPfhYz1+g4cOKDy8nKtXr1aL7/8sp577jldeOGF+u53v5vlM/90ycbn7bffTni/+vp6zZ8/P+nHKSgo0MaNGxNue/LJJ1VUVJTeEx6jdF3f6ZqamnTmmWfq5ZdfTuu5hpWOa+zp6dHZZ5+t7du3x28jIMkRkAz44IMP4n9pFy9erOuvv37E91u6dKnOOeechNsOHjyoIAj0+uuvZ/w8w0r1+m699VbddNNNCbft2bNnxP9T5xoPYX0i1Yew1qxZo0gkohdffDHt5xpWOq6xvb09/gXS4JGXl6e8vDzl5+erq6sro9fgDQHJoP/85z+KRCJav379iG9fv369iouLdfz48fht27Zt04QJE0x+BzLUp13fN7/5TS1evDjhtr179474sEKuJXsCtqmpKX7biRMnUnoS/etf/3rCbdddd53ZJ9HHen2StHr1apWWluqFF17I2PmGkY5r/Oijj9TR0ZFwLFy4UFdeeaU6Ojp04sSJjF+HJwQkjZ577jnt2LFDhw8f1p/+9CfNmjVLs2fPjj/mv3LlSt12223x9z9+/LgqKip000036cCBA2ptbdXMmTNVX1+fq0sY1Vivb8OGDZo4caJ+/etf64033tDzzz+vSy+9VLNnz87VJSQ4fvy42tvb4191rl27Vu3t7XrzzTclffIjoJFIRC0tLero6NB3vvOdYT8Cetttt2nlypXxf25ra1N+fr4aGxvV2dmpxsbGnP0Ybyaur6mpSYWFhWpubtY777wTP07/IiibMnGNQ/EQVnIEJI3+8Ic/aMaMGSosLFRZWZl++MMfJjy/sWzZsmE/sdTZ2amrr75axcXFqqio0I9//GOz332Eub6HH35YNTU1Ki4uVnl5uW655ZacvWZgqN27d4/4O6iXLVsm6dSL0MrKylRUVKR58+apo6Mj4WPU1tbG33/Q5s2bdd5556mgoEDnn3++tmzZkqUrSpSJ66uqqhrxYzY0NGTvwk6TqX+HpyMgyREQAEAoBAQAEAoBAQCEQkAAAKEQEABAKAQEABAKAQEAhEJAAAChEBAAQCgEBO4Nvhr5v//9b04+/65du3Teeeepv78/Y5/j0ksvzdkr2oFkCAhcqa2t1YoVKxJuO3HihN555x0NDAzk5JwuueQSPf744xn9HE8//bRmzpyZ0UgBY0VA4MpIAcmltrY2lZaWZvwXKvX19WnatGkJv6cCyLX/AZkl8YTZwtxuAAAAAElFTkSuQmCC" width="400">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, things work as intended, and we make our target neuron spike at 10ms! Of course, the change is reflected in the schedule:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scheduling_summary</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <table>
+<thead><tr>
+<th style="text-align: center;">object</th>
+            <th style="text-align: center;">part of</th>
+            <th style="text-align: center;">Clock dt</th>
+            <th style="text-align: center;">when</th>
+            <th style="text-align: center;">order</th>
+            <th style="text-align: center;">active</th>
+        </tr></thead>
+<tbody>
+<tr>
+<td style="text-align: left;">
+<b>group_stateupdater_1</b> (<em>StateUpdater</em>)</td>
+            <td style="text-align: left;">group (<em>NeuronGroup</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">groups</td>
+            <td style="text-align: right;">0</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>inp</b> (<em>SpikeGeneratorGroup</em>)</td>
+            <td style="text-align: left;">inp (<em>SpikeGeneratorGroup</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">before_synapses</td>
+            <td style="text-align: right;">0</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>inp_mon</b> (<em>SpikeMonitor</em>)</td>
+            <td style="text-align: left;">inp_mon (<em>SpikeMonitor</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">before_synapses</td>
+            <td style="text-align: right;">1</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>syn_pre</b> (<em>SynapticPathway</em>)</td>
+            <td style="text-align: left;">syn (<em>Synapses</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">synapses</td>
+            <td style="text-align: right;">-1</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>group_thresholder_1</b> (<em>Thresholder</em>)</td>
+            <td style="text-align: left;">group (<em>NeuronGroup</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">thresholds</td>
+            <td style="text-align: right;">0</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>group_mon</b> (<em>SpikeMonitor</em>)</td>
+            <td style="text-align: left;">group_mon (<em>SpikeMonitor</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">thresholds</td>
+            <td style="text-align: right;">1</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+<tr>
+<td style="text-align: left;">
+<b>group_resetter_1</b> (<em>Resetter</em>)</td>
+            <td style="text-align: left;">group (<em>NeuronGroup</em>)</td>
+            <td style="text-align: left;">100. us (every step)</td>
+            <td style="text-align: left;">resets</td>
+            <td style="text-align: right;">0</td>
+            <td style="text-align: center;">yes</td>
+        </tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For more information on this topic, have a look at Brian's <a href="https://brian2.readthedocs.io/en/stable/user/running.html#scheduling"><i class="fas fa-book"></i> documentation</a></p>
+
+</div>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../tags/training/" rel="tag">training</a></li>
+            <li><a class="tag p-category" href="../../../tags/video/" rel="tag">video</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../brian-24/" rel="prev" title="New release: Brian 2.4">Previous post</a>
+            </li>
+        </ul></nav></aside><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script><script>
+                renderMathInElement(document.body,
+                    {
+                        
+delimiters: [
+    {left: "$$", right: "$$", display: true},
+    {left: "\\[", right: "\\]", display: true},
+    {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
+    {left: "$", right: "$", display: false},
+    {left: "\\(", right: "\\)", display: false}
+]
+
+                    }
+                );
+            </script></article><!--End of body content--><footer id="footer" class="text-center">
+            Contents © 2020         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>
