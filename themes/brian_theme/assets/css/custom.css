@@ -1,3 +1,8 @@
+/* increase contrast for text-muted */
+.text-muted {
+    color: #535a5f !important;
+}
+
 /* Blue background/border color */
 .bg-blue {
     background-color: #035b8f;
