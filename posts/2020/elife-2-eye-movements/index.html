@@ -8,7 +8,7 @@
 <link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/2020/elife-2-eye-movements/">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
@@ -31,7 +31,6 @@
 <meta property="article:tag" content="synapses">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@briansimulator">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -141,7 +140,7 @@
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f9a84bbf320>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f9a84c19d40>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_2_eye_movements.png', 'title': 'Non-standard neuron modelling: smooth pursuit eye movements', 'slug': 'elife-2-eye-movements', 'date': '2020-01-30 17:07', 'tags': 'model, synapses', 'category': 'article', 'updated': '2020-01-30 17:07', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'description': '', 'template': '', 'password': ''})}) -->
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f7f620aff80>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f7f6210bc20>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_2_eye_movements.png', 'title': 'Non-standard neuron modelling: smooth pursuit eye movements', 'slug': 'elife-2-eye-movements', 'date': '2020-01-30 17:07', 'tags': 'model, synapses', 'category': 'article', 'updated': '2020-01-30 17:07', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'password': '', 'data': '', 'description': '', 'template': ''})}) -->
     <div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
@@ -449,10 +448,10 @@ $$ \frac{d^2x}{dt^2} = \alpha(x_0 - x) - \beta\frac{dx}{dt}$$</p>
 
 
 
-<div id="42f8bb83-08b7-42bf-ab7b-ea6dd999c21b"></div>
+<div id="40aa9859-b23b-43e6-b1a9-257cde15a6d7"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#42f8bb83-08b7-42bf-ab7b-ea6dd999c21b');
+var element = $('#40aa9859-b23b-43e6-b1a9-257cde15a6d7');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -1254,21 +1253,19 @@ if (IPython.notebook.kernel != null) {
             <li class="next">
                 <a href="../elife-3-bisection/" rel="next" title="Making use of Python: threshold finding with bisection">Next post</a>
             </li>
-        </ul></nav></aside><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script><script>
-                renderMathInElement(document.body,
-                    {
-                        
-delimiters: [
-    {left: "$$", right: "$$", display: true},
-    {left: "\\[", right: "\\]", display: true},
-    {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
-    {left: "$", right: "$", display: false},
-    {left: "\\(", right: "\\)", display: false}
-]
-
-                    }
-                );
-            </script></article><!--End of body content--><footer id="footer" class="text-center">
+        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><!--End of body content--><footer id="footer" class="text-center">
             Contents © 2021         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
             
             

@@ -8,7 +8,7 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/tags/release/">
 <link rel="next" href="index-2.html" type="text/html">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
@@ -205,7 +205,7 @@
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>We've released Brian 1.4.4, a maintenance release for Brian 1 that fixes compatibility issues with recent versions of numpy/sympy.</p>
+<p>We’ve released Brian 1.4.4, a maintenance release for Brian 1 that fixes compatibility issues with recent versions of numpy/sympy.</p>
 <p>The packages are available on PyPI: <a href="https://pypi.python.org/pypi/brian">https://pypi.python.org/pypi/brian</a></p>
 <p>Note that for new projects, you should use <a href="http://brian2.readthedocs.io">Brian 2</a> instead, the Brian version under active development.</p>
 </div>
@@ -227,10 +227,10 @@
 <p>The new Brian 2 release fixes two bugs:
 </p>
 <ol>
-<li>an incorrect application of the substitution mechanism in equations (i.e. when using the same set of equations several times and changing the equations' variable names via Brian's Equation class), and</li>
+<li>an incorrect application of the substitution mechanism in equations (i.e. when using the same set of equations several times and changing the equations’ variable names via Brian’s Equation class), and</li>
     <li>an inadvertent deactivation of parts of the new caching mechanism which resulted in a major reduction of its performance improvement.</li>
 </ol>
-The Brian2GeNN release adds a workaround for a bug in some version of the glibc library on Linux which can potentially lead to drastically reduced performance. This is the same workaround that had already been applied to Brian 2's C++ standalone mode with an earlier release.
+The Brian2GeNN release adds a workaround for a bug in some version of the glibc library on Linux which can potentially lead to drastically reduced performance. This is the same workaround that had already been applied to Brian 2’s C++ standalone mode with an earlier release.
 <p><strong>How to get Brian 2:</strong> <a href="http://brian2.readthedocs.io/en/2.1.2/introduction/install.html">http://brian2.readthedocs.io/en/2.1.2/introduction/install.html</a></p>
 <p><strong>How to get Brian2GeNN:</strong> <a href="http://brian2genn.readthedocs.io/en/latest/introduction/index.html">http://brian2genn.readthedocs.io/en/latest/introduction/index.html</a></p>
 <p>As always, please report bugs or suggestions to the github bug tracker (<a href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>) or to the brian-development mailing list (brian-development@googlegroups.com).</p>
@@ -250,7 +250,7 @@ The Brian2GeNN release adds a workaround for a bug in some version of the glibc 
         <div>
 <p></p>
 <p>We are happy to announce the release of <strong>Brian 2.1</strong>. This release includes a number of fixes and small improvements, and two new major features: support for numerical integration with adaptive-timestep methods based on the GNU Scientific Library, and caching of code generation leading to faster simulation setup times, in particular for multiple runs of the same model. For an extensive list of changes, see the <a href="http://brian2.readthedocs.io/en/2.1/introduction/release_notes.html">release notes</a>. We recommend all users of Brian 2 to update.</p>
-<p>We also release a new version 1.1. of <a href="http://brian2genn.readthedocs.io"><strong>Brian2GeNN</strong></a>, Brian's interface to the GPU-enhanced Neuronal Network simulation environment (<a href="http://genn-team.github.io/genn/">GeNN</a>). This release does not contain any major new features except for bug and compatibility fixes, but an update is required for all users that update to Brian 2.1.</p>
+<p>We also release a new version 1.1. of <a href="http://brian2genn.readthedocs.io"><strong>Brian2GeNN</strong></a>, Brian’s interface to the GPU-enhanced Neuronal Network simulation environment (<a href="http://genn-team.github.io/genn/">GeNN</a>). This release does not contain any major new features except for bug and compatibility fixes, but an update is required for all users that update to Brian 2.1.</p>
 <p><strong>How to get Brian 2</strong>: follow the <a href="http://brian2.readthedocs.io/en/2.1/introduction/install.html">installation instructions in the documentation </a></p>
 <p><strong>Further information about Brian2</strong>: <a class="moz-txt-link-freetext" href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 <p>As always, please report bugs or suggestions to the <a href="https://github.com/brian-team/brian2/issues">github bug tracker</a> or to the brian-development mailing list (<a class="moz-txt-link-abbreviated" href="mailto:brian-development@googlegroups.com">brian-development@googlegroups.com</a>).</p>
@@ -272,7 +272,7 @@ The Brian2GeNN release adds a workaround for a bug in some version of the glibc 
 <p>We are proud to announce the release of <strong>Brian2GeNN</strong>, the Brian 2 interface to the <a href="http://genn-team.github.io/genn/">GPU-enhanced Neuronal Network (GeNN)</a> simulator. With this interface, a Brian 2 script (as long as it only uses <a href="http://brian2genn.readthedocs.io/en/latest/introduction/exclusions.html">supported features</a>) can benefit from the potential performance benefits of a GPU by adding just two lines to the start of the script:
 <code>
 import brian2genn
-set_device('genn')
+set_device(‘genn’)
 </code></p>
 <p>Brian2GeNN can be installed from the same Anaconda repository channel as Brian itself:</p>
 <p><code>conda install -c brian-team brian2genn</code></p>

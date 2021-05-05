@@ -8,7 +8,7 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/code-generation/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
@@ -138,12 +138,12 @@
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p></p>
-<p>The latest SVN version of Brian includes a new experimental package, brian.experimental.codegen, which is designed for automatic generation of code for numerical integration in Python, C++ and GPU C++. If the global preference usecodegen is True then it will be used automatically for all nonlinear differential equations. If usecodegenweave is True then C code will be generated, otherwise Python code. In all cases the code runs faster. GPU code is not currently used. Use the <a href="http://www.briansimulator.org/docs/reference-preferences.html#global-configuration-file">brian_global_preferences.py</a> file to activate it for all your code. As an example of how it works, let's use the following Brian Equations object:</p>
+<p>The latest SVN version of Brian includes a new experimental package, brian.experimental.codegen, which is designed for automatic generation of code for numerical integration in Python, C++ and GPU C++. If the global preference usecodegen is True then it will be used automatically for all nonlinear differential equations. If usecodegenweave is True then C code will be generated, otherwise Python code. In all cases the code runs faster. GPU code is not currently used. Use the <a href="http://www.briansimulator.org/docs/reference-preferences.html#global-configuration-file">brian_global_preferences.py</a> file to activate it for all your code. As an example of how it works, let’s use the following Brian Equations object:</p>
 <p>[python]
-eqs = Equations('''
+eqs = Equations(‘’‘
 dV/dt = -W<em>V/(10</em>second) : volt
 dW/dt = -V*<em>2/(1</em>second) : volt
-''')
+‘’‘)
 [/python]</p>
 <p>The codegen module generates the following code for the Euler update scheme. For Python:</p>
 <p>[python]
@@ -186,33 +186,33 @@ for(int _i=0;_i&lt;num_neurons;_i++){
 <p>These are all generated from the following template for the Euler integration scheme:</p>
 <p>[python]
 euler_scheme = [
-    (('foreachvar', 'nonzero'),
-        '''
+    ((‘foreachvar’, ‘nonzero’),
+        ‘’‘
         $vartype ${var}__tmp = $var_expr
-        '''),
-    (('foreachvar', 'nonzero'),
-        '''
+        ‘’‘),
+    ((‘foreachvar’, ‘nonzero’),
+        ‘’‘
         $var += ${var}__tmp*dt
-        ''')
+        ‘’‘)
     ]
 [/python]</p>
 <p>The other schemes are the RK2 and exponential Euler scheme. For example, the exponential Euler scheme is:</p>
 <p>[python]
 exp_euler_scheme = [
-    (('foreachvar', 'nonzero'),
-        '''
+    ((‘foreachvar’, ‘nonzero’),
+        ‘’‘
         $vartype ${var}__B = @substitute(var_expr, {var:0})
         $vartype ${var}__A = @substitute(var_expr, {var:1})
         ${var}__A -= ${var}__B
         ${var}__B /= ${var}__A
         ${var}__A <em>= dt
-        '''),
-    (('foreachvar', 'nonzero'),
-        '''
+        ‘’‘),
+    ((‘foreachvar’, ‘nonzero’),
+        ‘’‘
         $var += ${var}__B
         $var </em>= exp(${var}__A)
         $var -= ${var}__B
-        ''')
+        ‘’‘)
     ]
 [/python]</p>
 <p>On the Equations above, this generates the following Python code:</p>

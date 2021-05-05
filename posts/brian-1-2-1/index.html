@@ -8,7 +8,7 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/brian-1-2-1/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
@@ -159,9 +159,9 @@ In addition, garbage collection is called after a clear.</li>
 <p>Improvements</p>
 <ul>
 <li>The sparseness keyword in connect_random can be a function</li>
-<li>Added 'wmin' to STDP</li>
+<li>Added ‘wmin’ to STDP</li>
 <li>You can now access STDP internal variables, e.g. stdp.A_pre, and monitor
-them by doing e.g. StateMonitor(stdp.pre_group, 'A_pre')</li>
+them by doing e.g. StateMonitor(stdp.pre_group, ‘A_pre’)</li>
 <li>STDP now supports nonlinear equations and parameters</li>
 <li>refractory can now be a vector (see docstring for NeuronGroup) for constant
 resets.</li>
@@ -180,12 +180,12 @@ and resolving ticket #53</li>
 <li>Weave now works on 64 bit platforms with 64 bit Python</li>
 <li>Fixed bug introduced in 1.2.0 where dense DelayConnection structures would
 not propagate any spikes</li>
-<li>Fixed bug where connect* functions on DelayConnection didn't work with
+<li>Fixed bug where connect* functions on DelayConnection didn’t work with
 subgroups but only with the whole group.</li>
 <li>Fixed bug with linked_var from subgroups not working</li>
 <li>Fixed bug with adding Equations objects together using a shared base equation
 (ticket #9 on the trac)</li>
-<li>unit_checking=False now works (didn't do anything before)</li>
+<li>unit_checking=False now works (didn’t do anything before)</li>
 <li>Fixed bug with using Equations object twice (for two different NeuronGroups)</li>
 <li>Fixed unit checking bug and ZeroDivisionError (ticket #38)</li>
 <li>Fixed rare problems with spikes being lost due to wrong size of SpikeContainer,

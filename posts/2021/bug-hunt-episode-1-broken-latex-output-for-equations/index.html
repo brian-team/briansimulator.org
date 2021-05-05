@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bug hunt episode 1: Broken LaTeX output for equations | The Brian spiking neural network simulator</title>
+<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#333e63">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
+<link rel="canonical" href="https://briansimulator.org/posts/2021/bug-hunt-episode-1-broken-latex-output-for-equations/">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-84065998-2', { 'anonymize_ip': true });
+</script><script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="../../../assets/css/custom.css">
+<!-- Global site tag (gtag.js) - Google Analytics --><meta name="author" content="Marcel Stimberg">
+<meta name="robots" content="noindex">
+<meta property="og:site_name" content="The Brian spiking neural network simulator">
+<meta property="og:title" content="Bug hunt episode 1: Broken LaTeX output for equations">
+<meta property="og:url" content="https://briansimulator.org/posts/2021/bug-hunt-episode-1-broken-latex-output-for-equations/">
+<meta property="og:description" content="This article starts a new series of blog posts about “bug hunts”. In these articles, I will go through a recent bug in Brian (or one of its dependencies) and describe all the steps I used to find the ">
+<meta property="og:image" content="https://briansimulator.org/images/articles/2021/bug-hunt-episode-1-broken-latex-output-for-equations.png">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-05-04T00:00:00Z">
+<meta property="article:tag" content="bug-hunt">
+<meta property="article:tag" content="Development">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@briansimulator">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4 navbar-dark bg-blue"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="https://briansimulator.org/">
+            <img src="../../../logos/brian_logo_small.png" alt="The Brian spiking neural network simulator" id="logo" class="d-inline-block align-top"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../../install/" class="nav-link">Install</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Getting started</a>
+            <div class="dropdown-menu">
+                    <a href="https://mybinder.org/v2/gh/brian-team/brian2-binder/master?filepath=demo.ipynb" class="dropdown-item">Try in the browser</a>
+                    <a href="../../../getting-started" class="dropdown-item">Beginners guide</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/resources/tutorials/index.html" class="dropdown-item">Tutorials</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/examples/index.html" class="dropdown-item">Examples</a>
+                    <a href="https://brian2.readthedocs.io" class="dropdown-item">Documentation</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+            <div class="dropdown-menu">
+                    <a href="../../../blog" class="dropdown-item">All posts</a>
+                    <a href="../../../categories/news" class="dropdown-item">News</a>
+                    <a href="../../../categories/article" class="dropdown-item">Articles</a>
+                    <a href="../../../tags/" class="dropdown-item">Tags</a>
+                    <a href="../../../archive.html" class="dropdown-item">Archive</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu">
+                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum</a>
+                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="../../../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
+                    <a href="../../../ecosystem/" class="dropdown-item">Software ecosystem</a>
+                    <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
+                    <a href="../../../contribute" class="dropdown-item">How to contribute</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Material</a>
+            <div class="dropdown-menu">
+                    <a href="../../../publications/" class="dropdown-item">Our papers</a>
+                    <a href="../../../cite/" class="dropdown-item">How to cite us</a>
+                    <a href="https://github.com/brian-team/brian-material/tree/master/logos" class="dropdown-item">Download logos</a>
+                    <a href="https://github.com/brian-team/brian2" class="dropdown-item">GitHub repository</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../../team" class="nav-link">Team</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+<a href="../../../rss.xml" class="nav-link">RSS feed</a>
+
+                
+                
+                    
+    
+    </li>
+<li class="nav-item">
+    <a href="index.md" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Bug hunt episode 1: Broken LaTeX output for equations</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Marcel Stimberg
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2021-05-04T00:00:00Z" itemprop="datePublished" title="2021-05-04">2021-05-04</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="index.md" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<!--
+.. title: Bug hunt episode 1: Broken LaTeX output for equations
+.. slug: bug-hunt-episode-1-broken-latex-output-for-equations
+.. date: 2021-05-05
+.. tags: Development, bug-hunt
+.. category: article
+.. has_math: true
+-->
+
+<p>This article starts a new series of blog posts about “bug hunts”. In these articles, I will go through a recent bug in Brian (or one of its dependencies) and describe all the steps I used to find the source of the bug and how I fixed it. I will try to not only focus on the Brian-side of things, but also show some general tools like <code>git bisect</code> or “monkey patching” that can be helpful to find the source of these nasty critters (no actual bugs were harmed during the making of this blog post).</p>
+<p>Let’s start! Today’s bug will be about equations, and more specifically about their LaTeX representation. As most of you probably know, Brian can represent equations, quantities, etc. in LaTeX. This representation can then either be included in a LaTeX document or directly rendered for example as the output in <a href="https://jupyter.org/">jupyter notebooks</a>.</p>
+<!-- TEASER_END -->
+
+<h3>Context</h3>
+<p>We don’t document this feature particularly well, but is mentioned in our <a href="https://brian2.readthedocs.io/en/stable/developer/guidelines/representation.html?latex-representations-with-sympy#latex-representations-with-sympy">development documentation</a> and in our <a href="https://www.frontiersin.org/articles/10.3389/fninf.2014.00006/full#h5">2014 paper</a>. Taking the example from that paper, our extension of <a href="https://www.sympy.org/en/index.html">sympy</a>‘s LaTeX printing facilities makes it possible to convert an <code>Equations</code> object to LaTeX markup:</p>
+<pre class="code literal-block"><span></span><span class="n">eqs</span> <span class="o">=</span> <span class="n">Equations</span><span class="p">(</span><span class="s1">'''dv/dt = (g_L*(E_L-v) +</span>
+<span class="s1">                            g_s*(E_s-v))/tau_m : volt</span>
+<span class="s1">                   dg_s/dt = -g_s/tau_s : siemens'''</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">eqs</span><span class="p">))</span>
+</pre>
+
+
+<p>Output:</p>
+<pre class="code literal-block"><span></span><span class="k">\begin</span><span class="nb">{</span>align*<span class="nb">}</span><span class="k">\frac</span><span class="nb">{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}</span>v<span class="nb">}{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}</span>t<span class="nb">}</span> <span class="nb">&amp;</span>= <span class="k">\frac</span><span class="nb">{</span>g<span class="nb">_{</span>L<span class="nb">}</span> <span class="k">\left</span>(E<span class="nb">_{</span>L<span class="nb">}</span> - v<span class="k">\right</span>) + g<span class="nb">_{</span>s<span class="nb">}</span> <span class="k">\left</span>(E<span class="nb">_{</span>s<span class="nb">}</span> - v<span class="k">\right</span>)<span class="nb">}{</span><span class="k">\tau</span><span class="nb">_{</span>m<span class="nb">}}</span> <span class="nb">&amp;&amp;</span> <span class="k">\text</span><span class="nb">{</span>(unit of <span class="s">$</span><span class="nb">v</span><span class="s">$</span>: <span class="s">$</span><span class="nv">\mathrm</span><span class="nb">{V}</span><span class="s">$</span>)<span class="nb">}</span><span class="k">\\</span>
+<span class="k">\frac</span><span class="nb">{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}</span>g<span class="nb">_{</span>s<span class="nb">}}{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}</span>t<span class="nb">}</span> <span class="nb">&amp;</span>= - <span class="k">\frac</span><span class="nb">{</span>g<span class="nb">_{</span>s<span class="nb">}}{</span><span class="k">\tau</span><span class="nb">_{</span>s<span class="nb">}}</span> <span class="nb">&amp;&amp;</span> <span class="k">\text</span><span class="nb">{</span>(unit of <span class="s">$</span><span class="nb">g_{s}</span><span class="s">$</span>: <span class="s">$</span><span class="nv">\mathrm</span><span class="nb">{S}</span><span class="s">$</span>)<span class="nb">}</span><span class="k">\end</span><span class="nb">{</span>align*<span class="nb">}</span>
+</pre>
+
+
+<p>Included in a LaTeX document (or in a Markdown document that supports LaTeX equations like this blog post), this is rendered as:</p>
+<div>
+<!-- to avoid that markdown replaces stars etc. -->
+\begin{alignat}{4}
+    \frac{\mathrm{d}v}{\mathrm{d}t} &amp;= \frac{g_{L} \left(E_{L} - v\right) + g_{s} \left(E_{s} - v\right)}{\tau_{m}} &amp;&amp; \text{(unit of $v$: $\mathrm{V}$)}\\
+    \frac{\mathrm{d}g_{s}}{\mathrm{d}t} &amp;= - \frac{g_{s}}{\tau_{s}} &amp;&amp; \text{(unit of $g_{s}$: $\mathrm{S}$)}
+\end{alignat}
+</div>
+
+<p>Which looks kind of nice, in particular note the subscripts and the conversion of <code>tau</code> to $\tau$.</p>
+<h3>The bug</h3>
+<p>Now, a couple of days ago user Sebastian Schmitt (<code>schmitts</code>) reported on our <a href="https://brian.discourse.group/t/latex-representation-of-equations/376">discussion forum</a> that this feature seems to be broken. He helpfully provided a simple example demonstrating the issue (always appreciated!):</p>
+<pre class="code literal-block"><span></span><span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">latex</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">'dv/dt = -v/(10*ms) : volt'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">latex</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">equations</span><span class="p">))</span>
+</pre>
+
+
+<p>Output:</p>
+<pre class="code literal-block"><span></span><span class="k">\begin</span><span class="nb">{</span>align*<span class="nb">}</span><span class="k">\mathtt</span><span class="nb">{</span><span class="k">\text</span><span class="nb">{</span><span class="k">\textbackslashfrac\{\textbackslashmathrm\{</span>d<span class="k">\}</span>v<span class="k">\}\{\textbackslashmathrm\{</span>d<span class="k">\}</span>t<span class="k">\}</span><span class="nb">}}</span> <span class="nb">&amp;</span>= - <span class="k">\frac</span><span class="nb">{</span>v<span class="nb">}{</span>10 ms<span class="nb">}</span> <span class="nb">&amp;&amp;</span> <span class="k">\text</span><span class="nb">{</span>(unit of <span class="s">$</span><span class="nb">v</span><span class="s">$</span>: <span class="s">$</span><span class="nv">\mathrm</span><span class="nb">{V}</span><span class="s">$</span>)<span class="nb">}</span><span class="k">\end</span><span class="nb">{</span>align*<span class="nb">}</span>
+</pre>
+
+
+<p>Which does not look right at all when rendered:
+</p>
+<div>
+\begin{alignat}{4}\mathtt{\text{\textbackslashfrac{\textbackslashmathrm{d}v}{\textbackslashmathrm{d}t}}} &amp;= - \frac{v}{10 ms} &amp;&amp; \text{(unit of $v$: $\mathrm{V}$)}\end{alignat}
+</div>
+<h3>The hunt</h3>
+<h4>Going down Brian’s history</h4>
+<p>I confirmed the problem on my machine with the latest development version of Brian, and opened an <a href="https://github.com/brian-team/brian2/issues/1296">issue on github</a>. Since I was sure that this worked previously (otherwise we wouldn’t have put it in the 2014 paper <span class="emoji">😉</span> ), I marked the bug as a <em>regression</em>. I therefore checked out previous releases of Brian to see whether the bug still occured. The problem was still there with version 2.3.0.1, but testing earlier versions got a bit tedious, since I could not run them directly from the source code on Python 3. I therefore switched to a Python 2 environment and checked out version 2.1.3.1, released in 2018. Lo and behold, this version did not seem to be affected by the bug. Just to make sure, I did a quick check whether the 2.3.0.1 version (the newest version of Brian that is still compatible with Python 2, see below) would show the error as I confirmed earlier; well, it didn’t. So how come that this issue appears under Python 3 but not with Python 2, when using the same version of Brian? In this case, an actual dependence on the Python version seemed rather unlikely, but of course the Python version wasn’t the only difference between the two environments that I used for testing – a number of packages were installed with different versions. A quick check with <code>conda list</code> (I am using <a href="https://conda.io">conda environments</a> on my system) revealed: <code>sympy</code> was installed with version 1.5.1 in the Python 2 environment, and with version 1.8 in the newer Python 3 environment. Since our LaTeX output builds on <code>sympy</code>, this seemed to be the probable cause for the difference, and downgrading <code>sympy</code> indeed made the issue disappear.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Checking older versions of Brian can sometimes be tricky due to the Python 2 → 3 transition.
+Versions up to <strong>2.2.2.1</strong> used the <a href="https://docs.python.org/3/library/2to3.html"><code>2to3.py</code></a> tool to
+translate from Python 2 to Python 3. This means that code runs directly from the source directory only under
+Python 2, running it with Python 3 requires first installing it (which will run <code>2to3.py</code> to translate the 
+code). Version <strong>2.3</strong> got rid of this limitation, and has code that is both compatible with Python 2 and 
+Python 3 (via the <a href="https://pypi.org/project/future/"><code>future</code></a> package. This means that you can run it without 
+any installation on both Python versions. Finally, since version <strong>2.4</strong>, Brian is “Python 3-only” and no 
+longer has a compatibility layer for Python 2.</p>
+</div>
+<h4>What changed in sympy?</h4>
+<p>Now, what and when changed in <code>sympy</code> that broke our LaTeX support? To investigate further, I removed the installed <code>sympy</code> package and instead cloned their <a href="https://github.com/sympy/sympy/">development repository</a> from github:</p>
+<pre class="code literal-block"><span></span><span class="gp">$</span> conda remove --force sympy
+<span class="gp">$</span> git clone git@github.com:sympy/sympy.git
+</pre>
+
+
+<p>Cloning the repository takes a moment (the repository contains an impressive number of 46,784 commits!), but then it gives us access to the full history of the <code>sympy</code> project. As the next step, I installed it in “development mode” to make it possible to easily switch its version without having to install the package over and over again:</p>
+<pre class="code literal-block"><span></span><span class="gp">$</span> pip install -e .
+</pre>
+
+
+<p>As most repositories do, <code>sympy</code> tags its releases and a <code>git tag</code> shows that it prefixes its release tag names with <code>sympy-...</code>. This gives us everything we need to run the amazing <code>git bisect</code> command which lets you pin-point the exact commit that introduced a regression. In this case, I start it with:</p>
+<pre class="code literal-block"><span></span><span class="gp">$</span> git bisect start sympy-1.8 sympy-1.5.1
+<span class="go">Already on 'master'</span>
+<span class="go">Your branch is up to date with 'origin/master'.</span>
+<span class="go">Bisecting: a merge base must be tested</span>
+<span class="go">[c6a18db2095aeed3f2820d620d817ebc3f1ccacd] Don't allow expressions to compare equal to strings</span>
+</pre>
+
+
+<p>(From my previous tests I know that version 1.8 is affected by the problem, while version 1.5.1 is not.)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As the name suggests, <code>git bisect</code> runs a <a href="https://en.wikipedia.org/wiki/Bisection_(software_engineering)">bisection algorithm</a>. This means with each response it cuts the the number of commits to check in half – the total number of commits to check therefore only grows logarithmically with the number of total commits. Below, only 14 verifications were necessary to find the relevant commit out of more than 3000!</p>
+</div>
+<p>Now I could test each version manually and report back to <code>git</code> whether the version is “bad” or “good” (<code>git bisect bad</code> or <code>git bisect good</code>), i.e. whether it reproduced the problem or not. When you have to check many revisions, and when it is easy to verify each revision with an automatic test, there is a nice alternative to this manual approach. Taking the initial test script provided by <code>schmitts</code>, I extend it so that it tests for the presence of the <code>textbackslash</code> string (which shouldn’t be there):</p>
+<pre class="code literal-block"><span></span><span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">latex</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">'dv/dt = -v/(10*ms) : volt'</span><span class="p">)</span>
+<span class="k">assert</span> <span class="s1">'textbackslash'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">latex</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">equations</span><span class="p">)</span>
+</pre>
+
+
+<p>Running this script will now either end quietly (and with an <a href="https://en.wikipedia.org/wiki/Exit_status">exit code</a> 0), or fail with an <code>AssertionError</code> if the problem is present. After storing the script as <code>/tmp/sympy_latex.py</code>, I can now hand off the testing to <code>git bisect</code> which will go through all the commits in a smart way to find the first commit introducing the problem:</p>
+<pre class="code literal-block"><span></span><span class="gp">$</span> git bisect run python /tmp/sympy_latex.py
+</pre>
+
+
+<p>This leads to quite a bit of output:
+<details><summary>Full output</summary><pre>
+running python /tmp/sympy_latex.py
+Bisecting: 3205 revisions left to test after this (roughly 12 steps)
+[de62108d34a1265cc1b2b9c5155d6070b842b672] Merge pull request #19508 from sachin-4099/gsoc#6
+running python /tmp/sympy_latex.py
+Bisecting: 1602 revisions left to test after this (roughly 11 steps)
+[d3e5f14c5241b9da96560c4deffef9eaf4991228] Made parts of boolalg faster and a bit more pythonic
+running python /tmp/sympy_latex.py
+ERROR      Brian 2 encountered an unexpected error. If you think this is a bug in Brian 2, please report this issue either to the discourse forum at <a href="http://brian.discourse.group/">http://brian.discourse.group/</a>, or to the issue tracker at <a href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>. Please include this file with debug information in your report: /tmp/brian_debug_ikr3y3p0.log  Additionally, you can also include a copy of the script that was run, available at: /tmp/brian_script_u82neiv1.py Thanks! [brian2]
+Traceback (most recent call last):
+  File “/tmp/sympy_latex.py”, line 6, in <module>
+    assert ‘textbackslash’ not in latex(G.equations)
+AssertionError
+Bisecting: 801 revisions left to test after this (roughly 10 steps)
+[737a81874003f4a7169d266976a90cbd5dfaf2b4] TST ADD check minimal polynomials of problematic expression computed with both methods
+running python /tmp/sympy_latex.py
+Bisecting: 407 revisions left to test after this (roughly 9 steps)
+[a8207569d13fad973bf9afb2772bd85ea6fa1c6e] Update array_derivatives.py
+running python /tmp/sympy_latex.py
+ERROR      Brian 2 encountered an unexpected error. If you think this is a bug in Brian 2, please report this issue either to the discourse forum at <a href="http://brian.discourse.group/">http://brian.discourse.group/</a>, or to the issue tracker at <a href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>. Please include this file with debug information in your report: /tmp/brian_debug_7g1_4r8w.log  Additionally, you can also include a copy of the script that was run, available at: /tmp/brian_script_ce1dkbau.py Thanks! [brian2]
+Traceback (most recent call last):
+  File “/tmp/sympy_latex.py”, line 6, in <module>
+    assert ‘textbackslash’ not in latex(G.equations)
+AssertionError
+Bisecting: 196 revisions left to test after this (roughly 8 steps)
+[87c9ea827f4b1b6cc34a7c707de1fd5d9819cb46] Merge pull request #19944 from eric-wieser/allow-custom-printers
+running python /tmp/sympy_latex.py
+ERROR      Brian 2 encountered an unexpected error. If you think this is a bug in Brian 2, please report this issue either to the discourse forum at <a href="http://brian.discourse.group/">http://brian.discourse.group/</a>, or to the issue tracker at <a href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>. Please include this file with debug information in your report: /tmp/brian_debug_t0clxwav.log  Additionally, you can also include a copy of the script that was run, available at: /tmp/brian_script_yvu9jtqi.py Thanks! [brian2]
+Traceback (most recent call last):
+  File “/tmp/sympy_latex.py”, line 6, in <module>
+    assert ‘textbackslash’ not in latex(G.equations)
+AssertionError
+Bisecting: 96 revisions left to test after this (roughly 7 steps)
+[87cca59f3507e1052631da0819edd0cfa1baadc0] Merge pull request #19742 from bjodah/logaddexp
+running python /tmp/sympy_latex.py
+ERROR      Brian 2 encountered an unexpected error. If you think this is a bug in Brian 2, please report this issue either to the discourse forum at <a href="http://brian.discourse.group/">http://brian.discourse.group/</a>, or to the issue tracker at <a href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>. Please include this file with debug information in your report: /tmp/brian_debug_tpz1qnjv.log  Additionally, you can also include a copy of the script that was run, available at: /tmp/brian_script_2dj31z0l.py Thanks! [brian2]
+Traceback (most recent call last):
+  File “/tmp/sympy_latex.py”, line 6, in <module>
+    assert ‘textbackslash’ not in latex(G.equations)
+AssertionError
+Bisecting: 48 revisions left to test after this (roughly 6 steps)
+[044c6e4c9d73d56ec862f060a87314c269d2e050] Merge pull request #19805 from goddus/14037_test
+running python /tmp/sympy_latex.py
+ERROR      Brian 2 encountered an unexpected error. If you think this is a bug in Brian 2, please report this issue either to the discourse forum at <a href="http://brian.discourse.group/">http://brian.discourse.group/</a>, or to the issue tracker at <a href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>. Please include this file with debug information in your report: /tmp/brian_debug_5lpmsekz.log  Additionally, you can also include a copy of the script that was run, available at: /tmp/brian_script_8jf447vd.py Thanks! [brian2]
+Traceback (most recent call last):
+  File “/tmp/sympy_latex.py”, line 6, in <module>
+    assert ‘textbackslash’ not in latex(G.equations)
+AssertionError
+Bisecting: 29 revisions left to test after this (roughly 5 steps)
+[3d6b5a44dff651642cb480797b0e265c0bf28357] Merge pull request #19713 from sylee957/fix_nested_frac_field
+running python /tmp/sympy_latex.py
+Bisecting: 14 revisions left to test after this (roughly 4 steps)
+[36897bfd792170158ab762c908329ce688b0a4d0] Merge pull request #19753 from Soumi7/special
+running python /tmp/sympy_latex.py
+Bisecting: 8 revisions left to test after this (roughly 3 steps)
+[a6e4cc52d3122996e4b0db96955f3c9cae0efd64] Merge pull request #19611 from eric-wieser/fix-latex-default
+running python /tmp/sympy_latex.py
+ERROR      Brian 2 encountered an unexpected error. If you think this is a bug in Brian 2, please report this issue either to the discourse forum at <a href="http://brian.discourse.group/">http://brian.discourse.group/</a>, or to the issue tracker at <a href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>. Please include this file with debug information in your report: /tmp/brian_debug_ptntb08b.log  Additionally, you can also include a copy of the script that was run, available at: /tmp/brian_script_fi72yrc1.py Thanks! [brian2]
+Traceback (most recent call last):
+  File “/tmp/sympy_latex.py”, line 6, in <module>
+    assert ‘textbackslash’ not in latex(G.equations)
+AssertionError
+Bisecting: 2 revisions left to test after this (roughly 2 steps)
+[d8941c4642f9974cfcb615a48934a0c5dbb4fe3a] Tweak documentation
+running python /tmp/sympy_latex.py
+ERROR      Brian 2 encountered an unexpected error. If you think this is a bug in Brian 2, please report this issue either to the discourse forum at <a href="http://brian.discourse.group/">http://brian.discourse.group/</a>, or to the issue tracker at <a href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>. Please include this file with debug information in your report: /tmp/brian_debug_1yuffecs.log  Additionally, you can also include a copy of the script that was run, available at: /tmp/brian_script_nt_tfg6o.py Thanks! [brian2]
+Traceback (most recent call last):
+  File “/tmp/sympy_latex.py”, line 6, in <module>
+    assert ‘textbackslash’ not in latex(G.equations)
+AssertionError
+Bisecting: 0 revisions left to test after this (roughly 1 step)
+[a4c7ebc6cb4de1fc9b36a63e78c151de38575021] Add a versionchanged directive
+running python /tmp/sympy_latex.py
+ERROR      Brian 2 encountered an unexpected error. If you think this is a bug in Brian 2, please report this issue either to the discourse forum at <a href="http://brian.discourse.group/">http://brian.discourse.group/</a>, or to the issue tracker at <a href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>. Please include this file with debug information in your report: /tmp/brian_debug_bxugu6c7.log  Additionally, you can also include a copy of the script that was run, available at: /tmp/brian_script_xs531o8q.py Thanks! [brian2]
+Traceback (most recent call last):
+  File “/tmp/sympy_latex.py”, line 6, in <module>
+    assert ‘textbackslash’ not in latex(G.equations)
+AssertionError
+Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[27d64a4a644093b8f8a38a77466680302d2b4ee2] printing: Show unsupported types in monospace font
+running python /tmp/sympy_latex.py
+ERROR      Brian 2 encountered an unexpected error. If you think this is a bug in Brian 2, please report this issue either to the discourse forum at <a href="http://brian.discourse.group/">http://brian.discourse.group/</a>, or to the issue tracker at <a href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>. Please include this file with debug information in your report: /tmp/brian_debug_6l75fq6r.log  Additionally, you can also include a copy of the script that was run, available at: /tmp/brian_script_718wjgs2.py Thanks! [brian2]
+Traceback (most recent call last):
+  File “/tmp/sympy_latex.py”, line 6, in <module>
+    assert ‘textbackslash’ not in latex(G.equations)
+AssertionError
+</module></module></module></module></module></module></module></module></module></pre>
+</details></p>
+<p>and finally gives us the information we were looking for:</p>
+<pre class="code literal-block"><span></span><span class="go">27d64a4a644093b8f8a38a77466680302d2b4ee2 is the first bad commit</span>
+<span class="go">commit 27d64a4a644093b8f8a38a77466680302d2b4ee2</span>
+<span class="go">Author: Eric Wieser &lt;wieser.eric@gmail.com&gt;</span>
+<span class="go">Date:   Mon Jun 22 13:06:12 2020 +0100</span>
+
+<span class="go">    printing: Show unsupported types in monospace font</span>
+
+<span class="go"> sympy/printing/latex.py            | 41 +++++++++++++++++++++++++++++++-------</span>
+<span class="go"> sympy/printing/tests/test_latex.py | 30 ++++++++++++++++++++++++++--</span>
+<span class="go"> 2 files changed, 62 insertions(+), 9 deletions(-)</span>
+<span class="go">bisect run success</span>
+</pre>
+
+
+<p>This looks indeed very relevant, and the change in the <a href="https://github.com/sympy/sympy/commit/27d64a4a644093b8f8a38a77466680302d2b4ee2">referenced commit</a> introduces the strange <code>\textbackslash</code> we were seeing.</p>
+<p>Does this mean we have found a bug in <code>sympy</code>, or is there something to fix in Brian?</p>
+<h4>Getting to the bottom of it</h4>
+<p>When I opened the github issue, I mentioned that converting a single equation (instead of the full <code>Equations</code> object) could be used as a workaround. Looking more closely, it turns out that this already gives incorrect output:</p>
+<pre class="code literal-block"><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'$$'</span> <span class="o">+</span> <span class="n">latex</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">equations</span><span class="p">[</span><span class="s1">'v'</span><span class="p">])</span> <span class="o">+</span> <span class="s1">'$$'</span><span class="p">)</span>
+</pre>
+
+
+<p>prints:</p>
+<pre class="code literal-block"><span></span><span class="sb">$$</span><span class="nv">\frac</span><span class="nb">{</span><span class="nv">\mathrm</span><span class="nb">{d}</span><span class="nv">\mathtt</span><span class="nb">{</span><span class="nv">\text</span><span class="nb">{v}}}{</span><span class="nv">\mathrm</span><span class="nb">{d}t} </span><span class="o">=</span><span class="nb"> </span><span class="o">-</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{v}{</span><span class="m">10</span><span class="nb"> ms}</span><span class="s">$$</span>
+</pre>
+
+
+<p>While this doesn’t look <em>that</em> bad (no weird <code>\textbackslash</code> for example), it wraps the $v$ on the left-hand side in the wrong way, making it use a typewriter font instead of the italics normally used for variables:
+</p>
+<div>
+$$
+\frac{\mathrm{d}\mathtt{\text{v}}}{\mathrm{d}t} = - \frac{v}{10 ms}
+$$
+</div>
+<p>Why does it correctly display $v$ on the right-hand side, but not on the left-hand side? The conversion to LaTeX is handled in the function <a href="https://github.com/brian-team/brian2/blob/a0167fc35a585a0b58aa8cf28889a0e03a520696/brian2/equations/equations.py#L459"><code>SingleEquations._latex</code></a>, which currently looks like this:</p>
+<pre class="code literal-block"><span></span>    <span class="k">def</span> <span class="nf">_latex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">DIFFERENTIAL_EQUATION</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="sa">r</span><span class="s1">'\frac{\mathrm</span><span class="si">{d}</span><span class="s1">'</span> <span class="o">+</span> <span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">varname</span><span class="p">)</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">'}{\mathrm</span><span class="si">{d}</span><span class="s1">t} = '</span> <span class="o">+</span>
+                    <span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">str_to_sympy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">code</span><span class="p">)))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">SUBEXPRESSION</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">varname</span><span class="p">)</span> <span class="o">+</span> <span class="s1">' = '</span> <span class="o">+</span>
+                    <span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">str_to_sympy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">code</span><span class="p">)))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">PARAMETER</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">varname</span><span class="p">)</span>
+</pre>
+
+
+<p>What is the difference between the left-hand side and the right-hand side that could explain the different rendering of the variable name? It turns out that for the right-hand side, we call <code>sympy.latex</code> on the result of the <a href="https://brian2.readthedocs.io/en/stable/reference/brian2.parsing.sympytools.str_to_sympy.html"><code>str_to_sympy</code></a> function, i.e. on a <code>sympy</code> object; in contrast, on the left-hand side, we call <code>sympy.latex</code> on a <em>string</em> (<code>self.varname</code>). Well, it is finally time to look at <code>sympy</code>‘s documentation to see whether it has to say anything about that… indeed it does! Somewhat hidden at the end of the <a href="https://docs.sympy.org/latest/modules/printing.html#sympy.printing.latex.latex">documentation for <code>sympy.latex</code></a> we find the following sentence:</p>
+<blockquote>
+<p><em>Changed in version 1.7.0:</em> Unsupported types no longer have their str representation treated as valid latex.</p>
+</blockquote>
+<p>Ha! Apparently, until version 1.7, <code>sympy</code> was happily accepting simple strings as input to <code>sympy.latex</code> and simply expected them to be valid LaTeX code. Now, it instead tries to display them verbatim (replacing backslashes by <code>\textbackslash</code>, etc.) and in a typewriter font. So how can we fix this? Instead of calling <code>sympy.latex(self.varname)</code>, we call <code>sympy.latex(sympy.Symbol(self.varname))</code>, i.e. call <code>sympy.latex</code> on a <code>sympy</code> object instead of a pure string. What does <code>sympy.latex(sympy.Symbol(self.varname))</code> return if <code>self.varname</code> is <code>'v'</code>? Well, it simply returns <code>'v'</code>… Doesn’t this mean we could simply use <code>self.varname</code> directly? We could, but we’d lose some of <code>sympy</code>‘s features, e.g. <code>tau</code> would no longer be converted to <code>\tau</code> (i.e. $\tau$).</p>
+<p>Now, how can we check that we are not using <code>sympy.latex</code> directly on strings elsewhere in the code? Of course we could search for calls to <code>latex</code> in the source code and verify them manually, but there’s another neat trick we can use, so called <a href="https://en.wikipedia.org/wiki/Monkey_patch">“monkey patching”</a>.</p>
+<p>I am going to run Brian’s test suite, or at least the “codegen-independent” part, i.e. the part that does not test the full code generation machinery. Converting equations to LaTeX belongs into this category. However, before running this test I will “monkey patch” the <code>sympy.latex</code> function so that it fails if it gets called for a string – otherwise it does the same thing as the original function. Note that I have to do this before importing <code>brian2</code>, because otherwise <code>brian2</code> would important the original <code>sympy.latex</code> function before I can patch it. We also need to switch off <a href="https://docs.pytest.org/">pytest</a>‘s parallel testing, because otherwise tests will be executed in independent processes that do not make use of our carefully patched function.</p>
+<p>Here’s the patch and the test run:</p>
+<pre class="code literal-block"><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">latex</span> <span class="k">as</span> <span class="n">_orig_latex</span>
+<span class="kn">import</span> <span class="nn">sympy</span>
+<span class="k">def</span> <span class="nf">latex</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">_orig_latex</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="n">sympy</span><span class="o">.</span><span class="n">latex</span> <span class="o">=</span> <span class="n">latex</span>
+<span class="kn">import</span> <span class="nn">brian2</span>
+<span class="n">brian2</span><span class="o">.</span><span class="n">test</span><span class="p">([])</span>  <span class="c1"># no code generation targets are tested</span>
+</pre>
+
+
+<p>Two of the tests fails and point us to another use of <code>sympy.latex</code> with a string in <a href="https://github.com/brian-team/brian2/blob/a0167fc35a585a0b58aa8cf28889a0e03a520696/brian2/equations/equations.py#L1047"><code>Equations._latex</code></a>:</p>
+<pre class="code literal-block"><span></span>            <span class="c1"># ...</span>
+            <span class="n">varname</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="n">eq</span><span class="o">.</span><span class="n">varname</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">eq</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">DIFFERENTIAL_EQUATION</span><span class="p">:</span>
+                <span class="n">lhs</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">'\frac{\mathrm</span><span class="si">{d}</span><span class="s1">'</span> <span class="o">+</span> <span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">varname</span><span class="p">)</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">'}{\mathrm</span><span class="si">{d}</span><span class="s1">t}'</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Normal equation or parameter</span>
+                <span class="n">lhs</span> <span class="o">=</span> <span class="n">varname</span>
+            <span class="c1"># ...</span>
+            <span class="k">if</span> <span class="n">eq</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">PARAMETER</span><span class="p">:</span>
+                <span class="n">eq_latex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">'</span><span class="si">%s</span><span class="s1"> &amp;&amp;&amp; \text{(unit: $</span><span class="si">%s</span><span class="s1">$</span><span class="si">%s</span><span class="s1">)}'</span> <span class="o">%</span> <span class="p">(</span><span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span>                            
+                                                              <span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">get_unit</span><span class="p">(</span><span class="n">eq</span><span class="o">.</span><span class="n">dim</span><span class="p">)),</span>
+                                                              <span class="n">flag_str</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">eq_latex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">'</span><span class="si">%s</span><span class="s1"> &amp;= </span><span class="si">%s</span><span class="s1"> &amp;&amp; \text{(unit of $</span><span class="si">%s</span><span class="s1">$: $</span><span class="si">%s</span><span class="s1">$</span><span class="si">%s</span><span class="s1">)}'</span> <span class="o">%</span> <span class="p">(</span><span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="c1"># ← PROBLEM</span>
+                                                                           <span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">rhs</span><span class="p">),</span>
+                                                                           <span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">varname</span><span class="p">),</span>
+                                                                           <span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">get_unit</span><span class="p">(</span><span class="n">eq</span><span class="o">.</span><span class="n">dim</span><span class="p">)),</span>
+                                                                           <span class="n">flag_str</span><span class="p">)</span>
+            <span class="n">equations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">eq_latex</span><span class="p">)</span>
+</pre>
+
+
+<p>In the marked line above, we call <code>sympy.latex(lhs)</code>, but <code>lhs</code> is a string, not a sympy object (note that a couple of lines earlier, the <code>lhs</code> refers to <code>varname</code>, which despites its somewhat confusing name is a <code>sympy.Symbol</code> – this use is therefore correct). Including <code>lhs</code> as it is, instead of wrapping it with <code>sympy.latex</code> should therefore fix the issue.</p>
+<h4>Final tests and commiting things</h4>
+<p>A manual test with the example from the beginning shows that it now prints</p>
+<pre class="code literal-block"><span></span><span class="k">\begin</span><span class="nb">{</span>align*<span class="nb">}</span><span class="k">\frac</span><span class="nb">{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}</span>v<span class="nb">}{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}</span>t<span class="nb">}</span> <span class="nb">&amp;</span>= - <span class="k">\frac</span><span class="nb">{</span>v<span class="nb">}{</span>10 ms<span class="nb">}</span> <span class="nb">&amp;&amp;</span> <span class="k">\text</span><span class="nb">{</span>(unit of <span class="s">$</span><span class="nb">v</span><span class="s">$</span>: <span class="s">$</span><span class="nv">\mathrm</span><span class="nb">{V}</span><span class="s">$</span>)<span class="nb">}</span><span class="k">\end</span><span class="nb">{</span>align*<span class="nb">}</span>
+</pre>
+
+
+<p>which renders correctly:
+</p>
+<div>
+\begin{alignat}{4}
+\frac{\mathrm{d}v}{\mathrm{d}t} &amp;= - \frac{v}{10 ms} &amp;&amp; \text{(unit of $v$: $\mathrm{V}$)}
+\end{alignat}
+</div>
+<p>Before commiting the fix, however, we should also make sure that this issue does not reappear in the future, i.e. we need a test. A good test for a bug should of course fail before applying the fix, and no longer fail afterwards. I already fixed the issue in the code, so what is the easiest way to make sure that it fails without these changes? There are several ways to do this, but in this case a simple solution is to run</p>
+<pre class="code literal-block"><span></span><span class="gp">$</span> git stash
+</pre>
+
+
+<p>This resets all changes in the repository, but stores them locally. We can now write a test and make sure that it fails (because our repository does not have the fix anymore). The LaTeX output is currently not tested very well (but we don’t want tests to fail due to small inconsequential layout changes, either), but for the moment very simple test should be enough. To make sure that the current issue is fixed, I simply add</p>
+<pre class="code literal-block"><span></span><span class="k">assert</span> <span class="s1">'textbackslash'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">func</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  <span class="c1"># for LaTeX, see #1296</span>
+<span class="c1">#...</span>
+<span class="k">assert</span> <span class="s1">'textbackslash'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">func</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">equations</span><span class="p">)</span>
+</pre>
+
+
+<p>to the <a href="https://github.com/brian-team/brian2/blob/a0167fc35a585a0b58aa8cf28889a0e03a520696/brian2/tests/test_neurongroup.py#L1396"><code>test_repr</code> test in <code>test_neurongroup.py</code></a>.</p>
+<p>As expected, this fails in the current codebase, and after getting the fixes back from the “stash” with</p>
+<pre class="code literal-block"><span></span><span class="gp">$</span> git stash pop
+</pre>
+
+
+<p>the test successfully passes.</p>
+<p>This concludes everything. I finish by committing the changes in a new branch and open a <a href="https://github.com/brian-team/brian2/pull/1299">pull request</a> so that they can be merged into the main code base.</p>
+<h3>Final remarks</h3>
+<p>This was a small bug, but also quite typical in many ways: some “minor” feature of Brian (i.e. not something completely obvious that would get noticed by out users, us and our test suite immediately) used to work but no longer does. A user reported the issue, and we had to figure out whether we broke something in Brian, or whether one of our dependencies introduced a bug. The <code>git bisect</code> tool is great for figuring things like this out; here I applied it to <code>sympy</code> but in other situations I would have applied it to Brian’s code base itself. The final outcome also was rather typical: Brian did something (arguably?) wrong, but in a way that worked fine with earlier versions of a dependency, in this case <code>sympy</code>. And in the end, the fixes were almost trivial, but finding them wasn’t obvious from the start!</p>
+<p>Hope that you learned a thing or two from reading this blog post, and maybe it motivates to fix a bug in Brian yourself! Comments very welcome, feel free to reach out on <a href="https://twitter.com/briansimulator">twitter</a> or on the <a href="https://brian.discourse.group">discussion forum</a>.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../tags/bug-hunt/" rel="tag">bug-hunt</a></li>
+            <li><a class="tag p-category" href="../../../tags/development/" rel="tag">Development</a></li>
+        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><!--End of body content--><footer id="footer" class="text-center">
+            Contents © 2021         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

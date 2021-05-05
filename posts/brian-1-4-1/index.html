@@ -8,7 +8,7 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/brian-1-4-1/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
@@ -143,7 +143,7 @@
 <p>Major features:
 </p>
 <ul>
-<li>C extensions are compiled by default during installation (with a fallback to the Python version if compilation fails) -- this might lead to a considerable speedup for users who did not compile those extensions manually before. Note that this only includes installations based on running setup.py (including pip and easy_install), not the Windows .exe installer.</li>
+<li>C extensions are compiled by default during installation (with a fallback to the Python version if compilation fails) – this might lead to a considerable speedup for users who did not compile those extensions manually before. Note that this only includes installations based on running setup.py (including pip and easy_install), not the Windows .exe installer.</li>
 </ul>
 Minor features:
 <ul>
@@ -154,9 +154,9 @@ Minor features:
 </ul>
 Improvements:
 <ul>
-<li>Brian's documentation is now also available under <a href="http://brian.readthedocs.org">brian.readthedocs.org</a>
+<li>Brian’s documentation is now also available under <a href="http://brian.readthedocs.org">brian.readthedocs.org</a>
 </li>
-    <li>ProgressReporter has context manager support (i.e. can be used in "with" statements)</li>
+    <li>ProgressReporter has context manager support (i.e. can be used in “with” statements)</li>
     <li>NeuronGroup and Synapses work with empty model specifications.</li>
     <li>C version of SpikeContainer is now picklable</li>
 </ul>
@@ -164,8 +164,8 @@ Bug fixes:
 <ul>
 <li>Synaptic equations referring to variables in the pre- or postsynaptic group are never considered as being linear (fixes ticket #83)</li>
     <li>Fix issue with static equations in synaptic models (see  <a href="https://groups.google.com/d/msg/briansupport/-/uqxLK_yoqKUJ">https://groups.google.com/d/msg/briansupport/-/uqxLK_yoqKUJ</a> )</li>
-    <li>Make LinearStateUpdater pickable, even if array B is "NotImplemented".</li>
-    <li>Fixed the bug in which the StateSpikeMonitor didn't record variables defined with a static equation.</li>
+    <li>Make LinearStateUpdater pickable, even if array B is “NotImplemented”.</li>
+    <li>Fixed the bug in which the StateSpikeMonitor didn’t record variables defined with a static equation.</li>
     <li>Important bug fixes for brian hears, all users are encouraged to update:</li>
 <ul>
 <li>Make sure that LinearFilterbank copies it source and therefore not changes it (when not using weave) (fixes ticket #73)</li>
@@ -175,7 +175,7 @@ Bug fixes:
 </ul>
 Experimental features:
 <ul>
-<li>C version of SpikeQueue (used in the Synapses class), which can lead to a considerable speedup (see "Advanced concepts/Compiled code" for instructions how to use it).</li>
+<li>C version of SpikeQueue (used in the Synapses class), which can lead to a considerable speedup (see “Advanced concepts/Compiled code” for instructions how to use it).</li>
     <li>Delays can be specified as a parameters of the Synapses model and then be changed dynamically.</li>
 </ul>
 </div>

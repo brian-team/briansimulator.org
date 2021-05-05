@@ -8,7 +8,7 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/categories/news/index-4.html">
 <link rel="prev" href="." type="text/html">
 <link rel="next" href="index-3.html" type="text/html">
@@ -134,7 +134,7 @@
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>We've released Brian 1.4.4, a maintenance release for Brian 1 that fixes compatibility issues with recent versions of numpy/sympy.</p>
+<p>We’ve released Brian 1.4.4, a maintenance release for Brian 1 that fixes compatibility issues with recent versions of numpy/sympy.</p>
 <p>The packages are available on PyPI: <a href="https://pypi.python.org/pypi/brian">https://pypi.python.org/pypi/brian</a></p>
 <p>Note that for new projects, you should use <a href="http://brian2.readthedocs.io">Brian 2</a> instead, the Brian version under active development.</p>
 </div>
@@ -156,10 +156,10 @@
 <p>The new Brian 2 release fixes two bugs:
 </p>
 <ol>
-<li>an incorrect application of the substitution mechanism in equations (i.e. when using the same set of equations several times and changing the equations' variable names via Brian's Equation class), and</li>
+<li>an incorrect application of the substitution mechanism in equations (i.e. when using the same set of equations several times and changing the equations’ variable names via Brian’s Equation class), and</li>
     <li>an inadvertent deactivation of parts of the new caching mechanism which resulted in a major reduction of its performance improvement.</li>
 </ol>
-The Brian2GeNN release adds a workaround for a bug in some version of the glibc library on Linux which can potentially lead to drastically reduced performance. This is the same workaround that had already been applied to Brian 2's C++ standalone mode with an earlier release.
+The Brian2GeNN release adds a workaround for a bug in some version of the glibc library on Linux which can potentially lead to drastically reduced performance. This is the same workaround that had already been applied to Brian 2’s C++ standalone mode with an earlier release.
 <p><strong>How to get Brian 2:</strong> <a href="http://brian2.readthedocs.io/en/2.1.2/introduction/install.html">http://brian2.readthedocs.io/en/2.1.2/introduction/install.html</a></p>
 <p><strong>How to get Brian2GeNN:</strong> <a href="http://brian2genn.readthedocs.io/en/latest/introduction/index.html">http://brian2genn.readthedocs.io/en/latest/introduction/index.html</a></p>
 <p>As always, please report bugs or suggestions to the github bug tracker (<a href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>) or to the brian-development mailing list (brian-development@googlegroups.com).</p>
@@ -179,7 +179,7 @@ The Brian2GeNN release adds a workaround for a bug in some version of the glibc 
         <div>
 <p></p>
 <p>We are happy to announce the release of <strong>Brian 2.1</strong>. This release includes a number of fixes and small improvements, and two new major features: support for numerical integration with adaptive-timestep methods based on the GNU Scientific Library, and caching of code generation leading to faster simulation setup times, in particular for multiple runs of the same model. For an extensive list of changes, see the <a href="http://brian2.readthedocs.io/en/2.1/introduction/release_notes.html">release notes</a>. We recommend all users of Brian 2 to update.</p>
-<p>We also release a new version 1.1. of <a href="http://brian2genn.readthedocs.io"><strong>Brian2GeNN</strong></a>, Brian's interface to the GPU-enhanced Neuronal Network simulation environment (<a href="http://genn-team.github.io/genn/">GeNN</a>). This release does not contain any major new features except for bug and compatibility fixes, but an update is required for all users that update to Brian 2.1.</p>
+<p>We also release a new version 1.1. of <a href="http://brian2genn.readthedocs.io"><strong>Brian2GeNN</strong></a>, Brian’s interface to the GPU-enhanced Neuronal Network simulation environment (<a href="http://genn-team.github.io/genn/">GeNN</a>). This release does not contain any major new features except for bug and compatibility fixes, but an update is required for all users that update to Brian 2.1.</p>
 <p><strong>How to get Brian 2</strong>: follow the <a href="http://brian2.readthedocs.io/en/2.1/introduction/install.html">installation instructions in the documentation </a></p>
 <p><strong>Further information about Brian2</strong>: <a class="moz-txt-link-freetext" href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 <p>As always, please report bugs or suggestions to the <a href="https://github.com/brian-team/brian2/issues">github bug tracker</a> or to the brian-development mailing list (<a class="moz-txt-link-abbreviated" href="mailto:brian-development@googlegroups.com">brian-development@googlegroups.com</a>).</p>
@@ -201,7 +201,7 @@ The Brian2GeNN release adds a workaround for a bug in some version of the glibc 
 <p>We are proud to announce the release of <strong>Brian2GeNN</strong>, the Brian 2 interface to the <a href="http://genn-team.github.io/genn/">GPU-enhanced Neuronal Network (GeNN)</a> simulator. With this interface, a Brian 2 script (as long as it only uses <a href="http://brian2genn.readthedocs.io/en/latest/introduction/exclusions.html">supported features</a>) can benefit from the potential performance benefits of a GPU by adding just two lines to the start of the script:
 <code>
 import brian2genn
-set_device('genn')
+set_device(‘genn’)
 </code></p>
 <p>Brian2GeNN can be installed from the same Anaconda repository channel as Brian itself:</p>
 <p><code>conda install -c brian-team brian2genn</code></p>
@@ -272,13 +272,13 @@ Earlier versions of Brian 2 contained bugs that could lead to incorrect recordin
 <ul>
 <li>Much more flexible model definitions. The behaviour of all model elements can now be defined by arbitrary equations specified in standard mathematical notation.</li>
     <li>Code generation as standard. Behind the scenes, Brian automatically generates and compiles C++ code to simulate your model, making it much faster.</li>
-    <li>"Standalone mode". In this mode, Brian generates a complete C++ project tree that implements your model. This can be then be compiled and run entirely independently of Brian. This leads to both highly efficient code, as well as making it much easier to run simulations on non-standard computational hardware, for example on robotics platforms.</li>
+    <li>“Standalone mode”. In this mode, Brian generates a complete C++ project tree that implements your model. This can be then be compiled and run entirely independently of Brian. This leads to both highly efficient code, as well as making it much easier to run simulations on non-standard computational hardware, for example on robotics platforms.</li>
     <li>Multicompartmental modelling.</li>
     <li>Python 2 and 3 support.</li>
 </ul>
-That's just a small fraction of the new features in 2.0, take a look at the <a href="https://brian2.readthedocs.io/en/stable/introduction/release_notes.html">full list</a>.
+That’s just a small fraction of the new features in 2.0, take a look at the <a href="https://brian2.readthedocs.io/en/stable/introduction/release_notes.html">full list</a>.
 <h5>Upgrading from Brian 1.4</h5>
-Brian 2 is a rewrite from scratch, and introduces some backwards incompatible changes. In most cases, these should be relatively simple. We've written a <a href="https://brian2.readthedocs.io/en/stable/introduction/changes.html">detailed guide on how to update your simulations</a>. Note that you can have both Brian 1 and Brian 2 installed simultaneously, so you can switch gradually.
+Brian 2 is a rewrite from scratch, and introduces some backwards incompatible changes. In most cases, these should be relatively simple. We’ve written a <a href="https://brian2.readthedocs.io/en/stable/introduction/changes.html">detailed guide on how to update your simulations</a>. Note that you can have both Brian 1 and Brian 2 installed simultaneously, so you can switch gradually.
 <h5>Thanks</h5>
 Brian 2 was written by Marcel Stimberg, Dan Goodman and Romain Brette.
 <p>Do please remember to cite Brian if you use it for your research.</p>
@@ -298,7 +298,7 @@ Brian 2 was written by Marcel Stimberg, Dan Goodman and Romain Brette.
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>On <strong>July 18th 2015</strong>, we'll have a tutorial on "Modelling of spiking neural networks with Brian" at the <a href="http://www.cnsorg.org/cns-2015-prague">CNS conference</a> in Prague. It will feature introductory sessions in the morning (no prior Brian knowledge necessary) and more advanced topics in the afternoon. Follow this link to find the <a href="https://briansimulator.org/brian-tutorial-at-cns-2015">preliminary schedule</a>.</p>
+<p>On <strong>July 18th 2015</strong>, we’ll have a tutorial on “Modelling of spiking neural networks with Brian” at the <a href="http://www.cnsorg.org/cns-2015-prague">CNS conference</a> in Prague. It will feature introductory sessions in the morning (no prior Brian knowledge necessary) and more advanced topics in the afternoon. Follow this link to find the <a href="https://briansimulator.org/brian-tutorial-at-cns-2015">preliminary schedule</a>.</p>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/google-summer-of-code-2015/" class="u-url">Google Summer of Code 2015</a></h1>
@@ -314,7 +314,7 @@ Brian 2 was written by Marcel Stimberg, Dan Goodman and Romain Brette.
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<a href="http://www.google-melange.com/gsoc/homepage/google/gsoc2015">Google Summer of Code 2015</a> ("a program that offers student developers stipends to write code for various open source projects.") has announced the accepted mentoring organisations yesterday, among them the <a href="http://incf.org/">International Neuroinformatics Coordinating Facility</a> (INCF). <strong>Under the umbrella of the INCF, it is possible to work on Brian!</strong> We have added an idea for a project (<a href="http://incf.org/gsoc/2015/proposals/#-span----nbsp---span--span-improving-the-brian-simulator-s-interoperability-with-simulator-independent-model-description-languages--span-">"Improving the Brian simulator's interoperability with simulator-independent model-description languages"</a>) to the INCF webpage, but you are free to come up with a proposal of your own.
+<a href="http://www.google-melange.com/gsoc/homepage/google/gsoc2015">Google Summer of Code 2015</a> (“a program that offers student developers stipends to write code for various open source projects.”) has announced the accepted mentoring organisations yesterday, among them the <a href="http://incf.org/">International Neuroinformatics Coordinating Facility</a> (INCF). <strong>Under the umbrella of the INCF, it is possible to work on Brian!</strong> We have added an idea for a project (<a href="http://incf.org/gsoc/2015/proposals/#-span----nbsp---span--span-improving-the-brian-simulator-s-interoperability-with-simulator-independent-model-description-languages--span-">“Improving the Brian simulator’s interoperability with simulator-independent model-description languages”</a>) to the INCF webpage, but you are free to come up with a proposal of your own.
 <p>The application period starts on March 16th, but now would be the time to discuss ideas with us. Head over to our <a href="https://groups.google.com/forum/#!forum/brian-development">mailing list</a> (<em>brian-development@googlegroups.com</em>) if you have questions and/or ideas.</p>
 </div>
     </div>

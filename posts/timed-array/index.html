@@ -8,7 +8,7 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/timed-array/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
@@ -143,42 +143,42 @@ One annoying thing that crops up often in writing programs for Brian, is that yo
 <p>One annoying thing that crops up often in writing programs for Brian, is that you have some set of equations with a parameter which varies over time according to the values in some array. Supposing that I was an array of length N with values sampled at intervals dt, you would like to be able to write an equation like:</p>
 <p>[python]
 I = randn(N)
-eqs = '''
+eqs = ‘’‘
 dV/dt = (-V+I(t))/tau : 1
-'''
+‘’‘
 [/python]
 One way of solving the problem is to use a network operation, like so:</p>
 <p>[python]
 I = randn(N)
-eqs = '''
+eqs = ‘’‘
 dV/dt = -(V+J)/tau : 1
 J : 1
-'''
-G = NeuronGroup(m, eqs, ...)
+‘’‘
+G = NeuronGroup(m, eqs, …)
 @network_operation
 def update_J(clk):
     i = int(clk.t/clk.dt)
     G.J = I[i]
 [/python]
-This works, but it's not terribly intuitive. The new TimedArray class allows you to do both of these things. The first could be written like so:</p>
+This works, but it’s not terribly intuitive. The new TimedArray class allows you to do both of these things. The first could be written like so:</p>
 <p>[python]
 I = TimedArray(randn(N))
-eqs = '''
+eqs = ‘’‘
 dV/dt = (-V+I(t))/tau : 1
-'''
+‘’‘
 [/python]
 The second like so:</p>
 <p>[python]
 I = randn(N)
-eqs = '''
+eqs = ‘’‘
 dV/dt = -(V+J)/tau : 1
 J : 1
-'''
-G = NeuronGroup(m, eqs, ...)
+‘’‘
+G = NeuronGroup(m, eqs, …)
 G.J = TimedArray(I)
 [/python]
 Behind the scenes, the first one works by adding a <strong>call</strong> method to numpy arrays which interpolates. The second one works by adding a network operation to the network. The first breaks linearity and so nonlinear solvers are always used, so if your equations are linear, the second is probably better to use.</p>
-<p>TimedArray has several options, including the use of evenly sampled grid points based on a start time and dt (given by a clock by default), or a fixed array of times which needn't be evenly sampled. For example to turn a signal on between 1 second and 1.1 second you could do:</p>
+<p>TimedArray has several options, including the use of evenly sampled grid points based on a start time and dt (given by a clock by default), or a fixed array of times which needn’t be evenly sampled. For example to turn a signal on between 1 second and 1.1 second you could do:</p>
 <p>[python]
 times = [0<em>second, 1</em>second, 1.1*second]
 values = [0, 1, 0]

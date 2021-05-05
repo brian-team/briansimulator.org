@@ -8,7 +8,7 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/categories/news/index-2.html">
 <link rel="prev" href="index-3.html" type="text/html">
 <link rel="next" href="index-1.html" type="text/html">
@@ -134,7 +134,7 @@
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>We've just added a new <a href="https://briansimulator.org/showcase/">Showcase </a>section to the website. Here we'll list any projects that make use of or include Brian, or any cool demos and so forth developed by other people. When we add new things to the showcase we'll post a News item on the website.</p>
+<p>We’ve just added a new <a href="https://briansimulator.org/showcase/">Showcase </a>section to the website. Here we’ll list any projects that make use of or include Brian, or any cool demos and so forth developed by other people. When we add new things to the showcase we’ll post a News item on the website.</p>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-1-3/" class="u-url">Brian 1.3</a></h1>
@@ -172,7 +172,7 @@
 </ul>
 <h5>Improvements</h5>
 <ul>
-<li>SpikeGeneratorGroup is faster for large number of events ("gather" option).</li>
+<li>SpikeGeneratorGroup is faster for large number of events (“gather” option).</li>
     <li>Speed improvement for pure Python version of sparse matrix preparation</li>
     <li>Speed improvements for spike propagation weave code (50-100% faster).</li>
     <li>Clocks have been changed and should now behave more predictably. In addition, you can now specify an order attribute for clocks.</li>
@@ -190,7 +190,7 @@
     <li>Units now work correctly in STDP (ticket #60)</li>
     <li>STDP raises an error if operations are reordered (ticket #57)</li>
     <li>linked_var works with static vars (equations) (ticket #68)</li>
-    <li>Changing clock.t during a run won't end the run</li>
+    <li>Changing clock.t during a run won’t end the run</li>
     <li>Fixed ticket #66 (unit bug)</li>
     <li>Fixed ticket #64 (bug with freeze)</li>
     <li>Can now run a network with no group</li>
@@ -233,7 +233,7 @@
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>We have a new paper in <a href="http://www.mitpressjournals.org/loi/neco">Neural Computation</a> (in press) "Vectorised algorithms for spiking neural network simulation", preprint available <a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2010/10/algorithms-preprint.pdf">here</a>. Abstract follows:
+<p>We have a new paper in <a href="http://www.mitpressjournals.org/loi/neco">Neural Computation</a> (in press) “Vectorised algorithms for spiking neural network simulation”, preprint available <a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2010/10/algorithms-preprint.pdf">here</a>. Abstract follows:
 </p>
 <p style="margin: 0px; text-indent: 0px; padding-left: 30px;">High-level languages (Matlab, Python) are popular in neuroscience because they are flexible and accelerate development. However, for simulating spiking neural networks, the cost of interpretation is a bottleneck. We describe a set of algorithms to simulate large spiking neural networks efficiently with high-level languages using vector-based operations. These algorithms constitute the core of Brian, a spiking neural network simulator written in the Python language. Vectorised simulation makes it possible to combine the flexibility of high-level languages with the computational efficiency usually associated with compiled languages.</p>
 </div>
@@ -251,9 +251,9 @@
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>We have just had a new paper accepted for the journal <a href="http://www.springer.com/biomed/neuroscience/journal/12021">Neuroinformatics</a>, entitled "Code generation: a strategy for neural network simulators". You can download a provisional PDF <a href="http://dl.dropbox.com/u/556426/codegen.pdf">here</a>. Abstract included below:
+<p>We have just had a new paper accepted for the journal <a href="http://www.springer.com/biomed/neuroscience/journal/12021">Neuroinformatics</a>, entitled “Code generation: a strategy for neural network simulators”. You can download a provisional PDF <a href="http://dl.dropbox.com/u/556426/codegen.pdf">here</a>. Abstract included below:
 </p>
-<p style="padding-left: 30px;">We demonstrate a technique for the design of neural network simulation software, runtime code generation. This technique can be used to give the user complete flexibility in specifying the mathematical model for their simulation in a high level way, along with the speed of code written in a low level language such as C++. It can also be used to write code only once but target different hardware platforms, including inexpensive high performance graphics processing units (GPUs). Code generation can be naturally combined with computer algebra systems to provide further simplification and optimisation of the generated code. The technique is quite general and could be applied to any simulation package. We demonstrate it with the "Brian" simulator (<a href="http://www.briansimulator.org">http://www.briansimulator.org</a>).</p>
+<p style="padding-left: 30px;">We demonstrate a technique for the design of neural network simulation software, runtime code generation. This technique can be used to give the user complete flexibility in specifying the mathematical model for their simulation in a high level way, along with the speed of code written in a low level language such as C++. It can also be used to write code only once but target different hardware platforms, including inexpensive high performance graphics processing units (GPUs). Code generation can be naturally combined with computer algebra systems to provide further simplification and optimisation of the generated code. The technique is quite general and could be applied to any simulation package. We demonstrate it with the “Brian” simulator (<a href="http://www.briansimulator.org">http://www.briansimulator.org</a>).</p>
 The code generation features are already available in the current version of Brian, although undocumented as yet (see the <a href="http://www.briansimulator.org/docs/reference-preferences.html">Preferences</a> section of the documentation for information on how to activate code generation).</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-1-2-1/" class="u-url">Brian 1.2.1</a></h1>
@@ -289,9 +289,9 @@ In addition, garbage collection is called after a clear.</li>
 <p>Improvements</p>
 <ul>
 <li>The sparseness keyword in connect_random can be a function</li>
-<li>Added 'wmin' to STDP</li>
+<li>Added ‘wmin’ to STDP</li>
 <li>You can now access STDP internal variables, e.g. stdp.A_pre, and monitor
-them by doing e.g. StateMonitor(stdp.pre_group, 'A_pre')</li>
+them by doing e.g. StateMonitor(stdp.pre_group, ‘A_pre’)</li>
 <li>STDP now supports nonlinear equations and parameters</li>
 <li>refractory can now be a vector (see docstring for NeuronGroup) for constant
 resets.</li>
@@ -310,12 +310,12 @@ and resolving ticket #53</li>
 <li>Weave now works on 64 bit platforms with 64 bit Python</li>
 <li>Fixed bug introduced in 1.2.0 where dense DelayConnection structures would
 not propagate any spikes</li>
-<li>Fixed bug where connect* functions on DelayConnection didn't work with
+<li>Fixed bug where connect* functions on DelayConnection didn’t work with
 subgroups but only with the whole group.</li>
 <li>Fixed bug with linked_var from subgroups not working</li>
 <li>Fixed bug with adding Equations objects together using a shared base equation
 (ticket #9 on the trac)</li>
-<li>unit_checking=False now works (didn't do anything before)</li>
+<li>unit_checking=False now works (didn’t do anything before)</li>
 <li>Fixed bug with using Equations object twice (for two different NeuronGroups)</li>
 <li>Fixed unit checking bug and ZeroDivisionError (ticket #38)</li>
 <li>Fixed rare problems with spikes being lost due to wrong size of SpikeContainer,
@@ -351,7 +351,7 @@ it now dynamically adapts to the number of spikes.</li>
 <li><a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2010/07/brian-telluride-tutorial-withoutsounds.ppt">Powerpoint slides without audio (1.5MB)</a></li>
     <li><a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2010/07/Telluride-July-2010.zip">Powerpoint slides with audio (15MB)</a></li>
 </ul>
-Unfortunately, I can't find a good way to convert this into a video file or I would upload that / put it on YouTube - let me know if you have a good, free way of doing it. (None of the programs I found online could correctly handle the transitions and the audio files correctly.)</div>
+Unfortunately, I can’t find a good way to convert this into a video file or I would upload that / put it on YouTube - let me know if you have a good, free way of doing it. (None of the programs I found online could correctly handle the transitions and the audio files correctly.)</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-tutorial-at-telluride/" class="u-url">Brian tutorial at Telluride</a></h1>
         <div class="metadata">
@@ -366,7 +366,7 @@ Unfortunately, I can't find a good way to convert this into a video file or I wo
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>There will be a tutorial on Brian at the <a href="https://neuromorphs.net/nm/wiki/2010">Telluride workshop</a> in Colorado, tomorrow at noon (via Skype as I'm in Paris).</p>
+<p>There will be a tutorial on Brian at the <a href="https://neuromorphs.net/nm/wiki/2010">Telluride workshop</a> in Colorado, tomorrow at noon (via Skype as I’m in Paris).</p>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/building-sparse-connections/" class="u-url">Building sparse connections</a></h1>
@@ -405,7 +405,7 @@ myconnection.connect_random(group1,group2,0.1,weight=1<em>nS,sparseness=exp(-abs
 <p>We have just released <a href="https://neuralensemble.org/trac/brian/wiki/Downloads">Brian 1.2</a>.</p>
 <p>The major feature of this release is the model fitting toolbox, designed for automatic fitting of spiking neural models to recorded data. The toolbox is capable of using multiple CPUs or GPUs, across multiple machines. For example, in our lab we use 3 computers with 2 GPUs each to get a 300x speed increase compared to using a single CPU.</p>
 <p>Other features of this release include some support for real time plotting as the simulation runs and some important bug fixes. See below for the complete list of changes.</p>
-<p>With this release, we are moving away from the old Sourceforge site to the new <a href="https://neuralensemble.org/trac/brian/wiki">Brian Trac</a> kindly hosted by <a href="http://www.neuralensemble.org/">Neural Ensemble</a>. We have also been working on our release tools, making it much easier to produce new releases. We now plan to do fairly frequent 'quick releases' which will be less thoroughly tested, but useful for those who want the latest features without having to much around with the SVN version.</p>
+<p>With this release, we are moving away from the old Sourceforge site to the new <a href="https://neuralensemble.org/trac/brian/wiki">Brian Trac</a> kindly hosted by <a href="http://www.neuralensemble.org/">Neural Ensemble</a>. We have also been working on our release tools, making it much easier to produce new releases. We now plan to do fairly frequent ‘quick releases’ which will be less thoroughly tested, but useful for those who want the latest features without having to much around with the SVN version.</p>
 <p>Major features:
 </p>
 <ul>

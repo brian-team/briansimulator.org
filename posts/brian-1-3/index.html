@@ -8,7 +8,7 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/brian-1-3/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
@@ -161,7 +161,7 @@ The major change in this version is the addition of the Brian.hears package for 
 </ul>
 <h5>Improvements</h5>
 <ul>
-<li>SpikeGeneratorGroup is faster for large number of events ("gather" option).</li>
+<li>SpikeGeneratorGroup is faster for large number of events (“gather” option).</li>
     <li>Speed improvement for pure Python version of sparse matrix preparation</li>
     <li>Speed improvements for spike propagation weave code (50-100% faster).</li>
     <li>Clocks have been changed and should now behave more predictably. In addition, you can now specify an order attribute for clocks.</li>
@@ -179,7 +179,7 @@ The major change in this version is the addition of the Brian.hears package for 
     <li>Units now work correctly in STDP (ticket #60)</li>
     <li>STDP raises an error if operations are reordered (ticket #57)</li>
     <li>linked_var works with static vars (equations) (ticket #68)</li>
-    <li>Changing clock.t during a run won't end the run</li>
+    <li>Changing clock.t during a run won’t end the run</li>
     <li>Fixed ticket #66 (unit bug)</li>
     <li>Fixed ticket #64 (bug with freeze)</li>
     <li>Can now run a network with no group</li>

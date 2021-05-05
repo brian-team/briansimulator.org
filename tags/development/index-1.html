@@ -8,7 +8,7 @@
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/tags/development/index-1.html">
 <link rel="prev" href="index-2.html" type="text/html">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
@@ -153,12 +153,12 @@ myconnection.connect_random(group1,group2,0.1,weight=1<em>nS,sparseness=exp(-abs
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>The latest SVN version of Brian includes a new experimental package, brian.experimental.codegen, which is designed for automatic generation of code for numerical integration in Python, C++ and GPU C++. If the global preference usecodegen is True then it will be used automatically for all nonlinear differential equations. If usecodegenweave is True then C code will be generated, otherwise Python code. In all cases the code runs faster. GPU code is not currently used. Use the <a href="http://www.briansimulator.org/docs/reference-preferences.html#global-configuration-file">brian_global_preferences.py</a> file to activate it for all your code. As an example of how it works, let's use the following Brian Equations object:</p>
+<p>The latest SVN version of Brian includes a new experimental package, brian.experimental.codegen, which is designed for automatic generation of code for numerical integration in Python, C++ and GPU C++. If the global preference usecodegen is True then it will be used automatically for all nonlinear differential equations. If usecodegenweave is True then C code will be generated, otherwise Python code. In all cases the code runs faster. GPU code is not currently used. Use the <a href="http://www.briansimulator.org/docs/reference-preferences.html#global-configuration-file">brian_global_preferences.py</a> file to activate it for all your code. As an example of how it works, let’s use the following Brian Equations object:</p>
 <p>[python]
-eqs = Equations('''
+eqs = Equations(‘’‘
 dV/dt = -W<em>V/(10</em>second) : volt
 dW/dt = -V*<em>2/(1</em>second) : volt
-''')
+‘’‘)
 [/python]</p>
 <p>The codegen module generates the following code for the Euler update scheme. For Python:</p>
 <p>[python]
@@ -201,33 +201,33 @@ for(int _i=0;_i&lt;num_neurons;_i++){
 <p>These are all generated from the following template for the Euler integration scheme:</p>
 <p>[python]
 euler_scheme = [
-    (('foreachvar', 'nonzero'),
-        '''
+    ((‘foreachvar’, ‘nonzero’),
+        ‘’‘
         $vartype ${var}__tmp = $var_expr
-        '''),
-    (('foreachvar', 'nonzero'),
-        '''
+        ‘’‘),
+    ((‘foreachvar’, ‘nonzero’),
+        ‘’‘
         $var += ${var}__tmp*dt
-        ''')
+        ‘’‘)
     ]
 [/python]</p>
 <p>The other schemes are the RK2 and exponential Euler scheme. For example, the exponential Euler scheme is:</p>
 <p>[python]
 exp_euler_scheme = [
-    (('foreachvar', 'nonzero'),
-        '''
+    ((‘foreachvar’, ‘nonzero’),
+        ‘’‘
         $vartype ${var}__B = @substitute(var_expr, {var:0})
         $vartype ${var}__A = @substitute(var_expr, {var:1})
         ${var}__A -= ${var}__B
         ${var}__B /= ${var}__A
         ${var}__A <em>= dt
-        '''),
-    (('foreachvar', 'nonzero'),
-        '''
+        ‘’‘),
+    ((‘foreachvar’, ‘nonzero’),
+        ‘’‘
         $var += ${var}__B
         $var </em>= exp(${var}__A)
         $var -= ${var}__B
-        ''')
+        ‘’‘)
     ]
 [/python]</p>
 <p>On the Equations above, this generates the following Python code:</p>
@@ -269,14 +269,14 @@ W -= W__B
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>This is a little trick that may be useful to people using multiprocessing and numpy that I couldn't find any good examples of online.</p>
-<p>Using the Python multiprocessing package you create a new Python process for each CPU in the system, but you may often want to work on the same data without making a copy. Here is one way to do that. First of all, we assume you're starting with a large numpy array S. We replace S with a version in shared memory, and then we can pass this</p>
+<p>This is a little trick that may be useful to people using multiprocessing and numpy that I couldn’t find any good examples of online.</p>
+<p>Using the Python multiprocessing package you create a new Python process for each CPU in the system, but you may often want to work on the same data without making a copy. Here is one way to do that. First of all, we assume you’re starting with a large numpy array S. We replace S with a version in shared memory, and then we can pass this</p>
 <p>[python]
 from multiprocessing import sharedctypes
 size = S.size
 shape = S.shape
 S.shape = size
-S_ctypes = sharedctypes.RawArray('d', S)
+S_ctypes = sharedctypes.RawArray(‘d’, S)
 S = numpy.frombuffer(S_ctypes, dtype=numpy.float64, count=size)
 S.shape = shape
 [/python]</p>
@@ -317,36 +317,36 @@ S.shape = shape
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>A feature of the pylab/matplotlib plotting package that I hadn't used before is animation. The <a href="http://www.scipy.org/Cookbook/Matplotlib/Animations">Animations </a>entry on the Scipy Cookbook explains how to do it. Here is an example of using it to do realtime plotting of a network in Brian. We plot a raster plot and sample membrane potential trace as the CUBA example runs:</p>
+<p>A feature of the pylab/matplotlib plotting package that I hadn’t used before is animation. The <a href="http://www.scipy.org/Cookbook/Matplotlib/Animations">Animations </a>entry on the Scipy Cookbook explains how to do it. Here is an example of using it to do realtime plotting of a network in Brian. We plot a raster plot and sample membrane potential trace as the CUBA example runs:</p>
 <p>[python]
 from brian import *</p>
 <h6>Set up the standard CUBA example</h6>
 <p>N = 4000
-eqs='''
+eqs=’‘’
 dv/dt = (ge+gi-(v+49<em>mV))/(20</em>ms) : volt
 dge/dt = -ge/(5<em>ms) : volt
 dgi/dt = -gi/(10</em>ms) : volt
-'''
+‘’‘
 P = NeuronGroup(N, eqs, threshold=-50<em>mV,reset=-60</em>mV)
 P.v = -60<em>mV+10</em>mV<em>rand(len(P))
 Pe = P.subgroup(3200)
 Pi = P.subgroup(800)
-Ce = Connection(Pe, P, 'ge', weight=1.62</em>mV, sparseness=0.02)
-Ci = Connection(Pi, P, 'gi', weight=-9*mV, sparseness=0.02)</p>
+Ce = Connection(Pe, P, ‘ge’, weight=1.62</em>mV, sparseness=0.02)
+Ci = Connection(Pi, P, ‘gi’, weight=-9*mV, sparseness=0.02)</p>
 <h6>Real time plotting stuff</h6>
 <h2>First of all, we use standard Brian monitors to record values</h2>
 <p>M = SpikeMonitor(P)
-trace = StateMonitor(P, 'v', record=0)</p>
-<h2>The ion() command switches pylab's "interactive mode" on</h2>
+trace = StateMonitor(P, ‘v’, record=0)</p>
+<h2>The ion() command switches pylab’s “interactive mode” on</h2>
 <p>ion()</p>
 <h2>We set up the plot with the correct axes</h2>
 <p>subplot(211)</p>
 <h2>Note that we have to store a copy of the objects (plot lines) whose data</h2>
 <h2>we will update in real time</h2>
-<p>rasterline, = plot([], [], '.') # plot points, hence the '.'
+<p>rasterline, = plot([], [], ‘.’) # plot points, hence the ‘.’
 axis([0, 1, 0, N])
 subplot(212)
-traceline, = plot([], []) # plot lines, hence no '.'
+traceline, = plot([], []) # plot lines, hence no ‘.’
 axis([0, 1, -0.06, -0.05])</p>
 <h2>This network operation updates the graphics every 10ms of simulated time</h2>
 <p>@network_operation(clock=EventClock(dt=10<em>ms))
@@ -366,7 +366,7 @@ draw_gfx() # final draw to get the last bits of data in
 ioff() # switch interactive mode off
 show() # and wait for user to close the window before shutting down
 [/python]</p>
-<p>We're thinking about adapting some of this to include in the standard Brian plotting library. Any thoughts?</p>
+<p>We’re thinking about adapting some of this to include in the standard Brian plotting library. Any thoughts?</p>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/linked-variables/" class="u-url">Linked variables</a></h1>
@@ -383,24 +383,24 @@ show() # and wait for user to close the window before shutting down
         <div>
 <p></p>
 <p>Please see the entry on <a href="../../posts/the-idea/">the idea</a> of this development blog.</p>
-<p>One thing we end up doing very often in Brian in our code, is copying the values of a variable in one group to the values of a variable in another group. That is, a variable from one group should essentially be defined as the same as the variable from another group. This comes up in models of the auditory system we're working on, because we use one NeuronGroup to represent the displacement of hair cells in the cochlea, and a separate NeuronGroup to represent the auditory nerve fibres which receive graded rather than spiking inputs from them. In general, the same thing might be useful in any case where there is a graded rather than spiking connection between two NeuronGroups. What we were doing was this:</p>
+<p>One thing we end up doing very often in Brian in our code, is copying the values of a variable in one group to the values of a variable in another group. That is, a variable from one group should essentially be defined as the same as the variable from another group. This comes up in models of the auditory system we’re working on, because we use one NeuronGroup to represent the displacement of hair cells in the cochlea, and a separate NeuronGroup to represent the auditory nerve fibres which receive graded rather than spiking inputs from them. In general, the same thing might be useful in any case where there is a graded rather than spiking connection between two NeuronGroups. What we were doing was this:</p>
 <p>[python]
-haircells = NeuronGroup(...)
-nervefibres = NeuronGroup(...)
-@network_operation(when='start')
+haircells = NeuronGroup(…)
+nervefibres = NeuronGroup(…)
+@network_operation(when=’start’)
 def graded_connection():
     nervefibres.input = haircells.output
 [/python]</p>
 <p>This works fine, but generally we think using network operations in this technical sort of a way is not very intuitive for most users, so we thought about a way of doing this automatically with a nice syntax. We came up with this:</p>
 <p>[python]
-nervefibres.input = linked_var(haircells, 'output')
+nervefibres.input = linked_var(haircells, ‘output’)
 [/python]</p>
-<p>The practical effect of this is exactly the same as the code above, but the syntax is much nicer. Behind the scenes, the function linked_var creates a LinkedVar class instance which is recognised by the <strong>setattr</strong> method of the NeuronGroup, which creates a network operation to do the copy, but you didn't want to know that.</p>
-<p>The question is, what should the syntax be? At the moment, we've gone with:</p>
+<p>The practical effect of this is exactly the same as the code above, but the syntax is much nicer. Behind the scenes, the function linked_var creates a LinkedVar class instance which is recognised by the <strong>setattr</strong> method of the NeuronGroup, which creates a network operation to do the copy, but you didn’t want to know that.</p>
+<p>The question is, what should the syntax be? At the moment, we’ve gone with:</p>
 <p>[python]
 linked_var(source, var, func, when, clock)
 [/python]</p>
-<p>The func, when and clock arguments are optional. The func argument allows you to pass the value of the variable in the source group through a function. For example, in the auditory system you do half wave rectification and logarithmic compression. The when argument tells it when to do the copy operation, at the start of the simulation loop by default, and the clock tells it what schedule to update on, by default it uses the target group's clock. Is this a nice syntax? Is there anything else this should be able to do?</p>
+<p>The func, when and clock arguments are optional. The func argument allows you to pass the value of the variable in the source group through a function. For example, in the auditory system you do half wave rectification and logarithmic compression. The when argument tells it when to do the copy operation, at the start of the simulation loop by default, and the clock tells it what schedule to update on, by default it uses the target group’s clock. Is this a nice syntax? Is there anything else this should be able to do?</p>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/recentstatemonitor/" class="u-url">RecentStateMonitor</a></h1>
@@ -417,7 +417,7 @@ linked_var(source, var, func, when, clock)
         <div>
 <p></p>
 <p>Please see the entry on <a href="../../posts/the-idea/">the idea</a> of this development blog.</p>
-<p>As part of our efforts to implement STDP with heterogeneous delays, which I'll write more about some other time, we realised we needed to access recent values of a variable, but never covering more than a fixed duration T. That is, we needed access to V(t-s) for 0&lt;s&lt;T, where t is the current time. We could get access to this by recording all the values of V, but that's a big memory hog for a long running simulation. Instead, we came up with a new object, the RecentStateMonitor, which works in a very similar way to StateMonitor.</p>
+<p>As part of our efforts to implement STDP with heterogeneous delays, which I’ll write more about some other time, we realised we needed to access recent values of a variable, but never covering more than a fixed duration T. That is, we needed access to V(t-s) for 0&lt;s&lt;T, where t is the current time. We could get access to this by recording all the values of V, but that’s a big memory hog for a long running simulation. Instead, we came up with a new object, the RecentStateMonitor, which works in a very similar way to StateMonitor.</p>
 <p>For the user, you can use RecentStateMonitor in exactly the same way as a StateMonitor (but with some extra options for allowing more efficient access to the data). We imagine it might be useful for things like network operations that monitor the dynamics of a variable as a simulation runs, and inject different currents depending on those dynamics. It could also be used together with a custom SpikeMonitor for a very simple spike triggered average monitor.</p>
 <p>The implementation uses a cylindrical array, a 2D generalisation of a <a href="http://en.wikipedia.org/wiki/Circular_buffer">circular array</a> that is circular in only one dimension. It is a 2D array V(i,j) where i represents a time index, and j a neuron index. The time index is circular and relative to a pointer into the array which updates at each time step, when the pointer reaches the end of the fixed size array, it resets back to the beginning in a circular fashion. This cylindrical array structure is good for memory access because no memory needs to be allocated or deallocated as it runs.</p>
 <p>At the moment, RecentStateMonitor only records the values for a single variable, but it will very likely be extended, or an additional class added which handles multiple variables (since this seems to be a very likely use case). Any ideas on other features you would like this to have? or more efficient implementations?</p>
@@ -440,42 +440,42 @@ linked_var(source, var, func, when, clock)
 <p>One annoying thing that crops up often in writing programs for Brian, is that you have some set of equations with a parameter which varies over time according to the values in some array. Supposing that I was an array of length N with values sampled at intervals dt, you would like to be able to write an equation like:</p>
 <p>[python]
 I = randn(N)
-eqs = '''
+eqs = ‘’‘
 dV/dt = (-V+I(t))/tau : 1
-'''
+‘’‘
 [/python]
 One way of solving the problem is to use a network operation, like so:</p>
 <p>[python]
 I = randn(N)
-eqs = '''
+eqs = ‘’‘
 dV/dt = -(V+J)/tau : 1
 J : 1
-'''
-G = NeuronGroup(m, eqs, ...)
+‘’‘
+G = NeuronGroup(m, eqs, …)
 @network_operation
 def update_J(clk):
     i = int(clk.t/clk.dt)
     G.J = I[i]
 [/python]
-This works, but it's not terribly intuitive. The new TimedArray class allows you to do both of these things. The first could be written like so:</p>
+This works, but it’s not terribly intuitive. The new TimedArray class allows you to do both of these things. The first could be written like so:</p>
 <p>[python]
 I = TimedArray(randn(N))
-eqs = '''
+eqs = ‘’‘
 dV/dt = (-V+I(t))/tau : 1
-'''
+‘’‘
 [/python]
 The second like so:</p>
 <p>[python]
 I = randn(N)
-eqs = '''
+eqs = ‘’‘
 dV/dt = -(V+J)/tau : 1
 J : 1
-'''
-G = NeuronGroup(m, eqs, ...)
+‘’‘
+G = NeuronGroup(m, eqs, …)
 G.J = TimedArray(I)
 [/python]
 Behind the scenes, the first one works by adding a <strong>call</strong> method to numpy arrays which interpolates. The second one works by adding a network operation to the network. The first breaks linearity and so nonlinear solvers are always used, so if your equations are linear, the second is probably better to use.</p>
-<p>TimedArray has several options, including the use of evenly sampled grid points based on a start time and dt (given by a clock by default), or a fixed array of times which needn't be evenly sampled. For example to turn a signal on between 1 second and 1.1 second you could do:</p>
+<p>TimedArray has several options, including the use of evenly sampled grid points based on a start time and dt (given by a clock by default), or a fixed array of times which needn’t be evenly sampled. For example to turn a signal on between 1 second and 1.1 second you could do:</p>
 <p>[python]
 times = [0<em>second, 1</em>second, 1.1*second]
 values = [0, 1, 0]
@@ -497,7 +497,7 @@ The TimedArray class is defined in the module timedarray. Take a look at the doc
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>At the moment, we're working on these features for Brian 1.1.3 which should be coming very soon:
+<p>At the moment, we’re working on these features for Brian 1.1.3 which should be coming very soon:
 </p>
 <ul>
 <li>STDP working with connections with heterogeneous delays.</li>
@@ -505,11 +505,11 @@ The TimedArray class is defined in the module timedarray. Take a look at the doc
     <li>A new TimedArray class to make it easier to set the values of a variable in an equation from a precomputed array.</li>
     <li>Progress reporting for simulation runs, with estimates of how long the computation will take.</li>
 </ul>
-In the medium term, possibly for Brian 1.2, we're working on:
+In the medium term, possibly for Brian 1.2, we’re working on:
 <ul>
 <li>Support for parallel processing with a GPU - the work in progress on this is already available in the experimental subpackage in Brian.</li>
     <li>Support for automatic generation and compilation of C code for nonlinear differential equation solvers.</li>
-    <li>A subpackage, "Brian hears", for auditory system modelling, including efficient GPU based filterbank operations.</li>
+    <li>A subpackage, “Brian hears”, for auditory system modelling, including efficient GPU based filterbank operations.</li>
 </ul>
 </div>
     </div>
@@ -526,12 +526,12 @@ In the medium term, possibly for Brian 1.2, we're working on:
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>As part of the new website, we'll be writing entries on this development blog, showing ideas we plan to put in the next release of Brian. The idea is to let people know about new developments and features, and to get feedback about them. We hope that you might try out experimental or new features available in the experimental subpackage of Brian, or from the most recent revision on the SVN, and let us know what you think about them. Useful questions we would like feedback on are:
+<p>As part of the new website, we’ll be writing entries on this development blog, showing ideas we plan to put in the next release of Brian. The idea is to let people know about new developments and features, and to get feedback about them. We hope that you might try out experimental or new features available in the experimental subpackage of Brian, or from the most recent revision on the SVN, and let us know what you think about them. Useful questions we would like feedback on are:
 </p>
 <ul>
 <li>Does it work?</li>
     <li>Is it too slow?</li>
-    <li>Does it have all the features you'd like it to have?</li>
+    <li>Does it have all the features you’d like it to have?</li>
     <li>Is the syntax clear?</li>
 </ul>
 Brian is an open source package, and partly a community effort. The more feedback and suggestions we get, the better we can make it. Hopefully this blog will also foster efforts to bring more people into the Brian development team.
