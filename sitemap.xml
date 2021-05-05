@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/archive.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/assises-de-la-recherche/</loc>
@@ -35,15 +35,15 @@
  </url>
  <url>
   <loc>https://briansimulator.org/authors/</loc>
-  <lastmod>2021-05-04T15:08:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/authors/brian-team/</loc>
-  <lastmod>2021-05-04T15:08:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/authors/marcel-stimberg/</loc>
-  <lastmod>2021-05-04T15:08:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/better-sparse-matrix-support/</loc>
@@ -55,31 +55,31 @@
  </url>
  <url>
   <loc>https://briansimulator.org/blog/index-1.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/blog/index-2.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/blog/index-3.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/blog/index-4.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/blog/index-5.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/blog/index-6.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/blog/index-7.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/brian-1-1-3/</loc>
@@ -259,19 +259,19 @@
  </url>
  <url>
   <loc>https://briansimulator.org/categories/news/index-1.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/categories/news/index-2.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/categories/news/index-3.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/categories/news/index-4.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/cite/</loc>
@@ -522,8 +522,8 @@
   <lastmod>2021-05-05T11:07:00Z</lastmod>
  </url>
  <url>
-  <loc>https://briansimulator.org/posts/2021/bug-hunt-notebook/</loc>
-  <lastmod>2021-05-05T11:07:00Z</lastmod>
+  <loc>https://briansimulator.org/posts/2021/bug-hunt-episode-1-broken-latex-output-for-equations/</loc>
+  <lastmod>2021-05-05T11:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2021/live-session-on-brian-development/</loc>
@@ -931,7 +931,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/tags/</loc>
-  <lastmod>2021-05-05T11:07:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/tags/brian2genn/</loc>
@@ -939,7 +939,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/tags/bug-hunt/</loc>
-  <lastmod>2021-05-05T11:07:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/tags/community/</loc>
@@ -951,27 +951,19 @@
  </url>
  <url>
   <loc>https://briansimulator.org/tags/development/index-1.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/tags/development/index-2.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/tags/development/index-3.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/tags/gsoc/</loc>
   <lastmod>2021-05-05T11:07:00Z</lastmod>
- </url>
- <url>
-  <loc>https://briansimulator.org/tags/katex/</loc>
-  <lastmod>2021-05-04T14:50:00Z</lastmod>
- </url>
- <url>
-  <loc>https://briansimulator.org/tags/mathjax/</loc>
-  <lastmod>2021-05-04T14:50:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/tags/model/</loc>
@@ -999,11 +991,11 @@
  </url>
  <url>
   <loc>https://briansimulator.org/tags/release/index-1.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/tags/release/index-2.html</loc>
-  <lastmod>2021-05-05T11:13:00Z</lastmod>
+  <lastmod>2021-05-05T13:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/tags/shared-memory/</loc>
