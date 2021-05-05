@@ -69,7 +69,7 @@ I confirmed the problem on my machine with the latest development version of Bri
     translate from Python 2 to Python 3. This means that code runs directly from the source directory only under
     Python 2, running it with Python 3 requires first installing it (which will run `2to3.py` to translate the 
     code). Version **2.3** got rid of this limitation, and has code that is both compatible with Python 2 and 
-    Python 3 (via the [`future`](https://pypi.org/project/future/) package. This means that you can run it without 
+    Python 3 (via the [`future`](https://pypi.org/project/future/) package). This means that you can run it without 
     any installation on both Python versions. Finally, since version **2.4**, Brian is "Python 3-only" and no 
     longer has a compatibility layer for Python 2.
 
@@ -258,7 +258,7 @@ Ha! Apparently, until version 1.7, `sympy` was happily accepting simple strings 
 
 Now, how can we check that we are not using `sympy.latex` directly on strings elsewhere in the code? Of course we could search for calls to `latex` in the source code and verify them manually, but there's another neat trick we can use, so called ["monkey patching"](https://en.wikipedia.org/wiki/Monkey_patch).
 
-I am going to run Brian's test suite, or at least the "codegen-independent" part, i.e. the part that does not test the full code generation machinery. Converting equations to LaTeX belongs into this category. However, before running this test I will "monkey patch" the `sympy.latex` function so that it fails if it gets called for a string – otherwise it does the same thing as the original function. Note that I have to do this before importing `brian2`, because otherwise `brian2` would important the original `sympy.latex` function before I can patch it. We also need to switch off [pytest](https://docs.pytest.org/)'s parallel testing, because otherwise tests will be executed in independent processes that do not make use of our carefully patched function.
+I am going to run Brian's test suite, or at least the "codegen-independent" part, i.e. the part that does not test the full code generation machinery. Converting equations to LaTeX belongs into this category. However, before running this test I will "monkey patch" the `sympy.latex` function so that it fails if it gets called for a string – otherwise it does the same thing as the original function. Note that I have to do this before importing `brian2`, because otherwise `brian2` would import the original `sympy.latex` function before I can patch it. We also need to switch off [pytest](https://docs.pytest.org/)'s parallel testing, because otherwise tests will be executed in independent processes that do not make use of our carefully patched function.
 
 Here's the patch and the test run:
 ```Python
@@ -269,7 +269,7 @@ def latex(obj, *args, **kwds):
     return _orig_latex(obj, *args, **kwds)
 sympy.latex = latex
 import brian2
-brian2.test([])  # no code generation targets are tested
+brian2.test([], test_in_parallel=[])  # no code generation targets are tested
 ```
 
 Two of the tests fails and point us to another use of `sympy.latex` with a string in [`Equations._latex`](https://github.com/brian-team/brian2/blob/a0167fc35a585a0b58aa8cf28889a0e03a520696/brian2/equations/equations.py#L1047):
@@ -313,7 +313,7 @@ Before commiting the fix, however, we should also make sure that this issue does
 ```console
 $ git stash
 ```
-This resets all changes in the repository, but stores them locally. We can now write a test and make sure that it fails (because our repository does not have the fix anymore). The LaTeX output is currently not tested very well (but we don't want tests to fail due to small inconsequential layout changes, either), but for the moment very simple test should be enough. To make sure that the current issue is fixed, I simply add
+This resets all changes in the repository, but stores them locally. We can now write a test and make sure that it fails (because our repository does not have the fix anymore). The LaTeX output is currently not tested very well (but we don't want tests to fail due to small inconsequential layout changes, either), but for the moment a very simple test should be enough. To make sure that the current issue is fixed, I simply add
 ```Python
 assert 'textbackslash' not in func(G)  # for LaTeX, see #1296
 #...
@@ -331,6 +331,6 @@ This concludes everything. I finish by committing the changes in a new branch an
 
 ## Final remarks
 
-This was a small bug, but also quite typical in many ways: some "minor" feature of Brian (i.e. not something completely obvious that would get noticed by out users, us and our test suite immediately) used to work but no longer does. A user reported the issue, and we had to figure out whether we broke something in Brian, or whether one of our dependencies introduced a bug. The `git bisect` tool is great for figuring things like this out; here I applied it to `sympy` but in other situations I would have applied it to Brian's code base itself. The final outcome also was rather typical: Brian did something (arguably?) wrong, but in a way that worked fine with earlier versions of a dependency, in this case `sympy`. And in the end, the fixes were almost trivial, but finding them wasn't obvious from the start!
+This was a small bug, but also quite typical in many ways: some "minor" feature of Brian (i.e. not something completely obvious that would get noticed by our users, us, and our test suite immediately) used to work but no longer does. A user reported the issue, and we had to figure out whether we broke something in Brian, or whether one of our dependencies introduced a bug. The `git bisect` tool is great for figuring things like this out; here I applied it to `sympy` but in other situations I would have applied it to Brian's code base itself. The final outcome also was rather typical: Brian did something (arguably?) wrong, but in a way that worked fine with earlier versions of a dependency, in this case `sympy`. And in the end, the fixes were almost trivial, but finding them wasn't obvious from the start!
 
-Hope that you learned a thing or two from reading this blog post, and maybe it motivates to fix a bug in Brian yourself! Comments very welcome, feel free to reach out on [twitter](https://twitter.com/briansimulator) or on the [discussion forum](https://brian.discourse.group).
+Hope that you learned a thing or two from reading this blog post, and maybe it motivates you to fix a bug in Brian yourself! Comments very welcome, feel free to reach out on [twitter](https://twitter.com/briansimulator) or on the [discussion forum](https://brian.discourse.group).
