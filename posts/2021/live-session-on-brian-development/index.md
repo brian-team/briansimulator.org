@@ -11,3 +11,7 @@ Marcel Stimberg will talk about Brian's development process in a live developer 
 For more information and the link to the Zoom session see the [announcement](https://ocns.github.io/SoftwareWG/2021/02/07/dev-session-marcel-stimberg-brian-simulator.html).
 
 This talk is part of a series of sessions organized by the newly formed [Software Working Group](https://ocns.github.io/SoftwareWG/) under the umbrella of the [INCF](https://www.incf.org/) and [OCNS](https://www.cnsorg.org/).
+
+**Update:** The video for the recorded sessions is now on Youtube:
+
+{{% media url=https://www.youtube.com/watch?v=fy6Hs5uQ7aQ %}}
