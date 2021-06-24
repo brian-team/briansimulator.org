@@ -1006,12 +1006,10 @@ GITHUB_COMMIT_SOURCE = True
 # Many filters are shipped with Nikola. A list is available in the manual:
 # <https://getnikola.com/handbook.html#post-processing-filters>
 #
-# from nikola import filters
-# FILTERS = {
-#    ".html": [filters.typogrify],
-#    ".js": [filters.closure_compiler],
-#    ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
-# }
+from nikola import filters
+FILTERS = {
+   ".html": [filters.typogrify_sans_widont],
+}
 
 # Executable for the "yui_compressor" filter (defaults to 'yui-compressor').
 # YUI_COMPRESSOR_EXECUTABLE = 'yui-compressor'
@@ -1044,7 +1042,7 @@ GITHUB_COMMIT_SOURCE = True
 
 # Expert setting! Create a gzipped copy of each generated file. Cheap server-
 # side optimization for very high traffic sites or low memory servers.
-# GZIP_FILES = False
+GZIP_FILES = True
 # File extensions that will be compressed
 # GZIP_EXTENSIONS = ('.txt', '.htm', '.html', '.css', '.js', '.json', '.atom', '.xml')
 # Use an external gzip command? None means no.
@@ -1208,10 +1206,9 @@ CODE_COLOR_SCHEME = 'friendly'
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:
 # <link rel="name" href="file" sizes="size"/>
-# FAVICONS = (
-#     ("icon", "/favicon.ico", "16x16"),
-#     ("icon", "/icon_128x128.png", "128x128"),
-# )
+FAVICONS = (
+    ("icon", "/logos/favicon.png", "32x32"),
+)
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
 INDEX_TEASERS = True
@@ -1622,7 +1619,7 @@ TWITTER_CARD = {
 # Bundle JS and CSS into single files to make site loading faster in a HTTP/1.1
 # environment but is not recommended for HTTP/2.0 when caching is used.
 # Defaults to True.
-# USE_BUNDLES = True
+USE_BUNDLES = False
 
 # Plugins you don't want to use. Be careful :-)
 # DISABLED_PLUGINS = ["render_galleries"]
