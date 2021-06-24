@@ -5,11 +5,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Posts about Development (old posts, page 2) | The Brian spiking neural network simulator</title>
-<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/tags/development/index-2.html">
+<link rel="icon" href="../../logos/favicon.png" sizes="32x32">
 <link rel="prev" href="index-3.html" type="text/html">
 <link rel="next" href="index-1.html" type="text/html">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
@@ -90,7 +96,7 @@
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -113,7 +119,7 @@
             
                 <p class="feedlink">
                         
-            <a href="../development.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
+            <a href="../development.xml" hreflang="en" type="application/rss+xml"><span class="caps">RSS</span> feed</a>
 
                 </p>
 
@@ -260,15 +266,15 @@ For a full list of changes, see the <a href="https://brian2.readthedocs.org/en/2
 <p>We are happy to announce another alpha release of Brian2 (version number 2.0a8). A significant amount of internal refactoring work has been done since the previous release and many bugs (in particular related to the new “standalone” mode) have been fixed. The release also adds the following user-visible changes:</p>
 <ul>
 <li>The definition of variable namespaces is now finalized and follows a consistent approach, see <a href="http://brian2.readthedocs.org/en/latest/user/equations.html#external-variables-and-functions">the documentation</a> for details</li>
-<li>A variable marked as "unless refractory" in the equations is now completely clamped during refractoriness, i.e. it also ignores synaptic input, for example</li>
-<li>Pre-defined constants (e.g. "e" or "pi") are now correctly understood in the symbolic analysis of equations</li>
-<li>Parameters and subexpressions can be declared as "scalar", meaning that they should be stored/calculated as a single value for a whole group</li>
+<li>A variable marked as &#8220;unless refractory&#8221; in the equations is now completely clamped during refractoriness, i.e. it also ignores synaptic input, for example</li>
+<li>Pre-defined constants (e.g. &#8220;e&#8221; or &#8220;pi&#8221;) are now correctly understood in the symbolic analysis of equations</li>
+<li>Parameters and subexpressions can be declared as &#8220;scalar&#8221;, meaning that they should be stored/calculated as a single value for a whole group</li>
 <li>Exact integration can now take place even for equations referring to a TimedArray, if the timestep of the TimedArray is a multiple of the simulation timestep</li>
 <li>The internal calculation of TimedArray values is now more robust. The new approach entails a change in the semantics of TimedArray when its timestep is bigger than the simulation timestep. For more details see <a href="http://brian2.readthedocs.org/en/latest/user/input.html#timed-arrays">the documentation</a>
 </li>
 <li>Performance improvement for the Python-based SpikeQueue</li>
 </ul>
-<p>Brian 2 is stabilizing and can already be used for quite a variety of network simulations. We ported a rather complex example from Brian 1 (<code>synapses_barrelcortex.py</code>) that shows a lot of Brian2's features in use.</p>
+<p>Brian 2 is stabilizing and can already be used for quite a variety of network simulations. We ported a rather complex example from Brian 1 (<code>synapses_barrelcortex.py</code>) that shows a lot of Brian2&#8217;s features in use.</p>
 
 <p>As always, please report any comments to the <a href="http://groups.google.com/group/brian-development/">brian-development mailing list</a> or open an issue on the <a href="https://github.com/brian-team/brian2/issues">github repository</a>.</p>
 
@@ -290,7 +296,7 @@ Alternatively, you can directly download the package from the package index and 
 
 <p>You can find documentation for Brian2 at readthedocs: <a href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 
-<p>Note that the user documentation is still quite incomplete, you'll find a lot of information in the reference documentation, though.</p>
+<p>Note that the user documentation is still quite incomplete, you&#8217;ll find a lot of information in the reference documentation, though.</p>
 
 <p></p>
 </div>
@@ -312,7 +318,7 @@ Alternatively, you can directly download the package from the package index and 
 <ul>
 <li>A workaround that makes Brian2 work with the latest version of sympy (0.7.4) which introduced a bug in their differential equation solver.</li>
 <li>A C++ version of the SpikeQueue, the data structure responsible for the spike transmission. This feature needs a working C++ compiler and will lead to a performance gain.</li>
-<li>Faster synapse updates in pure numpy/Python for STDP-like rules</li>
+<li>Faster synapse updates in pure numpy/Python for <span class="caps">STDP</span>-like rules</li>
 <li>A more flexible approach for importing the brian2 package that should allow for different programming styles (see <a href="http://brian2.readthedocs.org/en/latest/introduction/import.html">the documentation</a>).</li>
 </ul>
 <p>Please report any comments/questions you may have to the <a href="http://groups.google.com/group/brian-development/">brian-development mailing list</a></p>
@@ -335,7 +341,7 @@ pip install –pre brian2  # newer versions of pip
 
 <p>You can find documentation for Brian2 at readthedocs: <a href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 
-<p>Note that the user documentation is still quite incomplete, you'll find a lot of information in the reference documentation, though.</p>
+<p>Note that the user documentation is still quite incomplete, you&#8217;ll find a lot of information in the reference documentation, though.</p>
 
 <p></p>
 </div>
@@ -358,7 +364,7 @@ pip install –pre brian2  # newer versions of pip
 
 <p>This mode has some restrictions compared to the standard operating mode of Brian, you can find more details in the documentation:<br><a href="http://brian2.readthedocs.org/en/latest/user/devices.html">http://brian2.readthedocs.org/en/latest/user/devices.html</a></p>
 
-<p>We are very interested in feedback about how this mode fits with your needs, what restrictions you cannot live with, what additional functionality you'd need, etc. Please report any comments to the <a href="http://groups.google.com/group/brian-development/">brian-development mailing list</a></p>
+<p>We are very interested in feedback about how this mode fits with your needs, what restrictions you cannot live with, what additional functionality you&#8217;d need, etc. Please report any comments to the <a href="http://groups.google.com/group/brian-development/">brian-development mailing list</a></p>
 
 <h3>How to get Brian2?</h3>
 
@@ -378,7 +384,7 @@ pip install –pre brian2  # newer versions of pip
 
 <p>You can find documentation for Brian2 at readthedocs: <a href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 
-<p>Note that the user documentation is still quite incomplete, you'll find a lot of information in the reference documentation, though.</p>
+<p>Note that the user documentation is still quite incomplete, you&#8217;ll find a lot of information in the reference documentation, though.</p>
 
 <p></p>
 </div>
@@ -418,7 +424,7 @@ pip install –pre brian2</code></p>
 
 <p>You can find documentation for Brian2 at readthedocs: <a href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 
-<p>Note that the user documentation is still quite incomplete, you'll find a lot of information in the reference documentation, though.</p>
+<p>Note that the user documentation is still quite incomplete, you&#8217;ll find a lot of information in the reference documentation, though.</p>
 
 <h3>Feedback wanted!</h3>
 
@@ -451,7 +457,7 @@ pip install –pre brian2</code></p>
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>We just added a new method <code>Connection.connect_from_sparse</code>(W, delay=None, column_access=True) which allows you to initialise a Connection object directly with any scipy sparse matrix. This has a huge memory efficiency gain if you use CSR/COO matrices, as by default Brian uses LIL which is very flexible but memory inefficient. For an even bigger memory efficiency gain, if you are not using STDP, set column_access=False. <a href="http://neuralensemble.org/trac/brian/wiki/Downloads">Download the SVN version of Brian</a> to start using this feature.</p>
+<p>We just added a new method <code>Connection.connect_from_sparse</code>(W, delay=None, column_access=True) which allows you to initialise a Connection object directly with any scipy sparse matrix. This has a huge memory efficiency gain if you use <span class="caps">CSR</span>/<span class="caps">COO</span> matrices, as by default Brian uses <span class="caps">LIL</span> which is very flexible but memory inefficient. For an even bigger memory efficiency gain, if you are not using <span class="caps">STDP</span>, set column_access=False. <a href="http://neuralensemble.org/trac/brian/wiki/Downloads">Download the <span class="caps">SVN</span> version of Brian</a> to start using this feature.</p>
 </div>
     </div>
     </article>
@@ -470,7 +476,7 @@ pip install –pre brian2</code></p>
 </div>
 
 
-        <script src="../../assets/js/all-nocdn.js"></script><script>
+            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

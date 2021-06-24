@@ -5,11 +5,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Non-standard neuron modelling: smooth pursuit eye movements | The Brian spiking neural network simulator</title>
-<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/2020/elife-2-eye-movements/">
+<link rel="icon" href="../../../logos/favicon.png" sizes="32x32">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -98,7 +104,7 @@
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -140,11 +146,11 @@
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f0a5b0665f0>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f0a5b066e60>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_2_eye_movements.png', 'title': 'Non-standard neuron modelling: smooth pursuit eye movements', 'slug': 'elife-2-eye-movements', 'date': '2020-01-30 17:07', 'tags': 'model, synapses', 'category': 'article', 'updated': '2020-01-30 17:07', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'password': '', 'filters': '', 'data': '', 'description': '', 'template': ''})}) -->
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f30bf5184d0>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f30bf4faf80>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_2_eye_movements.png', 'title': 'Non-standard neuron modelling: smooth pursuit eye movements', 'slug': 'elife-2-eye-movements', 'date': '2020-01-30 17:07', 'tags': 'model, synapses', 'category': 'article', 'updated': '2020-01-30 17:07', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'password': '', 'description': '', 'template': ''})}) -->
     <div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
-    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    You can either download it via the &#8220;Source&#8221; link on the top right, or run it directly in the browser on the
     <a href="https://mybinder.org">mybinder</a> infrastructure: <a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Felife_example_2_eye_movements.ipynb">
     <img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"></a>
     </p>
@@ -209,7 +215,7 @@ $$ m\frac{d^2x}{dt^2} = k(x_L-x_R-2x) - f\frac{dx}{dt}$$</p>
 <p>We see that $x_0 = \frac{1}{2}(x_L-x_R)$ is the equilibrium position of the eye. Here we have assumed that spring elasticities are identical. We can rewrite this equation with just two parameters $\alpha$ and $\beta$:
 $$ \frac{d^2x}{dt^2} = \alpha(x_0 - x) - \beta\frac{dx}{dt}$$</p>
 <p>We will assume that eye position can move between -1 and 1.</p>
-<p>We consider that the resting length is the variable on which motoneurons act. Each spike from a motoneuron produces a waveform of contraction ("twitch"), i.e., a change in resting length. We consider that contractions add linearly, and resting lengths relax exponentially. By linearity it follows that we can simply express the action of motoneurons on the equilibrium position of the eye $x_0$, which relaxes exponentially to the center position 0.</p>
+<p>We consider that the resting length is the variable on which motoneurons act. Each spike from a motoneuron produces a waveform of contraction (&#8220;twitch&#8221;), i.e., a change in resting length. We consider that contractions add linearly, and resting lengths relax exponentially. By linearity it follows that we can simply express the action of motoneurons on the equilibrium position of the eye $x_0$, which relaxes exponentially to the center position 0.</p>
 <p>Finally, we consider a visual object that performs a random walk according to an Ornstein–Uhlenbeck with 0 as the central location.</p>
 
 </div>
@@ -448,10 +454,10 @@ $$ \frac{d^2x}{dt^2} = \alpha(x_0 - x) - \beta\frac{dx}{dt}$$</p>
 
 
 
-<div id="b8cca773-6dee-4d41-af10-8af7d4ee1055"></div>
+<div id="6c784252-d9d9-4020-bb0e-71d9315ee5a5"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b8cca773-6dee-4d41-af10-8af7d4ee1055');
+var element = $('#6c784252-d9d9-4020-bb0e-71d9315ee5a5');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -759,13 +765,13 @@ mpl.figure.prototype.request_resize = function(x_pixels, y_pixels) {
 mpl.figure.prototype.send_message = function(type, properties) {
     properties['type'] = type;
     properties['figure_id'] = this.id;
-    this.ws.send(JSON.stringify(properties));
+    this.ws.send(<span class="caps">JSON</span>.stringify(properties));
 }
 
 mpl.figure.prototype.send_draw_message = function() {
     if (!this.waiting) {
         this.waiting = true;
-        this.ws.send(JSON.stringify({type: "draw", figure_id: this.id}));
+        this.ws.send(<span class="caps">JSON</span>.stringify({type: "draw", figure_id: this.id}));
     }
 }
 
@@ -853,19 +859,19 @@ mpl.figure.prototype.updated_canvas_event = function() {
 mpl.figure.prototype._make_on_message_function = function(fig) {
     return function socket_on_message(evt) {
         if (evt.data instanceof Blob) {
-            /* FIXME: We get "Resource interpreted as Image but
-             * transferred with MIME type text/plain:" errors on
-             * Chrome.  But how to set the MIME type?  It doesn't seem
+            /* <span class="caps">FIXME</span>: We get "Resource interpreted as Image but
+             * transferred with <span class="caps">MIME</span> type text/plain:" errors on
+             * Chrome.  But how to set the <span class="caps">MIME</span> type?  It doesn't seem
              * to be part of the websocket stream */
             evt.data.type = "image/png";
 
             /* Free the memory for the previous frames */
             if (fig.imageObj.src) {
-                (window.URL || window.webkitURL).revokeObjectURL(
+                (window.<span class="caps">URL</span> || window.webkitURL).revokeObjectURL(
                     fig.imageObj.src);
             }
 
-            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
+            fig.imageObj.src = (window.<span class="caps">URL</span> || window.webkitURL).createObjectURL(
                 evt.data);
             fig.updated_canvas_event();
             fig.waiting = false;
@@ -878,11 +884,11 @@ mpl.figure.prototype._make_on_message_function = function(fig) {
             return;
         }
 
-        var msg = JSON.parse(evt.data);
+        var msg = <span class="caps">JSON</span>.parse(evt.data);
         var msg_type = msg['type'];
 
         // Call the  "handle_{type}" callback, which takes
-        // the figure and JSON message as its only arguments.
+        // the figure and <span class="caps">JSON</span> message as its only arguments.
         try {
             var callback = fig["handle_" + msg_type];
         } catch (e) {
@@ -1073,7 +1079,7 @@ mpl.figure.prototype.handle_close = function(fig, msg) {
     // Update the output cell to use the data from the current canvas.
     fig.push_to_output();
     var dataURL = fig.canvas.toDataURL();
-    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // Re-enable the keyboard manager in IPython - without this line, in <span class="caps">FF</span>,
     // the notebook keyboard shortcuts fail.
     IPython.keyboard_manager.enable()
     $(fig.parent_element).html('<img src="' + dataURL + '" width="' + width + '">');
@@ -1097,7 +1103,7 @@ mpl.figure.prototype.updated_canvas_event = function() {
     IPython.notebook.set_dirty(true);
     this.send_message("ack", {});
     var fig = this;
-    // Wait a second, then push the new image to the DOM so
+    // Wait a second, then push the new image to the <span class="caps">DOM</span> so
     // that it is saved nicely (might be nice to debounce this).
     setTimeout(function () { fig.push_to_output() }, 1000);
 }
@@ -1274,7 +1280,7 @@ MathJax.Hub.Config({
 </div>
 
 
-        <script src="../../../assets/js/all-nocdn.js"></script><script>
+            <script src="../../../assets/js/jquery.min.js"></script><script src="../../../assets/js/popper.min.js"></script><script src="../../../assets/js/bootstrap.min.js"></script><script src="../../../assets/js/baguetteBox.min.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

@@ -6,11 +6,17 @@
 <meta name="description" content="Articles about features of the Brian simulator.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Articles | The Brian spiking neural network simulator</title>
-<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/categories/article/">
+<link rel="icon" href="../../logos/favicon.png" sizes="32x32">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -89,7 +95,7 @@
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -113,7 +119,7 @@
             
                 <p class="feedlink">
                         
-            <a href="../article.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
+            <a href="../article.xml" hreflang="en" type="application/rss+xml"><span class="caps">RSS</span> feed</a>
 
                 </p>
 
@@ -160,11 +166,11 @@
         </div>
     </header><div class="p-summary entry-summary d-flex">
         <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f0a5b0975f0>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f0a5b066a70>, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_2.png', 'title': 'Getting the timing right (scheduling\xa02)', 'slug': 'video-scheduling-2', 'date': '2020-10-08 9:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-10-08 9:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'password': '', 'filters': '', 'data': '', 'description': '', 'template': ''})}) -->
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f30bf518ef0>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f30bf518f80>, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_2.png', 'title': 'Getting the timing right (scheduling\xa02)', 'slug': 'video-scheduling-2', 'date': '2020-10-08 9:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-10-08 9:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'password': '', 'description': '', 'template': ''})}) -->
     <div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
-    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    You can either download it via the &#8220;Source&#8221; link on the top right, or run it directly in the browser on the
     <a href="https://mybinder.org">mybinder</a> infrastructure: <a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Fscheduling_2.ipynb">
     <img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"></a>
     </p>
@@ -195,7 +201,7 @@ is selected.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>"Scheduling": mechanism to determine the order of operations during a simulation</p>
+<p><span class="dquo">&#8220;</span>Scheduling&#8221;: mechanism to determine the order of operations during a simulation</p>
 <p>In this video we will look at its importance for:</p>
 <ul>
 <li>propagating synaptic activity</li>
@@ -229,11 +235,11 @@ is selected.
         </div>
     </header><div class="p-summary entry-summary d-flex">
         <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f0a5b097320>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f0a5b066710>, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_1.png', 'title': 'Getting the timing right (scheduling\xa01)', 'slug': 'video-scheduling-1', 'date': '2020-09-04 13:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-09-04 13:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'password': '', 'filters': '', 'data': '', 'description': '', 'template': ''})}) -->
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f30bf518c20>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f30bf518e60>, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_1.png', 'title': 'Getting the timing right (scheduling\xa01)', 'slug': 'video-scheduling-1', 'date': '2020-09-04 13:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-09-04 13:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'password': '', 'description': '', 'template': ''})}) -->
     <div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
-    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    You can either download it via the &#8220;Source&#8221; link on the top right, or run it directly in the browser on the
     <a href="https://mybinder.org">mybinder</a> infrastructure: <a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Fscheduling_1.ipynb">
     <img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"></a>
     </p>
@@ -264,7 +270,7 @@ is selected.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>"Scheduling": mechanism to determine the order of operations during a simulation</p>
+<p><span class="dquo">&#8220;</span>Scheduling&#8221;: mechanism to determine the order of operations during a simulation</p>
 <p>In this notebook we will look at its importance for:</p>
 <ul>
 <li>recording values with a <code>StateMonitor</code>
@@ -291,11 +297,11 @@ is selected.
         </div>
     </header><div class="p-summary entry-summary d-flex">
         <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f0a5b066560>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f0a5b066f80>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_3_bisection.png', 'title': 'Making use of Python: threshold finding with bisection', 'slug': 'elife-3-bisection', 'date': '2020-01-30 17:46', 'tags': 'model', 'category': 'article', 'updated': '2020-01-30 17:46', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'password': '', 'filters': '', 'data': '', 'description': '', 'template': ''})}) -->
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f30bf518950>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f30bf4faef0>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_3_bisection.png', 'title': 'Making use of Python: threshold finding with bisection', 'slug': 'elife-3-bisection', 'date': '2020-01-30 17:46', 'tags': 'model', 'category': 'article', 'updated': '2020-01-30 17:46', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'password': '', 'description': '', 'template': ''})}) -->
     <div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
-    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    You can either download it via the &#8220;Source&#8221; link on the top right, or run it directly in the browser on the
     <a href="https://mybinder.org">mybinder</a> infrastructure: <a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Felife_example_3_bisection.ipynb">
     <img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"></a>
     </p>
@@ -349,11 +355,11 @@ is selected.
         </div>
     </header><div class="p-summary entry-summary d-flex">
         <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f0a5b0665f0>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f0a5b066e60>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_2_eye_movements.png', 'title': 'Non-standard neuron modelling: smooth pursuit eye movements', 'slug': 'elife-2-eye-movements', 'date': '2020-01-30 17:07', 'tags': 'model, synapses', 'category': 'article', 'updated': '2020-01-30 17:07', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'password': '', 'filters': '', 'data': '', 'description': '', 'template': ''})}) -->
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f30bf5184d0>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f30bf4faf80>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_2_eye_movements.png', 'title': 'Non-standard neuron modelling: smooth pursuit eye movements', 'slug': 'elife-2-eye-movements', 'date': '2020-01-30 17:07', 'tags': 'model, synapses', 'category': 'article', 'updated': '2020-01-30 17:07', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'password': '', 'description': '', 'template': ''})}) -->
     <div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
-    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    You can either download it via the &#8220;Source&#8221; link on the top right, or run it directly in the browser on the
     <a href="https://mybinder.org">mybinder</a> infrastructure: <a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Felife_example_2_eye_movements.ipynb">
     <img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"></a>
     </p>
@@ -406,11 +412,11 @@ is selected.
         </div>
     </header><div class="p-summary entry-summary d-flex">
         <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f0a5b0660e0>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f0a5b066b00>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_1_pyloric_network.png', 'title': 'Non-standard neuron modelling: the pyloric network', 'slug': 'elife-1-pyloric', 'date': '2020-01-28 16:46', 'tags': 'model, synapses', 'category': 'article', 'updated': '2020-01-28 16:46', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'password': '', 'filters': '', 'data': '', 'description': '', 'template': ''})}) -->
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f30bf518290>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f30bf4faa70>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_1_pyloric_network.png', 'title': 'Non-standard neuron modelling: the pyloric network', 'slug': 'elife-1-pyloric', 'date': '2020-01-28 16:46', 'tags': 'model, synapses', 'category': 'article', 'updated': '2020-01-28 16:46', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'password': '', 'description': '', 'template': ''})}) -->
     <div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
-    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    You can either download it via the &#8220;Source&#8221; link on the top right, or run it directly in the browser on the
     <a href="https://mybinder.org">mybinder</a> infrastructure: <a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Felife_example_1_pyloric_network.ipynb">
     <img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"></a>
     </p>
@@ -441,9 +447,9 @@ is selected.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>One of the great advantages of using Brian is that defining new non-standard model types is easy. In this article, we will build a highly simplified model of the pyloric circuit of the crustacean stomatogastric ganglion. This circuit generates a tri-phasic rhythmic pattern with alternating bursts of action potentials in different types of motor neurons. Here, we follow previous work (e.g. Golowasch et al., 1999) by modeling the circuit as consisting of three populations: AB/PD (anterior buster and pyloric dilator neurons), LP (lateral pyloric neurons), and PY (pyloric neurons). This model has a number of non-standard properties that will be described in the following annotated version of the code.</p>
+<p>One of the great advantages of using Brian is that defining new non-standard model types is easy. In this article, we will build a highly simplified model of the pyloric circuit of the crustacean stomatogastric ganglion. This circuit generates a tri-phasic rhythmic pattern with alternating bursts of action potentials in different types of motor neurons. Here, we follow previous work (e.g. Golowasch et al., 1999) by modeling the circuit as consisting of three populations: <span class="caps">AB</span>/<span class="caps">PD</span> (anterior buster and pyloric dilator neurons), <span class="caps">LP</span> (lateral pyloric neurons), and <span class="caps">PY</span> (pyloric neurons). This model has a number of non-standard properties that will be described in the following annotated version of the code.</p>
 <blockquote>
-<p>Golowasch, J., Casey, M., Abbott, L. F., &amp; Marder, E. (1999).<br>
+<p>Golowasch, J., Casey, M., Abbott, L. F., <span class="amp">&amp;</span> Marder, E. (1999).<br>
 Network Stability from Activity-Dependent Regulation of Neuronal Conductances.<br>
 Neural Computation, 11(5), 1079-1096.<br><a href="https://doi.org/10.1162/089976699300016359">https://doi.org/10.1162/089976699300016359</a></p>
 </blockquote>
@@ -473,7 +479,7 @@ Neural Computation, 11(5), 1079-1096.<br><a href="https://doi.org/10.1162/089976
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The articles in this blog are written as <a href="https://jupyter.org/">Jupyter notebooks</a> – interactive documents that contain text, Python code, and the results of running the code (i.e. text or figures). This article gives some details on the various ways to use them and explains common commands we use when presenting Brian code.</p>
-<p>While the documents are "static" on this website, i.e. you can neither change nor run the code, you have two options to interactively explore and modify their content:</p>
+<p>While the documents are &#8220;static&#8221; on this website, i.e. you can neither change nor run the code, you have two options to interactively explore and modify their content:</p>
 <p class="more"><a href="../../posts/2020/notes-notebooks/">Read more…</a></p>
 </div>
 </div>
@@ -508,7 +514,7 @@ MathJax.Hub.Config({
 </div>
 
 
-        <script src="../../assets/js/all-nocdn.js"></script><script>
+            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

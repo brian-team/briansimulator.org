@@ -5,11 +5,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Real time plotting | The Brian spiking neural network simulator</title>
-<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/real-time-plotting/">
+<link rel="icon" href="../../logos/favicon.png" sizes="32x32">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -95,7 +101,7 @@
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -138,10 +144,10 @@
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p></p>
-<p>A feature of the pylab/matplotlib plotting package that I hadn’t used before is animation. The <a href="http://www.scipy.org/Cookbook/Matplotlib/Animations">Animations </a>entry on the Scipy Cookbook explains how to do it. Here is an example of using it to do realtime plotting of a network in Brian. We plot a raster plot and sample membrane potential trace as the CUBA example runs:</p>
+<p>A feature of the pylab/matplotlib plotting package that I hadn’t used before is animation. The <a href="http://www.scipy.org/Cookbook/Matplotlib/Animations">Animations </a>entry on the Scipy Cookbook explains how to do it. Here is an example of using it to do realtime plotting of a network in Brian. We plot a raster plot and sample membrane potential trace as the <span class="caps">CUBA</span> example runs:</p>
 <p>[python]
 from brian import *</p>
-<h6>Set up the standard CUBA example</h6>
+<h6>Set up the standard <span class="caps">CUBA</span> example</h6>
 <p>N = 4000
 eqs=’‘’
 dv/dt = (ge+gi-(v+49<em>mV))/(20</em>ms) : volt
@@ -209,7 +215,7 @@ show() # and wait for user to close the window before shutting down
 </div>
 
 
-        <script src="../../assets/js/all-nocdn.js"></script><script>
+            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

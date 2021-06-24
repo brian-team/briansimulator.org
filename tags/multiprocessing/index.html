@@ -5,11 +5,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Posts about multiprocessing | The Brian spiking neural network simulator</title>
-<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/tags/multiprocessing/">
+<link rel="icon" href="../../logos/favicon.png" sizes="32x32">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -88,7 +94,7 @@
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -111,7 +117,7 @@
             
                 <p class="feedlink">
                         
-            <a href="../multiprocessing.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
+            <a href="../multiprocessing.xml" hreflang="en" type="application/rss+xml"><span class="caps">RSS</span> feed</a>
 
                 </p>
 
@@ -133,7 +139,7 @@
         <div>
 <p></p>
 <p>This is a little trick that may be useful to people using multiprocessing and numpy that I couldn’t find any good examples of online.</p>
-<p>Using the Python multiprocessing package you create a new Python process for each CPU in the system, but you may often want to work on the same data without making a copy. Here is one way to do that. First of all, we assume you’re starting with a large numpy array S. We replace S with a version in shared memory, and then we can pass this</p>
+<p>Using the Python multiprocessing package you create a new Python process for each <span class="caps">CPU</span> in the system, but you may often want to work on the same data without making a copy. Here is one way to do that. First of all, we assume you’re starting with a large numpy array S. We replace S with a version in shared memory, and then we can pass this</p>
 <p>[python]
 from multiprocessing import sharedctypes
 size = S.size
@@ -171,7 +177,7 @@ S.shape = shape
 </div>
 
 
-        <script src="../../assets/js/all-nocdn.js"></script><script>
+            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

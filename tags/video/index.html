@@ -5,11 +5,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Posts about video | The Brian spiking neural network simulator</title>
-<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/tags/video/">
+<link rel="icon" href="../../logos/favicon.png" sizes="32x32">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -88,7 +94,7 @@
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -111,7 +117,7 @@
             
                 <p class="feedlink">
                         
-            <a href="../video.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
+            <a href="../video.xml" hreflang="en" type="application/rss+xml"><span class="caps">RSS</span> feed</a>
 
                 </p>
 
@@ -131,11 +137,11 @@
         </div>
     </header><div class="p-summary entry-summary d-flex">
         <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f0a5b0975f0>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f0a5b066a70>, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_2.png', 'title': 'Getting the timing right (scheduling\xa02)', 'slug': 'video-scheduling-2', 'date': '2020-10-08 9:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-10-08 9:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'password': '', 'filters': '', 'data': '', 'description': '', 'template': ''})}) -->
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f30bf518ef0>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f30bf518f80>, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_2.png', 'title': 'Getting the timing right (scheduling\xa02)', 'slug': 'video-scheduling-2', 'date': '2020-10-08 9:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-10-08 9:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'password': '', 'description': '', 'template': ''})}) -->
     <div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
-    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    You can either download it via the &#8220;Source&#8221; link on the top right, or run it directly in the browser on the
     <a href="https://mybinder.org">mybinder</a> infrastructure: <a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Fscheduling_2.ipynb">
     <img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"></a>
     </p>
@@ -166,7 +172,7 @@ is selected.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>"Scheduling": mechanism to determine the order of operations during a simulation</p>
+<p><span class="dquo">&#8220;</span>Scheduling&#8221;: mechanism to determine the order of operations during a simulation</p>
 <p>In this video we will look at its importance for:</p>
 <ul>
 <li>propagating synaptic activity</li>
@@ -200,11 +206,11 @@ is selected.
         </div>
     </header><div class="p-summary entry-summary d-flex">
         <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f0a5b097320>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f0a5b066710>, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_1.png', 'title': 'Getting the timing right (scheduling\xa01)', 'slug': 'video-scheduling-1', 'date': '2020-09-04 13:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-09-04 13:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'password': '', 'filters': '', 'data': '', 'description': '', 'template': ''})}) -->
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f30bf518c20>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f30bf518e60>, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_1.png', 'title': 'Getting the timing right (scheduling\xa01)', 'slug': 'video-scheduling-1', 'date': '2020-09-04 13:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-09-04 13:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'password': '', 'description': '', 'template': ''})}) -->
     <div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
-    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    You can either download it via the &#8220;Source&#8221; link on the top right, or run it directly in the browser on the
     <a href="https://mybinder.org">mybinder</a> infrastructure: <a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Fscheduling_1.ipynb">
     <img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"></a>
     </p>
@@ -235,7 +241,7 @@ is selected.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>"Scheduling": mechanism to determine the order of operations during a simulation</p>
+<p><span class="dquo">&#8220;</span>Scheduling&#8221;: mechanism to determine the order of operations during a simulation</p>
 <p>In this notebook we will look at its importance for:</p>
 <ul>
 <li>recording values with a <code>StateMonitor</code>
@@ -279,7 +285,7 @@ MathJax.Hub.Config({
 </div>
 
 
-        <script src="../../assets/js/all-nocdn.js"></script><script>
+            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

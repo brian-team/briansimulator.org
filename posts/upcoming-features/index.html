@@ -5,11 +5,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Upcoming features | The Brian spiking neural network simulator</title>
-<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/upcoming-features/">
+<link rel="icon" href="../../logos/favicon.png" sizes="32x32">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -98,7 +104,7 @@
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -144,16 +150,16 @@
 <p>At the moment, we’re working on these features for Brian 1.1.3 which should be coming very soon:
 </p>
 <ul>
-<li>STDP working with connections with heterogeneous delays.</li>
+<li><span class="caps">STDP</span> working with connections with heterogeneous delays.</li>
     <li>A new RecentStateMonitor for storing only the most recent values of a variable.</li>
     <li>A new TimedArray class to make it easier to set the values of a variable in an equation from a precomputed array.</li>
     <li>Progress reporting for simulation runs, with estimates of how long the computation will take.</li>
 </ul>
 In the medium term, possibly for Brian 1.2, we’re working on:
 <ul>
-<li>Support for parallel processing with a GPU - the work in progress on this is already available in the experimental subpackage in Brian.</li>
+<li>Support for parallel processing with a <span class="caps">GPU</span> - the work in progress on this is already available in the experimental subpackage in Brian.</li>
     <li>Support for automatic generation and compilation of C code for nonlinear differential equation solvers.</li>
-    <li>A subpackage, “Brian hears”, for auditory system modelling, including efficient GPU based filterbank operations.</li>
+    <li>A subpackage, “Brian hears”, for auditory system modelling, including efficient <span class="caps">GPU</span> based filterbank operations.</li>
 </ul>
 </div>
     </div>
@@ -176,7 +182,7 @@ In the medium term, possibly for Brian 1.2, we’re working on:
 </div>
 
 
-        <script src="../../assets/js/all-nocdn.js"></script><script>
+            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

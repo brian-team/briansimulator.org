@@ -5,11 +5,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yet another alpha version of Brian 2.0 | The Brian spiking neural network simulator</title>
-<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/yet-another-alpha-brian-2-0/">
+<link rel="icon" href="../../logos/favicon.png" sizes="32x32">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -98,7 +104,7 @@ A workaround that makes Brian2 work with the latest version of sympy ">
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -145,7 +151,7 @@ A workaround that makes Brian2 work with the latest version of sympy ">
 <ul>
 <li>A workaround that makes Brian2 work with the latest version of sympy (0.7.4) which introduced a bug in their differential equation solver.</li>
 <li>A C++ version of the SpikeQueue, the data structure responsible for the spike transmission. This feature needs a working C++ compiler and will lead to a performance gain.</li>
-<li>Faster synapse updates in pure numpy/Python for STDP-like rules</li>
+<li>Faster synapse updates in pure numpy/Python for <span class="caps">STDP</span>-like rules</li>
 <li>A more flexible approach for importing the brian2 package that should allow for different programming styles (see <a href="http://brian2.readthedocs.org/en/latest/introduction/import.html">the documentation</a>).</li>
 </ul>
 <p>Please report any comments/questions you may have to the <a href="http://groups.google.com/group/brian-development/">brian-development mailing list</a></p>
@@ -168,7 +174,7 @@ pip install –pre brian2  # newer versions of pip
 
 <p>You can find documentation for Brian2 at readthedocs: <a href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 
-<p>Note that the user documentation is still quite incomplete, you'll find a lot of information in the reference documentation, though.</p>
+<p>Note that the user documentation is still quite incomplete, you&#8217;ll find a lot of information in the reference documentation, though.</p>
 
 <p></p>
 </div>
@@ -193,7 +199,7 @@ pip install –pre brian2  # newer versions of pip
 </div>
 
 
-        <script src="../../assets/js/all-nocdn.js"></script><script>
+            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

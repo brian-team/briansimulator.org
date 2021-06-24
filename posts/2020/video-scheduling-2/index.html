@@ -5,11 +5,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Getting the timing right (scheduling 2) | The Brian spiking neural network simulator</title>
-<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/2020/video-scheduling-2/">
+<link rel="icon" href="../../../logos/favicon.png" sizes="32x32">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -98,7 +104,7 @@
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -140,11 +146,11 @@
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f0a5b0975f0>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f0a5b066a70>, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_2.png', 'title': 'Getting the timing right (scheduling\xa02)', 'slug': 'video-scheduling-2', 'date': '2020-10-08 9:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-10-08 9:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'password': '', 'filters': '', 'data': '', 'description': '', 'template': ''})}) -->
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f30bf518ef0>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f30bf518f80>, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_2.png', 'title': 'Getting the timing right (scheduling\xa02)', 'slug': 'video-scheduling-2', 'date': '2020-10-08 9:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-10-08 9:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'password': '', 'description': '', 'template': ''})}) -->
     <div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
-    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    You can either download it via the &#8220;Source&#8221; link on the top right, or run it directly in the browser on the
     <a href="https://mybinder.org">mybinder</a> infrastructure: <a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Fscheduling_2.ipynb">
     <img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"></a>
     </p>
@@ -175,7 +181,7 @@ is selected.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>"Scheduling": mechanism to determine the order of operations during a simulation</p>
+<p><span class="dquo">&#8220;</span>Scheduling&#8221;: mechanism to determine the order of operations during a simulation</p>
 <p>In this video we will look at its importance for:</p>
 <ul>
 <li>propagating synaptic activity</li>
@@ -215,7 +221,7 @@ is selected.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's say we have a neuron (<code>group</code> in the following code) that is following some dynamics given by its equations, inputs, etc. Now, we also want to make this neuron spike at a specific time (here, 10ms), e.g. to probe a spike-timing-dependent plasticity mechanism or to model some experimental stimulation.</p>
+<p>Let&#8217;s say we have a neuron (<code>group</code> in the following code) that is following some dynamics given by its equations, inputs, etc. Now, we also want to make this neuron spike at a specific time (here, 10ms), e.g. to probe a spike-timing-dependent plasticity mechanism or to model some experimental stimulation.</p>
 <p>We could try this by using the approach in the code below: a <code>SpikeGeneratorGroup</code> spikes at the specified time and connects to the target neuron with a synapse that is strong enough to make the target neuron spike. Will this lead to a target neuron spiking at 10ms?</p>
 
 </div>
@@ -263,10 +269,10 @@ is selected.
 
 
 
-<div id="ffaceef9-abda-42d0-b63e-64621b6b9e65"></div>
+<div id="d941cb03-26ae-4b77-ba6c-3575124791a8"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ffaceef9-abda-42d0-b63e-64621b6b9e65');
+var element = $('#d941cb03-26ae-4b77-ba6c-3575124791a8');
 /* Put everything inside the global mpl namespace */
 /* global mpl */
 window.mpl = {};
@@ -998,7 +1004,7 @@ mpl.figure.prototype.handle_close = function (fig, msg) {
     // Update the output cell to use the data from the current canvas.
     fig.push_to_output();
     var dataURL = fig.canvas.toDataURL();
-    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // Re-enable the keyboard manager in IPython - without this line, in <span class="caps">FF</span>,
     // the notebook keyboard shortcuts fail.
     IPython.keyboard_manager.enable();
     fig.parent_element.innerHTML =
@@ -1024,7 +1030,7 @@ mpl.figure.prototype.updated_canvas_event = function () {
     IPython.notebook.set_dirty(true);
     this.send_message('ack', {});
     var fig = this;
-    // Wait a second, then push the new image to the DOM so
+    // Wait a second, then push the new image to the <span class="caps">DOM</span> so
     // that it is saved nicely (might be nice to debounce this).
     setTimeout(function () {
         fig.push_to_output();
@@ -1282,7 +1288,7 @@ if (IPython.notebook.kernel !== null) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Does this fix our issue? Let's run the simulation again:</p>
+<p>Does this fix our issue? Let&#8217;s run the simulation again:</p>
 
 </div>
 </div>
@@ -1329,10 +1335,10 @@ if (IPython.notebook.kernel !== null) {
 
 
 
-<div id="2976a2ad-bc32-4f37-972c-c6aa94c74c82"></div>
+<div id="50279b83-56e8-4269-89a3-38ebe1c257a0"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#2976a2ad-bc32-4f37-972c-c6aa94c74c82');
+var element = $('#50279b83-56e8-4269-89a3-38ebe1c257a0');
 /* Put everything inside the global mpl namespace */
 /* global mpl */
 window.mpl = {};
@@ -2064,7 +2070,7 @@ mpl.figure.prototype.handle_close = function (fig, msg) {
     // Update the output cell to use the data from the current canvas.
     fig.push_to_output();
     var dataURL = fig.canvas.toDataURL();
-    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // Re-enable the keyboard manager in IPython - without this line, in <span class="caps">FF</span>,
     // the notebook keyboard shortcuts fail.
     IPython.keyboard_manager.enable();
     fig.parent_element.innerHTML =
@@ -2090,7 +2096,7 @@ mpl.figure.prototype.updated_canvas_event = function () {
     IPython.notebook.set_dirty(true);
     this.send_message('ack', {});
     var fig = this;
-    // Wait a second, then push the new image to the DOM so
+    // Wait a second, then push the new image to the <span class="caps">DOM</span> so
     // that it is saved nicely (might be nice to debounce this).
     setTimeout(function () {
         fig.push_to_output();
@@ -2280,7 +2286,7 @@ if (IPython.notebook.kernel !== null) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As we can see, nothing changed... This should actually not come as much of a surprise: in the current schedule, the <code>SpikeGeneratorGroup</code> will spike in the 10ms time step, but the activity gets only propagated to the target neuron in the time step that follows! We can also confirm this by looking at our trusted <code>scheduling_summary</code> function:</p>
+<p>As we can see, nothing changed&#8230; This should actually not come as much of a surprise: in the current schedule, the <code>SpikeGeneratorGroup</code> will spike in the 10ms time step, but the activity gets only propagated to the target neuron in the time step that follows! We can also confirm this by looking at our trusted <code>scheduling_summary</code> function:</p>
 
 </div>
 </div>
@@ -2602,10 +2608,10 @@ if (IPython.notebook.kernel !== null) {
 
 
 
-<div id="83f3fdcb-4cd5-4486-8877-156a90ef4e29"></div>
+<div id="c6f28576-c43f-4fa2-b1d7-88be549d18ad"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#83f3fdcb-4cd5-4486-8877-156a90ef4e29');
+var element = $('#c6f28576-c43f-4fa2-b1d7-88be549d18ad');
 /* Put everything inside the global mpl namespace */
 /* global mpl */
 window.mpl = {};
@@ -3337,7 +3343,7 @@ mpl.figure.prototype.handle_close = function (fig, msg) {
     // Update the output cell to use the data from the current canvas.
     fig.push_to_output();
     var dataURL = fig.canvas.toDataURL();
-    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // Re-enable the keyboard manager in IPython - without this line, in <span class="caps">FF</span>,
     // the notebook keyboard shortcuts fail.
     IPython.keyboard_manager.enable();
     fig.parent_element.innerHTML =
@@ -3363,7 +3369,7 @@ mpl.figure.prototype.updated_canvas_event = function () {
     IPython.notebook.set_dirty(true);
     this.send_message('ack', {});
     var fig = this;
-    // Wait a second, then push the new image to the DOM so
+    // Wait a second, then push the new image to the <span class="caps">DOM</span> so
     // that it is saved nicely (might be nice to debounce this).
     setTimeout(function () {
         fig.push_to_output();
@@ -3670,7 +3676,7 @@ if (IPython.notebook.kernel !== null) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For more information on this topic, have a look at Brian's <a href="https://brian2.readthedocs.io/en/stable/user/running.html#scheduling"><i class="fas fa-book"></i> documentation</a></p>
+<p>For more information on this topic, have a look at Brian&#8217;s <a href="https://brian2.readthedocs.io/en/stable/user/running.html#scheduling"><i class="fas fa-book"></i> documentation</a></p>
 
 </div>
 </div>
@@ -3709,7 +3715,7 @@ MathJax.Hub.Config({
 </div>
 
 
-        <script src="../../../assets/js/all-nocdn.js"></script><script>
+            <script src="../../../assets/js/jquery.min.js"></script><script src="../../../assets/js/popper.min.js"></script><script src="../../../assets/js/bootstrap.min.js"></script><script src="../../../assets/js/baguetteBox.min.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

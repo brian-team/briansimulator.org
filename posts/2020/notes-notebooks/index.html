@@ -5,11 +5,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Notes on Notebooks | The Brian spiking neural network simulator</title>
-<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/2020/notes-notebooks/">
+<link rel="icon" href="../../../logos/favicon.png" sizes="32x32">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -95,7 +101,7 @@
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -143,19 +149,19 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The articles in this blog are written as <a href="https://jupyter.org/">Jupyter notebooks</a> – interactive documents that contain text, Python code, and the results of running the code (i.e. text or figures). This article gives some details on the various ways to use them and explains common commands we use when presenting Brian code.</p>
-<p>While the documents are "static" on this website, i.e. you can neither change nor run the code, you have two options to interactively explore and modify their content:</p>
+<p>While the documents are &#8220;static&#8221; on this website, i.e. you can neither change nor run the code, you have two options to interactively explore and modify their content:</p>
 <!-- TEASER_END -->
 
 <p><strong>Option 1</strong>: You run it in the browser, using the <a href="https://mybinder.org">mybinder.org</a> infrastructure. For this, each article has a badge that you can click to launch the interactive notebook: <a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2FNotes%20on%20Notebooks.ipynb"><img src="https://mybinder.org/badge_logo.svg" alt="Binder"></a></p>
-<p><strong>Option 2</strong>: You download the notebook to your own machine, using the "Source" link on the top right of the page. In this case, you need to have the relevant software installed on your own machine – for the articles here that means at least Brian with its dependencies, <a href="https://matplotlib.org/users/installing.html">matplotlib</a> for the plotting support, and the <a href="https://jupyter.org/install.html">Jupyter notebook</a> or <a href="https://jupyter.org/install.html">Jupyter Lab</a> software itself. If you then <a href="https://jupyter.readthedocs.io/en/latest/running.html">run the notebook server</a> or <a href="https://jupyterlab.readthedocs.io/en/latest/getting_started/starting.html">Jupyter lab</a> from the directory where you downloaded the notebook, you can select the downloaded notebook and start using it.</p>
+<p><strong>Option 2</strong>: You download the notebook to your own machine, using the &#8220;Source&#8221; link on the top right of the page. In this case, you need to have the relevant software installed on your own machine – for the articles here that means at least Brian with its dependencies, <a href="https://matplotlib.org/users/installing.html">matplotlib</a> for the plotting support, and the <a href="https://jupyter.org/install.html">Jupyter notebook</a> or <a href="https://jupyter.org/install.html">Jupyter Lab</a> software itself. If you then <a href="https://jupyter.readthedocs.io/en/latest/running.html">run the notebook server</a> or <a href="https://jupyterlab.readthedocs.io/en/latest/getting_started/starting.html">Jupyter lab</a> from the directory where you downloaded the notebook, you can select the downloaded notebook and start using it.</p>
 <h3 id="Run-code-in-a-notebook">Run code in a notebook<a class="anchor-link" href="#Run-code-in-a-notebook">¶</a>
 </h3>
 <p>To run the code:</p>
 <ol>
 <li>Click on the cell to select it.</li>
-<li>Press SHIFT+ENTER on your keyboard or press the play button (<button class="fa fa-play icon-play btn btn-xs btn-default"></button>) in the toolbar above.</li>
+<li>Press <span class="caps">SHIFT</span>+<span class="caps">ENTER</span> on your keyboard or press the play button (<button class="fa fa-play icon-play btn btn-xs btn-default"></button>) in the toolbar above.</li>
 </ol>
-<p>Feel free to create new cells using the plus button (<button class="fa fa-plus icon-plus btn btn-xs btn-default"></button>), or pressing SHIFT+ENTER while this cell is selected.</p>
+<p>Feel free to create new cells using the plus button (<button class="fa fa-plus icon-plus btn btn-xs btn-default"></button>), or pressing <span class="caps">SHIFT</span>+<span class="caps">ENTER</span> while this cell is selected.</p>
 <h3 id="Brian-specific-notes">Brian-specific notes<a class="anchor-link" href="#Brian-specific-notes">¶</a>
 </h3>
 <p>Since our articles run code with the Brian simulator, they typically start with the following import:</p>
@@ -181,8 +187,8 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This makes all Brian functions and objects available in the current namespace, i.e. you can directly use e.g. <code>NeuronGroup</code> or <code>mV</code>. It also imports numpy and matplotlib (if installed), so you can use e.g. <code>np.arange</code>, or <code>plt.plot</code>. In your own scripts, you might prefer to import <code>brian2</code> differently to not "pollute" your namespace with so many names, have a look at <a href="https://brian2.readthedocs.io/en/stable/user/import.html">the documentation</a> for alternatives.</p>
-<p>In many articles, we then set the <a href="https://brian2.readthedocs.io/en/stable/user/computation.html">code generation target</a> to "numpy":</p>
+<p>This makes all Brian functions and objects available in the current namespace, i.e. you can directly use e.g. <code>NeuronGroup</code> or <code>mV</code>. It also imports numpy and matplotlib (if installed), so you can use e.g. <code>np.arange</code>, or <code>plt.plot</code>. In your own scripts, you might prefer to import <code>brian2</code> differently to not &#8220;pollute&#8221; your namespace with so many names, have a look at <a href="https://brian2.readthedocs.io/en/stable/user/import.html">the documentation</a> for alternatives.</p>
+<p>In many articles, we then set the <a href="https://brian2.readthedocs.io/en/stable/user/computation.html">code generation target</a> to &#8220;numpy&#8221;:</p>
 
 </div>
 </div>
@@ -205,10 +211,10 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This essentially means that we switch off the code generation to more efficient C++ code. The reason for this is simple: code generation can significantly speed up simulations but it also comes with a cost, the code has to be generated and compiled. In our articles, we often use "toy models" that are so simple that this extra step takes more time than what the optimization saves...</p>
+<p>This essentially means that we switch off the code generation to more efficient C++ code. The reason for this is simple: code generation can significantly speed up simulations but it also comes with a cost, the code has to be generated and compiled. In our articles, we often use &#8220;toy models&#8221; that are so simple that this extra step takes more time than what the optimization saves&#8230;</p>
 <h4 id="Plotting">Plotting<a class="anchor-link" href="#Plotting">¶</a>
 </h4>
-<p>In an interactive notebook, it is much nicer to be able to interact with the plots as well, e.g. we might want to zoom or pan. This is enabled with the following notebook-specific command (i.e., don't use this in a script outside of a notebook):</p>
+<p>In an interactive notebook, it is much nicer to be able to interact with the plots as well, e.g. we might want to zoom or pan. This is enabled with the following notebook-specific command (i.e., don&#8217;t use this in a script outside of a notebook):</p>
 
 </div>
 </div>
@@ -231,7 +237,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Using this interface is often a source for confusion, though: when you use matplotlib's pyplot interface (<code>plt.plot</code>, etc.), you cannot easily use more than one plot. We will therefore use matplotlib's object-oriented interface instead. This approach looks slightly more complicated for simple plots, but does not have problems with multiple plots, and also easily extends to more complex plots (multiple subplots, for example):</p>
+<p>Using this interface is often a source for confusion, though: when you use matplotlib&#8217;s pyplot interface (<code>plt.plot</code>, etc.), you cannot easily use more than one plot. We will therefore use matplotlib&#8217;s object-oriented interface instead. This approach looks slightly more complicated for simple plots, but does not have problems with multiple plots, and also easily extends to more complex plots (multiple subplots, for example):</p>
 
 </div>
 </div>
@@ -261,10 +267,10 @@
 
 
 
-<div id="7c83787c-f83c-490b-98d9-b3edb939636b"></div>
+<div id="6e3e857e-06a8-4bd6-bc84-7ea71c195218"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#7c83787c-f83c-490b-98d9-b3edb939636b');
+var element = $('#6e3e857e-06a8-4bd6-bc84-7ea71c195218');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -572,13 +578,13 @@ mpl.figure.prototype.request_resize = function(x_pixels, y_pixels) {
 mpl.figure.prototype.send_message = function(type, properties) {
     properties['type'] = type;
     properties['figure_id'] = this.id;
-    this.ws.send(JSON.stringify(properties));
+    this.ws.send(<span class="caps">JSON</span>.stringify(properties));
 }
 
 mpl.figure.prototype.send_draw_message = function() {
     if (!this.waiting) {
         this.waiting = true;
-        this.ws.send(JSON.stringify({type: "draw", figure_id: this.id}));
+        this.ws.send(<span class="caps">JSON</span>.stringify({type: "draw", figure_id: this.id}));
     }
 }
 
@@ -666,19 +672,19 @@ mpl.figure.prototype.updated_canvas_event = function() {
 mpl.figure.prototype._make_on_message_function = function(fig) {
     return function socket_on_message(evt) {
         if (evt.data instanceof Blob) {
-            /* FIXME: We get "Resource interpreted as Image but
-             * transferred with MIME type text/plain:" errors on
-             * Chrome.  But how to set the MIME type?  It doesn't seem
+            /* <span class="caps">FIXME</span>: We get "Resource interpreted as Image but
+             * transferred with <span class="caps">MIME</span> type text/plain:" errors on
+             * Chrome.  But how to set the <span class="caps">MIME</span> type?  It doesn't seem
              * to be part of the websocket stream */
             evt.data.type = "image/png";
 
             /* Free the memory for the previous frames */
             if (fig.imageObj.src) {
-                (window.URL || window.webkitURL).revokeObjectURL(
+                (window.<span class="caps">URL</span> || window.webkitURL).revokeObjectURL(
                     fig.imageObj.src);
             }
 
-            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
+            fig.imageObj.src = (window.<span class="caps">URL</span> || window.webkitURL).createObjectURL(
                 evt.data);
             fig.updated_canvas_event();
             fig.waiting = false;
@@ -691,11 +697,11 @@ mpl.figure.prototype._make_on_message_function = function(fig) {
             return;
         }
 
-        var msg = JSON.parse(evt.data);
+        var msg = <span class="caps">JSON</span>.parse(evt.data);
         var msg_type = msg['type'];
 
         // Call the  "handle_{type}" callback, which takes
-        // the figure and JSON message as its only arguments.
+        // the figure and <span class="caps">JSON</span> message as its only arguments.
         try {
             var callback = fig["handle_" + msg_type];
         } catch (e) {
@@ -886,7 +892,7 @@ mpl.figure.prototype.handle_close = function(fig, msg) {
     // Update the output cell to use the data from the current canvas.
     fig.push_to_output();
     var dataURL = fig.canvas.toDataURL();
-    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // Re-enable the keyboard manager in IPython - without this line, in <span class="caps">FF</span>,
     // the notebook keyboard shortcuts fail.
     IPython.keyboard_manager.enable()
     $(fig.parent_element).html('<img src="' + dataURL + '" width="' + width + '">');
@@ -910,7 +916,7 @@ mpl.figure.prototype.updated_canvas_event = function() {
     IPython.notebook.set_dirty(true);
     this.send_message("ack", {});
     var fig = this;
-    // Wait a second, then push the new image to the DOM so
+    // Wait a second, then push the new image to the <span class="caps">DOM</span> so
     // that it is saved nicely (might be nice to debounce this).
     setTimeout(function () { fig.push_to_output() }, 1000);
 }
@@ -1104,10 +1110,10 @@ if (IPython.notebook.kernel != null) {
 
 
 
-<div id="789ec093-1e7d-4cf2-a137-4402605617b7"></div>
+<div id="0071002d-657e-471c-a054-2345862471e4"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#789ec093-1e7d-4cf2-a137-4402605617b7');
+var element = $('#0071002d-657e-471c-a054-2345862471e4');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -1415,13 +1421,13 @@ mpl.figure.prototype.request_resize = function(x_pixels, y_pixels) {
 mpl.figure.prototype.send_message = function(type, properties) {
     properties['type'] = type;
     properties['figure_id'] = this.id;
-    this.ws.send(JSON.stringify(properties));
+    this.ws.send(<span class="caps">JSON</span>.stringify(properties));
 }
 
 mpl.figure.prototype.send_draw_message = function() {
     if (!this.waiting) {
         this.waiting = true;
-        this.ws.send(JSON.stringify({type: "draw", figure_id: this.id}));
+        this.ws.send(<span class="caps">JSON</span>.stringify({type: "draw", figure_id: this.id}));
     }
 }
 
@@ -1509,19 +1515,19 @@ mpl.figure.prototype.updated_canvas_event = function() {
 mpl.figure.prototype._make_on_message_function = function(fig) {
     return function socket_on_message(evt) {
         if (evt.data instanceof Blob) {
-            /* FIXME: We get "Resource interpreted as Image but
-             * transferred with MIME type text/plain:" errors on
-             * Chrome.  But how to set the MIME type?  It doesn't seem
+            /* <span class="caps">FIXME</span>: We get "Resource interpreted as Image but
+             * transferred with <span class="caps">MIME</span> type text/plain:" errors on
+             * Chrome.  But how to set the <span class="caps">MIME</span> type?  It doesn't seem
              * to be part of the websocket stream */
             evt.data.type = "image/png";
 
             /* Free the memory for the previous frames */
             if (fig.imageObj.src) {
-                (window.URL || window.webkitURL).revokeObjectURL(
+                (window.<span class="caps">URL</span> || window.webkitURL).revokeObjectURL(
                     fig.imageObj.src);
             }
 
-            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
+            fig.imageObj.src = (window.<span class="caps">URL</span> || window.webkitURL).createObjectURL(
                 evt.data);
             fig.updated_canvas_event();
             fig.waiting = false;
@@ -1534,11 +1540,11 @@ mpl.figure.prototype._make_on_message_function = function(fig) {
             return;
         }
 
-        var msg = JSON.parse(evt.data);
+        var msg = <span class="caps">JSON</span>.parse(evt.data);
         var msg_type = msg['type'];
 
         // Call the  "handle_{type}" callback, which takes
-        // the figure and JSON message as its only arguments.
+        // the figure and <span class="caps">JSON</span> message as its only arguments.
         try {
             var callback = fig["handle_" + msg_type];
         } catch (e) {
@@ -1729,7 +1735,7 @@ mpl.figure.prototype.handle_close = function(fig, msg) {
     // Update the output cell to use the data from the current canvas.
     fig.push_to_output();
     var dataURL = fig.canvas.toDataURL();
-    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // Re-enable the keyboard manager in IPython - without this line, in <span class="caps">FF</span>,
     // the notebook keyboard shortcuts fail.
     IPython.keyboard_manager.enable()
     $(fig.parent_element).html('<img src="' + dataURL + '" width="' + width + '">');
@@ -1753,7 +1759,7 @@ mpl.figure.prototype.updated_canvas_event = function() {
     IPython.notebook.set_dirty(true);
     this.send_message("ack", {});
     var fig = this;
-    // Wait a second, then push the new image to the DOM so
+    // Wait a second, then push the new image to the <span class="caps">DOM</span> so
     // that it is saved nicely (might be nice to debounce this).
     setTimeout(function () { fig.push_to_output() }, 1000);
 }
@@ -1906,7 +1912,7 @@ if (IPython.notebook.kernel != null) {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Brian-simulations">Brian simulations<a class="anchor-link" href="#Brian-simulations">¶</a>
 </h4>
-<p>In Brian, you can run a simulation by simply calling the <code>run()</code> function. How does Brian know which neurons, synapses, and simulators it is supposed to simulate? Brian determines this automatically (we call it the <em>magic</em> system 🧙) by gathering all the objects it can detect. Unfortunately, this does not work in a notebook that describes <a href="https://brian2.readthedocs.io/en/stable/user/running.html#multiple-magic-runs">several networks</a>, since the later <code>run</code> statements still "see" all the objects defined for the earlier runs. To avoid these issues, we can explicitly tell Brian to not look before a certain point by using the <code>start_scope()</code> function:</p>
+<p>In Brian, you can run a simulation by simply calling the <code>run()</code> function. How does Brian know which neurons, synapses, and simulators it is supposed to simulate? Brian determines this automatically (we call it the <em>magic</em> system 🧙) by gathering all the objects it can detect. Unfortunately, this does not work in a notebook that describes <a href="https://brian2.readthedocs.io/en/stable/user/running.html#multiple-magic-runs">several networks</a>, since the later <code>run</code> statements still &#8220;see&#8221; all the objects defined for the earlier runs. To avoid these issues, we can explicitly tell Brian to not look before a certain point by using the <code>start_scope()</code> function:</p>
 
 </div>
 </div>
@@ -1967,7 +1973,7 @@ MathJax.Hub.Config({
 </div>
 
 
-        <script src="../../../assets/js/all-nocdn.js"></script><script>
+            <script src="../../../assets/js/jquery.min.js"></script><script src="../../../assets/js/popper.min.js"></script><script src="../../../assets/js/bootstrap.min.js"></script><script src="../../../assets/js/baguetteBox.min.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

@@ -5,11 +5,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>News (old posts, page 2) | The Brian spiking neural network simulator</title>
-<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/categories/news/index-2.html">
+<link rel="icon" href="../../logos/favicon.png" sizes="32x32">
 <link rel="prev" href="index-3.html" type="text/html">
 <link rel="next" href="index-1.html" type="text/html">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
@@ -90,7 +96,7 @@
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -113,7 +119,7 @@
             
                 <p class="feedlink">
                         
-            <a href="../news.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
+            <a href="../news.xml" hreflang="en" type="application/rss+xml"><span class="caps">RSS</span> feed</a>
 
                 </p>
 
@@ -151,7 +157,7 @@
         <div>
 <p></p>
 <p>The 1.3 release of Brian is out!</p>
-<p>The major change in this version is the addition of the<a href="http://www.briansimulator.org/docs/hears.html"> Brian.hears package for auditory modelling</a>. This version also includes an update to the toolbox for fitting neural models to electrophysiological recordings (which now uses version 0.3 of the parallel optimization package <a href="http://code.google.com/p/playdoh/">Playdoh</a>), remote control of Brian scripts, and experimental support for code generation for C and GPU. There are also a number of other new features, bug fixes and improvements (full list below).</p>
+<p>The major change in this version is the addition of the<a href="http://www.briansimulator.org/docs/hears.html"> Brian.hears package for auditory modelling</a>. This version also includes an update to the toolbox for fitting neural models to electrophysiological recordings (which now uses version 0.3 of the parallel optimization package <a href="http://code.google.com/p/playdoh/">Playdoh</a>), remote control of Brian scripts, and experimental support for code generation for C and <span class="caps">GPU</span>. There are also a number of other new features, bug fixes and improvements (full list below).</p>
 <p>Brian is also available from the <a href="http://neuro.debian.net/pkgs/python-brian.html">NeuroDebian repository</a>: pre-packaged for all recent Debian and Ubuntu releases.</p>
 <p>Brian is being developed by Romain Brette and Dan Goodman. This version also includes contributions by Bertrand Fontaine, Cyrille Rossant, Victor Benichoux and Boris Gourévitch.
 </p>
@@ -177,18 +183,18 @@
     <li>Speed improvements for spike propagation weave code (50-100% faster).</li>
     <li>Clocks have been changed and should now behave more predictably. In addition, you can now specify an order attribute for clocks.</li>
     <li>modelfitting is now based on playdoh 0.3</li>
-    <li>modelfitting can now use euler/exp.euler or RK2 integration schemes</li>
-    <li>Loading AER data is much faster</li>
+    <li>modelfitting can now use euler/exp.euler or <span class="caps">RK2</span> integration schemes</li>
+    <li>Loading <span class="caps">AER</span> data is much faster</li>
     <li>Freezing now uses higher precision (used to only use 12sf now uses 17sf)</li>
 </ul>
 <h5>Bug fixes</h5>
 <ul>
-<li>Bug in STDP with small values for wmin/wmax fixed (ticket #63)</li>
-    <li>Equations/aliases now work correctly in STDP (ticket #56)</li>
+<li>Bug in <span class="caps">STDP</span> with small values for wmin/wmax fixed (ticket #63)</li>
+    <li>Equations/aliases now work correctly in <span class="caps">STDP</span> (ticket #56)</li>
     <li>Bug in sparse matrices introduced in scipy 0.8.0 fixed</li>
     <li>Bug in TimedArray when dt keyword is used now fixed (thanks to Adrien Wohrer for pointing out the bug).</li>
-    <li>Units now work correctly in STDP (ticket #60)</li>
-    <li>STDP raises an error if operations are reordered (ticket #57)</li>
+    <li>Units now work correctly in <span class="caps">STDP</span> (ticket #60)</li>
+    <li><span class="caps">STDP</span> raises an error if operations are reordered (ticket #57)</li>
     <li>linked_var works with static vars (equations) (ticket #68)</li>
     <li>Changing clock.t during a run won’t end the run</li>
     <li>Fixed ticket #66 (unit bug)</li>
@@ -217,7 +223,7 @@
         <div>
 <p></p>
 <p>We have just been informed by the Frontiers Editorial Staff that our <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11/005.2008/abstract">first paper on Brian</a> for <a href="http://www.frontiersin.org/neuroinformatics">Frontiers in Neuroinformatics</a> was the second most cited paper across all the <a href="http://www.frontiersin.org/">Frontiers journals</a> since its publication in 2008.</p>
-<p>This paper was published as part of a <a href="http://www.frontiersin.org/neuroinformatics/specialtopics/python_in_neuroscience/8">special issue on Python in neuroscience</a> which appears to have been very successful. According to my <a href="http://www.harzing.com/pop.htm">Publish or Perish</a> search, six other articles from the same issue are in the top 25 most cited papers in Frontiers journals since 2008, comprising papers on <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.011.2008/abstract">PyNN</a>, <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.004.2008/abstract">Vision Egg</a>, <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.012.2008/abstract">PyNEST</a>, <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.001.2009/abstract">NEURON</a>, <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.004.2009/abstract">Python for information theory</a>, and <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.008.2008/abstract">MDP</a>.</p>
+<p>This paper was published as part of a <a href="http://www.frontiersin.org/neuroinformatics/specialtopics/python_in_neuroscience/8">special issue on Python in neuroscience</a> which appears to have been very successful. According to my <a href="http://www.harzing.com/pop.htm">Publish or Perish</a> search, six other articles from the same issue are in the top 25 most cited papers in Frontiers journals since 2008, comprising papers on <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.011.2008/abstract">PyNN</a>, <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.004.2008/abstract">Vision Egg</a>, <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.012.2008/abstract">PyNEST</a>, <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.001.2009/abstract"><span class="caps">NEURON</span></a>, <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.004.2009/abstract">Python for information theory</a>, and <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.008.2008/abstract"><span class="caps">MDP</span></a>.</p>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/new-paper-on-vectorised-algorithms/" class="u-url">New paper on vectorised algorithms</a></h1>
@@ -251,7 +257,7 @@
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>We have just had a new paper accepted for the journal <a href="http://www.springer.com/biomed/neuroscience/journal/12021">Neuroinformatics</a>, entitled “Code generation: a strategy for neural network simulators”. You can download a provisional PDF <a href="http://dl.dropbox.com/u/556426/codegen.pdf">here</a>. Abstract included below:
+<p>We have just had a new paper accepted for the journal <a href="http://www.springer.com/biomed/neuroscience/journal/12021">Neuroinformatics</a>, entitled “Code generation: a strategy for neural network simulators”. You can download a provisional <span class="caps">PDF</span> <a href="http://dl.dropbox.com/u/556426/codegen.pdf">here</a>. Abstract included below:
 </p>
 <p style="padding-left: 30px;">We demonstrate a technique for the design of neural network simulation software, runtime code generation. This technique can be used to give the user complete flexibility in specifying the mathematical model for their simulation in a high level way, along with the speed of code written in a low level language such as C++. It can also be used to write code only once but target different hardware platforms, including inexpensive high performance graphics processing units (GPUs). Code generation can be naturally combined with computer algebra systems to provide further simplification and optimisation of the generated code. The technique is quite general and could be applied to any simulation package. We demonstrate it with the “Brian” simulator (<a href="http://www.briansimulator.org">http://www.briansimulator.org</a>).</p>
 The code generation features are already available in the current version of Brian, although undocumented as yet (see the <a href="http://www.briansimulator.org/docs/reference-preferences.html">Preferences</a> section of the documentation for information on how to activate code generation).</div>
@@ -270,7 +276,7 @@ The code generation features are already available in the current version of Bri
         <div>
 <p></p>
 <p>We have just released <a href="https://neuralensemble.org/trac/brian/wiki/Downloads">Brian 1.2.1</a>.</p>
-<p>This is mostly a bug fixing release, and minor new features. One highlight is the new remote control system which allows you to interact with a Brian script as it is running - e.g. changing parameter values, plotting intermediate results, etc. Also, GPU support on 64 bit and Linux machines is now much better.</p>
+<p>This is mostly a bug fixing release, and minor new features. One highlight is the new remote control system which allows you to interact with a Brian script as it is running - e.g. changing parameter values, plotting intermediate results, etc. Also, <span class="caps">GPU</span> support on 64 bit and Linux machines is now much better.</p>
 <p>Major features:</p>
 <ul>
 <li>New remote controlling of running Brian scripts via RemoteControlServer
@@ -289,10 +295,10 @@ In addition, garbage collection is called after a clear.</li>
 <p>Improvements</p>
 <ul>
 <li>The sparseness keyword in connect_random can be a function</li>
-<li>Added ‘wmin’ to STDP</li>
-<li>You can now access STDP internal variables, e.g. stdp.A_pre, and monitor
+<li>Added ‘wmin’ to <span class="caps">STDP</span></li>
+<li>You can now access <span class="caps">STDP</span> internal variables, e.g. stdp.A_pre, and monitor
 them by doing e.g. StateMonitor(stdp.pre_group, ‘A_pre’)</li>
-<li>STDP now supports nonlinear equations and parameters</li>
+<li><span class="caps">STDP</span> now supports nonlinear equations and parameters</li>
 <li>refractory can now be a vector (see docstring for NeuronGroup) for constant
 resets.</li>
 <li>modelfitting now uses playdoh library</li>
@@ -348,8 +354,8 @@ it now dynamically adapts to the number of spikes.</li>
 <p>I gave a relatively technical tutorial on using Brian that might be of interest more generally. The tutorial was done via Skype so I could record what I was saying and insert that into the Powerpoint slides. You can download both versions below:
 </p>
 <ul>
-<li><a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2010/07/brian-telluride-tutorial-withoutsounds.ppt">Powerpoint slides without audio (1.5MB)</a></li>
-    <li><a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2010/07/Telluride-July-2010.zip">Powerpoint slides with audio (15MB)</a></li>
+<li><a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2010/07/brian-telluride-tutorial-withoutsounds.ppt">Powerpoint slides without audio (1.<span class="caps">5MB</span>)</a></li>
+    <li><a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2010/07/Telluride-July-2010.zip">Powerpoint slides with audio (<span class="caps">15MB</span>)</a></li>
 </ul>
 Unfortunately, I can’t find a good way to convert this into a video file or I would upload that / put it on YouTube - let me know if you have a good, free way of doing it. (None of the programs I found online could correctly handle the transitions and the audio files correctly.)</div>
     </div>
@@ -403,9 +409,9 @@ myconnection.connect_random(group1,group2,0.1,weight=1<em>nS,sparseness=exp(-abs
         <div>
 <p></p>
 <p>We have just released <a href="https://neuralensemble.org/trac/brian/wiki/Downloads">Brian 1.2</a>.</p>
-<p>The major feature of this release is the model fitting toolbox, designed for automatic fitting of spiking neural models to recorded data. The toolbox is capable of using multiple CPUs or GPUs, across multiple machines. For example, in our lab we use 3 computers with 2 GPUs each to get a 300x speed increase compared to using a single CPU.</p>
+<p>The major feature of this release is the model fitting toolbox, designed for automatic fitting of spiking neural models to recorded data. The toolbox is capable of using multiple CPUs or GPUs, across multiple machines. For example, in our lab we use 3 computers with 2 GPUs each to get a 300x speed increase compared to using a single <span class="caps">CPU</span>.</p>
 <p>Other features of this release include some support for real time plotting as the simulation runs and some important bug fixes. See below for the complete list of changes.</p>
-<p>With this release, we are moving away from the old Sourceforge site to the new <a href="https://neuralensemble.org/trac/brian/wiki">Brian Trac</a> kindly hosted by <a href="http://www.neuralensemble.org/">Neural Ensemble</a>. We have also been working on our release tools, making it much easier to produce new releases. We now plan to do fairly frequent ‘quick releases’ which will be less thoroughly tested, but useful for those who want the latest features without having to much around with the SVN version.</p>
+<p>With this release, we are moving away from the old Sourceforge site to the new <a href="https://neuralensemble.org/trac/brian/wiki">Brian Trac</a> kindly hosted by <a href="http://www.neuralensemble.org/">Neural Ensemble</a>. We have also been working on our release tools, making it much easier to produce new releases. We now plan to do fairly frequent ‘quick releases’ which will be less thoroughly tested, but useful for those who want the latest features without having to much around with the <span class="caps">SVN</span> version.</p>
 <p>Major features:
 </p>
 <ul>
@@ -434,7 +440,7 @@ Bug fixes:
     <li>Minor bugfix to TimedArray caused by floating point comparisons</li>
     <li>Bugfix: refractory neurons could fire in very extreme circumstances</li>
     <li>Fixed bug with DelayConnection not setting max_delay</li>
-    <li>Fixed bug with STP</li>
+    <li>Fixed bug with <span class="caps">STP</span></li>
     <li>Fixed bug with weight=lambda i,j:rand()</li>
 </ul>
 New examples:
@@ -464,7 +470,7 @@ New examples:
 </div>
 
 
-        <script src="../../assets/js/all-nocdn.js"></script><script>
+            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

@@ -6,11 +6,17 @@
 <meta name="description" content="A free, open source simulator for spiking neural networks.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Brian spiking neural network simulator (old posts, page 7) | The Brian spiking neural network simulator</title>
-<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/blog/index-7.html">
+<link rel="icon" href="../logos/favicon.png" sizes="32x32">
 <link rel="prev" href="." type="text/html">
 <link rel="next" href="index-6.html" type="text/html">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
@@ -90,7 +96,7 @@
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../rss.xml" class="nav-link">RSS feed</a>
+<a href="../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -130,7 +136,7 @@
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The articles in this blog are written as <a href="https://jupyter.org/">Jupyter notebooks</a> – interactive documents that contain text, Python code, and the results of running the code (i.e. text or figures). This article gives some details on the various ways to use them and explains common commands we use when presenting Brian code.</p>
-<p>While the documents are "static" on this website, i.e. you can neither change nor run the code, you have two options to interactively explore and modify their content:</p>
+<p>While the documents are &#8220;static&#8221; on this website, i.e. you can neither change nor run the code, you have two options to interactively explore and modify their content:</p>
 <p class="more"><a href="../posts/2020/notes-notebooks/">Read more…</a></p>
 </div>
 </div>
@@ -147,7 +153,7 @@
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p>The <a href="https://incf.org"><abbr title=" International Neuroinformatics Coordinating Facility">INCF</abbr></a> is again applying to be a mentor organization in <a href="https://summerofcode.withgoogle.com/">Google’s Summer of Code program</a>, a “a global program focused on bringing more student developers into open source software development”. Changes are quite high that it will be selected, since its participation in the last years was very successful. If this is the case, there will be an opportunity to work on the Brian simulator, please see the list of <a href="https://docs.google.com/document/d/19xlhgizLcv5x4kjap3nXoQMTNGnxaV-qiq0vrSe-HMo">proposed projects</a> (Brian projects are number 8 and 9). Feel free to ask questions or discuss the project on the <a href="https://neurostars.org/">Neurostars forum</a> (find all projects in the <em>GSoC</em> category). It is not mandatory to work on one of the proposed projects, though, please contact <a href="mailto:marcel.stimberg@inserm.fr">marcel.stimberg@inserm.fr</a> if you have an idea of your own.</p>
+        <p>The <a href="https://incf.org"><abbr title=" International Neuroinformatics Coordinating Facility"><span class="caps">INCF</span></abbr></a> is again applying to be a mentor organization in <a href="https://summerofcode.withgoogle.com/">Google’s Summer of Code program</a>, a “a global program focused on bringing more student developers into open source software development”. Changes are quite high that it will be selected, since its participation in the last years was very successful. If this is the case, there will be an opportunity to work on the Brian simulator, please see the list of <a href="https://docs.google.com/document/d/19xlhgizLcv5x4kjap3nXoQMTNGnxaV-qiq0vrSe-HMo">proposed projects</a> (Brian projects are number 8 and 9). Feel free to ask questions or discuss the project on the <a href="https://neurostars.org/">Neurostars forum</a> (find all projects in the <em>GSoC</em> category). It is not mandatory to work on one of the proposed projects, though, please contact <a href="mailto:marcel.stimberg@inserm.fr">marcel.stimberg@inserm.fr</a> if you have an idea of your own.</p>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2020/brian2genn-paper/" class="u-url">Brian2GeNN paper published: accelerate Brian simulations with GPUs</a></h1>
         <div class="metadata">
@@ -163,11 +169,11 @@
         <div>
 <p>Our paper on <a href="https://brian2genn.readthedocs.io/en/stable/">brian2genn</a> was published today. It automatically translates
 Brian models into a format that can be read by the
-<a href="https://genn-team.github.io/genn/">GPU-enhanced neural network simulator (GeNN)</a> to allow it to run on GPU. Some
-simulations were 400x faster on GPU compared to a single CPU.</p>
+<a href="https://genn-team.github.io/genn/"><span class="caps">GPU</span>-enhanced neural network simulator (GeNN)</a> to allow it to run on <span class="caps">GPU</span>. Some
+simulations were 400x faster on <span class="caps">GPU</span> compared to a single <span class="caps">CPU</span>.</p>
 <div class="bg-light p-4">
 <p>
-Stimberg M, Goodman DFM, Nowotny T (2020)<br><a href="https://www.nature.com/articles/s41598-019-54957-7">Brian2GeNN: a system for accelerating a large variety of spiking neural networks with graphics hardware</a><br><i>Scientific Reports</i> <span class="text-muted">10, 410. doi: 10.1038/s41598-019-54957-7 
+Stimberg M, Goodman <span class="caps">DFM</span>, Nowotny T (2020)<br><a href="https://www.nature.com/articles/s41598-019-54957-7">Brian2GeNN: a system for accelerating a large variety of spiking neural networks with graphics hardware</a><br><i>Scientific Reports</i> <span class="text-muted">10, 410. doi: 10.1038/s41598-019-54957-7 
 </span></p>
 </div>
 </div>
@@ -279,7 +285,7 @@ MathJax.Hub.Config({
 </div>
 
 
-        <script src="../assets/js/all-nocdn.js"></script><script>
+            <script src="../assets/js/jquery.min.js"></script><script src="../assets/js/popper.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/baguetteBox.min.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

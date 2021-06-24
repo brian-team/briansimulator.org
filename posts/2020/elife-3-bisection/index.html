@@ -5,11 +5,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Making use of Python: threshold finding with bisection | The Brian spiking neural network simulator</title>
-<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/2020/elife-3-bisection/">
+<link rel="icon" href="../../../logos/favicon.png" sizes="32x32">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -97,7 +103,7 @@
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -139,11 +145,11 @@
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f0a5b066560>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f0a5b066f80>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_3_bisection.png', 'title': 'Making use of Python: threshold finding with bisection', 'slug': 'elife-3-bisection', 'date': '2020-01-30 17:46', 'tags': 'model', 'category': 'article', 'updated': '2020-01-30 17:46', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'password': '', 'filters': '', 'data': '', 'description': '', 'template': ''})}) -->
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f30bf518950>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f30bf4faef0>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_3_bisection.png', 'title': 'Making use of Python: threshold finding with bisection', 'slug': 'elife-3-bisection', 'date': '2020-01-30 17:46', 'tags': 'model', 'category': 'article', 'updated': '2020-01-30 17:46', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'password': '', 'description': '', 'template': ''})}) -->
     <div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
-    You can either download it via the "Source" link on the top right, or run it directly in the browser on the
+    You can either download it via the &#8220;Source&#8221; link on the top right, or run it directly in the browser on the
     <a href="https://mybinder.org">mybinder</a> infrastructure: <a href="https://mybinder.org/v2/gh/brian-team/briansimulator.org/master?filepath=articles%2F2020%2Felife_example_3_bisection.ipynb">
     <img src="https://static.mybinder.org/badge_logo.svg" alt="Launch binder" class="d-inline-block"></a>
     </p>
@@ -204,7 +210,7 @@ is selected.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Our model of the neuron is based on the classical model of from Hodgkin and Huxley (1952). Note that this is not actually a model of a neuron, but rather of a (space-clamped) axon. However, to avoid confusion with spatially extended models, we simply use the term "neuron" here. In this model, the membrane potential is shifted, i.e. the resting potential is at 0mV:</p>
+<p>Our model of the neuron is based on the classical model of from Hodgkin and Huxley (1952). Note that this is not actually a model of a neuron, but rather of a (space-clamped) axon. However, to avoid confusion with spatially extended models, we simply use the term &#8220;neuron&#8221; here. In this model, the membrane potential is shifted, i.e. the resting potential is at 0mV:</p>
 
 </div>
 </div>
@@ -323,7 +329,7 @@ is selected.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The algorithm we use here to find the voltage threshold is a simple bisection: we try to find the threshold voltage of a neuron by repeatedly testing values and increasing or decreasing these values depending on whether we observe a spike or not. By continously halving the size of the correction, we quickly converge to a precise estimate.</p>
-<p>We start with the same initial estimate for all segments, 25mV above the resting potential, and the same value for the size of the "correction step":</p>
+<p>We start with the same initial estimate for all segments, 25mV above the resting potential, and the same value for the size of the &#8220;correction step&#8221;:</p>
 
 </div>
 </div>
@@ -447,10 +453,10 @@ is selected.
 
 
 
-<div id="a71d6e57-de3b-4d6e-b2ab-cb963ba11f54"></div>
+<div id="5c93aeab-53ac-4e9f-b1f1-9ea577a7156a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a71d6e57-de3b-4d6e-b2ab-cb963ba11f54');
+var element = $('#5c93aeab-53ac-4e9f-b1f1-9ea577a7156a');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -758,13 +764,13 @@ mpl.figure.prototype.request_resize = function(x_pixels, y_pixels) {
 mpl.figure.prototype.send_message = function(type, properties) {
     properties['type'] = type;
     properties['figure_id'] = this.id;
-    this.ws.send(JSON.stringify(properties));
+    this.ws.send(<span class="caps">JSON</span>.stringify(properties));
 }
 
 mpl.figure.prototype.send_draw_message = function() {
     if (!this.waiting) {
         this.waiting = true;
-        this.ws.send(JSON.stringify({type: "draw", figure_id: this.id}));
+        this.ws.send(<span class="caps">JSON</span>.stringify({type: "draw", figure_id: this.id}));
     }
 }
 
@@ -852,19 +858,19 @@ mpl.figure.prototype.updated_canvas_event = function() {
 mpl.figure.prototype._make_on_message_function = function(fig) {
     return function socket_on_message(evt) {
         if (evt.data instanceof Blob) {
-            /* FIXME: We get "Resource interpreted as Image but
-             * transferred with MIME type text/plain:" errors on
-             * Chrome.  But how to set the MIME type?  It doesn't seem
+            /* <span class="caps">FIXME</span>: We get "Resource interpreted as Image but
+             * transferred with <span class="caps">MIME</span> type text/plain:" errors on
+             * Chrome.  But how to set the <span class="caps">MIME</span> type?  It doesn't seem
              * to be part of the websocket stream */
             evt.data.type = "image/png";
 
             /* Free the memory for the previous frames */
             if (fig.imageObj.src) {
-                (window.URL || window.webkitURL).revokeObjectURL(
+                (window.<span class="caps">URL</span> || window.webkitURL).revokeObjectURL(
                     fig.imageObj.src);
             }
 
-            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
+            fig.imageObj.src = (window.<span class="caps">URL</span> || window.webkitURL).createObjectURL(
                 evt.data);
             fig.updated_canvas_event();
             fig.waiting = false;
@@ -877,11 +883,11 @@ mpl.figure.prototype._make_on_message_function = function(fig) {
             return;
         }
 
-        var msg = JSON.parse(evt.data);
+        var msg = <span class="caps">JSON</span>.parse(evt.data);
         var msg_type = msg['type'];
 
         // Call the  "handle_{type}" callback, which takes
-        // the figure and JSON message as its only arguments.
+        // the figure and <span class="caps">JSON</span> message as its only arguments.
         try {
             var callback = fig["handle_" + msg_type];
         } catch (e) {
@@ -1072,7 +1078,7 @@ mpl.figure.prototype.handle_close = function(fig, msg) {
     // Update the output cell to use the data from the current canvas.
     fig.push_to_output();
     var dataURL = fig.canvas.toDataURL();
-    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // Re-enable the keyboard manager in IPython - without this line, in <span class="caps">FF</span>,
     // the notebook keyboard shortcuts fail.
     IPython.keyboard_manager.enable()
     $(fig.parent_element).html('<img src="' + dataURL + '" width="' + width + '">');
@@ -1096,7 +1102,7 @@ mpl.figure.prototype.updated_canvas_event = function() {
     IPython.notebook.set_dirty(true);
     this.send_message("ack", {});
     var fig = this;
-    // Wait a second, then push the new image to the DOM so
+    // Wait a second, then push the new image to the <span class="caps">DOM</span> so
     // that it is saved nicely (might be nice to debounce this).
     setTimeout(function () { fig.push_to_output() }, 1000);
 }
@@ -1272,7 +1278,7 @@ MathJax.Hub.Config({
 </div>
 
 
-        <script src="../../../assets/js/all-nocdn.js"></script><script>
+            <script src="../../../assets/js/jquery.min.js"></script><script src="../../../assets/js/popper.min.js"></script><script src="../../../assets/js/bootstrap.min.js"></script><script src="../../../assets/js/baguetteBox.min.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {

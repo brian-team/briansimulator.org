@@ -5,11 +5,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>New paper on Brian Hears | The Brian spiking neural network simulator</title>
-<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/new-paper-on-brian-hears/">
+<link rel="icon" href="../../logos/favicon.png" sizes="32x32">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -95,7 +101,7 @@ Fontaine B, Goodman DFM, Benichoux V, Brette R (2011). Brian Hears: online audit
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -139,7 +145,7 @@ Fontaine B, Goodman DFM, Benichoux V, Brette R (2011). Brian Hears: online audit
     <div>
 <p></p>
 <p>The following paper on Brian Hears was just accepted for publication:</p>
-<p>Fontaine B, Goodman DFM, Benichoux V, Brette R (2011). <strong>Brian Hears: online auditory processing using vectorisation over channels.</strong> <em>Frontiers in Neuroinformatics</em> (in press) [<a href="http://dl.dropbox.com/u/556426/brianhears-preprint.pdf">preprint</a>]</p>
+<p>Fontaine B, Goodman <span class="caps">DFM</span>, Benichoux V, Brette R (2011). <strong>Brian Hears: online auditory processing using vectorisation over channels.</strong> <em>Frontiers in Neuroinformatics</em> (in press) [<a href="http://dl.dropbox.com/u/556426/brianhears-preprint.pdf">preprint</a>]</p>
 <p><strong>Abstract</strong>
 The human cochlea includes about 3000 inner hair cells which filter sounds at frequencies between 20 Hz and 20 kHz. This massively parallel frequency analysis is reflected in models of auditory processing, which are often based on banks of filters. However, existing implementations do not exploit this parallelism. Here we propose algorithms to simulate these models by vectorising computation over frequency channels, which are implemented in “Brian Hears”, a library for the spiking neural network simulator package “Brian”. This approach allows us to use high-level programming languages such as Python, because with vectorised operations, the computational cost of interpretation represents a small fraction of the total cost. This makes it possible to define and simulate complex models in a simple way, while all previous implementations were model-specific. In addition, we show that these algorithms can be naturally parallelised using graphics processing units, yielding substantial speed improvements. We demonstrate these algorithms with several state-of-the-art cochlear models, and show that they compare favorably with existing, less flexible, implementations.</p>
 </div>
@@ -160,7 +166,7 @@ The human cochlea includes about 3000 inner hair cells which filter sounds at fr
 </div>
 
 
-        <script src="../../assets/js/all-nocdn.js"></script><script>
+            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/popper.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/baguetteBox.min.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {
