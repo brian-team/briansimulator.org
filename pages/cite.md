@@ -65,7 +65,7 @@ function get_citation(version) {
     let data = versions[version];
     let date = data[0];
     let doi = data[1];
-    let citation = "Stimberg, Marcel, Goodman, Dan F.M., & Brette, Romain. (" + date + "). Brian 2 (Version " + version + "). Zenodo. doi: <a href='http://doi.org/" + doi + "'>"+doi+"</a>";
+    let citation = 'Stimberg, Marcel, Goodman, Dan F.M., & Brette, Romain. (' + date + '). Brian 2 (Version ' + version + '). Zenodo. doi: <a href="http://doi.org/' + doi + '">' + doi + '</a>';
     return citation;
 };
 
