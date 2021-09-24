@@ -13,10 +13,22 @@
 <link href="../../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/2020/video-scheduling-1/">
 <link rel="icon" href="../../../logos/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -104,7 +116,7 @@
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../../../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -146,7 +158,7 @@
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f30bf518c20>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f30bf518e60>, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_1.png', 'title': 'Getting the timing right (scheduling\xa01)', 'slug': 'video-scheduling-1', 'date': '2020-09-04 13:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-09-04 13:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'password': '', 'description': '', 'template': ''})}) -->
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f5f7a0c3a70>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f5f7a128a70>, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_1.png', 'title': 'Getting the timing right (scheduling\xa01)', 'slug': 'video-scheduling-1', 'date': '2020-09-04 13:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-09-04 13:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'password': '', 'data': '', 'description': '', 'template': '', 'filters': ''})}) -->
     <div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
@@ -259,10 +271,10 @@ is selected.
 
 
 
-<div id="05274b44-af0b-4cd4-b4ab-5689b7a19362"></div>
+<div id="cfae0b17-6810-4dfb-99d0-33ef8c6314ee"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#05274b44-af0b-4cd4-b4ab-5689b7a19362');
+var element = $('#cfae0b17-6810-4dfb-99d0-33ef8c6314ee');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -570,13 +582,13 @@ mpl.figure.prototype.request_resize = function(x_pixels, y_pixels) {
 mpl.figure.prototype.send_message = function(type, properties) {
     properties['type'] = type;
     properties['figure_id'] = this.id;
-    this.ws.send(<span class="caps">JSON</span>.stringify(properties));
+    this.ws.send(JSON.stringify(properties));
 }
 
 mpl.figure.prototype.send_draw_message = function() {
     if (!this.waiting) {
         this.waiting = true;
-        this.ws.send(<span class="caps">JSON</span>.stringify({type: "draw", figure_id: this.id}));
+        this.ws.send(JSON.stringify({type: "draw", figure_id: this.id}));
     }
 }
 
@@ -664,19 +676,19 @@ mpl.figure.prototype.updated_canvas_event = function() {
 mpl.figure.prototype._make_on_message_function = function(fig) {
     return function socket_on_message(evt) {
         if (evt.data instanceof Blob) {
-            /* <span class="caps">FIXME</span>: We get "Resource interpreted as Image but
-             * transferred with <span class="caps">MIME</span> type text/plain:" errors on
-             * Chrome.  But how to set the <span class="caps">MIME</span> type?  It doesn't seem
+            /* FIXME: We get "Resource interpreted as Image but
+             * transferred with MIME type text/plain:" errors on
+             * Chrome.  But how to set the MIME type?  It doesn't seem
              * to be part of the websocket stream */
             evt.data.type = "image/png";
 
             /* Free the memory for the previous frames */
             if (fig.imageObj.src) {
-                (window.<span class="caps">URL</span> || window.webkitURL).revokeObjectURL(
+                (window.URL || window.webkitURL).revokeObjectURL(
                     fig.imageObj.src);
             }
 
-            fig.imageObj.src = (window.<span class="caps">URL</span> || window.webkitURL).createObjectURL(
+            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
                 evt.data);
             fig.updated_canvas_event();
             fig.waiting = false;
@@ -689,11 +701,11 @@ mpl.figure.prototype._make_on_message_function = function(fig) {
             return;
         }
 
-        var msg = <span class="caps">JSON</span>.parse(evt.data);
+        var msg = JSON.parse(evt.data);
         var msg_type = msg['type'];
 
         // Call the  "handle_{type}" callback, which takes
-        // the figure and <span class="caps">JSON</span> message as its only arguments.
+        // the figure and JSON message as its only arguments.
         try {
             var callback = fig["handle_" + msg_type];
         } catch (e) {
@@ -884,7 +896,7 @@ mpl.figure.prototype.handle_close = function(fig, msg) {
     // Update the output cell to use the data from the current canvas.
     fig.push_to_output();
     var dataURL = fig.canvas.toDataURL();
-    // Re-enable the keyboard manager in IPython - without this line, in <span class="caps">FF</span>,
+    // Re-enable the keyboard manager in IPython - without this line, in FF,
     // the notebook keyboard shortcuts fail.
     IPython.keyboard_manager.enable()
     $(fig.parent_element).html('<img src="' + dataURL + '" width="' + width + '">');
@@ -908,7 +920,7 @@ mpl.figure.prototype.updated_canvas_event = function() {
     IPython.notebook.set_dirty(true);
     this.send_message("ack", {});
     var fig = this;
-    // Wait a second, then push the new image to the <span class="caps">DOM</span> so
+    // Wait a second, then push the new image to the DOM so
     // that it is saved nicely (might be nice to debounce this).
     setTimeout(function () { fig.push_to_output() }, 1000);
 }
@@ -1290,10 +1302,10 @@ $-50.02477894061322\,\mathrm{m}\,\mathrm{V}$
 
 
 
-<div id="2e818488-12fa-48d1-aab1-cec33a657222"></div>
+<div id="d157b35e-65b8-4ad0-a4d1-7a96f3b388ba"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#2e818488-12fa-48d1-aab1-cec33a657222');
+var element = $('#d157b35e-65b8-4ad0-a4d1-7a96f3b388ba');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -1601,13 +1613,13 @@ mpl.figure.prototype.request_resize = function(x_pixels, y_pixels) {
 mpl.figure.prototype.send_message = function(type, properties) {
     properties['type'] = type;
     properties['figure_id'] = this.id;
-    this.ws.send(<span class="caps">JSON</span>.stringify(properties));
+    this.ws.send(JSON.stringify(properties));
 }
 
 mpl.figure.prototype.send_draw_message = function() {
     if (!this.waiting) {
         this.waiting = true;
-        this.ws.send(<span class="caps">JSON</span>.stringify({type: "draw", figure_id: this.id}));
+        this.ws.send(JSON.stringify({type: "draw", figure_id: this.id}));
     }
 }
 
@@ -1695,19 +1707,19 @@ mpl.figure.prototype.updated_canvas_event = function() {
 mpl.figure.prototype._make_on_message_function = function(fig) {
     return function socket_on_message(evt) {
         if (evt.data instanceof Blob) {
-            /* <span class="caps">FIXME</span>: We get "Resource interpreted as Image but
-             * transferred with <span class="caps">MIME</span> type text/plain:" errors on
-             * Chrome.  But how to set the <span class="caps">MIME</span> type?  It doesn't seem
+            /* FIXME: We get "Resource interpreted as Image but
+             * transferred with MIME type text/plain:" errors on
+             * Chrome.  But how to set the MIME type?  It doesn't seem
              * to be part of the websocket stream */
             evt.data.type = "image/png";
 
             /* Free the memory for the previous frames */
             if (fig.imageObj.src) {
-                (window.<span class="caps">URL</span> || window.webkitURL).revokeObjectURL(
+                (window.URL || window.webkitURL).revokeObjectURL(
                     fig.imageObj.src);
             }
 
-            fig.imageObj.src = (window.<span class="caps">URL</span> || window.webkitURL).createObjectURL(
+            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
                 evt.data);
             fig.updated_canvas_event();
             fig.waiting = false;
@@ -1720,11 +1732,11 @@ mpl.figure.prototype._make_on_message_function = function(fig) {
             return;
         }
 
-        var msg = <span class="caps">JSON</span>.parse(evt.data);
+        var msg = JSON.parse(evt.data);
         var msg_type = msg['type'];
 
         // Call the  "handle_{type}" callback, which takes
-        // the figure and <span class="caps">JSON</span> message as its only arguments.
+        // the figure and JSON message as its only arguments.
         try {
             var callback = fig["handle_" + msg_type];
         } catch (e) {
@@ -1915,7 +1927,7 @@ mpl.figure.prototype.handle_close = function(fig, msg) {
     // Update the output cell to use the data from the current canvas.
     fig.push_to_output();
     var dataURL = fig.canvas.toDataURL();
-    // Re-enable the keyboard manager in IPython - without this line, in <span class="caps">FF</span>,
+    // Re-enable the keyboard manager in IPython - without this line, in FF,
     // the notebook keyboard shortcuts fail.
     IPython.keyboard_manager.enable()
     $(fig.parent_element).html('<img src="' + dataURL + '" width="' + width + '">');
@@ -1939,7 +1951,7 @@ mpl.figure.prototype.updated_canvas_event = function() {
     IPython.notebook.set_dirty(true);
     this.send_message("ack", {});
     var fig = this;
-    // Wait a second, then push the new image to the <span class="caps">DOM</span> so
+    // Wait a second, then push the new image to the DOM so
     // that it is saved nicely (might be nice to debounce this).
     setTimeout(function () { fig.push_to_output() }, 1000);
 }

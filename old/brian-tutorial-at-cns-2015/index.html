@@ -13,10 +13,22 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/old/brian-tutorial-at-cns-2015/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -100,7 +112,7 @@ The tutorial will take place in room RB 211 at the University of Economics. Plea
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -124,7 +136,7 @@ The tutorial will take place in room RB 211 at the University of Economics. Plea
         
         
         
-<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Brian Tutorial at <span class="caps">CNS</span> 2015</a></h1>
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Brian Tutorial at CNS 2015</a></h1>
 
         
 
@@ -132,9 +144,9 @@ The tutorial will take place in room RB 211 at the University of Economics. Plea
     <div>
 <p></p>
 <h3>Modelling of spiking neural networks with Brian</h3>
-Tutorial T3 at <a href="http://www.cnsorg.org/cns-2015-prague"><span class="caps">CNS</span> 2015</a>, Prague (<strong>July 18th 2015</strong>)
-<p>The tutorial will take place in room <span class="caps">RB</span> 211 at the <a href="http://www.cnsorg.org/cns-2015-venue">University of Economics</a>. Please consider installing Brian 2 beforehand, see the installation instructions in the <a href="http://brian2.readthedocs.org">documentation</a>.</p>
-<p><em><strong>The material presented at the tutorial can be found here:</strong> <a href="https://github.com/brian-team/brian-material/tree/master/2015-CNS-tutorial">https://github.com/brian-team/brian-material/tree/master/2015-<span class="caps">CNS</span>-tutorial</a>
+Tutorial T3 at <a href="http://www.cnsorg.org/cns-2015-prague">CNS 2015</a>, Prague (<strong>July 18th 2015</strong>)
+<p>The tutorial will take place in room RB 211 at the <a href="http://www.cnsorg.org/cns-2015-venue">University of Economics</a>. Please consider installing Brian 2 beforehand, see the installation instructions in the <a href="http://brian2.readthedocs.org">documentation</a>.</p>
+<p><em><strong>The material presented at the tutorial can be found here:</strong> <a href="https://github.com/brian-team/brian-material/tree/master/2015-CNS-tutorial">https://github.com/brian-team/brian-material/tree/master/2015-CNS-tutorial</a>
 </em>
 </p>
 <h4>Schedule</h4>
@@ -226,7 +238,7 @@ We recommend using the <a href="http://continuum.io/downloads">Anaconda distribu
 <ul>
 <li>The full Anaconda distribution comes with a Matlab-like development environment for Python called <a href="https://code.google.com/p/spyderlib/">Spyder</a>, you can start it by typing <code>spyder</code> in a Terminal. You can also start it using Anaconda’s “launcher” application, for more details and other IDEs that you can use, see <a href="http://docs.continuum.io/anaconda/ide_integration.html">docs.continuum.io/anaconda/ide_integration.html</a>
 </li>
-    <li>You don’t necessarily need a full <span class="caps">IDE</span> to work with Python/Brian, starting <code>ipython</code> in a terminal window and using any text editor to edit files is good enough.</li>
+    <li>You don’t necessarily need a full IDE to work with Python/Brian, starting <code>ipython</code> in a terminal window and using any text editor to edit files is good enough.</li>
 </ul>
 </div>
     </div>

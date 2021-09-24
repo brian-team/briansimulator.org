@@ -13,10 +13,22 @@
 <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/papers-using-brian/">
 <link rel="icon" href="../logos/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -34,7 +46,7 @@ our main papers:
 2019).
 Here are a few we selected to give an id">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2020-12-11T09:43:41Z">
+<meta property="article:published_time" content="2020-02-20T14:25:09Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@briansimulator">
 </head>
@@ -104,7 +116,7 @@ Here are a few we selected to give an id">
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -144,7 +156,7 @@ our main papers:
 <ul class="list-group list-group-flush">
 <li class="list-group-item"> 
 <p>
-Frady <span class="caps">EP</span>, Sommer <span class="caps">FT</span> (2019)<br><a href="https://doi.org/10.1073/pnas.1902653116">Robust computation with rhythmic spike patterns</a><br><i><span class="caps">PNAS</span></i> <span class="text-muted">116 (36) 18050-18059; doi: 10.1073/pnas.1902653116
+Frady EP, Sommer FT (2019)<br><a href="https://doi.org/10.1073/pnas.1902653116">Robust computation with rhythmic spike patterns</a><br><i>PNAS</i> <span class="text-muted">116 (36) 18050-18059; doi: 10.1073/pnas.1902653116
 <br><a href="https://github.com/epaxon/epaxon.github.io">[code]</a>
 
 </span></p>
@@ -152,7 +164,7 @@ Frady <span class="caps">EP</span>, Sommer <span class="caps">FT</span> (2019)<b
 
 <li class="list-group-item"> 
 <p>
- O&#8217;Donnell C, Gonçalves <span class="caps">JT</span>, Portera-Cailliau C, Sejnowski <span class="caps">TJ</span> (2017)<br><a href="https://doi.org/10.7554/eLife.26724">Beyond excitation/inhibition imbalance in multidimensional models of neural circuit changes in brain disorders</a><br><i>eLife</i> <span class="text-muted">6:e26724 doi:10.7554/eLife.26724
+ O&#8217;Donnell C, Gonçalves JT, Portera-Cailliau C, Sejnowski TJ (2017)<br><a href="https://doi.org/10.7554/eLife.26724">Beyond excitation/inhibition imbalance in multidimensional models of neural circuit changes in brain disorders</a><br><i>eLife</i> <span class="text-muted">6:e26724 doi:10.7554/eLife.26724
 <br><a href="https://github.com/elifesciences-publications/ODonnelletal_2017_imbalances">[code]</a>
 
 </span></p>
@@ -160,7 +172,7 @@ Frady <span class="caps">EP</span>, Sommer <span class="caps">FT</span> (2019)<b
 
 <li class="list-group-item"> 
 <p>
-Diehl <span class="caps">PU</span> and Cook M (2015)<br><a href="https://www.frontiersin.org/articles/10.3389/fncom.2015.00099/full">Unsupervised learning of digit recognition using spike-timing-dependent plasticity</a><br><i>Frontiers in Computational Neuroscience</i> <span class="text-muted">doi: 10.3389/fncom.2015.00099
+Diehl PU and Cook M (2015)<br><a href="https://www.frontiersin.org/articles/10.3389/fncom.2015.00099/full">Unsupervised learning of digit recognition using spike-timing-dependent plasticity</a><br><i>Frontiers in Computational Neuroscience</i> <span class="text-muted">doi: 10.3389/fncom.2015.00099
 <br><a href="https://github.com/peter-u-diehl/stdp-mnist">[code]</a>
 
 </span></p>
@@ -168,19 +180,19 @@ Diehl <span class="caps">PU</span> and Cook M (2015)<br><a href="https://www.fro
 
 <li class="list-group-item"> 
 <p>
-Tan <span class="caps">AYY</span>, Chen Y, Scholl B, Seidemann E, Priebe <span class="caps">NJ</span> (2014)<br><a href="https://doi.org/10.1038/nature13159">Sensory stimulation shifts visual cortex from synchronous to asynchronous states</a><br><i>Nature</i> <span class="text-muted">509, 226–229. doi:10.1038/nature13159
+Tan AYY, Chen Y, Scholl B, Seidemann E, Priebe NJ (2014)<br><a href="https://doi.org/10.1038/nature13159">Sensory stimulation shifts visual cortex from synchronous to asynchronous states</a><br><i>Nature</i> <span class="text-muted">509, 226–229. doi:10.1038/nature13159
 <br></span></p>
 </li>
 
 <li class="list-group-item"> 
 <p>
-Pastoll H, Solanka L, van Rossum <span class="caps">MCW</span>, Nolan <span class="caps">MF</span> (2013)<br><a href="https://doi.org/10.1016/j.neuron.2012.11.032">Feedback Inhibition Enables Theta-Nested Gamma Oscillations and Grid Firing Fields</a><br><i>Neuron</i> <span class="text-muted">doi: 10.1016/j.neuron.2012.11.032
+Pastoll H, Solanka L, van Rossum MCW, Nolan MF (2013)<br><a href="https://doi.org/10.1016/j.neuron.2012.11.032">Feedback Inhibition Enables Theta-Nested Gamma Oscillations and Grid Firing Fields</a><br><i>Neuron</i> <span class="text-muted">doi: 10.1016/j.neuron.2012.11.032
 <br></span></p>
 </li>
 
 <li class="list-group-item"> 
 <p>
-Masquelier T, Hugues E, Deco G and Thorpe <span class="caps">SJ</span> (2009)<br><a href="https://doi.org/10.1523/JNEUROSCI.2207-09.2009">Oscillations, Phase-of-Firing Coding, and Spike Timing-Dependent Plasticity: An Efficient Learning Scheme</a><br><i>Journal of Neuroscience</i> <span class="text-muted">29 (43) 13484-13493; doi:10.1523/<span class="caps">JNEUROSCI</span>.2207-09.2009
+Masquelier T, Hugues E, Deco G and Thorpe SJ (2009)<br><a href="https://doi.org/10.1523/JNEUROSCI.2207-09.2009">Oscillations, Phase-of-Firing Coding, and Spike Timing-Dependent Plasticity: An Efficient Learning Scheme</a><br><i>Journal of Neuroscience</i> <span class="text-muted">29 (43) 13484-13493; doi:10.1523/JNEUROSCI.2207-09.2009
 <br><a href="https://senselab.med.yale.edu/ModelDB/showmodel.cshtml?model=123928#tabs-1">[code]</a>
 
 </span></p>

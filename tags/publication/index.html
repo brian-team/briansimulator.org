@@ -13,10 +13,22 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/tags/publication/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -94,7 +106,7 @@
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -117,7 +129,7 @@
             
                 <p class="feedlink">
                         
-            <a href="../publication.xml" hreflang="en" type="application/rss+xml"><span class="caps">RSS</span> feed</a>
+            <a href="../publication.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
@@ -139,11 +151,11 @@
         <div>
 <p>Our paper on <a href="https://brian2genn.readthedocs.io/en/stable/">brian2genn</a> was published today. It automatically translates
 Brian models into a format that can be read by the
-<a href="https://genn-team.github.io/genn/"><span class="caps">GPU</span>-enhanced neural network simulator (GeNN)</a> to allow it to run on <span class="caps">GPU</span>. Some
-simulations were 400x faster on <span class="caps">GPU</span> compared to a single <span class="caps">CPU</span>.</p>
+<a href="https://genn-team.github.io/genn/">GPU-enhanced neural network simulator (GeNN)</a> to allow it to run on GPU. Some
+simulations were 400x faster on GPU compared to a single CPU.</p>
 <div class="bg-light p-4">
 <p>
-Stimberg M, Goodman <span class="caps">DFM</span>, Nowotny T (2020)<br><a href="https://www.nature.com/articles/s41598-019-54957-7">Brian2GeNN: a system for accelerating a large variety of spiking neural networks with graphics hardware</a><br><i>Scientific Reports</i> <span class="text-muted">10, 410. doi: 10.1038/s41598-019-54957-7 
+Stimberg M, Goodman DFM, Nowotny T (2020)<br><a href="https://www.nature.com/articles/s41598-019-54957-7">Brian2GeNN: a system for accelerating a large variety of spiking neural networks with graphics hardware</a><br><i>Scientific Reports</i> <span class="text-muted">10, 410. doi: 10.1038/s41598-019-54957-7 
 </span></p>
 </div>
 </div>

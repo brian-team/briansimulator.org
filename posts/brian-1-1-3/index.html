@@ -13,10 +13,22 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/brian-1-1-3/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -107,7 +119,7 @@ Added colormap option to StateMo">
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -153,7 +165,7 @@ Added colormap option to StateMo">
 <p>We have just produced a <a href="http://sourceforge.net/project/showfiles.php?group_id=226798">new release of Brian</a>, version 1.1.3, with the
 following changes:</p>
 <ul>
-<li><span class="caps">STDP</span> now works with DelayConnection</li>
+<li>STDP now works with DelayConnection</li>
 <li>Added EventClock</li>
 <li>Added RecentStateMonitor</li>
 <li>Added colormap option to StateMonitor.plot</li>

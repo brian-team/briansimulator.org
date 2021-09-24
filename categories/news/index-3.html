@@ -13,12 +13,24 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/categories/news/index-3.html">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
 <link rel="prev" href="index-4.html" type="text/html">
 <link rel="next" href="index-2.html" type="text/html">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -96,7 +108,7 @@
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -119,7 +131,7 @@
             
                 <p class="feedlink">
                         
-            <a href="../news.xml" hreflang="en" type="application/rss+xml"><span class="caps">RSS</span> feed</a>
+            <a href="../news.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
@@ -127,7 +139,7 @@
 
         </div>
     </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-tutorial-cns-2014/" class="u-url">Brian tutorial at <span class="caps">CNS</span> 2014</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-tutorial-cns-2014/" class="u-url">Brian tutorial at CNS 2014</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../../authors/brian-team/">Brian team</a>
@@ -140,7 +152,7 @@
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>On <strong>July 26th 2014</strong>, we’ll have a tutorial on “Modelling of spiking neural networks with Brian” at the <a href="http://www.cnsorg.org/cns-2014-quebec-city"><span class="caps">CNS</span> conference</a> in Québec City. It will feature introductory sessions in the morning (no prior Brian knowledge necessary) and more advanced topics in the afternoon. Follow this link to find the <a href="https://briansimulator.org/brian-tutorial-at-cns-2014">preliminary schedule</a>.</p>
+<p>On <strong>July 26th 2014</strong>, we’ll have a tutorial on “Modelling of spiking neural networks with Brian” at the <a href="http://www.cnsorg.org/cns-2014-quebec-city">CNS conference</a> in Québec City. It will feature introductory sessions in the morning (no prior Brian knowledge necessary) and more advanced topics in the afternoon. Follow this link to find the <a href="https://briansimulator.org/brian-tutorial-at-cns-2014">preliminary schedule</a>.</p>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/new-brian-paper-equation-oriented-specification-of-neural-models-for-simulations/" class="u-url">New Brian paper: Equation-oriented specification of neural models for simulations</a></h1>
@@ -156,13 +168,13 @@
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>We have just had a new paper <a href="http://www.frontiersin.org/Journal/10.3389/fninf.2014.00006/abstract">Equation-oriented specification of neural models for simulations</a> published in the <a href="http://www.frontiersin.org/Neuroinformatics/researchtopics/Python_in_Neuroscience_II/1591">Python in Neuroscience <span class="caps">II</span></a> special edition of <a href="http://www.frontiersin.org/Neuroinformatics">Frontiers in Neuroinformatics</a>. In this paper we describe the new approach to neural model specification we’re taking in Brian 2.</p>
+<p>We have just had a new paper <a href="http://www.frontiersin.org/Journal/10.3389/fninf.2014.00006/abstract">Equation-oriented specification of neural models for simulations</a> published in the <a href="http://www.frontiersin.org/Neuroinformatics/researchtopics/Python_in_Neuroscience_II/1591">Python in Neuroscience II</a> special edition of <a href="http://www.frontiersin.org/Neuroinformatics">Frontiers in Neuroinformatics</a>. In this paper we describe the new approach to neural model specification we’re taking in Brian 2.</p>
 <p>Abstract below:
 </p>
 <blockquote>Simulating biological neuronal networks is a core method of research in computational neuroscience. A full specification of such a network model includes a description of the dynamics and state changes of neurons and synapses, as well as the synaptic connectivity patterns and the initial values of all parameters. A standard approach in neuronal modeling software is to build network models based on a library of pre-defined components and mechanisms; if a model component does not yet exist, it has to be defined in a special-purpose or general low-level language and potentially be compiled and linked with the simulator. Here we propose an alternative approach that allows flexible definition of models by writing textual descriptions based on mathematical notation. We demonstrate that this approach allows the definition of a wide range of models with minimal syntax. Furthermore, such explicit model descriptions allow the generation of executable code for various target languages and devices, since the description is not tied to an implementation. Finally, this approach also has advantages for readability and reproducibility, because the model description is fully explicit, and because it can be automatically parsed and transformed into formatted descriptions. The presented approach has been implemented in the Brian2 simulator.</blockquote>
 </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-tutorial-at-cns-2013/" class="u-url">Brian tutorial at <span class="caps">CNS</span> 2013</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-tutorial-at-cns-2013/" class="u-url">Brian tutorial at CNS 2013</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../../authors/brian-team/">Brian team</a>
@@ -175,7 +187,7 @@
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>On <strong>July 13th 2013</strong>, we’ll have a tutorial on “Advanced modelling of spiking neural networks with Brian” at the <a href="http://www.cnsorg.org/cns-2013-paris"><span class="caps">CNS</span> conference</a> in Paris, covering various topics around the available Brian toolboxes, the ongoing Brian development and general handy tricks to cope with complex simulations. The tutorial will also feature an open questions sessions in the end where attendants can ask for help with individual problems they have in their current Brian project. Follow this link to find the <a href="https://briansimulator.org/brian-tutorial-cns-2013">schedule and material</a>.</p>
+<p>On <strong>July 13th 2013</strong>, we’ll have a tutorial on “Advanced modelling of spiking neural networks with Brian” at the <a href="http://www.cnsorg.org/cns-2013-paris">CNS conference</a> in Paris, covering various topics around the available Brian toolboxes, the ongoing Brian development and general handy tricks to cope with complex simulations. The tutorial will also feature an open questions sessions in the end where attendants can ask for help with individual problems they have in their current Brian project. Follow this link to find the <a href="https://briansimulator.org/brian-tutorial-cns-2013">schedule and material</a>.</p>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/new-book-on-ipython/" class="u-url">New book on IPython</a></h1>
@@ -276,7 +288,7 @@ If you are a Brian user, please consider taking 5 minutes to answer  these quest
         <div>
 <p></p>
 <p>The following paper on Brian Hears was just accepted for publication:</p>
-<p>Fontaine B, Goodman <span class="caps">DFM</span>, Benichoux V, Brette R (2011). <strong>Brian Hears: online auditory processing using vectorisation over channels.</strong> <em>Frontiers in Neuroinformatics</em> (in press) [<a href="http://dl.dropbox.com/u/556426/brianhears-preprint.pdf">preprint</a>]</p>
+<p>Fontaine B, Goodman DFM, Benichoux V, Brette R (2011). <strong>Brian Hears: online auditory processing using vectorisation over channels.</strong> <em>Frontiers in Neuroinformatics</em> (in press) [<a href="http://dl.dropbox.com/u/556426/brianhears-preprint.pdf">preprint</a>]</p>
 <p><strong>Abstract</strong>
 The human cochlea includes about 3000 inner hair cells which filter sounds at frequencies between 20 Hz and 20 kHz. This massively parallel frequency analysis is reflected in models of auditory processing, which are often based on banks of filters. However, existing implementations do not exploit this parallelism. Here we propose algorithms to simulate these models by vectorising computation over frequency channels, which are implemented in “Brian Hears”, a library for the spiking neural network simulator package “Brian”. This approach allows us to use high-level programming languages such as Python, because with vectorised operations, the computational cost of interpretation represents a small fraction of the total cost. This makes it possible to define and simulate complex models in a simple way, while all previous implementations were model-specific. In addition, we show that these algorithms can be naturally parallelised using graphics processing units, yielding substantial speed improvements. We demonstrate these algorithms with several state-of-the-art cochlear models, and show that they compare favorably with existing, less flexible, implementations.</p>
 </div>
@@ -295,7 +307,7 @@ The human cochlea includes about 3000 inner hair cells which filter sounds at fr
         <div>
 <p></p>
 <p>The following paper has just been accepted for publication:</p>
-<p>Rossant C, Fontaine B, Goodman <span class="caps">DFM</span> (2011). <strong>Playdoh: a lightweight Python package for distributed computing and optimisation.</strong> <em>Journal of Computational Science </em>(in press)</p>
+<p>Rossant C, Fontaine B, Goodman DFM (2011). <strong>Playdoh: a lightweight Python package for distributed computing and optimisation.</strong> <em>Journal of Computational Science </em>(in press)</p>
 <p><strong>Abstract</strong>
 Parallel computing is now an essential paradigm for high performance scientific computing. Most existing hardware and software solutions are expensive or difficult to use. We developed Playdoh, a Python library for distributing computations across the free computing units available in a small network of multicore computers. Playdoh supports independent and loosely coupled parallel problems such as global optimisations, Monte Carlo simulations and numerical integration of partial differential equations. It is designed to be lightweight and easy to use and should be of interest to scientists wanting to turn their lab computers into a small cluster at no cost.</p>
 <p>Brian users might find the package (available <a href="http://code.google.com/p/playdoh/">here</a>) and the paper (<a href="http://dl.dropbox.com/u/556426/playdoh-preprint.pdf">preprint</a>) interesting.</p>
