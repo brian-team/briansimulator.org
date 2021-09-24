@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bug hunt episode 2: a strange file appears | The Brian spiking neural network simulator</title>
+<link href="../../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#333e63">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
+<link rel="canonical" href="https://briansimulator.org/posts/2021/bug-hunt-episode-2-a-strange-file-appears/">
+<link rel="icon" href="../../../logos/favicon.png" sizes="32x32">
+<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-84065998-2', { 'anonymize_ip': true });
+</script><script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="../../../assets/css/custom.css">
+<!-- Global site tag (gtag.js) - Google Analytics --><meta name="author" content="Marcel Stimberg">
+<link rel="prev" href="../bug-hunt-episode-1-broken-latex-output-for-equations/" title="Bug hunt episode 1: Broken LaTeX output for equations" type="text/html">
+<meta property="og:site_name" content="The Brian spiking neural network simulator">
+<meta property="og:title" content="Bug hunt episode 2: a strange file appears">
+<meta property="og:url" content="https://briansimulator.org/posts/2021/bug-hunt-episode-2-a-strange-file-appears/">
+<meta property="og:description" content="This is the second article in the “bug hunt” series. In these articles, I go through a recent bug in Brian (or one of its dependencies) and describe all the steps I used to find the source of the bug ">
+<meta property="og:image" content="https://briansimulator.org/images/articles/2021/bug-hunt-episode-2-a-strange-file-appears.png">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2021-09-24T00:00:00Z">
+<meta property="article:tag" content="bug-hunt">
+<meta property="article:tag" content="Development">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@briansimulator">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4 navbar-dark bg-blue"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="https://briansimulator.org/">
+            <img src="../../../logos/brian_logo_small.png" alt="The Brian spiking neural network simulator" id="logo" class="d-inline-block align-top"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../../install/" class="nav-link">Install</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Getting started</a>
+            <div class="dropdown-menu">
+                    <a href="https://mybinder.org/v2/gh/brian-team/brian2-binder/master?filepath=demo.ipynb" class="dropdown-item">Try in the browser</a>
+                    <a href="../../../getting-started" class="dropdown-item">Beginners guide</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/resources/tutorials/index.html" class="dropdown-item">Tutorials</a>
+                    <a href="https://brian2.readthedocs.io/en/stable/examples/index.html" class="dropdown-item">Examples</a>
+                    <a href="https://brian2.readthedocs.io" class="dropdown-item">Documentation</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+            <div class="dropdown-menu">
+                    <a href="../../../blog" class="dropdown-item">All posts</a>
+                    <a href="../../../categories/news" class="dropdown-item">News</a>
+                    <a href="../../../categories/article" class="dropdown-item">Articles</a>
+                    <a href="../../../tags/" class="dropdown-item">Tags</a>
+                    <a href="../../../archive.html" class="dropdown-item">Archive</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu">
+                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum</a>
+                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="../../../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
+                    <a href="../../../ecosystem/" class="dropdown-item">Software ecosystem</a>
+                    <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
+                    <a href="../../../contribute" class="dropdown-item">How to contribute</a>
+            </div>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Material</a>
+            <div class="dropdown-menu">
+                    <a href="../../../publications/" class="dropdown-item">Our papers</a>
+                    <a href="../../../cite/" class="dropdown-item">How to cite us</a>
+                    <a href="https://github.com/brian-team/brian-material/tree/master/logos" class="dropdown-item">Download logos</a>
+                    <a href="https://github.com/brian-team/brian2" class="dropdown-item">GitHub repository</a>
+            </div>
+                </li>
+<li class="nav-item">
+<a href="../../../team" class="nav-link">Team</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right">
+<li class="nav-item">
+<a href="../../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+
+                
+                
+                    
+    
+    </li>
+<li class="nav-item">
+    <a href="index.md" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Bug hunt episode 2: a strange file appears</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    <a class="u-url" href="../../../authors/marcel-stimberg/">Marcel Stimberg</a>
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2021-09-24T00:00:00Z" itemprop="datePublished" title="2021-09-24">2021-09-24</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="index.md" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<!--
+.. title: Bug hunt episode 2: a strange file appears
+.. slug: bug-hunt-episode-2-a-strange-file-appears
+.. date: 2021-09-23
+.. tags: Development, bug-hunt
+.. category: article
+-->
+
+<p>This is the second article in the <a href="https://briansimulator.org/tags/bug-hunt/">“bug hunt” series</a>. In these articles, I go through a recent bug in Brian (or one of its dependencies) and describe all the steps I used to find the source of the bug and how I fixed it.</p>
+<p>Today’s bug is about a strangely named file that seemingly appears out of nowhere when running Brian simulations. The final fix for the bug will turn out to be a single character change in the Brian code base 😀!</p>
+<!-- TEASER_END -->
+
+<h3>The bug</h3>
+<p>I recently noticed that I had a strange file in many directories on my computers. Since it only seemed to appear in directories from which I ran Brian simulations, it was pretty clear that this had something to do with Brian. The name of the file: <code>-.o</code>. Now, files ending on <code>.o</code> are usually <a href="https://en.wikipedia.org/wiki/Object_file">object files</a>, i.e. the machine code output of a compiler. Such files are note executable by itself, but can be <a href="https://en.wikipedia.org/wiki/Linker_(computing)">linked</a> together to form an executable file or a library. Now, of course any file could be named <code>something.o</code>, but the <code>file</code> utility (note that I am using Linux) confirms that it is an “<span class="caps">ELF</span> 64-bit <span class="caps">LSB</span> relocatable”, which refers to the <a href="https://en.wikipedia.org/wiki/Executable_and_Linkable_Format">standard Unix format for object files</a>. Since we use C++ code generation in Brian (either via Cython in runtime mode, or directly in standalone mode), it seems reasonable to assume that the file gets created somewhere during that process.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you encounter a file named <code>-.o</code>, you can of course easily delete it using a graphical file explorer.
+On the other hand, it can be surprisingly tricky when using the command line.
+For example, simply using the standard Unix command <code>rm -.o</code> will fail with an error message about an “unknown option ‘.’” – most Unix tools interpret the hyphen “<code>-</code>” as the beginning of a command line option, and “<code>.</code>” is not such an option.
+Now, if you have been using the Unix command line for some time you know that the way to deal with “special characters” is to use quotation marks or to “escape” the special characters with a backslash <code>\</code>.
+For example, if you have a file named <code>my file.txt</code> (i.e. with a space in the file name), you need to delete it using either <code>rm "my file.txt"</code> or <code>rm my\ file.txt</code>, since a simple <code>rm my file.txt</code> would be interpreted as a request to delete the two files <code>my</code> and <code>file.txt</code>.
+It might come as a surprise that this does not work here, <code>rm "-.o"</code> still fails with the same error message (if you are interested in the details, you can write a small script that deals with its own command line arguments stored in <code>sys.argv</code> and see what it does for different inputs).
+The solution to deal with the issue here is slightly different: you either have to refer to the file without having its name start with a hyphen, or you have to make clear to <code>rm</code> that you do not want to pass additional command line arguments.
+The first approach is the most universal: instead of using <code>rm -.o</code> you can refer to the file as e.g. <code>rm ./-.o</code>.
+The <code>./</code> part simply means “in the current directory” and is usually redundant, but here it helps us avoid a name that starts with an hyphen.
+The second approach is to explicitly tell <code>rm</code> to not expect further command line arguments by using an empty argument <code>--</code>, i.e. to call <code>rm -- -.o</code>.
+This works for many Unix command line tools, not only for <code>rm</code>.</p>
+</div>
+<h3>The hunt</h3>
+<h4>Reproducing the issue</h4>
+<p>The first step of fixing an issue is making sure to be able to reproduce it. I first ran the Brian test suite (after deleting the existing <code>-.o</code> file in my directory), and confirmed that after the run the mystery file had reappeared. By construction, the test suite is of course running all (or at least most) of Brian’s functionality, so something more narrow in scope (and taking less time to run) would be more useful. I noticed that I had another <code>-.o</code> file in our examples directory, so I made an educated guess that running at least one of the examples would trigger the file generation. I tested a few of them and it turned out that not all of them make the file appear. For example, running the <a href="https://brian2.readthedocs.io/en/stable/examples/CUBA.html"><code>CUBA.py</code> example</a>  would <em>not</em> create a new file, but running the <a href="https://brian2.readthedocs.io/en/stable/examples/COBAHH.html"><code>COBAHH.py</code> example</a> would. Evaluating this systematically for all examples might potentially give us a hint to where the issue comes from, but would also take a bit of time. For now, having the <em><span class="caps">COBAHH</span></em> example to reproduce the issue is enough.</p>
+<h4>Hstorical research</h4>
+<p>Since I am sure that this bug hasn’t been around forever, the next step is to find out when the problem has been introduced. A quick check with version <code>2.3.0.2</code> indeed shows that it can run the <em><span class="caps">COBAHH</span></em> example without generating the <code>-.o</code> file. As in the <a href="../bug-hunt-episode-1-broken-latex-output-for-equations/">last bug hunt</a>, I then used git’s <em>bisect</em> mechanism to quickly find the commit introducing the problem. This led me to commit <a href="https://github.com/brian-team/brian2/commit/628ff2cddf6b90e32a5e360fd48d99ce9f6fc355">628ff2cddf6b90</a>:</p>
+<pre class="code literal-block"><span></span><span class="k">commit</span><span class="w"> </span><span class="mi">628</span><span class="n">ff2cddf6b90e32a5e360fd48d99ce9f6fc355</span><span class="w"></span>
+<span class="nl">Author</span><span class="p">:</span><span class="w"> </span><span class="n">Marcel</span><span class="w"> </span><span class="n">Stimberg</span><span class="w"> </span><span class="o">&lt;</span><span class="n">marcel</span><span class="p">.</span><span class="n">stimberg</span><span class="nv">@inserm</span><span class="p">.</span><span class="n">fr</span><span class="o">&gt;</span><span class="w"></span>
+<span class="nc">Date</span><span class="err">:</span><span class="w">   </span><span class="n">Fri</span><span class="w"> </span><span class="n">Jul</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">16</span><span class="err">:</span><span class="mi">55</span><span class="err">:</span><span class="mi">56</span><span class="w"> </span><span class="mi">2020</span><span class="w"> </span><span class="o">+</span><span class="mi">0200</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">Do</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">turn</span><span class="w"> </span><span class="n">integers</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">floats</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">sympy</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">Closes</span><span class="w"> </span><span class="n">#1199</span><span class="p">,</span><span class="w"> </span><span class="n">closes</span><span class="w"> </span><span class="n">#812</span><span class="w"></span>
+</pre>
+
+
+<p>How this could lead to a spurious file appearing is certainly not obvious. I therefore double checked, but indeed: before that commit, the <em><span class="caps">COBAHH</span></em> example does not generate any file, but after the commit it consistently does. The changes in the commit do not seem to have anything to do with files or compilation, though. Ignoring the change in a <a href="%5Bdoctest%20%E2%80%94%20Test%20interactive%20Python%20examples%20%E2%80%94%20Python%203.9.7%20documentation%5D(https:/docs.python.org/3/library/doctest.html)">doctest</a>, the main change is given as:</p>
+<pre class="code literal-block"><span></span><span class="gh">diff --git a/brian2/parsing/rendering.py b/brian2/parsing/rendering.py</span>
+<span class="gh">index 76fa3107..e0186a94 100644</span>
+<span class="gd">--- a/brian2/parsing/rendering.py</span>
+<span class="gi">+++ b/brian2/parsing/rendering.py</span>
+<span class="gu">@@ -1,5 +1,5 @@</span>
+<span class="gd">-</span>
+ import ast
+<span class="gi">+import numbers</span>
+
+ import sympy
+
+<span class="gu">@@ -265,7 +265,10 @@ def render_NameConstant(self, node):</span>
+             return str(node.value)
+
+     def render_Num(self, node):
+<span class="gd">-        return sympy.Float(node.n)</span>
+<span class="gi">+        if isinstance(node.n, numbers.Integral):</span>
+<span class="gi">+            return sympy.Integer(node.n)</span>
+<span class="gi">+        else:</span>
+<span class="gi">+            return sympy.Float(node.n)</span>
+
+     def render_BinOp(self, node):
+         op_name = node.op.__class__.__name__
+</pre>
+
+
+<p>This was not as helpful as expected, let us therefore try a different approach.</p>
+<h4>Step-by-step debugging</h4>
+<p>At some point during the example run, the <code>-.o</code> file gets created – but when exactly? A quick check with statements checking <code>os.path.exists('-.o')</code> in the example file makes it clear that it happens during the <code>run</code> statement (which also includes the code generation and compilation), but I wouldn’t want to sprinkle such checks all over Brian’s code base. Instead, I turn to a tool that was made for that job, the <em>debugger</em> (who would have thought it could be useful for debugging!). Python comes with the built-in debugging tool <a href="%5Bpdb%20%E2%80%94%20The%20Python%20Debugger%20%E2%80%94%20Python%203.9.7%20documentation%5D(https:/docs.python.org/3/library/pdb.html)"><code>pdb</code></a>, but using a “graphical” debugger integrated in the <span class="caps">IDE</span> is much more convenient. In my case, I use the <a href="%5BPyCharm:%20the%20Python%20IDE%20for%20Professional%20Developers%20by%20JetBrains%5D(https:/www.jetbrains.com/pycharm/)">PyCharm <span class="caps">IDE</span></a> and its <a href="%5BDebugging%20with%20PyCharm%20%7C%20PyCharm%5D(https:/www.jetbrains.com/help/pycharm/debugging-python-code.html)">debugger</a>. Using a combination of breakpoints and stepping through the code, I can now figure out exactly when and where the file gets created. This process does take a while, since either I have to step through each and every line of code (and there are many of them), or I will step over big chunks at a time, but then I will have to run everything again with more fine-grained stepping/breakpoints.</p>
+<p>Using the latter approach, I find that the code is generated during the <code>before_run</code> period, and more specifically during the <code>before_run</code> code of the <code>StateUpdater</code>. This could explain why the <em><span class="caps">COBAHH</span></em> example shows the issue but <em><span class="caps">CUBA</span></em> does not – the two examples use different numerical integration methods (the purpose of the <code>StateUpdater</code>). Drilling further down, I find that the code is generated during the code generation process, and more specifically when target-code implementations of the mathematical functions are added. The function that triggers the file generation is <code>exprel</code> ($\mathrm{exprel}(x) = \frac{\exp(x) - 1}{x}$ with improved accuracy and defined for $x=0$). What is special about this function? The <code>exprel</code> function internally uses the C function <code>expm1</code> ($\mathrm{expm1}(x) = \exp(x) - 1$), but this function has only been added to the C standard with <a href="%5BC99%20-%20Wikipedia%5D(https:/en.wikipedia.org/wiki/C99)">C99</a>. As the name suggests, this standard is from 1999, but compilers have been slow implementing all of its features. For example, Microsoft’s Visual Studio compiler only started adding support with Visual Studio 2013! To make sure the compiler used to compile the Brian model supports C99, we have a function <code>compiler_supports_c99</code> (in <a href="https://github.com/brian-team/brian2/blob/master/brian2/codegen/cpp_prefs.py"><code>brian2.codegen.cpp_prefs</code></a>), which verifies that the compiler is recent enough.</p>
+<p>On Unix, this test runs the following command:</p>
+<pre class="code literal-block"><span></span><span class="nb">echo</span> <span class="s2">"#if (__STDC_VERSION__ &lt; 199901L)\n#error\n#endif"</span> <span class="p">|</span> cc -xc -c - &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</pre>
+
+
+<p>This tests preprocessor macros stating the standards support of the compiler, and raises an error if it is too old. Now, this command actually tries hard <em>not</em> to generate any file! Usually, you’d write the preprocessor macros to a <code>.c</code> file and run the compiler on this file. Instead, the code is printed to the standard output using <code>echo</code>, and then <a href="%5BPipeline%20(Unix)%20-%20Wikipedia%5D(https:/en.wikipedia.org/wiki/Pipeline_(Unix))">“piped”</a> into the <code>cc</code> compiler that is asked to take its input from <code>stdin</code> by using the special filename <code>-</code>. This does work and the test is performed correctly; the <code>-c</code> option tells the compiler to only compile things and not to bother with linking into an executable. But using <code>-c</code> here actually turns out to be the issue! As the <a href="https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html#Overall-Options">documentation</a> states, “The ultimate output is in the form of an object file for each source file.” Our “source file” in this case is named <code>-</code> (even though it is not an actual file), and the resulting object file is therefore named  – you guessed it – <code>-.o</code>!</p>
+<p>Once we have identified the problem, the fix is actually trivial: to perform the check, we do not actually have to run the compiler’s compilation step at all. The check only uses the preprocessor, so we can replace <code>-c</code> by <code>-E</code> which will happily print out everything to <code>stdout</code> instead of creating a new file. Problem solved by changing a single character in the code!</p>
+<h4>Did <code>git bisect</code> lie to us?</h4>
+<p>We found the source of the bug and a simple fix. But what about that commit we identified earlier using <code>git bisect</code> – this does not seem to have to do anything with the issue, the erroneous <code>compiler_supports_c99</code> check had been in the code much longer!</p>
+<p>When we look at the generated code of the <em><span class="caps">COBAHH</span></em> model before the commit in question, we see that it does not contain any call to <code>exprel</code>, but only to <code>exp</code>. This explains why it does not trigger the issue (if there is no reference to <code>exprel</code>, there is no need to check for C99 compatibility), but how can the code <em>not</em> refer to <code>exprel</code> when the equations clearly do? And what does this have to do with the fact whether number literals (e.g. the <code>13</code> in <code>exprel(13*mV - v)</code>) are interpreted as floating point numbers or integers?</p>
+<p>The answer lies in the mathematical transformations we perform for the equations, e.g. to apply the numerical integration algorithm. To do these kind of operations, we use the <a href="https://www.sympy.org">SymPy package</a> which has powerful facilities for symbolic handling of equations. When we use it to transform the equations, it can do all kind of operations that (at least potentially) simplify the equations without changing their meaning. For example, using the definition of $\mathrm{exprel}$ shown earlier, we could transform it in the following way when it gets applied to the argument $x - y$;</p>
+<p>$$
+\mathrm{exprel}(x - y) = \frac{\exp(x-y) - 1}{x - y} = \frac{\frac{\exp(x)}{\exp(y)} -1}{x -y}
+$$</p>
+<p>Admittedly, this does not really <em>simplify</em> things here, but if one of the variables is in fact a constant, e.g. $x = 2$, we could evaluate this value once and use it in the equations, i.e:</p>
+<p>$$
+\dots = \frac{\frac{7.389056099}{\exp(y)}-1}{2 - y}
+$$</p>
+<p>It turns out, <em>SymPy</em> will do these kind of transformations only when the numerical value (the $2$ in this example) is a floating point number, but not when it is an integer. This is understandable, since floating point numbers are not “ideal” numbers due to their limited precision, so something like $7.389056099 \approx \exp(2)$ is only <em>approximately</em> true:</p>
+<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sympy</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sympy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sympy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="mf">7.38905609893065</span>
+</pre>
+
+
+<p>This explains why earlier versions of Brian (where all number literals were interpreted as floating point numbers) sometimes got rid of <code>exprel</code> during the mathematical transformation of equations, whereas newer versions (which kept integer literals as integers) did not touch them. Removing the call to <code>exprel</code> and replacing it by variants of <code>exp</code> is actually not what we want, even if the two formulations are “mathematically equivalent”. The main reason for using <code>exprel</code> in the first place is to gain accuracy and to make the function more robust for a close-to-zero argument – replacing it will remove all these advantages. But this will be a discussion for another time, which you are more than welcome to follow in this <a href="https://github.com/brian-team/brian2/issues/1350">github issue</a> 😀.</p>
+<h3>Final remarks</h3>
+<p>Yet another time, the fix for an issue turned out to be trivial (a one character change!), but finding the issue was not straightforward at all. The bug also nicely demonstrated how things can be connected in unexpected ways in a complex software project: a change in the handling of integer literals in equations leads to differences in the treatment by <em>SymPy</em> which then leads to differences in the generated code and finally triggers a compiler check that wasn’t triggered before.</p>
+<p>Hope that you learned a thing or two from reading this blog post, and maybe it motivates you to fix a bug in Brian yourself! Comments very welcome, feel free to reach out on <a href="https://twitter.com/briansimulator">twitter</a> or on the <a href="https://brian.discourse.group">discussion forum</a>.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../tags/bug-hunt/" rel="tag">bug-hunt</a></li>
+            <li><a class="tag p-category" href="../../../tags/development/" rel="tag">Development</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../bug-hunt-episode-1-broken-latex-output-for-equations/" rel="prev" title="Bug hunt episode 1: Broken LaTeX output for equations">Previous post</a>
+            </li>
+        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><!--End of body content--><footer id="footer" class="text-center">
+            Contents © 2021         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../../assets/js/jquery.min.js"></script><script src="../../../assets/js/popper.min.js"></script><script src="../../../assets/js/bootstrap.min.js"></script><script src="../../../assets/js/baguetteBox.min.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+</body>
+</html>

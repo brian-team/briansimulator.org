@@ -127,7 +127,33 @@
 
         </div>
     </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-2-0-2/" class="u-url">Brian 2.0.2</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian2genn-1-0/" class="u-url">Brian2GeNN 1.0</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../../authors/brian-team/">Brian team</a>
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/brian2genn-1-0/" rel="bookmark">
+            <time class="published dt-published" datetime="2017-06-29T09:26:31Z" itemprop="datePublished" title="2017-06-29">2017-06-29</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>We are proud to announce the release of <strong>Brian2GeNN</strong>, the Brian 2 interface to the <a href="http://genn-team.github.io/genn/"><span class="caps">GPU</span>-enhanced Neuronal Network (GeNN)</a> simulator. With this interface, a Brian 2 script (as long as it only uses <a href="http://brian2genn.readthedocs.io/en/latest/introduction/exclusions.html">supported features</a>) can benefit from the potential performance benefits of a <span class="caps">GPU</span> by adding just two lines to the start of the script:
+<code>
+import brian2genn
+set_device(‘genn’)
+</code></p>
+<p>Brian2GeNN can be installed from the same Anaconda repository channel as Brian itself:</p>
+<p><code>conda install -c brian-team brian2genn</code></p>
+<p>This installation method will also include the GeNN simulator, while an installation from PyPI (via <code>pip install brian2genn</code>) will require a manual installation of GeNN. See the <a href="http://brian2genn.readthedocs.io">documentation (http://brian2genn.readthedocs.io)</a> for more details.</p>
+<p>Note that in all cases, users need a <span class="caps">CUDA</span>-capable <span class="caps">NVIDIA</span> <span class="caps">GPU</span> and a manual installation of the <span class="caps">CUDA</span> <span class="caps">SDK</span>.</p>
+<p>The actual performance benefits of using a <span class="caps">GPU</span> to run the simulation depend strongly on the details of the model but can be significant. With the Brian2GeNN package, we hope to make it as easy as possible for users to try it out for themselves.</p>
+<p>In case you run into problems with the installation of the package or with its use, please contact us at brian-development@googlegroups.com or open an issue on the <a href="https://github.com/brian-team/brian2genn/issues">Brian2GeNN bug tracker</a>.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-2-0-2/" class="u-url">Brian 2.0.2</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../../authors/brian-team/">Brian team</a>

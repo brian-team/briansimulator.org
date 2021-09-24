@@ -126,7 +126,33 @@
 
         </div>
     </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2021/bug-hunt-episode-1-broken-latex-output-for-equations/" class="u-url">Bug hunt episode 1: Broken LaTeX output for equations</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2021/bug-hunt-episode-2-a-strange-file-appears/" class="u-url">Bug hunt episode 2: a strange file appears</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../../authors/marcel-stimberg/">Marcel Stimberg</a>
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/2021/bug-hunt-episode-2-a-strange-file-appears/" rel="bookmark">
+            <time class="published dt-published" datetime="2021-09-24T00:00:00Z" itemprop="datePublished" title="2021-09-24">2021-09-24</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<!--
+.. title: Bug hunt episode 2: a strange file appears
+.. slug: bug-hunt-episode-2-a-strange-file-appears
+.. date: 2021-09-23
+.. tags: Development, bug-hunt
+.. category: article
+-->
+
+<p>This is the second article in the <a href="https://briansimulator.org/tags/bug-hunt/">“bug hunt” series</a>. In these articles, I go through a recent bug in Brian (or one of its dependencies) and describe all the steps I used to find the source of the bug and how I fixed it.</p>
+<p>Today’s bug is about a strangely named file that seemingly appears out of nowhere when running Brian simulations. The final fix for the bug will turn out to be a single character change in the Brian code base 😀!</p>
+<p class="more"><a href="../../posts/2021/bug-hunt-episode-2-a-strange-file-appears/">Read more…</a></p>
+</div>
+        <img src="../../images/articles/2021/bug-hunt-episode-2-a-strange-file-appears.png" alt="Preview image" class="d-none d-sm-block float-right m-2" width="120px" height="120px">
+</div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2021/bug-hunt-episode-1-broken-latex-output-for-equations/" class="u-url">Bug hunt episode 1: Broken LaTeX output for equations</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../../authors/marcel-stimberg/">Marcel Stimberg</a>
@@ -306,32 +332,6 @@ The Brian2GeNN release adds a workaround for a bug in some version of the glibc 
 <p><strong>How to get Brian 2</strong>: follow the <a href="http://brian2.readthedocs.io/en/2.1/introduction/install.html">installation instructions in the documentation </a></p>
 <p><strong>Further information about Brian2</strong>: <a class="moz-txt-link-freetext" href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 <p>As always, please report bugs or suggestions to the <a href="https://github.com/brian-team/brian2/issues">github bug tracker</a> or to the brian-development mailing list (<a class="moz-txt-link-abbreviated" href="mailto:brian-development@googlegroups.com">brian-development@googlegroups.com</a>).</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian2genn-1-0/" class="u-url">Brian2GeNN 1.0</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../../authors/brian-team/">Brian team</a>
-            </span></p>
-            <p class="dateline">
-            <a href="../../posts/brian2genn-1-0/" rel="bookmark">
-            <time class="published dt-published" datetime="2017-06-29T09:26:31Z" itemprop="datePublished" title="2017-06-29">2017-06-29</time></a>
-            </p>
-        </div>
-    </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
-<p>We are proud to announce the release of <strong>Brian2GeNN</strong>, the Brian 2 interface to the <a href="http://genn-team.github.io/genn/"><span class="caps">GPU</span>-enhanced Neuronal Network (GeNN)</a> simulator. With this interface, a Brian 2 script (as long as it only uses <a href="http://brian2genn.readthedocs.io/en/latest/introduction/exclusions.html">supported features</a>) can benefit from the potential performance benefits of a <span class="caps">GPU</span> by adding just two lines to the start of the script:
-<code>
-import brian2genn
-set_device(‘genn’)
-</code></p>
-<p>Brian2GeNN can be installed from the same Anaconda repository channel as Brian itself:</p>
-<p><code>conda install -c brian-team brian2genn</code></p>
-<p>This installation method will also include the GeNN simulator, while an installation from PyPI (via <code>pip install brian2genn</code>) will require a manual installation of GeNN. See the <a href="http://brian2genn.readthedocs.io">documentation (http://brian2genn.readthedocs.io)</a> for more details.</p>
-<p>Note that in all cases, users need a <span class="caps">CUDA</span>-capable <span class="caps">NVIDIA</span> <span class="caps">GPU</span> and a manual installation of the <span class="caps">CUDA</span> <span class="caps">SDK</span>.</p>
-<p>The actual performance benefits of using a <span class="caps">GPU</span> to run the simulation depend strongly on the details of the model but can be significant. With the Brian2GeNN package, we hope to make it as easy as possible for users to try it out for themselves.</p>
-<p>In case you run into problems with the installation of the package or with its use, please contact us at brian-development@googlegroups.com or open an issue on the <a href="https://github.com/brian-team/brian2genn/issues">Brian2GeNN bug tracker</a>.</p>
 </div>
     </div>
     </article>
