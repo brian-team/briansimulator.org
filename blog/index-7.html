@@ -14,30 +14,12 @@
 <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/blog/index-7.html">
 <link rel="icon" href="../logos/favicon.png" sizes="32x32">
 <link rel="prev" href="." type="text/html">
 <link rel="next" href="index-6.html" type="text/html">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-84065998-2', { 'anonymize_ip': true });
-</script><script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="../assets/css/custom.css">
-<!-- Global site tag (gtag.js) - Google Analytics --><!-- Hide notebook header on index pages --><style>
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible.io/js/plausible.js"></script><!-- Hide notebook header on index pages --><style>
     div.notebook-header {
         display: none;
     }
@@ -108,7 +90,7 @@ MathJax.Hub.Config({
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../rss.xml" class="nav-link">RSS feed</a>
+<a href="../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -143,7 +125,7 @@ MathJax.Hub.Config({
         </div>
     </header><div class="p-summary entry-summary d-flex">
         <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f0eade52200>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f0eade389e0>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_1_pyloric_network.png', 'title': 'Non-standard neuron modelling: the pyloric network', 'slug': 'elife-1-pyloric', 'date': '2020-01-28 16:46', 'tags': 'model, synapses', 'category': 'article', 'updated': '2020-01-28 16:46', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'data': '', 'filters': '', 'description': '', 'template': '', 'password': ''})}) -->
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f30bf518290>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f30bf4faa70>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_1_pyloric_network.png', 'title': 'Non-standard neuron modelling: the pyloric network', 'slug': 'elife-1-pyloric', 'date': '2020-01-28 16:46', 'tags': 'model, synapses', 'category': 'article', 'updated': '2020-01-28 16:46', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'password': '', 'description': '', 'template': ''})}) -->
     <div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
@@ -178,7 +160,7 @@ is selected.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>One of the great advantages of using Brian is that defining new non-standard model types is easy. In this article, we will build a highly simplified model of the pyloric circuit of the crustacean stomatogastric ganglion. This circuit generates a tri-phasic rhythmic pattern with alternating bursts of action potentials in different types of motor neurons. Here, we follow previous work (e.g. Golowasch et al., 1999) by modeling the circuit as consisting of three populations: AB/PD (anterior buster and pyloric dilator neurons), LP (lateral pyloric neurons), and PY (pyloric neurons). This model has a number of non-standard properties that will be described in the following annotated version of the code.</p>
+<p>One of the great advantages of using Brian is that defining new non-standard model types is easy. In this article, we will build a highly simplified model of the pyloric circuit of the crustacean stomatogastric ganglion. This circuit generates a tri-phasic rhythmic pattern with alternating bursts of action potentials in different types of motor neurons. Here, we follow previous work (e.g. Golowasch et al., 1999) by modeling the circuit as consisting of three populations: <span class="caps">AB</span>/<span class="caps">PD</span> (anterior buster and pyloric dilator neurons), <span class="caps">LP</span> (lateral pyloric neurons), and <span class="caps">PY</span> (pyloric neurons). This model has a number of non-standard properties that will be described in the following annotated version of the code.</p>
 <blockquote>
 <p>Golowasch, J., Casey, M., Abbott, L. F., <span class="amp">&amp;</span> Marder, E. (1999).<br>
 Network Stability from Activity-Dependent Regulation of Neuronal Conductances.<br>
@@ -227,7 +209,7 @@ Neural Computation, 11(5), 1079-1096.<br><a href="https://doi.org/10.1162/089976
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p>The <a href="https://incf.org"><abbr title=" International Neuroinformatics Coordinating Facility">INCF</abbr></a> is again applying to be a mentor organization in <a href="https://summerofcode.withgoogle.com/">Google’s Summer of Code program</a>, a “a global program focused on bringing more student developers into open source software development”. Changes are quite high that it will be selected, since its participation in the last years was very successful. If this is the case, there will be an opportunity to work on the Brian simulator, please see the list of <a href="https://docs.google.com/document/d/19xlhgizLcv5x4kjap3nXoQMTNGnxaV-qiq0vrSe-HMo">proposed projects</a> (Brian projects are number 8 and 9). Feel free to ask questions or discuss the project on the <a href="https://neurostars.org/">Neurostars forum</a> (find all projects in the <em>GSoC</em> category). It is not mandatory to work on one of the proposed projects, though, please contact <a href="mailto:marcel.stimberg@inserm.fr">marcel.stimberg@inserm.fr</a> if you have an idea of your own.</p>
+        <p>The <a href="https://incf.org"><abbr title=" International Neuroinformatics Coordinating Facility"><span class="caps">INCF</span></abbr></a> is again applying to be a mentor organization in <a href="https://summerofcode.withgoogle.com/">Google’s Summer of Code program</a>, a “a global program focused on bringing more student developers into open source software development”. Changes are quite high that it will be selected, since its participation in the last years was very successful. If this is the case, there will be an opportunity to work on the Brian simulator, please see the list of <a href="https://docs.google.com/document/d/19xlhgizLcv5x4kjap3nXoQMTNGnxaV-qiq0vrSe-HMo">proposed projects</a> (Brian projects are number 8 and 9). Feel free to ask questions or discuss the project on the <a href="https://neurostars.org/">Neurostars forum</a> (find all projects in the <em>GSoC</em> category). It is not mandatory to work on one of the proposed projects, though, please contact <a href="mailto:marcel.stimberg@inserm.fr">marcel.stimberg@inserm.fr</a> if you have an idea of your own.</p>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2020/brian2genn-paper/" class="u-url">Brian2GeNN paper published: accelerate Brian simulations with GPUs</a></h1>
         <div class="metadata">
@@ -243,11 +225,11 @@ Neural Computation, 11(5), 1079-1096.<br><a href="https://doi.org/10.1162/089976
         <div>
 <p>Our paper on <a href="https://brian2genn.readthedocs.io/en/stable/">brian2genn</a> was published today. It automatically translates
 Brian models into a format that can be read by the
-<a href="https://genn-team.github.io/genn/">GPU-enhanced neural network simulator (GeNN)</a> to allow it to run on GPU. Some
-simulations were 400x faster on GPU compared to a single CPU.</p>
+<a href="https://genn-team.github.io/genn/"><span class="caps">GPU</span>-enhanced neural network simulator (GeNN)</a> to allow it to run on <span class="caps">GPU</span>. Some
+simulations were 400x faster on <span class="caps">GPU</span> compared to a single <span class="caps">CPU</span>.</p>
 <div class="bg-light p-4">
 <p>
-Stimberg M, Goodman DFM, Nowotny T (2020)<br><a href="https://www.nature.com/articles/s41598-019-54957-7">Brian2GeNN: a system for accelerating a large variety of spiking neural networks with graphics hardware</a><br><i>Scientific Reports</i> <span class="text-muted">10, 410. doi: 10.1038/s41598-019-54957-7 
+Stimberg M, Goodman <span class="caps">DFM</span>, Nowotny T (2020)<br><a href="https://www.nature.com/articles/s41598-019-54957-7">Brian2GeNN: a system for accelerating a large variety of spiking neural networks with graphics hardware</a><br><i>Scientific Reports</i> <span class="text-muted">10, 410. doi: 10.1038/s41598-019-54957-7 
 </span></p>
 </div>
 </div>

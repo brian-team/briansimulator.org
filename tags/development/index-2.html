@@ -13,30 +13,12 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/tags/development/index-2.html">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
 <link rel="prev" href="index-3.html" type="text/html">
 <link rel="next" href="index-1.html" type="text/html">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-84065998-2', { 'anonymize_ip': true });
-</script><script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="../../assets/css/custom.css">
-<!-- Global site tag (gtag.js) - Google Analytics --><!-- Hide notebook header on index pages --><style>
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible.io/js/plausible.js"></script><!-- Hide notebook header on index pages --><style>
     div.notebook-header {
         display: none;
     }
@@ -108,7 +90,7 @@ MathJax.Hub.Config({
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -131,7 +113,7 @@ MathJax.Hub.Config({
             
                 <p class="feedlink">
                         
-            <a href="../development.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
+            <a href="../development.xml" hreflang="en" type="application/rss+xml"><span class="caps">RSS</span> feed</a>
 
                 </p>
 
@@ -330,7 +312,7 @@ Alternatively, you can directly download the package from the package index and 
 <ul>
 <li>A workaround that makes Brian2 work with the latest version of sympy (0.7.4) which introduced a bug in their differential equation solver.</li>
 <li>A C++ version of the SpikeQueue, the data structure responsible for the spike transmission. This feature needs a working C++ compiler and will lead to a performance gain.</li>
-<li>Faster synapse updates in pure numpy/Python for STDP-like rules</li>
+<li>Faster synapse updates in pure numpy/Python for <span class="caps">STDP</span>-like rules</li>
 <li>A more flexible approach for importing the brian2 package that should allow for different programming styles (see <a href="http://brian2.readthedocs.org/en/latest/introduction/import.html">the documentation</a>).</li>
 </ul>
 <p>Please report any comments/questions you may have to the <a href="http://groups.google.com/group/brian-development/">brian-development mailing list</a></p>
@@ -469,7 +451,7 @@ pip install –pre brian2</code></p>
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>We just added a new method <code>Connection.connect_from_sparse</code>(W, delay=None, column_access=True) which allows you to initialise a Connection object directly with any scipy sparse matrix. This has a huge memory efficiency gain if you use CSR/COO matrices, as by default Brian uses LIL which is very flexible but memory inefficient. For an even bigger memory efficiency gain, if you are not using STDP, set column_access=False. <a href="http://neuralensemble.org/trac/brian/wiki/Downloads">Download the SVN version of Brian</a> to start using this feature.</p>
+<p>We just added a new method <code>Connection.connect_from_sparse</code>(W, delay=None, column_access=True) which allows you to initialise a Connection object directly with any scipy sparse matrix. This has a huge memory efficiency gain if you use <span class="caps">CSR</span>/<span class="caps">COO</span> matrices, as by default Brian uses <span class="caps">LIL</span> which is very flexible but memory inefficient. For an even bigger memory efficiency gain, if you are not using <span class="caps">STDP</span>, set column_access=False. <a href="http://neuralensemble.org/trac/brian/wiki/Downloads">Download the <span class="caps">SVN</span> version of Brian</a> to start using this feature.</p>
 </div>
     </div>
     </article>

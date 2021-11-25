@@ -13,28 +13,10 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/brian-1-2-1/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-84065998-2', { 'anonymize_ip': true });
-</script><script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="../../assets/css/custom.css">
-<!-- Global site tag (gtag.js) - Google Analytics --><meta name="author" content="Brian team">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible.io/js/plausible.js"></script><meta name="author" content="Brian team">
 <link rel="prev" href="../brian-tutorial-slides/" title="Brian tutorial slides" type="text/html">
 <link rel="next" href="../new-paper-on-code-generation/" title="New paper on code generation" type="text/html">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
@@ -114,7 +96,7 @@ This is mostly a bug fixing release, and minor new features. One highlight is th
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -158,7 +140,7 @@ This is mostly a bug fixing release, and minor new features. One highlight is th
     <div>
 <p></p>
 <p>We have just released <a href="https://neuralensemble.org/trac/brian/wiki/Downloads">Brian 1.2.1</a>.</p>
-<p>This is mostly a bug fixing release, and minor new features. One highlight is the new remote control system which allows you to interact with a Brian script as it is running - e.g. changing parameter values, plotting intermediate results, etc. Also, GPU support on 64 bit and Linux machines is now much better.</p>
+<p>This is mostly a bug fixing release, and minor new features. One highlight is the new remote control system which allows you to interact with a Brian script as it is running - e.g. changing parameter values, plotting intermediate results, etc. Also, <span class="caps">GPU</span> support on 64 bit and Linux machines is now much better.</p>
 <p>Major features:</p>
 <ul>
 <li>New remote controlling of running Brian scripts via RemoteControlServer
@@ -177,10 +159,10 @@ In addition, garbage collection is called after a clear.</li>
 <p>Improvements</p>
 <ul>
 <li>The sparseness keyword in connect_random can be a function</li>
-<li>Added ‘wmin’ to STDP</li>
-<li>You can now access STDP internal variables, e.g. stdp.A_pre, and monitor
+<li>Added ‘wmin’ to <span class="caps">STDP</span></li>
+<li>You can now access <span class="caps">STDP</span> internal variables, e.g. stdp.A_pre, and monitor
 them by doing e.g. StateMonitor(stdp.pre_group, ‘A_pre’)</li>
-<li>STDP now supports nonlinear equations and parameters</li>
+<li><span class="caps">STDP</span> now supports nonlinear equations and parameters</li>
 <li>refractory can now be a vector (see docstring for NeuronGroup) for constant
 resets.</li>
 <li>modelfitting now uses playdoh library</li>

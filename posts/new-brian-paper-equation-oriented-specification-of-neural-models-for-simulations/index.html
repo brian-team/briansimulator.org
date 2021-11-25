@@ -13,28 +13,10 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/new-brian-paper-equation-oriented-specification-of-neural-models-for-simulations/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-84065998-2', { 'anonymize_ip': true });
-</script><script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="../../assets/css/custom.css">
-<!-- Global site tag (gtag.js) - Google Analytics --><meta name="author" content="Brian team">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible.io/js/plausible.js"></script><meta name="author" content="Brian team">
 <link rel="prev" href="../yet-another-alpha-brian-2-0/" title="Yet another alpha version of Brian 2.0" type="text/html">
 <link rel="next" href="../new-alpha-version-of-brian-2/" title="New alpha version of Brian 2" type="text/html">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
@@ -112,7 +94,7 @@ MathJax.Hub.Config({
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -155,7 +137,7 @@ MathJax.Hub.Config({
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p></p>
-<p>We have just had a new paper <a href="http://www.frontiersin.org/Journal/10.3389/fninf.2014.00006/abstract">Equation-oriented specification of neural models for simulations</a> published in the <a href="http://www.frontiersin.org/Neuroinformatics/researchtopics/Python_in_Neuroscience_II/1591">Python in Neuroscience II</a> special edition of <a href="http://www.frontiersin.org/Neuroinformatics">Frontiers in Neuroinformatics</a>. In this paper we describe the new approach to neural model specification we’re taking in Brian 2.</p>
+<p>We have just had a new paper <a href="http://www.frontiersin.org/Journal/10.3389/fninf.2014.00006/abstract">Equation-oriented specification of neural models for simulations</a> published in the <a href="http://www.frontiersin.org/Neuroinformatics/researchtopics/Python_in_Neuroscience_II/1591">Python in Neuroscience <span class="caps">II</span></a> special edition of <a href="http://www.frontiersin.org/Neuroinformatics">Frontiers in Neuroinformatics</a>. In this paper we describe the new approach to neural model specification we’re taking in Brian 2.</p>
 <p>Abstract below:
 </p>
 <blockquote>Simulating biological neuronal networks is a core method of research in computational neuroscience. A full specification of such a network model includes a description of the dynamics and state changes of neurons and synapses, as well as the synaptic connectivity patterns and the initial values of all parameters. A standard approach in neuronal modeling software is to build network models based on a library of pre-defined components and mechanisms; if a model component does not yet exist, it has to be defined in a special-purpose or general low-level language and potentially be compiled and linked with the simulator. Here we propose an alternative approach that allows flexible definition of models by writing textual descriptions based on mathematical notation. We demonstrate that this approach allows the definition of a wide range of models with minimal syntax. Furthermore, such explicit model descriptions allow the generation of executable code for various target languages and devices, since the description is not tied to an implementation. Finally, this approach also has advantages for readability and reproducibility, because the model description is fully explicit, and because it can be automatically parsed and transformed into formatted descriptions. The presented approach has been implemented in the Brian2 simulator.</blockquote>

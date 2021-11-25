@@ -13,28 +13,10 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/better-sparse-matrix-support/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-84065998-2"></script><script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-84065998-2', { 'anonymize_ip': true });
-</script><script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script><link rel="stylesheet" type="text/css" href="../../assets/css/custom.css">
-<!-- Global site tag (gtag.js) - Google Analytics --><meta name="author" content="Brian team">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible.io/js/plausible.js"></script><meta name="author" content="Brian team">
 <link rel="prev" href="../about-the-new-website/" title="About the new website" type="text/html">
 <link rel="next" href="../brian-1-4-is-out/" title="Brian 1.4 is out!" type="text/html">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
@@ -113,7 +95,7 @@ MathJax.Hub.Config({
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -156,7 +138,7 @@ MathJax.Hub.Config({
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p></p>
-<p>We just added a new method <code>Connection.connect_from_sparse</code>(W, delay=None, column_access=True) which allows you to initialise a Connection object directly with any scipy sparse matrix. This has a huge memory efficiency gain if you use CSR/COO matrices, as by default Brian uses LIL which is very flexible but memory inefficient. For an even bigger memory efficiency gain, if you are not using STDP, set column_access=False. <a href="http://neuralensemble.org/trac/brian/wiki/Downloads">Download the SVN version of Brian</a> to start using this feature.</p>
+<p>We just added a new method <code>Connection.connect_from_sparse</code>(W, delay=None, column_access=True) which allows you to initialise a Connection object directly with any scipy sparse matrix. This has a huge memory efficiency gain if you use <span class="caps">CSR</span>/<span class="caps">COO</span> matrices, as by default Brian uses <span class="caps">LIL</span> which is very flexible but memory inefficient. For an even bigger memory efficiency gain, if you are not using <span class="caps">STDP</span>, set column_access=False. <a href="http://neuralensemble.org/trac/brian/wiki/Downloads">Download the <span class="caps">SVN</span> version of Brian</a> to start using this feature.</p>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
