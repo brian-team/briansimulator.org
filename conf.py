@@ -1531,7 +1531,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # before </head>
 # (translatable)
 EXTRA_HEAD_DATA = '''
-<script defer data-domain="briansimulator.org" src="https://plausible.io/js/plausible.js"></script>
+<script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/js/script.js"></script>
 '''
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
