@@ -13,10 +13,22 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/new-paper-on-playdoh/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
 <link rel="prev" href="../brian-second-most-popular-simulator/" title="Brian second most popular simulator" type="text/html">
 <link rel="next" href="../new-paper-on-brian-hears/" title="New paper on Brian Hears" type="text/html">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
@@ -95,7 +107,7 @@ Rossant C, Fontaine B, Goodman DFM (2011). Playdoh: a lightweight Python package
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -139,7 +151,7 @@ Rossant C, Fontaine B, Goodman DFM (2011). Playdoh: a lightweight Python package
     <div>
 <p></p>
 <p>The following paper has just been accepted for publication:</p>
-<p>Rossant C, Fontaine B, Goodman <span class="caps">DFM</span> (2011). <strong>Playdoh: a lightweight Python package for distributed computing and optimisation.</strong> <em>Journal of Computational Science </em>(in press)</p>
+<p>Rossant C, Fontaine B, Goodman DFM (2011). <strong>Playdoh: a lightweight Python package for distributed computing and optimisation.</strong> <em>Journal of Computational Science </em>(in press)</p>
 <p><strong>Abstract</strong>
 Parallel computing is now an essential paradigm for high performance scientific computing. Most existing hardware and software solutions are expensive or difficult to use. We developed Playdoh, a Python library for distributing computations across the free computing units available in a small network of multicore computers. Playdoh supports independent and loosely coupled parallel problems such as global optimisations, Monte Carlo simulations and numerical integration of partial differential equations. It is designed to be lightweight and easy to use and should be of interest to scientists wanting to turn their lab computers into a small cluster at no cost.</p>
 <p>Brian users might find the package (available <a href="http://code.google.com/p/playdoh/">here</a>) and the paper (<a href="http://dl.dropbox.com/u/556426/playdoh-preprint.pdf">preprint</a>) interesting.</p>

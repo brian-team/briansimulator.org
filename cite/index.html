@@ -13,10 +13,22 @@
 <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/cite/">
 <link rel="icon" href="../logos/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
 <meta property="og:title" content="How to cite Brian">
 <meta property="og:url" content="https://briansimulator.org/cite/">
@@ -98,7 +110,7 @@ eLife 8:e47314. doi: 10.7554">
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -132,7 +144,7 @@ eLife 8:e47314. doi: 10.7554">
 <p>When you use Brian in your research, please cite our main paper:</p>
 <div class="alert alert-success" role="alert">
 <p>
-Stimberg M, Brette R, Goodman <span class="caps">DFM</span> (2019)<br><a href="https://elifesciences.org/articles/47314">Brian 2, an intuitive and efficient neural simulator</a><br><i>eLife</i> <span class="text-muted">8:e47314. doi: 10.7554/eLife.47314
+Stimberg M, Brette R, Goodman DFM (2019)<br><a href="https://elifesciences.org/articles/47314">Brian 2, an intuitive and efficient neural simulator</a><br><i>eLife</i> <span class="text-muted">8:e47314. doi: 10.7554/eLife.47314
 </span></p>
 <details><summary>BibTeX (click to expand)</summary><pre class="code literal-block"><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">Stimberg2019</span><span class="p">,</span>
     <span class="na">title</span> <span class="p">=</span> <span class="s">{Brian 2, an intuitive and efficient neural simulator}</span><span class="p">,</span>
@@ -153,7 +165,7 @@ Stimberg M, Brette R, Goodman <span class="caps">DFM</span> (2019)<br><a href="h
 </div>
 
 <p><br>
-Some journals use an <abbr title="Research Resource Identifiers"><span class="caps">RRID</span></abbr> to reference software tools. The Brian simulator
+Some journals use an <abbr title="Research Resource Identifiers">RRID</abbr> to reference software tools. The Brian simulator
 is registered as <a href="https://scicrunch.org/resolver/SCR_002998">SCR_002998</a>.</p>
 <p>To cite a specific version of Brian, you can refer to the identifiers stored on <a href="https://doi.org/10.5281/zenodo.654861">Zenodo</a>:</p>
 <div class="zenodo-versions">

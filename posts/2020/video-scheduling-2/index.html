@@ -13,10 +13,22 @@
 <link href="../../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/2020/video-scheduling-2/">
 <link rel="icon" href="../../../logos/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
 <link rel="prev" href="../brian-24/" title="New release: Brian 2.4" type="text/html">
 <link rel="next" href="../../2021/live-session-on-brian-development/" title="Live session on Brian development" type="text/html">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
@@ -98,7 +110,7 @@
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../../../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -140,7 +152,7 @@
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f30bf518ef0>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f30bf518f80>, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_2.png', 'title': 'Getting the timing right (scheduling\xa02)', 'slug': 'video-scheduling-2', 'date': '2020-10-08 9:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-10-08 9:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'password': '', 'description': '', 'template': ''})}) -->
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f5f7a0c35f0>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f5f7a128b90>, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_2.png', 'title': 'Getting the timing right (scheduling\xa02)', 'slug': 'video-scheduling-2', 'date': '2020-10-08 9:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-10-08 9:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'password': '', 'data': '', 'description': '', 'template': '', 'filters': ''})}) -->
     <div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
@@ -263,10 +275,10 @@ is selected.
 
 
 
-<div id="d941cb03-26ae-4b77-ba6c-3575124791a8"></div>
+<div id="b27546ff-074b-4bf5-bc66-5058cf14b51e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d941cb03-26ae-4b77-ba6c-3575124791a8');
+var element = $('#b27546ff-074b-4bf5-bc66-5058cf14b51e');
 /* Put everything inside the global mpl namespace */
 /* global mpl */
 window.mpl = {};
@@ -998,7 +1010,7 @@ mpl.figure.prototype.handle_close = function (fig, msg) {
     // Update the output cell to use the data from the current canvas.
     fig.push_to_output();
     var dataURL = fig.canvas.toDataURL();
-    // Re-enable the keyboard manager in IPython - without this line, in <span class="caps">FF</span>,
+    // Re-enable the keyboard manager in IPython - without this line, in FF,
     // the notebook keyboard shortcuts fail.
     IPython.keyboard_manager.enable();
     fig.parent_element.innerHTML =
@@ -1024,7 +1036,7 @@ mpl.figure.prototype.updated_canvas_event = function () {
     IPython.notebook.set_dirty(true);
     this.send_message('ack', {});
     var fig = this;
-    // Wait a second, then push the new image to the <span class="caps">DOM</span> so
+    // Wait a second, then push the new image to the DOM so
     // that it is saved nicely (might be nice to debounce this).
     setTimeout(function () {
         fig.push_to_output();
@@ -1329,10 +1341,10 @@ if (IPython.notebook.kernel !== null) {
 
 
 
-<div id="50279b83-56e8-4269-89a3-38ebe1c257a0"></div>
+<div id="7789c0f8-b594-4161-8f80-ae0f80157708"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#50279b83-56e8-4269-89a3-38ebe1c257a0');
+var element = $('#7789c0f8-b594-4161-8f80-ae0f80157708');
 /* Put everything inside the global mpl namespace */
 /* global mpl */
 window.mpl = {};
@@ -2064,7 +2076,7 @@ mpl.figure.prototype.handle_close = function (fig, msg) {
     // Update the output cell to use the data from the current canvas.
     fig.push_to_output();
     var dataURL = fig.canvas.toDataURL();
-    // Re-enable the keyboard manager in IPython - without this line, in <span class="caps">FF</span>,
+    // Re-enable the keyboard manager in IPython - without this line, in FF,
     // the notebook keyboard shortcuts fail.
     IPython.keyboard_manager.enable();
     fig.parent_element.innerHTML =
@@ -2090,7 +2102,7 @@ mpl.figure.prototype.updated_canvas_event = function () {
     IPython.notebook.set_dirty(true);
     this.send_message('ack', {});
     var fig = this;
-    // Wait a second, then push the new image to the <span class="caps">DOM</span> so
+    // Wait a second, then push the new image to the DOM so
     // that it is saved nicely (might be nice to debounce this).
     setTimeout(function () {
         fig.push_to_output();
@@ -2602,10 +2614,10 @@ if (IPython.notebook.kernel !== null) {
 
 
 
-<div id="c6f28576-c43f-4fa2-b1d7-88be549d18ad"></div>
+<div id="1afa2a22-e191-418e-8ff9-d1d0dd312f96"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c6f28576-c43f-4fa2-b1d7-88be549d18ad');
+var element = $('#1afa2a22-e191-418e-8ff9-d1d0dd312f96');
 /* Put everything inside the global mpl namespace */
 /* global mpl */
 window.mpl = {};
@@ -3337,7 +3349,7 @@ mpl.figure.prototype.handle_close = function (fig, msg) {
     // Update the output cell to use the data from the current canvas.
     fig.push_to_output();
     var dataURL = fig.canvas.toDataURL();
-    // Re-enable the keyboard manager in IPython - without this line, in <span class="caps">FF</span>,
+    // Re-enable the keyboard manager in IPython - without this line, in FF,
     // the notebook keyboard shortcuts fail.
     IPython.keyboard_manager.enable();
     fig.parent_element.innerHTML =
@@ -3363,7 +3375,7 @@ mpl.figure.prototype.updated_canvas_event = function () {
     IPython.notebook.set_dirty(true);
     this.send_message('ack', {});
     var fig = this;
-    // Wait a second, then push the new image to the <span class="caps">DOM</span> so
+    // Wait a second, then push the new image to the DOM so
     // that it is saved nicely (might be nice to debounce this).
     setTimeout(function () {
         fig.push_to_output();

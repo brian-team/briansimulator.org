@@ -13,12 +13,24 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/categories/news/index-4.html">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
 <link rel="prev" href="." type="text/html">
 <link rel="next" href="index-3.html" type="text/html">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><!-- Hide notebook header on index pages --><style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><!-- Hide notebook header on index pages --><style>
     div.notebook-header {
         display: none;
     }
@@ -90,7 +102,7 @@
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -113,7 +125,7 @@
             
                 <p class="feedlink">
                         
-            <a href="../news.xml" hreflang="en" type="application/rss+xml"><span class="caps">RSS</span> feed</a>
+            <a href="../news.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
@@ -178,8 +190,8 @@ The Brian2GeNN release adds a workaround for a bug in some version of the glibc 
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>We are happy to announce the release of <strong>Brian 2.1</strong>. This release includes a number of fixes and small improvements, and two new major features: support for numerical integration with adaptive-timestep methods based on the <span class="caps">GNU</span> Scientific Library, and caching of code generation leading to faster simulation setup times, in particular for multiple runs of the same model. For an extensive list of changes, see the <a href="http://brian2.readthedocs.io/en/2.1/introduction/release_notes.html">release notes</a>. We recommend all users of Brian 2 to update.</p>
-<p>We also release a new version 1.1. of <a href="http://brian2genn.readthedocs.io"><strong>Brian2GeNN</strong></a>, Brian’s interface to the <span class="caps">GPU</span>-enhanced Neuronal Network simulation environment (<a href="http://genn-team.github.io/genn/">GeNN</a>). This release does not contain any major new features except for bug and compatibility fixes, but an update is required for all users that update to Brian 2.1.</p>
+<p>We are happy to announce the release of <strong>Brian 2.1</strong>. This release includes a number of fixes and small improvements, and two new major features: support for numerical integration with adaptive-timestep methods based on the GNU Scientific Library, and caching of code generation leading to faster simulation setup times, in particular for multiple runs of the same model. For an extensive list of changes, see the <a href="http://brian2.readthedocs.io/en/2.1/introduction/release_notes.html">release notes</a>. We recommend all users of Brian 2 to update.</p>
+<p>We also release a new version 1.1. of <a href="http://brian2genn.readthedocs.io"><strong>Brian2GeNN</strong></a>, Brian’s interface to the GPU-enhanced Neuronal Network simulation environment (<a href="http://genn-team.github.io/genn/">GeNN</a>). This release does not contain any major new features except for bug and compatibility fixes, but an update is required for all users that update to Brian 2.1.</p>
 <p><strong>How to get Brian 2</strong>: follow the <a href="http://brian2.readthedocs.io/en/2.1/introduction/install.html">installation instructions in the documentation </a></p>
 <p><strong>Further information about Brian2</strong>: <a class="moz-txt-link-freetext" href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 <p>As always, please report bugs or suggestions to the <a href="https://github.com/brian-team/brian2/issues">github bug tracker</a> or to the brian-development mailing list (<a class="moz-txt-link-abbreviated" href="mailto:brian-development@googlegroups.com">brian-development@googlegroups.com</a>).</p>
@@ -198,7 +210,7 @@ The Brian2GeNN release adds a workaround for a bug in some version of the glibc 
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>We are proud to announce the release of <strong>Brian2GeNN</strong>, the Brian 2 interface to the <a href="http://genn-team.github.io/genn/"><span class="caps">GPU</span>-enhanced Neuronal Network (GeNN)</a> simulator. With this interface, a Brian 2 script (as long as it only uses <a href="http://brian2genn.readthedocs.io/en/latest/introduction/exclusions.html">supported features</a>) can benefit from the potential performance benefits of a <span class="caps">GPU</span> by adding just two lines to the start of the script:
+<p>We are proud to announce the release of <strong>Brian2GeNN</strong>, the Brian 2 interface to the <a href="http://genn-team.github.io/genn/">GPU-enhanced Neuronal Network (GeNN)</a> simulator. With this interface, a Brian 2 script (as long as it only uses <a href="http://brian2genn.readthedocs.io/en/latest/introduction/exclusions.html">supported features</a>) can benefit from the potential performance benefits of a GPU by adding just two lines to the start of the script:
 <code>
 import brian2genn
 set_device(‘genn’)
@@ -206,8 +218,8 @@ set_device(‘genn’)
 <p>Brian2GeNN can be installed from the same Anaconda repository channel as Brian itself:</p>
 <p><code>conda install -c brian-team brian2genn</code></p>
 <p>This installation method will also include the GeNN simulator, while an installation from PyPI (via <code>pip install brian2genn</code>) will require a manual installation of GeNN. See the <a href="http://brian2genn.readthedocs.io">documentation (http://brian2genn.readthedocs.io)</a> for more details.</p>
-<p>Note that in all cases, users need a <span class="caps">CUDA</span>-capable <span class="caps">NVIDIA</span> <span class="caps">GPU</span> and a manual installation of the <span class="caps">CUDA</span> <span class="caps">SDK</span>.</p>
-<p>The actual performance benefits of using a <span class="caps">GPU</span> to run the simulation depend strongly on the details of the model but can be significant. With the Brian2GeNN package, we hope to make it as easy as possible for users to try it out for themselves.</p>
+<p>Note that in all cases, users need a CUDA-capable NVIDIA GPU and a manual installation of the CUDA SDK.</p>
+<p>The actual performance benefits of using a GPU to run the simulation depend strongly on the details of the model but can be significant. With the Brian2GeNN package, we hope to make it as easy as possible for users to try it out for themselves.</p>
 <p>In case you run into problems with the installation of the package or with its use, please contact us at brian-development@googlegroups.com or open an issue on the <a href="https://github.com/brian-team/brian2genn/issues">Brian2GeNN bug tracker</a>.</p>
 </div>
     </div>
@@ -285,7 +297,7 @@ Brian 2 was written by Marcel Stimberg, Dan Goodman and Romain Brette.
 <p>We would also like to thank the large number of users (over 40) who contributed code, bug reports, etc.</p>
 </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-tutorial-cns-2015/" class="u-url">Brian tutorial at <span class="caps">CNS</span> 2015</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-tutorial-cns-2015/" class="u-url">Brian tutorial at CNS 2015</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../../authors/brian-team/">Brian team</a>
@@ -298,7 +310,7 @@ Brian 2 was written by Marcel Stimberg, Dan Goodman and Romain Brette.
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>On <strong>July 18th 2015</strong>, we’ll have a tutorial on “Modelling of spiking neural networks with Brian” at the <a href="http://www.cnsorg.org/cns-2015-prague"><span class="caps">CNS</span> conference</a> in Prague. It will feature introductory sessions in the morning (no prior Brian knowledge necessary) and more advanced topics in the afternoon. Follow this link to find the <a href="https://briansimulator.org/brian-tutorial-at-cns-2015">preliminary schedule</a>.</p>
+<p>On <strong>July 18th 2015</strong>, we’ll have a tutorial on “Modelling of spiking neural networks with Brian” at the <a href="http://www.cnsorg.org/cns-2015-prague">CNS conference</a> in Prague. It will feature introductory sessions in the morning (no prior Brian knowledge necessary) and more advanced topics in the afternoon. Follow this link to find the <a href="https://briansimulator.org/brian-tutorial-at-cns-2015">preliminary schedule</a>.</p>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/google-summer-of-code-2015/" class="u-url">Google Summer of Code 2015</a></h1>
@@ -314,7 +326,7 @@ Brian 2 was written by Marcel Stimberg, Dan Goodman and Romain Brette.
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<a href="http://www.google-melange.com/gsoc/homepage/google/gsoc2015">Google Summer of Code 2015</a> (“a program that offers student developers stipends to write code for various open source projects.”) has announced the accepted mentoring organisations yesterday, among them the <a href="http://incf.org/">International Neuroinformatics Coordinating Facility</a> (<span class="caps">INCF</span>). <strong>Under the umbrella of the <span class="caps">INCF</span>, it is possible to work on Brian!</strong> We have added an idea for a project (<a href="http://incf.org/gsoc/2015/proposals/#-span----nbsp---span--span-improving-the-brian-simulator-s-interoperability-with-simulator-independent-model-description-languages--span-">“Improving the Brian simulator’s interoperability with simulator-independent model-description languages”</a>) to the <span class="caps">INCF</span> webpage, but you are free to come up with a proposal of your own.
+<a href="http://www.google-melange.com/gsoc/homepage/google/gsoc2015">Google Summer of Code 2015</a> (“a program that offers student developers stipends to write code for various open source projects.”) has announced the accepted mentoring organisations yesterday, among them the <a href="http://incf.org/">International Neuroinformatics Coordinating Facility</a> (INCF). <strong>Under the umbrella of the INCF, it is possible to work on Brian!</strong> We have added an idea for a project (<a href="http://incf.org/gsoc/2015/proposals/#-span----nbsp---span--span-improving-the-brian-simulator-s-interoperability-with-simulator-independent-model-description-languages--span-">“Improving the Brian simulator’s interoperability with simulator-independent model-description languages”</a>) to the INCF webpage, but you are free to come up with a proposal of your own.
 <p>The application period starts on March 16th, but now would be the time to discuss ideas with us. Head over to our <a href="https://groups.google.com/forum/#!forum/brian-development">mailing list</a> (<em>brian-development@googlegroups.com</em>) if you have questions and/or ideas.</p>
 </div>
     </div>

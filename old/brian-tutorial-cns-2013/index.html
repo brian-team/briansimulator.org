@@ -13,10 +13,22 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/old/brian-tutorial-cns-2013/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
 <meta property="og:title" content="Brian tutorial at CNS 2013">
 <meta property="og:url" content="https://briansimulator.org/old/brian-tutorial-cns-2013/">
@@ -94,7 +106,7 @@ The tutorial took place in the “Éspace Curie” at the 4th floor of the Unive
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -118,7 +130,7 @@ The tutorial took place in the “Éspace Curie” at the 4th floor of the Unive
         
         
         
-<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Brian tutorial at <span class="caps">CNS</span> 2013</a></h1>
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Brian tutorial at CNS 2013</a></h1>
 
         
 
@@ -126,11 +138,11 @@ The tutorial took place in the “Éspace Curie” at the 4th floor of the Unive
     <div>
 <p></p>
 <h3>Advanced modelling of spiking neural networks with Brian</h3>
-Tutorial at <a href="http://www.cnsorg.org/cns-2013-paris"><span class="caps">CNS</span> 2013</a>, Paris (<strong>July 13th 2013</strong>)
+Tutorial at <a href="http://www.cnsorg.org/cns-2013-paris">CNS 2013</a>, Paris (<strong>July 13th 2013</strong>)
 The tutorial took place in the “Éspace Curie” at the 4th floor of the University Paris Descartes, 45 Rue des Saints-Pères (<a href="http://media2.parisdescartes.fr/?d=NDQ5NzA%3D">map of the building</a>).
 <h4>Material</h4>
 The material is in a github repository: <a href="https://github.com/brian-team/brian-material">https://github.com/brian-team/brian-material</a>
-You can clone the repository using git, but you can also download all the material in a single <a href="https://github.com/brian-team/brian-material/archive/master.zip"><span class="caps">ZIP</span> file</a>.
+You can clone the repository using git, but you can also download all the material in a single <a href="https://github.com/brian-team/brian-material/archive/master.zip">ZIP file</a>.
 <p>Some of the folders include examples in the form of ipython notebooks (.ipynb files). More information on the ipython notebook can be found at the <a href="http://ipython.org/notebook.html">ipython website</a> – if you have a recent version of ipython, you also have the notebook, try starting it with:
 </p>
 <p><code>ipython notebook –pylab=inline</code></p>

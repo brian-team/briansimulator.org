@@ -13,11 +13,23 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/tags/release/index-1.html">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
 <link rel="prev" href="index-2.html" type="text/html">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><!-- Hide notebook header on index pages --><style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><!-- Hide notebook header on index pages --><style>
     div.notebook-header {
         display: none;
     }
@@ -89,7 +101,7 @@
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -112,7 +124,7 @@
             
                 <p class="feedlink">
                         
-            <a href="../release.xml" hreflang="en" type="application/rss+xml"><span class="caps">RSS</span> feed</a>
+            <a href="../release.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
 
                 </p>
 
@@ -242,7 +254,7 @@ Minor features:
 <ul>
 <li>Convenience methods for the Synapses class, allowing to save and load the connectivity and to convert the weights into a matrix</li>
     <li>A new openmp option to switch on the use of OpenMP pragmas in generated C code</li>
-    <li>Brian hears: Two new models, MiddleEar (filtering by the middle ear) and ZhangSynapse (model of the <span class="caps">IHC</span>-<span class="caps">AN</span> synapse)</li>
+    <li>Brian hears: Two new models, MiddleEar (filtering by the middle ear) and ZhangSynapse (model of the IHC-AN synapse)</li>
     <li>Brian hears: New convenience functions to get reasonable axis ticks for logarithmic axes</li>
 </ul>
 Improvements:
@@ -289,7 +301,7 @@ Experimental features:
 <p>The 1.4 release of Brian is out!</p>
 <p>The major change in this version is the addition of a new Synapses class, which allows modeling everything synaptic: gap junctions, probabilistic synapses, nonlinear synapses, plasticity, etc. There are also a number of other new features, bug fixes and improvements (see below).</p>
 <p>Brian is being developed by Romain Brette and Dan Goodman. This version also includes contributions by Bertrand Fontaine, Cyrille Rossant, Victor Benichoux, Marcel Stimberg and Jonathan Laudanski.</p>
-<p>We take advantage of this announcement to inform Brian users that we are currently discussing the development of Brian 2.0, a rewriting of Brian, intended to be simpler, faster, and to be able to run on external devices (e.g. <span class="caps">GPU</span>). We will make an announcement on our <a href="http://groups.google.fr/group/briansupport">mailing list </a>soon, where we will ask for user opinions.</p>
+<p>We take advantage of this announcement to inform Brian users that we are currently discussing the development of Brian 2.0, a rewriting of Brian, intended to be simpler, faster, and to be able to run on external devices (e.g. GPU). We will make an announcement on our <a href="http://groups.google.fr/group/briansupport">mailing list </a>soon, where we will ask for user opinions.</p>
 <p><strong>New features since 1.3.1</strong></p>
 <p>Major features:
 </p>
@@ -355,12 +367,12 @@ Experimental features:
     <li>Many more examples from papers</li>
     <li>New electrode compensation module (in library.electrophysiology)</li>
     <li>New trace analysis module (in library.electrophysiology)</li>
-    <li>Added new brian.tools.taskfarm.run_tasks function to use multiple CPUs to perform multiple runs of a simulation and save results to a DataManager, with an optional <span class="caps">GUI</span> interface.</li>
+    <li>Added new brian.tools.taskfarm.run_tasks function to use multiple CPUs to perform multiple runs of a simulation and save results to a DataManager, with an optional GUI interface.</li>
     <li>Added FractionalDelay filterbank to brian.hears, fractional itds to HeadlessDatabase and fractional shifts to Sound.shifted.</li>
     <li>Added vowel function to brian.hears for creating artificial vowel sounds</li>
     <li>New spike_triggered_average function</li>
     <li>Added maxlevel and atmaxlevel to Sound</li>
-    <li>New <span class="caps">IRNS</span>/<span class="caps">IRNO</span> noise functions</li>
+    <li>New IRNS/IRNO noise functions</li>
 </ul>
 Improvements:
 <ul>
@@ -377,7 +389,7 @@ Bug fixes:
     <li>MultiConnection now propagates reinit (important for monitors) (#76)</li>
     <li>Fixed bug in realtime plotting</li>
     <li>Fixed various bugs in Sound</li>
-    <li>Fixed bugs in <span class="caps">STDP</span></li>
+    <li>Fixed bugs in STDP</li>
     <li>Now propagates spikes only if spikes exist (#78)</li>
 </ul>
 </div>
@@ -396,7 +408,7 @@ Bug fixes:
         <div>
 <p></p>
 <p>The 1.3 release of Brian is out!</p>
-<p>The major change in this version is the addition of the<a href="http://www.briansimulator.org/docs/hears.html"> Brian.hears package for auditory modelling</a>. This version also includes an update to the toolbox for fitting neural models to electrophysiological recordings (which now uses version 0.3 of the parallel optimization package <a href="http://code.google.com/p/playdoh/">Playdoh</a>), remote control of Brian scripts, and experimental support for code generation for C and <span class="caps">GPU</span>. There are also a number of other new features, bug fixes and improvements (full list below).</p>
+<p>The major change in this version is the addition of the<a href="http://www.briansimulator.org/docs/hears.html"> Brian.hears package for auditory modelling</a>. This version also includes an update to the toolbox for fitting neural models to electrophysiological recordings (which now uses version 0.3 of the parallel optimization package <a href="http://code.google.com/p/playdoh/">Playdoh</a>), remote control of Brian scripts, and experimental support for code generation for C and GPU. There are also a number of other new features, bug fixes and improvements (full list below).</p>
 <p>Brian is also available from the <a href="http://neuro.debian.net/pkgs/python-brian.html">NeuroDebian repository</a>: pre-packaged for all recent Debian and Ubuntu releases.</p>
 <p>Brian is being developed by Romain Brette and Dan Goodman. This version also includes contributions by Bertrand Fontaine, Cyrille Rossant, Victor Benichoux and Boris Gourévitch.
 </p>
@@ -422,18 +434,18 @@ Bug fixes:
     <li>Speed improvements for spike propagation weave code (50-100% faster).</li>
     <li>Clocks have been changed and should now behave more predictably. In addition, you can now specify an order attribute for clocks.</li>
     <li>modelfitting is now based on playdoh 0.3</li>
-    <li>modelfitting can now use euler/exp.euler or <span class="caps">RK2</span> integration schemes</li>
-    <li>Loading <span class="caps">AER</span> data is much faster</li>
+    <li>modelfitting can now use euler/exp.euler or RK2 integration schemes</li>
+    <li>Loading AER data is much faster</li>
     <li>Freezing now uses higher precision (used to only use 12sf now uses 17sf)</li>
 </ul>
 <h5>Bug fixes</h5>
 <ul>
-<li>Bug in <span class="caps">STDP</span> with small values for wmin/wmax fixed (ticket #63)</li>
-    <li>Equations/aliases now work correctly in <span class="caps">STDP</span> (ticket #56)</li>
+<li>Bug in STDP with small values for wmin/wmax fixed (ticket #63)</li>
+    <li>Equations/aliases now work correctly in STDP (ticket #56)</li>
     <li>Bug in sparse matrices introduced in scipy 0.8.0 fixed</li>
     <li>Bug in TimedArray when dt keyword is used now fixed (thanks to Adrien Wohrer for pointing out the bug).</li>
-    <li>Units now work correctly in <span class="caps">STDP</span> (ticket #60)</li>
-    <li><span class="caps">STDP</span> raises an error if operations are reordered (ticket #57)</li>
+    <li>Units now work correctly in STDP (ticket #60)</li>
+    <li>STDP raises an error if operations are reordered (ticket #57)</li>
     <li>linked_var works with static vars (equations) (ticket #68)</li>
     <li>Changing clock.t during a run won’t end the run</li>
     <li>Fixed ticket #66 (unit bug)</li>
@@ -462,7 +474,7 @@ Bug fixes:
         <div>
 <p></p>
 <p>We have just released <a href="https://neuralensemble.org/trac/brian/wiki/Downloads">Brian 1.2.1</a>.</p>
-<p>This is mostly a bug fixing release, and minor new features. One highlight is the new remote control system which allows you to interact with a Brian script as it is running - e.g. changing parameter values, plotting intermediate results, etc. Also, <span class="caps">GPU</span> support on 64 bit and Linux machines is now much better.</p>
+<p>This is mostly a bug fixing release, and minor new features. One highlight is the new remote control system which allows you to interact with a Brian script as it is running - e.g. changing parameter values, plotting intermediate results, etc. Also, GPU support on 64 bit and Linux machines is now much better.</p>
 <p>Major features:</p>
 <ul>
 <li>New remote controlling of running Brian scripts via RemoteControlServer
@@ -481,10 +493,10 @@ In addition, garbage collection is called after a clear.</li>
 <p>Improvements</p>
 <ul>
 <li>The sparseness keyword in connect_random can be a function</li>
-<li>Added ‘wmin’ to <span class="caps">STDP</span></li>
-<li>You can now access <span class="caps">STDP</span> internal variables, e.g. stdp.A_pre, and monitor
+<li>Added ‘wmin’ to STDP</li>
+<li>You can now access STDP internal variables, e.g. stdp.A_pre, and monitor
 them by doing e.g. StateMonitor(stdp.pre_group, ‘A_pre’)</li>
-<li><span class="caps">STDP</span> now supports nonlinear equations and parameters</li>
+<li>STDP now supports nonlinear equations and parameters</li>
 <li>refractory can now be a vector (see docstring for NeuronGroup) for constant
 resets.</li>
 <li>modelfitting now uses playdoh library</li>
@@ -538,9 +550,9 @@ it now dynamically adapts to the number of spikes.</li>
         <div>
 <p></p>
 <p>We have just released <a href="https://neuralensemble.org/trac/brian/wiki/Downloads">Brian 1.2</a>.</p>
-<p>The major feature of this release is the model fitting toolbox, designed for automatic fitting of spiking neural models to recorded data. The toolbox is capable of using multiple CPUs or GPUs, across multiple machines. For example, in our lab we use 3 computers with 2 GPUs each to get a 300x speed increase compared to using a single <span class="caps">CPU</span>.</p>
+<p>The major feature of this release is the model fitting toolbox, designed for automatic fitting of spiking neural models to recorded data. The toolbox is capable of using multiple CPUs or GPUs, across multiple machines. For example, in our lab we use 3 computers with 2 GPUs each to get a 300x speed increase compared to using a single CPU.</p>
 <p>Other features of this release include some support for real time plotting as the simulation runs and some important bug fixes. See below for the complete list of changes.</p>
-<p>With this release, we are moving away from the old Sourceforge site to the new <a href="https://neuralensemble.org/trac/brian/wiki">Brian Trac</a> kindly hosted by <a href="http://www.neuralensemble.org/">Neural Ensemble</a>. We have also been working on our release tools, making it much easier to produce new releases. We now plan to do fairly frequent ‘quick releases’ which will be less thoroughly tested, but useful for those who want the latest features without having to much around with the <span class="caps">SVN</span> version.</p>
+<p>With this release, we are moving away from the old Sourceforge site to the new <a href="https://neuralensemble.org/trac/brian/wiki">Brian Trac</a> kindly hosted by <a href="http://www.neuralensemble.org/">Neural Ensemble</a>. We have also been working on our release tools, making it much easier to produce new releases. We now plan to do fairly frequent ‘quick releases’ which will be less thoroughly tested, but useful for those who want the latest features without having to much around with the SVN version.</p>
 <p>Major features:
 </p>
 <ul>
@@ -569,7 +581,7 @@ Bug fixes:
     <li>Minor bugfix to TimedArray caused by floating point comparisons</li>
     <li>Bugfix: refractory neurons could fire in very extreme circumstances</li>
     <li>Fixed bug with DelayConnection not setting max_delay</li>
-    <li>Fixed bug with <span class="caps">STP</span></li>
+    <li>Fixed bug with STP</li>
     <li>Fixed bug with weight=lambda i,j:rand()</li>
 </ul>
 New examples:
@@ -599,7 +611,7 @@ New examples:
 <p>We have just produced a <a href="http://sourceforge.net/project/showfiles.php?group_id=226798">new release of Brian</a>, version 1.1.3, with the
 following changes:</p>
 <ul>
-<li><span class="caps">STDP</span> now works with DelayConnection</li>
+<li>STDP now works with DelayConnection</li>
 <li>Added EventClock</li>
 <li>Added RecentStateMonitor</li>
 <li>Added colormap option to StateMonitor.plot</li>

@@ -13,10 +13,22 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/brian-2-1-and-brian2genn-1-1/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
 <link rel="prev" href="../brian2genn-1-0/" title="Brian2GeNN 1.0" type="text/html">
 <link rel="next" href="../brian-2-1-2-and-brian2genn-1-1-5/" title="Brian 2.1.2 and Brian2GeNN 1.1.5" type="text/html">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
@@ -96,7 +108,7 @@
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -139,8 +151,8 @@
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p></p>
-<p>We are happy to announce the release of <strong>Brian 2.1</strong>. This release includes a number of fixes and small improvements, and two new major features: support for numerical integration with adaptive-timestep methods based on the <span class="caps">GNU</span> Scientific Library, and caching of code generation leading to faster simulation setup times, in particular for multiple runs of the same model. For an extensive list of changes, see the <a href="http://brian2.readthedocs.io/en/2.1/introduction/release_notes.html">release notes</a>. We recommend all users of Brian 2 to update.</p>
-<p>We also release a new version 1.1. of <a href="http://brian2genn.readthedocs.io"><strong>Brian2GeNN</strong></a>, Brian’s interface to the <span class="caps">GPU</span>-enhanced Neuronal Network simulation environment (<a href="http://genn-team.github.io/genn/">GeNN</a>). This release does not contain any major new features except for bug and compatibility fixes, but an update is required for all users that update to Brian 2.1.</p>
+<p>We are happy to announce the release of <strong>Brian 2.1</strong>. This release includes a number of fixes and small improvements, and two new major features: support for numerical integration with adaptive-timestep methods based on the GNU Scientific Library, and caching of code generation leading to faster simulation setup times, in particular for multiple runs of the same model. For an extensive list of changes, see the <a href="http://brian2.readthedocs.io/en/2.1/introduction/release_notes.html">release notes</a>. We recommend all users of Brian 2 to update.</p>
+<p>We also release a new version 1.1. of <a href="http://brian2genn.readthedocs.io"><strong>Brian2GeNN</strong></a>, Brian’s interface to the GPU-enhanced Neuronal Network simulation environment (<a href="http://genn-team.github.io/genn/">GeNN</a>). This release does not contain any major new features except for bug and compatibility fixes, but an update is required for all users that update to Brian 2.1.</p>
 <p><strong>How to get Brian 2</strong>: follow the <a href="http://brian2.readthedocs.io/en/2.1/introduction/install.html">installation instructions in the documentation </a></p>
 <p><strong>Further information about Brian2</strong>: <a class="moz-txt-link-freetext" href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 <p>As always, please report bugs or suggestions to the <a href="https://github.com/brian-team/brian2/issues">github bug tracker</a> or to the brian-development mailing list (<a class="moz-txt-link-abbreviated" href="mailto:brian-development@googlegroups.com">brian-development@googlegroups.com</a>).</p>

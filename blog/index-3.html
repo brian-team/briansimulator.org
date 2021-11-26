@@ -14,12 +14,24 @@
 <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/blog/index-3.html">
 <link rel="icon" href="../logos/favicon.png" sizes="32x32">
 <link rel="prev" href="index-4.html" type="text/html">
 <link rel="next" href="index-2.html" type="text/html">
-<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><!-- Hide notebook header on index pages --><style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><!-- Hide notebook header on index pages --><style>
     div.notebook-header {
         display: none;
     }
@@ -90,7 +102,7 @@
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -127,7 +139,7 @@
         <div>
 <p></p>
 <p>The following paper on Brian Hears was just accepted for publication:</p>
-<p>Fontaine B, Goodman <span class="caps">DFM</span>, Benichoux V, Brette R (2011). <strong>Brian Hears: online auditory processing using vectorisation over channels.</strong> <em>Frontiers in Neuroinformatics</em> (in press) [<a href="http://dl.dropbox.com/u/556426/brianhears-preprint.pdf">preprint</a>]</p>
+<p>Fontaine B, Goodman DFM, Benichoux V, Brette R (2011). <strong>Brian Hears: online auditory processing using vectorisation over channels.</strong> <em>Frontiers in Neuroinformatics</em> (in press) [<a href="http://dl.dropbox.com/u/556426/brianhears-preprint.pdf">preprint</a>]</p>
 <p><strong>Abstract</strong>
 The human cochlea includes about 3000 inner hair cells which filter sounds at frequencies between 20 Hz and 20 kHz. This massively parallel frequency analysis is reflected in models of auditory processing, which are often based on banks of filters. However, existing implementations do not exploit this parallelism. Here we propose algorithms to simulate these models by vectorising computation over frequency channels, which are implemented in “Brian Hears”, a library for the spiking neural network simulator package “Brian”. This approach allows us to use high-level programming languages such as Python, because with vectorised operations, the computational cost of interpretation represents a small fraction of the total cost. This makes it possible to define and simulate complex models in a simple way, while all previous implementations were model-specific. In addition, we show that these algorithms can be naturally parallelised using graphics processing units, yielding substantial speed improvements. We demonstrate these algorithms with several state-of-the-art cochlear models, and show that they compare favorably with existing, less flexible, implementations.</p>
 </div>
@@ -146,7 +158,7 @@ The human cochlea includes about 3000 inner hair cells which filter sounds at fr
         <div>
 <p></p>
 <p>The following paper has just been accepted for publication:</p>
-<p>Rossant C, Fontaine B, Goodman <span class="caps">DFM</span> (2011). <strong>Playdoh: a lightweight Python package for distributed computing and optimisation.</strong> <em>Journal of Computational Science </em>(in press)</p>
+<p>Rossant C, Fontaine B, Goodman DFM (2011). <strong>Playdoh: a lightweight Python package for distributed computing and optimisation.</strong> <em>Journal of Computational Science </em>(in press)</p>
 <p><strong>Abstract</strong>
 Parallel computing is now an essential paradigm for high performance scientific computing. Most existing hardware and software solutions are expensive or difficult to use. We developed Playdoh, a Python library for distributing computations across the free computing units available in a small network of multicore computers. Playdoh supports independent and loosely coupled parallel problems such as global optimisations, Monte Carlo simulations and numerical integration of partial differential equations. It is designed to be lightweight and easy to use and should be of interest to scientists wanting to turn their lab computers into a small cluster at no cost.</p>
 <p>Brian users might find the package (available <a href="http://code.google.com/p/playdoh/">here</a>) and the paper (<a href="http://dl.dropbox.com/u/556426/playdoh-preprint.pdf">preprint</a>) interesting.</p>
@@ -198,7 +210,7 @@ Parallel computing is now an essential paradigm for high performance scientific 
         <div>
 <p></p>
 <p>The 1.3 release of Brian is out!</p>
-<p>The major change in this version is the addition of the<a href="http://www.briansimulator.org/docs/hears.html"> Brian.hears package for auditory modelling</a>. This version also includes an update to the toolbox for fitting neural models to electrophysiological recordings (which now uses version 0.3 of the parallel optimization package <a href="http://code.google.com/p/playdoh/">Playdoh</a>), remote control of Brian scripts, and experimental support for code generation for C and <span class="caps">GPU</span>. There are also a number of other new features, bug fixes and improvements (full list below).</p>
+<p>The major change in this version is the addition of the<a href="http://www.briansimulator.org/docs/hears.html"> Brian.hears package for auditory modelling</a>. This version also includes an update to the toolbox for fitting neural models to electrophysiological recordings (which now uses version 0.3 of the parallel optimization package <a href="http://code.google.com/p/playdoh/">Playdoh</a>), remote control of Brian scripts, and experimental support for code generation for C and GPU. There are also a number of other new features, bug fixes and improvements (full list below).</p>
 <p>Brian is also available from the <a href="http://neuro.debian.net/pkgs/python-brian.html">NeuroDebian repository</a>: pre-packaged for all recent Debian and Ubuntu releases.</p>
 <p>Brian is being developed by Romain Brette and Dan Goodman. This version also includes contributions by Bertrand Fontaine, Cyrille Rossant, Victor Benichoux and Boris Gourévitch.
 </p>
@@ -224,18 +236,18 @@ Parallel computing is now an essential paradigm for high performance scientific 
     <li>Speed improvements for spike propagation weave code (50-100% faster).</li>
     <li>Clocks have been changed and should now behave more predictably. In addition, you can now specify an order attribute for clocks.</li>
     <li>modelfitting is now based on playdoh 0.3</li>
-    <li>modelfitting can now use euler/exp.euler or <span class="caps">RK2</span> integration schemes</li>
-    <li>Loading <span class="caps">AER</span> data is much faster</li>
+    <li>modelfitting can now use euler/exp.euler or RK2 integration schemes</li>
+    <li>Loading AER data is much faster</li>
     <li>Freezing now uses higher precision (used to only use 12sf now uses 17sf)</li>
 </ul>
 <h5>Bug fixes</h5>
 <ul>
-<li>Bug in <span class="caps">STDP</span> with small values for wmin/wmax fixed (ticket #63)</li>
-    <li>Equations/aliases now work correctly in <span class="caps">STDP</span> (ticket #56)</li>
+<li>Bug in STDP with small values for wmin/wmax fixed (ticket #63)</li>
+    <li>Equations/aliases now work correctly in STDP (ticket #56)</li>
     <li>Bug in sparse matrices introduced in scipy 0.8.0 fixed</li>
     <li>Bug in TimedArray when dt keyword is used now fixed (thanks to Adrien Wohrer for pointing out the bug).</li>
-    <li>Units now work correctly in <span class="caps">STDP</span> (ticket #60)</li>
-    <li><span class="caps">STDP</span> raises an error if operations are reordered (ticket #57)</li>
+    <li>Units now work correctly in STDP (ticket #60)</li>
+    <li>STDP raises an error if operations are reordered (ticket #57)</li>
     <li>linked_var works with static vars (equations) (ticket #68)</li>
     <li>Changing clock.t during a run won’t end the run</li>
     <li>Fixed ticket #66 (unit bug)</li>
@@ -264,7 +276,7 @@ Parallel computing is now an essential paradigm for high performance scientific 
         <div>
 <p></p>
 <p>We have just been informed by the Frontiers Editorial Staff that our <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11/005.2008/abstract">first paper on Brian</a> for <a href="http://www.frontiersin.org/neuroinformatics">Frontiers in Neuroinformatics</a> was the second most cited paper across all the <a href="http://www.frontiersin.org/">Frontiers journals</a> since its publication in 2008.</p>
-<p>This paper was published as part of a <a href="http://www.frontiersin.org/neuroinformatics/specialtopics/python_in_neuroscience/8">special issue on Python in neuroscience</a> which appears to have been very successful. According to my <a href="http://www.harzing.com/pop.htm">Publish or Perish</a> search, six other articles from the same issue are in the top 25 most cited papers in Frontiers journals since 2008, comprising papers on <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.011.2008/abstract">PyNN</a>, <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.004.2008/abstract">Vision Egg</a>, <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.012.2008/abstract">PyNEST</a>, <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.001.2009/abstract"><span class="caps">NEURON</span></a>, <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.004.2009/abstract">Python for information theory</a>, and <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.008.2008/abstract"><span class="caps">MDP</span></a>.</p>
+<p>This paper was published as part of a <a href="http://www.frontiersin.org/neuroinformatics/specialtopics/python_in_neuroscience/8">special issue on Python in neuroscience</a> which appears to have been very successful. According to my <a href="http://www.harzing.com/pop.htm">Publish or Perish</a> search, six other articles from the same issue are in the top 25 most cited papers in Frontiers journals since 2008, comprising papers on <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.011.2008/abstract">PyNN</a>, <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.004.2008/abstract">Vision Egg</a>, <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.012.2008/abstract">PyNEST</a>, <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.001.2009/abstract">NEURON</a>, <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.004.2009/abstract">Python for information theory</a>, and <a href="http://www.frontiersin.org/neuroinformatics/10.3389/neuro.11.008.2008/abstract">MDP</a>.</p>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/new-paper-on-vectorised-algorithms/" class="u-url">New paper on vectorised algorithms</a></h1>
@@ -298,7 +310,7 @@ Parallel computing is now an essential paradigm for high performance scientific 
     </header><div class="p-summary entry-summary d-flex">
         <div>
 <p></p>
-<p>We have just had a new paper accepted for the journal <a href="http://www.springer.com/biomed/neuroscience/journal/12021">Neuroinformatics</a>, entitled “Code generation: a strategy for neural network simulators”. You can download a provisional <span class="caps">PDF</span> <a href="http://dl.dropbox.com/u/556426/codegen.pdf">here</a>. Abstract included below:
+<p>We have just had a new paper accepted for the journal <a href="http://www.springer.com/biomed/neuroscience/journal/12021">Neuroinformatics</a>, entitled “Code generation: a strategy for neural network simulators”. You can download a provisional PDF <a href="http://dl.dropbox.com/u/556426/codegen.pdf">here</a>. Abstract included below:
 </p>
 <p style="padding-left: 30px;">We demonstrate a technique for the design of neural network simulation software, runtime code generation. This technique can be used to give the user complete flexibility in specifying the mathematical model for their simulation in a high level way, along with the speed of code written in a low level language such as C++. It can also be used to write code only once but target different hardware platforms, including inexpensive high performance graphics processing units (GPUs). Code generation can be naturally combined with computer algebra systems to provide further simplification and optimisation of the generated code. The technique is quite general and could be applied to any simulation package. We demonstrate it with the “Brian” simulator (<a href="http://www.briansimulator.org">http://www.briansimulator.org</a>).</p>
 The code generation features are already available in the current version of Brian, although undocumented as yet (see the <a href="http://www.briansimulator.org/docs/reference-preferences.html">Preferences</a> section of the documentation for information on how to activate code generation).</div>
@@ -317,7 +329,7 @@ The code generation features are already available in the current version of Bri
         <div>
 <p></p>
 <p>We have just released <a href="https://neuralensemble.org/trac/brian/wiki/Downloads">Brian 1.2.1</a>.</p>
-<p>This is mostly a bug fixing release, and minor new features. One highlight is the new remote control system which allows you to interact with a Brian script as it is running - e.g. changing parameter values, plotting intermediate results, etc. Also, <span class="caps">GPU</span> support on 64 bit and Linux machines is now much better.</p>
+<p>This is mostly a bug fixing release, and minor new features. One highlight is the new remote control system which allows you to interact with a Brian script as it is running - e.g. changing parameter values, plotting intermediate results, etc. Also, GPU support on 64 bit and Linux machines is now much better.</p>
 <p>Major features:</p>
 <ul>
 <li>New remote controlling of running Brian scripts via RemoteControlServer
@@ -336,10 +348,10 @@ In addition, garbage collection is called after a clear.</li>
 <p>Improvements</p>
 <ul>
 <li>The sparseness keyword in connect_random can be a function</li>
-<li>Added ‘wmin’ to <span class="caps">STDP</span></li>
-<li>You can now access <span class="caps">STDP</span> internal variables, e.g. stdp.A_pre, and monitor
+<li>Added ‘wmin’ to STDP</li>
+<li>You can now access STDP internal variables, e.g. stdp.A_pre, and monitor
 them by doing e.g. StateMonitor(stdp.pre_group, ‘A_pre’)</li>
-<li><span class="caps">STDP</span> now supports nonlinear equations and parameters</li>
+<li>STDP now supports nonlinear equations and parameters</li>
 <li>refractory can now be a vector (see docstring for NeuronGroup) for constant
 resets.</li>
 <li>modelfitting now uses playdoh library</li>
@@ -395,8 +407,8 @@ it now dynamically adapts to the number of spikes.</li>
 <p>I gave a relatively technical tutorial on using Brian that might be of interest more generally. The tutorial was done via Skype so I could record what I was saying and insert that into the Powerpoint slides. You can download both versions below:
 </p>
 <ul>
-<li><a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2010/07/brian-telluride-tutorial-withoutsounds.ppt">Powerpoint slides without audio (1.<span class="caps">5MB</span>)</a></li>
-    <li><a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2010/07/Telluride-July-2010.zip">Powerpoint slides with audio (<span class="caps">15MB</span>)</a></li>
+<li><a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2010/07/brian-telluride-tutorial-withoutsounds.ppt">Powerpoint slides without audio (1.5MB)</a></li>
+    <li><a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2010/07/Telluride-July-2010.zip">Powerpoint slides with audio (15MB)</a></li>
 </ul>
 Unfortunately, I can’t find a good way to convert this into a video file or I would upload that / put it on YouTube - let me know if you have a good, free way of doing it. (None of the programs I found online could correctly handle the transitions and the audio files correctly.)</div>
     </div>

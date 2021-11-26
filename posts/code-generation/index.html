@@ -13,10 +13,22 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/code-generation/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
 <link rel="prev" href="../sharing-numpy-arrays-between-processes/" title="Sharing numpy arrays between processes" type="text/html">
 <link rel="next" href="../building-sparse-connections/" title="Building sparse connections" type="text/html">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
@@ -95,7 +107,7 @@
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -138,7 +150,7 @@
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p></p>
-<p>The latest <span class="caps">SVN</span> version of Brian includes a new experimental package, brian.experimental.codegen, which is designed for automatic generation of code for numerical integration in Python, C++ and <span class="caps">GPU</span> C++. If the global preference usecodegen is True then it will be used automatically for all nonlinear differential equations. If usecodegenweave is True then C code will be generated, otherwise Python code. In all cases the code runs faster. <span class="caps">GPU</span> code is not currently used. Use the <a href="http://www.briansimulator.org/docs/reference-preferences.html#global-configuration-file">brian_global_preferences.py</a> file to activate it for all your code. As an example of how it works, let’s use the following Brian Equations object:</p>
+<p>The latest SVN version of Brian includes a new experimental package, brian.experimental.codegen, which is designed for automatic generation of code for numerical integration in Python, C++ and GPU C++. If the global preference usecodegen is True then it will be used automatically for all nonlinear differential equations. If usecodegenweave is True then C code will be generated, otherwise Python code. In all cases the code runs faster. GPU code is not currently used. Use the <a href="http://www.briansimulator.org/docs/reference-preferences.html#global-configuration-file">brian_global_preferences.py</a> file to activate it for all your code. As an example of how it works, let’s use the following Brian Equations object:</p>
 <p>[python]
 eqs = Equations(‘’‘
 dV/dt = -W<em>V/(10</em>second) : volt
@@ -167,7 +179,7 @@ for(int _i=0;_i&lt;num_neurons;_i++){
     W += W__tmp*dt;
 }
 [/cpp]</p>
-<p>And for the <span class="caps">GPU</span>:</p>
+<p>And for the GPU:</p>
 <p>[cpp]
 <strong>global</strong> void stateupdate(int num_neurons, double t, double <em>S)
 {
@@ -196,7 +208,7 @@ euler_scheme = [
         ‘’‘)
     ]
 [/python]</p>
-<p>The other schemes are the <span class="caps">RK2</span> and exponential Euler scheme. For example, the exponential Euler scheme is:</p>
+<p>The other schemes are the RK2 and exponential Euler scheme. For example, the exponential Euler scheme is:</p>
 <p>[python]
 exp_euler_scheme = [
     ((‘foreachvar’, ‘nonzero’),
@@ -236,8 +248,8 @@ W *= exp(W__A)
 V -= V__B
 W -= W__B
 [/python]</p>
-<p>And similarly for C++ and <span class="caps">GPU</span>.</p>
-<p>We will be extending the automatic generation of code into other areas, including resets, thresholds, and <span class="caps">STDP</span> code.</p>
+<p>And similarly for C++ and GPU.</p>
+<p>We will be extending the automatic generation of code into other areas, including resets, thresholds, and STDP code.</p>
 <p>If you have any comments on the approach, bug reports, etc. please let us know!</p>
 </div>
     </div>

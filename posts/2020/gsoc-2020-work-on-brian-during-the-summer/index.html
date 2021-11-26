@@ -13,10 +13,22 @@
 <link href="../../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/2020/gsoc-2020-work-on-brian-during-the-summer/">
 <link rel="icon" href="../../../logos/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
 <link rel="prev" href="../brian2genn-paper/" title="Brian2GeNN paper published: accelerate Brian simulations with GPUs" type="text/html">
 <link rel="next" href="../notes-notebooks/" title="Notes on Notebooks" type="text/html">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
@@ -95,7 +107,7 @@
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../../../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -136,7 +148,7 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>The <a href="https://incf.org"><abbr title=" International Neuroinformatics Coordinating Facility"><span class="caps">INCF</span></abbr></a> is again applying to be a mentor organization in <a href="https://summerofcode.withgoogle.com/">Google’s Summer of Code program</a>, a “a global program focused on bringing more student developers into open source software development”. Changes are quite high that it will be selected, since its participation in the last years was very successful. If this is the case, there will be an opportunity to work on the Brian simulator, please see the list of <a href="https://docs.google.com/document/d/19xlhgizLcv5x4kjap3nXoQMTNGnxaV-qiq0vrSe-HMo">proposed projects</a> (Brian projects are number 8 and 9). Feel free to ask questions or discuss the project on the <a href="https://neurostars.org/">Neurostars forum</a> (find all projects in the <em>GSoC</em> category). It is not mandatory to work on one of the proposed projects, though, please contact <a href="mailto:marcel.stimberg@inserm.fr">marcel.stimberg@inserm.fr</a> if you have an idea of your own.</p>
+    <p>The <a href="https://incf.org"><abbr title=" International Neuroinformatics Coordinating Facility">INCF</abbr></a> is again applying to be a mentor organization in <a href="https://summerofcode.withgoogle.com/">Google’s Summer of Code program</a>, a “a global program focused on bringing more student developers into open source software development”. Changes are quite high that it will be selected, since its participation in the last years was very successful. If this is the case, there will be an opportunity to work on the Brian simulator, please see the list of <a href="https://docs.google.com/document/d/19xlhgizLcv5x4kjap3nXoQMTNGnxaV-qiq0vrSe-HMo">proposed projects</a> (Brian projects are number 8 and 9). Feel free to ask questions or discuss the project on the <a href="https://neurostars.org/">Neurostars forum</a> (find all projects in the <em>GSoC</em> category). It is not mandatory to work on one of the proposed projects, though, please contact <a href="mailto:marcel.stimberg@inserm.fr">marcel.stimberg@inserm.fr</a> if you have an idea of your own.</p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../tags/gsoc/" rel="tag">GSoC</a></li>

@@ -13,10 +13,22 @@
 <link href="../../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/2020/elife-1-pyloric/">
 <link rel="icon" href="../../../logos/favicon.png" sizes="32x32">
-<!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
 <link rel="prev" href="../notes-notebooks/" title="Notes on Notebooks" type="text/html">
 <link rel="next" href="../elife-2-eye-movements/" title="Non-standard neuron modelling: smooth pursuit eye movements" type="text/html">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
@@ -98,7 +110,7 @@
 </ul>
 <ul class="navbar-nav navbar-right">
 <li class="nav-item">
-<a href="../../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
+<a href="../../../rss.xml" class="nav-link">RSS feed</a>
 
                 
                 
@@ -140,7 +152,7 @@
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f30bf518290>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f30bf4faa70>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_1_pyloric_network.png', 'title': 'Non-standard neuron modelling: the pyloric network', 'slug': 'elife-1-pyloric', 'date': '2020-01-28 16:46', 'tags': 'model, synapses', 'category': 'article', 'updated': '2020-01-28 16:46', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'password': '', 'description': '', 'template': ''})}) -->
+<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f0eade52200>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f0eade389e0>, {'has_math': 'true', 'previewimage': '/images/articles/2020/elife_example_1_pyloric_network.png', 'title': 'Non-standard neuron modelling: the pyloric network', 'slug': 'elife-1-pyloric', 'date': '2020-01-28 16:46', 'tags': 'model, synapses', 'category': 'article', 'updated': '2020-01-28 16:46', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'data': '', 'filters': '', 'description': '', 'template': '', 'password': ''})}) -->
     <div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
@@ -175,7 +187,7 @@ is selected.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>One of the great advantages of using Brian is that defining new non-standard model types is easy. In this article, we will build a highly simplified model of the pyloric circuit of the crustacean stomatogastric ganglion. This circuit generates a tri-phasic rhythmic pattern with alternating bursts of action potentials in different types of motor neurons. Here, we follow previous work (e.g. Golowasch et al., 1999) by modeling the circuit as consisting of three populations: <span class="caps">AB</span>/<span class="caps">PD</span> (anterior buster and pyloric dilator neurons), <span class="caps">LP</span> (lateral pyloric neurons), and <span class="caps">PY</span> (pyloric neurons). This model has a number of non-standard properties that will be described in the following annotated version of the code.</p>
+<p>One of the great advantages of using Brian is that defining new non-standard model types is easy. In this article, we will build a highly simplified model of the pyloric circuit of the crustacean stomatogastric ganglion. This circuit generates a tri-phasic rhythmic pattern with alternating bursts of action potentials in different types of motor neurons. Here, we follow previous work (e.g. Golowasch et al., 1999) by modeling the circuit as consisting of three populations: AB/PD (anterior buster and pyloric dilator neurons), LP (lateral pyloric neurons), and PY (pyloric neurons). This model has a number of non-standard properties that will be described in the following annotated version of the code.</p>
 <blockquote>
 <p>Golowasch, J., Casey, M., Abbott, L. F., <span class="amp">&amp;</span> Marder, E. (1999).<br>
 Network Stability from Activity-Dependent Regulation of Neuronal Conductances.<br>
@@ -378,7 +390,7 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Finally, we note that $I_\mathrm{fast}$ and $I_\mathrm{slow}$ are neuron-specific state variables (set by the Synapses later), and that $Ca_\mathrm{target}$ is a neuron-specific constant. We also add a special integer constant called <code>label</code> that will be used to label <span class="caps">AB</span>/<span class="caps">PD</span>, <span class="caps">LP</span>, and <span class="caps">PY</span> neurons.</p>
+<p>Finally, we note that $I_\mathrm{fast}$ and $I_\mathrm{slow}$ are neuron-specific state variables (set by the Synapses later), and that $Ca_\mathrm{target}$ is a neuron-specific constant. We also add a special integer constant called <code>label</code> that will be used to label AB/PD, LP, and PY neurons.</p>
 
 </div>
 </div>
@@ -555,7 +567,7 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To establish synapses between the neurons, we can provide a logical condition detailing whether a connection should be created for a specific pair of neurons. This condition can refer to arbitrary pre- and post-synaptic variables or constants. In the following, we make use of the <code>label</code> constant that defines the type of each neuron. Given that our simple model only includes one neuron of each type, we could have used the neuron indices instead. However, using a label has the advantage of clearly showing the intent behind the connection pattern and would automatically generalize to a network with multiple neurons per type. Here, we want to establish connections with fast synapses for all pairs of neurons with different type (i.e., don&#8217;t connect neurons of the same type to each other), but not from <span class="caps">PY</span> to <span class="caps">AB</span>/<span class="caps">PD</span> neurons:</p>
+<p>To establish synapses between the neurons, we can provide a logical condition detailing whether a connection should be created for a specific pair of neurons. This condition can refer to arbitrary pre- and post-synaptic variables or constants. In the following, we make use of the <code>label</code> constant that defines the type of each neuron. Given that our simple model only includes one neuron of each type, we could have used the neuron indices instead. However, using a label has the advantage of clearly showing the intent behind the connection pattern and would automatically generalize to a network with multiple neurons per type. Here, we want to establish connections with fast synapses for all pairs of neurons with different type (i.e., don&#8217;t connect neurons of the same type to each other), but not from PY to AB/PD neurons:</p>
 
 </div>
 </div>
@@ -634,7 +646,7 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Slow synapses are only arising from <span class="caps">AB</span>/<span class="caps">PD</span> units, and target neurons of all other types:</p>
+<p>Slow synapses are only arising from AB/PD units, and target neurons of all other types:</p>
 
 </div>
 </div>
@@ -825,10 +837,10 @@ $$</p>
 
 
 
-<div id="18e4c1bf-7122-468c-b6ed-b915553895b2"></div>
+<div id="65202338-c8cd-4266-98e2-5c8039c8320e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#18e4c1bf-7122-468c-b6ed-b915553895b2');
+var element = $('#65202338-c8cd-4266-98e2-5c8039c8320e');
 /* Put everything inside the global mpl namespace */
 window.mpl = {};
 
@@ -1136,13 +1148,13 @@ mpl.figure.prototype.request_resize = function(x_pixels, y_pixels) {
 mpl.figure.prototype.send_message = function(type, properties) {
     properties['type'] = type;
     properties['figure_id'] = this.id;
-    this.ws.send(<span class="caps">JSON</span>.stringify(properties));
+    this.ws.send(JSON.stringify(properties));
 }
 
 mpl.figure.prototype.send_draw_message = function() {
     if (!this.waiting) {
         this.waiting = true;
-        this.ws.send(<span class="caps">JSON</span>.stringify({type: "draw", figure_id: this.id}));
+        this.ws.send(JSON.stringify({type: "draw", figure_id: this.id}));
     }
 }
 
@@ -1230,19 +1242,19 @@ mpl.figure.prototype.updated_canvas_event = function() {
 mpl.figure.prototype._make_on_message_function = function(fig) {
     return function socket_on_message(evt) {
         if (evt.data instanceof Blob) {
-            /* <span class="caps">FIXME</span>: We get "Resource interpreted as Image but
-             * transferred with <span class="caps">MIME</span> type text/plain:" errors on
-             * Chrome.  But how to set the <span class="caps">MIME</span> type?  It doesn't seem
+            /* FIXME: We get "Resource interpreted as Image but
+             * transferred with MIME type text/plain:" errors on
+             * Chrome.  But how to set the MIME type?  It doesn't seem
              * to be part of the websocket stream */
             evt.data.type = "image/png";
 
             /* Free the memory for the previous frames */
             if (fig.imageObj.src) {
-                (window.<span class="caps">URL</span> || window.webkitURL).revokeObjectURL(
+                (window.URL || window.webkitURL).revokeObjectURL(
                     fig.imageObj.src);
             }
 
-            fig.imageObj.src = (window.<span class="caps">URL</span> || window.webkitURL).createObjectURL(
+            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
                 evt.data);
             fig.updated_canvas_event();
             fig.waiting = false;
@@ -1255,11 +1267,11 @@ mpl.figure.prototype._make_on_message_function = function(fig) {
             return;
         }
 
-        var msg = <span class="caps">JSON</span>.parse(evt.data);
+        var msg = JSON.parse(evt.data);
         var msg_type = msg['type'];
 
         // Call the  "handle_{type}" callback, which takes
-        // the figure and <span class="caps">JSON</span> message as its only arguments.
+        // the figure and JSON message as its only arguments.
         try {
             var callback = fig["handle_" + msg_type];
         } catch (e) {
@@ -1450,7 +1462,7 @@ mpl.figure.prototype.handle_close = function(fig, msg) {
     // Update the output cell to use the data from the current canvas.
     fig.push_to_output();
     var dataURL = fig.canvas.toDataURL();
-    // Re-enable the keyboard manager in IPython - without this line, in <span class="caps">FF</span>,
+    // Re-enable the keyboard manager in IPython - without this line, in FF,
     // the notebook keyboard shortcuts fail.
     IPython.keyboard_manager.enable()
     $(fig.parent_element).html('<img src="' + dataURL + '" width="' + width + '">');
@@ -1474,7 +1486,7 @@ mpl.figure.prototype.updated_canvas_event = function() {
     IPython.notebook.set_dirty(true);
     this.send_message("ack", {});
     var fig = this;
-    // Wait a second, then push the new image to the <span class="caps">DOM</span> so
+    // Wait a second, then push the new image to the DOM so
     // that it is saved nicely (might be nice to debounce this).
     setTimeout(function () { fig.push_to_output() }, 1000);
 }
