@@ -1,3 +1,0 @@
-<html><body><p>We will be at the <a href="http://www.cnsorg.org/2009/">Computational Neuroscience (CNS)</a> meeting next week, at the Python in Neuroscience <a href="http://www.cnsorg.org/2009/workshops.shtml">workshop</a>. Romain Brette will give a talk on Brian in the morning session of the first day, and Dan Goodman will give a tutorial in afternoon/evening session on using Python for neuroscience, covering NumPy, SciPy, PyLab and Brian. Hope to see you there!
-
-<a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2009/07/tutorial.zip">Download the slides and code from the tutorial</a></p></body></html>

@@ -1,9 +1,0 @@
-<html><body><p>We are happy to announce the release of <strong>Brian 2.0rc</strong>. This is a release candidate for the final Brian 2.0 release, meaning that from now on we will focus on bug fixes and documentation, without introducing new major features or changing the syntax for the user. This release candidate itself does however change a few important syntax elements, see "Backwards-incompatible changes" in the <a href="http://brian2.readthedocs.org/en/2.0rc/introduction/release_notes.html">release notes</a>.
-
-Apart from many bug fixes and performance improvements, this release adds a few important new features, in particular a "generator syntax" to create synapses more efficiently and a re-worked morphology module for multicompartmental simulations. For a full list of changes see the <a href="http://brian2.readthedocs.org/en/2.0rc/introduction/release_notes.html">release notes</a>.
-
-<strong>How to get Brian 2</strong>: follow the <a href="http://brian2.readthedocs.org/en/2.0rc/introduction/install.html">installation instructions</a> in the documentation
-
-<strong>Further information about Brian2</strong>: <a class="moz-txt-link-freetext" href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a>
-
-As always, please report bugs or suggestions to the github bug tracker (<a class="moz-txt-link-freetext" href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>) or to the brian-development mailing list (<a class="moz-txt-link-abbreviated" href="mailto:brian-development@googlegroups.com">brian-development@googlegroups.com</a>).</p></body></html>

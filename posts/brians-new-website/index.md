@@ -1,1 +1,0 @@
-<html><body><p>Brian has a new website! It's now running on Wordpress and will feature blogs for Brian related news, announcements of new releases, and a development blog.</p></body></html>

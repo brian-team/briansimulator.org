@@ -1,1 +1,0 @@
-<html><body><p>There will be a tutorial on Brian at the <a href="https://neuromorphs.net/nm/wiki/2010">Telluride workshop</a> in Colorado, tomorrow at noon (via Skype as I'm in Paris).</p></body></html>

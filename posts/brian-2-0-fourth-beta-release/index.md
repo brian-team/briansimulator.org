@@ -1,1 +1,0 @@
-<html><body><p>We are happy to announce the fourth beta release of Brian 2.0. For more information, have a look at the <a href="http://brian2.readthedocs.org/en/2.0b4/introduction/release_notes.html">release notes</a>.</p></body></html>

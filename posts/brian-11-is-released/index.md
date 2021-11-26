@@ -1,1 +1,0 @@
-<html><body><a href="https://sourceforge.net/projects/brian/">Brian 1.1.2 released!</a></body></html>

@@ -1,1 +1,0 @@
-<html><body><p>The Brian SVN has moved from SourceForge to <a href="http://neuralensemble.org/brian">neuralensemble.org</a>. The current release (1.1.3) is still available at the SourceForge and PyPI pages, but future releases will be at the new page. The current development version will only be available on the new page from now on.</p></body></html>

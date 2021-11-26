@@ -1,1 +1,0 @@
-<html><body><p>We've just added a new <a href="https://briansimulator.org/showcase/">Showcase </a>section to the website. Here we'll list any projects that make use of or include Brian, or any cool demos and so forth developed by other people. When we add new things to the showcase we'll post a News item on the website.</p></body></html>
