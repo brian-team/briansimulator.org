@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://briansimulator.org/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/2009/05/27/the-idea/</loc>
@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/archive.html</loc>
-  <lastmod>2021-11-26T13:06:00Z</lastmod>
+  <lastmod>2021-11-29T12:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/assises-de-la-recherche/</loc>
@@ -79,7 +79,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/blog/index-7.html</loc>
-  <lastmod>2021-11-26T13:06:00Z</lastmod>
+  <lastmod>2021-11-29T12:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/brian-1-1-3/</loc>
@@ -271,11 +271,11 @@
  </url>
  <url>
   <loc>https://briansimulator.org/categories/news/index-4.html</loc>
-  <lastmod>2021-11-26T13:06:00Z</lastmod>
+  <lastmod>2021-11-29T12:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/cite/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/code-generation/</loc>
@@ -291,7 +291,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/contribute/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/correlation-vs-synchrony/</loc>
@@ -319,7 +319,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/ecosystem/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/features/</loc>
@@ -331,7 +331,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/getting-started/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/google-summer-of-code-2015/</loc>
@@ -347,7 +347,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/install/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/is-perception-about-inference/</loc>
@@ -431,15 +431,15 @@
  </url>
  <url>
   <loc>https://briansimulator.org/old/brian-tutorial-at-cns-2014/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/old/brian-tutorial-at-cns-2015/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/old/brian-tutorial-cns-2013/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/on-imitation/</loc>
@@ -463,7 +463,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/papers-using-brian/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/perceiving-and-knowing/</loc>
@@ -475,315 +475,319 @@
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2020/brian-23/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2020/brian-24/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2020/brian-discourse-forum/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2020/brian-online-tutorial/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2020/brian2genn-paper/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2020/elife-1-pyloric/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2020/elife-2-eye-movements/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2020/elife-3-bisection/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2020/gsoc-2020-work-on-brian-during-the-summer/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2020/notes-notebooks/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2020/video-scheduling-1/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2020/video-scheduling-2/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://briansimulator.org/posts/2021/brian-25/</loc>
+  <lastmod>2021-11-29T12:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2021/bug-hunt-episode-1-broken-latex-output-for-equations/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2021/bug-hunt-episode-2-a-strange-file-appears/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2021/live-session-on-brian-development/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/about-the-new-website/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/better-sparse-matrix-support/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-1-1-3/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-1-2-1/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-1-2/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-1-3-1/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-1-3/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-1-4-1/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-1-4-4-maintenance-release/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-1-4-is-out/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-11-is-released/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-2-0-1/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-2-0-2/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-2-0-alpha-release/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-2-0-beta-release/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-2-0-fourth-beta-release/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-2-0-release-candidate/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-2-0-second-beta-release/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-2-0/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-2-0rc3/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-2-1-2-and-brian2genn-1-1-5/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-2-1-3/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-2-1-and-brian2genn-1-1/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-2-2/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-at-cns/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-at-neurocomp/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-is-in-pynn/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-paper-amongst-most-cited-in-frontiers/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-second-most-popular-simulator/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-survey/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-tutorial-at-cns-2013/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-tutorial-at-telluride/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-tutorial-cns-2014/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-tutorial-cns-2015/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian-tutorial-slides/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brian2genn-1-0/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/brians-new-website/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/bug-advisory-connections-from-subgroups-with-delays/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/bug-advisory-multiple-clocks/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/building-sparse-connections/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/code-generation/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/first-release-of-brian2tools/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/google-summer-of-code-2015/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/linked-variables/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/new-alpha-version-of-brian-2-0/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/new-alpha-version-of-brian-2/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/new-book-on-ipython/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/new-brian-paper-equation-oriented-specification-of-neural-models-for-simulations/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/new-brian-showcase/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/new-paper-on-brian-hears/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/new-paper-on-code-generation/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/new-paper-on-playdoh/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/new-paper-on-vectorised-algorithms/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/new-svn/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/paper-on-brian-2-published-in-elife/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/real-time-plotting/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/recentstatemonitor/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/sharing-numpy-arrays-between-processes/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/the-brian-twister/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/the-idea/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/timed-array/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/upcoming-features/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/yet-another-alpha-brian-2-0/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/psychology-of-academic-hiring-committees-v-cognitive-dissonance/</loc>
@@ -799,7 +803,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/publications/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/rate-vs-timing-i-a-category-error/</loc>
@@ -963,7 +967,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/tags/development/index-3.html</loc>
-  <lastmod>2021-11-26T13:06:00Z</lastmod>
+  <lastmod>2021-11-29T12:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/tags/gsoc/</loc>
@@ -999,7 +1003,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/tags/release/index-2.html</loc>
-  <lastmod>2021-11-26T13:06:00Z</lastmod>
+  <lastmod>2021-11-29T12:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/tags/shared-memory/</loc>
@@ -1023,7 +1027,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/team/</loc>
-  <lastmod>2021-09-24T14:27:00Z</lastmod>
+  <lastmod>2021-11-26T13:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/the-brain-uses-all-available-information/</loc>
