@@ -13,22 +13,10 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/linked-variables/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
 <link rel="prev" href="../recentstatemonitor/" title="RecentStateMonitor" type="text/html">
 <link rel="next" href="../brian-is-in-pynn/" title="Brian is in PyNN" type="text/html">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
@@ -107,7 +95,7 @@ One thing we end up doing very often in Brian in our code, is copying the values
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -139,8 +127,7 @@ One thing we end up doing very often in Brian in our code, is copying the values
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
+    <p></p>
 <p>Please see the entry on <a href="../the-idea/">the idea</a> of this development blog.</p>
 <p>One thing we end up doing very often in Brian in our code, is copying the values of a variable in one group to the values of a variable in another group. That is, a variable from one group should essentially be defined as the same as the variable from another group. This comes up in models of the auditory system we’re working on, because we use one NeuronGroup to represent the displacement of hair cells in the cochlea, and a separate NeuronGroup to represent the auditory nerve fibres which receive graded rather than spiking inputs from them. In general, the same thing might be useful in any case where there is a graded rather than spiking connection between two NeuronGroups. What we were doing was this:</p>
 <p>[python]
@@ -160,7 +147,6 @@ nervefibres.input = linked_var(haircells, ‘output’)
 linked_var(source, var, func, when, clock)
 [/python]</p>
 <p>The func, when and clock arguments are optional. The func argument allows you to pass the value of the variable in the source group through a function. For example, in the auditory system you do half wave rectification and logarithmic compression. The when argument tells it when to do the copy operation, at the start of the simulation loop by default, and the clock tells it what schedule to update on, by default it uses the target group’s clock. Is this a nice syntax? Is there anything else this should be able to do?</p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/development/" rel="tag">Development</a></li>
@@ -173,7 +159,7 @@ linked_var(source, var, func, when, clock)
                 <a href="../brian-is-in-pynn/" rel="next" title="Brian is in PyNN">Next post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer" class="text-center">
-            Contents © 2021         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
+            Contents © 2022         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
             
             
         </footer>

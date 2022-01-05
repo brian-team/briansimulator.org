@@ -13,22 +13,10 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/brian-1-4-is-out/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
 <link rel="prev" href="../better-sparse-matrix-support/" title="Better sparse matrix support" type="text/html">
 <link rel="next" href="../brian-1-4-1/" title="Brian 1.4.1" type="text/html">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
@@ -107,7 +95,7 @@ The major change in this version is the addition of a new Synapses class, which 
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -139,12 +127,11 @@ The major change in this version is the addition of a new Synapses class, which 
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
+    <p></p>
 <p>The 1.4 release of Brian is out!</p>
 <p>The major change in this version is the addition of a new Synapses class, which allows modeling everything synaptic: gap junctions, probabilistic synapses, nonlinear synapses, plasticity, etc. There are also a number of other new features, bug fixes and improvements (see below).</p>
 <p>Brian is being developed by Romain Brette and Dan Goodman. This version also includes contributions by Bertrand Fontaine, Cyrille Rossant, Victor Benichoux, Marcel Stimberg and Jonathan Laudanski.</p>
-<p>We take advantage of this announcement to inform Brian users that we are currently discussing the development of Brian 2.0, a rewriting of Brian, intended to be simpler, faster, and to be able to run on external devices (e.g. GPU). We will make an announcement on our <a href="http://groups.google.fr/group/briansupport">mailing list </a>soon, where we will ask for user opinions.</p>
+<p>We take advantage of this announcement to inform Brian users that we are currently discussing the development of Brian 2.0, a rewriting of Brian, intended to be simpler, faster, and to be able to run on external devices (e.g. <span class="caps">GPU</span>). We will make an announcement on our <a href="http://groups.google.fr/group/briansupport">mailing list </a>soon, where we will ask for user opinions.</p>
 <p><strong>New features since 1.3.1</strong></p>
 <p>Major features:
 </p>
@@ -156,36 +143,36 @@ Minor features:
 <li>New AERSpikeMonitor class</li>
     <li>Several updates to library.electrophysiology</li>
 </ul>
-Improvements:
+<p>Improvements:</p>
 <ul>
 <li>Units should work better with static code analysers now</li>
     <li>Added Network.remove</li>
     <li>SpikeMonitor has a new .it attribute (returns pair i, t of arrays of spike times)</li>
     <li>Many new examples</li>
 </ul>
-Bug fixes:
+<p>Bug fixes:</p>
 <ul>
 <li>Assigning to a static variable (equation) now raise an error</li>
     <li>Fixed issues for TimedArrays with explicitly set times (fixes ticket #81)</li>
-    <li>Fixed bug, repr and str didn’t work for Sound</li>
-    <li>Fixed bug where tone(array_of_frequencies, …)</li>
+    <li>Fixed bug, repr and str didn&#8217;t work for Sound</li>
+    <li>Fixed bug where tone(array_of_frequencies, &#8230;)</li>
     <li>Fixed SparseConnectionMatrix bug suggested by Owen Mackwood</li>
     <li>Fixed bug in Parameters reported by Jimmy Bonaiuto</li>
     <li>Fixed bug with contained_objects reported by Oleg Sinyavskiy</li>
-    <li>Units <strong>repr</strong> and <strong>str</strong> fixes</li>
+    <li>Units __repr__ and __str__ fixes</li>
     <li>Sound.spectrum, Sound.pinknoise, brownnoise</li>
-    <li>t wasn’t available in StringReset and PythonThreshold</li>
+    <li>t wasn&#8217;t available in StringReset and PythonThreshold</li>
 </ul>
-Deprecated or removed features:
+<p>Deprecated or removed features:</p>
 <ul>
 <li>MultipleSpikeGeneratorGroup</li>
     <li>experimental.coincidence_detection</li>
 </ul>
-Experimental features:
+<p>Experimental features:</p>
 <ul>
 <li>Generating model documentation automatically (experimental.model_documentation)</li>
 </ul>
- </div>
+<p></p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/release/" rel="tag">Release</a></li>
@@ -198,7 +185,7 @@ Experimental features:
                 <a href="../brian-1-4-1/" rel="next" title="Brian 1.4.1">Next post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer" class="text-center">
-            Contents © 2021         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
+            Contents © 2022         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
             
             
         </footer>

@@ -13,22 +13,10 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/brian-1-2-1/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
 <link rel="prev" href="../brian-tutorial-slides/" title="Brian tutorial slides" type="text/html">
 <link rel="next" href="../new-paper-on-code-generation/" title="New paper on code generation" type="text/html">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
@@ -107,7 +95,7 @@ This is mostly a bug fixing release, and minor new features. One highlight is th
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -139,10 +127,9 @@ This is mostly a bug fixing release, and minor new features. One highlight is th
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
+    <p></p>
 <p>We have just released <a href="https://neuralensemble.org/trac/brian/wiki/Downloads">Brian 1.2.1</a>.</p>
-<p>This is mostly a bug fixing release, and minor new features. One highlight is the new remote control system which allows you to interact with a Brian script as it is running - e.g. changing parameter values, plotting intermediate results, etc. Also, GPU support on 64 bit and Linux machines is now much better.</p>
+<p>This is mostly a bug fixing release, and minor new features. One highlight is the new remote control system which allows you to interact with a Brian script as it is running - e.g. changing parameter values, plotting intermediate results, etc. Also, <span class="caps">GPU</span> support on 64 bit and Linux machines is now much better.</p>
 <p>Major features:</p>
 <ul>
 <li>New remote controlling of running Brian scripts via RemoteControlServer
@@ -161,10 +148,10 @@ In addition, garbage collection is called after a clear.</li>
 <p>Improvements</p>
 <ul>
 <li>The sparseness keyword in connect_random can be a function</li>
-<li>Added ‘wmin’ to STDP</li>
-<li>You can now access STDP internal variables, e.g. stdp.A_pre, and monitor
+<li>Added ‘wmin’ to <span class="caps">STDP</span></li>
+<li>You can now access <span class="caps">STDP</span> internal variables, e.g. stdp.A_pre, and monitor
 them by doing e.g. StateMonitor(stdp.pre_group, ‘A_pre’)</li>
-<li>STDP now supports nonlinear equations and parameters</li>
+<li><span class="caps">STDP</span> now supports nonlinear equations and parameters</li>
 <li>refractory can now be a vector (see docstring for NeuronGroup) for constant
 resets.</li>
 <li>modelfitting now uses playdoh library</li>
@@ -203,7 +190,6 @@ it now dynamically adapts to the number of spikes.</li>
 <li>Model has now been removed from Brian (it was deprecated in 1.1).</li>
 </ul>
 </div>
-    </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/release/" rel="tag">Release</a></li>
         </ul>
@@ -215,7 +201,7 @@ it now dynamically adapts to the number of spikes.</li>
                 <a href="../new-paper-on-code-generation/" rel="next" title="New paper on code generation">Next post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer" class="text-center">
-            Contents © 2021         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
+            Contents © 2022         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
             
             
         </footer>

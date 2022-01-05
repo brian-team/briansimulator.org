@@ -13,22 +13,10 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/old/brian-tutorial-at-cns-2015/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
 <meta property="og:title" content="Brian Tutorial at CNS 2015">
 <meta property="og:url" content="https://briansimulator.org/old/brian-tutorial-at-cns-2015/">
@@ -105,7 +93,7 @@ The tutorial will take place in room RB 211 at the University of Economics. Plea
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -121,21 +109,19 @@ The tutorial will take place in room RB 211 at the University of Economics. Plea
         
         
         
-<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Brian Tutorial at CNS 2015</a></h1>
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Brian Tutorial at <span class="caps">CNS</span> 2015</a></h1>
 
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
+    <p></p>
 <h3>Modelling of spiking neural networks with Brian</h3>
-Tutorial T3 at <a href="http://www.cnsorg.org/cns-2015-prague">CNS 2015</a>, Prague (<strong>July 18th 2015</strong>)
-<p>The tutorial will take place in room RB 211 at the <a href="http://www.cnsorg.org/cns-2015-venue">University of Economics</a>. Please consider installing Brian 2 beforehand, see the installation instructions in the <a href="http://brian2.readthedocs.org">documentation</a>.</p>
-<p><em><strong>The material presented at the tutorial can be found here:</strong> <a href="https://github.com/brian-team/brian-material/tree/master/2015-CNS-tutorial">https://github.com/brian-team/brian-material/tree/master/2015-CNS-tutorial</a>
-</em>
-</p>
+Tutorial T3 at <a href="http://www.cnsorg.org/cns-2015-prague"><span class="caps">CNS</span> 2015</a>, Prague (<strong>July 18th 2015</strong>)
+<p>The tutorial will take place in room <span class="caps">RB</span> 211 at the <a href="http://www.cnsorg.org/cns-2015-venue">University of Economics</a>. Please consider installing Brian 2 beforehand, see the installation instructions in the <a href="http://brian2.readthedocs.org">documentation</a>.</p>
+<p><em><strong>The material presented at the tutorial can be found here:</strong> <a href="https://github.com/brian-team/brian-material/tree/master/2015-CNS-tutorial">https://github.com/brian-team/brian-material/tree/master/2015-<span class="caps">CNS</span>-tutorial</a>
+</em></p>
 <h4>Schedule</h4>
-In the morning sessions, we plan to give an introduction to Brian, no prior knowledge of Brian is necessary. The afternoon sessions will be about more advanced topics and delve a bit into Brian’s internals. There will also be a general question&amp;answers session where we can discuss any topic of interest to the participants.
+<p>In the morning sessions, we plan to give an introduction to Brian, no prior knowledge of Brian is necessary. The afternoon sessions will be about more advanced topics and delve a bit into Brian’s internals. There will also be a general question&amp;answers session where we can discuss any topic of interest to the participants.</p>
 <table>
 <colgroup>
 <col width="120">
@@ -219,18 +205,18 @@ In the morning sessions, we plan to give an introduction to Brian, no prior know
 </tbody>
 </table>
 <h5>Working with Brian 2</h5>
-We recommend using the <a href="http://continuum.io/downloads">Anaconda distribution</a> with Brian 2.
+<p>We recommend using the <a href="http://continuum.io/downloads">Anaconda distribution</a> with Brian 2.</p>
 <ul>
-<li>The full Anaconda distribution comes with a Matlab-like development environment for Python called <a href="https://code.google.com/p/spyderlib/">Spyder</a>, you can start it by typing <code>spyder</code> in a Terminal. You can also start it using Anaconda’s “launcher” application, for more details and other IDEs that you can use, see <a href="http://docs.continuum.io/anaconda/ide_integration.html">docs.continuum.io/anaconda/ide_integration.html</a>
+<li>The full Anaconda distribution comes with a Matlab-like development environment for Python called <a href="https://code.google.com/p/spyderlib/">Spyder</a>, you can start it by typing <code>spyder</code> in a Terminal. You can also start it using Anaconda&#8217;s &#8220;launcher&#8221; application, for more details and other IDEs that you can use, see <a href="http://docs.continuum.io/anaconda/ide_integration.html">docs.continuum.io/anaconda/ide_integration.html</a>
 </li>
-    <li>You don’t necessarily need a full IDE to work with Python/Brian, starting <code>ipython</code> in a terminal window and using any text editor to edit files is good enough.</li>
+    <li>You don&#8217;t necessarily need a full <span class="caps">IDE</span> to work with Python/Brian, starting <code>ipython</code> in a terminal window and using any text editor to edit files is good enough.</li>
 </ul>
-</div>
+<p></p>
     </div>
     
 
 </article><!--End of body content--><footer id="footer" class="text-center">
-            Contents © 2021         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
+            Contents © 2022         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
             
             
         </footer>

@@ -13,22 +13,10 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/tags/bug-hunt/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><!-- Hide notebook header on index pages --><style>
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><!-- Hide notebook header on index pages --><style>
     div.notebook-header {
         display: none;
     }
@@ -100,7 +88,7 @@ MathJax.Hub.Config({
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -122,7 +110,7 @@ MathJax.Hub.Config({
             
                 <p class="feedlink">
                         
-            <a href="../bug-hunt.xml" hreflang="en" type="application/rss+xml">RSS feed</a>
+            <a href="../bug-hunt.xml" hreflang="en" type="application/rss+xml"><span class="caps">RSS</span> feed</a>
 
                 </p>
 
@@ -142,14 +130,6 @@ MathJax.Hub.Config({
         </div>
     </header><div class="p-summary entry-summary d-flex">
         <div>
-<!--
-.. title: Bug hunt episode 2: a strange file appears
-.. slug: bug-hunt-episode-2-a-strange-file-appears
-.. date: 2021-09-23
-.. tags: Development, bug-hunt
-.. category: article
--->
-
 <p>This is the second article in the <a href="https://briansimulator.org/tags/bug-hunt/">“bug hunt” series</a>. In these articles, I go through a recent bug in Brian (or one of its dependencies) and describe all the steps I used to find the source of the bug and how I fixed it.</p>
 <p>Today’s bug is about a strangely named file that seemingly appears out of nowhere when running Brian simulations. The final fix for the bug will turn out to be a single character change in the Brian code base 😀!</p>
 <p class="more"><a href="../../posts/2021/bug-hunt-episode-2-a-strange-file-appears/">Read more…</a></p>
@@ -168,15 +148,6 @@ MathJax.Hub.Config({
         </div>
     </header><div class="p-summary entry-summary d-flex">
         <div>
-<!--
-.. title: Bug hunt episode 1: Broken LaTeX output for equations
-.. slug: bug-hunt-episode-1-broken-latex-output-for-equations
-.. date: 2021-05-05
-.. tags: Development, bug-hunt
-.. category: article
-.. has_math: true
--->
-
 <p>This article starts a new series of blog posts about “bug hunts”. In these articles, I will go through a recent bug in Brian (or one of its dependencies) and describe all the steps I used to find the source of the bug and how I fixed it. I will try to not only focus on the Brian-side of things, but also show some general tools like <code>git bisect</code> or “monkey patching” that can be helpful to find the source of these nasty critters (no actual bugs were harmed during the making of this blog post).</p>
 <p>Let’s start! Today’s bug will be about equations, and more specifically about their LaTeX representation. As most of you probably know, Brian can represent equations, quantities, etc. in LaTeX. This representation can then either be included in a LaTeX document or directly rendered for example as the output in <a href="https://jupyter.org/">jupyter notebooks</a>.</p>
 <p class="more"><a href="../../posts/2021/bug-hunt-episode-1-broken-latex-output-for-equations/">Read more…</a></p>
@@ -187,6 +158,8 @@ MathJax.Hub.Config({
 </div>
 
 
+
+    
 
 
 
@@ -204,7 +177,7 @@ MathJax.Hub.Config({
     }
 });
 </script><!--End of body content--><footer id="footer" class="text-center">
-            Contents © 2021         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
+            Contents © 2022         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
             
             
         </footer>

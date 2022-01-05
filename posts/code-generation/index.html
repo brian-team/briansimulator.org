@@ -13,22 +13,10 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/code-generation/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
 <link rel="prev" href="../sharing-numpy-arrays-between-processes/" title="Sharing numpy arrays between processes" type="text/html">
 <link rel="next" href="../building-sparse-connections/" title="Building sparse connections" type="text/html">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
@@ -106,7 +94,7 @@ MathJax.Hub.Config({
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -138,9 +126,8 @@ MathJax.Hub.Config({
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
-<p>The latest SVN version of Brian includes a new experimental package, brian.experimental.codegen, which is designed for automatic generation of code for numerical integration in Python, C++ and GPU C++. If the global preference usecodegen is True then it will be used automatically for all nonlinear differential equations. If usecodegenweave is True then C code will be generated, otherwise Python code. In all cases the code runs faster. GPU code is not currently used. Use the <a href="http://www.briansimulator.org/docs/reference-preferences.html#global-configuration-file">brian_global_preferences.py</a> file to activate it for all your code. As an example of how it works, let’s use the following Brian Equations object:</p>
+    <p></p>
+<p>The latest <span class="caps">SVN</span> version of Brian includes a new experimental package, brian.experimental.codegen, which is designed for automatic generation of code for numerical integration in Python, C++ and <span class="caps">GPU</span> C++. If the global preference usecodegen is True then it will be used automatically for all nonlinear differential equations. If usecodegenweave is True then C code will be generated, otherwise Python code. In all cases the code runs faster. <span class="caps">GPU</span> code is not currently used. Use the <a href="http://www.briansimulator.org/docs/reference-preferences.html#global-configuration-file">brian_global_preferences.py</a> file to activate it for all your code. As an example of how it works, let’s use the following Brian Equations object:</p>
 <p>[python]
 eqs = Equations(‘’‘
 dV/dt = -W<em>V/(10</em>second) : volt
@@ -169,7 +156,7 @@ for(int _i=0;_i&lt;num_neurons;_i++){
     W += W__tmp*dt;
 }
 [/cpp]</p>
-<p>And for the GPU:</p>
+<p>And for the <span class="caps">GPU</span>:</p>
 <p>[cpp]
 <strong>global</strong> void stateupdate(int num_neurons, double t, double <em>S)
 {
@@ -198,7 +185,7 @@ euler_scheme = [
         ‘’‘)
     ]
 [/python]</p>
-<p>The other schemes are the RK2 and exponential Euler scheme. For example, the exponential Euler scheme is:</p>
+<p>The other schemes are the <span class="caps">RK2</span> and exponential Euler scheme. For example, the exponential Euler scheme is:</p>
 <p>[python]
 exp_euler_scheme = [
     ((‘foreachvar’, ‘nonzero’),
@@ -222,9 +209,9 @@ exp_euler_scheme = [
 V = _S[0]
 W = _S[1]
 V__B = 0
-W__B = -1.0<em>V<strong>2
-V__A = -0.1<em>W
-W__A = -1.0</em>V</strong>2
+W__B = -1.0<em>V</em><em>2
+V__A = -0.1</em>W
+W__A = -1.0<em>V</em><em>2
 V__A -= V__B
 W__A -= W__B
 V__B /= V__A
@@ -238,10 +225,9 @@ W *= exp(W__A)
 V -= V__B
 W -= W__B
 [/python]</p>
-<p>And similarly for C++ and GPU.</p>
-<p>We will be extending the automatic generation of code into other areas, including resets, thresholds, and STDP code.</p>
+<p>And similarly for C++ and <span class="caps">GPU</span>.</p>
+<p>We will be extending the automatic generation of code into other areas, including resets, thresholds, and <span class="caps">STDP</span> code.</p>
 <p>If you have any comments on the approach, bug reports, etc. please let us know!</p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/development/" rel="tag">Development</a></li>
@@ -254,7 +240,7 @@ W -= W__B
                 <a href="../building-sparse-connections/" rel="next" title="Building sparse connections">Next post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer" class="text-center">
-            Contents © 2021         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
+            Contents © 2022         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
             
             
         </footer>

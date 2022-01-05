@@ -13,22 +13,10 @@
 <link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/posts/brian-1-3-1/">
 <link rel="icon" href="../../logos/favicon.png" sizes="32x32">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><meta name="author" content="Brian team">
 <link rel="prev" href="../the-brian-twister/" title="The Brian Twister" type="text/html">
 <link rel="next" href="../about-the-new-website/" title="About the new website" type="text/html">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
@@ -107,7 +95,7 @@ This is a minor release, but there are some nice new features and many small imp
             </li>
 </ul>
 <ul class="navbar-nav navbar-right"><li class="nav-item">
-<a href="../../rss.xml" class="nav-link">RSS feed</a>
+<a href="../../rss.xml" class="nav-link"><span class="caps">RSS</span> feed</a>
 
                 
                 
@@ -139,8 +127,7 @@ This is a minor release, but there are some nice new features and many small imp
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
+    <p></p>
 <p>We have just released Brian 1.3.1, available via <strong>easy_install -U brian</strong> or from our <a href="https://neuralensemble.org/trac/brian/downloader/download/release/16/1.3.1">download page</a>.</p>
 <p>This is a minor release, but there are some nice new features and many small improvements (listed below).</p>
 <p>Minor features:
@@ -151,12 +138,12 @@ This is a minor release, but there are some nice new features and many small imp
     <li>Many more examples from papers</li>
     <li>New electrode compensation module (in library.electrophysiology)</li>
     <li>New trace analysis module (in library.electrophysiology)</li>
-    <li>Added new brian.tools.taskfarm.run_tasks function to use multiple CPUs to perform multiple runs of a simulation and save results to a DataManager, with an optional GUI interface.</li>
+    <li>Added new brian.tools.taskfarm.run_tasks function to use multiple CPUs to perform multiple runs of a simulation and save results to a DataManager, with an optional <span class="caps">GUI</span> interface.</li>
     <li>Added FractionalDelay filterbank to brian.hears, fractional itds to HeadlessDatabase and fractional shifts to Sound.shifted.</li>
     <li>Added vowel function to brian.hears for creating artificial vowel sounds</li>
     <li>New spike_triggered_average function</li>
     <li>Added maxlevel and atmaxlevel to Sound</li>
-    <li>New IRNS/IRNO noise functions</li>
+    <li>New <span class="caps">IRNS</span>/<span class="caps">IRNO</span> noise functions</li>
 </ul>
 Improvements:
 <ul>
@@ -165,18 +152,18 @@ Improvements:
     <li>Monitors do not process empty spike arrays when there have not been any spikes, increases speed for monitored networks with sparse firing (#78)</li>
     <li>Various speed optimisations</li>
 </ul>
-Bug fixes:
+<p>Bug fixes:</p>
 <ul>
 <li>Fixed bug with frozen equations and time variable in equations</li>
-    <li>Fixed bug with loading sounds using Sound(‘filename.wav’)</li>
+    <li>Fixed bug with loading sounds using Sound(&#8216;filename.wav&#8217;)</li>
     <li>SpikeMonitor now clears spiketimes correctly on reinit (#75)</li>
     <li>MultiConnection now propagates reinit (important for monitors) (#76)</li>
     <li>Fixed bug in realtime plotting</li>
     <li>Fixed various bugs in Sound</li>
-    <li>Fixed bugs in STDP</li>
+    <li>Fixed bugs in <span class="caps">STDP</span></li>
     <li>Now propagates spikes only if spikes exist (#78)</li>
 </ul>
-</div>
+<p></p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/release/" rel="tag">Release</a></li>
@@ -189,7 +176,7 @@ Bug fixes:
                 <a href="../about-the-new-website/" rel="next" title="About the new website">Next post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer" class="text-center">
-            Contents © 2021         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
+            Contents © 2022         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Brian on Twitter</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">Brian on GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">Brian on ReadTheDocs</span></a>
             
             
         </footer>
