@@ -15,6 +15,15 @@ Here are a few we selected to give an idea of what can be done with Brian.
 
 <ul class="list-group list-group-flush">
 
+<li class="list-group-item">
+{{% publication authors="Bouchacourt F, Buschman TJ" year="2019"
+                title="A Flexible Model of Working Memory"
+                url="https://www.sciencedirect.com/science/article/pii/S0896627319303770"
+                journal="Neuron" extras="103 (1) 147-160.e8; doi: 10.1016/j.neuron.2019.04.020" %}}
+<a href="https://github.com/buschman-lab/FlexibleWorkingMemory/">[code]</a>
+{{% /publication %}}
+</li>
+
 <li class="list-group-item"> 
 {{% publication authors="Frady EP, Sommer FT" year="2019"
                 title="Robust computation with rhythmic spike patterns"
