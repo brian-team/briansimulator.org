@@ -129,7 +129,8 @@
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>This is a little trick that may be useful to people using multiprocessing and numpy that I couldn’t find any good examples of online.</p>
 <p>Using the Python multiprocessing package you create a new Python process for each <span class="caps">CPU</span> in the system, but you may often want to work on the same data without making a copy. Here is one way to do that. First of all, we assume you’re starting with a large numpy array S. We replace S with a version in shared memory, and then we can pass this</p>
 <p>[python]
@@ -147,13 +148,12 @@ from numpy import ctypeslib
 S = ctypeslib.as_array(S_ctypes)
 S.shape = shape
 [/python] </p>
+</div>
     </div>
     </article>
 </div>
 
 
-
-    
 
 
 

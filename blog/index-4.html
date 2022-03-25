@@ -123,13 +123,17 @@
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We are proud to announce the alpha release of Brian2, the successor of Brian, everyone’s favourite neural simulator.</p>
 <p>This is an alpha release, therefore many features are still missing and there are very likely many bugs. The main reason for this release is to get feedback from users, the only way to make sure that the final version will be as useful to everyone as possible.</p>
 
 <p>This release is the cumulation of work that started more than one year ago, a basic rewrite of Brian that tries to keep and extend the strengths of Brian (ease of use, flexibility) while building it on a new foundation of a code generation framework that will allow for exciting new applications in the future.</p>
+
 <h3>How to get Brian2?</h3>
+
 <p>Brian2 is available on the <a href="https://pypi.python.org/pypi/Brian2">python package index</a>, therefore you can install it using easy_install or pip:</p>
+
 <p><code>easy_install brian2
 pip install –pre brian2</code></p>
 <p>Alternatively, you can directly download the package from the package index and install it yourself using <code>python setup.py install</code> (if you are using Python 2, simply running it from the source directory also works).</p>
@@ -138,13 +142,19 @@ pip install –pre brian2</code></p>
 <a href="https://github.com/brian-team/brian2">https://github.com/brian-team/brian2</a></p>
 
 <p>Note that the package is called <b>brian2</b>, not <b>brian</b>, therefore it does not interfere with an existing Brian installation and trying out Brian2 will not affect your existing Brian simulations.</p>
+
 <h3>Documentation</h3>
+
 <p>You can find documentation for Brian2 at readthedocs: <a href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 
 <p>Note that the user documentation is still quite incomplete, you&#8217;ll find a lot of information in the reference documentation, though.</p>
+
 <h3>Feedback wanted!</h3>
+
 <p>This is an alpha release, so there is still a lot that will change in the next months. However, the syntax is already mostly the way we plan it to be. Please provide feedback if you find something unintuitive or you fail to see how to express something that you could express in Brian1. For the feedback, please use either the <a href="http://groups.google.com/group/brian-development/">brian-development mailing list</a> or the <a href="https://github.com/brian-team/brian2/issues">github issues</a>. Note that the *internal* code (e.g. the interface to the code generation framework) will still change quite a bit.</p>
+
 <h3>Known issues</h3>
+
 <ul>
 <li>Brian hears and the modelfitting toolbox have not yet been ported to Brian2</li>
     <li>Brian2 is not yet optimised for performance. In particular, setting up a simulation or using multiple run statements might appear to be slow because a lot of work is unnecessarily repeated. For the simulation itself, a big performance increase can be often achieved by switching on C++ code generation by using the following in the code: <code>brian_prefs.codegen.target = 'weave'</code>
@@ -155,6 +165,7 @@ pip install –pre brian2</code></p>
 </li>
 </ul>
 <p></p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-tutorial-at-cns-2013/" class="u-url">Brian tutorial at <span class="caps">CNS</span> 2013</a></h1>
         <div class="metadata">
@@ -167,8 +178,10 @@ pip install –pre brian2</code></p>
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>On <strong>July 13th 2013</strong>, we’ll have a tutorial on “Advanced modelling of spiking neural networks with Brian” at the <a href="http://www.cnsorg.org/cns-2013-paris"><span class="caps">CNS</span> conference</a> in Paris, covering various topics around the available Brian toolboxes, the ongoing Brian development and general handy tricks to cope with complex simulations. The tutorial will also feature an open questions sessions in the end where attendants can ask for help with individual problems they have in their current Brian project. Follow this link to find the <a href="https://briansimulator.org/brian-tutorial-cns-2013">schedule and material</a>.</p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/new-book-on-ipython/" class="u-url">New book on IPython</a></h1>
         <div class="metadata">
@@ -181,11 +194,13 @@ pip install –pre brian2</code></p>
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <a href="http://cyrille.rossant.net/">Cyrille Rossant</a>, one of the developers of Brian, has written a new book “<a href="http://www.packtpub.com/learning-ipython-for-interactive-computing-and-data-visualization/book">Learning IPython for Interactive Computing and Data Visualization</a>“. Recently, IPython has really become an excellent tool for scientific computation, growing far beyond its roots as an enhanced interactive shell for Python. It now supports the IPython notebook (which lets you mix text, mathematics, code and results, like in Mathematica notebooks), and a parallel computing engine to use multiple cores or machines. Unfortunately, the online documentation is not as easy to follow as it could be, which is where Cyrille’s book comes in handy.
 <p>He covers everything from installation to advanced topics like high performance computing and customizing IPython, using clear, worked examples with publicly available datasets. In addition to IPython, he also briefly covers using important scientific computing Python packages such as NumPy, SciPy, Cython and Pandas.</p>
 <p>And of course, for the next major release of Brian we’re working on incorporating lots of support for the IPython workflow.</p>
 <p>If you haven’t yet tried IPython or if you’ve only just started using it, I’d highly recommend <a href="http://www.packtpub.com/learning-ipython-for-interactive-computing-and-data-visualization/book">Cyrille’s book</a> (reasonably priced at around $15 for the ebook version). There’s even plenty of stuff in there for more experiened users too.</p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-1-4-1/" class="u-url">Brian 1.4.1</a></h1>
         <div class="metadata">
@@ -198,7 +213,8 @@ pip install –pre brian2</code></p>
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We have just released Brian 1.4.1, available from PyPI using  <strong>pip install -U brian</strong> or <strong>easy_install -U brian</strong>, or from the <a href="http://neuralensemble.org/trac/brian/downloader/download/release/19">NeuralEnsemble server</a>. It will be soon available in the <a href="http://neuro.debian.net/pkgs/python-brian.html">NeuroDebian repositories</a> as well, thanks to the <a href="http://neuro.debian.net/about.html#chap-team">NeuroDebian team</a>.</p>
 <p>This is a minor release, but it adds a couple of useful features (including experimental features for the Synapses class) and fixes some important bugs, in particular for users of brian hears. A list of changes can be found below:</p>
 <p>Major features:
@@ -213,20 +229,20 @@ Minor features:
     <li>Brian hears: Two new models, MiddleEar (filtering by the middle ear) and ZhangSynapse (model of the <span class="caps">IHC</span>-<span class="caps">AN</span> synapse)</li>
     <li>Brian hears: New convenience functions to get reasonable axis ticks for logarithmic axes</li>
 </ul>
-<p>Improvements:</p>
+Improvements:
 <ul>
-<li>Brian&#8217;s documentation is now also available under <a href="http://brian.readthedocs.org">brian.readthedocs.org</a>
+<li>Brian’s documentation is now also available under <a href="http://brian.readthedocs.org">brian.readthedocs.org</a>
 </li>
-    <li>ProgressReporter has context manager support (i.e. can be used in &#8220;with&#8221; statements)</li>
+    <li>ProgressReporter has context manager support (i.e. can be used in “with” statements)</li>
     <li>NeuronGroup and Synapses work with empty model specifications.</li>
     <li>C version of SpikeContainer is now picklable</li>
 </ul>
-<p>Bug fixes:</p>
+Bug fixes:
 <ul>
 <li>Synaptic equations referring to variables in the pre- or postsynaptic group are never considered as being linear (fixes ticket #83)</li>
     <li>Fix issue with static equations in synaptic models (see  <a href="https://groups.google.com/d/msg/briansupport/-/uqxLK_yoqKUJ">https://groups.google.com/d/msg/briansupport/-/uqxLK_yoqKUJ</a> )</li>
-    <li>Make LinearStateUpdater pickable, even if array B is &#8220;NotImplemented&#8221;.</li>
-    <li>Fixed the bug in which the StateSpikeMonitor didn&#8217;t record variables defined with a static equation.</li>
+    <li>Make LinearStateUpdater pickable, even if array B is “NotImplemented”.</li>
+    <li>Fixed the bug in which the StateSpikeMonitor didn’t record variables defined with a static equation.</li>
     <li>Important bug fixes for brian hears, all users are encouraged to update:</li>
 <ul>
 <li>Make sure that LinearFilterbank copies it source and therefore not changes it (when not using weave) (fixes ticket #73)</li>
@@ -234,12 +250,12 @@ Minor features:
     <li> Fix shifting multi-channel sounds with fractional=True (fixes ticket #80)</li>
 </ul>
 </ul>
-<p>Experimental features:</p>
+Experimental features:
 <ul>
-<li>C version of SpikeQueue (used in the Synapses class), which can lead to a considerable speedup (see &#8220;Advanced concepts/Compiled code&#8221; for instructions how to use it).</li>
+<li>C version of SpikeQueue (used in the Synapses class), which can lead to a considerable speedup (see “Advanced concepts/Compiled code” for instructions how to use it).</li>
     <li>Delays can be specified as a parameters of the Synapses model and then be changed dynamically.</li>
 </ul>
-<p></p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-1-4-is-out/" class="u-url">Brian 1.4 is out!</a></h1>
         <div class="metadata">
@@ -252,7 +268,8 @@ Minor features:
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>The 1.4 release of Brian is out!</p>
 <p>The major change in this version is the addition of a new Synapses class, which allows modeling everything synaptic: gap junctions, probabilistic synapses, nonlinear synapses, plasticity, etc. There are also a number of other new features, bug fixes and improvements (see below).</p>
 <p>Brian is being developed by Romain Brette and Dan Goodman. This version also includes contributions by Bertrand Fontaine, Cyrille Rossant, Victor Benichoux, Marcel Stimberg and Jonathan Laudanski.</p>
@@ -268,36 +285,36 @@ Minor features:
 <li>New AERSpikeMonitor class</li>
     <li>Several updates to library.electrophysiology</li>
 </ul>
-<p>Improvements:</p>
+Improvements:
 <ul>
 <li>Units should work better with static code analysers now</li>
     <li>Added Network.remove</li>
     <li>SpikeMonitor has a new .it attribute (returns pair i, t of arrays of spike times)</li>
     <li>Many new examples</li>
 </ul>
-<p>Bug fixes:</p>
+Bug fixes:
 <ul>
 <li>Assigning to a static variable (equation) now raise an error</li>
     <li>Fixed issues for TimedArrays with explicitly set times (fixes ticket #81)</li>
-    <li>Fixed bug, repr and str didn&#8217;t work for Sound</li>
-    <li>Fixed bug where tone(array_of_frequencies, &#8230;)</li>
+    <li>Fixed bug, repr and str didn’t work for Sound</li>
+    <li>Fixed bug where tone(array_of_frequencies, …)</li>
     <li>Fixed SparseConnectionMatrix bug suggested by Owen Mackwood</li>
     <li>Fixed bug in Parameters reported by Jimmy Bonaiuto</li>
     <li>Fixed bug with contained_objects reported by Oleg Sinyavskiy</li>
-    <li>Units __repr__ and __str__ fixes</li>
+    <li>Units <strong>repr</strong> and <strong>str</strong> fixes</li>
     <li>Sound.spectrum, Sound.pinknoise, brownnoise</li>
-    <li>t wasn&#8217;t available in StringReset and PythonThreshold</li>
+    <li>t wasn’t available in StringReset and PythonThreshold</li>
 </ul>
-<p>Deprecated or removed features:</p>
+Deprecated or removed features:
 <ul>
 <li>MultipleSpikeGeneratorGroup</li>
     <li>experimental.coincidence_detection</li>
 </ul>
-<p>Experimental features:</p>
+Experimental features:
 <ul>
 <li>Generating model documentation automatically (experimental.model_documentation)</li>
 </ul>
-<p></p>
+ </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/better-sparse-matrix-support/" class="u-url">Better sparse matrix support</a></h1>
         <div class="metadata">
@@ -310,8 +327,10 @@ Minor features:
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We just added a new method <code>Connection.connect_from_sparse</code>(W, delay=None, column_access=True) which allows you to initialise a Connection object directly with any scipy sparse matrix. This has a huge memory efficiency gain if you use <span class="caps">CSR</span>/<span class="caps">COO</span> matrices, as by default Brian uses <span class="caps">LIL</span> which is very flexible but memory inefficient. For an even bigger memory efficiency gain, if you are not using <span class="caps">STDP</span>, set column_access=False. <a href="http://neuralensemble.org/trac/brian/wiki/Downloads">Download the <span class="caps">SVN</span> version of Brian</a> to start using this feature.</p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/about-the-new-website/" class="u-url">About the new website</a></h1>
         <div class="metadata">
@@ -324,9 +343,11 @@ Minor features:
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>The Brian website looks weird! It’s not going to last! We have been hacked by some trojan (not the software, just the website) and we had to remove everything. The content is back, but all the settings have gone. It will take a little while to put everything back to the original configuration, please be patient!</p>
 <p><strong>Update: it’s back to normal!</strong></p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-1-3-1/" class="u-url">Brian 1.3.1</a></h1>
         <div class="metadata">
@@ -339,7 +360,8 @@ Minor features:
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We have just released Brian 1.3.1, available via <strong>easy_install -U brian</strong> or from our <a href="https://neuralensemble.org/trac/brian/downloader/download/release/16/1.3.1">download page</a>.</p>
 <p>This is a minor release, but there are some nice new features and many small improvements (listed below).</p>
 <p>Minor features:
@@ -364,10 +386,10 @@ Improvements:
     <li>Monitors do not process empty spike arrays when there have not been any spikes, increases speed for monitored networks with sparse firing (#78)</li>
     <li>Various speed optimisations</li>
 </ul>
-<p>Bug fixes:</p>
+Bug fixes:
 <ul>
 <li>Fixed bug with frozen equations and time variable in equations</li>
-    <li>Fixed bug with loading sounds using Sound(&#8216;filename.wav&#8217;)</li>
+    <li>Fixed bug with loading sounds using Sound(‘filename.wav’)</li>
     <li>SpikeMonitor now clears spiketimes correctly on reinit (#75)</li>
     <li>MultiConnection now propagates reinit (important for monitors) (#76)</li>
     <li>Fixed bug in realtime plotting</li>
@@ -375,7 +397,7 @@ Improvements:
     <li>Fixed bugs in <span class="caps">STDP</span></li>
     <li>Now propagates spikes only if spikes exist (#78)</li>
 </ul>
-<p></p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/the-brian-twister/" class="u-url">The Brian Twister</a></h1>
         <div class="metadata">
@@ -388,7 +410,8 @@ Improvements:
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We are organizing a competition, the “Brian twister”: write an example script for the Brian simulator and win a Brian mug!
 A winning entry:
 </p>
@@ -402,6 +425,7 @@ For example, this short script simulates a synfire chain (Diesmann et al., 1999)
 <p>The goal of this competition is to extend the set of examples provided to Brian users. It is also an opportunity for you to advertise your papers. The examples will be included in the next Brian release.</p>
 <p>Please send me your file with a short explanation before the end of this year (31 December 2011): <a href="mailto:romain.brette@ens.fr">romain.brette@ens.fr</a></p>
 <p>Good luck!</p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-survey/" class="u-url">Brian survey</a></h1>
         <div class="metadata">
@@ -414,12 +438,14 @@ For example, this short script simulates a synfire chain (Diesmann et al., 1999)
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We are doing an anonymous survey to improve the Brian simulator  (<a href="https://briansimulator.org/">http://briansimulator.org</a>).
 If you are a Brian user, please consider taking 5 minutes to answer  these questions:</p>
 <p><a href="https://docs.google.com/spreadsheet/viewform?formkey=dEVlaTVFczBDS1FtZW5wYXl3cmFpVFE6MQ">https://docs.google.com/spreadsheet/viewform?formkey=dEVlaTVFczBDS1FtZW5wYXl3cmFpVFE6MQ</a></p>
 <p>No question is mandatory. Your feedback will be extremely helpful for  us! It is also the opportunity for you to tell us what improvements you  would like to see in Brian.</p>
 <p>Thanks for you time</p>
+</div>
     </div>
     </article>
 </div>

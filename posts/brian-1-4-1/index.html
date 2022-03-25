@@ -126,7 +126,8 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p></p>
+    <div>
+<p></p>
 <p>We have just released Brian 1.4.1, available from PyPI using  <strong>pip install -U brian</strong> or <strong>easy_install -U brian</strong>, or from the <a href="http://neuralensemble.org/trac/brian/downloader/download/release/19">NeuralEnsemble server</a>. It will be soon available in the <a href="http://neuro.debian.net/pkgs/python-brian.html">NeuroDebian repositories</a> as well, thanks to the <a href="http://neuro.debian.net/about.html#chap-team">NeuroDebian team</a>.</p>
 <p>This is a minor release, but it adds a couple of useful features (including experimental features for the Synapses class) and fixes some important bugs, in particular for users of brian hears. A list of changes can be found below:</p>
 <p>Major features:
@@ -141,20 +142,20 @@ Minor features:
     <li>Brian hears: Two new models, MiddleEar (filtering by the middle ear) and ZhangSynapse (model of the <span class="caps">IHC</span>-<span class="caps">AN</span> synapse)</li>
     <li>Brian hears: New convenience functions to get reasonable axis ticks for logarithmic axes</li>
 </ul>
-<p>Improvements:</p>
+Improvements:
 <ul>
-<li>Brian&#8217;s documentation is now also available under <a href="http://brian.readthedocs.org">brian.readthedocs.org</a>
+<li>Brian’s documentation is now also available under <a href="http://brian.readthedocs.org">brian.readthedocs.org</a>
 </li>
-    <li>ProgressReporter has context manager support (i.e. can be used in &#8220;with&#8221; statements)</li>
+    <li>ProgressReporter has context manager support (i.e. can be used in “with” statements)</li>
     <li>NeuronGroup and Synapses work with empty model specifications.</li>
     <li>C version of SpikeContainer is now picklable</li>
 </ul>
-<p>Bug fixes:</p>
+Bug fixes:
 <ul>
 <li>Synaptic equations referring to variables in the pre- or postsynaptic group are never considered as being linear (fixes ticket #83)</li>
     <li>Fix issue with static equations in synaptic models (see  <a href="https://groups.google.com/d/msg/briansupport/-/uqxLK_yoqKUJ">https://groups.google.com/d/msg/briansupport/-/uqxLK_yoqKUJ</a> )</li>
-    <li>Make LinearStateUpdater pickable, even if array B is &#8220;NotImplemented&#8221;.</li>
-    <li>Fixed the bug in which the StateSpikeMonitor didn&#8217;t record variables defined with a static equation.</li>
+    <li>Make LinearStateUpdater pickable, even if array B is “NotImplemented”.</li>
+    <li>Fixed the bug in which the StateSpikeMonitor didn’t record variables defined with a static equation.</li>
     <li>Important bug fixes for brian hears, all users are encouraged to update:</li>
 <ul>
 <li>Make sure that LinearFilterbank copies it source and therefore not changes it (when not using weave) (fixes ticket #73)</li>
@@ -162,12 +163,12 @@ Minor features:
     <li> Fix shifting multi-channel sounds with fractional=True (fixes ticket #80)</li>
 </ul>
 </ul>
-<p>Experimental features:</p>
+Experimental features:
 <ul>
-<li>C version of SpikeQueue (used in the Synapses class), which can lead to a considerable speedup (see &#8220;Advanced concepts/Compiled code&#8221; for instructions how to use it).</li>
+<li>C version of SpikeQueue (used in the Synapses class), which can lead to a considerable speedup (see “Advanced concepts/Compiled code” for instructions how to use it).</li>
     <li>Delays can be specified as a parameters of the Synapses model and then be changed dynamically.</li>
 </ul>
-<p></p>
+</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/release/" rel="tag">Release</a></li>

@@ -123,8 +123,10 @@
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>There will be a tutorial on Brian at the <a href="https://neuromorphs.net/nm/wiki/2010">Telluride workshop</a> in Colorado, tomorrow at noon (via Skype as I’m in Paris).</p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/building-sparse-connections/" class="u-url">Building sparse connections</a></h1>
         <div class="metadata">
@@ -137,12 +139,14 @@
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We just added a new feature for building sparse connections: the sparseness keyword now accepts functions in the same way as the weight keyword, e.g.:</p>
 <p>[python]
 myconnection.connect_random(group1,group2,0.1,weight=1<em>nS,sparseness=exp(-abs(i-j)</em>.1))
 [/python]</p>
 <p>makes random synapses between neurons with a distance-dependent probability (assuming the neurons are topographically arranged, with a linear topology).</p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/code-generation/" class="u-url">Code generation</a></h1>
         <div class="metadata">
@@ -155,7 +159,8 @@ myconnection.connect_random(group1,group2,0.1,weight=1<em>nS,sparseness=exp(-abs
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>The latest <span class="caps">SVN</span> version of Brian includes a new experimental package, brian.experimental.codegen, which is designed for automatic generation of code for numerical integration in Python, C++ and <span class="caps">GPU</span> C++. If the global preference usecodegen is True then it will be used automatically for all nonlinear differential equations. If usecodegenweave is True then C code will be generated, otherwise Python code. In all cases the code runs faster. <span class="caps">GPU</span> code is not currently used. Use the <a href="http://www.briansimulator.org/docs/reference-preferences.html#global-configuration-file">brian_global_preferences.py</a> file to activate it for all your code. As an example of how it works, let’s use the following Brian Equations object:</p>
 <p>[python]
 eqs = Equations(‘’‘
@@ -238,9 +243,9 @@ exp_euler_scheme = [
 V = _S[0]
 W = _S[1]
 V__B = 0
-W__B = -1.0<em>V</em><em>2
-V__A = -0.1</em>W
-W__A = -1.0<em>V</em><em>2
+W__B = -1.0<em>V<strong>2
+V__A = -0.1<em>W
+W__A = -1.0</em>V</strong>2
 V__A -= V__B
 W__A -= W__B
 V__B /= V__A
@@ -257,6 +262,7 @@ W -= W__B
 <p>And similarly for C++ and <span class="caps">GPU</span>.</p>
 <p>We will be extending the automatic generation of code into other areas, including resets, thresholds, and <span class="caps">STDP</span> code.</p>
 <p>If you have any comments on the approach, bug reports, etc. please let us know!</p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/sharing-numpy-arrays-between-processes/" class="u-url">Sharing numpy arrays between processes</a></h1>
         <div class="metadata">
@@ -269,7 +275,8 @@ W -= W__B
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>This is a little trick that may be useful to people using multiprocessing and numpy that I couldn’t find any good examples of online.</p>
 <p>Using the Python multiprocessing package you create a new Python process for each <span class="caps">CPU</span> in the system, but you may often want to work on the same data without making a copy. Here is one way to do that. First of all, we assume you’re starting with a large numpy array S. We replace S with a version in shared memory, and then we can pass this</p>
 <p>[python]
@@ -287,6 +294,7 @@ from numpy import ctypeslib
 S = ctypeslib.as_array(S_ctypes)
 S.shape = shape
 [/python] </p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-1-2/" class="u-url">Brian 1.2</a></h1>
         <div class="metadata">
@@ -299,7 +307,8 @@ S.shape = shape
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We have just released <a href="https://neuralensemble.org/trac/brian/wiki/Downloads">Brian 1.2</a>.</p>
 <p>The major feature of this release is the model fitting toolbox, designed for automatic fitting of spiking neural models to recorded data. The toolbox is capable of using multiple CPUs or GPUs, across multiple machines. For example, in our lab we use 3 computers with 2 GPUs each to get a 300x speed increase compared to using a single <span class="caps">CPU</span>.</p>
 <p>Other features of this release include some support for real time plotting as the simulation runs and some important bug fixes. See below for the complete list of changes.</p>
@@ -311,12 +320,12 @@ S.shape = shape
 </ul>
 Minor features:
 <ul>
-<li>New real-time &#8220;refresh=&#8220; options added to plotting functions</li>
+<li>New real-time <code>refresh=</code> options added to plotting functions</li>
     <li>Gamma factor in utils.statistics</li>
     <li>New RegularClock object</li>
     <li>Added brian_sample_run function to test installation in place of nose tests</li>
 </ul>
-<p>Improvements:</p>
+Improvements:
 <ul>
 <li>Speed improvements to monitors and plotting functions</li>
     <li>Sparse matrix support improved, should work with scipy versions up to 0.7.1</li>
@@ -324,7 +333,7 @@ Minor features:
     <li>Parameters now picklable</li>
     <li>Made Equations picklable</li>
 </ul>
-<p>Bug fixes:</p>
+Bug fixes:
 <ul>
 <li>Fixed major bug with subgroups and connections (announced on webpage)</li>
     <li>Fixed major bug with multiple clocks (announced on webpage)</li>
@@ -335,7 +344,7 @@ Minor features:
     <li>Fixed bug with <span class="caps">STP</span></li>
     <li>Fixed bug with weight=lambda i,j:rand()</li>
 </ul>
-<p>New examples:</p>
+New examples:
 <ul>
 <li>New multiprocessing examples</li>
     <li>Added polychronisation example</li>
@@ -344,7 +353,7 @@ Minor features:
     <li>Added examples of using derived classes with Brian</li>
     <li>Realtime plotting example</li>
 </ul>
-<p></p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/bug-advisory-multiple-clocks/" class="u-url">Bug advisory: multiple clocks</a></h1>
         <div class="metadata">
@@ -357,8 +366,10 @@ Minor features:
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We recently found and fixed a bug which may silently cause spikes to be lost or extra spikes to be generated in certain circumstances. At the moment, the only known example of a problem is when using SpikeGeneratorGroup in a simulation with multiple clocks as in <a href="http://groups.google.com/group/briansupport/browse_thread/thread/98151b5f340c33b0?hl=en">this message on the support group</a>, but the problem may also appear in rare situations with other simulations with multiple clocks. We advise users to upgrade to Brian 1.1.4 when it is released next week.</p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/bug-advisory-connections-from-subgroups-with-delays/" class="u-url">Bug advisory: connections from subgroups with delays</a></h1>
         <div class="metadata">
@@ -371,7 +382,8 @@ Minor features:
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We recently found a bug that may silently cause problems with many simulations. The bug causes problems in the following situation:
 </p>
 <ul>
@@ -382,6 +394,7 @@ Minor features:
 </ul>
 In this case, the SpikeContainer object would be improperly initialised and many spikes may be lost. The latest development version fixes this. See <a href="http://neuralensemble.org/trac/brian/ticket/33">ticket #33</a> on our trac.
 <p>If you have code running on an older version and think your code might be affected, please get in contact on the <a href="mailto:briansupport@googlegroups.com">briansupport@googlegroups.com</a> list.</p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/new-svn/" class="u-url">New <span class="caps">SVN</span></a></h1>
         <div class="metadata">
@@ -394,8 +407,10 @@ In this case, the SpikeContainer object would be improperly initialised and many
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>The Brian <span class="caps">SVN</span> has moved from SourceForge to <a href="http://neuralensemble.org/brian">neuralensemble.org</a>. The current release (1.1.3) is still available at the SourceForge and PyPI pages, but future releases will be at the new page. The current development version will only be available on the new page from now on.</p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/real-time-plotting/" class="u-url">Real time plotting</a></h1>
         <div class="metadata">
@@ -408,7 +423,8 @@ In this case, the SpikeContainer object would be improperly initialised and many
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>A feature of the pylab/matplotlib plotting package that I hadn’t used before is animation. The <a href="http://www.scipy.org/Cookbook/Matplotlib/Animations">Animations </a>entry on the Scipy Cookbook explains how to do it. Here is an example of using it to do realtime plotting of a network in Brian. We plot a raster plot and sample membrane potential trace as the <span class="caps">CUBA</span> example runs:</p>
 <p>[python]
 from brian import *</p>
@@ -459,6 +475,7 @@ ioff() # switch interactive mode off
 show() # and wait for user to close the window before shutting down
 [/python]</p>
 <p>We’re thinking about adapting some of this to include in the standard Brian plotting library. Any thoughts?</p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-1-1-3/" class="u-url">Brian 1.1.3</a></h1>
         <div class="metadata">
@@ -471,7 +488,8 @@ show() # and wait for user to close the window before shutting down
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We have just produced a <a href="http://sourceforge.net/project/showfiles.php?group_id=226798">new release of Brian</a>, version 1.1.3, with the
 following changes:</p>
 <ul>
@@ -489,6 +507,7 @@ following changes:</p>
 <li>Various bug fixes</li>
 </ul>
 <p>You will also notice that the manual now includes a developer’s guide. If you are interested in contributing, we suggest you to subscribe to the <a href="http://groups.google.fr/group/brian-development">Brian development mailing list</a>.</p>
+</div>
     </div>
     </article>
 </div>

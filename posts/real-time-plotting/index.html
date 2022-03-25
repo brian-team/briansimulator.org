@@ -126,7 +126,8 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p></p>
+    <div>
+<p></p>
 <p>A feature of the pylab/matplotlib plotting package that I hadn’t used before is animation. The <a href="http://www.scipy.org/Cookbook/Matplotlib/Animations">Animations </a>entry on the Scipy Cookbook explains how to do it. Here is an example of using it to do realtime plotting of a network in Brian. We plot a raster plot and sample membrane potential trace as the <span class="caps">CUBA</span> example runs:</p>
 <p>[python]
 from brian import *</p>
@@ -177,6 +178,7 @@ ioff() # switch interactive mode off
 show() # and wait for user to close the window before shutting down
 [/python]</p>
 <p>We’re thinking about adapting some of this to include in the standard Brian plotting library. Any thoughts?</p>
+</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/development/" rel="tag">Development</a></li>

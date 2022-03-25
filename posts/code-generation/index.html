@@ -126,7 +126,8 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p></p>
+    <div>
+<p></p>
 <p>The latest <span class="caps">SVN</span> version of Brian includes a new experimental package, brian.experimental.codegen, which is designed for automatic generation of code for numerical integration in Python, C++ and <span class="caps">GPU</span> C++. If the global preference usecodegen is True then it will be used automatically for all nonlinear differential equations. If usecodegenweave is True then C code will be generated, otherwise Python code. In all cases the code runs faster. <span class="caps">GPU</span> code is not currently used. Use the <a href="http://www.briansimulator.org/docs/reference-preferences.html#global-configuration-file">brian_global_preferences.py</a> file to activate it for all your code. As an example of how it works, let’s use the following Brian Equations object:</p>
 <p>[python]
 eqs = Equations(‘’‘
@@ -209,9 +210,9 @@ exp_euler_scheme = [
 V = _S[0]
 W = _S[1]
 V__B = 0
-W__B = -1.0<em>V</em><em>2
-V__A = -0.1</em>W
-W__A = -1.0<em>V</em><em>2
+W__B = -1.0<em>V<strong>2
+V__A = -0.1<em>W
+W__A = -1.0</em>V</strong>2
 V__A -= V__B
 W__A -= W__B
 V__B /= V__A
@@ -228,6 +229,7 @@ W -= W__B
 <p>And similarly for C++ and <span class="caps">GPU</span>.</p>
 <p>We will be extending the automatic generation of code into other areas, including resets, thresholds, and <span class="caps">STDP</span> code.</p>
 <p>If you have any comments on the approach, bug reports, etc. please let us know!</p>
+</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/development/" rel="tag">Development</a></li>

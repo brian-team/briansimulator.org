@@ -120,7 +120,33 @@
 
         </div>
     </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-2-1-and-brian2genn-1-1/" class="u-url">Brian 2.1 and Brian2GeNN 1.1</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-2-1-2-and-brian2genn-1-1-5/" class="u-url">Brian 2.1.2 and Brian2GeNN 1.1.5</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../../authors/brian-team/">Brian team</a>
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/brian-2-1-2-and-brian2genn-1-1-5/" rel="bookmark">
+            <time class="published dt-published" datetime="2017-11-08T18:16:14Z" itemprop="datePublished" title="2017-11-08">2017-11-08</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p></p>
+<p>We have released new bug fix releases for <strong>Brian 2</strong> (version 2.1.2) and <strong>Brian2GeNN</strong> (version 1.1.5).</p>
+<p>The new Brian 2 release fixes two bugs:
+</p>
+<ol>
+<li>an incorrect application of the substitution mechanism in equations (i.e. when using the same set of equations several times and changing the equations’ variable names via Brian’s Equation class), and</li>
+    <li>an inadvertent deactivation of parts of the new caching mechanism which resulted in a major reduction of its performance improvement.</li>
+</ol>
+The Brian2GeNN release adds a workaround for a bug in some version of the glibc library on Linux which can potentially lead to drastically reduced performance. This is the same workaround that had already been applied to Brian 2’s C++ standalone mode with an earlier release.
+<p><strong>How to get Brian 2:</strong> <a href="http://brian2.readthedocs.io/en/2.1.2/introduction/install.html">http://brian2.readthedocs.io/en/2.1.2/introduction/install.html</a></p>
+<p><strong>How to get Brian2GeNN:</strong> <a href="http://brian2genn.readthedocs.io/en/latest/introduction/index.html">http://brian2genn.readthedocs.io/en/latest/introduction/index.html</a></p>
+<p>As always, please report bugs or suggestions to the github bug tracker (<a href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>) or to the brian-development mailing list (brian-development@googlegroups.com).</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-2-1-and-brian2genn-1-1/" class="u-url">Brian 2.1 and Brian2GeNN 1.1</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../../authors/brian-team/">Brian team</a>
@@ -131,12 +157,14 @@
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We are happy to announce the release of <strong>Brian 2.1</strong>. This release includes a number of fixes and small improvements, and two new major features: support for numerical integration with adaptive-timestep methods based on the <span class="caps">GNU</span> Scientific Library, and caching of code generation leading to faster simulation setup times, in particular for multiple runs of the same model. For an extensive list of changes, see the <a href="http://brian2.readthedocs.io/en/2.1/introduction/release_notes.html">release notes</a>. We recommend all users of Brian 2 to update.</p>
 <p>We also release a new version 1.1. of <a href="http://brian2genn.readthedocs.io"><strong>Brian2GeNN</strong></a>, Brian’s interface to the <span class="caps">GPU</span>-enhanced Neuronal Network simulation environment (<a href="http://genn-team.github.io/genn/">GeNN</a>). This release does not contain any major new features except for bug and compatibility fixes, but an update is required for all users that update to Brian 2.1.</p>
 <p><strong>How to get Brian 2</strong>: follow the <a href="http://brian2.readthedocs.io/en/2.1/introduction/install.html">installation instructions in the documentation </a></p>
 <p><strong>Further information about Brian2</strong>: <a class="moz-txt-link-freetext" href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 <p>As always, please report bugs or suggestions to the <a href="https://github.com/brian-team/brian2/issues">github bug tracker</a> or to the brian-development mailing list (<a class="moz-txt-link-abbreviated" href="mailto:brian-development@googlegroups.com">brian-development@googlegroups.com</a>).</p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian2genn-1-0/" class="u-url">Brian2GeNN 1.0</a></h1>
         <div class="metadata">
@@ -149,7 +177,8 @@
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We are proud to announce the release of <strong>Brian2GeNN</strong>, the Brian 2 interface to the <a href="http://genn-team.github.io/genn/"><span class="caps">GPU</span>-enhanced Neuronal Network (GeNN)</a> simulator. With this interface, a Brian 2 script (as long as it only uses <a href="http://brian2genn.readthedocs.io/en/latest/introduction/exclusions.html">supported features</a>) can benefit from the potential performance benefits of a <span class="caps">GPU</span> by adding just two lines to the start of the script:
 <code>
 import brian2genn
@@ -161,6 +190,7 @@ set_device(‘genn’)
 <p>Note that in all cases, users need a <span class="caps">CUDA</span>-capable <span class="caps">NVIDIA</span> <span class="caps">GPU</span> and a manual installation of the <span class="caps">CUDA</span> <span class="caps">SDK</span>.</p>
 <p>The actual performance benefits of using a <span class="caps">GPU</span> to run the simulation depend strongly on the details of the model but can be significant. With the Brian2GeNN package, we hope to make it as easy as possible for users to try it out for themselves.</p>
 <p>In case you run into problems with the installation of the package or with its use, please contact us at brian-development@googlegroups.com or open an issue on the <a href="https://github.com/brian-team/brian2genn/issues">Brian2GeNN bug tracker</a>.</p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-2-0-2/" class="u-url">Brian 2.0.2</a></h1>
         <div class="metadata">
@@ -173,11 +203,13 @@ set_device(‘genn’)
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We are happy to announce the release of <strong>Brian 2.0.2</strong>. This release includes a large number of fixes and improvements, in particular important updates for the unit system and multi-compartmental simulations. Note that with this release we provide conda packages for Python 3.6, but no longer for Python 3.4. For an extensive list of changes, see the <a href="http://brian2.readthedocs.io/en/2.0.2/introduction/release_notes.html">release notes</a>. We recommend all users of Brian 2 to update.</p>
 <p><strong>How to get Brian 2</strong>: follow the <a href="http://brian2.readthedocs.io/en/2.0.2/introduction/install.html">installation instructions in the documentation </a></p>
 <p><strong>Further information about Brian2</strong>: <a class="moz-txt-link-freetext" href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 <p>As always, please report bugs or suggestions to the <a href="https://github.com/brian-team/brian2/issues">github bug tracker</a> or to the brian-development mailing list (<a class="moz-txt-link-abbreviated" href="mailto:brian-development@googlegroups.com">brian-development@googlegroups.com</a>).</p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-2-0-1/" class="u-url">Brian 2.0.1</a></h1>
         <div class="metadata">
@@ -190,13 +222,15 @@ set_device(‘genn’)
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We are happy to announce the release of<strong> Brian 2.0.1</strong>. This is a bug fix release which does not add any new features but fixes a few important bugs and updates the documentation.
 Earlier versions of Brian 2 contained bugs that could lead to incorrect recordings from subgroups with <em>PopulationRateMonitor</em> and <em>SpikeMonitor</em>. The issue was only triggered under quite specific circumstances and not for all code generation targets (for more details, see <a href="https://github.com/brian-team/brian2/issues/772">github issues 772</a> and <a href="https://github.com/brian-team/brian2/issues/777">777</a>), but could in the worst case lead to the recording of incorrectly high firing rates at certain time steps (for <em>SpikeMonitor</em>, the bug meant that spikes beyond the size of the subgroup were recorded).</p>
 <p>The new release also fixes a few other issues reported by users, see the<a href="http://brian2.readthedocs.io/en/2.0.1/introduction/release_notes.html"> release notes</a> for more information. We strongly recommend all users of Brian 2 to update.</p>
 <p><strong>How to get Brian 2:</strong> follow the <a href="http://brian2.readthedocs.io/en/2.0.1/introduction/install.html">installation instructions in the documentation</a></p>
 <p><strong>Further information about Brian2:</strong> <a class="moz-txt-link-freetext" href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 <p>As always, please report bugs or suggestions to the <a href="https://github.com/brian-team/brian2/issues">github bug tracker</a> or to the brian-development mailing list (<a class="moz-txt-link-abbreviated" href="mailto:brian-development@googlegroups.com">brian-development@googlegroups.com</a>).</p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-2-0/" class="u-url">Brian 2.0</a></h1>
         <div class="metadata">
@@ -209,7 +243,8 @@ Earlier versions of Brian 2 contained bugs that could lead to incorrect recordin
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We are very pleased to announce the release of version 2.0 of the Brian neural network simulator.</p>
 <p>Brian is a free, open source simulator for spiking neural networks. It is written in the Python programming language and is available on almost all platforms. We believe that a simulator should not only save the time of processors, but also the time of scientists. Brian is therefore designed to be easy to learn and use, highly flexible and easily extensible.</p>
 <p>You can learn more about Brian from our <a href="https://briansimulator.org">front page</a>. You can also try out Brian from your web browser, without having to install any software, using our <a href="https://mybinder.org/repo/brian-team/brian2-binder/notebooks/demo.ipynb">interactive demo</a>.
@@ -218,17 +253,18 @@ Earlier versions of Brian 2 contained bugs that could lead to incorrect recordin
 <ul>
 <li>Much more flexible model definitions. The behaviour of all model elements can now be defined by arbitrary equations specified in standard mathematical notation.</li>
     <li>Code generation as standard. Behind the scenes, Brian automatically generates and compiles C++ code to simulate your model, making it much faster.</li>
-    <li><span class="dquo">&#8220;</span>Standalone mode&#8221;. In this mode, Brian generates a complete C++ project tree that implements your model. This can be then be compiled and run entirely independently of Brian. This leads to both highly efficient code, as well as making it much easier to run simulations on non-standard computational hardware, for example on robotics platforms.</li>
+    <li>“Standalone mode”. In this mode, Brian generates a complete C++ project tree that implements your model. This can be then be compiled and run entirely independently of Brian. This leads to both highly efficient code, as well as making it much easier to run simulations on non-standard computational hardware, for example on robotics platforms.</li>
     <li>Multicompartmental modelling.</li>
     <li>Python 2 and 3 support.</li>
 </ul>
-<p>That’s just a small fraction of the new features in 2.0, take a look at the <a href="https://brian2.readthedocs.io/en/stable/introduction/release_notes.html">full list</a>.</p>
+That’s just a small fraction of the new features in 2.0, take a look at the <a href="https://brian2.readthedocs.io/en/stable/introduction/release_notes.html">full list</a>.
 <h5>Upgrading from Brian 1.4</h5>
-<p>Brian 2 is a rewrite from scratch, and introduces some backwards incompatible changes. In most cases, these should be relatively simple. We’ve written a <a href="https://brian2.readthedocs.io/en/stable/introduction/changes.html">detailed guide on how to update your simulations</a>. Note that you can have both Brian 1 and Brian 2 installed simultaneously, so you can switch gradually.</p>
+Brian 2 is a rewrite from scratch, and introduces some backwards incompatible changes. In most cases, these should be relatively simple. We’ve written a <a href="https://brian2.readthedocs.io/en/stable/introduction/changes.html">detailed guide on how to update your simulations</a>. Note that you can have both Brian 1 and Brian 2 installed simultaneously, so you can switch gradually.
 <h5>Thanks</h5>
-<p>Brian 2 was written by Marcel Stimberg, Dan Goodman and Romain Brette.</p>
+Brian 2 was written by Marcel Stimberg, Dan Goodman and Romain Brette.
 <p>Do please remember to cite Brian if you use it for your research.</p>
 <p>We would also like to thank the large number of users (over 40) who contributed code, bug reports, etc.</p>
+</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-2-0rc3/" class="u-url">Brian 2.0rc3</a></h1>
         <div class="metadata">
@@ -241,11 +277,13 @@ Earlier versions of Brian 2 contained bugs that could lead to incorrect recordin
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <p></p>
+        <div>
+<p></p>
 <p>We are happy to announce the release of <strong>Brian 2.0rc3</strong>. This release fixes several bugs, in particular related to long-running simulations (a memory leak and the inability to configure the logging system). It  also improves the random number generation mechanism (same high-quality random numbers in C++ standalone as in runtime mode; new seed function to get reproducible random numbers). See the <a href="http://brian2.readthedocs.org/en/2.0rc3/introduction/release_notes.html">release notes</a> for more information and other changes.</p>
 <p><strong>How to get Brian 2:</strong> follow the <a href="http://brian2.readthedocs.org/en/2.0rc3/introduction/install.html">installation instructions in the documentation</a></p>
 <p><strong>Further information about Brian2:</strong> <a class="moz-txt-link-freetext" href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 <p>As always, please report bugs or suggestions to the <a href="https://github.com/brian-team/brian2/issues">github bug tracker</a> or to the brian-development mailing list (<a class="moz-txt-link-abbreviated" href="mailto:brian-development@googlegroups.com">brian-development@googlegroups.com</a>).</p>
+</div>
     </div>
     </article>
 </div>

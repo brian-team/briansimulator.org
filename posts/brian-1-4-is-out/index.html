@@ -127,7 +127,8 @@ The major change in this version is the addition of a new Synapses class, which 
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p></p>
+    <div>
+<p></p>
 <p>The 1.4 release of Brian is out!</p>
 <p>The major change in this version is the addition of a new Synapses class, which allows modeling everything synaptic: gap junctions, probabilistic synapses, nonlinear synapses, plasticity, etc. There are also a number of other new features, bug fixes and improvements (see below).</p>
 <p>Brian is being developed by Romain Brette and Dan Goodman. This version also includes contributions by Bertrand Fontaine, Cyrille Rossant, Victor Benichoux, Marcel Stimberg and Jonathan Laudanski.</p>
@@ -143,36 +144,36 @@ Minor features:
 <li>New AERSpikeMonitor class</li>
     <li>Several updates to library.electrophysiology</li>
 </ul>
-<p>Improvements:</p>
+Improvements:
 <ul>
 <li>Units should work better with static code analysers now</li>
     <li>Added Network.remove</li>
     <li>SpikeMonitor has a new .it attribute (returns pair i, t of arrays of spike times)</li>
     <li>Many new examples</li>
 </ul>
-<p>Bug fixes:</p>
+Bug fixes:
 <ul>
 <li>Assigning to a static variable (equation) now raise an error</li>
     <li>Fixed issues for TimedArrays with explicitly set times (fixes ticket #81)</li>
-    <li>Fixed bug, repr and str didn&#8217;t work for Sound</li>
-    <li>Fixed bug where tone(array_of_frequencies, &#8230;)</li>
+    <li>Fixed bug, repr and str didn’t work for Sound</li>
+    <li>Fixed bug where tone(array_of_frequencies, …)</li>
     <li>Fixed SparseConnectionMatrix bug suggested by Owen Mackwood</li>
     <li>Fixed bug in Parameters reported by Jimmy Bonaiuto</li>
     <li>Fixed bug with contained_objects reported by Oleg Sinyavskiy</li>
-    <li>Units __repr__ and __str__ fixes</li>
+    <li>Units <strong>repr</strong> and <strong>str</strong> fixes</li>
     <li>Sound.spectrum, Sound.pinknoise, brownnoise</li>
-    <li>t wasn&#8217;t available in StringReset and PythonThreshold</li>
+    <li>t wasn’t available in StringReset and PythonThreshold</li>
 </ul>
-<p>Deprecated or removed features:</p>
+Deprecated or removed features:
 <ul>
 <li>MultipleSpikeGeneratorGroup</li>
     <li>experimental.coincidence_detection</li>
 </ul>
-<p>Experimental features:</p>
+Experimental features:
 <ul>
 <li>Generating model documentation automatically (experimental.model_documentation)</li>
 </ul>
-<p></p>
+ </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/release/" rel="tag">Release</a></li>
