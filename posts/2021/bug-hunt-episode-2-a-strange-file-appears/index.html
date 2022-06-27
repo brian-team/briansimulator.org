@@ -128,8 +128,7 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<!--
+    <!--
 .. title: Bug hunt episode 2: a strange file appears
 .. slug: bug-hunt-episode-2-a-strange-file-appears
 .. date: 2021-09-23
@@ -162,51 +161,48 @@ This works for many Unix command line tools, not only for <code>rm</code>.</p>
 <p>The first step of fixing an issue is making sure to be able to reproduce it. I first ran the Brian test suite (after deleting the existing <code>-.o</code> file in my directory), and confirmed that after the run the mystery file had reappeared. By construction, the test suite is of course running all (or at least most) of Brian’s functionality, so something more narrow in scope (and taking less time to run) would be more useful. I noticed that I had another <code>-.o</code> file in our examples directory, so I made an educated guess that running at least one of the examples would trigger the file generation. I tested a few of them and it turned out that not all of them make the file appear. For example, running the <a href="https://brian2.readthedocs.io/en/stable/examples/CUBA.html"><code>CUBA.py</code> example</a>  would <em>not</em> create a new file, but running the <a href="https://brian2.readthedocs.io/en/stable/examples/COBAHH.html"><code>COBAHH.py</code> example</a> would. Evaluating this systematically for all examples might potentially give us a hint to where the issue comes from, but would also take a bit of time. For now, having the <em><span class="caps">COBAHH</span></em> example to reproduce the issue is enough.</p>
 <h4>Hstorical research</h4>
 <p>Since I am sure that this bug hasn’t been around forever, the next step is to find out when the problem has been introduced. A quick check with version <code>2.3.0.2</code> indeed shows that it can run the <em><span class="caps">COBAHH</span></em> example without generating the <code>-.o</code> file. As in the <a href="../bug-hunt-episode-1-broken-latex-output-for-equations/">last bug hunt</a>, I then used git’s <em>bisect</em> mechanism to quickly find the commit introducing the problem. This led me to commit <a href="https://github.com/brian-team/brian2/commit/628ff2cddf6b90e32a5e360fd48d99ce9f6fc355">628ff2cddf6b90</a>:</p>
-<pre class="code literal-block"><span></span><span class="k">commit</span><span class="w"> </span><span class="mi">628</span><span class="n">ff2cddf6b90e32a5e360fd48d99ce9f6fc355</span><span class="w"></span>
+<pre class="code literal-block"><span></span><code><span class="k">commit</span><span class="w"> </span><span class="mi">628</span><span class="n">ff2cddf6b90e32a5e360fd48d99ce9f6fc355</span><span class="w"></span>
 <span class="nl">Author</span><span class="p">:</span><span class="w"> </span><span class="n">Marcel</span><span class="w"> </span><span class="n">Stimberg</span><span class="w"> </span><span class="o">&lt;</span><span class="n">marcel</span><span class="p">.</span><span class="n">stimberg</span><span class="nv">@inserm</span><span class="p">.</span><span class="n">fr</span><span class="o">&gt;</span><span class="w"></span>
 <span class="nc">Date</span><span class="err">:</span><span class="w">   </span><span class="n">Fri</span><span class="w"> </span><span class="n">Jul</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">16</span><span class="err">:</span><span class="mi">55</span><span class="err">:</span><span class="mi">56</span><span class="w"> </span><span class="mi">2020</span><span class="w"> </span><span class="o">+</span><span class="mi">0200</span><span class="w"></span>
 
 <span class="w">    </span><span class="n">Do</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">turn</span><span class="w"> </span><span class="n">integers</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">floats</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">sympy</span><span class="w"></span>
 
 <span class="w">    </span><span class="n">Closes</span><span class="w"> </span><span class="n">#1199</span><span class="p">,</span><span class="w"> </span><span class="n">closes</span><span class="w"> </span><span class="n">#812</span><span class="w"></span>
-</pre>
-
+</code></pre>
 
 <p>How this could lead to a spurious file appearing is certainly not obvious. I therefore double checked, but indeed: before that commit, the <em><span class="caps">COBAHH</span></em> example does not generate any file, but after the commit it consistently does. The changes in the commit do not seem to have anything to do with files or compilation, though. Ignoring the change in a <a href="%5Bdoctest%20%E2%80%94%20Test%20interactive%20Python%20examples%20%E2%80%94%20Python%203.9.7%20documentation%5D(https:/docs.python.org/3/library/doctest.html)">doctest</a>, the main change is given as:</p>
-<pre class="code literal-block"><span></span><span class="gh">diff --git a/brian2/parsing/rendering.py b/brian2/parsing/rendering.py</span>
-<span class="gh">index 76fa3107..e0186a94 100644</span>
-<span class="gd">--- a/brian2/parsing/rendering.py</span>
-<span class="gi">+++ b/brian2/parsing/rendering.py</span>
-<span class="gu">@@ -1,5 +1,5 @@</span>
-<span class="gd">-</span>
- import ast
-<span class="gi">+import numbers</span>
+<pre class="code literal-block"><span></span><code><span class="gh">diff --git a/brian2/parsing/rendering.py b/brian2/parsing/rendering.py</span><span class="w"></span>
+<span class="gh">index 76fa3107..e0186a94 100644</span><span class="w"></span>
+<span class="gd">--- a/brian2/parsing/rendering.py</span><span class="w"></span>
+<span class="gi">+++ b/brian2/parsing/rendering.py</span><span class="w"></span>
+<span class="gu">@@ -1,5 +1,5 @@</span><span class="w"></span>
+<span class="gd">-</span><span class="w"></span>
+<span class="w"> </span>import ast<span class="w"></span>
+<span class="gi">+import numbers</span><span class="w"></span>
 
- import sympy
+<span class="w"> </span>import sympy<span class="w"></span>
 
-<span class="gu">@@ -265,7 +265,10 @@ def render_NameConstant(self, node):</span>
-             return str(node.value)
+<span class="gu">@@ -265,7 +265,10 @@ def render_NameConstant(self, node):</span><span class="w"></span>
+<span class="w"> </span>            return str(node.value)<span class="w"></span>
 
-     def render_Num(self, node):
-<span class="gd">-        return sympy.Float(node.n)</span>
-<span class="gi">+        if isinstance(node.n, numbers.Integral):</span>
-<span class="gi">+            return sympy.Integer(node.n)</span>
-<span class="gi">+        else:</span>
-<span class="gi">+            return sympy.Float(node.n)</span>
+<span class="w"> </span>    def render_Num(self, node):<span class="w"></span>
+<span class="gd">-        return sympy.Float(node.n)</span><span class="w"></span>
+<span class="gi">+        if isinstance(node.n, numbers.Integral):</span><span class="w"></span>
+<span class="gi">+            return sympy.Integer(node.n)</span><span class="w"></span>
+<span class="gi">+        else:</span><span class="w"></span>
+<span class="gi">+            return sympy.Float(node.n)</span><span class="w"></span>
 
-     def render_BinOp(self, node):
-         op_name = node.op.__class__.__name__
-</pre>
-
+<span class="w"> </span>    def render_BinOp(self, node):<span class="w"></span>
+<span class="w"> </span>        op_name = node.op.__class__.__name__<span class="w"></span>
+</code></pre>
 
 <p>This was not as helpful as expected, let us therefore try a different approach.</p>
 <h4>Step-by-step debugging</h4>
 <p>At some point during the example run, the <code>-.o</code> file gets created – but when exactly? A quick check with statements checking <code>os.path.exists('-.o')</code> in the example file makes it clear that it happens during the <code>run</code> statement (which also includes the code generation and compilation), but I wouldn’t want to sprinkle such checks all over Brian’s code base. Instead, I turn to a tool that was made for that job, the <em>debugger</em> (who would have thought it could be useful for debugging!). Python comes with the built-in debugging tool <a href="%5Bpdb%20%E2%80%94%20The%20Python%20Debugger%20%E2%80%94%20Python%203.9.7%20documentation%5D(https:/docs.python.org/3/library/pdb.html)"><code>pdb</code></a>, but using a “graphical” debugger integrated in the <span class="caps">IDE</span> is much more convenient. In my case, I use the <a href="%5BPyCharm:%20the%20Python%20IDE%20for%20Professional%20Developers%20by%20JetBrains%5D(https:/www.jetbrains.com/pycharm/)">PyCharm <span class="caps">IDE</span></a> and its <a href="%5BDebugging%20with%20PyCharm%20%7C%20PyCharm%5D(https:/www.jetbrains.com/help/pycharm/debugging-python-code.html)">debugger</a>. Using a combination of breakpoints and stepping through the code, I can now figure out exactly when and where the file gets created. This process does take a while, since either I have to step through each and every line of code (and there are many of them), or I will step over big chunks at a time, but then I will have to run everything again with more fine-grained stepping/breakpoints.</p>
 <p>Using the latter approach, I find that the code is generated during the <code>before_run</code> period, and more specifically during the <code>before_run</code> code of the <code>StateUpdater</code>. This could explain why the <em><span class="caps">COBAHH</span></em> example shows the issue but <em><span class="caps">CUBA</span></em> does not – the two examples use different numerical integration methods (the purpose of the <code>StateUpdater</code>). Drilling further down, I find that the code is generated during the code generation process, and more specifically when target-code implementations of the mathematical functions are added. The function that triggers the file generation is <code>exprel</code> ($\mathrm{exprel}(x) = \frac{\exp(x) - 1}{x}$ with improved accuracy and defined for $x=0$). What is special about this function? The <code>exprel</code> function internally uses the C function <code>expm1</code> ($\mathrm{expm1}(x) = \exp(x) - 1$), but this function has only been added to the C standard with <a href="%5BC99%20-%20Wikipedia%5D(https:/en.wikipedia.org/wiki/C99)">C99</a>. As the name suggests, this standard is from 1999, but compilers have been slow implementing all of its features. For example, Microsoft’s Visual Studio compiler only started adding support with Visual Studio 2013! To make sure the compiler used to compile the Brian model supports C99, we have a function <code>compiler_supports_c99</code> (in <a href="https://github.com/brian-team/brian2/blob/master/brian2/codegen/cpp_prefs.py"><code>brian2.codegen.cpp_prefs</code></a>), which verifies that the compiler is recent enough.</p>
 <p>On Unix, this test runs the following command:</p>
-<pre class="code literal-block"><span></span><span class="nb">echo</span> <span class="s2">"#if (__STDC_VERSION__ &lt; 199901L)\n#error\n#endif"</span> <span class="p">|</span> cc -xc -c - &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
-</pre>
-
+<pre class="code literal-block"><span></span><code><span class="nb">echo</span> <span class="s2">"#if (__STDC_VERSION__ &lt; 199901L)\n#error\n#endif"</span> <span class="p">|</span> cc -xc -c - &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</code></pre>
 
 <p>This tests preprocessor macros stating the standards support of the compiler, and raises an error if it is too old. Now, this command actually tries hard <em>not</em> to generate any file! Usually, you’d write the preprocessor macros to a <code>.c</code> file and run the compiler on this file. Instead, the code is printed to the standard output using <code>echo</code>, and then <a href="%5BPipeline%20(Unix)%20-%20Wikipedia%5D(https:/en.wikipedia.org/wiki/Pipeline_(Unix))">“piped”</a> into the <code>cc</code> compiler that is asked to take its input from <code>stdin</code> by using the special filename <code>-</code>. This does work and the test is performed correctly; the <code>-c</code> option tells the compiler to only compile things and not to bother with linking into an executable. But using <code>-c</code> here actually turns out to be the issue! As the <a href="https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html#Overall-Options">documentation</a> states, “The ultimate output is in the form of an object file for each source file.” Our “source file” in this case is named <code>-</code> (even though it is not an actual file), and the resulting object file is therefore named  – you guessed it – <code>-.o</code>!</p>
 <p>Once we have identified the problem, the fix is trivial: to perform the check, we do not actually have to run the compiler’s compilation step at all. The check only uses the preprocessor, so we can replace <code>-c</code> by <code>-E</code> which will happily print out everything to <code>stdout</code> instead of creating a new file. Problem solved by changing a single character in the code!</p>
@@ -222,19 +218,17 @@ $$</p>
 \dots = \frac{\frac{7.389056099}{\exp(y)}-1}{2 - y}
 $$</p>
 <p>It turns out, <em>SymPy</em> will do these kind of transformations only when the numerical value (the $2$ in this example) is a floating point number, but not when it is an integer. This is understandable, since floating point numbers are not “ideal” numbers due to their limited precision, so something like $7.389056099 \approx \exp(2)$ is only <em>approximately</em> true:</p>
-<pre class="code literal-block"><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sympy</span>
+<pre class="code literal-block"><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sympy</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">sympy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">sympy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
 <span class="mf">7.38905609893065</span>
-</pre>
-
+</code></pre>
 
 <p>This explains why earlier versions of Brian (where all number literals were interpreted as floating point numbers) sometimes got rid of <code>exprel</code> during the mathematical transformation of equations, whereas newer versions (which kept integer literals as integers) do not touch them. Removing the call to <code>exprel</code> and replacing it by variants of <code>exp</code> is actually not what we want, even if the two formulations are “mathematically equivalent”. The main reason for using <code>exprel</code> in the first place is to gain accuracy and to make the function more robust for a close-to-zero argument – replacing it will remove all these advantages. But this will be a discussion for another time, which you are more than welcome to follow in this <a href="https://github.com/brian-team/brian2/issues/1350">github issue</a> 😀.</p>
 <h3>Final remarks</h3>
 <p>Yet another time, the fix for an issue turned out to be trivial (a one character change!), but finding the issue was not straightforward at all. The bug also nicely demonstrated how things can be connected in unexpected ways in a complex software project: a change in the handling of integer literals in equations leads to differences in the treatment by <em>SymPy</em> which then leads to differences in the generated code and finally triggers a compiler check that wasn’t triggered before.</p>
 <p>Hope that you learned a thing or two from reading this blog post, and maybe it motivates you to fix a bug in Brian yourself! Comments very welcome, feel free to reach out on <a href="https://twitter.com/briansimulator">twitter</a> or on the <a href="https://brian.discourse.group">discussion forum</a>.</p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../tags/bug-hunt/" rel="tag">bug-hunt</a></li>

@@ -122,12 +122,10 @@
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>We will be at <a href="http://2009.neurocomp.fr/">NeuroComp 2009 </a>in Bordeaux on 16 September. We will give a tutorial at 4.30 pm. Try to install Brian before the tutorial, and we will help you if you have any problem with it. You will need to bring your laptop (no machine in the room). If there is anything special you would like us to address during the tutorial, please don’t hesitate to contact us.</p>
 <p>Slides for the tutorial: <a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2009/09/brian_neurocomp2009.ppt">ppt</a>, <a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2009/09/brian_neurocomp2009.pdf">pdf</a>.</p>
 <p><a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2009/09/neurocomp09_examples.zip">Examples </a>of the tutorial.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-at-cns/" class="u-url">Brian at <span class="caps">CNS</span></a></h1>
         <div class="metadata">
@@ -140,11 +138,9 @@
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>We will be at the <a href="http://www.cnsorg.org/2009/">Computational Neuroscience (<span class="caps">CNS</span>)</a> meeting next week, at the Python in Neuroscience <a href="http://www.cnsorg.org/2009/workshops.shtml">workshop</a>. Romain Brette will give a talk on Brian in the morning session of the first day, and Dan Goodman will give a tutorial in afternoon/evening session on using Python for neuroscience, covering NumPy, SciPy, PyLab and Brian. Hope to see you there!</p>
 <p><a href="http://www.briansimulator.org/WordPress/wp-content/uploads/2009/07/tutorial.zip">Download the slides and code from the tutorial</a></p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-is-in-pynn/" class="u-url">Brian is in PyNN</a></h1>
         <div class="metadata">
@@ -157,10 +153,8 @@
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>Brian is now part of the <a href="http://neuralensemble.org/trac/PyNN">PyNN </a><span class="caps">API</span> since version 0.5. PyNN is a simulator-independent language for building neuronal network models.  You can write the code for a model once, using the PyNN <span class="caps">API</span> and the <a class="ext-link" href="http://www.python.org/"><span class="icon">Python</span></a> programming language, and then run it without modification on any simulator that PyNN supports (currently <a class="ext-link" href="http://www.neuron.yale.edu/neuron/"><span class="icon"><span class="caps">NEURON</span></span></a>, <a class="ext-link" href="http://www.nest-initiative.org/?page=Software"><span class="icon"><span class="caps">NEST</span></span></a>, <a class="ext-link" href="http://sourceforge.net/projects/pcsim/"><span class="icon"><span class="caps">PCSIM</span></span></a> and <a class="ext-link" href="https://briansimulator.org/"><span class="icon">Brian</span></a>).</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/linked-variables/" class="u-url">Linked variables</a></h1>
         <div class="metadata">
@@ -173,8 +167,7 @@
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>Please see the entry on <a href="../posts/the-idea/">the idea</a> of this development blog.</p>
 <p>One thing we end up doing very often in Brian in our code, is copying the values of a variable in one group to the values of a variable in another group. That is, a variable from one group should essentially be defined as the same as the variable from another group. This comes up in models of the auditory system we’re working on, because we use one NeuronGroup to represent the displacement of hair cells in the cochlea, and a separate NeuronGroup to represent the auditory nerve fibres which receive graded rather than spiking inputs from them. In general, the same thing might be useful in any case where there is a graded rather than spiking connection between two NeuronGroups. What we were doing was this:</p>
 <p>[python]
@@ -194,7 +187,6 @@ nervefibres.input = linked_var(haircells, ‘output’)
 linked_var(source, var, func, when, clock)
 [/python]</p>
 <p>The func, when and clock arguments are optional. The func argument allows you to pass the value of the variable in the source group through a function. For example, in the auditory system you do half wave rectification and logarithmic compression. The when argument tells it when to do the copy operation, at the start of the simulation loop by default, and the clock tells it what schedule to update on, by default it uses the target group’s clock. Is this a nice syntax? Is there anything else this should be able to do?</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/recentstatemonitor/" class="u-url">RecentStateMonitor</a></h1>
         <div class="metadata">
@@ -207,14 +199,12 @@ linked_var(source, var, func, when, clock)
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>Please see the entry on <a href="../posts/the-idea/">the idea</a> of this development blog.</p>
 <p>As part of our efforts to implement <span class="caps">STDP</span> with heterogeneous delays, which I’ll write more about some other time, we realised we needed to access recent values of a variable, but never covering more than a fixed duration T. That is, we needed access to V(t-s) for 0&lt;s&lt;T, where t is the current time. We could get access to this by recording all the values of V, but that’s a big memory hog for a long running simulation. Instead, we came up with a new object, the RecentStateMonitor, which works in a very similar way to StateMonitor.</p>
 <p>For the user, you can use RecentStateMonitor in exactly the same way as a StateMonitor (but with some extra options for allowing more efficient access to the data). We imagine it might be useful for things like network operations that monitor the dynamics of a variable as a simulation runs, and inject different currents depending on those dynamics. It could also be used together with a custom SpikeMonitor for a very simple spike triggered average monitor.</p>
 <p>The implementation uses a cylindrical array, a 2D generalisation of a <a href="http://en.wikipedia.org/wiki/Circular_buffer">circular array</a> that is circular in only one dimension. It is a 2D array V(i,j) where i represents a time index, and j a neuron index. The time index is circular and relative to a pointer into the array which updates at each time step, when the pointer reaches the end of the fixed size array, it resets back to the beginning in a circular fashion. This cylindrical array structure is good for memory access because no memory needs to be allocated or deallocated as it runs.</p>
 <p>At the moment, RecentStateMonitor only records the values for a single variable, but it will very likely be extended, or an additional class added which handles multiple variables (since this seems to be a very likely use case). Any ideas on other features you would like this to have? or more efficient implementations?</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/timed-array/" class="u-url">TimedArray</a></h1>
         <div class="metadata">
@@ -227,8 +217,7 @@ linked_var(source, var, func, when, clock)
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>Please see the entry on <a href="https://briansimulator.org/2009/05/27/the-idea/">the idea</a> of this development blog.</p>
 <p>One annoying thing that crops up often in writing programs for Brian, is that you have some set of equations with a parameter which varies over time according to the values in some array. Supposing that I was an array of length N with values sampled at intervals dt, you would like to be able to write an equation like:</p>
 <p>[python]
@@ -275,7 +264,6 @@ values = [0, 1, 0]
 x = TimedArray(values, times)
 [/python]
 The TimedArray class is defined in the module timedarray. Take a look at the documentation, try some examples, and let us know what you think.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/upcoming-features/" class="u-url">Upcoming features</a></h1>
         <div class="metadata">
@@ -288,8 +276,7 @@ The TimedArray class is defined in the module timedarray. Take a look at the doc
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>At the moment, we’re working on these features for Brian 1.1.3 which should be coming very soon:
 </p>
 <ul>
@@ -302,9 +289,9 @@ In the medium term, possibly for Brian 1.2, we’re working on:
 <ul>
 <li>Support for parallel processing with a <span class="caps">GPU</span> - the work in progress on this is already available in the experimental subpackage in Brian.</li>
     <li>Support for automatic generation and compilation of C code for nonlinear differential equation solvers.</li>
-    <li>A subpackage, “Brian hears”, for auditory system modelling, including efficient <span class="caps">GPU</span> based filterbank operations.</li>
+    <li>A subpackage, &#8220;Brian hears&#8221;, for auditory system modelling, including efficient <span class="caps">GPU</span> based filterbank operations.</li>
 </ul>
-</div>
+<p></p>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/the-idea/" class="u-url">The idea</a></h1>
         <div class="metadata">
@@ -317,8 +304,7 @@ In the medium term, possibly for Brian 1.2, we’re working on:
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>As part of the new website, we’ll be writing entries on this development blog, showing ideas we plan to put in the next release of Brian. The idea is to let people know about new developments and features, and to get feedback about them. We hope that you might try out experimental or new features available in the experimental subpackage of Brian, or from the most recent revision on the <span class="caps">SVN</span>, and let us know what you think about them. Useful questions we would like feedback on are:
 </p>
 <ul>
@@ -329,7 +315,6 @@ In the medium term, possibly for Brian 1.2, we’re working on:
 </ul>
 Brian is an open source package, and partly a community effort. The more feedback and suggestions we get, the better we can make it. Hopefully this blog will also foster efforts to bring more people into the Brian development team.
 <p>Please comment on entries on the blog, send us email directly, or join in on the <a href="http://groups.google.fr/group/briansupport">discussion forums</a>.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brians-new-website/" class="u-url">Brian&#8217;s new website</a></h1>
         <div class="metadata">
@@ -342,10 +327,8 @@ Brian is an open source package, and partly a community effort. The more feedbac
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>Brian has a new website! It’s now running on Wordpress and will feature blogs for Brian related news, announcements of new releases, and a development blog.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/brian-11-is-released/" class="u-url">Brian 1.1.2</a></h1>
         <div class="metadata">
@@ -358,10 +341,8 @@ Brian is an open source package, and partly a community effort. The more feedbac
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <a href="https://sourceforge.net/projects/brian/">Brian 1.1.2 released!</a>
-</div>
     </div>
     </article>
 </div>

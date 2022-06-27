@@ -130,8 +130,7 @@
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>We are happy to announce another alpha release of Brian2 (version number 2.0a5) which adds a new feature for testing: C++ standalone simulations.</p>
 <p>Standalone mode is a new addition to Brian2 with no equivalent in Brian1. It takes a simulation script and generates a directory of completely Brian-independent C++ files from it that perform the simulation. This can give significant performance advantages over the standard Brian simulation mode and also allows to do simulations on devices where Brian or one of its dependencies is not available (e.g. on a computing cluster or in robotics applications).</p>
 
@@ -140,27 +139,22 @@
 <p>We are very interested in feedback about how this mode fits with your needs, what restrictions you cannot live with, what additional functionality you&#8217;d need, etc. Please report any comments to the <a href="http://groups.google.com/group/brian-development/">brian-development mailing list</a></p>
 
 <h3>How to get Brian2?</h3>
-
 <p>Brian2 is available on the <a href="https://pypi.python.org/pypi/Brian2">python package index</a>, therefore  you can install it using easy_install or pip:</p>
-
 <p><code>easy_install brian2
 pip install brian 2  # older versions of pip
 pip install –pre brian2  # newer versions of pip
-</code>
-</p>
+</code></p>
 <p>Alternatively, you can directly download the package from the package index and install it yourself using <code>python setup.py install</code> (if you are using Python 2.x, simply running it from the source directory also works).</p>
+
 <p>Finally, you can also clone the git repository at:<br><a href="https://github.com/brian-team/brian2">https://github.com/brian-team/brian2</a></p>
 
 <p>Note that the package is called brian2, not brian, therefore it does not interfere with an existing Brian installation and trying out Brian2 will not affect your existing Brian simulations.</p>
 
 <h3>Documentation</h3>
-
 <p>You can find documentation for Brian2 at readthedocs: <a href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 
 <p>Note that the user documentation is still quite incomplete, you&#8217;ll find a lot of information in the reference documentation, though.</p>
-
 <p></p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-2-0-alpha-release/" class="u-url">Brian 2.0 alpha release</a></h1>
         <div class="metadata">
@@ -173,17 +167,13 @@ pip install –pre brian2  # newer versions of pip
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>We are proud to announce the alpha release of Brian2, the successor of Brian, everyone’s favourite neural simulator.</p>
 <p>This is an alpha release, therefore many features are still missing and there are very likely many bugs. The main reason for this release is to get feedback from users, the only way to make sure that the final version will be as useful to everyone as possible.</p>
 
 <p>This release is the cumulation of work that started more than one year ago, a basic rewrite of Brian that tries to keep and extend the strengths of Brian (ease of use, flexibility) while building it on a new foundation of a code generation framework that will allow for exciting new applications in the future.</p>
-
 <h3>How to get Brian2?</h3>
-
 <p>Brian2 is available on the <a href="https://pypi.python.org/pypi/Brian2">python package index</a>, therefore you can install it using easy_install or pip:</p>
-
 <p><code>easy_install brian2
 pip install –pre brian2</code></p>
 <p>Alternatively, you can directly download the package from the package index and install it yourself using <code>python setup.py install</code> (if you are using Python 2, simply running it from the source directory also works).</p>
@@ -192,19 +182,13 @@ pip install –pre brian2</code></p>
 <a href="https://github.com/brian-team/brian2">https://github.com/brian-team/brian2</a></p>
 
 <p>Note that the package is called <b>brian2</b>, not <b>brian</b>, therefore it does not interfere with an existing Brian installation and trying out Brian2 will not affect your existing Brian simulations.</p>
-
 <h3>Documentation</h3>
-
 <p>You can find documentation for Brian2 at readthedocs: <a href="http://brian2.readthedocs.org">http://brian2.readthedocs.org</a></p>
 
 <p>Note that the user documentation is still quite incomplete, you&#8217;ll find a lot of information in the reference documentation, though.</p>
-
 <h3>Feedback wanted!</h3>
-
 <p>This is an alpha release, so there is still a lot that will change in the next months. However, the syntax is already mostly the way we plan it to be. Please provide feedback if you find something unintuitive or you fail to see how to express something that you could express in Brian1. For the feedback, please use either the <a href="http://groups.google.com/group/brian-development/">brian-development mailing list</a> or the <a href="https://github.com/brian-team/brian2/issues">github issues</a>. Note that the *internal* code (e.g. the interface to the code generation framework) will still change quite a bit.</p>
-
 <h3>Known issues</h3>
-
 <ul>
 <li>Brian hears and the modelfitting toolbox have not yet been ported to Brian2</li>
     <li>Brian2 is not yet optimised for performance. In particular, setting up a simulation or using multiple run statements might appear to be slow because a lot of work is unnecessarily repeated. For the simulation itself, a big performance increase can be often achieved by switching on C++ code generation by using the following in the code: <code>brian_prefs.codegen.target = 'weave'</code>
@@ -215,7 +199,6 @@ pip install –pre brian2</code></p>
 </li>
 </ul>
 <p></p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-1-4-1/" class="u-url">Brian 1.4.1</a></h1>
         <div class="metadata">
@@ -228,8 +211,7 @@ pip install –pre brian2</code></p>
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>We have just released Brian 1.4.1, available from PyPI using  <strong>pip install -U brian</strong> or <strong>easy_install -U brian</strong>, or from the <a href="http://neuralensemble.org/trac/brian/downloader/download/release/19">NeuralEnsemble server</a>. It will be soon available in the <a href="http://neuro.debian.net/pkgs/python-brian.html">NeuroDebian repositories</a> as well, thanks to the <a href="http://neuro.debian.net/about.html#chap-team">NeuroDebian team</a>.</p>
 <p>This is a minor release, but it adds a couple of useful features (including experimental features for the Synapses class) and fixes some important bugs, in particular for users of brian hears. A list of changes can be found below:</p>
 <p>Major features:
@@ -244,20 +226,20 @@ Minor features:
     <li>Brian hears: Two new models, MiddleEar (filtering by the middle ear) and ZhangSynapse (model of the <span class="caps">IHC</span>-<span class="caps">AN</span> synapse)</li>
     <li>Brian hears: New convenience functions to get reasonable axis ticks for logarithmic axes</li>
 </ul>
-Improvements:
+<p>Improvements:</p>
 <ul>
-<li>Brian’s documentation is now also available under <a href="http://brian.readthedocs.org">brian.readthedocs.org</a>
+<li>Brian&#8217;s documentation is now also available under <a href="http://brian.readthedocs.org">brian.readthedocs.org</a>
 </li>
-    <li>ProgressReporter has context manager support (i.e. can be used in “with” statements)</li>
+    <li>ProgressReporter has context manager support (i.e. can be used in &#8220;with&#8221; statements)</li>
     <li>NeuronGroup and Synapses work with empty model specifications.</li>
     <li>C version of SpikeContainer is now picklable</li>
 </ul>
-Bug fixes:
+<p>Bug fixes:</p>
 <ul>
 <li>Synaptic equations referring to variables in the pre- or postsynaptic group are never considered as being linear (fixes ticket #83)</li>
     <li>Fix issue with static equations in synaptic models (see  <a href="https://groups.google.com/d/msg/briansupport/-/uqxLK_yoqKUJ">https://groups.google.com/d/msg/briansupport/-/uqxLK_yoqKUJ</a> )</li>
-    <li>Make LinearStateUpdater pickable, even if array B is “NotImplemented”.</li>
-    <li>Fixed the bug in which the StateSpikeMonitor didn’t record variables defined with a static equation.</li>
+    <li>Make LinearStateUpdater pickable, even if array B is &#8220;NotImplemented&#8221;.</li>
+    <li>Fixed the bug in which the StateSpikeMonitor didn&#8217;t record variables defined with a static equation.</li>
     <li>Important bug fixes for brian hears, all users are encouraged to update:</li>
 <ul>
 <li>Make sure that LinearFilterbank copies it source and therefore not changes it (when not using weave) (fixes ticket #73)</li>
@@ -265,12 +247,12 @@ Bug fixes:
     <li> Fix shifting multi-channel sounds with fractional=True (fixes ticket #80)</li>
 </ul>
 </ul>
-Experimental features:
+<p>Experimental features:</p>
 <ul>
-<li>C version of SpikeQueue (used in the Synapses class), which can lead to a considerable speedup (see “Advanced concepts/Compiled code” for instructions how to use it).</li>
+<li>C version of SpikeQueue (used in the Synapses class), which can lead to a considerable speedup (see &#8220;Advanced concepts/Compiled code&#8221; for instructions how to use it).</li>
     <li>Delays can be specified as a parameters of the Synapses model and then be changed dynamically.</li>
 </ul>
-</div>
+<p></p>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-1-4-is-out/" class="u-url">Brian 1.4 is out!</a></h1>
         <div class="metadata">
@@ -283,8 +265,7 @@ Experimental features:
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>The 1.4 release of Brian is out!</p>
 <p>The major change in this version is the addition of a new Synapses class, which allows modeling everything synaptic: gap junctions, probabilistic synapses, nonlinear synapses, plasticity, etc. There are also a number of other new features, bug fixes and improvements (see below).</p>
 <p>Brian is being developed by Romain Brette and Dan Goodman. This version also includes contributions by Bertrand Fontaine, Cyrille Rossant, Victor Benichoux, Marcel Stimberg and Jonathan Laudanski.</p>
@@ -300,36 +281,36 @@ Minor features:
 <li>New AERSpikeMonitor class</li>
     <li>Several updates to library.electrophysiology</li>
 </ul>
-Improvements:
+<p>Improvements:</p>
 <ul>
 <li>Units should work better with static code analysers now</li>
     <li>Added Network.remove</li>
     <li>SpikeMonitor has a new .it attribute (returns pair i, t of arrays of spike times)</li>
     <li>Many new examples</li>
 </ul>
-Bug fixes:
+<p>Bug fixes:</p>
 <ul>
 <li>Assigning to a static variable (equation) now raise an error</li>
     <li>Fixed issues for TimedArrays with explicitly set times (fixes ticket #81)</li>
-    <li>Fixed bug, repr and str didn’t work for Sound</li>
-    <li>Fixed bug where tone(array_of_frequencies, …)</li>
+    <li>Fixed bug, repr and str didn&#8217;t work for Sound</li>
+    <li>Fixed bug where tone(array_of_frequencies, &#8230;)</li>
     <li>Fixed SparseConnectionMatrix bug suggested by Owen Mackwood</li>
     <li>Fixed bug in Parameters reported by Jimmy Bonaiuto</li>
     <li>Fixed bug with contained_objects reported by Oleg Sinyavskiy</li>
-    <li>Units <strong>repr</strong> and <strong>str</strong> fixes</li>
+    <li>Units __repr__ and __str__ fixes</li>
     <li>Sound.spectrum, Sound.pinknoise, brownnoise</li>
-    <li>t wasn’t available in StringReset and PythonThreshold</li>
+    <li>t wasn&#8217;t available in StringReset and PythonThreshold</li>
 </ul>
-Deprecated or removed features:
+<p>Deprecated or removed features:</p>
 <ul>
 <li>MultipleSpikeGeneratorGroup</li>
     <li>experimental.coincidence_detection</li>
 </ul>
-Experimental features:
+<p>Experimental features:</p>
 <ul>
 <li>Generating model documentation automatically (experimental.model_documentation)</li>
 </ul>
- </div>
+<p></p>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-1-3-1/" class="u-url">Brian 1.3.1</a></h1>
         <div class="metadata">
@@ -342,8 +323,7 @@ Experimental features:
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>We have just released Brian 1.3.1, available via <strong>easy_install -U brian</strong> or from our <a href="https://neuralensemble.org/trac/brian/downloader/download/release/16/1.3.1">download page</a>.</p>
 <p>This is a minor release, but there are some nice new features and many small improvements (listed below).</p>
 <p>Minor features:
@@ -368,10 +348,10 @@ Improvements:
     <li>Monitors do not process empty spike arrays when there have not been any spikes, increases speed for monitored networks with sparse firing (#78)</li>
     <li>Various speed optimisations</li>
 </ul>
-Bug fixes:
+<p>Bug fixes:</p>
 <ul>
 <li>Fixed bug with frozen equations and time variable in equations</li>
-    <li>Fixed bug with loading sounds using Sound(‘filename.wav’)</li>
+    <li>Fixed bug with loading sounds using Sound(&#8216;filename.wav&#8217;)</li>
     <li>SpikeMonitor now clears spiketimes correctly on reinit (#75)</li>
     <li>MultiConnection now propagates reinit (important for monitors) (#76)</li>
     <li>Fixed bug in realtime plotting</li>
@@ -379,7 +359,7 @@ Bug fixes:
     <li>Fixed bugs in <span class="caps">STDP</span></li>
     <li>Now propagates spikes only if spikes exist (#78)</li>
 </ul>
-</div>
+<p></p>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-1-3/" class="u-url">Brian 1.3</a></h1>
         <div class="metadata">
@@ -392,8 +372,7 @@ Bug fixes:
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>The 1.3 release of Brian is out!</p>
 <p>The major change in this version is the addition of the<a href="http://www.briansimulator.org/docs/hears.html"> Brian.hears package for auditory modelling</a>. This version also includes an update to the toolbox for fitting neural models to electrophysiological recordings (which now uses version 0.3 of the parallel optimization package <a href="http://code.google.com/p/playdoh/">Playdoh</a>), remote control of Brian scripts, and experimental support for code generation for C and <span class="caps">GPU</span>. There are also a number of other new features, bug fixes and improvements (full list below).</p>
 <p>Brian is also available from the <a href="http://neuro.debian.net/pkgs/python-brian.html">NeuroDebian repository</a>: pre-packaged for all recent Debian and Ubuntu releases.</p>
@@ -416,7 +395,7 @@ Bug fixes:
 </ul>
 <h5>Improvements</h5>
 <ul>
-<li>SpikeGeneratorGroup is faster for large number of events (“gather” option).</li>
+<li>SpikeGeneratorGroup is faster for large number of events (&#8220;gather&#8221; option).</li>
     <li>Speed improvement for pure Python version of sparse matrix preparation</li>
     <li>Speed improvements for spike propagation weave code (50-100% faster).</li>
     <li>Clocks have been changed and should now behave more predictably. In addition, you can now specify an order attribute for clocks.</li>
@@ -434,7 +413,7 @@ Bug fixes:
     <li>Units now work correctly in <span class="caps">STDP</span> (ticket #60)</li>
     <li><span class="caps">STDP</span> raises an error if operations are reordered (ticket #57)</li>
     <li>linked_var works with static vars (equations) (ticket #68)</li>
-    <li>Changing clock.t during a run won’t end the run</li>
+    <li>Changing clock.t during a run won&#8217;t end the run</li>
     <li>Fixed ticket #66 (unit bug)</li>
     <li>Fixed ticket #64 (bug with freeze)</li>
     <li>Can now run a network with no group</li>
@@ -445,7 +424,7 @@ Bug fixes:
 <ul>
 <li>brian.connection deprecated and replaced by subpackage brian.connections, making the code structure much more straightforward and setting up for future work on code generation, etc.</li>
 </ul>
-</div>
+<p></p>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-1-2-1/" class="u-url">Brian 1.2.1</a></h1>
         <div class="metadata">
@@ -458,8 +437,7 @@ Bug fixes:
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>We have just released <a href="https://neuralensemble.org/trac/brian/wiki/Downloads">Brian 1.2.1</a>.</p>
 <p>This is mostly a bug fixing release, and minor new features. One highlight is the new remote control system which allows you to interact with a Brian script as it is running - e.g. changing parameter values, plotting intermediate results, etc. Also, <span class="caps">GPU</span> support on 64 bit and Linux machines is now much better.</p>
 <p>Major features:</p>
@@ -522,7 +500,6 @@ it now dynamically adapts to the number of spikes.</li>
 <li>Model has now been removed from Brian (it was deprecated in 1.1).</li>
 </ul>
 </div>
-    </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-1-2/" class="u-url">Brian 1.2</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
@@ -534,8 +511,7 @@ it now dynamically adapts to the number of spikes.</li>
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>We have just released <a href="https://neuralensemble.org/trac/brian/wiki/Downloads">Brian 1.2</a>.</p>
 <p>The major feature of this release is the model fitting toolbox, designed for automatic fitting of spiking neural models to recorded data. The toolbox is capable of using multiple CPUs or GPUs, across multiple machines. For example, in our lab we use 3 computers with 2 GPUs each to get a 300x speed increase compared to using a single <span class="caps">CPU</span>.</p>
 <p>Other features of this release include some support for real time plotting as the simulation runs and some important bug fixes. See below for the complete list of changes.</p>
@@ -547,12 +523,12 @@ it now dynamically adapts to the number of spikes.</li>
 </ul>
 Minor features:
 <ul>
-<li>New real-time <code>refresh=</code> options added to plotting functions</li>
+<li>New real-time &#8220;refresh=&#8220; options added to plotting functions</li>
     <li>Gamma factor in utils.statistics</li>
     <li>New RegularClock object</li>
     <li>Added brian_sample_run function to test installation in place of nose tests</li>
 </ul>
-Improvements:
+<p>Improvements:</p>
 <ul>
 <li>Speed improvements to monitors and plotting functions</li>
     <li>Sparse matrix support improved, should work with scipy versions up to 0.7.1</li>
@@ -560,7 +536,7 @@ Improvements:
     <li>Parameters now picklable</li>
     <li>Made Equations picklable</li>
 </ul>
-Bug fixes:
+<p>Bug fixes:</p>
 <ul>
 <li>Fixed major bug with subgroups and connections (announced on webpage)</li>
     <li>Fixed major bug with multiple clocks (announced on webpage)</li>
@@ -571,7 +547,7 @@ Bug fixes:
     <li>Fixed bug with <span class="caps">STP</span></li>
     <li>Fixed bug with weight=lambda i,j:rand()</li>
 </ul>
-New examples:
+<p>New examples:</p>
 <ul>
 <li>New multiprocessing examples</li>
     <li>Added polychronisation example</li>
@@ -580,7 +556,7 @@ New examples:
     <li>Added examples of using derived classes with Brian</li>
     <li>Realtime plotting example</li>
 </ul>
-</div>
+<p></p>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-1-1-3/" class="u-url">Brian 1.1.3</a></h1>
         <div class="metadata">
@@ -593,8 +569,7 @@ New examples:
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <p>We have just produced a <a href="http://sourceforge.net/project/showfiles.php?group_id=226798">new release of Brian</a>, version 1.1.3, with the
 following changes:</p>
 <ul>
@@ -612,7 +587,6 @@ following changes:</p>
 <li>Various bug fixes</li>
 </ul>
 <p>You will also notice that the manual now includes a developer’s guide. If you are interested in contributing, we suggest you to subscribe to the <a href="http://groups.google.fr/group/brian-development">Brian development mailing list</a>.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-11-is-released/" class="u-url">Brian 1.1.2</a></h1>
         <div class="metadata">
@@ -625,10 +599,8 @@ following changes:</p>
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p></p>
+        <p></p>
 <a href="https://sourceforge.net/projects/brian/">Brian 1.1.2 released!</a>
-</div>
     </div>
     </article>
 </div>

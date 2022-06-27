@@ -7,90 +7,90 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://briansimulator.org/authors/brian-team.xml</loc>
-  <lastmod>2022-03-25T21:06:00Z</lastmod>
+  <lastmod>2022-06-27T15:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/authors/marcel-stimberg.xml</loc>
-  <lastmod>2021-11-25T09:50:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/categories/article.xml</loc>
-  <lastmod>2021-11-25T09:50:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/categories/news.xml</loc>
-  <lastmod>2022-03-25T21:06:00Z</lastmod>
+  <lastmod>2022-06-27T15:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/rss.xml</loc>
-  <lastmod>2022-03-25T21:06:00Z</lastmod>
+  <lastmod>2022-06-27T15:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/sitemap.xml</loc>
-  <lastmod>2022-03-25T21:06:00Z</lastmod>
+  <lastmod>2022-06-27T15:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/brian2genn.xml</loc>
-  <lastmod>2021-06-24T10:00:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/bug-hunt.xml</loc>
-  <lastmod>2021-11-25T09:50:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/community.xml</loc>
-  <lastmod>2021-06-24T10:00:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/development.xml</loc>
-  <lastmod>2022-03-25T21:06:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/gsoc.xml</loc>
-  <lastmod>2022-03-25T21:06:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/model.xml</loc>
-  <lastmod>2021-06-24T10:00:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/multiprocessing.xml</loc>
-  <lastmod>2021-06-24T10:00:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/notes.xml</loc>
-  <lastmod>2021-06-24T10:00:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/numpy.xml</loc>
-  <lastmod>2021-06-24T10:00:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/publication.xml</loc>
-  <lastmod>2021-06-24T10:00:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/release.xml</loc>
-  <lastmod>2022-03-25T21:02:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/shared-memory.xml</loc>
-  <lastmod>2021-06-24T10:00:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/synapses.xml</loc>
-  <lastmod>2021-06-24T10:00:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/teaching.xml</loc>
-  <lastmod>2021-06-24T10:00:00Z</lastmod>
+  <lastmod>2022-06-27T15:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/training.xml</loc>
-  <lastmod>2021-06-24T10:00:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/video.xml</loc>
-  <lastmod>2021-06-24T10:00:00Z</lastmod>
+  <lastmod>2022-06-27T15:10:00Z</lastmod>
  </sitemap>
 </sitemapindex>

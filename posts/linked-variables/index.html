@@ -127,8 +127,7 @@ One thing we end up doing very often in Brian in our code, is copying the values
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
+    <p></p>
 <p>Please see the entry on <a href="../the-idea/">the idea</a> of this development blog.</p>
 <p>One thing we end up doing very often in Brian in our code, is copying the values of a variable in one group to the values of a variable in another group. That is, a variable from one group should essentially be defined as the same as the variable from another group. This comes up in models of the auditory system we’re working on, because we use one NeuronGroup to represent the displacement of hair cells in the cochlea, and a separate NeuronGroup to represent the auditory nerve fibres which receive graded rather than spiking inputs from them. In general, the same thing might be useful in any case where there is a graded rather than spiking connection between two NeuronGroups. What we were doing was this:</p>
 <p>[python]
@@ -148,7 +147,6 @@ nervefibres.input = linked_var(haircells, ‘output’)
 linked_var(source, var, func, when, clock)
 [/python]</p>
 <p>The func, when and clock arguments are optional. The func argument allows you to pass the value of the variable in the source group through a function. For example, in the auditory system you do half wave rectification and logarithmic compression. The when argument tells it when to do the copy operation, at the start of the simulation loop by default, and the clock tells it what schedule to update on, by default it uses the target group’s clock. Is this a nice syntax? Is there anything else this should be able to do?</p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/development/" rel="tag">Development</a></li>

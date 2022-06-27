@@ -127,8 +127,7 @@ The major feature of this release is the model fitting toolbox, designed for aut
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p></p>
+    <p></p>
 <p>We have just released <a href="https://neuralensemble.org/trac/brian/wiki/Downloads">Brian 1.2</a>.</p>
 <p>The major feature of this release is the model fitting toolbox, designed for automatic fitting of spiking neural models to recorded data. The toolbox is capable of using multiple CPUs or GPUs, across multiple machines. For example, in our lab we use 3 computers with 2 GPUs each to get a 300x speed increase compared to using a single <span class="caps">CPU</span>.</p>
 <p>Other features of this release include some support for real time plotting as the simulation runs and some important bug fixes. See below for the complete list of changes.</p>
@@ -140,12 +139,12 @@ The major feature of this release is the model fitting toolbox, designed for aut
 </ul>
 Minor features:
 <ul>
-<li>New real-time <code>refresh=</code> options added to plotting functions</li>
+<li>New real-time &#8220;refresh=&#8220; options added to plotting functions</li>
     <li>Gamma factor in utils.statistics</li>
     <li>New RegularClock object</li>
     <li>Added brian_sample_run function to test installation in place of nose tests</li>
 </ul>
-Improvements:
+<p>Improvements:</p>
 <ul>
 <li>Speed improvements to monitors and plotting functions</li>
     <li>Sparse matrix support improved, should work with scipy versions up to 0.7.1</li>
@@ -153,7 +152,7 @@ Improvements:
     <li>Parameters now picklable</li>
     <li>Made Equations picklable</li>
 </ul>
-Bug fixes:
+<p>Bug fixes:</p>
 <ul>
 <li>Fixed major bug with subgroups and connections (announced on webpage)</li>
     <li>Fixed major bug with multiple clocks (announced on webpage)</li>
@@ -164,7 +163,7 @@ Bug fixes:
     <li>Fixed bug with <span class="caps">STP</span></li>
     <li>Fixed bug with weight=lambda i,j:rand()</li>
 </ul>
-New examples:
+<p>New examples:</p>
 <ul>
 <li>New multiprocessing examples</li>
     <li>Added polychronisation example</li>
@@ -173,7 +172,7 @@ New examples:
     <li>Added examples of using derived classes with Brian</li>
     <li>Realtime plotting example</li>
 </ul>
-</div>
+<p></p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/release/" rel="tag">Release</a></li>

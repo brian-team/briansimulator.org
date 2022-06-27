@@ -17,7 +17,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../rss.xml">
 <link rel="canonical" href="https://briansimulator.org/blog/">
 <link rel="icon" href="../logos/favicon.png" sizes="32x32">
-<link rel="next" href="index-7.html" type="text/html">
+<link rel="next" href="index-8.html" type="text/html">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script><!-- Hide notebook header on index pages --><style>
     div.notebook-header {
         display: none;
@@ -111,7 +111,46 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2022/gsoc-applications/" class="u-url">Recommendations for GSoC 2022 applications</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2022/cns-satellite-tutorial/" class="u-url"><span class="caps">CNS</span> 2022 satellite tutorial on Brian (June 30th)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/brian-team/">Brian team</a>
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/2022/cns-satellite-tutorial/" rel="bookmark">
+            <time class="published dt-published" datetime="2022-06-27T14:55:00Z" itemprop="datePublished" title="2022-06-27">2022-06-27</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <p>On June 30th, 2022, we will have a <strong>Brian tutorial</strong>, as part of a series of free satellite tutorials organized by the <a href="https://ocns.github.io/SoftwareWG/"><span class="caps">INCF</span>/<span class="caps">OCNS</span> Software Working Group</a> two weeks before <a href="https://www.cnsorg.org/cns-2022"><span class="caps">CNS</span><code>*</code>2022</a>.
+You can find more information about the tutorials here: <a href="https://ocns.github.io/SoftwareWG/pages/software-wg-satellite-tutorials-at-cns-2022.html">ocns.github.io/SoftwareWG/pages/software-wg-satellite-tutorials-at-cns-2022.html</a> </p>
+<p>Please <a href="https://framaforms.org/incfocns-software-wg-cns2022-satellite-tutorials-registration-1654593600"><strong>register here</strong></a> if you have not done so yet. <em>Registration is free but mandatory</em>. You have to be registered to get access to the Zoom link.</p>
+<h3>Schedule (<strong>Thursday, June 30th 2022</strong>)</h3>
+<p>The preliminary schedule of the tutorial is as follows (times are in <span class="caps">UTC</span>, but by clicking on them you get the times in your time zone):</p>
+<h4>
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg=Brian+tutorial%2C+part+1&amp;iso=20220630T1030&amp;p1=%3A&amp;ah=1&amp;am=30">10:30 – 12:00 (<span class="caps">UTC</span>)</a>: <strong>Part 1, Introduction to Brian</strong>
+</h4>
+<p>An introduction for users that have little experience with Brian, roughly following the material in the <a href="https://brian2.readthedocs.io/en/stable/resources/tutorials/index.html">Brian tutorials</a>.</p>
+<h4>
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg=Brian+tutorial%2C+part+2&amp;iso=20220630T1200&amp;p1=%3A&amp;ah=0&amp;am=45">12:00 – 12:45 (<span class="caps">UTC</span>)</a>: <strong>Part 2, The Brian ecosystem</strong>
+</h4>
+<p>An overview of existing packages that make Brian more convenient to use and more powerful. In particular:</p>
+<ul>
+<li>
+<a href="https://brian2tools.readthedocs.io/"><code>brian2tools</code></a>, providing tools for for visualization and model import/export</li>
+<li>
+<a href="https://brian2modelfitting.readthedocs.io"><code>brian2modelfitting</code></a>, supporting automatic fits of model parameters</li>
+<li>
+<a href="https://brian2genn.readthedocs.io"><code>brian2genn</code></a> and <a href="https://brian2cuda.readthedocs.io"><code>brian2cuda</code></a>, accelerating Brian simulations by running them on the <span class="caps">GPU</span>.</li>
+</ul>
+<h4>
+<a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg=Brian+tutorial%2C+part+3&amp;iso=20220630T1245&amp;p1=%3A&amp;ah=0&amp;am=45">12:45 – 13:30 (<span class="caps">UTC</span>)</a>: <strong>Part 3, Best practice and performance</strong>
+</h4>
+<p>A number of practical tips and demonstrations, showing how to structure code for readability and performance.</p>
+<h3>Platform</h3>
+<p>The tutorial will take place on the <a href="https://docs.opensourcebrain.org/OSBv2/Guided_tour.html#osbv2-guidedtour">Open Source Brian v2 (OSBv2)</a> platform, allowing everyone to participate without the need for a local installation of Brian.</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2022/gsoc-applications/" class="u-url">Recommendations for GSoC 2022 applications</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../authors/brian-team/">Brian team</a>
@@ -122,8 +161,7 @@
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p>The application period for the Google Summer of Code 2022 starts on April 4th (full <a href="https://developers.google.com/open-source/gsoc/timeline">timeline for GSoC 2022</a>). With this post we give some general information about the ideal contributor application from our point of view. The recommendations we give here hold for all of the proposed projects, but we will also try to give information specific to the respective projects in the corresponding <a href="https://neurostars.org/">neurostars</a> threads. For a full list of Brian-related projects, see the end of this post.</p>
+        <p>The application period for the Google Summer of Code 2022 starts on April 4th (full <a href="https://developers.google.com/open-source/gsoc/timeline">timeline for GSoC 2022</a>). With this post we give some general information about the ideal contributor application from our point of view. The recommendations we give here hold for all of the proposed projects, but we will also try to give information specific to the respective projects in the corresponding <a href="https://neurostars.org/">neurostars</a> threads. For a full list of Brian-related projects, see the end of this post.</p>
 <p>Before you consider submitting an application, make sure you fit the <a href="https://developers.google.com/open-source/gsoc/faq#what_are_the_eligibility_requirements_for_participation">general eligibility criteria</a>. Note that several online sources, including the <a href="https://developers.google.com/open-source/gsoc/faq">GSoC <span class="caps">FAQ</span></a>, still sometimes refer to Google Summer of Code <em>students</em> instead of <em>contributors</em>. This is now a misnomer, though, since the program is open to all “open source beginners” (at least 18 years of age), regardless of whether they are enrolled as students or not. That said, you need to be available to invest around 175h to 350h (depending on the project) over the summer, so this program is hardly compatible with a full-time employment.</p>
 <p>Please contact us in the respective neurostars discussion, to make us aware that you are interested in the project. This is also the best place to ask about anything that is unclear in the project description, or about any questions or doubts you have.</p>
 <p>Your application should convince us that:</p>
@@ -147,7 +185,6 @@
 <li><a href="https://neurostars.org/t/gsoc-2022-project-idea-4-2-brian2genn-350-h/">Project Idea 4.2: Brian2GeNN (350 h)</a></li>
 </ul>
 </div>
-    </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2021/brian-25/" class="u-url">New release: Brian 2.5</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
@@ -159,12 +196,10 @@
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p>It took us a while, but we are very happy to finally announce a new release, <strong>Brian 2.5</strong> 🎉. This release comes with a large number of bug fixes, various small improvements to the C++ code generation process, new examples and improved documentation, as well as a more powerful “generator syntax” for synapse generation. In particular, it is now possible to generate a fixed number of synapses randomly – either for each pre-synaptic or for each post-synaptic cell. We have also updated our build and testing infrastructure, and now provide binary pip-installable packages for all platforms, including the fancy new Apple hardware. Please let us know if you run into any issues!</p>
+        <p>It took us a while, but we are very happy to finally announce a new release, <strong>Brian 2.5</strong> 🎉. This release comes with a large number of bug fixes, various small improvements to the C++ code generation process, new examples and improved documentation, as well as a more powerful “generator syntax” for synapse generation. In particular, it is now possible to generate a fixed number of synapses randomly – either for each pre-synaptic or for each post-synaptic cell. We have also updated our build and testing infrastructure, and now provide binary pip-installable packages for all platforms, including the fancy new Apple hardware. Please let us know if you run into any issues!</p>
 <p>As always, Brian 2 can be installed with Anaconda from the <a href="https://anaconda.org/conda-forge/brian2">conda-forge channel</a> (packages are provided for Python 3.7–3.10), or with pip from the <a href="https://pypi.org/project/Brian2/">pypi repository</a>. See the <a href="https://brian2.readthedocs.io/en/2.5.0.1/introduction/install.html">installation instructions</a> for more details.</p>
 <p>Thanks to everyone who contributed 🤝!</p>
 <p>For all the details about this new release, please have a look at the <a href="https://brian2.readthedocs.io/en/2.5.0.1/introduction/release_notes.html">release notes</a>.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2021/bug-hunt-episode-2-a-strange-file-appears/" class="u-url">Bug hunt episode 2: a strange file appears</a></h1>
         <div class="metadata">
@@ -178,14 +213,6 @@
         </div>
     </header><div class="p-summary entry-summary d-flex">
         <div>
-<!--
-.. title: Bug hunt episode 2: a strange file appears
-.. slug: bug-hunt-episode-2-a-strange-file-appears
-.. date: 2021-09-23
-.. tags: Development, bug-hunt
-.. category: article
--->
-
 <p>This is the second article in the <a href="https://briansimulator.org/tags/bug-hunt/">“bug hunt” series</a>. In these articles, I go through a recent bug in Brian (or one of its dependencies) and describe all the steps I used to find the source of the bug and how I fixed it.</p>
 <p>Today’s bug is about a strangely named file that seemingly appears out of nowhere when running Brian simulations. The final fix for the bug will turn out to be a single character change in the Brian code base 😀!</p>
 <p class="more"><a href="../posts/2021/bug-hunt-episode-2-a-strange-file-appears/">Read more…</a></p>
@@ -204,15 +231,6 @@
         </div>
     </header><div class="p-summary entry-summary d-flex">
         <div>
-<!--
-.. title: Bug hunt episode 1: Broken LaTeX output for equations
-.. slug: bug-hunt-episode-1-broken-latex-output-for-equations
-.. date: 2021-05-05
-.. tags: Development, bug-hunt
-.. category: article
-.. has_math: true
--->
-
 <p>This article starts a new series of blog posts about “bug hunts”. In these articles, I will go through a recent bug in Brian (or one of its dependencies) and describe all the steps I used to find the source of the bug and how I fixed it. I will try to not only focus on the Brian-side of things, but also show some general tools like <code>git bisect</code> or “monkey patching” that can be helpful to find the source of these nasty critters (no actual bugs were harmed during the making of this blog post).</p>
 <p>Let’s start! Today’s bug will be about equations, and more specifically about their LaTeX representation. As most of you probably know, Brian can represent equations, quantities, etc. in LaTeX. This representation can then either be included in a LaTeX document or directly rendered for example as the output in <a href="https://jupyter.org/">jupyter notebooks</a>.</p>
 <p class="more"><a href="../posts/2021/bug-hunt-episode-1-broken-latex-output-for-equations/">Read more…</a></p>
@@ -230,13 +248,12 @@
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p>Marcel Stimberg will talk about Brian’s development process in a live developer session on <strong>Thursday, Feb 11 2021, 17:00 <span class="caps">UTC</span></strong> (check <a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg=Dev+session%3A+Marcel+Stimberg%3A+Brian+Simulator&amp;iso=20210211T17&amp;p1=136&amp;ah=1">local time</a>). 
+        <p>Marcel Stimberg will talk about Brian’s development process in a live developer session on <strong>Thursday, Feb 11 2021, 17:00 <span class="caps">UTC</span></strong> (check <a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg=Dev+session%3A+Marcel+Stimberg%3A+Brian+Simulator&amp;iso=20210211T17&amp;p1=136&amp;ah=1">local time</a>). 
 For more information and the link to the Zoom session see the <a href="https://ocns.github.io/SoftwareWG/2021/02/07/dev-session-marcel-stimberg-brian-simulator.html">announcement</a>.</p>
 <p>This talk is part of a series of sessions organized by the newly formed <a href="https://ocns.github.io/SoftwareWG/">Software Working Group</a> under the umbrella of the <a href="https://www.incf.org/"><span class="caps">INCF</span></a> and <a href="https://www.cnsorg.org/"><span class="caps">OCNS</span></a>.</p>
 <p><strong>Update:</strong> The video for the recorded sessions is now on Youtube:</p>
-<p><iframe width="200" height="113" src="https://www.youtube.com/embed/fy6Hs5uQ7aQ?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-</div>
+<p></p>
+<div class="text-error">In order to use the media directive, you must install the &#8220;micawber&#8221; Python package.</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2020/video-scheduling-2/" class="u-url">Getting the timing right (scheduling 2)</a></h1>
         <div class="metadata">
@@ -250,8 +267,7 @@ For more information and the link to the Zoom session see the <a href="https://o
         </div>
     </header><div class="p-summary entry-summary d-flex">
         <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f30bf518ef0>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f30bf518f80>, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_2.png', 'title': 'Getting the timing right (scheduling\xa02)', 'slug': 'video-scheduling-2', 'date': '2020-10-08 9:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-10-08 9:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'password': '', 'description': '', 'template': ''})}) -->
-    <div class="alert alert-primary notebook-header" role="alert">
+<div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
     You can either download it via the &#8220;Source&#8221; link on the top right, or run it directly in the browser on the
@@ -318,11 +334,9 @@ is selected.
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p>In these very particular times, we are nevertheless happy to announce a new release, <strong>Brian 2.4</strong>. This release fixes a large number of bugs and includes a number of small improvements. As announced with the previous release, Brian 2.4 is the first release that no longer supports Python 2. For a full list of changes, see the <a href="http://brian2.readthedocs.io/en/2.4/introduction/release_notes.html">release notes</a>. We recommend all users of Brian 2 to update.</p>
+        <p>In these very particular times, we are nevertheless happy to announce a new release, <strong>Brian 2.4</strong>. This release fixes a large number of bugs and includes a number of small improvements. As announced with the previous release, Brian 2.4 is the first release that no longer supports Python 2. For a full list of changes, see the <a href="http://brian2.readthedocs.io/en/2.4/introduction/release_notes.html">release notes</a>. We recommend all users of Brian 2 to update.</p>
 <p>As always, Brian 2 can be installed with Anaconda from the <a href="https://anaconda.org/conda-forge/brian2">conda-forge channel</a> (packages are provided for Python 3.6, 3.7, 3.8), or with pip from the <a href="https://pypi.org/project/Brian2/">pypi repository</a>. See the <a href="../install">installation instructions</a> for more details.</p>
 <p>In case of questions or issues, please join us in the Brian support forum at <a href="https://brian.discourse.group">brian.discourse.group</a>.</p>
-</div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2020/video-scheduling-1/" class="u-url">Getting the timing right (scheduling 1)</a></h1>
         <div class="metadata">
@@ -336,8 +350,7 @@ is selected.
         </div>
     </header><div class="p-summary entry-summary d-flex">
         <div>
-<!-- Functionary(<function Post.__init__.<locals>.<lambda> at 0x7f30bf518c20>, {'en': defaultdict(<function get_meta.<locals>.<lambda> at 0x7f30bf518e60>, {'has_math': 'true', 'previewimage': '/images/articles/2020/scheduling_1.png', 'title': 'Getting the timing right (scheduling\xa01)', 'slug': 'video-scheduling-1', 'date': '2020-09-04 13:00', 'tags': 'training, video', 'category': 'article', 'updated': '2020-09-04 13:00', 'type': 'text', 'url_type': '', 'priority': '', 'author': '', 'filters': '', 'data': '', 'password': '', 'description': '', 'template': ''})}) -->
-    <div class="alert alert-primary notebook-header" role="alert">
+<div class="alert alert-primary notebook-header" role="alert">
     <p>
     This article is written as a <a href="https://jupyter.org">Jupyter notebook</a> which you can execute and modify interactively.
     You can either download it via the &#8220;Source&#8221; link on the top right, or run it directly in the browser on the
@@ -397,70 +410,19 @@ is selected.
             </p>
         </div>
     </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p>Ask questions, chat and learn with other Brian users, show off what you’ve done, suggest new features, … We will try out a brand new forum for support questions
+        <p>Ask questions, chat and learn with other Brian users, show off what you’ve done, suggest new features, … We will try out a brand new forum for support questions
 and general discussion, replacing our previous forums on Google Groups. The new forum builds
 on the <a href="https://www.discourse.org/">Discourse</a> platform which gives us exciting new features
 such as giving credit to users for answering questions.</p>
 <p>Please join here <span class="emoji">👉</span> <strong><a href="https://brian.discourse.group">brian.discourse.group</a></strong>.</p>
 <p></p>
 <center><a href="https://brian.discourse.group"><img alt="Forum screenshot" src="../images/screenshot_forum.png"></a></center>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2020/brian-online-tutorial/" class="u-url">Brian online tutorial</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/brian-team/">Brian team</a>
-            </span></p>
-            <p class="dateline">
-            <a href="../posts/2020/brian-online-tutorial/" rel="bookmark">
-            <time class="published dt-published" datetime="2020-08-06T13:27:27Z" itemprop="datePublished" title="2020-08-06">2020-08-06</time></a>
-            </p>
-        </div>
-    </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p>We will experiment with running a Brian tutorial online. The first tutorial of
-this kind will take place on <strong>Friday, August 7th 2020</strong> from <strong>2pm-6pm <span class="caps">BST</span></strong> (<span class="caps">UTC</span>+1, see <a href="https://www.timeanddate.com/worldclock/fixedtime.html?msg=Brian+Online+Tutorial&amp;iso=20200807T14&amp;p1=136&amp;ah=4">here for other timezones</a>). Free (but mandatory)
-registration <a href="https://t.co/zS4VQ4Cp51?amp=1">here</a>. We will run the tutorial as
-a <a href="https://zoom.us/">Zoom</a> meeting – registering with the link will give you the <span class="caps">URL</span> (please don’t share so we can avoid zoombombing). We will record the meeting and
-if everything goes reasonably well, we will upload the videos later.</p>
-<p><strong>Update:</strong> The recorded video is now on Youtube:</p>
-<p><iframe width="200" height="113" src="https://www.youtube.com/embed/cAF3UWTzX9A?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-<p>If you participate, it would be really helpful if you could download and install Brian before the tutorial so that you can work along with it as we go. Instructions are:</p>
-<ol>
-<li>Download and install the <a href="https://www.anaconda.com/products/individual">Anaconda Python 3 distribution</a>
-</li>
-<li>Open a command prompt and run the following lines:
-    <pre class="code literal-block">
-<i class="fa fa-chevron-right gp" aria-hidden="true"> conda create -n brian_tutorial -c conda-forge python=3 brian2 matplotlib notebook nb_conda_kernels
-<i class="fa fa-chevron-right gp" aria-hidden="true"> conda activate brian_tutorial
-<i class="fa fa-chevron-right gp" aria-hidden="true"> pip install brian2tools
-</i></i></i></pre>
-</li>
-<li>You can now verify this is working by starting a Jupyter notebook server with:
-    <pre class="code literal-block"><i class="fa fa-chevron-right gp" aria-hidden="true"> jupyter notebook</i></pre>
-</li>
-<li>Your browser should open with the Jupyter notebooks interface. Now create a new notebook and put the following code in an empty cell:
-    <pre class="code literal-block">from brian2 import *</pre>
-</li>
-<li>Run that cell by pressing Ctrl+Enter. If that works without any errors (you might see a warning) then you’re good to go.</li>
-<li>If that doesn’t work or you want to use a different system than Anaconda, take a look at our <a href="https://brian2.readthedocs.io/en/stable/introduction/install.html">detailed installation instructions</a>. </li>
-</ol>
-<p>If you have trouble installing, don’t worry. You can use the <a href="http://mybinder.org/v2/gh/brian-team/brian2-binder/master?filepath=index.ipynb">Brian installation on Binder</a> or <a href="https://colab.research.google.com">Google Colab</a> instead.</p>
-<p>For Colab, just make the first cell as follows:</p>
-<p></p>
-<pre class="code literal-block">
-!pip install brian2
-!pip install brian2tools
-</pre>
-<p>Looking forward to seeing you all on Friday!</p>
-</div>
     </div>
     </article>
 </div>
 
         <ul class="pager postindexpager clearfix">
-<li class="next"><a href="index-7.html" rel="next">Older posts</a></li>
+<li class="next"><a href="index-8.html" rel="next">Older posts</a></li>
         </ul>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
