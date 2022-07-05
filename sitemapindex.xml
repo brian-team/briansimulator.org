@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://briansimulator.org/authors/brian-team.xml</loc>
-  <lastmod>2022-06-27T15:14:00Z</lastmod>
+  <lastmod>2022-07-05T08:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/authors/marcel-stimberg.xml</loc>
@@ -19,19 +19,19 @@
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/categories/news.xml</loc>
-  <lastmod>2022-06-27T15:14:00Z</lastmod>
+  <lastmod>2022-07-05T08:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/rss.xml</loc>
-  <lastmod>2022-06-27T15:14:00Z</lastmod>
+  <lastmod>2022-07-05T08:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/sitemap.xml</loc>
-  <lastmod>2022-06-27T15:14:00Z</lastmod>
+  <lastmod>2022-07-05T08:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/brian2genn.xml</loc>
-  <lastmod>2022-06-27T15:10:00Z</lastmod>
+  <lastmod>2022-07-05T08:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/bug-hunt.xml</loc>
@@ -39,15 +39,15 @@
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/community.xml</loc>
-  <lastmod>2022-06-27T15:10:00Z</lastmod>
+  <lastmod>2022-07-05T08:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/development.xml</loc>
-  <lastmod>2022-06-27T15:10:00Z</lastmod>
+  <lastmod>2022-07-05T08:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/gsoc.xml</loc>
-  <lastmod>2022-06-27T15:10:00Z</lastmod>
+  <lastmod>2022-07-05T08:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/model.xml</loc>
@@ -67,11 +67,11 @@
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/publication.xml</loc>
-  <lastmod>2022-06-27T15:10:00Z</lastmod>
+  <lastmod>2022-07-05T08:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/release.xml</loc>
-  <lastmod>2022-06-27T15:10:00Z</lastmod>
+  <lastmod>2022-07-05T08:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/shared-memory.xml</loc>
@@ -83,7 +83,7 @@
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/teaching.xml</loc>
-  <lastmod>2022-06-27T15:14:00Z</lastmod>
+  <lastmod>2022-07-05T08:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/training.xml</loc>
