@@ -10,6 +10,8 @@
 On June 30th, 2022, we will have a **Brian tutorial**, as part of a series of free satellite tutorials organized by the [INCF/OCNS Software Working Group](https://ocns.github.io/SoftwareWG/) two weeks before [CNS`*`2022](https://www.cnsorg.org/cns-2022).
 You can find more information about the tutorials here: [ocns.github.io/SoftwareWG/pages/software-wg-satellite-tutorials-at-cns-2022.html](https://ocns.github.io/SoftwareWG/pages/software-wg-satellite-tutorials-at-cns-2022.html) 
 
+<!-- TEASER_END -->
+
 Please [**register here**](https://framaforms.org/incfocns-software-wg-cns2022-satellite-tutorials-registration-1654593600) if you have not done so yet. *Registration is free but mandatory*. You have to be registered to get access to the Zoom link.
 
 ## Schedule (**Thursday, June 30th 2022**)

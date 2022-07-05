@@ -12,6 +12,8 @@ Brian models into a format that can be read by the
 [GPU-enhanced neural network simulator (GeNN)](https://genn-team.github.io/genn/) to allow it to run on GPU. Some
 simulations were 400x faster on GPU compared to a single CPU.
 
+<!-- TEASER_END -->
+
 <div class="bg-light p-4">
 {{% publication authors="Stimberg M, Goodman DFM, Nowotny T" year="2020"
                 title="Brian2GeNN: a system for accelerating a large variety of spiking neural networks with graphics hardware"

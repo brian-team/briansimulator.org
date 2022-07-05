@@ -13,6 +13,8 @@ and general discussion, replacing our previous forums on Google Groups. The new 
 on the [Discourse](https://www.discourse.org/) platform which gives us exciting new features
 such as giving credit to users for answering questions.
 
+<!-- TEASER_END -->
+
 Please join here {{% emoji right_pointing_backhand_index %}} **[brian.discourse.group](https://brian.discourse.group)**.
 
 <center>[![Forum screenshot](/images/screenshot_forum.png)](https://brian.discourse.group)</center>

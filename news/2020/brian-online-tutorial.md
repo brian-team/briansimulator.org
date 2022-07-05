@@ -14,6 +14,8 @@ registration [here](https://t.co/zS4VQ4Cp51?amp=1). We will run the tutorial as
 a [Zoom](https://zoom.us/) meeting – registering with the link will give you the URL (please don't share so we can avoid zoombombing). We will record the meeting and
 if everything goes reasonably well, we will upload the videos later.
 
+<!-- TEASER_END -->
+
 **Update:** The recorded video is now on Youtube:
 
 {{% media url=https://youtu.be/cAF3UWTzX9A %}}

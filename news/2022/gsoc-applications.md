@@ -9,6 +9,8 @@
 
 The application period for the Google Summer of Code 2022 starts on April 4th (full [timeline for GSoC 2022](https://developers.google.com/open-source/gsoc/timeline)). With this post we give some general information about the ideal contributor application from our point of view. The recommendations we give here hold for all of the proposed projects, but we will also try to give information specific to the respective projects in the corresponding [neurostars](https://neurostars.org/) threads. For a full list of Brian-related projects, see the end of this post.
 
+<!-- TEASER_END -->
+
 Before you consider submitting an application, make sure you fit the [general eligibility criteria](https://developers.google.com/open-source/gsoc/faq#what_are_the_eligibility_requirements_for_participation). Note that several online sources, including the [GSoC FAQ](https://developers.google.com/open-source/gsoc/faq), still sometimes refer to Google Summer of Code *students* instead of *contributors*. This is now a misnomer, though, since the program is open to all "open source beginners" (at least 18 years of age), regardless of whether they are enrolled as students or not. That said, you need to be available to invest around 175h to 350h (depending on the project) over the summer, so this program is hardly compatible with a full-time employment.
 
 Please contact us in the respective neurostars discussion, to make us aware that you are interested in the project. This is also the best place to ask about anything that is unclear in the project description, or about any questions or doubts you have.
