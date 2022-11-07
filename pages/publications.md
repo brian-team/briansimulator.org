@@ -1,9 +1,15 @@
 <ul class="list-group list-group-flush">
 <li class="list-group-item"> 
+{{% publication authors="Alevi D, Stimberg M, Sprekeler H, Obermayer K, Augustin M" year="2020"
+                title="Brian2CUDA: Flexible and Efficient Simulation of Spiking Neural Network Models on GPUs"
+                url="https://www.frontiersin.org/articles/10.3389/fninf.2022.883700/full"
+                journal="Frontiers in Neuroinformatics" extras="16:883700. doi: 10.3389/fninf.2022.883700" %}}
+</li>
+<li class="list-group-item"> 
 {{% publication authors="Stimberg M, Goodman DFM, Nowotny T" year="2020"
                 title="Brian2GeNN: a system for accelerating a large variety of spiking neural networks with graphics hardware"
                 url="https://www.nature.com/articles/s41598-019-54957-7"
-                journal="Scientific Reports" extras="10, 410. doi: 10.1038/s41598-019-54957-7 " %}}
+                journal="Scientific Reports" extras="10, 410. doi: 10.1038/s41598-019-54957-7" %}}
 </li>
 <li class="list-group-item"> 
 {{% publication authors="Stimberg M, Brette R, Goodman DFM" year="2019"

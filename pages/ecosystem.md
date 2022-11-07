@@ -4,19 +4,25 @@
 .. type: text
 -->
 
-Below is a list of packages that build on Brian, either from us, colleagues we've worked on, or entirely separate
+Below is a list of packages that build on Brian, either from us, colleagues we've worked with, or entirely separate
 groups. If you have written a package using Brian and it's not listed here, let us know!
 
 ## Brian team
 
 <ul class="list-group list-group-flush">
     <li class="list-group-item">
+        <h3><a href="http://brian2cuda.readthedocs.io/">brian2cuda</a></h3>
+        Brian 2 device that generates CUDA code for simulations on GPUs. Supports all features that are supported
+        by the C++ standalone device, and can accelerate simulations by orders of magnitudes
+        (<a href="https://www.frontiersin.org/articles/10.3389/fninf.2022.883700/full">Brian2CUDA paper</a>).
+    </li>
+    <li class="list-group-item">
         <h3><a href="http://brian2genn.readthedocs.io/">brian2genn</a></h3>
         Brian 2 frontend to the
         <a href="http://genn-team.github.io/genn/">GPU-enhanced neural network simulator (GeNN)</a>. Allows you to
         run Brian models on GPU up to 400x faster
-        (<a href="https://www.nature.com/articles/s41598-019-54957-7">paper</a>).
-    </li> 
+        (<a href="https://www.nature.com/articles/s41598-019-54957-7">Brian2GeNN paper</a>).
+    </li>
     <li class="list-group-item">
         <h3><a href="https://brian2modelfitting.readthedocs.io/en/stable/">brian2modelfitting</a></h3>
         Model Fitting Toolbox for Brian 2 simulator, to allow the user to find the best fit of the parameters for
