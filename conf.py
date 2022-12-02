@@ -1531,7 +1531,7 @@ COPY_SOURCES = False
 # before </head>
 # (translatable)
 EXTRA_HEAD_DATA = '''
-<script defer data-domain="briansimulator.org" src="https://plausible-proxy.briansimulator.workers.dev/javascript/script.js"></script>
+<script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script>
 '''
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
