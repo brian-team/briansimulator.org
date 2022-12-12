@@ -1,6 +1,6 @@
 <ul class="list-group list-group-flush">
 <li class="list-group-item"> 
-{{% publication authors="Alevi D, Stimberg M, Sprekeler H, Obermayer K, Augustin M" year="2020"
+{{% publication authors="Alevi D, Stimberg M, Sprekeler H, Obermayer K, Augustin M" year="2022"
                 title="Brian2CUDA: Flexible and Efficient Simulation of Spiking Neural Network Models on GPUs"
                 url="https://www.frontiersin.org/articles/10.3389/fninf.2022.883700/full"
                 journal="Frontiers in Neuroinformatics" extras="16:883700. doi: 10.3389/fninf.2022.883700" %}}
