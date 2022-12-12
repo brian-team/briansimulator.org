@@ -68,6 +68,8 @@ Our [tutorials](https://brian2.readthedocs.io/en/stable/resources/tutorials/inde
 basics of Brian. The easiest way to use them is to click the <img src="https://static.mybinder.org/badge.svg"/> button
 and run them interactively in the browser.
 
+You can also find a number of introductory videos in our [YouTube channel](https://www.youtube.com/@briansimulator).
+
 ## 6. Next steps
 
 Once you understand the basics, here are a few ideas for how to get to grips with more advanced features of Brian:
