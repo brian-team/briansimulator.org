@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://briansimulator.org/authors/brian-team.xml</loc>
-  <lastmod>2022-11-07T10:07:00Z</lastmod>
+  <lastmod>2023-03-17T16:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/authors/marcel-stimberg.xml</loc>
@@ -19,15 +19,15 @@
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/categories/news.xml</loc>
-  <lastmod>2022-11-07T10:07:00Z</lastmod>
+  <lastmod>2023-03-17T16:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/rss.xml</loc>
-  <lastmod>2022-11-07T10:07:00Z</lastmod>
+  <lastmod>2023-03-17T16:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/sitemap.xml</loc>
-  <lastmod>2022-12-12T15:15:00Z</lastmod>
+  <lastmod>2023-03-17T16:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/brian2genn.xml</loc>
@@ -43,11 +43,11 @@
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/development.xml</loc>
-  <lastmod>2022-11-07T10:07:00Z</lastmod>
+  <lastmod>2023-03-17T16:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/gsoc.xml</loc>
-  <lastmod>2022-11-07T10:07:00Z</lastmod>
+  <lastmod>2023-03-17T16:37:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://briansimulator.org/tags/model.xml</loc>
