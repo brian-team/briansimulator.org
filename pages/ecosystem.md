@@ -44,6 +44,10 @@ groups. If you have written a package using Brian and it's not listed here, let 
 
 <ul class="list-group list-group-flush">
     <li class="list-group-item">
+    <h3><a href="https://dendrify.readthedocs.io/">Dendrify</a></h3>
+    Dendrify, through simple commands, automatically generates reduced compartmental neuron models for Brian&nbsp;2, with simplified yet biologically relevant dendritic and synaptic integrative properties (<a href="https://doi.org/10.1038/s41467-022-35747-8">paper</a>).
+    </li>
+    <li class="list-group-item">
         <h3><a href="https://github.com/EPFL-LCN/neuronaldynamics-exercises">Neuronal Dynamics Exercises</a></h3>
         This repository contains python exercises accompanying the book
         <a href="http://neuronaldynamics.epfl.ch/">Neuronal Dynamics</a> by Wulfram Gerstner, Werner M. Kistler,

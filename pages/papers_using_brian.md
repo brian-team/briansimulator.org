@@ -16,6 +16,34 @@ Here are a few we selected to give an idea of what can be done with Brian.
 <ul class="list-group list-group-flush">
 
 <li class="list-group-item">
+{{% publication authors="Hürkey S, Niemeyer N, Schleimer J-H, Ryglewski S, Schreiber S, Duch C" year="2023"
+                title="Gap junctions desynchronize a neural circuit to stabilize insect flight"
+                url="https://www.nature.com/articles/s41586-023-06099-0"
+                journal="Nature" extras="618 118–125; doi: 10.1038/s41586-023-06099-0" %}}
+<a href="https://zenodo.org/record/7740678">[code]</a>
+{{% /publication %}}
+</li>
+
+
+<li class="list-group-item">
+{{% publication authors="Elices I, Kulkarni A, Escoubet N, Pontani S-L, Prevost A M, Brette R" year="2023"
+                title="An electrophysiological and kinematic model of Paramecium, the “swimming neuron”"
+                url="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010899"
+                journal="PLoS Comp Bio" extras="19 (2): e1010899; doi: 10.1371/journal.pcbi.1010899" %}}
+<a href="https://github.com/romainbrette/Paramecium-model">[code]</a>
+{{% /publication %}}
+</li>
+
+<li class="list-group-item">
+{{% publication authors="Peron S, Pancholi R, Voelcker B, Wittenbach J D, Ólafsdóttir H F, Freeman J, Svoboda K" year="2020"
+                title="Recurrent interactions in local cortical circuits"
+                url="https://repository.ubn.ru.nl/bitstream/handle/2066/224957/3/224957pub.pdf"
+                journal="Nature" extras="579 256–259; doi: 10.1038/s41586-020-2062-x" %}}
+<a href="https://github.com/jwittenbach/ablation-sim">[code]</a>
+{{% /publication %}}
+</li>
+
+<li class="list-group-item">
 {{% publication authors="Bouchacourt F, Buschman TJ" year="2019"
                 title="A Flexible Model of Working Memory"
                 url="https://www.sciencedirect.com/science/article/pii/S0896627319303770"
