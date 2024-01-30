@@ -23,7 +23,8 @@
 <meta property="og:title" content="RecentStateMonitor">
 <meta property="og:url" content="https://briansimulator.org/posts/recentstatemonitor/">
 <meta property="og:description" content="Please see the entry on the idea of this development blog.
-As part of our efforts to implement STDP with heterogeneous delays, which I’ll write more about some other time, we realised we needed to acc">
+
+As part of our efforts to implement STDP with heterogeneous delays, which I'll write more about some other time, we realised we needed to ac">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2009-05-27T21:49:41Z">
 <meta property="article:tag" content="Development">
@@ -71,8 +72,7 @@ As part of our efforts to implement STDP with heterogeneous delays, which I’ll
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
             <div class="dropdown-menu">
-                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum</a>
-                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum/chat</a>
                     <a href="../../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
                     <a href="../../ecosystem/" class="dropdown-item">Software ecosystem</a>
                     <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
@@ -127,12 +127,15 @@ As part of our efforts to implement STDP with heterogeneous delays, which I’ll
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p></p>
-<p>Please see the entry on <a href="../the-idea/">the idea</a> of this development blog.</p>
-<p>As part of our efforts to implement <span class="caps">STDP</span> with heterogeneous delays, which I’ll write more about some other time, we realised we needed to access recent values of a variable, but never covering more than a fixed duration T. That is, we needed access to V(t-s) for 0&lt;s&lt;T, where t is the current time. We could get access to this by recording all the values of V, but that’s a big memory hog for a long running simulation. Instead, we came up with a new object, the RecentStateMonitor, which works in a very similar way to StateMonitor.</p>
-<p>For the user, you can use RecentStateMonitor in exactly the same way as a StateMonitor (but with some extra options for allowing more efficient access to the data). We imagine it might be useful for things like network operations that monitor the dynamics of a variable as a simulation runs, and inject different currents depending on those dynamics. It could also be used together with a custom SpikeMonitor for a very simple spike triggered average monitor.</p>
-<p>The implementation uses a cylindrical array, a 2D generalisation of a <a href="http://en.wikipedia.org/wiki/Circular_buffer">circular array</a> that is circular in only one dimension. It is a 2D array V(i,j) where i represents a time index, and j a neuron index. The time index is circular and relative to a pointer into the array which updates at each time step, when the pointer reaches the end of the fixed size array, it resets back to the beginning in a circular fashion. This cylindrical array structure is good for memory access because no memory needs to be allocated or deallocated as it runs.</p>
-<p>At the moment, RecentStateMonitor only records the values for a single variable, but it will very likely be extended, or an additional class added which handles multiple variables (since this seems to be a very likely use case). Any ideas on other features you would like this to have? or more efficient implementations?</p>
+    <p>Please see the entry on <a href="../the-idea/">the idea</a> of this development blog.
+
+As part of our efforts to implement <span class="caps">STDP</span> with heterogeneous delays, which I&#8217;ll write more about some other time, we realised we needed to access recent values of a variable, but never covering more than a fixed duration T. That is, we needed access to V(t-s) for 0&lt;s&lt;T, where t is the current time. We could get access to this by recording all the values of V, but that&#8217;s a big memory hog for a long running simulation. Instead, we came up with a new object, the RecentStateMonitor, which works in a very similar way to StateMonitor.
+
+For the user, you can use RecentStateMonitor in exactly the same way as a StateMonitor (but with some extra options for allowing more efficient access to the data). We imagine it might be useful for things like network operations that monitor the dynamics of a variable as a simulation runs, and inject different currents depending on those dynamics. It could also be used together with a custom SpikeMonitor for a very simple spike triggered average monitor.
+
+The implementation uses a cylindrical array, a 2D generalisation of a <a href="http://en.wikipedia.org/wiki/Circular_buffer">circular array</a> that is circular in only one dimension. It is a 2D array V(i,j) where i represents a time index, and j a neuron index. The time index is circular and relative to a pointer into the array which updates at each time step, when the pointer reaches the end of the fixed size array, it resets back to the beginning in a circular fashion. This cylindrical array structure is good for memory access because no memory needs to be allocated or deallocated as it runs.
+
+At the moment, RecentStateMonitor only records the values for a single variable, but it will very likely be extended, or an additional class added which handles multiple variables (since this seems to be a very likely use case). Any ideas on other features you would like this to have? or more efficient implementations?</p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/development/" rel="tag">Development</a></li>
@@ -145,7 +148,7 @@ As part of our efforts to implement STDP with heterogeneous delays, which I’ll
                 <a href="../linked-variables/" rel="next" title="Linked variables">Next post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer" class="text-center">
-            Contents © 2023         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
+            Contents © 2024         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
             
             
         </footer>

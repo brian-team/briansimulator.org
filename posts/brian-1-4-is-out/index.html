@@ -23,7 +23,8 @@
 <meta property="og:title" content="Brian 1.4 is out!">
 <meta property="og:url" content="https://briansimulator.org/posts/brian-1-4-is-out/">
 <meta property="og:description" content="The 1.4 release of Brian is out!
-The major change in this version is the addition of a new Synapses class, which allows modeling everything synaptic: gap junctions, probabilistic synapses, nonlinear s">
+
+The major change in this version is the addition of a new Synapses class, which allows modeling everything synaptic: gap junctions, probabilistic synapses, nonlinear ">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2012-08-30T09:55:24Z">
 <meta property="article:tag" content="Release">
@@ -71,8 +72,7 @@ The major change in this version is the addition of a new Synapses class, which 
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
             <div class="dropdown-menu">
-                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum</a>
-                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum/chat</a>
                     <a href="../../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
                     <a href="../../ecosystem/" class="dropdown-item">Software ecosystem</a>
                     <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
@@ -127,13 +127,17 @@ The major change in this version is the addition of a new Synapses class, which 
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p></p>
-<p>The 1.4 release of Brian is out!</p>
-<p>The major change in this version is the addition of a new Synapses class, which allows modeling everything synaptic: gap junctions, probabilistic synapses, nonlinear synapses, plasticity, etc. There are also a number of other new features, bug fixes and improvements (see below).</p>
-<p>Brian is being developed by Romain Brette and Dan Goodman. This version also includes contributions by Bertrand Fontaine, Cyrille Rossant, Victor Benichoux, Marcel Stimberg and Jonathan Laudanski.</p>
-<p>We take advantage of this announcement to inform Brian users that we are currently discussing the development of Brian 2.0, a rewriting of Brian, intended to be simpler, faster, and to be able to run on external devices (e.g. <span class="caps">GPU</span>). We will make an announcement on our <a href="http://groups.google.fr/group/briansupport">mailing list </a>soon, where we will ask for user opinions.</p>
-<p><strong>New features since 1.3.1</strong></p>
-<p>Major features:
+    <p>The 1.4 release of Brian is out!
+
+The major change in this version is the addition of a new Synapses class, which allows modeling everything synaptic: gap junctions, probabilistic synapses, nonlinear synapses, plasticity, etc. There are also a number of other new features, bug fixes and improvements (see below).
+
+Brian is being developed by Romain Brette and Dan Goodman. This version also includes contributions by Bertrand Fontaine, Cyrille Rossant, Victor Benichoux, Marcel Stimberg and Jonathan Laudanski.
+
+We take advantage of this announcement to inform Brian users that we are currently discussing the development of Brian 2.0, a rewriting of Brian, intended to be simpler, faster, and to be able to run on external devices (e.g. <span class="caps">GPU</span>). We will make an announcement on our <a href="http://groups.google.fr/group/briansupport">mailing list </a>soon, where we will ask for user opinions.
+
+<strong>New features since 1.3.1</strong>
+
+Major features:
 </p>
 <ul>
 <li>New Synapses class (plasticity, gap junctions, nonlinear synapses, etc)</li>
@@ -143,14 +147,14 @@ Minor features:
 <li>New AERSpikeMonitor class</li>
     <li>Several updates to library.electrophysiology</li>
 </ul>
-<p>Improvements:</p>
+Improvements:
 <ul>
 <li>Units should work better with static code analysers now</li>
     <li>Added Network.remove</li>
     <li>SpikeMonitor has a new .it attribute (returns pair i, t of arrays of spike times)</li>
     <li>Many new examples</li>
 </ul>
-<p>Bug fixes:</p>
+Bug fixes:
 <ul>
 <li>Assigning to a static variable (equation) now raise an error</li>
     <li>Fixed issues for TimedArrays with explicitly set times (fixes ticket #81)</li>
@@ -163,17 +167,16 @@ Minor features:
     <li>Sound.spectrum, Sound.pinknoise, brownnoise</li>
     <li>t wasn&#8217;t available in StringReset and PythonThreshold</li>
 </ul>
-<p>Deprecated or removed features:</p>
+Deprecated or removed features:
 <ul>
 <li>MultipleSpikeGeneratorGroup</li>
     <li>experimental.coincidence_detection</li>
 </ul>
-<p>Experimental features:</p>
+Experimental features:
 <ul>
 <li>Generating model documentation automatically (experimental.model_documentation)</li>
 </ul>
-<p></p>
-    </div>
+</div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/release/" rel="tag">Release</a></li>
         </ul>
@@ -185,7 +188,7 @@ Minor features:
                 <a href="../brian-1-4-1/" rel="next" title="Brian 1.4.1">Next post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer" class="text-center">
-            Contents © 2023         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
+            Contents © 2024         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
             
             
         </footer>

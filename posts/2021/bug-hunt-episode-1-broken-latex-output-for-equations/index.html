@@ -72,8 +72,7 @@
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
             <div class="dropdown-menu">
-                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum</a>
-                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum/chat</a>
                     <a href="../../../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
                     <a href="../../../ecosystem/" class="dropdown-item">Software ecosystem</a>
                     <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
@@ -142,17 +141,17 @@
 <!-- TEASER_END -->
 
 <h3>Context</h3>
-<p>We don’t document this feature particularly well, but is mentioned in our <a href="https://brian2.readthedocs.io/en/stable/developer/guidelines/representation.html?latex-representations-with-sympy#latex-representations-with-sympy">development documentation</a> and in our <a href="https://www.frontiersin.org/articles/10.3389/fninf.2014.00006/full#h5">2014 paper</a>. Taking the example from that paper, our extension of <a href="https://www.sympy.org/en/index.html">sympy</a>‘s LaTeX printing facilities makes it possible to convert an <code>Equations</code> object to LaTeX markup:</p>
-<pre class="code literal-block"><span></span><code><span class="n">eqs</span> <span class="o">=</span> <span class="n">Equations</span><span class="p">(</span><span class="s1">'''dv/dt = (g_L*(E_L-v) +</span>
+<p>We don’t document this feature particularly well, but is mentioned in our <a href="https://brian2.readthedocs.io/en/stable/developer/guidelines/representation.html?latex-representations-with-sympy#latex-representations-with-sympy">development documentation</a> and in our <a href="https://www.frontiersin.org/articles/10.3389/fninf.2014.00006/full#h5">2014 paper</a>. Taking the example from that paper, our extension of <a href="https://www.sympy.org/en/index.html">sympy</a>’s LaTeX printing facilities makes it possible to convert an <code>Equations</code> object to LaTeX markup:</p>
+<div class="code"><pre class="code literal-block"><span class="n">eqs</span> <span class="o">=</span> <span class="n">Equations</span><span class="p">(</span><span class="s1">'''dv/dt = (g_L*(E_L-v) +</span>
 <span class="s1">                            g_s*(E_s-v))/tau_m : volt</span>
 <span class="s1">                   dg_s/dt = -g_s/tau_s : siemens'''</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">eqs</span><span class="p">))</span>
-</code></pre>
+</pre></div>
 
 <p>Output:</p>
-<pre class="code literal-block"><span></span><code><span class="k">\begin</span><span class="nb">{</span>align*<span class="nb">}</span><span class="k">\frac</span><span class="nb">{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}</span>v<span class="nb">}{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}</span>t<span class="nb">}</span> <span class="nb">&amp;</span>= <span class="k">\frac</span><span class="nb">{</span>g<span class="nb">_{</span>L<span class="nb">}</span> <span class="k">\left</span>(E<span class="nb">_{</span>L<span class="nb">}</span> - v<span class="k">\right</span>) + g<span class="nb">_{</span>s<span class="nb">}</span> <span class="k">\left</span>(E<span class="nb">_{</span>s<span class="nb">}</span> - v<span class="k">\right</span>)<span class="nb">}{</span><span class="k">\tau</span><span class="nb">_{</span>m<span class="nb">}}</span> <span class="nb">&amp;&amp;</span> <span class="k">\text</span><span class="nb">{</span>(unit of <span class="s">$</span><span class="nb">v</span><span class="s">$</span>: <span class="s">$</span><span class="nv">\mathrm</span><span class="nb">{V}</span><span class="s">$</span>)<span class="nb">}</span><span class="k">\\</span>
+<div class="code"><pre class="code literal-block"><span class="k">\begin</span><span class="nb">{</span>align*<span class="nb">}</span><span class="k">\frac</span><span class="nb">{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}</span>v<span class="nb">}{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}</span>t<span class="nb">}</span> <span class="nb">&amp;</span>= <span class="k">\frac</span><span class="nb">{</span>g<span class="nb">_{</span>L<span class="nb">}</span> <span class="k">\left</span>(E<span class="nb">_{</span>L<span class="nb">}</span> - v<span class="k">\right</span>) + g<span class="nb">_{</span>s<span class="nb">}</span> <span class="k">\left</span>(E<span class="nb">_{</span>s<span class="nb">}</span> - v<span class="k">\right</span>)<span class="nb">}{</span><span class="k">\tau</span><span class="nb">_{</span>m<span class="nb">}}</span> <span class="nb">&amp;&amp;</span> <span class="k">\text</span><span class="nb">{</span>(unit of <span class="s">$</span><span class="nb">v</span><span class="s">$</span>: <span class="s">$</span><span class="nv">\mathrm</span><span class="nb">{V}</span><span class="s">$</span>)<span class="nb">}</span><span class="k">\\</span>
 <span class="k">\frac</span><span class="nb">{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}</span>g<span class="nb">_{</span>s<span class="nb">}}{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}</span>t<span class="nb">}</span> <span class="nb">&amp;</span>= - <span class="k">\frac</span><span class="nb">{</span>g<span class="nb">_{</span>s<span class="nb">}}{</span><span class="k">\tau</span><span class="nb">_{</span>s<span class="nb">}}</span> <span class="nb">&amp;&amp;</span> <span class="k">\text</span><span class="nb">{</span>(unit of <span class="s">$</span><span class="nb">g_{s}</span><span class="s">$</span>: <span class="s">$</span><span class="nv">\mathrm</span><span class="nb">{S}</span><span class="s">$</span>)<span class="nb">}</span><span class="k">\end</span><span class="nb">{</span>align*<span class="nb">}</span>
-</code></pre>
+</pre></div>
 
 <p>Included in a LaTeX document (or in a Markdown document that supports LaTeX equations like this blog post), this is rendered as:</p>
 <div>
@@ -165,15 +164,15 @@
 <p>Which looks kind of nice, in particular note the subscripts and the conversion of <code>tau</code> to $\tau$.</p>
 <h3>The bug</h3>
 <p>Now, a couple of days ago user Sebastian Schmitt (<code>schmitts</code>) reported on our <a href="https://brian.discourse.group/t/latex-representation-of-equations/376">discussion forum</a> that this feature seems to be broken. He helpfully provided a simple example demonstrating the issue (always appreciated!):</p>
-<pre class="code literal-block"><span></span><code><span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="code"><pre class="code literal-block"><span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">latex</span>
 <span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">'dv/dt = -v/(10*ms) : volt'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">latex</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">equations</span><span class="p">))</span>
-</code></pre>
+</pre></div>
 
 <p>Output:</p>
-<pre class="code literal-block"><span></span><code><span class="k">\begin</span><span class="nb">{</span>align*<span class="nb">}</span><span class="k">\mathtt</span><span class="nb">{</span><span class="k">\text</span><span class="nb">{</span><span class="k">\textbackslashfrac\{\textbackslashmathrm\{</span>d<span class="k">\}</span>v<span class="k">\}\{\textbackslashmathrm\{</span>d<span class="k">\}</span>t<span class="k">\}</span><span class="nb">}}</span> <span class="nb">&amp;</span>= - <span class="k">\frac</span><span class="nb">{</span>v<span class="nb">}{</span>10 ms<span class="nb">}</span> <span class="nb">&amp;&amp;</span> <span class="k">\text</span><span class="nb">{</span>(unit of <span class="s">$</span><span class="nb">v</span><span class="s">$</span>: <span class="s">$</span><span class="nv">\mathrm</span><span class="nb">{V}</span><span class="s">$</span>)<span class="nb">}</span><span class="k">\end</span><span class="nb">{</span>align*<span class="nb">}</span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="k">\begin</span><span class="nb">{</span>align*<span class="nb">}</span><span class="k">\mathtt</span><span class="nb">{</span><span class="k">\text</span><span class="nb">{</span><span class="k">\textbackslashfrac\{\textbackslashmathrm\{</span>d<span class="k">\}</span>v<span class="k">\}\{\textbackslashmathrm\{</span>d<span class="k">\}</span>t<span class="k">\}</span><span class="nb">}}</span> <span class="nb">&amp;</span>= - <span class="k">\frac</span><span class="nb">{</span>v<span class="nb">}{</span>10 ms<span class="nb">}</span> <span class="nb">&amp;&amp;</span> <span class="k">\text</span><span class="nb">{</span>(unit of <span class="s">$</span><span class="nb">v</span><span class="s">$</span>: <span class="s">$</span><span class="nv">\mathrm</span><span class="nb">{V}</span><span class="s">$</span>)<span class="nb">}</span><span class="k">\end</span><span class="nb">{</span>align*<span class="nb">}</span>
+</pre></div>
 
 <p>Which does not look right at all when rendered:</p>
 <div>
@@ -195,21 +194,21 @@ longer has a compatibility layer for Python 2.</p>
 </div>
 <h4>What changed in sympy?</h4>
 <p>Now, what and when changed in <code>sympy</code> that broke our LaTeX support? To investigate further, I removed the installed <code>sympy</code> package and instead cloned their <a href="https://github.com/sympy/sympy/">development repository</a> from github:</p>
-<pre class="code literal-block"><span></span><code><span class="gp">$ </span>conda remove --force sympy
-<span class="gp">$ </span>git clone git@github.com:sympy/sympy.git
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="gp">$ </span>conda<span class="w"> </span>remove<span class="w"> </span>--force<span class="w"> </span>sympy
+<span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:sympy/sympy.git
+</pre></div>
 
 <p>Cloning the repository takes a moment (the repository contains an impressive number of 46,784 commits!), but then it gives us access to the full history of the <code>sympy</code> project. As the next step, I installed it in “development mode” to make it possible to easily switch its version without having to install the package over and over again:</p>
-<pre class="code literal-block"><span></span><code><span class="gp">$ </span>pip install -e .
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</pre></div>
 
 <p>As most repositories do, <code>sympy</code> tags its releases and a <code>git tag</code> shows that it prefixes its release tag names with <code>sympy-...</code>. This gives us everything we need to run the amazing <code>git bisect</code> command which lets you pin-point the exact commit that introduced a regression. In this case, I start it with:</p>
-<pre class="code literal-block"><span></span><code><span class="gp">$ </span>git bisect start sympy-1.8 sympy-1.5.1
+<div class="code"><pre class="code literal-block"><span class="gp">$ </span>git<span class="w"> </span>bisect<span class="w"> </span>start<span class="w"> </span>sympy-1.8<span class="w"> </span>sympy-1.5.1
 <span class="go">Already on 'master'</span>
 <span class="go">Your branch is up to date with 'origin/master'.</span>
 <span class="go">Bisecting: a merge base must be tested</span>
 <span class="go">[c6a18db2095aeed3f2820d620d817ebc3f1ccacd] Don't allow expressions to compare equal to strings</span>
-</code></pre>
+</pre></div>
 
 <p>(From my previous tests I know that version 1.8 is affected by the problem, while version 1.5.1 is not.)</p>
 <div class="admonition note">
@@ -217,16 +216,16 @@ longer has a compatibility layer for Python 2.</p>
 <p>As the name suggests, <code>git bisect</code> runs a <a href="https://en.wikipedia.org/wiki/Bisection_(software_engineering)">bisection algorithm</a>. This means with each response it cuts the the number of commits to check in half – the total number of commits to check therefore only grows logarithmically with the number of total commits. Below, only 14 verifications were necessary to find the relevant commit out of more than 3000!</p>
 </div>
 <p>Now I could test each version manually and report back to <code>git</code> whether the version is “bad” or “good” (<code>git bisect bad</code> or <code>git bisect good</code>), i.e. whether it reproduced the problem or not. When you have to check many revisions, and when it is easy to verify each revision with an automatic test, there is a nice alternative to this manual approach. Taking the initial test script provided by <code>schmitts</code>, I extend it so that it tests for the presence of the <code>textbackslash</code> string (which shouldn’t be there):</p>
-<pre class="code literal-block"><span></span><code><span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="code"><pre class="code literal-block"><span class="kn">from</span> <span class="nn">brian2</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">latex</span>
 
 <span class="n">G</span> <span class="o">=</span> <span class="n">NeuronGroup</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">'dv/dt = -v/(10*ms) : volt'</span><span class="p">)</span>
 <span class="k">assert</span> <span class="s1">'textbackslash'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">latex</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">equations</span><span class="p">)</span>
-</code></pre>
+</pre></div>
 
 <p>Running this script will now either end quietly (and with an <a href="https://en.wikipedia.org/wiki/Exit_status">exit code</a> 0), or fail with an <code>AssertionError</code> if the problem is present. After storing the script as <code>/tmp/sympy_latex.py</code>, I can now hand off the testing to <code>git bisect</code> which will go through all the commits in a smart way to find the first commit introducing the problem:</p>
-<pre class="code literal-block"><span></span><code><span class="gp">$ </span>git bisect run python /tmp/sympy_latex.py
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="gp">$ </span>git<span class="w"> </span>bisect<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>/tmp/sympy_latex.py
+</pre></div>
 
 <p>This leads to quite a bit of output:</p>
 <details><summary>Full output</summary><pre>
@@ -317,7 +316,7 @@ Traceback (most recent call last):
 AssertionError
 </module></https:></module></https:></module></https:></module></https:></module></https:></module></https:></module></https:></module></https:></module></https:></pre>
 </details><p>and finally gives us the information we were looking for:</p>
-<pre class="code literal-block"><span></span><code><span class="go">27d64a4a644093b8f8a38a77466680302d2b4ee2 is the first bad commit</span>
+<div class="code"><pre class="code literal-block"><span class="go">27d64a4a644093b8f8a38a77466680302d2b4ee2 is the first bad commit</span>
 <span class="go">commit 27d64a4a644093b8f8a38a77466680302d2b4ee2</span>
 <span class="go">Author: Eric Wieser &lt;wieser.eric@gmail.com&gt;</span>
 <span class="go">Date:   Mon Jun 22 13:06:12 2020 +0100</span>
@@ -328,18 +327,18 @@ AssertionError
 <span class="go"> sympy/printing/tests/test_latex.py | 30 ++++++++++++++++++++++++++--</span>
 <span class="go"> 2 files changed, 62 insertions(+), 9 deletions(-)</span>
 <span class="go">bisect run success</span>
-</code></pre>
+</pre></div>
 
 <p>This looks indeed very relevant, and the change in the <a href="https://github.com/sympy/sympy/commit/27d64a4a644093b8f8a38a77466680302d2b4ee2">referenced commit</a> introduces the strange <code>\textbackslash</code> we were seeing.</p>
 <p>Does this mean we have found a bug in <code>sympy</code>, or is there something to fix in Brian?</p>
 <h4>Getting to the bottom of it</h4>
 <p>When I opened the github issue, I mentioned that converting a single equation (instead of the full <code>Equations</code> object) could be used as a workaround. Looking more closely, it turns out that this already gives incorrect output:</p>
-<pre class="code literal-block"><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">'$$'</span> <span class="o">+</span> <span class="n">latex</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">equations</span><span class="p">[</span><span class="s1">'v'</span><span class="p">])</span> <span class="o">+</span> <span class="s1">'$$'</span><span class="p">)</span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="nb">print</span><span class="p">(</span><span class="s1">'$$'</span> <span class="o">+</span> <span class="n">latex</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">equations</span><span class="p">[</span><span class="s1">'v'</span><span class="p">])</span> <span class="o">+</span> <span class="s1">'$$'</span><span class="p">)</span>
+</pre></div>
 
 <p>prints:</p>
-<pre class="code literal-block"><span></span><code><span class="sb">$$</span><span class="nv">\frac</span><span class="nb">{</span><span class="nv">\mathrm</span><span class="nb">{d}</span><span class="nv">\mathtt</span><span class="nb">{</span><span class="nv">\text</span><span class="nb">{v}}}{</span><span class="nv">\mathrm</span><span class="nb">{d}t} </span><span class="o">=</span><span class="nb"> </span><span class="o">-</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{v}{</span><span class="m">10</span><span class="nb"> ms}</span><span class="s">$$</span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="sb">$$</span><span class="nv">\frac</span><span class="nb">{</span><span class="nv">\mathrm</span><span class="nb">{d}</span><span class="nv">\mathtt</span><span class="nb">{</span><span class="nv">\text</span><span class="nb">{v}}}{</span><span class="nv">\mathrm</span><span class="nb">{d}t} </span><span class="o">=</span><span class="nb"> </span><span class="o">-</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{v}{</span><span class="m">10</span><span class="nb"> ms}</span><span class="s">$$</span>
+</pre></div>
 
 <p>While this doesn’t look <em>that</em> bad (no weird <code>\textbackslash</code> for example), it wraps the $v$ on the left-hand side in the wrong way, making it use a typewriter font instead of the italics normally used for variables:</p>
 <div>
@@ -349,7 +348,7 @@ $$
 </div>
 
 <p>Why does it correctly display $v$ on the right-hand side, but not on the left-hand side? The conversion to LaTeX is handled in the function <a href="https://github.com/brian-team/brian2/blob/a0167fc35a585a0b58aa8cf28889a0e03a520696/brian2/equations/equations.py#L459"><code>SingleEquations._latex</code></a>, which currently looks like this:</p>
-<pre class="code literal-block"><span></span><code>    <span class="k">def</span> <span class="nf">_latex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<div class="code"><pre class="code literal-block">    <span class="k">def</span> <span class="nf">_latex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">DIFFERENTIAL_EQUATION</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">(</span><span class="sa">r</span><span class="s1">'\frac{\mathrm</span><span class="si">{d}</span><span class="s1">'</span> <span class="o">+</span> <span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">varname</span><span class="p">)</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">'}{\mathrm</span><span class="si">{d}</span><span class="s1">t} = '</span> <span class="o">+</span>
                     <span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">str_to_sympy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">code</span><span class="p">)))</span>
@@ -358,17 +357,17 @@ $$
                     <span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">str_to_sympy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">code</span><span class="p">)))</span>
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">PARAMETER</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">varname</span><span class="p">)</span>
-</code></pre>
+</pre></div>
 
-<p>What is the difference between the left-hand side and the right-hand side that could explain the different rendering of the variable name? It turns out that for the right-hand side, we call <code>sympy.latex</code> on the result of the <a href="https://brian2.readthedocs.io/en/stable/reference/brian2.parsing.sympytools.str_to_sympy.html"><code>str_to_sympy</code></a> function, i.e. on a <code>sympy</code> object; in contrast, on the left-hand side, we call <code>sympy.latex</code> on a <em>string</em> (<code>self.varname</code>). Well, it is finally time to look at <code>sympy</code>‘s documentation to see whether it has to say anything about that… indeed it does! Somewhat hidden at the end of the <a href="https://docs.sympy.org/latest/modules/printing.html#sympy.printing.latex.latex">documentation for <code>sympy.latex</code></a> we find the following sentence:</p>
+<p>What is the difference between the left-hand side and the right-hand side that could explain the different rendering of the variable name? It turns out that for the right-hand side, we call <code>sympy.latex</code> on the result of the <a href="https://brian2.readthedocs.io/en/stable/reference/brian2.parsing.sympytools.str_to_sympy.html"><code>str_to_sympy</code></a> function, i.e. on a <code>sympy</code> object; in contrast, on the left-hand side, we call <code>sympy.latex</code> on a <em>string</em> (<code>self.varname</code>). Well, it is finally time to look at <code>sympy</code>’s documentation to see whether it has to say anything about that… indeed it does! Somewhat hidden at the end of the <a href="https://docs.sympy.org/latest/modules/printing.html#sympy.printing.latex.latex">documentation for <code>sympy.latex</code></a> we find the following sentence:</p>
 <blockquote>
 <p><em>Changed in version 1.7.0:</em> Unsupported types no longer have their str representation treated as valid latex.</p>
 </blockquote>
-<p>Ha! Apparently, until version 1.7, <code>sympy</code> was happily accepting simple strings as input to <code>sympy.latex</code> and simply expected them to be valid LaTeX code. Now, it instead tries to display them verbatim (replacing backslashes by <code>\textbackslash</code>, etc.) and in a typewriter font. So how can we fix this? Instead of calling <code>sympy.latex(self.varname)</code>, we call <code>sympy.latex(sympy.Symbol(self.varname))</code>, i.e. call <code>sympy.latex</code> on a <code>sympy</code> object instead of a pure string. What does <code>sympy.latex(sympy.Symbol(self.varname))</code> return if <code>self.varname</code> is <code>'v'</code>? Well, it simply returns <code>'v'</code>… Doesn’t this mean we could simply use <code>self.varname</code> directly? We could, but we’d lose some of <code>sympy</code>‘s features, e.g. <code>tau</code> would no longer be converted to <code>\tau</code> (i.e. $\tau$).</p>
+<p>Ha! Apparently, until version 1.7, <code>sympy</code> was happily accepting simple strings as input to <code>sympy.latex</code> and simply expected them to be valid LaTeX code. Now, it instead tries to display them verbatim (replacing backslashes by <code>\textbackslash</code>, etc.) and in a typewriter font. So how can we fix this? Instead of calling <code>sympy.latex(self.varname)</code>, we call <code>sympy.latex(sympy.Symbol(self.varname))</code>, i.e. call <code>sympy.latex</code> on a <code>sympy</code> object instead of a pure string. What does <code>sympy.latex(sympy.Symbol(self.varname))</code> return if <code>self.varname</code> is <code>'v'</code>? Well, it simply returns <code>'v'</code>… Doesn’t this mean we could simply use <code>self.varname</code> directly? We could, but we’d lose some of <code>sympy</code>’s features, e.g. <code>tau</code> would no longer be converted to <code>\tau</code> (i.e. $\tau$).</p>
 <p>Now, how can we check that we are not using <code>sympy.latex</code> directly on strings elsewhere in the code? Of course we could search for calls to <code>latex</code> in the source code and verify them manually, but there’s another neat trick we can use, so called <a href="https://en.wikipedia.org/wiki/Monkey_patch">“monkey patching”</a>.</p>
-<p>I am going to run Brian’s test suite, or at least the “codegen-independent” part, i.e. the part that does not test the full code generation machinery. Converting equations to LaTeX belongs into this category. However, before running this test I will “monkey patch” the <code>sympy.latex</code> function so that it fails if it gets called for a string – otherwise it does the same thing as the original function. Note that I have to do this before importing <code>brian2</code>, because otherwise <code>brian2</code> would import the original <code>sympy.latex</code> function before I can patch it. We also need to switch off <a href="https://docs.pytest.org/">pytest</a>‘s parallel testing, because otherwise tests will be executed in independent processes that do not make use of our carefully patched function.</p>
+<p>I am going to run Brian’s test suite, or at least the “codegen-independent” part, i.e. the part that does not test the full code generation machinery. Converting equations to LaTeX belongs into this category. However, before running this test I will “monkey patch” the <code>sympy.latex</code> function so that it fails if it gets called for a string – otherwise it does the same thing as the original function. Note that I have to do this before importing <code>brian2</code>, because otherwise <code>brian2</code> would import the original <code>sympy.latex</code> function before I can patch it. We also need to switch off <a href="https://docs.pytest.org/">pytest</a>’s parallel testing, because otherwise tests will be executed in independent processes that do not make use of our carefully patched function.</p>
 <p>Here’s the patch and the test run:</p>
-<pre class="code literal-block"><span></span><code><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">latex</span> <span class="k">as</span> <span class="n">_orig_latex</span>
+<div class="code"><pre class="code literal-block"><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">latex</span> <span class="k">as</span> <span class="n">_orig_latex</span>
 <span class="kn">import</span> <span class="nn">sympy</span>
 <span class="k">def</span> <span class="nf">latex</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
     <span class="k">assert</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
@@ -376,10 +375,10 @@ $$
 <span class="n">sympy</span><span class="o">.</span><span class="n">latex</span> <span class="o">=</span> <span class="n">latex</span>
 <span class="kn">import</span> <span class="nn">brian2</span>
 <span class="n">brian2</span><span class="o">.</span><span class="n">test</span><span class="p">([],</span> <span class="n">test_in_parallel</span><span class="o">=</span><span class="p">[])</span>  <span class="c1"># no code generation targets are tested</span>
-</code></pre>
+</pre></div>
 
 <p>Two of the tests fails and point us to another use of <code>sympy.latex</code> with a string in <a href="https://github.com/brian-team/brian2/blob/a0167fc35a585a0b58aa8cf28889a0e03a520696/brian2/equations/equations.py#L1047"><code>Equations._latex</code></a>:</p>
-<pre class="code literal-block"><span></span><code>            <span class="c1"># ...</span>
+<div class="code"><pre class="code literal-block">            <span class="c1"># ...</span>
             <span class="n">varname</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="n">eq</span><span class="o">.</span><span class="n">varname</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">eq</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">DIFFERENTIAL_EQUATION</span><span class="p">:</span>
                 <span class="n">lhs</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">'\frac{\mathrm</span><span class="si">{d}</span><span class="s1">'</span> <span class="o">+</span> <span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">varname</span><span class="p">)</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">'}{\mathrm</span><span class="si">{d}</span><span class="s1">t}'</span>
@@ -398,13 +397,13 @@ $$
                                                                            <span class="n">sympy</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">get_unit</span><span class="p">(</span><span class="n">eq</span><span class="o">.</span><span class="n">dim</span><span class="p">)),</span>
                                                                            <span class="n">flag_str</span><span class="p">)</span>
             <span class="n">equations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">eq_latex</span><span class="p">)</span>
-</code></pre>
+</pre></div>
 
 <p>In the marked line above, we call <code>sympy.latex(lhs)</code>, but <code>lhs</code> is a string, not a sympy object (note that a couple of lines earlier, the <code>lhs</code> refers to <code>varname</code>, which despites its somewhat confusing name is a <code>sympy.Symbol</code> – this use is therefore correct). Including <code>lhs</code> as it is, instead of wrapping it with <code>sympy.latex</code> should therefore fix the issue.</p>
 <h4>Final tests and commiting things</h4>
 <p>A manual test with the example from the beginning shows that it now prints</p>
-<pre class="code literal-block"><span></span><code><span class="k">\begin</span><span class="nb">{</span>align*<span class="nb">}</span><span class="k">\frac</span><span class="nb">{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}</span>v<span class="nb">}{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}</span>t<span class="nb">}</span> <span class="nb">&amp;</span>= - <span class="k">\frac</span><span class="nb">{</span>v<span class="nb">}{</span>10 ms<span class="nb">}</span> <span class="nb">&amp;&amp;</span> <span class="k">\text</span><span class="nb">{</span>(unit of <span class="s">$</span><span class="nb">v</span><span class="s">$</span>: <span class="s">$</span><span class="nv">\mathrm</span><span class="nb">{V}</span><span class="s">$</span>)<span class="nb">}</span><span class="k">\end</span><span class="nb">{</span>align*<span class="nb">}</span>
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="k">\begin</span><span class="nb">{</span>align*<span class="nb">}</span><span class="k">\frac</span><span class="nb">{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}</span>v<span class="nb">}{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}</span>t<span class="nb">}</span> <span class="nb">&amp;</span>= - <span class="k">\frac</span><span class="nb">{</span>v<span class="nb">}{</span>10 ms<span class="nb">}</span> <span class="nb">&amp;&amp;</span> <span class="k">\text</span><span class="nb">{</span>(unit of <span class="s">$</span><span class="nb">v</span><span class="s">$</span>: <span class="s">$</span><span class="nv">\mathrm</span><span class="nb">{V}</span><span class="s">$</span>)<span class="nb">}</span><span class="k">\end</span><span class="nb">{</span>align*<span class="nb">}</span>
+</pre></div>
 
 <p>which renders correctly:</p>
 <div>
@@ -414,19 +413,19 @@ $$
 </div>
 
 <p>Before commiting the fix, however, we should also make sure that this issue does not reappear in the future, i.e. we need a test. A good test for a bug should of course fail before applying the fix, and no longer fail afterwards. I already fixed the issue in the code, so what is the easiest way to make sure that it fails without these changes? There are several ways to do this, but in this case a simple solution is to run</p>
-<pre class="code literal-block"><span></span><code><span class="gp">$ </span>git stash
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="gp">$ </span>git<span class="w"> </span>stash
+</pre></div>
 
 <p>This resets all changes in the repository, but stores them locally. We can now write a test and make sure that it fails (because our repository does not have the fix anymore). The LaTeX output is currently not tested very well (but we don’t want tests to fail due to small inconsequential layout changes, either), but for the moment a very simple test should be enough. To make sure that the current issue is fixed, I simply add</p>
-<pre class="code literal-block"><span></span><code><span class="k">assert</span> <span class="s1">'textbackslash'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">func</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  <span class="c1"># for LaTeX, see #1296</span>
+<div class="code"><pre class="code literal-block"><span class="k">assert</span> <span class="s1">'textbackslash'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">func</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  <span class="c1"># for LaTeX, see #1296</span>
 <span class="c1">#...</span>
 <span class="k">assert</span> <span class="s1">'textbackslash'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">func</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">equations</span><span class="p">)</span>
-</code></pre>
+</pre></div>
 
 <p>to the <a href="https://github.com/brian-team/brian2/blob/a0167fc35a585a0b58aa8cf28889a0e03a520696/brian2/tests/test_neurongroup.py#L1396"><code>test_repr</code> test in <code>test_neurongroup.py</code></a>.</p>
 <p>As expected, this fails in the current codebase, and after getting the fixes back from the “stash” with</p>
-<pre class="code literal-block"><span></span><code><span class="gp">$ </span>git stash pop
-</code></pre>
+<div class="code"><pre class="code literal-block"><span class="gp">$ </span>git<span class="w"> </span>stash<span class="w"> </span>pop
+</pre></div>
 
 <p>the test successfully passes.</p>
 <p>This concludes everything. I finish by committing the changes in a new branch and open a <a href="https://github.com/brian-team/brian2/pull/1299">pull request</a> so that they can be merged into the main code base.</p>
@@ -458,7 +457,7 @@ MathJax.Hub.Config({
     }
 });
 </script></article><!--End of body content--><footer id="footer" class="text-center">
-            Contents © 2023         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
+            Contents © 2024         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
             
             
         </footer>

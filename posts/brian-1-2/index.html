@@ -23,7 +23,8 @@
 <meta property="og:title" content="Brian 1.2">
 <meta property="og:url" content="https://briansimulator.org/posts/brian-1-2/">
 <meta property="og:description" content="We have just released Brian 1.2.
-The major feature of this release is the model fitting toolbox, designed for automatic fitting of spiking neural models to recorded data. The toolbox is capable of usi">
+
+The major feature of this release is the model fitting toolbox, designed for automatic fitting of spiking neural models to recorded data. The toolbox is capable of us">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2010-01-19T20:44:13Z">
 <meta property="article:tag" content="Release">
@@ -71,8 +72,7 @@ The major feature of this release is the model fitting toolbox, designed for aut
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
             <div class="dropdown-menu">
-                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum</a>
-                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum/chat</a>
                     <a href="../../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
                     <a href="../../ecosystem/" class="dropdown-item">Software ecosystem</a>
                     <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
@@ -127,12 +127,15 @@ The major feature of this release is the model fitting toolbox, designed for aut
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p></p>
-<p>We have just released <a href="https://neuralensemble.org/trac/brian/wiki/Downloads">Brian 1.2</a>.</p>
-<p>The major feature of this release is the model fitting toolbox, designed for automatic fitting of spiking neural models to recorded data. The toolbox is capable of using multiple CPUs or GPUs, across multiple machines. For example, in our lab we use 3 computers with 2 GPUs each to get a 300x speed increase compared to using a single <span class="caps">CPU</span>.</p>
-<p>Other features of this release include some support for real time plotting as the simulation runs and some important bug fixes. See below for the complete list of changes.</p>
-<p>With this release, we are moving away from the old Sourceforge site to the new <a href="https://neuralensemble.org/trac/brian/wiki">Brian Trac</a> kindly hosted by <a href="http://www.neuralensemble.org/">Neural Ensemble</a>. We have also been working on our release tools, making it much easier to produce new releases. We now plan to do fairly frequent ‘quick releases’ which will be less thoroughly tested, but useful for those who want the latest features without having to much around with the <span class="caps">SVN</span> version.</p>
-<p>Major features:
+    <p>We have just released <a href="https://neuralensemble.org/trac/brian/wiki/Downloads">Brian 1.2</a>.
+
+The major feature of this release is the model fitting toolbox, designed for automatic fitting of spiking neural models to recorded data. The toolbox is capable of using multiple CPUs or GPUs, across multiple machines. For example, in our lab we use 3 computers with 2 GPUs each to get a 300x speed increase compared to using a single <span class="caps">CPU</span>.
+
+Other features of this release include some support for real time plotting as the simulation runs and some important bug fixes. See below for the complete list of changes.
+
+With this release, we are moving away from the old Sourceforge site to the new <a href="https://neuralensemble.org/trac/brian/wiki">Brian Trac</a> kindly hosted by <a href="http://www.neuralensemble.org/">Neural Ensemble</a>. We have also been working on our release tools, making it much easier to produce new releases. We now plan to do fairly frequent &#8216;quick releases&#8217; which will be less thoroughly tested, but useful for those who want the latest features without having to much around with the <span class="caps">SVN</span> version.
+
+Major features:
 </p>
 <ul>
 <li>Model fitting toolbox (library.modelfitting)</li>
@@ -144,7 +147,7 @@ Minor features:
     <li>New RegularClock object</li>
     <li>Added brian_sample_run function to test installation in place of nose tests</li>
 </ul>
-<p>Improvements:</p>
+Improvements:
 <ul>
 <li>Speed improvements to monitors and plotting functions</li>
     <li>Sparse matrix support improved, should work with scipy versions up to 0.7.1</li>
@@ -152,7 +155,7 @@ Minor features:
     <li>Parameters now picklable</li>
     <li>Made Equations picklable</li>
 </ul>
-<p>Bug fixes:</p>
+Bug fixes:
 <ul>
 <li>Fixed major bug with subgroups and connections (announced on webpage)</li>
     <li>Fixed major bug with multiple clocks (announced on webpage)</li>
@@ -163,7 +166,7 @@ Minor features:
     <li>Fixed bug with <span class="caps">STP</span></li>
     <li>Fixed bug with weight=lambda i,j:rand()</li>
 </ul>
-<p>New examples:</p>
+New examples:
 <ul>
 <li>New multiprocessing examples</li>
     <li>Added polychronisation example</li>
@@ -172,8 +175,7 @@ Minor features:
     <li>Added examples of using derived classes with Brian</li>
     <li>Realtime plotting example</li>
 </ul>
-<p></p>
-    </div>
+</div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/release/" rel="tag">Release</a></li>
         </ul>
@@ -185,7 +187,7 @@ Minor features:
                 <a href="../sharing-numpy-arrays-between-processes/" rel="next" title="Sharing numpy arrays between processes">Next post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer" class="text-center">
-            Contents © 2023         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
+            Contents © 2024         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
             
             
         </footer>

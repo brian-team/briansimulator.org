@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>The Brian spiking neural network simulator (Posts about numpy)</title><link>https://briansimulator.org/</link><description></description><atom:link href="https://briansimulator.org/tags/numpy.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:postmaster@briansimulator.org"&gt;Brian team&lt;/a&gt; </copyright><lastBuildDate>Mon, 27 Jun 2022 15:10:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Sharing numpy arrays between processes</title><link>https://briansimulator.org/posts/sharing-numpy-arrays-between-processes/</link><dc:creator>Brian team</dc:creator><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;This is a little trick that may be useful to people using multiprocessing and numpy that I couldn’t find any good examples of online.&lt;/p&gt;
-&lt;p&gt;Using the Python multiprocessing package you create a new Python process for each CPU in the system, but you may often want to work on the same data without making a copy. Here is one way to do that. First of all, we assume you’re starting with a large numpy array S. We replace S with a version in shared memory, and then we can pass this&lt;/p&gt;
-&lt;p&gt;[python]
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>The Brian spiking neural network simulator (Posts about numpy)</title><link>https://briansimulator.org/</link><description></description><atom:link href="https://briansimulator.org/tags/numpy.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:postmaster@briansimulator.org"&gt;Brian team&lt;/a&gt; </copyright><lastBuildDate>Tue, 30 Jan 2024 10:44:19 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Sharing numpy arrays between processes</title><link>https://briansimulator.org/posts/sharing-numpy-arrays-between-processes/</link><dc:creator>Brian team</dc:creator><description>&lt;p&gt;This is a little trick that may be useful to people using multiprocessing and numpy that I couldn't find any good examples of online.
+
+Using the Python multiprocessing package you create a new Python process for each CPU in the system, but you may often want to work on the same data without making a copy. Here is one way to do that. First of all, we assume you're starting with a large numpy array S. We replace S with a version in shared memory, and then we can pass this
+
+[python]
 from multiprocessing import sharedctypes
 size = S.size
 shape = S.shape
 S.shape = size
-S_ctypes = sharedctypes.RawArray(‘d’, S)
+S_ctypes = sharedctypes.RawArray('d', S)
 S = numpy.frombuffer(S_ctypes, dtype=numpy.float64, count=size)
 S.shape = shape
-[/python]&lt;/p&gt;
-&lt;p&gt;Now we can send S_ctypes and shape to a child process in multiprocessing, and convert it back to a numpy array in the child process as follows:&lt;/p&gt;
-&lt;p&gt;[python]
+[/python]
+
+Now we can send S_ctypes and shape to a child process in multiprocessing, and convert it back to a numpy array in the child process as follows:
+
+[python]
 from numpy import ctypeslib
 S = ctypeslib.as_array(S_ctypes)
 S.shape = shape

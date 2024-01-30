@@ -70,8 +70,7 @@
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
             <div class="dropdown-menu">
-                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum</a>
-                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum/chat</a>
                     <a href="../../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
                     <a href="../../ecosystem/" class="dropdown-item">Software ecosystem</a>
                     <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
@@ -126,8 +125,7 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p></p>
-<p>We just added a new method <code>Connection.connect_from_sparse</code>(W, delay=None, column_access=True) which allows you to initialise a Connection object directly with any scipy sparse matrix. This has a huge memory efficiency gain if you use <span class="caps">CSR</span>/<span class="caps">COO</span> matrices, as by default Brian uses <span class="caps">LIL</span> which is very flexible but memory inefficient. For an even bigger memory efficiency gain, if you are not using <span class="caps">STDP</span>, set column_access=False. <a href="http://neuralensemble.org/trac/brian/wiki/Downloads">Download the <span class="caps">SVN</span> version of Brian</a> to start using this feature.</p>
+    <p>We just added a new method <code>Connection.connect_from_sparse</code>(W, delay=None, column_access=True) which allows you to initialise a Connection object directly with any scipy sparse matrix. This has a huge memory efficiency gain if you use <span class="caps">CSR</span>/<span class="caps">COO</span> matrices, as by default Brian uses <span class="caps">LIL</span> which is very flexible but memory inefficient. For an even bigger memory efficiency gain, if you are not using <span class="caps">STDP</span>, set column_access=False. <a href="http://neuralensemble.org/trac/brian/wiki/Downloads">Download the <span class="caps">SVN</span> version of Brian</a> to start using this feature.</p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/development/" rel="tag">Development</a></li>
@@ -140,7 +138,7 @@
                 <a href="../brian-1-4-is-out/" rel="next" title="Brian 1.4 is out!">Next post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer" class="text-center">
-            Contents © 2023         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
+            Contents © 2024         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
             
             
         </footer>

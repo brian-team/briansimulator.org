@@ -70,8 +70,7 @@
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
             <div class="dropdown-menu">
-                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum</a>
-                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum/chat</a>
                     <a href="../../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
                     <a href="../../ecosystem/" class="dropdown-item">Software ecosystem</a>
                     <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
@@ -126,108 +125,123 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p></p>
-<p>The latest <span class="caps">SVN</span> version of Brian includes a new experimental package, brian.experimental.codegen, which is designed for automatic generation of code for numerical integration in Python, C++ and <span class="caps">GPU</span> C++. If the global preference usecodegen is True then it will be used automatically for all nonlinear differential equations. If usecodegenweave is True then C code will be generated, otherwise Python code. In all cases the code runs faster. <span class="caps">GPU</span> code is not currently used. Use the <a href="http://www.briansimulator.org/docs/reference-preferences.html#global-configuration-file">brian_global_preferences.py</a> file to activate it for all your code. As an example of how it works, let’s use the following Brian Equations object:</p>
-<p>[python]
-eqs = Equations(‘’‘
-dV/dt = -W<em>V/(10</em>second) : volt
-dW/dt = -V*<em>2/(1</em>second) : volt
-‘’‘)
-[/python]</p>
-<p>The codegen module generates the following code for the Euler update scheme. For Python:</p>
-<p>[python]
+    <p>The latest <span class="caps">SVN</span> version of Brian includes a new experimental package, brian.experimental.codegen, which is designed for automatic generation of code for numerical integration in Python, C++ and <span class="caps">GPU</span> C++. If the global preference usecodegen is True then it will be used automatically for all nonlinear differential equations. If usecodegenweave is True then C code will be generated, otherwise Python code. In all cases the code runs faster. <span class="caps">GPU</span> code is not currently used. Use the <a href="http://www.briansimulator.org/docs/reference-preferences.html#global-configuration-file">brian_global_preferences.py</a> file to activate it for all your code. As an example of how it works, let&#8217;s use the following Brian Equations object:
+
+[python]
+eqs = Equations(&#8221;&#8217;
+dV/dt = -W*V/(10*second) : volt
+dW/dt = -V**2/(1*second) : volt
+&#8221;&#8217;)
+[/python]
+
+The codegen module generates the following code for the Euler update scheme. For Python:
+
+[python]
 V = _S[0]
 W = _S[1]
-V__tmp = -0.1<em>V</em>W
-W__tmp = -1.0<em>V</em><em>2
-V += V__tmp</em>dt
+V__tmp = -0.1*V*W
+W__tmp = -1.0*V**2
+V += V__tmp*dt
 W += W__tmp*dt
-[/python]</p>
-<p>For C:</p>
-<p>[cpp]
-double <em>V__Sbase = _S+0</em>num_neurons;
-double <em>W__Sbase = _S+1</em>num_neurons;
+[/python]
+
+For C:
+
+[cpp]
+double *V__Sbase = _S+0*num_neurons;
+double *W__Sbase = _S+1*num_neurons;
 for(int _i=0;_i&lt;num_neurons;_i++){
-    double &amp;V = <em>V__Sbase++;
-    double &amp;W = </em>W__Sbase++;
-    double V__tmp = -0.1<em>V</em>W;
-    double W__tmp = -1.0<em>pow(V, 2);
-    V += V__tmp</em>dt;
+    double &amp;V = *V__Sbase++;
+    double &amp;W = *W__Sbase++;
+    double V__tmp = -0.1*V*W;
+    double W__tmp = -1.0*pow(V, 2);
+    V += V__tmp*dt;
     W += W__tmp*dt;
 }
-[/cpp]</p>
-<p>And for the <span class="caps">GPU</span>:</p>
-<p>[cpp]
-<strong>global</strong> void stateupdate(int num_neurons, double t, double <em>S)
+[/cpp]
+
+And for the <span class="caps">GPU</span>:
+
+[cpp]
+__global__ void stateupdate(int num_neurons, double t, double *S)
 {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
     if(i&gt;=num_neurons) return;
-    double &amp;V = S[i+0</em>num_neurons];
-    double &amp;W = S[i+1<em>num_neurons];
-    double &amp;V = </em>V__Sbase++;
-    double &amp;W = <em>W__Sbase++;
-    double V__tmp = -0.1</em>V<em>W;
-    double W__tmp = -1.0</em>pow(V, 2);
-    V += V__tmp<em>dt;
-    W += W__tmp</em>dt;
+    double &amp;V = S[i+0*num_neurons];
+    double &amp;W = S[i+1*num_neurons];
+    double &amp;V = *V__Sbase++;
+    double &amp;W = *W__Sbase++;
+    double V__tmp = -0.1*V*W;
+    double W__tmp = -1.0*pow(V, 2);
+    V += V__tmp*dt;
+    W += W__tmp*dt;
 }
-[/cpp]</p>
-<p>These are all generated from the following template for the Euler integration scheme:</p>
-<p>[python]
+[/cpp]
+
+These are all generated from the following template for the Euler integration scheme:
+
+[python]
 euler_scheme = [
-    ((‘foreachvar’, ‘nonzero’),
-        ‘’‘
+    ((&#8216;foreachvar&#8217;, &#8216;nonzero&#8217;),
+        &#8221;&#8217;
         $vartype ${var}__tmp = $var_expr
-        ‘’‘),
-    ((‘foreachvar’, ‘nonzero’),
-        ‘’‘
+        &#8221;&#8217;),
+    ((&#8216;foreachvar&#8217;, &#8216;nonzero&#8217;),
+        &#8221;&#8217;
         $var += ${var}__tmp*dt
-        ‘’‘)
+        &#8221;&#8217;)
     ]
-[/python]</p>
-<p>The other schemes are the <span class="caps">RK2</span> and exponential Euler scheme. For example, the exponential Euler scheme is:</p>
-<p>[python]
+[/python]
+
+The other schemes are the <span class="caps">RK2</span> and exponential Euler scheme. For example, the exponential Euler scheme is:
+
+[python]
 exp_euler_scheme = [
-    ((‘foreachvar’, ‘nonzero’),
-        ‘’‘
+    ((&#8216;foreachvar&#8217;, &#8216;nonzero&#8217;),
+        &#8221;&#8217;
         $vartype ${var}__B = @substitute(var_expr, {var:0})
         $vartype ${var}__A = @substitute(var_expr, {var:1})
         ${var}__A -= ${var}__B
         ${var}__B /= ${var}__A
-        ${var}__A <em>= dt
-        ‘’‘),
-    ((‘foreachvar’, ‘nonzero’),
-        ‘’‘
+        ${var}__A *= dt
+        &#8221;&#8217;),
+    ((&#8216;foreachvar&#8217;, &#8216;nonzero&#8217;),
+        &#8221;&#8217;
         $var += ${var}__B
-        $var </em>= exp(${var}__A)
+        $var *= exp(${var}__A)
         $var -= ${var}__B
-        ‘’‘)
+        &#8221;&#8217;)
     ]
-[/python]</p>
-<p>On the Equations above, this generates the following Python code:</p>
-<p>[python]
+[/python]
+
+On the Equations above, this generates the following Python code:
+
+[python]
 V = _S[0]
 W = _S[1]
 V__B = 0
-W__B = -1.0<em>V</em><em>2
-V__A = -0.1</em>W
-W__A = -1.0<em>V</em><em>2
+W__B = -1.0*V**2
+V__A = -0.1*W
+W__A = -1.0*V**2
 V__A -= V__B
 W__A -= W__B
 V__B /= V__A
 W__B /= W__A
-V__A </em>= dt
-W__A <em>= dt
+V__A *= dt
+W__A *= dt
 V += V__B
 W += W__B
-V </em>= exp(V__A)
+V *= exp(V__A)
 W *= exp(W__A)
 V -= V__B
 W -= W__B
-[/python]</p>
-<p>And similarly for C++ and <span class="caps">GPU</span>.</p>
-<p>We will be extending the automatic generation of code into other areas, including resets, thresholds, and <span class="caps">STDP</span> code.</p>
-<p>If you have any comments on the approach, bug reports, etc. please let us know!</p>
+[/python]
+
+And similarly for C++ and <span class="caps">GPU</span>.
+
+We will be extending the automatic generation of code into other areas, including resets, thresholds, and <span class="caps">STDP</span> code.
+
+If you have any comments on the approach, bug reports, etc. please let us know!</p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/development/" rel="tag">Development</a></li>
@@ -240,7 +254,7 @@ W -= W__B
                 <a href="../building-sparse-connections/" rel="next" title="Building sparse connections">Next post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer" class="text-center">
-            Contents © 2023         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
+            Contents © 2024         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
             
             
         </footer>

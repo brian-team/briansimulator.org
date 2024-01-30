@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>The Brian spiking neural network simulator (Posts about training)</title><link>https://briansimulator.org/</link><description></description><atom:link href="https://briansimulator.org/tags/training.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:postmaster@briansimulator.org"&gt;Brian team&lt;/a&gt; </copyright><lastBuildDate>Mon, 27 Jun 2022 15:10:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Getting the timing right (scheduling 2)</title><link>https://briansimulator.org/posts/2020/video-scheduling-2/</link><dc:creator>Brian team</dc:creator><description>&lt;figure&gt;&lt;img src="https://briansimulator.org/images/articles/2020/scheduling_2.png"&gt;&lt;/figure&gt; &lt;div&gt;&lt;div class="alert alert-primary notebook-header" role="alert"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>The Brian spiking neural network simulator (Posts about training)</title><link>https://briansimulator.org/</link><description></description><atom:link href="https://briansimulator.org/tags/training.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:postmaster@briansimulator.org"&gt;Brian team&lt;/a&gt; </copyright><lastBuildDate>Tue, 30 Jan 2024 10:46:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Getting the timing right (scheduling 2)</title><link>https://briansimulator.org/posts/2020/video-scheduling-2/</link><dc:creator>Brian team</dc:creator><description>&lt;div&gt;&lt;div class="alert alert-primary notebook-header" role="alert"&gt;
     &lt;p&gt;
     This article is written as a &lt;a href="https://jupyter.org"&gt;Jupyter notebook&lt;/a&gt; which you can execute and modify interactively.
     You can either download it via the "Source" link on the top right, or run it directly in the browser on the
@@ -34,15 +34,14 @@ is selected.
 &lt;ul&gt;
 &lt;li&gt;propagating synaptic activity&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;You can also watch the &lt;a href="https://youtu.be/VwUqKwHtVJM"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt;  screencast video on Youtube&lt;/a&gt;.
-&lt;/p&gt;&lt;p&gt;&lt;a href="https://briansimulator.org/posts/2020/video-scheduling-2/"&gt;Read more…&lt;/a&gt; (46 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>training</category><category>video</category><guid>https://briansimulator.org/posts/2020/video-scheduling-2/</guid><pubDate>Thu, 08 Oct 2020 09:00:00 GMT</pubDate></item><item><title>Getting the timing right (scheduling 1)</title><link>https://briansimulator.org/posts/2020/video-scheduling-1/</link><dc:creator>Brian team</dc:creator><description>&lt;figure&gt;&lt;img src="https://briansimulator.org/images/articles/2020/scheduling_1.png"&gt;&lt;/figure&gt; &lt;div&gt;&lt;div class="alert alert-primary notebook-header" role="alert"&gt;
+&lt;p&gt;You can also watch the &lt;a href="https://youtu.be/VwUqKwHtVJM"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt;  screencast video on Youtube&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://briansimulator.org/posts/2020/video-scheduling-2/"&gt;Read more…&lt;/a&gt; (46 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>training</category><category>video</category><guid>https://briansimulator.org/posts/2020/video-scheduling-2/</guid><pubDate>Thu, 08 Oct 2020 09:00:00 GMT</pubDate></item><item><title>Getting the timing right (scheduling 1)</title><link>https://briansimulator.org/posts/2020/video-scheduling-1/</link><dc:creator>Brian team</dc:creator><description>&lt;div&gt;&lt;div class="alert alert-primary notebook-header" role="alert"&gt;
     &lt;p&gt;
     This article is written as a &lt;a href="https://jupyter.org"&gt;Jupyter notebook&lt;/a&gt; which you can execute and modify interactively.
     You can either download it via the "Source" link on the top right, or run it directly in the browser on the
@@ -77,5 +76,5 @@ is selected.
 &lt;ul&gt;
 &lt;li&gt;recording values with a &lt;code&gt;StateMonitor&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;You can also watch the &lt;a href="https://youtu.be/ib0UMU-H6eY"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt;  screencast video on Youtube&lt;/a&gt;.
-&lt;/p&gt;&lt;p&gt;&lt;a href="https://briansimulator.org/posts/2020/video-scheduling-1/"&gt;Read more…&lt;/a&gt; (27 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>training</category><category>video</category><guid>https://briansimulator.org/posts/2020/video-scheduling-1/</guid><pubDate>Fri, 04 Sep 2020 13:00:00 GMT</pubDate></item></channel></rss>
+&lt;p&gt;You can also watch the &lt;a href="https://youtu.be/ib0UMU-H6eY"&gt;&lt;i class="fab fa-youtube"&gt;&lt;/i&gt;  screencast video on Youtube&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://briansimulator.org/posts/2020/video-scheduling-1/"&gt;Read more…&lt;/a&gt; (27 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>training</category><category>video</category><guid>https://briansimulator.org/posts/2020/video-scheduling-1/</guid><pubDate>Fri, 04 Sep 2020 13:00:00 GMT</pubDate></item></channel></rss>

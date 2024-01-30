@@ -71,8 +71,7 @@
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
             <div class="dropdown-menu">
-                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum</a>
-                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum/chat</a>
                     <a href="../../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
                     <a href="../../ecosystem/" class="dropdown-item">Software ecosystem</a>
                     <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
@@ -127,18 +126,23 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p></p>
-<p>We are proud to announce the release of <strong>Brian2GeNN</strong>, the Brian 2 interface to the <a href="http://genn-team.github.io/genn/"><span class="caps">GPU</span>-enhanced Neuronal Network (GeNN)</a> simulator. With this interface, a Brian 2 script (as long as it only uses <a href="http://brian2genn.readthedocs.io/en/latest/introduction/exclusions.html">supported features</a>) can benefit from the potential performance benefits of a <span class="caps">GPU</span> by adding just two lines to the start of the script:
+    <p>We are proud to announce the release of <strong>Brian2GeNN</strong>, the Brian 2 interface to the <a href="http://genn-team.github.io/genn/"><span class="caps">GPU</span>-enhanced Neuronal Network (GeNN)</a> simulator. With this interface, a Brian 2 script (as long as it only uses <a href="http://brian2genn.readthedocs.io/en/latest/introduction/exclusions.html">supported features</a>) can benefit from the potential performance benefits of a <span class="caps">GPU</span> by adding just two lines to the start of the script:
 <code>
 import brian2genn
-set_device(‘genn’)
-</code></p>
-<p>Brian2GeNN can be installed from the same Anaconda repository channel as Brian itself:</p>
-<p><code>conda install -c brian-team brian2genn</code></p>
-<p>This installation method will also include the GeNN simulator, while an installation from PyPI (via <code>pip install brian2genn</code>) will require a manual installation of GeNN. See the <a href="http://brian2genn.readthedocs.io">documentation (http://brian2genn.readthedocs.io)</a> for more details.</p>
-<p>Note that in all cases, users need a <span class="caps">CUDA</span>-capable <span class="caps">NVIDIA</span> <span class="caps">GPU</span> and a manual installation of the <span class="caps">CUDA</span> <span class="caps">SDK</span>.</p>
-<p>The actual performance benefits of using a <span class="caps">GPU</span> to run the simulation depend strongly on the details of the model but can be significant. With the Brian2GeNN package, we hope to make it as easy as possible for users to try it out for themselves.</p>
-<p>In case you run into problems with the installation of the package or with its use, please contact us at brian-development@googlegroups.com or open an issue on the <a href="https://github.com/brian-team/brian2genn/issues">Brian2GeNN bug tracker</a>.</p>
+set_device('genn')
+</code>
+
+Brian2GeNN can be installed from the same Anaconda repository channel as Brian itself:
+
+<code>conda install -c brian-team brian2genn</code>
+
+This installation method will also include the GeNN simulator, while an installation from PyPI (via <code>pip install brian2genn</code>) will require a manual installation of GeNN. See the <a href="http://brian2genn.readthedocs.io">documentation (http://brian2genn.readthedocs.io)</a> for more details.
+
+Note that in all cases, users need a <span class="caps">CUDA</span>-capable <span class="caps">NVIDIA</span> <span class="caps">GPU</span> and a manual installation of the <span class="caps">CUDA</span> <span class="caps">SDK</span>.
+
+The actual performance benefits of using a <span class="caps">GPU</span> to run the simulation depend strongly on the details of the model but can be significant. With the Brian2GeNN package, we hope to make it as easy as possible for users to try it out for themselves.
+
+In case you run into problems with the installation of the package or with its use, please contact us at brian-development@googlegroups.com or open an issue on the <a href="https://github.com/brian-team/brian2genn/issues">Brian2GeNN bug tracker</a>.</p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/development/" rel="tag">Development</a></li>
@@ -152,7 +156,7 @@ set_device(‘genn’)
                 <a href="../brian-2-1-and-brian2genn-1-1/" rel="next" title="Brian 2.1 and Brian2GeNN 1.1">Next post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer" class="text-center">
-            Contents © 2023         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
+            Contents © 2024         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
             
             
         </footer>

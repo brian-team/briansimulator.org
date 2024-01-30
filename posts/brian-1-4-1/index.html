@@ -70,8 +70,7 @@
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
             <div class="dropdown-menu">
-                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum</a>
-                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum/chat</a>
                     <a href="../../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
                     <a href="../../ecosystem/" class="dropdown-item">Software ecosystem</a>
                     <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
@@ -126,13 +125,14 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p></p>
-<p>We have just released Brian 1.4.1, available from PyPI using  <strong>pip install -U brian</strong> or <strong>easy_install -U brian</strong>, or from the <a href="http://neuralensemble.org/trac/brian/downloader/download/release/19">NeuralEnsemble server</a>. It will be soon available in the <a href="http://neuro.debian.net/pkgs/python-brian.html">NeuroDebian repositories</a> as well, thanks to the <a href="http://neuro.debian.net/about.html#chap-team">NeuroDebian team</a>.</p>
-<p>This is a minor release, but it adds a couple of useful features (including experimental features for the Synapses class) and fixes some important bugs, in particular for users of brian hears. A list of changes can be found below:</p>
-<p>Major features:
+    <p>We have just released Brian 1.4.1, available from PyPI using  <strong>pip install -U brian</strong> or <strong>easy_install -U brian</strong>, or from the <a href="http://neuralensemble.org/trac/brian/downloader/download/release/19">NeuralEnsemble server</a>. It will be soon available in the <a href="http://neuro.debian.net/pkgs/python-brian.html">NeuroDebian repositories</a> as well, thanks to the <a href="http://neuro.debian.net/about.html#chap-team">NeuroDebian team</a>.
+
+This is a minor release, but it adds a couple of useful features (including experimental features for the Synapses class) and fixes some important bugs, in particular for users of brian hears. A list of changes can be found below:
+
+Major features:
 </p>
 <ul>
-<li>C extensions are compiled by default during installation (with a fallback to the Python version if compilation fails) – this might lead to a considerable speedup for users who did not compile those extensions manually before. Note that this only includes installations based on running setup.py (including pip and easy_install), not the Windows .exe installer.</li>
+<li>C extensions are compiled by default during installation (with a fallback to the Python version if compilation fails) &#8212; this might lead to a considerable speedup for users who did not compile those extensions manually before. Note that this only includes installations based on running setup.py (including pip and easy_install), not the Windows .exe installer.</li>
 </ul>
 Minor features:
 <ul>
@@ -141,7 +141,7 @@ Minor features:
     <li>Brian hears: Two new models, MiddleEar (filtering by the middle ear) and ZhangSynapse (model of the <span class="caps">IHC</span>-<span class="caps">AN</span> synapse)</li>
     <li>Brian hears: New convenience functions to get reasonable axis ticks for logarithmic axes</li>
 </ul>
-<p>Improvements:</p>
+Improvements:
 <ul>
 <li>Brian&#8217;s documentation is now also available under <a href="http://brian.readthedocs.org">brian.readthedocs.org</a>
 </li>
@@ -149,7 +149,7 @@ Minor features:
     <li>NeuronGroup and Synapses work with empty model specifications.</li>
     <li>C version of SpikeContainer is now picklable</li>
 </ul>
-<p>Bug fixes:</p>
+Bug fixes:
 <ul>
 <li>Synaptic equations referring to variables in the pre- or postsynaptic group are never considered as being linear (fixes ticket #83)</li>
     <li>Fix issue with static equations in synaptic models (see  <a href="https://groups.google.com/d/msg/briansupport/-/uqxLK_yoqKUJ">https://groups.google.com/d/msg/briansupport/-/uqxLK_yoqKUJ</a> )</li>
@@ -162,13 +162,12 @@ Minor features:
     <li> Fix shifting multi-channel sounds with fractional=True (fixes ticket #80)</li>
 </ul>
 </ul>
-<p>Experimental features:</p>
+Experimental features:
 <ul>
 <li>C version of SpikeQueue (used in the Synapses class), which can lead to a considerable speedup (see &#8220;Advanced concepts/Compiled code&#8221; for instructions how to use it).</li>
     <li>Delays can be specified as a parameters of the Synapses model and then be changed dynamically.</li>
 </ul>
-<p></p>
-    </div>
+</div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/release/" rel="tag">Release</a></li>
         </ul>
@@ -180,7 +179,7 @@ Minor features:
                 <a href="../new-book-on-ipython/" rel="next" title="New book on IPython">Next post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer" class="text-center">
-            Contents © 2023         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
+            Contents © 2024         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
             
             
         </footer>

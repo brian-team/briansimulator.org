@@ -23,7 +23,8 @@
 <meta property="og:title" content="TimedArray">
 <meta property="og:url" content="https://briansimulator.org/posts/timed-array/">
 <meta property="og:description" content="Please see the entry on the idea of this development blog.
-One annoying thing that crops up often in writing programs for Brian, is that you have some set of equations with a parameter which varies ov">
+
+One annoying thing that crops up often in writing programs for Brian, is that you have some set of equations with a parameter which varies o">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2009-05-27T21:33:40Z">
 <meta property="article:tag" content="Development">
@@ -71,8 +72,7 @@ One annoying thing that crops up often in writing programs for Brian, is that yo
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
             <div class="dropdown-menu">
-                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum</a>
-                    <a href="https://gitter.im/brian-team/brian2" class="dropdown-item">Chat group</a>
+                    <a href="https://brian.discourse.group" class="dropdown-item">Support forum/chat</a>
                     <a href="../../papers-using-brian/" class="dropdown-item">Papers using Brian</a>
                     <a href="../../ecosystem/" class="dropdown-item">Software ecosystem</a>
                     <a href="https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&amp;allsimu=true" class="dropdown-item">Models</a>
@@ -127,49 +127,55 @@ One annoying thing that crops up often in writing programs for Brian, is that yo
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p></p>
-<p>Please see the entry on <a href="https://briansimulator.org/2009/05/27/the-idea/">the idea</a> of this development blog.</p>
-<p>One annoying thing that crops up often in writing programs for Brian, is that you have some set of equations with a parameter which varies over time according to the values in some array. Supposing that I was an array of length N with values sampled at intervals dt, you would like to be able to write an equation like:</p>
-<p>[python]
+    <p>Please see the entry on <a href="https://briansimulator.org/2009/05/27/the-idea/">the idea</a> of this development blog.
+
+One annoying thing that crops up often in writing programs for Brian, is that you have some set of equations with a parameter which varies over time according to the values in some array. Supposing that I was an array of length N with values sampled at intervals dt, you would like to be able to write an equation like:
+
+[python]
 I = randn(N)
-eqs = ‘’‘
+eqs = &#8221;&#8217;
 dV/dt = (-V+I(t))/tau : 1
-‘’‘
+&#8221;&#8217;
 [/python]
-One way of solving the problem is to use a network operation, like so:</p>
-<p>[python]
+One way of solving the problem is to use a network operation, like so:
+
+[python]
 I = randn(N)
-eqs = ‘’‘
+eqs = &#8221;&#8217;
 dV/dt = -(V+J)/tau : 1
 J : 1
-‘’‘
-G = NeuronGroup(m, eqs, …)
+&#8221;&#8217;
+G = NeuronGroup(m, eqs, &#8230;)
 @network_operation
 def update_J(clk):
     i = int(clk.t/clk.dt)
     G.J = I[i]
 [/python]
-This works, but it’s not terribly intuitive. The new TimedArray class allows you to do both of these things. The first could be written like so:</p>
-<p>[python]
+This works, but it&#8217;s not terribly intuitive. The new TimedArray class allows you to do both of these things. The first could be written like so:
+
+[python]
 I = TimedArray(randn(N))
-eqs = ‘’‘
+eqs = &#8221;&#8217;
 dV/dt = (-V+I(t))/tau : 1
-‘’‘
+&#8221;&#8217;
 [/python]
-The second like so:</p>
-<p>[python]
+The second like so:
+
+[python]
 I = randn(N)
-eqs = ‘’‘
+eqs = &#8221;&#8217;
 dV/dt = -(V+J)/tau : 1
 J : 1
-‘’‘
-G = NeuronGroup(m, eqs, …)
+&#8221;&#8217;
+G = NeuronGroup(m, eqs, &#8230;)
 G.J = TimedArray(I)
 [/python]
-Behind the scenes, the first one works by adding a <strong>call</strong> method to numpy arrays which interpolates. The second one works by adding a network operation to the network. The first breaks linearity and so nonlinear solvers are always used, so if your equations are linear, the second is probably better to use.</p>
-<p>TimedArray has several options, including the use of evenly sampled grid points based on a start time and dt (given by a clock by default), or a fixed array of times which needn’t be evenly sampled. For example to turn a signal on between 1 second and 1.1 second you could do:</p>
-<p>[python]
-times = [0<em>second, 1</em>second, 1.1*second]
+Behind the scenes, the first one works by adding a __call__ method to numpy arrays which interpolates. The second one works by adding a network operation to the network. The first breaks linearity and so nonlinear solvers are always used, so if your equations are linear, the second is probably better to use.
+
+TimedArray has several options, including the use of evenly sampled grid points based on a start time and dt (given by a clock by default), or a fixed array of times which needn&#8217;t be evenly sampled. For example to turn a signal on between 1 second and 1.1 second you could do:
+
+[python]
+times = [0*second, 1*second, 1.1*second]
 values = [0, 1, 0]
 x = TimedArray(values, times)
 [/python]
@@ -186,7 +192,7 @@ The TimedArray class is defined in the module timedarray. Take a look at the doc
                 <a href="../recentstatemonitor/" rel="next" title="RecentStateMonitor">Next post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer" class="text-center">
-            Contents © 2023         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
+            Contents © 2024         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
             
             
         </footer>
