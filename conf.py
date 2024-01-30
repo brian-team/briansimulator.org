@@ -127,7 +127,8 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 #         'Fruits'
 #     )
 #
-# WARNING: Support for submenus is theme-dependent.
+# WARNING: 
+ submenus is theme-dependent.
 #          Only one level of submenus is supported.
 # WARNING: Some themes, including the default Bootstrap 4 theme,
 #          may present issues if the menu is too large.
@@ -162,8 +163,7 @@ NAVIGATION_LINKS = {
         ),
         (
             (
-                ("https://brian.discourse.group", "Support forum"),
-                ("https://gitter.im/brian-team/brian2", "Chat group"),
+                ("https://brian.discourse.group", "Support forum/chat"),
                 ("/papers-using-brian/", "Papers using Brian"),
                 ("/ecosystem/", "Software ecosystem"),
                 ("https://senselab.med.yale.edu/ModelDB/ModelList?id=231240&allsimu=true", "Models"),
