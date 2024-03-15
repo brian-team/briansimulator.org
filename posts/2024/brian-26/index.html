@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GSoC 2024 | The Brian spiking neural network simulator</title>
+<title>New release: Brian 2.6 | The Brian spiking neural network simulator</title>
 <link href="../../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
@@ -14,19 +14,18 @@
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
-<link rel="canonical" href="https://briansimulator.org/posts/2024/gsoc-2024/">
+<link rel="canonical" href="https://briansimulator.org/posts/2024/brian-26/">
 <link rel="icon" href="../../../logos/favicon.png" sizes="32x32">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script><meta name="author" content="Brian team">
-<link rel="prev" href="../../2023/gsoc-applications/" title="Recommendations for GSoC 2023 applications" type="text/html">
-<link rel="next" href="../brian-26/" title="New release: Brian 2.6" type="text/html">
+<link rel="prev" href="../gsoc-2024/" title="GSoC 2024" type="text/html">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
-<meta property="og:title" content="GSoC 2024">
-<meta property="og:url" content="https://briansimulator.org/posts/2024/gsoc-2024/">
-<meta property="og:description" content="We are very happy that the INCF has been again selected to be a mentor organization for the Google Summer of Code (“a global, online program focused on bringing new contributors into open source softw">
+<meta property="og:title" content="New release: Brian 2.6">
+<meta property="og:url" content="https://briansimulator.org/posts/2024/brian-26/">
+<meta property="og:description" content="It’s been a while since the last release, so we are very happy to announce that Brian 2.6 is finally out 🎉 This release comes with a major new feature to run standalone simulations repeatedly (or in p">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2024-02-28T13:15:00Z">
+<meta property="article:published_time" content="2024-03-15T15:40:00Z">
 <meta property="article:tag" content="Development">
-<meta property="article:tag" content="GSoC">
+<meta property="article:tag" content="Release">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@briansimulator">
 </head>
@@ -110,7 +109,7 @@
         
         
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">GSoC 2024</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">New release: Brian 2.6</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
@@ -118,7 +117,7 @@
             </span></p>
             <p class="dateline">
             <a href="." rel="bookmark">
-            <time class="published dt-published" datetime="2024-02-28T13:15:00Z" itemprop="datePublished" title="2024-02-28">2024-02-28</time></a>
+            <time class="published dt-published" datetime="2024-03-15T15:40:00Z" itemprop="datePublished" title="2024-03-15">2024-03-15</time></a>
             </p>
             
 
@@ -126,41 +125,20 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>We are very happy that the <a href="https://incf.org"><span class="caps">INCF</span></a> has been again selected to be a mentor organization for the <a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a> (“a global, online program focused on bringing new contributors into open source software development”). As in last years, the Brian simulator project takes part and offers several projects for students/”open source beginners” to work on.
-The application period for the Google Summer of Code 2024 starts on March 18th (full <a href="https://developers.google.com/open-source/gsoc/timeline">timeline for GSoC 2024</a>). With this post we give some general information about the ideal contributor application from our point of view. The recommendations we give here hold for all of the proposed projects, but we will also try to give information specific to the respective projects in the corresponding <a href="https://neurostars.org/tag/gsoc2024">neurostars</a> threads. For a full list of Brian-related projects, see the end of this post.</p>
+    <p>It’s been a while since the last release, so we are very happy to announce that <strong>Brian 2.6</strong> is finally out 🎉 This release comes with a major new feature to run standalone simulations repeatedly (or in parallel), without recompiling its code. We now also automatically push Docker images to <a href="https://hub.docker.com/repository/docker/briansimulator/brian/general">Docker Hub</a>, provide Python wheels for Python 3.12, and build and test on Apple Silicon hardware. The release also fixes various compatibility issues with the upcoming numpy 2.0 release – although we cannot be sure yet whether the ongoing development will not make additional changes neccessary. As always, the new release also fixes a bunch of small bugs and errors, and updates the documentation and the examples.</p>
 <!-- TEASER_END -->
 
-<p>Before you consider submitting an application, make sure you fit the <a href="https://developers.google.com/open-source/gsoc/faq#what_are_the_eligibility_requirements_for_participation">general eligibility criteria</a>. Note that several online sources, including the <a href="https://developers.google.com/open-source/gsoc/faq">GSoC <span class="caps">FAQ</span></a>, still sometimes refer to Google Summer of Code <em>students</em> instead of <em>contributors</em>. This is now a misnomer, though, since the program is open to all “open source beginners” (at least 18 years of age), regardless of whether they are enrolled as students or not. That said, you need to be available to invest around 175h to 350h (depending on the project) over the summer, so this program is hardly compatible with a full-time employment.</p>
-<p>Please contact us in the respective neurostars discussion, to make us aware that you are interested in the project. This is also the best place to ask about anything that is unclear in the project description, or about any questions or doubts you have.</p>
-<p>Your application should convince us that:</p>
-<ol>
-<li>You understand what the project is about: what is the problem or missing feature in Brian (or related project) that the project is trying to address? How does the proposed project solve the problem or adds the feature?</li>
-<li>You understand what steps are necessary to implement the proposed solution, and can give rough estimates of how long these steps will take.</li>
-<li>You have most or all of the necessary skills to implement the proposed solution and can acquire the missing skills during the project.</li>
-<li>You can commit the required time over the summer. Note that the program has some flexibility in the schedule. Importantly, please be realistic and honest – do not try to make the schedule work by planning with, say, 70h of work in a single week.</li>
-</ol>
-<p>For all of the above points, please fill it out with concrete details and link to other sources where helpful. For example, you might want to link to specific bits of the documentation that you deem relevant to the project and discuss them. Regarding your skills, they are ideally illustrated by concrete evidence as well, e.g. a link to a student project you wrote in Python, or a link to a website you set up.</p>
-<p>While it is not a strict requirement, we highly recommend to base your application on the <a href="https://www.incf.org/sites/default/files/files/INCF_GSoC_2022_Application_template.pdf"><span class="caps">INCF</span> GSoC Application template</a>. As soon as you have a draft that you’d like to have feedback on, please contact us directly (e.g. over a direct message on neurostars) with a link to the draft – a <a href="https://docs.google.com/">Google Docs</a> document is probably the easiest solution.</p>
-<p>As a final note: we cannot promise how many students we can accept to work on Brian with GSoC this year – it is even possible that we cannot accept anyone! To give you a rough idea of how the process works: after reviewing the received applications, all the projects participating under the umbrella of the <a href="https://www.incf.org"><span class="caps">INCF</span></a> will come up with a list of students they’d like to accept. The <span class="caps">INCF</span> will then transmit the number of requested “slots” to Google, which will finally decide the number of slots that it assigns to each organisation. This number of assigned slots is typically lower than the requested number, therefore not all students that were reviewed positively can be accepted. For a project like Brian, realistically we can only expect to receive a single slot and therefore only accept a single student for one of our proposed projects…</p>
-<p>We hope that this makes the application process a bit clearer, looking forward to discussing your applications, and hopefully to work with one of you over this summer!</p>
-<h3>Neurostars discussions for Brian-related projects</h3>
-<ul>
-<li><a href="https://neurostars.org/t/gsoc-2024-project-idea-18-1-brian2wasm-simulations-in-the-browser-175h-350h">Project Idea 18.1: Brian2Wasm: simulations in the browser (175h/350h)</a></li>
-<li><a href="https://neurostars.org/t/gsoc-2024-project-idea-18-2-improve-brian-s-markdown-exporter-175-h">Project Idea 18.2: Improve Brian’s markdown exporter (175h)</a></li>
-<li><a href="https://neurostars.org/t/gsoc-2024-project-idea-18-3-replace-brian-s-just-in-time-compilation-mechanism-350-h">Project Idea 18.3: Replace Brian’s just-in-time compilation mechanism (350h)</a></li>
-<li><a href="https://neurostars.org/t/gsoc-2024-project-idea-18-4-package-brian-s-unit-system-175h-350h">Project Idea 18.4: Package Brian’s unit system(175h/350h)</a></li>
-</ul>
-</div>
+<p>Brian 2 can be installed with pip from the <a href="https://pypi.org/project/Brian2/">pypi repository</a>, and via several other means (some of them might take a while to catch up to the latest release). See the <a href="https://brian2.readthedocs.io/en/2.6.0/introduction/install.html">installation instructions</a>, and the badges in the <a href="https://github.com/brian-team/brian2/blob/master/README.rst"><span class="caps">README</span> file</a> for more details.</p>
+<p>Thanks to everyone who contributed 🤝!</p>
+<p>For all the details about this new release, please have a look at the <a href="https://brian2.readthedocs.io/en/2.6.0/introduction/release_notes.html">release notes</a>.</p>
+    </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../tags/development/" rel="tag">Development</a></li>
-            <li><a class="tag p-category" href="../../../tags/gsoc/" rel="tag">GSoC</a></li>
+            <li><a class="tag p-category" href="../../../tags/release/" rel="tag">Release</a></li>
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../../2023/gsoc-applications/" rel="prev" title="Recommendations for GSoC 2023 applications">Previous post</a>
-            </li>
-            <li class="next">
-                <a href="../brian-26/" rel="next" title="New release: Brian 2.6">Next post</a>
+                <a href="../gsoc-2024/" rel="prev" title="GSoC 2024">Previous post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer" class="text-center">
             Contents © 2024         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>

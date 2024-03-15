@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/archive.html</loc>
-  <lastmod>2024-02-28T13:27:00Z</lastmod>
+  <lastmod>2024-03-15T15:51:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/assises-de-la-recherche/</loc>
@@ -83,7 +83,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/blog/index-8.html</loc>
-  <lastmod>2024-02-28T13:27:00Z</lastmod>
+  <lastmod>2024-03-15T15:50:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/brian-1-1-3/</loc>
@@ -279,7 +279,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/categories/news/index-5.html</loc>
-  <lastmod>2024-02-28T13:26:00Z</lastmod>
+  <lastmod>2024-03-15T15:50:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/cite/</loc>
@@ -556,6 +556,10 @@
  <url>
   <loc>https://briansimulator.org/posts/2023/gsoc-applications/</loc>
   <lastmod>2024-02-28T13:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://briansimulator.org/posts/2024/brian-26/</loc>
+  <lastmod>2024-03-15T13:31:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/posts/2024/gsoc-2024/</loc>
@@ -991,7 +995,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/tags/development/index-3.html</loc>
-  <lastmod>2024-02-28T13:26:00Z</lastmod>
+  <lastmod>2024-03-15T15:50:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/tags/gsoc/</loc>
@@ -1019,7 +1023,7 @@
  </url>
  <url>
   <loc>https://briansimulator.org/tags/release/</loc>
-  <lastmod>2024-02-28T13:26:00Z</lastmod>
+  <lastmod>2024-03-15T15:50:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/tags/release/index-1.html</loc>
@@ -1027,7 +1031,11 @@
  </url>
  <url>
   <loc>https://briansimulator.org/tags/release/index-2.html</loc>
-  <lastmod>2024-02-28T13:26:00Z</lastmod>
+  <lastmod>2024-03-15T15:50:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://briansimulator.org/tags/release/index-3.html</loc>
+  <lastmod>2024-03-15T15:50:00Z</lastmod>
  </url>
  <url>
   <loc>https://briansimulator.org/tags/shared-memory/</loc>
