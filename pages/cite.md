@@ -45,7 +45,7 @@ is registered as [SCR_002998](https://scicrunch.org/resolver/SCR_002998).
 To cite a specific version of Brian, you can refer to the identifiers stored on [Zenodo](https://doi.org/10.5281/zenodo.654861):
 
 <div class="zenodo-versions">
-<div class="btn-group btn-group-toggle" data-toggle="buttons" id="zenodo-versions">
+<div class="btn-group btn-group-toggle d-flex flex-row flex-wrap" data-toggle="buttons" id="zenodo-versions">
 </div>
 <blockquote id="zenodo-citation" class="blockquote">Requires JavaScript</blockquote>
 </div>
