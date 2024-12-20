@@ -110,7 +110,24 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2024/brian-27/" class="u-url">New releases: Brian 2.7.0 and 2.7.1</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2024/brian-28/" class="u-url">New release: Brian 2.8.0</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/brian-team/">Brian team</a>
+            </span></p>
+            <p class="dateline">
+            <a href="../posts/2024/brian-28/" rel="bookmark">
+            <time class="published dt-published" datetime="2024-12-20T16:00:00Z" itemprop="datePublished" title="2024-12-20">2024-12-20</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p>We are happy to announce the <strong>Brian 2.8 release</strong>. This release fixes a number of small bugs and improves our release infrastructure. In addition, it includes an important performance improvement for random number generation in C++ standalone mode, which significantly speeds up everything that needs randomness (e.g. PoissonGroup). It also comes with the Diehl <span class="amp">&amp;</span> Cook (2015) model in the documentation, contributed by Björn Lindqvist (thanks!).</p>
+<p>For more details, head over to the <a href="https://brian2.readthedocs.io/en/2.8.0/introduction/release_notes.html">release notes</a>.</p>
+<p class="more"><a href="../posts/2024/brian-28/">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2024/brian-27/" class="u-url">New releases: Brian 2.7.0 and 2.7.1</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../authors/brian-team/">Brian team</a>
@@ -258,24 +275,6 @@ You can find more information about the tutorials here: <a href="https://ocns.gi
 <p class="more"><a href="../posts/2021/bug-hunt-episode-2-a-strange-file-appears/">Read more…</a></p>
 </div>
         <img src="../images/articles/2021/bug-hunt-episode-2-a-strange-file-appears.png" alt="Preview image" class="d-none d-sm-block float-right m-2" width="120px" height="120px">
-</div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../posts/2021/bug-hunt-episode-1-broken-latex-output-for-equations/" class="u-url">Bug hunt episode 1: Broken LaTeX output for equations</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/marcel-stimberg/">Marcel Stimberg</a>
-            </span></p>
-            <p class="dateline">
-            <a href="../posts/2021/bug-hunt-episode-1-broken-latex-output-for-equations/" rel="bookmark">
-            <time class="published dt-published" datetime="2021-05-05T00:00:00Z" itemprop="datePublished" title="2021-05-05">2021-05-05</time></a>
-            </p>
-        </div>
-    </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p>This article starts a new series of blog posts about “bug hunts”. In these articles, I will go through a recent bug in Brian (or one of its dependencies) and describe all the steps I used to find the source of the bug and how I fixed it. I will try to not only focus on the Brian-side of things, but also show some general tools like <code>git bisect</code> or “monkey patching” that can be helpful to find the source of these nasty critters (no actual bugs were harmed during the making of this blog post).</p>
-<p>Let’s start! Today’s bug will be about equations, and more specifically about their LaTeX representation. As most of you probably know, Brian can represent equations, quantities, etc. in LaTeX. This representation can then either be included in a LaTeX document or directly rendered for example as the output in <a href="https://jupyter.org/">jupyter notebooks</a>.</p>
-<p class="more"><a href="../posts/2021/bug-hunt-episode-1-broken-latex-output-for-equations/">Read more…</a></p>
-</div>
-        <img src="../images/articles/2021/bug-hunt-episode-1-broken-latex-output-for-equations.png" alt="Preview image" class="d-none d-sm-block float-right m-2" width="120px" height="120px">
 </div>
     </article>
 </div>
