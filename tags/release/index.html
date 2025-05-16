@@ -118,7 +118,25 @@
 
         </div>
     </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2024/brian-28/" class="u-url">New release: Brian 2.8.0</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2025/brian-29/" class="u-url">New release: Brian 2.9.0</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../../authors/brian-team/">Brian team</a>
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/2025/brian-29/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-05-16T08:00:00Z" itemprop="datePublished" title="2025-05-16">2025-05-16</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p>We are happy to announce the <strong>Brian 2.9 release</strong>. This release extends the functionality of Brian’s <em>linked variable</em> feature (in particular, it can now be used to refer to a global modulation term in <code>Synapses</code>), and adds a “graceful interrupt” feature, allowing users to interrupt a simulation with Ctrl+C without triggering the usual Exception.
+As usual, the release also fixes a number of bugs and incompatibilities and comes with new examples in its documentation.</p>
+<p>For more details, head over to the <a href="https://brian2.readthedocs.io/en/2.9.0/introduction/release_notes.html">release notes</a>.</p>
+<p class="more"><a href="../../posts/2025/brian-29/">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2024/brian-28/" class="u-url">New release: Brian 2.8.0</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../../authors/brian-team/">Brian team</a>
@@ -270,33 +288,6 @@ As always, please report bugs or suggestions to the github bug tracker (<a href=
 The packages are available on PyPI: <a href="https://pypi.python.org/pypi/brian">https://pypi.python.org/pypi/brian</a>
 
 Note that for new projects, you should use <a href="http://brian2.readthedocs.io">Brian 2</a> instead, the Brian version under active development.</p>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-2-1-2-and-brian2genn-1-1-5/" class="u-url">Brian 2.1.2 and Brian2GeNN 1.1.5</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../../authors/brian-team/">Brian team</a>
-            </span></p>
-            <p class="dateline">
-            <a href="../../posts/brian-2-1-2-and-brian2genn-1-1-5/" rel="bookmark">
-            <time class="published dt-published" datetime="2017-11-08T18:16:14Z" itemprop="datePublished" title="2017-11-08">2017-11-08</time></a>
-            </p>
-        </div>
-    </header><div class="p-summary entry-summary d-flex">
-        <p>We have released new bug fix releases for <strong>Brian 2</strong> (version 2.1.2) and <strong>Brian2GeNN</strong> (version 1.1.5).
-
-The new Brian 2 release fixes two bugs:
-</p>
-<ol>
-<li>an incorrect application of the substitution mechanism in equations (i.e. when using the same set of equations several times and changing the equations&#8217; variable names via Brian&#8217;s Equation class), and</li>
-    <li>an inadvertent deactivation of parts of the new caching mechanism which resulted in a major reduction of its performance improvement.</li>
-</ol>
-The Brian2GeNN release adds a workaround for a bug in some version of the glibc library on Linux which can potentially lead to drastically reduced performance. This is the same workaround that had already been applied to Brian 2&#8217;s C++ standalone mode with an earlier release.
-
-<strong>How to get Brian 2:</strong> <a href="http://brian2.readthedocs.io/en/2.1.2/introduction/install.html">http://brian2.readthedocs.io/en/2.1.2/introduction/install.html</a>
-
-<strong>How to get Brian2GeNN:</strong> <a href="http://brian2genn.readthedocs.io/en/latest/introduction/index.html">http://brian2genn.readthedocs.io/en/latest/introduction/index.html</a>
-
-As always, please report bugs or suggestions to the github bug tracker (<a href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>) or to the brian-development mailing list (brian-development@googlegroups.com).
     </div>
     </article>
 </div>
