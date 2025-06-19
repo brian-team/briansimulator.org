@@ -15,7 +15,7 @@
         <img class="img-fluid rounded float-right" src="/photos/marcel_stimberg.png" style="height: 80px;"/>
         <h4>Marcel Stimberg</h4>
       </a>  
-        <div class="text-muted">Sorbonne University, Paris</div>
+        <div class="text-muted">ISIR, Sorbonne University, Paris</div>
         <div class="mt-2"><a href="https://github.com/mstimberg"><i class="fab fa-github"></i> @mstimberg</a></div>
     </div>
     <div class="card-body">
@@ -66,17 +66,17 @@
             <img class="img-fluid rounded float-right" src="/photos/romain_brette.jpg" style="height: 80px;"/>
             <h4>Romain Brette</h4>
         </a>
-        <div class="text-muted">Sorbonne University, Paris</div>
+        <div class="text-muted">ISR, Sorbonne University, INSERM, Paris</div>
         <div class="mt-2"><a href="https://github.com/romainbrette/"><i class="fab fa-github"></i> @romainbrette</a></div>
     </div>
     <div class="card-body">
         Romain is a research director in computational and theoretical neuroscience in the
-        <a href="https://www.isir.upmc.fr/teams/amac/?lang=en">AMAC team</a> of the <a href="https://www.isir.upmc.fr/isir/?lang=en">Institute of Intelligent Systems and Robotics</a>. His main interests are <a href="http://romainbrette.fr/sensory-systems/">neural modeling of
+        <a href="https://www.isir.upmc.fr/teams/acide/?lang=en">ACIDE team</a> of the <a href="https://www.isir.upmc.fr/isir/?lang=en">Institute of Intelligent Systems and Robotics</a>. His main interests are <a href="http://romainbrette.fr/sensory-systems/">neural modeling of
         perception</a> and <a href="http://romainbrette.fr/spike-initiation/">spike initiation</a>.
         He also has an interest in <a href="http://romainbrette.fr/epistemology/">epistemology</a>.
     </div>
 </div>
-<h3>Brian 1 team</h3>
+<h3 class="mt-3">Brian 1 team</h3>
 
 In addition to the Brian 2 team members, additional work was done on Brian 1 by:
 
