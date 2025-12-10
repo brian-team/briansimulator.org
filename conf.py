@@ -180,7 +180,14 @@ NAVIGATION_LINKS = {
             ),
             "Material"
         ),
-        ("/team", "Team")
+
+        (
+            (
+                ("/team", "Development team"),
+                ("/board", "Advisory board"),
+            ),
+            "About us"
+        )
     )
 }
 
