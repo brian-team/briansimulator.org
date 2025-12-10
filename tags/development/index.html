@@ -80,9 +80,13 @@
                     <a href="https://github.com/brian-team/brian-material/tree/master/logos" class="dropdown-item">Download logos</a>
                     <a href="https://github.com/brian-team/brian2" class="dropdown-item">GitHub repository</a>
             </div>
-                </li>
-<li class="nav-item">
-<a href="../../team" class="nav-link">Team</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About us</a>
+            <div class="dropdown-menu">
+                    <a href="../../team" class="dropdown-item">Development team</a>
+                    <a href="../../board" class="dropdown-item">Advisory board</a>
+            </div>
 
                 
             </li>
@@ -118,7 +122,24 @@
 
         </div>
     </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2025/brian-29/" class="u-url">New release: Brian 2.9.0</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2025/brian-210/" class="u-url">New release: Brian 2.10</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../../authors/brian-team/">Brian team</a>
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/2025/brian-210/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-12-10T17:00:00Z" itemprop="datePublished" title="2025-12-10">2025-12-10</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p>We are happy to announce the <strong>Brian 2.10 release</strong>. This release extends the functionality of <code>PopulationRateMonitor</code> and <code>SpikeMonitor</code>, which now provide a unified interface to for smoothed and binned rates, and adds a new <code>run_at</code> function to execute code at specific time points. It also fixes several important bugs and comes with performance improvements for C++ standalone mode. Behind the scenes, it made important progress in refactoring aspects of our code generation system, working towards the long-term goal of having a single C++ code generation system for standalone and runtime mode, and retiring the current Cython code generation mechanism.</p>
+<p>For more details, head over to the <a href="https://brian2.readthedocs.io/en/2.10.1/introduction/release_notes.html">release notes</a>.</p>
+<p class="more"><a href="../../posts/2025/brian-210/">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2025/brian-29/" class="u-url">New release: Brian 2.9.0</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../../authors/brian-team/">Brian team</a>
@@ -269,43 +290,13 @@ The application period for the Google Summer of Code 2024 starts on March 18th (
 <p class="more"><a href="../../posts/2021/brian-25/">Read more…</a></p>
 </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2021/bug-hunt-episode-2-a-strange-file-appears/" class="u-url">Bug hunt episode 2: a strange file appears</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../../authors/marcel-stimberg/">Marcel Stimberg</a>
-            </span></p>
-            <p class="dateline">
-            <a href="../../posts/2021/bug-hunt-episode-2-a-strange-file-appears/" rel="bookmark">
-            <time class="published dt-published" datetime="2021-09-24T00:00:00Z" itemprop="datePublished" title="2021-09-24">2021-09-24</time></a>
-            </p>
-        </div>
-    </header><div class="p-summary entry-summary d-flex">
-        <div>
-<p>This is the second article in the <a href="https://briansimulator.org/tags/bug-hunt/">“bug hunt” series</a>. In these articles, I go through a recent bug in Brian (or one of its dependencies) and describe all the steps I used to find the source of the bug and how I fixed it.</p>
-<p>Today’s bug is about a strangely named file that seemingly appears out of nowhere when running Brian simulations. The final fix for the bug will turn out to be a single character change in the Brian code base 😀!</p>
-<p class="more"><a href="../../posts/2021/bug-hunt-episode-2-a-strange-file-appears/">Read more…</a></p>
-</div>
-        <img src="../../images/articles/2021/bug-hunt-episode-2-a-strange-file-appears.png" alt="Preview image" class="d-none d-sm-block float-right m-2" width="120px" height="120px">
-</div>
     </article>
 </div>
 
         <ul class="pager postindexpager clearfix">
 <li class="next"><a href="index-4.html" rel="next">Older posts</a></li>
         </ul>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-    },
-    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-    "HTML-CSS": {
-        styles: {'.MathJax_Display': {"margin": 0}}
-    }
-});
-</script><!--End of body content--><footer id="footer" class="text-center">
+<!--End of body content--><footer id="footer" class="text-center">
             Contents © 2025         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
             
             

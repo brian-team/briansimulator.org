@@ -80,9 +80,13 @@
                     <a href="https://github.com/brian-team/brian-material/tree/master/logos" class="dropdown-item">Download logos</a>
                     <a href="https://github.com/brian-team/brian2" class="dropdown-item">GitHub repository</a>
             </div>
-                </li>
-<li class="nav-item">
-<a href="../../team" class="nav-link">Team</a>
+            </li>
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About us</a>
+            <div class="dropdown-menu">
+                    <a href="../../team" class="dropdown-item">Development team</a>
+                    <a href="../../board" class="dropdown-item">Advisory board</a>
+            </div>
 
                 
             </li>
@@ -118,7 +122,24 @@
 
         </div>
     </header><div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2025/brian-29/" class="u-url">New release: Brian 2.9.0</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2025/brian-210/" class="u-url">New release: Brian 2.10</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../../authors/brian-team/">Brian team</a>
+            </span></p>
+            <p class="dateline">
+            <a href="../../posts/2025/brian-210/" rel="bookmark">
+            <time class="published dt-published" datetime="2025-12-10T17:00:00Z" itemprop="datePublished" title="2025-12-10">2025-12-10</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary d-flex">
+        <div>
+<p>We are happy to announce the <strong>Brian 2.10 release</strong>. This release extends the functionality of <code>PopulationRateMonitor</code> and <code>SpikeMonitor</code>, which now provide a unified interface to for smoothed and binned rates, and adds a new <code>run_at</code> function to execute code at specific time points. It also fixes several important bugs and comes with performance improvements for C++ standalone mode. Behind the scenes, it made important progress in refactoring aspects of our code generation system, working towards the long-term goal of having a single C++ code generation system for standalone and runtime mode, and retiring the current Cython code generation mechanism.</p>
+<p>For more details, head over to the <a href="https://brian2.readthedocs.io/en/2.10.1/introduction/release_notes.html">release notes</a>.</p>
+<p class="more"><a href="../../posts/2025/brian-210/">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/2025/brian-29/" class="u-url">New release: Brian 2.9.0</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../../authors/brian-team/">Brian team</a>
@@ -271,23 +292,6 @@ From this release on, conda packages will be provided via the <a href="https://c
 <strong>How to get Brian 2:</strong> <a href="http://brian2.readthedocs.io/en/2.1.3.1/introduction/install.html">http://brian2.readthedocs.io/en/2.1.3.1/introduction/install.html</a>
 
 As always, please report bugs or suggestions to the github bug tracker (<a href="https://github.com/brian-team/brian2/issues">https://github.com/brian-team/brian2/issues</a>) or to the brian-development mailing list (brian-development@googlegroups.com).</p>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="../../posts/brian-1-4-4-maintenance-release/" class="u-url">Brian 1.4.4 (maintenance release)</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../../authors/brian-team/">Brian team</a>
-            </span></p>
-            <p class="dateline">
-            <a href="../../posts/brian-1-4-4-maintenance-release/" rel="bookmark">
-            <time class="published dt-published" datetime="2017-12-11T12:00:58Z" itemprop="datePublished" title="2017-12-11">2017-12-11</time></a>
-            </p>
-        </div>
-    </header><div class="p-summary entry-summary d-flex">
-        <p>We&#8217;ve released Brian 1.4.4, a maintenance release for Brian 1 that fixes compatibility issues with recent versions of numpy/sympy.
-
-The packages are available on PyPI: <a href="https://pypi.python.org/pypi/brian">https://pypi.python.org/pypi/brian</a>
-
-Note that for new projects, you should use <a href="http://brian2.readthedocs.io">Brian 2</a> instead, the Brian version under active development.</p>
     </div>
     </article>
 </div>
