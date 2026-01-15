@@ -1014,6 +1014,7 @@ GITHUB_COMMIT_SOURCE = True
 # <https://getnikola.com/handbook.html#post-processing-filters>
 #
 from nikola import filters
+
 FILTERS = {
    ".html": [filters.typogrify_sans_widont],
 }
@@ -1262,10 +1263,10 @@ LICENSE = ""
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
 CONTENT_FOOTER = 'Contents &copy; {date}         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         {license} &ndash;' \
-                 'Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fab fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> ' \
-                 '<a href="https://twitter.com/briansimulator"><i class="fab fa-twitter" aria-hidden="true" title="Twitter"></i><span class="sr-only">Twitter</span></a> ' \
-                 '<a href="https://www.youtube.com/@briansimulator"><i class="fab fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> ' \
-                 '<a href="https://github.com/brian-team/brian2"><i class="fab fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> ' \
+                 'Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fa-brands fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> ' \
+                 '<a href="https://bsky.app/profile/briansimulator.org"><i class="fa-brands fa-bluesky" aria-hidden="true" title="Bluesky"></i><span class="sr-only">Bluesky</span></a> ' \
+                 '<a href="https://www.youtube.com/@briansimulator"><i class="fa-brands fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> ' \
+                 '<a href="https://github.com/brian-team/brian2"><i class="fa-brands fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> ' \
                  '<a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>'
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
