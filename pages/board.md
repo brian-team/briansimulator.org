@@ -7,9 +7,15 @@
 We established a Brian advisory board in June 2025 by inviting some members of the Brian user/developer community, spanning a range of application domains and different levels of career stage. This board meets every 3 months, and discusses with the core development team on various issues. The details of the future organisation and how the board will be renewed over time are still being figured out.
 
 <h3>Members (June 2025 – )</h3>
+<style>
+    .card {
+        height: 95%;
+    }
+</style>
+<div class="container">
+<div class="row row-cols-1 row-cols-md-2">
 
-<div class="d-flex flex-wrap">
-
+<div class="col">
 <div class="card m-2">
     <div class="card-header">
         <img class="img-fluid rounded float-right" src="/photos/paul_brodersen.jpeg" style="height: 80px;"/>
@@ -20,7 +26,9 @@ We established a Brian advisory board in June 2025 by inviting some members of t
         Computational Biologist at the Department of Pharmacology, University of Oxford
     </div>
 </div>
+</div>
 
+<div class="col">
 <div class="card m-2">
     <div class="card-header">
         <img class="img-fluid rounded float-right" src="/photos/kyle_johnsen.png" style="height: 80px;"/>
@@ -32,7 +40,9 @@ We established a Brian advisory board in June 2025 by inviting some members of t
         PhD student at Georgia Tech/Emory University, advised by <a href="https://siplab.gatech.edu/">Chris Rozell</a>.
     </div>
 </div>
+</div>
 
+<div class="col">
 <div class="card m-2">
     <div class="card-header">
         <img class="img-fluid rounded float-right"  src="/photos/michalis_pagkalos.jpeg" style="height: 80px;"/>
@@ -44,7 +54,9 @@ We established a Brian advisory board in June 2025 by inviting some members of t
         Postdoctoral researcher at the Poirazi Lab, IMBB-FORTH
     </div>
 </div>
+</div>
 
+<div class="col">
 <div class="card m-2">
     <div class="card-header">
         <img class="img-fluid rounded float-right" src="/photos/ruben_tikidji-hamburyan.jpg" style="height: 80px;"/>
@@ -56,7 +68,9 @@ We established a Brian advisory board in June 2025 by inviting some members of t
         Senior Research Scientist, School of Medicine and Health Sciences, George Washington University.
     </div>
 </div>
+</div>
 
+<div class="col">
 <div class="card m-2">
     <div class="card-header">
         <img class="img-fluid rounded float-right" src="/photos/simo_vanni.jpg" style="height: 80px;"/>
@@ -67,5 +81,8 @@ We established a Brian advisory board in June 2025 by inviting some members of t
     <div class="card-body">
         PI of Visual Neuroscience group, Docent at Department of Physiology, Medicum, University of Helsinki
     </div>
+</div>
+</div>
+
 </div>
 </div>
