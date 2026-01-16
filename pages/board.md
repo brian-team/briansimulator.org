@@ -26,7 +26,7 @@ We established a Brian advisory board in June 2025 by inviting some members of t
         <img class="img-fluid rounded float-right" src="/photos/kyle_johnsen.png" style="height: 80px;"/>
         <h4>Kyle Johnsen</h4>
         <div class="mt-2"><a href="https://github.com/kjohnsen"><i class="fa-brands fa-github"></i> @kjohnsen</a></div>
-        <a href="https://bsky.app/profile/mrdendrify.bsky.social"><i class="fa-brands fa-bluesky"title="Bluesky"></i> @mrdendrify.bsky.social</a>
+        <a href="https://bsky.app/profile/kylejohnsen.bsky.social"><i class="fa-brands fa-bluesky"title="Bluesky"></i> @kylejohnsen.bsky.social</a>
     </div>
     <div class="card-body">
         PhD student at Georgia Tech/Emory University, advised by <a href="https://siplab.gatech.edu/">Chris Rozell</a>.
@@ -37,8 +37,8 @@ We established a Brian advisory board in June 2025 by inviting some members of t
     <div class="card-header">
         <img class="img-fluid rounded float-right"  src="/photos/michalis_pagkalos.jpeg" style="height: 80px;"/>
         <h4>Michalis Pagkalos</h4>
-        <div class="mt-2"><a href="https://github.com/mpgl"><i class="fa-brands fa-github"></i> @mpgl</a></div>
-        <a href="https://bsky.app/profile/kylejohnsen.bsky.social"><i class="fa-brands fa-bluesky"title="Bluesky"></i> @kylejohnsen.bsky.social</a>
+        <div class="mt-2"><a href="https://github.com/mpgl"><i class="fa-brands fa-github"></i> @mpgl</a></div>        
+        <a href="https://bsky.app/profile/mrdendrify.bsky.social"><i class="fa-brands fa-bluesky"title="Bluesky"></i> @mrdendrify.bsky.social</a>
     </div>
     <div class="card-body">
         Postdoctoral researcher at the Poirazi Lab, IMBB-FORTH
