@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>New release: Brian 2.10 | The Brian spiking neural network simulator</title>
+<title>GSoC 2026 | The Brian spiking neural network simulator</title>
 <link href="../../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css">
@@ -14,19 +14,18 @@
 <meta name="theme-color" content="#333e63">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../rss.xml">
-<link rel="canonical" href="https://briansimulator.org/posts/2025/brian-210/">
+<link rel="canonical" href="https://briansimulator.org/posts/2026/gsoc-2026/">
 <link rel="icon" href="../../../logos/favicon.png" sizes="32x32">
 <!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]--><script src="https://kit.fontawesome.com/2b48dbc3a6.js" crossorigin="anonymous"></script><meta name="author" content="Brian team">
-<link rel="prev" href="../brian-29/" title="New release: Brian 2.9.0" type="text/html">
-<link rel="next" href="../../2026/gsoc-2026/" title="GSoC 2026" type="text/html">
+<link rel="prev" href="../../2025/brian-210/" title="New release: Brian 2.10" type="text/html">
 <meta property="og:site_name" content="The Brian spiking neural network simulator">
-<meta property="og:title" content="New release: Brian 2.10">
-<meta property="og:url" content="https://briansimulator.org/posts/2025/brian-210/">
-<meta property="og:description" content="We are happy to announce the Brian 2.10 release. This release extends the functionality of PopulationRateMonitor and SpikeMonitor, which now provide a unified interface to for smoothed and binned rate">
+<meta property="og:title" content="GSoC 2026">
+<meta property="og:url" content="https://briansimulator.org/posts/2026/gsoc-2026/">
+<meta property="og:description" content="We are very happy that the INCF has been again selected to be a mentor organization for the Google Summer of Code (“a global, online program focused on bringing new contributors into open source softw">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2025-12-10T17:00:00Z">
+<meta property="article:published_time" content="2026-03-16T10:15:00Z">
 <meta property="article:tag" content="Development">
-<meta property="article:tag" content="Release">
+<meta property="article:tag" content="GSoC">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@briansimulator">
 </head>
@@ -114,7 +113,7 @@
         
         
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">New release: Brian 2.10</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">GSoC 2026</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
@@ -122,7 +121,7 @@
             </span></p>
             <p class="dateline">
             <a href="." rel="bookmark">
-            <time class="published dt-published" datetime="2025-12-10T17:00:00Z" itemprop="datePublished" title="2025-12-10">2025-12-10</time></a>
+            <time class="published dt-published" datetime="2026-03-16T10:15:00Z" itemprop="datePublished" title="2026-03-16">2026-03-16</time></a>
             </p>
             
 
@@ -130,23 +129,44 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>We are happy to announce the <strong>Brian 2.10 release</strong>. This release extends the functionality of <code>PopulationRateMonitor</code> and <code>SpikeMonitor</code>, which now provide a unified interface to for smoothed and binned rates, and adds a new <code>run_at</code> function to execute code at specific time points. It also fixes several important bugs and comes with performance improvements for C++ standalone mode. Behind the scenes, it made important progress in refactoring aspects of our code generation system, working towards the long-term goal of having a single C++ code generation system for standalone and runtime mode, and retiring the current Cython code generation mechanism.</p>
-<p>For more details, head over to the <a href="https://brian2.readthedocs.io/en/2.10.1/introduction/release_notes.html">release notes</a>.</p>
+    <p>We are very happy that the <a href="https://incf.org"><span class="caps">INCF</span></a> has been again selected to be a mentor organization for the <a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a> (“a global, online program focused on bringing new contributors into open source software development”). As in last years, the Brian simulator project takes part and offers several projects for students/”open source beginners” to work on.
+The <strong>application period for the Google Summer of Code 2026 starts</strong> on <strong>March 16th</strong>, and the deadline is on <strong>March 31st</strong> (full <a href="https://developers.google.com/open-source/gsoc/timeline">timeline for GSoC 2026</a>) – note that this is slightly earlier compared to previous years. With this post we give some general information about the ideal contributor application from our point of view. The recommendations we give here hold for all of the proposed projects, but we will also try to give information specific to the respective projects in the corresponding <a href="https://neurostars.org/c/gsoc/5">neurostars</a> threads. For a full list of Brian-related projects, see the end of this post.</p>
 <!-- TEASER_END -->
 
-<p>Brian 2 can be installed with pip from the <a href="https://pypi.org/project/Brian2/">pypi repository</a>, and via several other means (some of them might take a while to catch up to the latest release). See the <a href="https://brian2.readthedocs.io/en/2.10.1/introduction/install.html">installation instructions</a>, and the badges in the <a href="https://github.com/brian-team/brian2/blob/master/README.md"><span class="caps">README</span> file</a> for more details.</p>
-<p>Thanks to everyone who contributed 🤝!</p>
-    </div>
+<p>Before you consider submitting an application, <strong>make sure you fit the <a href="https://developers.google.com/open-source/gsoc/faq#eligibility">general eligibility criteria</a></strong>. The program is open to all students and “open source beginners” (at least 18 years of age), regardless of whether they are enrolled as students or not. That said, <strong>you need to be available to invest around 175h to 350h (depending on the project) over the summer</strong>, so this program is hardly compatible with a full-time employment (quoting from the page linked above: “Professionals often find the required time commitment difficult to balance.”)</p>
+<p>Please <strong>contact us in the respective neurostars discussion</strong>, to make us aware that you are interested in the project. This is also the best place to ask about anything that is unclear in the project description, or about any questions or doubts you have.</p>
+<p>Your application should convince us that:</p>
+<ol>
+<li>
+<strong>You understand what the project is about</strong>: what is the problem or missing feature in Brian (or related project) that the project is trying to address? How does the proposed project solve the problem or adds the feature?</li>
+<li>
+<strong>You understand what steps are necessary to implement the proposed solution</strong>, and can give rough estimates of how long these steps will take.</li>
+<li>
+<strong>You have most or all of the necessary skills to implement the proposed solution</strong> and can acquire the missing skills during the project.</li>
+<li>
+<strong>You can commit the required time over the summer</strong>. Note that the program has some flexibility in the schedule. Importantly, please be realistic and honest – do not try to make the schedule work by planning with, say, 70h of work in a single week.</li>
+</ol>
+<p>For all of the above points, please fill it out with <strong>concrete details</strong> and <strong>link to other sources</strong> where helpful. For example, you might want to link to specific bits of the documentation or code that you deem relevant to the project and discuss them. Regarding your skills, they are ideally illustrated by concrete evidence as well, e.g. a link to a student project you wrote in Python, or a link to a website you set up.</p>
+<p>Of course, we will also take other interactions we had with you into account, e.g. on GitHub issues or pull requests. For both the application and your GitHub contributions, make sure to <strong>focus on quality and not on quantity</strong>. In the age of LLMs, it is easy to create long texts and code contributions, but if these contributions are not showing signs of true engagement (e.g. pull requests that have never been tested by the contributor), they are not necessarily a plus for your application.</p>
+<p>While it is not a strict requirement, <strong>we highly recommend to base your application on the <a href="https://www.incf.org/sites/default/files/files/INCF_GSoC_2022_Application_template.pdf"><span class="caps">INCF</span> GSoC Application template</a></strong>. As soon as you have a draft that you’d like to have feedback on, please contact us directly (e.g. over a direct message on neurostars) with a link to the draft – a <a href="https://docs.google.com/">Google Docs</a> document is probably the easiest solution.</p>
+<p>An important final note: <strong>we cannot promise how many students we can accept to work on Brian with GSoC this year</strong> – it is even possible that we cannot accept anyone! To give you a rough idea of how the process works: after reviewing the received applications, all the projects participating under the umbrella of the <a href="https://www.incf.org"><span class="caps">INCF</span></a> will come up with a list of students they’d like to accept. The <span class="caps">INCF</span> will then transmit the number of requested “slots” to Google, which will finally decide the number of slots that it assigns to each organisation. This number of assigned slots is typically lower than the requested number, therefore not all students that were reviewed positively can be accepted. <strong>For a project like Brian, realistically we can only expect to receive a single slot and therefore only accept a single student for one of our proposed projects…</strong></p>
+<p>We hope that this makes the application process a bit clearer, looking forward to discussing your applications, and hopefully to work with one of you over this summer!</p>
+<h3>Neurostars discussions for Brian-related projects</h3>
+<ul>
+<li><a href="https://neurostars.org/t/gsoc-2026-project-1-brian-simulator-serialization-deserialization-for-brian-sim-models-results-and-input-data-175h-350h/35560">Project #1 : Brian Simulator - Serialization/deserialization for Brian sim models, results, and input data (175h/350h)</a></li>
+<li><a href="https://neurostars.org/t/gsoc-2026-project-2-brian-simulator-update-brian-documentation-infrastructure-175h/35561/2">Project #2 : Brian Simulator - Update Brian documentation infrastructure (175h)</a></li>
+<li><a href="https://neurostars.org/t/gsoc-2026-project-3-brian-simulator-improved-parser-for-brian-model-descriptions-175h/35562">Project #3 : Brian Simulator - Improved parser for Brian model descriptions (175h)</a></li>
+<li><a href="https://neurostars.org/t/gsoc-2026-project-4-brian-simulator-complete-finalize-code-editor-support-for-brian-model-equations-175h/35563">Project #4 : Brian Simulator - Complete/finalize code editor support for Brian model equations (175h)</a></li>
+<li><a href="https://neurostars.org/t/gsoc-2026-project-5-brian-simulator-fix-outstanding-issues-in-brian2cuda-175h-350h/35564">Project #5 : Brian Simulator - Fix outstanding issues in Brian2CUDA (175h/350h)</a></li>
+</ul>
+</div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../tags/development/" rel="tag">Development</a></li>
-            <li><a class="tag p-category" href="../../../tags/release/" rel="tag">Release</a></li>
+            <li><a class="tag p-category" href="../../../tags/gsoc/" rel="tag">GSoC</a></li>
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../brian-29/" rel="prev" title="New release: Brian 2.9.0">Previous post</a>
-            </li>
-            <li class="next">
-                <a href="../../2026/gsoc-2026/" rel="next" title="GSoC 2026">Next post</a>
+                <a href="../../2025/brian-210/" rel="prev" title="New release: Brian 2.10">Previous post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer" class="text-center">
             Contents © 2026         Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>          –Brian on <a rel="me" href="https://neuromatch.social/@briansimulator"><i class="fa-brands fa-mastodon" aria-hidden="true" title="Mastodon"></i><span class="sr-only">Mastodon</span></a> <a href="https://bsky.app/profile/briansimulator.org"><i class="fa-brands fa-bluesky" aria-hidden="true" title="Bluesky"></i><span class="sr-only">Bluesky</span></a> <a href="https://www.youtube.com/@briansimulator"><i class="fa-brands fa-youtube" aria-hidden="true" title="YouTube"></i><span class="sr-only">YouTube</span></a> <a href="https://github.com/brian-team/brian2"><i class="fa-brands fa-github" aria-hidden="true" title="GitHub"></i><span class="sr-only">GitHub</span></a> <a href="https://brian2.readthedocs.io"><i class="fas fa-book" aria-hidden="true" title="ReadTheDocs"></i><span class="sr-only">ReadTheDocs</span></a>
